@@ -1,0 +1,24 @@
+[
+  {
+    "event_time": "2025-07-22T10:14:00.000Z",
+    "event_name": "UserLogin",
+    "user": "karl.saare@client.ee",
+    "source_ip": "145.14.37.163",
+    "destination_ip": "13.80.23.7",
+    "location": "Tallinn, Estonia",
+    "login_result": "success",
+    "has_mfa": false,
+    "user_agent": "Windows-AzureAD-Authentication-Provider/1.0"
+  },
+  {
+    "event_time": "2025-07-23T08:10:00.000Z",
+    "event_name": "UserLogin",
+    "user": "karl.saare@client.ee",
+    "source_ip": "145.14.37.163",
+    "destination_ip": "13.80.23.7",
+    "location": "Tallinn, Estonia",
+    "login_result": "success",
+    "has_mfa": false,
+    "user_agent": "Windows-AzureAD-Authentication-Provider/1.0"
+  }
+]

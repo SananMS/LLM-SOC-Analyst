@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-80",
+    "Start Time": "2025-07-22T23:22:15.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "152.32.141.199",
+    "Destination IP": "13.80.23.7",
+    "Endpoint": "Office 365 (cloud authentication)",
+    "User": "risto.pohjal@client.ee",
+    "Playbook Used": "Suspicious Login Triage",
+    "Description": "An anomalous Office 365 login for risto.pohjal@client.ee was observed from Lagos, Nigeria and the login succeeded with MFA present. The source IP is flagged as a VPN hosted by a Data Center/Web Hosting provider and carries a maximum security score (100), while device management status is unknown. Because the IP is high-risk (data center/proxy) with a very high reputation score and the endpoint/device posture cannot be confirmed, this alert is classified as High Priority.",
+    "IP Reputation Score": "100/100",
+    "ISP": "UCLOUD INFORMATION TECHNOLOGY (HK) LIMITED",
+    "Usage Type": "Data Center/Web Hosting/Transit",
+    "Privacy Status": "VPN (flagged)",
+    "Device Management Status": "Unknown"
+  },
+  "classification": "HP"
+}

@@ -1,0 +1,25 @@
+{
+  "alert_id": "SOC-88",
+  "alert_name": "User Login Location Anomaly",
+  "start_time": "2025-07-23T23:55:15.000Z",
+  "source_ip": "182.95.178.158",
+  "destination_ip": "13.80.23.7",
+  "user": "karl.saare@client.ee",
+  "user_id": "2f6c9d81-4a7b-4e3f-9b0d-6a8e5c1f27d4",
+  "description": "An anomalous Office 365 login occurred from Mumbai, India, which is outside the user's typical login region.",
+  "evidence": {
+    "login_type": "o365_login",
+    "login_result": "success",
+    "has_mfa": false,
+    "user_agent": "Windows-AzureAD-Authentication-Provider/1.0",
+    "os": "Windows",
+    "geo_location": {
+      "city": "Mumbai",
+      "country": "India"
+    }
+  },
+  "technique": {
+    "name": "XDR Location Anomaly",
+    "killchain_stage": "Initial Attempts"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-25",
+    "Start Time": "2025-07-11T07:50:00.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "41.160.0.2",
+    "Destination IP": "13.80.23.7",
+    "Endpoint": "G315745",
+    "User": "Fred.Mercedes@client.ee",
+    "User ID": "7f8b92d4-e12a-4c5b-9d3f-8a6e41b2c0f9",
+    "Playbook Used": "Suspicious Login Triage",
+    "IP Reputation Score": 0,
+    "ISP Usage Type": "Fixed Line ISP",
+    "Company Managed": true,
+    "Historical Confirmations": "Two recent successful logins from Johannesburg (2025-07-08 and 2025-07-09) and prior alerts (SOC-15, SOC-22) were closed as false positives after the client confirmed the user was in South Africa.",
+    "Description": "An Office 365 login succeeded from Johannesburg, South Africa, on the company-managed endpoint G315745 and MFA was used. The source IP has a Security Score of 0 and is associated with a Fixed Line ISP, and there are two recent similar successful logins and alerts that were previously confirmed by the client. Because the device is managed, MFA was present, the IP risk is low, and the location has been historically confirmed for this user, the activity is assessed as low priority."
+  },
+  "classification": "LP"
+}

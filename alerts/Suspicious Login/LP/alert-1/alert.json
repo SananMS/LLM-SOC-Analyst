@@ -1,0 +1,27 @@
+{
+  "alert_id": "SOC-25",
+  "alert_name": "User Login Location Anomaly",
+  "start_time": "2025-07-11T07:50:00.000Z",
+  "source_ip": "41.160.0.2",
+  "destination_ip": "13.80.23.7",
+  "endpoint": "G315745",
+  "company_managed_and_compliant": true,
+  "user": "Fred.Mercedes@client.ee",
+  "user_id": "7f8b92d4-e12a-4c5b-9d3f-8a6e41b2c0f9",
+  "description": "An anomalous Office 365 login occurred from Johannesburg, South Africa, which is outside the user's typical login region.",
+  "evidence": {
+    "login_type": "o365_login",
+    "login_result": "success",
+    "has_mfa": true,
+    "user_agent": "Windows-AzureAD-Authentication-Provider/1.0",
+    "os": "Windows",
+    "geo_location": {
+      "city": "Johannesburg",
+      "country": "South Africa"
+    }
+  },
+  "technique": {
+    "name": "XDR Location Anomaly",
+    "killchain_stage": "Initial Attempts"
+  }
+}

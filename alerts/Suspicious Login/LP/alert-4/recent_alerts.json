@@ -1,0 +1,15 @@
+[
+  {
+    "alert_id": "SOC-105",
+    "alert_name": "User Login Location Anomaly",
+    "start_time": "2025-07-30T10:15:00.000Z",
+    "source_ip": "188.135.50.141",
+    "destination_ip": "13.80.23.7",
+    "user": "riina.maasik@client.ee",
+    "geo_location": {
+      "city": "Muscat",
+      "country": "Oman"
+    },
+    "analyst_comment": "Alert closed as FP. Confirmed by client: User was on vacation in Oman."
+  }
+]

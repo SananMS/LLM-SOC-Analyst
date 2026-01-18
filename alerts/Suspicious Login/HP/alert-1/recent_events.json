@@ -1,0 +1,24 @@
+[
+  {
+    "event_time": "2025-07-09T08:15:00.000Z",
+    "event_name": "UserLogin",
+    "user": "Elena.Vasiliev@client.ee",
+    "source_ip": "145.14.37.191",
+    "destination_ip": "13.80.23.7",
+    "location": "Tallinn, Estonia",
+    "login_result": "success",
+    "has_mfa": true,
+    "user_agent": "Windows-AzureAD-Authentication-Provider/1.0"
+  },
+  {
+    "event_time": "2025-07-09T09:00:00.000Z",
+    "event_name": "UserLogin",
+    "user": "Elena.Vasiliev@client.ee",
+    "source_ip": "145.14.37.191 ",
+    "destination_ip": "13.80.23.7",
+    "location": "Tallinn, Estonia",
+    "login_result": "success",
+    "has_mfa": true,
+    "user_agent": "Windows-AzureAD-Authentication-Provider/1.0"
+  }
+]

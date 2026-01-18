@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-65",
+    "Start Time": "2025-07-17T14:22:15.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "45.78.217.136",
+    "Destination IP": "13.80.23.7",
+    "Endpoint": "Not provided in alert",
+    "User": "martin.kask@client.ee",
+    "Playbook Used": "Suspicious Login Triage",
+    "Description": "An anomalous Office 365 login succeeded from Singapore using a Windows Azure AD authentication agent and MFA was not used. The source IP resolves to BYTEPLUS and is categorized as Data Center/Web Hosting with a Security Score of 100, while the user's recent known logins are from Tallinn, Estonia. Given the high-risk IP usage type, elevated security score, absence of MFA, and a country with no prior client confirmation, this alert is considered High Priority.",
+    "MFA Status": "false",
+    "ISP": "BYTEPLUS",
+    "Usage Type": "Data Center/Web Hosting/Transit",
+    "Security Score": "100",
+    "Recent Similar Events": "Two recent successful logins for the same user from Tallinn, Estonia at 2025-07-17T12:15:00 and 2025-07-17T13:00:00 from IP 145.14.37.180, both without MFA and using the same user agent."
+  },
+  "classification": "HP"
+}

@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-75",
+    "Start Time": "2025-07-20T15:22:15.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "176.120.22.47",
+    "Destination IP": "13.80.23.7",
+    "Endpoint": "unknown",
+    "User": "laura.tamm@client.ee",
+    "Playbook Used": "Suspicious Login Triage",
+    "Description": "An anomalous successful Office 365 login for laura.tamm@client.ee was observed from Saint Petersburg, Russia, which is outside the user's usual region. The login completed with MFA and the user agent matches prior successful logins from Tallinn earlier the same day, but the source IP has a very high reputation score (100) and is classified as Data Center/Web Hosting, indicating a high-risk hosting or relay service. Device management status is unknown and there is no prior confirmed client location in Russia for this user; because the IP reputation is high and the usage type is data-center, this alert is classified as High Priority.",
+    "MFA Used": true,
+    "Device Management Status": "unknown",
+    "IP Reputation Score": 100,
+    "ISP Usage Type": "Data Center/Web Hosting/Transit",
+    "Historical Confirmed Countries": "Estonia (Tallinn) - 2 recent successful logins earlier same day"
+  },
+  "classification": "HP"
+}

@@ -1,0 +1,27 @@
+{
+  "alert_id": "SOC-100",
+  "alert_name": "User Login Location Anomaly",
+  "start_time": "2025-07-25T07:50:00.000Z",
+  "source_ip": "155.133.15.2",
+  "destination_ip": "13.80.23.7",
+  "endpoint": "G3154545",
+  "company_managed_and_compliant": true,
+  "user": "lisa.korhonen@client.ee",
+  "user_id": "c4e9a17b-2d63-4f8a-9b52-6a0d8f3e91bc",
+  "description": "An anomalous Office 365 login occurred from Santiago de Querétaro, Mexico, which is outside the user's typical login region.",
+  "evidence": {
+    "login_type": "o365_login",
+    "login_result": "success",
+    "has_mfa": true,
+    "user_agent": "Windows-AzureAD-Authentication-Provider/1.0",
+    "os": "Windows",
+    "geo_location": {
+      "city": "Santiago de Querétaro",
+      "country": "Mexico"
+    }
+  },
+  "technique": {
+    "name": "XDR Location Anomaly",
+    "killchain_stage": "Initial Attempts"
+  }
+}

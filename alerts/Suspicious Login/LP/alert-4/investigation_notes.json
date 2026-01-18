@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-110",
+    "Start Time": "2025-08-01T08:30:00.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "83.110.250.231",
+    "Destination IP": "13.80.23.7",
+    "Endpoint": "F12347565",
+    "User": "riina.maasik@client.ee",
+    "Playbook Used": "Suspicious Login Triage",
+    "Description": "An Office 365 login succeeded from Dubai, UAE for user riina.maasik@client.ee using a company-managed Windows endpoint and MFA was applied. IP reputation shows a Security Score of 0 and the ISP is Emirates Telecommunications Corporation (Fixed Line), indicating low technical risk for the IP itself. However, the location is outside the user's typical region and there is no evidence of prior client confirmation for UAE, so the activity is atypical and is being treated as higher priority.",
+    "Security Score": 0,
+    "ISP": "Emirates Telecommunications Corporation",
+    "Usage Type": "Fixed Line ISP",
+    "MFA Used": true,
+    "Device Managed": true
+  },
+  "classification": "HP"
+}

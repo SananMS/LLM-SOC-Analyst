@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-100",
+    "Start Time": "2025-07-25T07:50:00.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "155.133.15.2",
+    "Destination IP": "13.80.23.7",
+    "Endpoint": "G3154545",
+    "User": "lisa.korhonen@client.ee",
+    "Playbook Used": "Suspicious Login Triage",
+    "Description": "A successful Office 365 login was observed from Santiago de Querétaro, Mexico, which is outside the user's normal region. The device is company-managed and MFA was used, while the source IP is flagged as a VPN with a low security score of 4 and identified as Data Center/Web Hosting. Prior recent successful logins for this user are from Tallinn, Estonia. Given the combination of a confirmed VPN, a company-managed endpoint, and the very low IP security score, this event is assessed as lower risk despite the novel country and data-center usage.",
+    "Company Managed": true,
+    "Usage Type": "Data Center/Web Hosting/Transit",
+    "IP Reputation Score": 4,
+    "VPN Detected": true,
+    "Historical Confirmed Location": "Tallinn, Estonia (multiple recent successful logins)"
+  },
+  "classification": "LP"
+}

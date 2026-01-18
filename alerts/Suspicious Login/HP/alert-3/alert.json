@@ -1,0 +1,25 @@
+{
+  "alert_id": "SOC-75",
+  "alert_name": "User Login Location Anomaly",
+  "start_time": "2025-07-20T15:22:15.000Z",
+  "source_ip": "176.120.22.47",
+  "destination_ip": "13.80.23.7",
+  "user": "laura.tamm@client.ee", 
+  "user_id": "f4b8a2d9-3c6e-4a1f-9e27-8c5d1b0e7a63",
+  "description": "An anomalous Office 365 login occurred from Saint Petersburg, Russia, which is outside the user's typical login region.",
+  "evidence": {
+    "login_type": "o365_login",
+    "login_result": "success",
+    "has_mfa": true,
+    "user_agent": "Windows-AzureAD-Authentication-Provider/1.0",
+    "os": "Windows",
+    "geo_location": {
+      "city": "Saint Petersburg",
+      "country": "Russia"
+    }
+  },
+  "technique": {
+    "name": "XDR Location Anomaly",
+    "killchain_stage": "Initial Attempts"
+  }
+}

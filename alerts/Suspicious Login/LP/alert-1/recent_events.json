@@ -1,0 +1,35 @@
+[
+  {
+    "event_time": "2025-07-06T07:30:00.000Z",
+    "event_name": "UserLogin",
+    "user": "Fred.Mercedes@client.ee",
+    "source_ip": "194.126.101.50",
+    "destination_ip": "13.80.23.7",
+    "location": "Tallinn, Estonia",
+    "login_result": "success",
+    "has_mfa": true,
+    "user_agent": "Windows-AzureAD-Authentication-Provider/1.0"
+  },
+  {
+    "event_time": "2025-07-08T10:15:00.000Z",
+    "event_name": "UserLogin",
+    "user": "Fred.Mercedes@client.ee",
+    "source_ip": "41.164.0.15",
+    "destination_ip": "13.80.23.7",
+    "location": "Johannesburg, South Africa",
+    "login_result": "success",
+    "has_mfa": true,
+    "user_agent": "Windows-AzureAD-Authentication-Provider/1.0"
+  },
+  {
+    "event_time": "2025-07-09T08:45:00.000Z",
+    "event_name": "UserLogin",
+    "user": "Fred.Mercedes@client.ee",
+    "source_ip": "41.164.0.19",
+    "destination_ip": "13.80.23.7",
+    "location": "Johannesburg, South Africa",
+    "login_result": "success",
+    "has_mfa": true,
+    "user_agent": "Windows-AzureAD-Authentication-Provider/1.0"
+  }
+]

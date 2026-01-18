@@ -1,0 +1,27 @@
+{
+  "alert_id": "SOC-115",
+  "alert_name": "User Login Location Anomaly",
+  "start_time": "2025-08-03T16:30:00.000Z",
+  "source_ip": "154.86.26.91",
+  "destination_ip": "13.80.23.7",
+  "endpoint": "T12345785",
+  "company_managed_and_compliant": true,
+  "user": "arne.tamm@client.ee",
+  "user_id": "c9d3e5f1-4a7b-4e2f-8b9a-1f6d2c3e5b7f",
+  "description": "An anomalous Office 365 login occurred from Hong Kong, Hong Kong, which is outside the user's typical login region.",
+  "evidence": {
+    "login_type": "o365_login",
+    "login_result": "success",
+    "has_mfa": true,
+    "user_agent": "Windows-AzureAD-Authentication-Provider/1.0",
+    "os": "Windows",
+    "geo_location": {
+      "city": "Hong Kong",
+      "country": "Hong Kong"
+    }
+  },
+  "technique": {
+    "name": "XDR Location Anomaly",
+    "killchain_stage": "Initial Attempts"
+  }
+}
