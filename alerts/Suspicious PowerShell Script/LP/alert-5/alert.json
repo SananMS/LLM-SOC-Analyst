@@ -1,0 +1,18 @@
+{
+  "alert_id": "SOC-5592",
+  "alert_name": "Suspicious PowerShell Script Execution",
+  "start_time": "2026-01-25T19:12:05.000Z",
+  "source_ip": "10.20.30.45",
+  "endpoint": "HOST-SRV-01",
+  "user": "backupVeeam",
+  "user_id": "S-1-5-21-32456789-1002",
+  "description": "A suspicious PowerShell script was executed on the host.",
+  "evidence": {
+    "scriptblock": "function PSTargetSupportsAlternateStreams\n        {\n            param (\n                [string] $supportAltStreamPath\n            )\n\n            $result = @{\n                TargetSupportsAlternateStreams = $false\n            }\n\n            # Resolve path in case it is a PSDrive\n            $resolvedPath = Microsoft.PowerShell.Management\\Resolve-Path -literal $supportAltStreamPath\n\n            $targetDrive = [IO.Path]::GetPathRoot($resolvedPath.ProviderPath)\n            if (-not $targetDrive)\n            {\n                return $result\n            }\n\n            # Check if the target drive is NTFS\n            $driveFormat = 'NTFS'\n            foreach ($drive in [System.IO.DriveInfo]::GetDrives())\n            {\n                if (($drive.Name -eq $targetDrive) -and ($drive.DriveFormat -eq $driveFormat))\n                {\n                    # Now, check if the target supports Add-Command -Stream. This functionality was introduced in version 3.0.\n                    $addContentCmdlet = Microsoft.PowerShell.Core\\Get-Command Microsoft.PowerShell.Management\\Add-Content -ErrorAction SilentlyContinue\n                    if ($addContentCmdlet.Parameters.Keys -contains 'Stream')\n                    {\n                        $result['TargetSupportsAlternateStreams'] = $true\n                        break\n                    }\n                }\n            }\n\n            return $result\n        }",
+    "os": "Windows Server 2022 Datacenter"
+  },
+  "technique": {
+    "name": "NTFS File Attributes",
+    "killchain_stage": "Defense Evasion"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "alert_id": "SOC-9745",
+  "alert_name": "Suspicious PowerShell Script Execution",
+  "start_time": "2026-01-26T02:47:19.000Z",
+  "source_ip": "10.4.22.18",
+  "endpoint": "FIN-SRV-01",
+  "user": "m.laane",
+  "user_id": "S-1-5-21-55667788-33445566-11223344-1021",
+  "description": "A suspicious PowerShell script was executed on the host.",
+  "evidence": {
+    "scriptblock": "Get-ChildItem C:\\Users -Recurse -Include *.kdbx,*.pst,*.docx -ErrorAction SilentlyContinue | Select-Object FullName,Length | Export-Csv C:\\ProgramData\\user_cache.csv -NoTypeInformation",
+    "os": "Windows Server 2019 Standard"
+  },
+  "technique": {
+    "name": "File and Directory Discovery",
+    "killchain_stage": "Discovery"
+  }
+}

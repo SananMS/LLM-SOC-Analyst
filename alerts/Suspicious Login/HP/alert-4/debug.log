@@ -1,3 +1,25 @@
+=== DEBUG SESSION START: 2026-01-25T16:28:13.974549 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: User Login Location Anomaly
+Selected Playbook: 'suspicious_login.json'
+
+[TOOL CALL]
+Tool: check_ip_reputation
+Arguments: {"ip": "152.32.141.199"}
+
+[TOOL RESPONSE]
+Source IP: 152.32.141.199 | Security Score: 100/100 | ISP: UCLOUD INFORMATION TECHNOLOGY (HK) LIMITED | Usage Type: Data Center/Web Hosting/Transit | Privacy Status: VPN
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[FINAL LLM OUTPUT]
 {
   "investigation_notes": {
     "Alert ID": "SOC-80",
@@ -16,3 +38,4 @@
   },
   "classification": "HP"
 }
+

@@ -1,0 +1,18 @@
+{
+  "alert_id": "SOC-9921",
+  "alert_name": "Suspicious PowerShell Script Execution",
+  "start_time": "2026-01-20T02:15:44.000Z",
+  "source_ip": "192.168.1.45",
+  "endpoint": "FS-PROD-02",
+  "user": "NT SERVICE\\DataBackupAgent",
+  "user_id": "S-1-5-80-3245",
+  "description": "A suspicious PowerShell script was executed on the host.",
+  "evidence": {
+    "scriptblock": "param($TargetDrive = 'C:', $ThresholdGB = 10)\n\n# DataVault Backup - Pre-Scan Inventory Script\n$LogPath = 'C:\\ProgramData\\DataVault\\Logs\\inventory_scan.log'\n$ReportPath = 'C:\\ProgramData\\DataVault\\Temp\\large_files.csv'\n\nfunction Write-Log($Message) {\n    $TS = Get-Date -Format 'yyyy-MM-dd HH:mm:ss'\n    \"[$TS] $Message\" | Out-File -FilePath $LogPath -Append\n}\n\ntry {\n    Write-Log 'Starting storage inventory scan...'\n    $LargeFiles = Get-ChildItem -Path $TargetDrive -Recurse -File -ErrorAction SilentlyContinue | \n                  Where-Object { $_.Length -gt ($ThresholdGB * 1GB) } | \n                  Select-Object Name, @{Name='SizeGB';Expression={$_.Length / 1GB}}, FullName\n    \n    $LargeFiles | Export-Csv -Path $ReportPath -NoTypeInformation\n    Write-Log \"Scan complete. Found $($LargeFiles.Count) files exceeding threshold.\"\n}\ncatch {\n    Write-Log \"Error during scan: $($_.Exception.Message)\"\n}",
+    "os": "Windows Server 2019 Standard"
+  },
+  "technique": {
+    "name": "File and Directory Discovery",
+    "killchain_stage": "Discovery"
+  }
+}

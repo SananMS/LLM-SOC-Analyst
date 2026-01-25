@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-8812",
+    "Start Time": "2026-01-25T14:46:27.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.15.5.30",
+    "Endpoint": "MGMT-TERM-01",
+    "User": "j.smith",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Scriptblock": "Get-ADGroup -Filter 'ObjectGUID -eq \"a1b2c3d4-e5f6-4a5b-bc6d-7e8f90123456\"'",
+    "OS": "Windows Server 2019 Standard",
+    "Technique": "Permission Groups Discovery",
+    "Related Alert ID": "SOC-1988",
+    "Previous Analyst Note": "Alert closed as FP. Verified with IT Manager: j.smith is a Senior Systems Administrator. This specific GUID lookup was performed as part of a manual audit.",
+    "Description": "The executed PowerShell command queries Active Directory for a group by a specific ObjectGUID, indicating a directed lookup rather than broad enumeration. The script is plaintext (not obfuscated) and matches a prior alert on the same host and user that was investigated and confirmed by IT as a legitimate manual audit by the administrator. Because the command is benign in nature, executed from a management terminal by a known admin, and has a documented prior false-positive disposition, this activity is classified as Low Priority."
+  },
+  "classification": "LP"
+}

@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-9114",
+    "Start Time": "2026-01-25T17:35:44.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.2.40.15",
+    "Endpoint": "SRV-FILE-02",
+    "User": "j.doe",
+    "User ID": "S-1-5-21-99281-44521-88214-1001",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Scriptblock": "$l = (Get-Process lsass).Id\nrundll32.exe C:\\Windows\\System32\\comsvcs.dll, MiniDump $l C:\\Windows\\Temp\\debug_report.log full",
+    "Technique": "LSASS Memory - Credential Access",
+    "OS": "Windows Server 2019 Standard",
+    "Description": "The script obtains the LSASS process ID and invokes rundll32 with comsvcs.dll MiniDump to write a full memory dump to C:\\Windows\\Temp\\debug_report.log, which would capture credential material. Key observations: the command explicitly targets lsass for a full memory dump, it was executed under the user account j.doe on SRV-FILE-02, and there are no indicators in the command that this is a known administrative tool or a system/service account operation. This activity is classified as High Priority because dumping LSASS is a direct credential-access behavior performed by a non-service user with no benign markers or historical justification."
+  },
+  "classification": "HP"
+}

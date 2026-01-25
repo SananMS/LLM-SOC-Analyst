@@ -1,0 +1,18 @@
+{
+  "alert_id": "SOC-9114",
+  "alert_name": "Suspicious PowerShell Script Execution",
+  "start_time": "2026-01-25T17:35:44.000Z",
+  "source_ip": "10.2.40.15",
+  "endpoint": "SRV-FILE-02",
+  "user": "j.doe",
+  "user_id": "S-1-5-21-99281-44521-88214-1001",
+  "description": "A suspicious PowerShell script was executed on the host.",
+  "evidence": {
+    "scriptblock": "$l = (Get-Process lsass).Id\nrundll32.exe C:\\Windows\\System32\\comsvcs.dll, MiniDump $l C:\\Windows\\Temp\\debug_report.log full",
+    "os": "Windows Server 2019 Standard"
+  },
+  "technique": {
+    "name": "LSASS Memory",
+    "killchain_stage": "Credential Access"
+  }
+}

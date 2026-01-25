@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-9826",
+    "Start Time": "2026-01-27T01:36:54.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.5.14.92",
+    "Endpoint": "HR-SRV-02",
+    "User": "k.tamm",
+    "User ID": "S-1-5-21-88990011-22334455-66778899-1034",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Technique": "Credentials from Web Browsers",
+    "OS": "Windows Server 2019 Standard",
+    "Script Content": "Copy-Item 'C:\\Users\\*\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Login Data' -Destination C:\\ProgramData\\chrome_cache.db -Force; Copy-Item 'C:\\Users\\*\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\*.default-release\\logins.json' -Destination C:\\ProgramData\\ff_cache.json -Force",
+    "Description": "The PowerShell command copied Chrome 'Login Data' and Firefox 'logins.json' from all user profiles to C:\\ProgramData, indicating extraction of stored browser credentials. The command uses wildcard paths to target all users and was executed by a non-service user on a server, with no indicators of legitimate administrative tooling or vendor-managed activity. Because this behavior clearly targets credential stores across multiple accounts and was run by an individual account on a server, the activity is classified as High Priority (HP)."
+  },
+  "classification": "HP"
+}

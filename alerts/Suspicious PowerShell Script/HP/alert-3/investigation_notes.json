@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-9623",
+    "Start Time": "2026-01-26T06:14:39.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.3.80.44",
+    "Endpoint": "SRV-WEB-02",
+    "User": "r.kuznetsov",
+    "User ID": "S-1-5-21-44332211-66778899-11002233-1019",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Script Content": "New-ItemProperty -Path 'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Run' -Name 'WindowsUpdateSvc' -Value 'powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File C:\\ProgramData\\winupd.ps1' -PropertyType String -Force",
+    "Technique": "Registry Run Keys / Startup Folder",
+    "OS": "Windows Server 2019 Standard",
+    "Description": "The PowerShell command creates an HKCU Run registry entry to launch 'powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File C:\\ProgramData\\winupd.ps1', which establishes persistence. It was executed by user r.kuznetsov on SRV-WEB-02 (Windows Server 2019) and uses bypass/hidden flags and a ProgramData script location that are commonly used to evade detection. No parent process lineage or historical context was provided, and because a non-service user on a server created a persistent startup entry with evasive flags, this activity is assessed as High Priority."
+  },
+  "classification": "HP"
+}

@@ -1,0 +1,18 @@
+{
+  "alert_id": "SOC-2281",
+  "alert_name": "Suspicious PowerShell Script Execution",
+  "start_time": "2026-01-25T14:40:12.000Z",
+  "source_ip": "10.10.15.22",
+  "endpoint": "DC-EAST-01",
+  "user": "SYSTEM",
+  "user_id": "S-1-5-18",
+  "description": "A suspicious PowerShell script was executed on the host.",
+  "evidence": {
+    "scriptblock": "[Console]::OutputEncoding = [System.Text.Encoding]::UTF8; $ProgressPreference = 'SilentlyContinue'\n\n# Helper function to handle null values and escape special characters\nfunction HandleString($value) {\n    if ($null -eq $value) { \n        return \"-\" \n    } else { \n        return $value -replace '\"', '\\\"'  # Escape double quotes\n    }\n}\n\ntry {\n    $details = @()\n    $domain = HandleString((Get-ADDomainController).Forest)\n\n    # Default Domain Password Policy\n    $passwordPolicy = Get-ADDefaultDomainPasswordPolicy \n    $details += @{\n        domain = $domain\n        name = \"Default Domain Policy\"\n        complexityenabled = $passwordPolicy.ComplexityEnabled\n        distinguishedname = HandleString($passwordPolicy.DistinguishedName)\n        lockoutduration = [String]$passwordPolicy.lockoutDuration\n        lockoutobservationwindow = [String]$passwordPolicy.LockoutObservationWindow\n        lockoutthreshold = [String]$passwordPolicy.LockoutThreshold\n        objectguid = HandleString([String]$passwordPolicy.ObjectGuid)\n        maxpwdage = $passwordPolicy.MaxPasswordAge.Days\n        minpwdage = $passwordPolicy.MinPasswordAge.Days\n        minpwdlength = $passwordPolicy.MinPasswordLength\n        pwdhistorylength = $passwordPolicy.PasswordHistoryCount\n        reversibleencryptionenabled = $passwordPolicy.reversibleEncryptionEnabled\n    }\n\n    # Fine-Grained Password Policies\n    $ADFineGrainedPasswordPolicy = Get-ADFineGrainedPasswordPolicy -Filter *\n    if ($ADFineGrainedPasswordPolicy) {\n        foreach ($o in $ADFineGrainedPasswordPolicy) {\n            $details += @{\n                domain = $domain\n                name = HandleString($o.Name)\n                complexityenabled = $o.ComplexityEnabled\n                distinguishedname = HandleString($o.DistinguishedName)\n                lockoutduration = [String]$o.lockoutDuration\n                lockoutobservationwindow = [String]$o.LockoutObservationWindow\n                lockoutthreshold = [String]$o.LockoutThreshold\n                maxpwdage = $o.MaxPasswordAge.Days\n                objectguid = HandleString([String]$o.ObjectGuid)\n                minpwdage = $o.MinPasswordAge.Days\n                minpwdlength = $o.MinPasswordLength\n                pwdhistorylength = $o.PasswordHistoryCount\n                reversibleencryptionenabled = $o.reversibleEncryptionEnabled\n            }\n        }\n    }\n\n    # Convert details to JSON with proper depth\n    ConvertTo-Json -Depth 5 -Compress @{\n        status = $true\n        data = $details\n    }\n}\ncatch {\n    ConvertTo-Json -Depth 5 -Compress @{\n        status = $false\n        msg = $( $_.Exception.Message )\n        stackTrace = $_ | Out-String\n    }\n}",
+    "os": "Windows Server 2022 Datacenter"
+  },
+  "technique": {
+    "name": "Password Policy Discovery",
+    "killchain_stage": "Discovery"
+  }
+}

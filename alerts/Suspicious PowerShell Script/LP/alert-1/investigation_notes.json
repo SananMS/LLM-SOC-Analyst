@@ -1,0 +1,29 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-4104",
+    "Start Time": "2025-12-21T15:39:16.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.0.0.1",
+    "Endpoint": "HOST-01",
+    "User": "SYSTEM",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Description": "The PowerShell script enumerates Active Directory OUs, associated GPO links, linked computers, groups, and users, then converts the results to JSON and writes the output to an agent-specific path. Key observations: the script is plaintext (no obfuscation), runs as the SYSTEM account, uses standard AD cmdlets, and references 'CyberCNSAgent' installation directories. Because the behavior aligns with benign inventory/collection activity, references an identified agent path, and executes under a service context, this alert is assessed as Low Priority.",
+    "Script Summary": "Enumerates AD Organizational Units, GPO inheritance/links, linked computers/groups/users, converts to JSON, and writes to disk.",
+    "Admin Marker Found": "References to C:\\Program Files (x86)\\CyberCNSAgent and C:\\Windows\\cybercnsagent agent_temp paths",
+    "AD Cmdlets Observed": [
+      "Get-ADOrganizationalUnit",
+      "Get-GPInheritance",
+      "Get-ADComputer",
+      "Get-ADGroup",
+      "Get-ADUser",
+      "Get-ADDomainController",
+      "ConvertTo-Json"
+    ],
+    "Output Paths": [
+      "C:\\Program Files (x86)\\CyberCNSAgent\\agent_temp\\ad_ous.json",
+      "C:\\Windows\\cybercnsagent\\agent_temp\\ad_ous.json"
+    ],
+    "OS": "Windows Server 2022 Datacenter"
+  },
+  "classification": "LP"
+}

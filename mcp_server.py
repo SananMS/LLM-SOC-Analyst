@@ -1,6 +1,7 @@
 import os
 import httpx
 import asyncio
+import base64
 from dotenv import load_dotenv
 from mcp.server.fastmcp import FastMCP
 
@@ -11,6 +12,21 @@ ABUSE_API_KEY = os.getenv("ABUSEIPDB_API_KEY")
 VPNAPI_KEY = os.getenv("VPNAPI_KEY")
 
 mcp = FastMCP("Live-SOC-Tools")
+
+@mcp.tool()
+async def decode_base64(encoded_str: str) -> str:
+    """Decodes a Base64 encoded string into plaintext UTF-8."""
+    try:
+        # Remove common PowerShell artifacts if present
+        clean_str = encoded_str.strip()
+        decoded_bytes = base64.b64decode(clean_str)
+        # Handle potential UTF-16 encoding often used by PowerShell -encodedcommand
+        try:
+            return decoded_bytes.decode("utf-16")
+        except UnicodeDecodeError:
+            return decoded_bytes.decode("utf-8")
+    except Exception as e:
+        return f"Error decoding Base64: {str(e)}"
 
 @mcp.tool()
 async def check_ip_reputation(ip: str) -> str:
@@ -56,7 +72,7 @@ async def check_ip_reputation(ip: str) -> str:
             if is_tor: privacy_status.append("Tor")
             if is_relay: privacy_status.append("Relay")
             
-            privacy_label = ", ".join(privacy_status) if privacy_status else "Residential/Direct"
+            privacy_label = ", ".join(privacy_status) if privacy_status else "Neither VPN nor Proxy nor Tor Node nor Relay"
 
             # Formatted output for the LLM Analyst
             return (f"Source IP: {ip} | Security Score: {score}/100 | ISP: {isp} | "

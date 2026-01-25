@@ -1,0 +1,18 @@
+{
+  "alert_id": "SOC-9826",
+  "alert_name": "Suspicious PowerShell Script Execution",
+  "start_time": "2026-01-27T01:36:54.000Z",
+  "source_ip": "10.5.14.92",
+  "endpoint": "HR-SRV-02",
+  "user": "k.tamm",
+  "user_id": "S-1-5-21-88990011-22334455-66778899-1034",
+  "description": "A suspicious PowerShell script was executed on the host.",
+  "evidence": {
+    "scriptblock": "Copy-Item 'C:\\Users\\*\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Login Data' -Destination C:\\ProgramData\\chrome_cache.db -Force; Copy-Item 'C:\\Users\\*\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\*.default-release\\logins.json' -Destination C:\\ProgramData\\ff_cache.json -Force",
+    "os": "Windows Server 2019 Standard"
+  },
+  "technique": {
+    "name": "Credentials from Web Browsers",
+    "killchain_stage": "Credential Access"
+  }
+}

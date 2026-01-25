@@ -1,3 +1,25 @@
+=== DEBUG SESSION START: 2026-01-25T16:31:29.570062 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: User Login Location Anomaly
+Selected Playbook: 'suspicious_login.json'
+
+[TOOL CALL]
+Tool: check_ip_reputation
+Arguments: {"ip": "154.86.26.91"}
+
+[TOOL RESPONSE]
+Source IP: 154.86.26.91 | Security Score: 0/100 | ISP: HONG KONG COMMUNICATIONS INTERNATIONAL CO.,LIMITED | Usage Type: Fixed Line ISP | Privacy Status: Neither VPN nor Proxy nor Tor Node nor Relay
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[FINAL LLM OUTPUT]
 {
   "investigation_notes": {
     "Alert ID": "SOC-115",
@@ -16,3 +38,4 @@
   },
   "classification": "LP"
 }
+

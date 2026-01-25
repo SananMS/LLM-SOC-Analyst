@@ -18,8 +18,8 @@
     {
       "step_id": 3,
       "task": "Correlate with Historical Activity and Client Confirmations",
-      "action": "Invoke 'get_recent_similar_events' and 'get_recent_similar_alerts' to examine the user's geographical history and past analyst notes.",
-      "tool_integration": ["get_recent_similar_events", "get_recent_similar_alerts"],
+      "action": "Invoke 'get_recent_events' and 'get_recent_similar_alerts' to examine the user's geographical history and past analyst notes.",
+      "tool_integration": ["get_recent_events", "get_recent_similar_alerts"],
       "logic": "Compare the current country against historically confirmed client locations. If the country is new and has no prior client confirmation, further contextual validation is required before classification."
     },
     {

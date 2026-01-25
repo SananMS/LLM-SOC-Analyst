@@ -1,0 +1,18 @@
+{
+  "alert_id": "SOC-9623",
+  "alert_name": "Suspicious PowerShell Script Execution",
+  "start_time": "2026-01-26T06:14:39.000Z",
+  "source_ip": "10.3.80.44",
+  "endpoint": "SRV-WEB-02",
+  "user": "r.kuznetsov",
+  "user_id": "S-1-5-21-44332211-66778899-11002233-1019",
+  "description": "A suspicious PowerShell script was executed on the host.",
+  "evidence": {
+    "scriptblock": "New-ItemProperty -Path 'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Run' -Name 'WindowsUpdateSvc' -Value 'powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File C:\\ProgramData\\winupd.ps1' -PropertyType String -Force",
+    "os": "Windows Server 2019 Standard"
+  },
+  "technique": {
+    "name": "Registry Run Keys / Startup Folder",
+    "killchain_stage": "Persistence"
+  }
+}

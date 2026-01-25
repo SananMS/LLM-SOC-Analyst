@@ -1,3 +1,25 @@
+=== DEBUG SESSION START: 2026-01-25T16:27:48.742231 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: User Login Location Anomaly
+Selected Playbook: 'suspicious_login.json'
+
+[TOOL CALL]
+Tool: check_ip_reputation
+Arguments: {"ip": "176.120.22.47"}
+
+[TOOL RESPONSE]
+Source IP: 176.120.22.47 | Security Score: 100/100 | ISP: Proton66 OOO | Usage Type: Data Center/Web Hosting/Transit | Privacy Status: Neither VPN nor Proxy nor Tor Node nor Relay
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[FINAL LLM OUTPUT]
 {
   "investigation_notes": {
     "Alert ID": "SOC-75",
@@ -15,3 +37,4 @@
   },
   "classification": "HP"
 }
+

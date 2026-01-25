@@ -1,3 +1,25 @@
+=== DEBUG SESSION START: 2026-01-25T16:28:44.333853 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: User Login Location Anomaly
+Selected Playbook: 'suspicious_login.json'
+
+[TOOL CALL]
+Tool: check_ip_reputation
+Arguments: {"ip": "182.95.178.158"}
+
+[TOOL RESPONSE]
+Source IP: 182.95.178.158 | Security Score: 100/100 | ISP: Bharti Airtel Limited | Usage Type: Fixed Line ISP | Privacy Status: Neither VPN nor Proxy nor Tor Node nor Relay
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[FINAL LLM OUTPUT]
 {
   "investigation_notes": {
     "Alert ID": "SOC-88",
@@ -16,3 +38,4 @@
   },
   "classification": "HP"
 }
+

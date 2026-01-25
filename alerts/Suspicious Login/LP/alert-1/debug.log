@@ -1,3 +1,17 @@
+=== DEBUG SESSION START: 2026-01-25T16:29:11.827236 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: User Login Location Anomaly
+Selected Playbook: 'suspicious_login.json'
+
+[TOOL CALL]
+Tool: check_ip_reputation
+Arguments: {"ip": "41.160.0.2"}
+
+[TOOL RESPONSE]
+Source IP: 41.160.0.2 | Security Score: 0/100 | ISP: Liquid Telecommunications Operations Limited | Usage Type: Fixed Line ISP | Privacy Status: Neither VPN nor Proxy nor Tor Node nor Relay
+
+[FINAL LLM OUTPUT]
 {
   "investigation_notes": {
     "Alert ID": "SOC-25",
@@ -17,3 +31,4 @@
   },
   "classification": "HP"
 }
+
