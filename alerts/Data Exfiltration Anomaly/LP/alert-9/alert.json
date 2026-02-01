@@ -1,0 +1,47 @@
+{
+  "alert_id": "SOC-20114",
+  "alert_name": "Data Exfiltration Anomaly",
+  "start_time": "2026-03-01T15:10:00.000Z",
+  "source_ip": "90.190.150.10",
+  "destination_ip": "40.108.201.15",
+  "user": "acc_svc@globalcorp.ee",
+  "user_id": "d48eeaf9-2d48-4bc2-80f0-bd03723fb1a2",
+  "description": "An unusual volume of SharePoint file downloads (294) was observed from the user, which is higher than their 24-hour baseline.",
+  "evidence": {
+    "workload": "SharePoint",
+    "operation": "FileDownloaded",
+    "site_url": "https://globalcorp.sharepoint.com/sites/DACH_Finance_Central/",
+    "application": "Workday MSGraph",
+    "user_agent": "Mozilla/4.0 (compatible; Win32; WinHttp.WinHttpRequest.5)",
+    "file_count": 294,
+    "baseline_24h": 25,
+    "geo_location": {
+      "city": "Tallinn",
+      "country": "Estonia"
+    },
+    "sample_files": [
+      "Gehaltsabrechnung_Februar_Export.csv",
+      "Jahresabschluss_2025_Entwurf.pdf",
+      "Kreditorenrechnung_DE_9941.pdf",
+      "Mitarbeiterliste_Abrechnung.xlsx",
+      "Umsatzsteuer_Voranmeldung_Q1.pdf",
+      "Kontoauszug_DeutscheBank_März.csv",
+      "Offene_Posten_Liste_Januar.xlsx",
+      "Verbindlichkeiten_Übersicht_GmbH.csv",
+      "Anlagenverzeichnis_Inventur_2026.xlsx",
+      "Cashflow_Bericht_Unternehmensführung.pdf"
+    ],
+    "sample_paths": [
+      "Finanzwesen/Personalabrechnung/Exporte/",
+      "Finanzwesen/Berichterstattung/Archiv/",
+      "Finanzwesen/Reingang/Eingangsrechnungen/",
+      "Finanzwesen/Gehälter/Monatslisten/",
+      "Finanzwesen/Steuern/Meldungen/",
+      "Finanzwesen/Banking/Auszüge/",
+      "Finanzwesen/Buchhaltung/Forderungen/",
+      "Finanzwesen/Buchhaltung/Verbindlichkeiten/",
+      "Finanzwesen/Inventar/Anlagen/",
+      "Finanzwesen/Controlling/Berichte/"
+    ]
+  }
+}

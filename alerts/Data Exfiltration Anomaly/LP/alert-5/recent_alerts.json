@@ -1,0 +1,17 @@
+[
+  {
+    "alert_id": "SOC-11300",
+    "alert_name": "Data Exfiltration Anomaly",
+    "start_time": "2026-01-03T10:43:46.000Z",
+    "endpoint": "SRV-PROD",
+    "user": "globalcorp@globalcorp.ee",
+    "source_ip": "194.126.101.43",
+    "application": "ChatGPT",
+    "user_agent": "Python/3.12 aiohttp/3.11.18",
+    "geo_location": {
+      "city": "Tallinn",
+      "country": "Estonia"
+    },
+    "analyst_comment": "Alert closed as FP. Client confirmed that this activity is due to deploying CHATGPT into the environment, which is performing automated synchronization of SharePoint data."
+  }
+]

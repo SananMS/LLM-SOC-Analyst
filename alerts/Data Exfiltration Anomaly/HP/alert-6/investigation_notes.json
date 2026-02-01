@@ -1,0 +1,22 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-24100",
+    "Start Time": "2026-02-01T22:15:44.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "85.253.110.42",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "TAL-CS-WORKSTATION-05",
+    "User": "Mari.Tamm@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "File Count": 750,
+    "Baseline 24h": 15,
+    "Geolocation": "Tallinn, Estonia",
+    "Local Time": "2026-02-02T00:15:44 (EET)",
+    "User Department": "Klienditugi",
+    "User Role": "Vanem-klienditeenindaja",
+    "Site URL": "https://globalcorp.sharepoint.com/sites/Juhtkond_Ja_Finants/",
+    "User Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+    "Description": "The user downloaded 750 files from a finance/executive SharePoint site, which is roughly 50x their 24-hour baseline. The activity occurred from Tallinn at 00:15 local time, placing it in the dead-of-night window which increases risk. The user's department and role (customer support) do not align with the sensitive financial and personnel paths accessed, and there are no recent similar alerts or events to indicate an authorized recurring process. Based on timing, large volume relative to baseline, and role-to-data mismatch, this is escalated as high priority."
+  },
+  "classification": "HP"
+}

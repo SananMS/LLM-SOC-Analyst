@@ -6,13 +6,13 @@
     "Source IP": "10.20.30.45",
     "Endpoint": "HOST-SRV-01",
     "User": "backupVeeam",
-    "User ID": "S-1-5-21-32456789-1002",
     "Playbook Used": "Suspicious PowerShell Triage",
-    "OS": "Windows Server 2022 Datacenter",
+    "Description": "The executed PowerShell function performs a check for NTFS alternate data stream support on a target path, which aligns with benign file-system capability checks rather than explicit malicious actions. The action was performed by the backupVeeam service account on a Windows Server and there are no VirusTotal hashes or external IP indicators in the provided evidence, nor any recent related alerts, which lowers suspicion. Although no on-disk file path was recorded (scriptblock execution), the service account context and absence of anomalous indicators support a Low Priority classification.",
+    "Scriptblock": "function PSTargetSupportsAlternateStreams\n        {\n            param (\n                [string] $supportAltStreamPath\n            )\n\n            $result = @{\n                TargetSupportsAlternateStreams = $false\n            }\n\n            # Resolve path in case it is a PSDrive\n            $resolvedPath = Microsoft.PowerShell.Management\\Resolve-Path -literal $supportAltStreamPath\n\n            $targetDrive = [IO.Path]::GetPathRoot($resolvedPath.ProviderPath)\n            if (-not $targetDrive)\n            {\n                return $result\n            }\n\n            # Check if the target drive is NTFS\n            $driveFormat = 'NTFS'\n            foreach ($drive in [System.IO.DriveInfo]::GetDrives())\n            {\n                if (($drive.Name -eq $targetDrive) -and ($drive.DriveFormat -eq $driveFormat))\n                {\n                    # Now, check if the target supports Add-Command -Stream. This functionality was introduced in version 3.0.\n                    $addContentCmdlet = Microsoft.PowerShell.Core\\Get-Command Microsoft.PowerShell.Management\\Add-Content -ErrorAction SilentlyContinue\n                    if ($addContentCmdlet.Parameters.Keys -contains 'Stream')\n                    {\n                        $result['TargetSupportsAlternateStreams'] = $true\n                        break\n                    }\n                }\n            }\n\n            return $result\n        }",
+    "Operating System": "Windows Server 2022 Datacenter",
     "Technique": "NTFS File Attributes (Defense Evasion)",
-    "Script Purpose": "Checks whether a given path/drive supports NTFS alternate data streams (ADS) by resolving the path, verifying the drive format is NTFS, and testing Add-Content for a 'Stream' parameter.",
-    "Script Obfuscation": "None observed (plaintext PowerShell)",
-    "Description": "The PowerShell function verifies if a target path supports NTFS alternate data streams by resolving the path, checking the drive format, and confirming Add-Content exposes a 'Stream' parameter. The script is plaintext and non-obfuscated and appears to be an environment capability check consistent with backup or maintenance tooling. The activity was run by a named service account (backupVeeam) on a Windows Server host, so it is considered low priority because the behavior aligns with expected administrative/backup operations and shows no indicators of malicious obfuscation or anomalous process lineage."
+    "Script Summary": "Checks whether a provided path/drive is NTFS and whether Add-Content supports the 'Stream' parameter to determine alternate data stream support.",
+    "Historical Context": "No recent events found. No recent similar alerts found."
   },
   "classification": "LP"
 }

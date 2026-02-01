@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-25600",
+    "Start Time": "2026-02-01T19:05:10.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "88.119.20.145",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "VIL-LT-DSK-12",
+    "User": "Jonas.Laitis@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Workload": "SharePoint",
+    "File Count": 920,
+    "Baseline 24h": 10,
+    "User Role": "Gamybos darbuotojas (Department: Gamyba)",
+    "Recent Events": "Three AnonymousLinkCreated events by the same user between 2026-02-01T18:40:00Z and 2026-02-01T18:52:30Z referencing personal SharePoint objects.",
+    "Description": "A large spike of 920 SharePoint file downloads (baseline 10) was observed from Jonas Laitis originating in Vilnius, Lithuania at local time ~21:05. The user's role in Manufacturing does not align with many of the downloaded paths (Legal, Board/Strategy, Marketing, Client lists), and the volume represents ~92x the 24-hour baseline; the user also created multiple anonymous links shortly before the downloads. Because of the significant volume spike, clear role-to-data mismatch, and evidence of anonymous link creation, this activity is treated as High Priority for further investigation."
+  },
+  "classification": "HP"
+}

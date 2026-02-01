@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-11500",
+    "Start Time": "2026-01-05T10:33:46.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "194.126.101.43",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "SRV-PROD",
+    "User": "globalcorp@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Application": "ChatGPT",
+    "User Agent": "Python/3.12 aiohttp/3.11.18",
+    "File Count": 300,
+    "Baseline 24h": 0,
+    "Recent Similar Alert": "SOC-11300 — same user, same source IP, same user agent; closed as false positive after client confirmed ChatGPT automated SharePoint synchronization.",
+    "Description": "An automated client integration (ChatGPT via Python aiohttp) downloaded 300 SharePoint files from an endpoint in Tallinn, Estonia at 2026-01-05T10:33:46Z. The activity occurred during local business hours and a recent matching alert (SOC-11300) was previously closed as a false positive after client confirmation that ChatGPT was performing scheduled synchronization. Given the geolocation within Europe, the business-hour timing, and validated historical context indicating expected automated sync behavior, this alert is considered Low Priority."
+  },
+  "classification": "LP"
+}

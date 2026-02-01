@@ -1,0 +1,50 @@
+[
+  {
+    "event_time": "2026-02-01T19:45:00.000Z",
+    "operation": "AnonymousLinkCreated",
+    "user": "Dace.Ozolina@globalcorp.ee",
+    "object_id": "https://globalcorp-my.sharepoint.com/personal/dace_ozolina_globalcorp_ee/Documents/Klientu_Dati_Kopija.zip"
+  },
+  {
+    "event_time": "2026-02-01T20:02:15.000Z",
+    "operation": "FileDeleted",
+    "user": "Dace.Ozolina@globalcorp.ee",
+    "file_name": "Klientu_Portfelis_2026_Pilns.xlsx",
+    "url": "https://globalcorp.sharepoint.com/sites/Latvija_Klienti_un_Ligumi/Klienti/Portfelis/2026/Klientu_Portfelis_2026_Pilns.xlsx"
+  },
+  {
+    "event_time": "2026-02-01T20:05:40.000Z",
+    "operation": "FileDeleted",
+    "user": "Dace.Ozolina@globalcorp.ee",
+    "file_name": "Ieņēmumu_Prognoze_Q1_Q4.pdf",
+    "url": "https://globalcorp.sharepoint.com/sites/Latvija_Klienti_un_Ligumi/Finanses/Prognozes/Ienēmumi/Ieņēmumu_Prognoze_Q1_Q4.pdf"
+  },
+  {
+    "event_time": "2026-02-01T20:08:12.000Z",
+    "operation": "FileDeleted",
+    "user": "Dace.Ozolina@globalcorp.ee",
+    "file_name": "Galvenais_Partneribas_Ligums_2026.pdf",
+    "url": "https://globalcorp.sharepoint.com/sites/Latvija_Klienti_un_Ligumi/Ligumi/Partneri/Arhivs/Galvenais_Partneribas_Ligums_2026.pdf"
+  },
+  {
+    "event_time": "2026-02-01T20:10:05.000Z",
+    "operation": "FileDeleted",
+    "user": "Dace.Ozolina@globalcorp.ee",
+    "file_name": "Marketinga_Strategija_Konfidenciali.pdf",
+    "url": "https://globalcorp.sharepoint.com/sites/Latvija_Klienti_un_Ligumi/Strategija/Marketingas/Latvija/Marketinga_Strategija_Konfidenciali.pdf"
+  },
+  {
+    "event_time": "2026-02-01T20:12:30.000Z",
+    "operation": "FileDeleted",
+    "user": "Dace.Ozolina@globalcorp.ee",
+    "file_name": "Vadibas_Sanaksmes_Protokols_Janvaris.docx",
+    "url": "https://globalcorp.sharepoint.com/sites/Latvija_Klienti_un_Ligumi/Vadiba/Protokoli/Sanaksmes/Vadibas_Sanaksmes_Protokols_Janvaris.docx"
+  },
+  {
+    "event_time": "2026-02-01T20:14:55.000Z",
+    "operation": "FileDeleted",
+    "user": "Dace.Ozolina@globalcorp.ee",
+    "file_name": "Konkurentu_Cenu_Analize_Slepeni.csv",
+    "url": "https://globalcorp.sharepoint.com/sites/Latvija_Klienti_un_Ligumi/Cenas/Konfidenciali/Lapas/Konkurentu_Cenu_Analize_Slepeni.csv"
+  }
+]

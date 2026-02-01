@@ -1,0 +1,36 @@
+{
+  "alert_id": "SOC-11340",
+  "alert_name": "Data Exfiltration Anomaly",
+  "start_time": "2026-01-31T14:45:10.000Z",
+  "source_ip": "82.131.44.12",
+  "destination_ip": "40.108.201.15",
+  "endpoint": "DEV-STATION-44",
+  "user": "Aleksei.Ivanov@globalcorp.ee",
+  "user_id": "b99c28d1-f22a-4c10-a11c-9e2d44f8b2c4",
+  "description": "An unusual volume of SharePoint file downloads (550) was observed from the user, which is higher than their 24-hour baseline.",
+  "evidence": {
+    "workload": "SharePoint",
+    "operation": "FileDownloaded",
+    "site_url": "https://globalcorp.sharepoint.com/sites/Engineering_Repo_Backup/",
+    "application": "Office 365 SharePoint Online",
+    "user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+    "file_count": 550,
+    "baseline_24h": 120,
+    "geo_location": {
+      "city": "Tallinn",
+      "country": "Estonia"
+    },
+    "sample_files": [
+      "main_processor.py",
+      "requirements.txt",
+      "data_utils.py",
+      "config_loader.py"
+    ],
+    "sample_paths": [
+      "Shared Documents/Projects/Python_Microservices/Core_v2/src/",
+      "Shared Documents/Projects/Python_Microservices/Core_v2/",
+      "Shared Documents/Projects/Python_Microservices/Core_v2/lib/",
+      "Shared Documents/Projects/Python_Microservices/Core_v2/utils/"
+    ]
+  }
+}

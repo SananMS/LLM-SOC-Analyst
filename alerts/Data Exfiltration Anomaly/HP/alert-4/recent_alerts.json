@@ -1,0 +1,14 @@
+[
+  {
+    "alert_id": "SOC-14215",
+    "alert_name": "User Login Location Anomaly",
+    "start_time": "2026-01-31T23:40:12.000Z",
+    "user": "Tanel.Lepp@globalcorp.ee",
+    "source_ip": "113.161.12.88",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+    "geo_location": {
+      "city": "Đồng Hới",
+      "country": "Vietnam"
+    }
+  }
+]

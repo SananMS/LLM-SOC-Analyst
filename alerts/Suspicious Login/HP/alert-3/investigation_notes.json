@@ -7,11 +7,11 @@
     "Destination IP": "13.80.23.7",
     "User": "laura.tamm@client.ee",
     "Playbook Used": "Suspicious Login Triage",
-    "IP Reputation Score": 100,
-    "ISP": "Proton66 OOO",
-    "Usage Type": "Data Center/Web Hosting/Transit",
     "Has MFA": true,
-    "Recent Events Summary": "Two recent successful logins for the user from 145.14.37.165 in Tallinn, Estonia at 2025-07-20T11:15:00Z and 2025-07-20T13:10:00Z, both with MFA and the same user agent."
+    "User Agent": "Windows-AzureAD-Authentication-Provider/1.0",
+    "Recent Confirmed Locations": "Tallinn, Estonia (2 successful logins earlier the same day)",
+    "IP Reputation Check": "Unavailable (API error)",
+    "Description": "An Office 365 login for laura.tamm@client.ee succeeded from Saint Petersburg, Russia, which is outside the user's typical region. MFA was used and the user agent matches two prior successful logins from Tallinn earlier the same day, which makes the new location regionally plausible. IP reputation details could not be retrieved but there are no clear proxy/data-center indicators in the evidence, so this is considered Low Priority due to strong contextual signals of legitimate activity."
   },
-  "classification": "HP"
+  "classification": "LP"
 }

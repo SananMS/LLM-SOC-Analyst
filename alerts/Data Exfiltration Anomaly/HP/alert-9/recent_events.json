@@ -1,0 +1,48 @@
+[
+  {
+    "event_time": "2026-02-01T20:45:00.000Z",
+    "operation": "SearchQueryPerformed",
+    "user": "Linas.Pavilionis@globalcorp.ee",
+    "query_text": "atlyginimas OR premija OR biudžetas"
+  },
+  {
+    "event_time": "2026-02-01T20:50:12.000Z",
+    "operation": "SearchQueryPerformed",
+    "user": "Linas.Pavilionis@globalcorp.ee",
+    "query_text": "slaptas OR receptas OR patentas"
+  },
+  {
+    "event_time": "2026-02-01T21:05:00.000Z",
+    "operation": "AnonymousLinkCreated",
+    "user": "Linas.Pavilionis@globalcorp.ee",
+    "object_id": "https://globalcorp-my.sharepoint.com/personal/linas_pavilionis_globalcorp_ee/Documents/Eksportui_Skirta.zip"
+  },
+  {
+    "event_time": "2026-02-01T21:15:20.000Z",
+    "operation": "FileDeleted",
+    "user": "Linas.Pavilionis@globalcorp.ee",
+    "file_name": "Slaptas_Produkto_Receptas_V2.pdf",
+    "url": "https://globalcorp.sharepoint.com/sites/Inovacijos_ir_Finansai/R_D/Receptūros/Slapta/Slaptas_Produkto_Receptas_V2.pdf"
+  },
+  {
+    "event_time": "2026-02-01T21:18:45.000Z",
+    "operation": "FileDeleted",
+    "user": "Linas.Pavilionis@globalcorp.ee",
+    "file_name": "Investicijų_Planas_Vokietija.pdf",
+    "url": "https://globalcorp.sharepoint.com/sites/Inovacijos_ir_Finansai/Investicijos/Projektai/Vokietija/Investicijų_Planas_Vokietija.pdf"
+  },
+  {
+    "event_time": "2026-02-01T21:22:10.000Z",
+    "operation": "FileDeleted",
+    "user": "Linas.Pavilionis@globalcorp.ee",
+    "file_name": "Algu_Biudzetas_Visi_Darbuotojai.csv",
+    "url": "https://globalcorp.sharepoint.com/sites/Inovacijos_ir_Finansai/Personalas/Atlyginimai/Biudžetas/Algu_Biudzetas_Visi_Darbuotojai.csv"
+  },
+  {
+    "event_time": "2026-02-01T21:25:55.000Z",
+    "operation": "FileDeleted",
+    "user": "Linas.Pavilionis@globalcorp.ee",
+    "file_name": "Mokesčių_Auditas_2025_Išvados.pdf",
+    "url": "https://globalcorp.sharepoint.com/sites/Inovacijos_ir_Finansai/Finansai/Auditas/Mokesčiai/Mokesčių_Auditas_2025_Išvados.pdf"
+  }
+]

@@ -3,7 +3,8 @@ import os
 import asyncio
 from openai import OpenAI
 from mcp import ClientSession, StdioServerParameters
-from datetime import datetime
+from datetime import datetime, UTC
+import argparse
 from mcp.client.stdio import stdio_client
 
 client = OpenAI()
@@ -30,7 +31,7 @@ async def select_playbook(alert_data, playbook_dir):
     # Collect name and description from every json in the playbook folder
     for filename in os.listdir(playbook_dir):
         if filename.endswith(".json"):
-            with open(os.path.join(playbook_dir, filename), 'r') as f:
+            with open(os.path.join(playbook_dir, filename), "r", encoding="utf-8") as f:
                 pb = json.load(f)
                 playbook_summaries.append({
                     "filename": filename,
@@ -81,16 +82,20 @@ async def soc_analyst_role(alert_json, playbook_content, playbook_filename, mcp_
         "The Description should summarize what happened and the key observations clearly in full sentences, "
         "written as if a Tier 1 SOC analyst is reporting it, with a natural human-written tone. "
         "It should be between 2 and 4 brief sentences that are not too long, covering all main information. "
+        "Remember that Description field is a MUST for the investigation notes. "
         "In addition to summarizing, the Description should provide reasoning for why the alert is considered Low Priority (LP) or High Priority (HP), "
         "without explicitly mentioning playbooks or SOPs. "
         "There is no need to include remediation actions in the Description. "
+        "Make sure to contextualize the alert properly based on all evidence provided, including any recent events or similar past alerts. "
+        "If certain fields are missing from the alert, you do not need to include them in the investigation notes or use placeholders like 'none'. Likewise, there is no need to mention these missing fields in the description. "
+        "Some alerts may not have specific fields as they differ. There is no need to say that 'there is no this or that' in the description, if they are missing from the alert json. "
         "Output the final JSON in a readable, beautified format with proper indentation, not as a single-line minified string."
     )
 
     tools = [
         {"type": "function", "function": {"name": "check_ip_reputation", "parameters": {"type": "object", "properties": {"ip": {"type": "string"}}, "required": ["ip"]}}},
         {"type": "function", "function": {"name": "check_hash_reputation", "parameters": {"type": "object", "properties": {"hash": {"type": "string"}}, "required": ["hash"]}}},
-        {"type": "function", "function": {"name": "decode_base64", "parameters": {"type": "object", "properties": {"encoded_str": {"type": "string"}}, "required": ["encoded_str"]}}},
+        {"type": "function", "function": {"name": "lookup_users", "parameters": {"type": "object", "properties": {"emails": {"type": "array", "items": {"type": "string"}}}, "required": ["emails"]}}},
         {"type": "function", "function": {"name": "get_recent_events", "parameters": {"type": "object", "properties": {}}}},
         {"type": "function", "function": {"name": "get_recent_similar_alerts", "parameters": {"type": "object", "properties": {}}}}
     ]
@@ -104,44 +109,63 @@ async def soc_analyst_role(alert_json, playbook_content, playbook_filename, mcp_
         os.getcwd(),
         "[SOC ANALYST PROMPT]\n" + json.dumps(messages, indent=2)
     )
+    # Initial call
     response = client.chat.completions.create(model="gpt-5-mini", messages=messages, tools=tools)
     msg = response.choices[0].message
 
-    if msg.tool_calls:
+    # Keep responding until no more tool calls
+    while msg.tool_calls:
+        # 1. Append the model's request to the history
         messages.append(msg)
+
+        # Define which tools live on the MCP server to avoid crashing on hallucinations
+        mcp_tool_whitelist = ["check_ip_reputation", "check_hash_reputation", "lookup_users"]
+
         for tc in msg.tool_calls:
             f_name = tc.function.name
-            f_args = json.loads(tc.function.arguments)
+            f_args = json.loads(tc.function.arguments) if tc.function.arguments else {}
 
-            write_debug(
-                root_path,
-                f"[TOOL CALL]\nTool: {f_name}\nArguments: {json.dumps(f_args)}"
-            )
+            write_debug(root_path, f"[TOOL CALL]\nTool: {f_name}\nArguments: {json.dumps(f_args)}")
+
+            # 2. Merged Routing Logic
+            if f_name in mcp_tool_whitelist:
+                # Call the MCP server only for whitelisted tools
+                try:
+                    mcp_res = await mcp_session.call_tool(f_name, arguments=f_args)
+                    tool_output = mcp_res.content[0].text
+                except Exception as e:
+                    tool_output = f"Error calling MCP tool: {str(e)}"
             
-            # Routing: MCP Server vs Local Context [cite: 259, 260]
-            if f_name in ["check_ip_reputation", "check_hash_reputation", "decode_base64"]:
-                # Error fix: we now have access to mcp_session passed into the function
-                mcp_res = await mcp_session.call_tool(f_name, arguments=f_args)
-                tool_output = mcp_res.content[0].text
-                write_debug(
-                    root_path,
-                    f"[TOOL RESPONSE]\n{tool_output}"
-                )
+            elif f_name == "get_recent_events":
+                tool_output = get_recent_events()
+            
+            elif f_name == "get_recent_similar_alerts":
+                tool_output = get_recent_similar_alerts()
+            
             else:
-                if f_name == "get_recent_events":
-                    tool_output = get_recent_events()
-                else:
-                    tool_output = get_recent_similar_alerts()
+                # This handles hallucinated tool names
+                tool_output = f"Error: The tool '{f_name}' is not available. Please use only provided tools."
 
-            messages.append({"tool_call_id": tc.id, "role": "tool", "name": f_name, "content": tool_output})
-        
-        final = client.chat.completions.create(model="gpt-5-mini", messages=messages)
+            write_debug(root_path, f"[TOOL RESPONSE]\n{tool_output}")
 
-        write_debug(
-            root_path,
-            "[FINAL LLM OUTPUT]\n" + final.choices[0].message.content
+            # 3. Append the tool result as a 'tool' role message
+            messages.append({
+                "role": "tool",
+                "tool_call_id": tc.id,
+                "name": f_name,
+                "content": str(tool_output)
+            })
+
+        # 4. Call the model again with the updated message history
+        response = client.chat.completions.create(
+            model="gpt-5-mini",
+            messages=messages,
+            tools=tools
         )
-        return final.choices[0].message.content
+        msg = response.choices[0].message
+
+    # Done, return the final content
+    write_debug(root_path, "[FINAL LLM OUTPUT]\n" + msg.content)
     return msg.content
 
 async def process_dataset(root_dir, playbook_dir, mcp_session):
@@ -151,9 +175,9 @@ async def process_dataset(root_dir, playbook_dir, mcp_session):
         if "alert.json" in files:
             debug_path = os.path.join(root, "debug.log")
             with open(debug_path, "w", encoding="utf-8") as f:
-                f.write(f"=== DEBUG SESSION START: {datetime.utcnow().isoformat()} UTC ===\n\n")
+                f.write(f"=== DEBUG SESSION START: {datetime.now(UTC).isoformat()} UTC ===\n\n")
 
-            with open(os.path.join(root, "alert.json"), 'r') as f:
+            with open(os.path.join(root, "alert.json"), "r", encoding="utf-8") as f:
                 alert_data = json.load(f)
             
             # --- ROUND 1: Dynamic Selection ---
@@ -170,12 +194,19 @@ async def process_dataset(root_dir, playbook_dir, mcp_session):
             print(f"--- Decided on Playbook: {pb_filename} for {root} ---")
 
             # Now this open() will work correctly
-            with open(os.path.join(playbook_dir, pb_filename), 'r') as f:
+            with open(os.path.join(playbook_dir, pb_filename), "r", encoding="utf-8") as f:
                 playbook_content = json.load(f)
 
             # Load local evidence
-            current_folder_events = open(os.path.join(root, "recent_events.json")).read() if "recent_events.json" in files else ""
-            current_folder_alerts = open(os.path.join(root, "recent_alerts.json")).read() if "recent_alerts.json" in files else ""
+            current_folder_events = (
+                open(os.path.join(root, "recent_events.json"), "r", encoding="utf-8", errors="replace").read()
+                if "recent_events.json" in files else ""
+            )
+
+            current_folder_alerts = (
+                open(os.path.join(root, "recent_alerts.json"), "r", encoding="utf-8", errors="replace").read()
+                if "recent_alerts.json" in files else ""
+            )
 
             # --- ROUND 2: Triage ---
             result = await soc_analyst_role(
@@ -186,18 +217,39 @@ async def process_dataset(root_dir, playbook_dir, mcp_session):
                 root
             )
             
-            with open(os.path.join(root, "investigation_notes.json"), 'w') as f:
-                f.write(result)
+            parsed_result = json.loads(result)
+
+            with open(os.path.join(root, "investigation_notes.json"), "w", encoding="utf-8") as f:
+                json.dump(parsed_result, f, ensure_ascii=False, indent=2)
+
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="SOC alert investigation runner"
+    )
+    parser.add_argument(
+        "--alert-folder",
+        required=True,
+        help="Alert subfolder under 'alerts/' to process (e.g. 'Suspicious Powershell Script')"
+    )
+    return parser.parse_args()
 
 async def main():
-    # Setup connection parameters for the MCP server [cite: 259]
-    server_params = StdioServerParameters(command="python", args=["mcp_server.py"])
+    args = parse_args()
+
+    alert_root = os.path.join("alerts", args.alert_folder)
+
+    if not os.path.isdir(alert_root):
+        raise ValueError(f"Alert folder does not exist: {alert_root}")
+
+    server_params = StdioServerParameters(
+        command="python",
+        args=["mcp_server.py"]
+    )
 
     async with stdio_client(server_params) as (read, write):
         async with ClientSession(read, write) as session:
             await session.initialize()
-            # FIXED: Pass session into the dataset processor
-            await process_dataset("alerts", "playbooks", session)
+            await process_dataset(alert_root, "playbooks", session)
 
 if __name__ == "__main__":
     asyncio.run(main())

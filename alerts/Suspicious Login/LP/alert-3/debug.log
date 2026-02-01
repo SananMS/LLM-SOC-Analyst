@@ -1,4 +1,4 @@
-=== DEBUG SESSION START: 2026-01-25T16:30:28.028412 UTC ===
+=== DEBUG SESSION START: 2026-01-27T12:22:45.038064 UTC ===
 
 [PLAYBOOK SELECTION]
 Alert Name: User Login Location Anomaly
@@ -9,15 +9,8 @@ Tool: check_ip_reputation
 Arguments: {"ip": "195.88.86.50"}
 
 [TOOL RESPONSE]
-Source IP: 195.88.86.50 | Security Score: 0/100 | ISP: Packethub S.A. | Usage Type: Data Center/Web Hosting/Transit | Privacy Status: VPN
-
-[TOOL CALL]
-Tool: get_recent_events
-Arguments: {}
-
-[TOOL CALL]
-Tool: get_recent_similar_alerts
-Arguments: {}
+Error during IP reputation check: Server error '500 Internal Server Error' for url 'https://api.abuseipdb.com/api/v2/check?ipAddress=195.88.86.50&verbose=true'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
 
 [FINAL LLM OUTPUT]
 {
@@ -30,13 +23,13 @@ Arguments: {}
     "Endpoint": "F31647565",
     "User": "marko.talvik@client.ee",
     "Playbook Used": "Suspicious Login Triage",
-    "Description": "An anomalous Office 365 login was detected for marko.talvik@client.ee from Istanbul, Turkey, which is outside the user's typical region. The login succeeded and used MFA, the endpoint is company-managed, and the source IP is identified as a VPN with a very low security score (0) despite being listed as Data Center/Web Hosting. Because the connection originates from a confirmed VPN, the device is company-managed, and the IP has a very low security score, this event is assessed as Low Priority.",
     "Login Result": "success",
     "Has MFA": true,
-    "ISP Usage Type": "Data Center/Web Hosting/Transit",
-    "IP Reputation Score": 0,
-    "Privacy Status": "VPN"
+    "Device Management Status": "Company managed and compliant",
+    "Geo Location": "Istanbul, Turkey",
+    "IP Reputation Check": "Unavailable - external reputation service returned an error",
+    "Description": "An Office 365 login for marko.talvik@client.ee was observed from Istanbul, Turkey, which is outside the user's typical region, and the authentication succeeded with MFA on a company-managed endpoint. The company-managed device and presence of MFA are mitigating factors, but there is no indication in the alert of prior confirmed activity from Turkey and IP reputation/VPN status could not be determined. Because the login originates from a novel country and IP risk information is currently unavailable, this event is considered higher risk and requires further enrichment and confirmation."
   },
-  "classification": "LP"
+  "classification": "HP"
 }
 

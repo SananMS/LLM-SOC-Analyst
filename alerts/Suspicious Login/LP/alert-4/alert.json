@@ -19,9 +19,5 @@
       "city": "Dubai",
       "country": "UAE"
     }
-  },
-  "technique": {
-    "name": "XDR Location Anomaly",
-    "killchain_stage": "Initial Attempts"
   }
 }

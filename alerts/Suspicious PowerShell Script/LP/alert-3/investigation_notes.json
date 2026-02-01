@@ -6,12 +6,12 @@
     "Source IP": "10.10.15.22",
     "Endpoint": "DC-EAST-01",
     "User": "SYSTEM",
-    "User ID": "S-1-5-18",
+    "Playbook Used": "Suspicious PowerShell Triage",
     "OS": "Windows Server 2022 Datacenter",
     "Technique": "Password Policy Discovery",
-    "Playbook Used": "Suspicious PowerShell Triage",
-    "Script Purpose": "Enumerates default domain password policy and fine-grained password policies and outputs JSON.",
-    "Description": "The script enumerates Active Directory default domain password policy and fine-grained password policies, collecting policy attributes and returning them as JSON. Key observations: it executed as SYSTEM on a domain controller, uses standard Get-AD* cmdlets (no obfuscation), and contains only benign data collection logic with no external network indicators in the evidence. Given the host context, account used, and clear administrative cmdlet usage consistent with AD inventory tasks, this activity is assessed as Low Priority (LP)."
+    "Script Summary": "PowerShell enumerates AD domain controller/forest and collects domain password policy and fine-grained password policies, then outputs JSON; no network calls or persistence actions in scriptblock.",
+    "Historical Alert Reference": "SOC-2105 (2026-01-10) — identical script on same host was previously investigated and confirmed by the client as a daily automated compliance check (closed as false positive).",
+    "Description": "The alert was triggered by a PowerShell execution on DC-EAST-01 under the SYSTEM account that enumerates Active Directory domain and password policy settings and returns them as JSON. The script content is administrative and consistent with a scheduled compliance check; there are no hard-coded external IPs, staging behaviors, or persistence mechanisms observed. A prior identical alert on the same host was investigated and confirmed by the client as an automated, benign task, which further supports non-malicious intent. Based on the execution context, script behavior, and historical confirmation, this alert is assessed as Low Priority."
   },
   "classification": "LP"
 }

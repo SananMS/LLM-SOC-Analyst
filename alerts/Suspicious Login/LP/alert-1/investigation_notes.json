@@ -8,12 +8,13 @@
     "Endpoint": "G315745",
     "User": "Fred.Mercedes@client.ee",
     "Playbook Used": "Suspicious Login Triage",
+    "MFA Status": true,
     "Login Result": "success",
-    "MFA Used": true,
-    "Company Managed": true,
-    "ISP": "Liquid Telecommunications Operations Limited",
-    "Security Score": 0,
-    "Description": "An Office 365 successful login for Fred.Mercedes@client.ee was observed from Johannesburg, South Africa on endpoint G315745. The source IP is a fixed-line ISP with a Security Score of 0, the device is company-managed, and MFA was used. However, the login is outside the user's typical region and there is no evidence in the alert metadata confirming prior client-approved activity from South Africa, so this event is elevated in priority for further review."
+    "Geo Location": "Johannesburg, South Africa",
+    "Device Managed": true,
+    "IP Reputation Check": "Unavailable (API error 500 during lookup)",
+    "Related Alerts": "SOC-15 (2025-07-08) closed as FP - user on vacation in South Africa; SOC-22 (2025-07-09) closed as FP - location verified as part of user's monthly travel schedule",
+    "Description": "An Office 365 login for Fred.Mercedes@client.ee succeeded from Johannesburg, South Africa on a company-managed endpoint (G315745) using MFA. Prior alerts (SOC-15 and SOC-22) show multiple recent successful logins from Johannesburg that were confirmed by the client as legitimate travel. Although the IP reputation lookup failed during triage, the presence of a managed device, MFA, and documented prior confirmations for this country support treating this alert as low risk."
   },
-  "classification": "HP"
+  "classification": "LP"
 }

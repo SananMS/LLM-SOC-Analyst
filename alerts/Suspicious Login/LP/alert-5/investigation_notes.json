@@ -8,11 +8,12 @@
     "Endpoint": "T12345785",
     "User": "arne.tamm@client.ee",
     "Playbook Used": "Suspicious Login Triage",
-    "Description": "An Office 365 login succeeded from Hong Kong, Hong Kong, which is outside the user's typical region. The source IP is a Fixed Line ISP with a very low security score (0) and is not identified as a VPN or proxy; the endpoint is company-managed and the user authenticated with MFA. Given the low IP risk, device management and MFA presence, and a recently confirmed nearby login in Macao, this activity is assessed as Low Priority because it is regionally plausible and lacks high-risk indicators.",
-    "IP Reputation Score": "0",
-    "ISP Name": "HONG KONG COMMUNICATIONS INTERNATIONAL CO.,LIMITED",
-    "Usage Type": "Fixed Line ISP",
-    "Previous Similar Alert": "SOC-110 (2025-08-03T10:15:00Z): login from Macao; closed as false positive after client confirmed user was on vacation in Macao."
+    "Has MFA": true,
+    "Login Result": "success",
+    "Company Managed and Compliant": true,
+    "Historical Confirmed Locations": "Macao (confirmed by client on 2025-08-03), Tallinn, Estonia",
+    "Similar Previous Alert": "SOC-110 (2025-08-03T10:15:00Z) closed as false positive after client confirmed user was on vacation in Macao",
+    "IP Reputation Check": "Unavailable (API returned 500 Internal Server Error)"
   },
   "classification": "LP"
 }

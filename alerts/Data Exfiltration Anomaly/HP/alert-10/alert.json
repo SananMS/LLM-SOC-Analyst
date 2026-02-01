@@ -1,0 +1,47 @@
+{
+  "alert_id": "SOC-31050",
+  "alert_name": "Data Exfiltration Anomaly",
+  "start_time": "2026-02-01T03:05:22.000Z",
+  "source_ip": "78.60.112.55",
+  "destination_ip": "40.108.201.15",
+  "user": "Tiina.Koppel@globalcorp.ee",
+  "user_id": "t11k22o3-p44p-55e6-l77k-88o99p00p11e",
+  "description": "An unusual volume of SharePoint file downloads (3,450) was observed from the user, which is higher than their 24-hour baseline.",
+  "evidence": {
+    "workload": "SharePoint",
+    "operation": "FileDownloaded",
+    "site_url": "https://globalcorp.sharepoint.com/sites/Global_Innovation_Master_Vault/",
+    "application": "Unknown",
+    "user_agent": "Python/3.12 aiohttp/3.11.18",
+    "file_count": 3450,
+    "baseline_24h": 12,
+    "geo_location": {
+      "city": "Klaipeda",
+      "country": "Lithuania"
+    },
+    "sample_files": [
+      "NextGen_Sensor_Patent_Full.zip",
+      "AI_Model_Weights_V5_Proprietary.bin",
+      "Quantum_Logic_Gates_Schematics.dwg",
+      "Global_Project_Roadmap_2026_2030.pdf",
+      "Core_Library_Source_Code_Obsfuscated.tar.gz",
+      "Competitor_Analysis_Secret_Report.docx",
+      "BioTech_Formula_Alpha_Final.pdf",
+      "Future_Tech_Acquisition_List.xlsx",
+      "Encryption_Standard_Internal_Only.key",
+      "Quarterly_Innovation_Budget_Allocation.xlsx"
+    ],
+    "sample_paths": [
+      "Patents/Drafts/Final/",
+      "Engineering/AI_Development/Models/",
+      "Engineering/Hardware/Quantum/",
+      "Strategy/Roadmaps/Global/",
+      "Development/Source/Core/",
+      "Market_Intelligence/Competitors/",
+      "BioTech/Formulas/Alpha/",
+      "M_A/Targets/2026/",
+      "Security/Encryption/Standards/",
+      "Finance/Budget/R_D_Grants/"
+    ]
+  }
+}

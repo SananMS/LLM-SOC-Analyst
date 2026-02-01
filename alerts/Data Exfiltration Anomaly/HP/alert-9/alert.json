@@ -1,0 +1,48 @@
+{
+  "alert_id": "SOC-29100",
+  "alert_name": "Data Exfiltration Anomaly",
+  "start_time": "2026-02-01T21:30:00.000Z",
+  "source_ip": "78.60.112.55",
+  "destination_ip": "40.108.201.15",
+  "endpoint": "VIL-MTN-WKS-02",
+  "user": "Linas.Pavilionis@globalcorp.ee",
+  "user_id": "l44p55v6-i77n-88a9-s00p-11a22v33i44l",
+  "description": "An unusual volume of SharePoint file downloads (840) was observed from the user, which is higher than their 24-hour baseline.",
+  "evidence": {
+    "workload": "SharePoint",
+    "operation": "FileDownloaded",
+    "site_url": "https://globalcorp.sharepoint.com/sites/Inovacijos_ir_Finansai/",
+    "application": "Office 365 SharePoint Online",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+    "file_count": 840,
+    "baseline_24h": 4,
+    "geo_location": {
+      "city": "Vilnius",
+      "country": "Lithuania"
+    },
+    "sample_files": [
+      "Slaptas_Produkto_Receptas_V2.pdf",
+      "Gamybos_Kastai_2026_Prognoze.xlsx",
+      "Algu_Biudzetas_Visi_Darbuotojai.csv",
+      "Investicijų_Planas_Vokietija.pdf",
+      "Patento_Paraiška_Lietuva.docx",
+      "Strateginis_Partneris_Sutartis.pdf",
+      "Gamyklos_Modernizavimo_Brėžiniai.dwg",
+      "Ketvirčio_Pelno_Ataskaita.xlsx",
+      "Darbuotojų_Sąrašas_Su_Premijomis.csv",
+      "Mokesčių_Auditas_2025_Išvados.pdf"
+    ],
+    "sample_paths": [
+      "R_D/Receptūros/Slapta/",
+      "Finansai/Kaštai/Prognozės/",
+      "Personalas/Atlyginimai/Biudžetas/",
+      "Investicijos/Projektai/Vokietija/",
+      "Teisė/Patentai/Paraiškos/",
+      "Sutartys/Strateginės/Partneriai/",
+      "Inžinerija/Brėžiniai/Modernizavimas/",
+      "Ataskaitos/Pelnas/2026/",
+      "Personalas/Premijos/Sąrašai/",
+      "Finansai/Auditas/Mokesčiai/"
+    ]
+  }
+}

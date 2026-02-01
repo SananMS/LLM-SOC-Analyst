@@ -10,9 +10,5 @@
   "evidence": {
     "scriptblock": "Copy-Item 'C:\\Users\\*\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Login Data' -Destination C:\\ProgramData\\chrome_cache.db -Force; Copy-Item 'C:\\Users\\*\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\*.default-release\\logins.json' -Destination C:\\ProgramData\\ff_cache.json -Force",
     "os": "Windows Server 2019 Standard"
-  },
-  "technique": {
-    "name": "Credentials from Web Browsers",
-    "killchain_stage": "Credential Access"
   }
 }

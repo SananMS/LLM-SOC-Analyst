@@ -1,0 +1,48 @@
+{
+  "alert_id": "SOC-16200",
+  "alert_name": "Data Exfiltration Anomaly",
+  "start_time": "2026-02-01T10:15:30.000Z",
+  "source_ip": "78.56.121.10",
+  "destination_ip": "40.108.201.15",
+  "endpoint": "LT-VIL-LAPTOP-44",
+  "user": "Tomas.Kazlauskas@globalcorp.ee",
+  "user_id": "t11k22z3-x44y-55z6-a77b-88c9d0e1f2a3",
+  "description": "An unusual volume of SharePoint file downloads (615) was observed from the user, which is higher than their 24-hour baseline.",
+  "evidence": {
+    "workload": "SharePoint",
+    "operation": "FileDownloaded",
+    "site_url": "https://globalcorp.sharepoint.com/sites/Baltic_Logistics/",
+    "application": "Office 365 SharePoint Online",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+    "file_count": 250,
+    "baseline_24h": 20,
+    "geo_location": {
+      "city": "Vilnius",
+      "country": "Lithuania"
+    },
+    "sample_files": [
+      "Saskaita_Faktura_2026_Sausis.pdf",
+      "Logistikos_Sutartis_UAB_Transportas.docx",
+      "Metine_Ataskaita_Final_v2.xlsx",
+      "Muitines_Deklaracija_VNO_882.pdf",
+      "Tiekejo_Anketa_Logistics_Plus.pdf",
+      "Kuro_Sanaudu_Lentele_Q4.xlsx",
+      "Sandeliu_Nuomos_Sutartis.pdf",
+      "Pirkimo_Uzsakymas_Nr441.docx",
+      "Transporto_Draudimo_Polisas.pdf",
+      "Inventoriaus_Patikros_Aktas.xlsx"
+    ],
+    "sample_paths": [
+      "Shared Documents/Lietuva/Saskaitos/2026/Sausis/",
+      "Shared Documents/Lietuva/Sutartys/Tiekejai/Transportas/",
+      "Shared Documents/Lietuva/Ataskaitos/Ketvirtis_Q4/",
+      "Shared Documents/Lietuva/Logistika/Muitine/",
+      "Shared Documents/Lietuva/Tiekejai/Klausimynai/",
+      "Shared Documents/Lietuva/Transportas/Islaidos/",
+      "Shared Documents/Lietuva/Nekilnojamas_Turtas/Nuoma/",
+      "Shared Documents/Lietuva/Pirkimai/Uzsakymai/",
+      "Shared Documents/Lietuva/Draudimas/Polisai/",
+      "Shared Documents/Lietuva/Sandelis/Inventorius/"
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "alert_id": "SOC-12200",
+  "alert_name": "Data Exfiltration Anomaly",
+  "start_time": "2026-01-31T14:45:10.000Z",
+  "source_ip": "194.126.101.99",
+  "destination_ip": "40.108.201.15",
+  "endpoint": "WKSTN-OFFSITE-04",
+  "user": "Liam.O-Sullivan@globalcorp.ee",
+  "user_id": "b11d99a4-e55c-4a12-b9a1-4f8c2d1f9a7b",
+  "description": "An unusual volume of SharePoint file downloads (850) was observed from the user, which is higher than their 24-hour baseline.",
+  "evidence": {
+    "workload": "SharePoint",
+    "operation": "FileDownloaded",
+    "site_url": "https://globalcorp.sharepoint.com/sites/Executive_Board_Confidential/",
+    "application": "Office 365 SharePoint Online",
+    "user_agent": "Mozilla/4.0 (compatible; Win32; WinHttp.WinHttpRequest.5)",
+    "file_count": 850,
+    "baseline_24h": 5,
+    "geo_location": {
+      "city": "Tallinn",
+      "country": "Estonia"
+    },
+    "sample_files": [
+      "Project_Zeus_Merger_Terms_v4.pdf",
+      "Q1_Shareholder_Divestment_Plan.xlsx",
+      "Board_Meeting_Minutes_January.docx"
+    ],
+    "sample_paths": [
+      "Shared Documents/Strategy/Acquisitions/Zeus/",
+      "Shared Documents/Finance/Shareholder_Relations/",
+      "Shared Documents/Executive/Board_Minutes/"
+    ]
+  }
+}

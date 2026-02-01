@@ -1,0 +1,55 @@
+=== DEBUG SESSION START: 2026-02-01T19:21:09.451247+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Data Exfiltration Anomaly
+Selected Playbook: 'excessive_downloads.json'
+
+[TOOL CALL]
+Tool: lookup_users
+Arguments: {"emails": ["Linda.Kask@globalcorp.ee"]}
+
+[TOOL RESPONSE]
+[
+  {
+    "email": "Linda.Kask@globalcorp.ee",
+    "full_name": "Linda Kask",
+    "department": "Finance",
+    "role": "Senior Accountant"
+  }
+]
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-11205",
+    "Start Time": "2026-01-31T09:15:22.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "194.126.101.44",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "FIN-LAPTOP-09",
+    "User": "Linda.Kask@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Description": "420 SharePoint file downloads were observed from the Finance SharePoint site at 2026-01-31T09:15:22Z (11:15 local time in Tallinn). User lookup shows Linda Kask is a Senior Accountant in Finance and the downloaded paths and filenames (tax, invoices, payroll) align with her role; the user agent is a standard Chrome browser and there are no recent related events or similar alerts. The volume is elevated (~9.3x the 24-hour baseline) but below the high-risk threshold and activity occurred during local business hours from a local Estonian IP, so this is assessed as Low Priority.",
+    "Workload": "SharePoint (Office 365 SharePoint Online)",
+    "File Count": 420,
+    "Baseline 24h": 45,
+    "Geo Location": "Tallinn, Estonia (UTC+2; local time at event 11:15:22)",
+    "User Role": "Linda Kask — Senior Accountant, Finance"
+  },
+  "classification": "LP"
+}
+

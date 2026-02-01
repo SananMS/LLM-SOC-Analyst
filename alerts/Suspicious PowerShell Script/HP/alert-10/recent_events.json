@@ -1,0 +1,17 @@
+[
+  {
+    "event_time": "2026-01-27T11:00:10.000Z",
+    "event_name": "ProcessCreation",
+    "user": "a.vargas",
+    "source_ip": "10.40.2.88",
+    "command_line": "C:\\Windows\\System32\\fodhelper.exe"
+  },
+  {
+    "event_time": "2026-01-27T11:02:45.000Z",
+    "event_name": "PowerShellExecution",
+    "user": "NT AUTHORITY\\SYSTEM",
+    "source_ip": "10.40.2.88",
+    "scriptblock": "[Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()",
+    "details": "Attacker checking if the process is running with SYSTEM/Admin integrity."
+  }
+]

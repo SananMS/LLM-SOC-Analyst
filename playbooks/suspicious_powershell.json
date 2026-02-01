@@ -1,44 +1,51 @@
 {
   "playbook_name": "Suspicious PowerShell Triage",
-  "description": "LLM-based SOP for triaging PowerShell alerts. Prioritizes identifying administrative tools via script content analysis, process lineage, and historical correlation to classify activity as LP or HP.",
+  "description": "LLM-based SOP for triaging PowerShell alerts. Prioritizes identifying administrative tools via internal script decoding, file path validation (if available), dual-layer process lineage, and VirusTotal reputation.",
   "steps": [
     {
       "step_id": 1,
-      "task": "Extract Execution Metadata",
-      "action": "Parse the alert JSON for 'user', 'endpoint', and 'scriptblock'. Search for 'parent_process_name' or 'caller_process' evidence if available.",
-      "logic": "Metadata provides context. If parent lineage is missing, the LLM relies more heavily on script behavior and historical data for classification."
+      "task": "Extract Execution Metadata & Lineage",
+      "action": "Parse alert JSON for 'user', 'endpoint', 'scriptblock', 'file_path', 'initiating_process', 'parent_process', and 'process_sha256'.",
+      "logic": "Metadata provides initial context. Note if 'file_path' is present; its absence may indicate a direct-to-memory execution (higher risk) or a logging limitation."
     },
     {
       "step_id": 2,
-      "task": "Script Normalization and Content Analysis",
-      "action": "Examine the 'scriptblock'. If Base64 encoded, invoke 'decode_base64'. Analyze plaintext for 'Admin Tool Signatures' (e.g., specific file paths, vendor-agnostic agent variables, or log directories).",
-      "tool_integration": "decode_base64",
-      "logic": "Search for 'Admin Markers' such as references to application installation folders or temporary working directories that indicate an authorized administrative tool."
+      "task": "External Reputation Check",
+      "action": "MAKE SURE TO INVOKE 'check_virustotal' using the 'process_sha256' of the initiating process, if it exists. If not, skip this step.",
+      "tool_integration": "check_virustotal",
+      "logic": "Determines if the binary responsible for spawning PowerShell is known-malicious. If detections >= 5, immediately flag for HP."
     },
     {
       "step_id": 3,
-      "task": "Correlate with Historical Activity and Past Alerts",
-      "action": "Invoke 'get_recent_events' and 'get_recent_similar_alerts' to examine the historical frequency of this script logic within the environment.",
-      "tool_integration": ["get_recent_events", "get_recent_similar_alerts"],
-      "logic": "Compare current activity against historical logs. If identical scripts have run frequently and were previously classified as expected activity, the current alert is highly likely to be LP."
+      "task": "Script Normalization and Content Analysis",
+      "action": "Internally decode 'scriptblock' if Base64 encoded. Analyze for 'Admin Tool Signatures' (e.g., installer paths, authenticode checks) and cross-reference with the 'file_path' ONLY if it exists.",
+      "logic": "Matches script intent (e.g., updater logic) with its physical location if known. If the script references a specific path that is NOT present in 'file_path', highlight the discrepancy."
     },
     {
       "step_id": 4,
-      "task": "Contextual Correlation",
-      "action": "Synthesize the (decoded) script logic, identified admin markers, and historical frequency against the user/system context.",
-      "logic": "Activity is categorized based on the alignment of the script's function (e.g., inventory collection) with its internal markers, even if general process data is absent."
+      "task": "Correlate with Historical Activity",
+      "action": "MAKE SURE TO INVOKE 'get_recent_events' and 'get_recent_similar_alerts' to understand context of the alert.",
+      "tool_integration": ["get_recent_events", "get_recent_similar_alerts"],
+      "logic": "Consistency in script logic and pathing across the environment typically suggests standard operational behavior (LP)."
     },
     {
       "step_id": 5,
-      "task": "Final Triage Classification",
-      "action": "Assign a triage priority (LP or HP) by correlating process legitimacy, script markers, user patterns, historical context, and concurrent host activity.",
-      "logic": "Classification rules (precedence order):\n\n1. **Low Priority (LP)** if:\n   - A process is identified that correlates to known software AND the script logic is a functional requirement for that software.\n   - OR a similar script activity was previously confirmed as authorized by the client or identified as legitimate in past analyst notes.\n   - OR recent events on the same host provide a legitimate explanation for the script (e.g., a known software update, agent installation, or similar cases preceding the alert).\n   - OR the script logic is a benign system task originating from a verified SYSTEM or service account.\n\n2. **High Priority (HP)** if:\n   - A process is identified but the script logic is NOT expected behavior for that software.\n   - OR the script is run by a non-service account (actual human username) at an unusual time, and the script logic is suspicious (e.g., credential access) with no supporting host activity to explain it.\n   - OR the script is heavily obfuscated and lacks any identifiable authorized application paths, client confirmations, or matching historical patterns.\n   - OR the activity originates from a high-risk application (e.g., Office, Browser)."
+      "task": "External Network Context Validation (IP Address)",
+      "action": "Extract external (public) IP addresses from the decoded 'scriptblock', 'get_recent_events', and 'get_recent_similar_alerts' results, then MAKE SURE TO  INVOKE'check_ip_reputation' (AbuseIPDB) for each identified IP, if they exist. This is only if they exist in the script or correlated data. If not, skip this step, as sometimes there are only private IPs.",
+      "tool_integration": "check_ip_reputation",
+      "logic": "IP reputation is used as contextual enrichment only. Regardless of AbuseIPDB score, the presence of hard-coded external IP communication within scripts exhibiting reverse shell, command-and-control, or interactive execution behavior should be treated as malicious by behavior. Reputation data is used to strengthen confidence, identify infrastructure reuse, and support campaign correlation—not to downgrade severity."
     },
     {
       "step_id": 6,
+      "task": "Final Triage Classification",
+      "action": "Assign triage priority (LP or HP) by considering available context: process legitimacy, script behavior, execution environment, historical alerts, and network indicators if present.",
+      "logic": "Classification rules:\n\n1. **Low Priority (LP)** if:\n   - The user account executing the script is a known service or administrative account AND the script performs standard operational or maintenance tasks consistent with expected internal policies. \n   - OR the script performs standard operational or maintenance tasks consistent with expected internal policies.\n   - OR historical alerts show the same or similar scripts have executed previously without incident.\n   \n   > Note: LP does not require VirusTotal data, file paths, or IP reputation if they are unavailable. If those exist, they can optionally reinforce confidence.\n\n2. **High Priority (HP)** if:\n   - The script shows unexpected or anomalous behavior outside normal administrative tasks.\n   - OR the process is unknown, untrusted, or flagged as malicious (e.g., VirusTotal detections >=5).\n   - OR command-and-control, reverse shell, or interactive execution behavior is observed.\n   - OR the alert lacks context for critical operations and cannot be correlated with trusted service accounts or historical benign activity."
+    },
+    {
+      "step_id": 7,
       "task": "Generate Investigation Summary",
-      "action": "Construct a concise Description field for the final JSON output.",
-      "logic": "The Description MUST include: 1) A short summary of what the script actually does (e.g., 'enumerates AD Organizational Units and GPOs'), 2) Key observations from the triage steps, and 3) The reasoning for the LP or HP classification."
+      "action": "Construct a concise Description field including: 1) Script intent, 2) VT and AbuseIPDB results, if they exist, and 3) Final reasoning.",
+      "logic": "Ensures the summary explicitly clarifies whether the triage was based on a physical file path or script behavior alone."
     }
   ]
 }

@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10882",
+    "Start Time": "2026-01-27T16:20:45.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.30.15.11",
+    "Endpoint": "WKSTN-SR-42",
+    "User": "Administrator",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Initiating Process": "powershell.exe",
+    "Parent Process": "cmd.exe",
+    "Process SHA256": "9785001b0dcf755eddb8af294a373c0b87b2498660f724e76c4d53f9c217c7a3",
+    "VirusTotal Detections": "Malicious: 0 | Suspicious: 0",
+    "Decoded Script": "vssadmin delete shadows /all /quiet; bcdedit /set {default} recoveryenabled no; bcdedit /set {default} bootstatuspolicy ignoreallfailures",
+    "Description": "The decoded PowerShell commands delete all volume shadow copies and disable system recovery and boot failure recovery, which is consistent with ransomware cleanup activity. VirusTotal returned no detections for the initiating process hash and no external IPs were present in the script or recent telemetry, but there are no recent events or similar alerts to justify this activity. Because the script performs destructive system changes under the Administrator account without corroborating benign context, this is classified as High Priority."
+  },
+  "classification": "HP"
+}

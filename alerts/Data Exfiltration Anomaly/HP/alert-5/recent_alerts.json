@@ -1,0 +1,15 @@
+[
+  {
+    "alert_id": "SOC-15885",
+    "alert_name": "Multiple Failed Login Attempts",
+    "start_time": "2026-01-31T23:15:00.000Z",
+    "user": "Kevin.Smit@globalcorp.ee",
+    "source_ip": "multiple",
+    "application": "Office 365",
+    "user_agent": "Go-http-client/1.1",
+    "geo_location": {
+      "city": "Multiple",
+      "country": "Multiple"
+    }
+  }
+]

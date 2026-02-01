@@ -10,9 +10,5 @@
   "evidence": {
     "scriptblock": "Get-ADGroup -Filter 'ObjectGUID -eq \"a1b2c3d4-e5f6-4a5b-bc6d-7e8f90123456\"'",
     "os": "Windows Server 2019 Standard"
-  },
-  "technique": {
-    "name": "Permission Groups Discovery",
-    "killchain_stage": "Discovery"
   }
 }

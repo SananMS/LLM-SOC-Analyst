@@ -11,16 +11,16 @@
     {
       "step_id": 2,
       "task": "Perform IP and ISP Usage Analysis",
-      "action": "Invoke 'check_ip_reputation' to retrieve the Security Score, ISP Name, Usage Type, and VPN status for the Source IP.",
+      "action": "MAKE SURE TO INVOKE 'check_ip_reputation' to retrieve the Security Score, ISP Name, Usage Type, and VPN status for the Source IP.",
       "tool_integration": "check_ip_reputation",
       "logic": "Connections identified as 'Data Center/Web Hosting/Proxy' are high-risk. 'Fixed Line ISP' is lower risk unless the Security Score is elevated. VPN usage is evaluated together with device management signals and IP reputation."
     },
     {
       "step_id": 3,
       "task": "Correlate with Historical Activity and Client Confirmations",
-      "action": "Invoke 'get_recent_events' and 'get_recent_similar_alerts' to examine the user's geographical history and past analyst notes.",
+      "action": "MAKE SURE TO INVOKE 'get_recent_events' and 'get_recent_similar_alerts' to examine the user's geographical history and past analyst notes. If either tool returns no data, this is acceptable and the analyst should continue with the investigation.",
       "tool_integration": ["get_recent_events", "get_recent_similar_alerts"],
-      "logic": "Compare the current country against historically confirmed client locations. If the country is new and has no prior client confirmation, further contextual validation is required before classification."
+      "logic": "Compare the current country and login context against historical activity and prior alerts. If the country or access pattern has not been previously observed or confirmed by the client, treat the activity as higher risk unless other strong Low Priority indicators apply."
     },
     {
       "step_id": 4,

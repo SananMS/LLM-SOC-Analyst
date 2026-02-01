@@ -1,0 +1,21 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-84292",
+    "Start Time": "2026-01-26T15:12:38.543Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "192.168.14.112",
+    "Endpoint": "WKSTN-PROD-99",
+    "User": "t_doe",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Description": "The PowerShell command performed an Authenticode signature check on a local TrainerRoad updater executable located in the user's AppData folder, which is consistent with updater behavior. The initiating process is trainerroad.exe with parent explorer.exe under user t_doe, and the process SHA256 was not found in VirusTotal; no external IPs or related recent alerts were identified. Given the local installer path, expected signature-check activity, benign process lineage, and lack of malicious detections or historical alerts, this alert is assessed as Low Priority.",
+    "Scriptblock": "powershell.exe -NoProfile -NonInteractive -InputFormat None -Command \"Get-AuthenticodeSignature 'C:\\Users\\t_doe\\AppData\\Local\\trainerroad-updater\\pending\\temp-TrainerRoad-2026.4.2.386.exe' | ConvertTo-Json -Compress | ForEach-Object { [Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($_)) }\"",
+    "Initiating Process": "trainerroad.exe",
+    "Parent Process": "explorer.exe",
+    "Process SHA256": "159cd40d11705ca90f15a789db5107d1deba86e7695984bfceaa1c88af20767a",
+    "VirusTotal Result": "Hash not found in VirusTotal database.",
+    "Recent Events": "No recent events found.",
+    "Recent Similar Alerts": "No recent similar alerts found.",
+    "Technique": "Subvert Trust Controls: Gatekeeper Bypass (Defense Evasion)"
+  },
+  "classification": "LP"
+}

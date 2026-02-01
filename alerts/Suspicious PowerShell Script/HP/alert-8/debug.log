@@ -1,0 +1,51 @@
+=== DEBUG SESSION START: 2026-01-27T13:21:14.712282 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Suspicious PowerShell Script Execution
+Selected Playbook: 'suspicious_powershell.json'
+
+[TOOL CALL]
+Tool: check_hash_reputation
+Arguments: {"hash": "9785001b0dcf755eddb8af294a373c0b87b2498660f724e76c4d53f9c217c7a3"}
+
+[TOOL RESPONSE]
+VT Results for 9785001b0dcf755eddb8af294a373c0b87b2498660f724e76c4d53f9c217c7a3: Malicious: 0 | Suspicious: 0
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL CALL]
+Tool: check_ip_reputation
+Arguments: {"ip": "172.16.8.92"}
+
+[TOOL RESPONSE]
+Error during IP reputation check: Server error '500 Internal Server Error' for url 'https://api.abuseipdb.com/api/v2/check?ipAddress=172.16.8.92&verbose=true'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10004",
+    "Start Time": "2026-01-27T13:45:10.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.50.11.92",
+    "Endpoint": "SRV-APPS-02",
+    "User": "s_keller",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Initiating Process": "powershell.exe",
+    "Parent Process": "wmiprvse.exe",
+    "Process SHA256": "9785001b0dcf755eddb8af294a373c0b87b2498660f724e76c4d53f9c217c7a3",
+    "Script Intent": "Downloads and executes a remote PowerShell script from http://172.16.8.92/PowerSpread.ps1 using Invoke-Expression (iex) with WebClient DownloadString.",
+    "VirusTotal Reputation": "Malicious: 0 | Suspicious: 0",
+    "IP Reputation Check": "AbuseIPDB lookup for 172.16.8.92 failed with 500 Internal Server Error",
+    "Recent Events Summary": "Within one minute prior to the alert the same user ran 'net localgroup administrators' and performed a ProcessAccess to lsass.exe with high access privileges.",
+    "Description": "The decoded PowerShell command downloads and executes a remote script from an external host and was spawned by wmiprvse.exe, which is an unusual parent for interactive PowerShell. VirusTotal shows the spawning process hash with no detections, and the AbuseIPDB lookup for the host in the script failed due to a server error. Recent activity from the same user shows local admin enumeration and access to lsass.exe, and combined with remote code retrieval and anomalous process lineage this behavior is concerning and indicates a higher priority investigation is warranted."
+  },
+  "classification": "HP"
+}
+

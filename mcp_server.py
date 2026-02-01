@@ -4,6 +4,7 @@ import asyncio
 import base64
 from dotenv import load_dotenv
 from mcp.server.fastmcp import FastMCP
+import json
 
 # Load API keys from .env file
 load_dotenv()
@@ -14,19 +15,33 @@ VPNAPI_KEY = os.getenv("VPNAPI_KEY")
 mcp = FastMCP("Live-SOC-Tools")
 
 @mcp.tool()
-async def decode_base64(encoded_str: str) -> str:
-    """Decodes a Base64 encoded string into plaintext UTF-8."""
+async def lookup_users(emails: list[str]) -> str:
+    """
+    Search for user details in the local users.json file based on a list of emails.
+    """
+    file_path = os.path.join(os.path.dirname(__file__), "users.json")
+    
+    if not os.path.exists(file_path):
+        return "Error: users.json file not found in the server directory."
+
     try:
-        # Remove common PowerShell artifacts if present
-        clean_str = encoded_str.strip()
-        decoded_bytes = base64.b64decode(clean_str)
-        # Handle potential UTF-16 encoding often used by PowerShell -encodedcommand
-        try:
-            return decoded_bytes.decode("utf-16")
-        except UnicodeDecodeError:
-            return decoded_bytes.decode("utf-8")
+        with open(file_path, "r", encoding="utf-8") as f:
+            users_db = json.load(f)
+        
+        # Ensure users_db is a list
+        if not isinstance(users_db, list):
+            return "Error: users.json format is invalid. Expected a list of user objects."
+
+        # Filter users matching the provided emails
+        found_users = [u for u in users_db if u.get("email") in emails]
+
+        if not found_users:
+            return f"No users found for emails: {', '.join(emails)}"
+
+        return json.dumps(found_users, indent=2)
+
     except Exception as e:
-        return f"Error decoding Base64: {str(e)}"
+        return f"Error reading users.json: {str(e)}"
 
 @mcp.tool()
 async def check_ip_reputation(ip: str) -> str:
@@ -82,16 +97,16 @@ async def check_ip_reputation(ip: str) -> str:
             return f"Error during IP reputation check: {str(e)}"
         
 @mcp.tool()
-async def check_hash_reputation(hash_val: str) -> str:
+async def check_hash_reputation(hash: str) -> str:
     """Query VirusTotal for file hash reputation."""
-    url = f"https://www.virustotal.com/api/v3/files/{hash_val}"
+    url = f"https://www.virustotal.com/api/v3/files/{hash}"
     headers = {"x-apikey": VT_API_KEY}
 
     async with httpx.AsyncClient() as client:
         try:
             response = await client.get(url, headers=headers)
             if response.status_code == 404:
-                return f"Hash {hash_val} not found in VirusTotal database."
+                return f"Hash {hash} not found in VirusTotal database."
             
             response.raise_for_status()
             stats = response.json()["data"]["attributes"]["last_analysis_stats"]
@@ -99,7 +114,7 @@ async def check_hash_reputation(hash_val: str) -> str:
             malicious = stats.get("malicious", 0)
             suspicious = stats.get("suspicious", 0)
             
-            return f"VT Results for {hash_val}: Malicious: {malicious} | Suspicious: {suspicious}"
+            return f"VT Results for {hash}: Malicious: {malicious} | Suspicious: {suspicious}"
         except Exception as e:
             return f"Error querying VirusTotal: {str(e)}"
 

@@ -1,0 +1,55 @@
+=== DEBUG SESSION START: 2026-02-01T19:23:29.295523+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Data Exfiltration Anomaly
+Selected Playbook: 'excessive_downloads.json'
+
+[TOOL CALL]
+Tool: lookup_users
+Arguments: {"emails": ["Tomas.Kazlauskas@globalcorp.ee"]}
+
+[TOOL RESPONSE]
+[
+  {
+    "email": "Tomas.Kazlauskas@globalcorp.ee",
+    "full_name": "Tomas Kazlauskas",
+    "department": "Supply Chain & Logistics",
+    "role": "Regional Supply Coordinator"
+  }
+]
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-16200",
+    "Start Time": "2026-02-01T10:15:30.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "78.56.121.10",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "LT-VIL-LAPTOP-44",
+    "User": "Tomas.Kazlauskas@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Workload": "SharePoint",
+    "File Count": 615,
+    "Baseline 24h": 20,
+    "Geo Location": "Vilnius, Lithuania",
+    "User Role": "Regional Supply Coordinator",
+    "Description": "The user Tomas Kazlauskas (Regional Supply Coordinator, Supply Chain & Logistics) downloaded 615 SharePoint files from Lithuanian sites at 2026-02-01T10:15:30Z (local Vilnius time ~12:15), and the accessed paths align with the user’s functional area. There are no recent related events or similar alerts for this user. However, the download volume is approximately 30x the 24-hour baseline (615 vs 20), which is a significant deviation and elevates this alert to high priority."
+  },
+  "classification": "HP"
+}
+

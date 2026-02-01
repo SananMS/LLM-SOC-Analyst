@@ -6,13 +6,13 @@
     "Source IP": "192.168.1.45",
     "Endpoint": "FS-PROD-02",
     "User": "NT SERVICE\\DataBackupAgent",
+    "User ID": "S-1-5-80-3245",
     "Playbook Used": "Suspicious PowerShell Triage",
-    "Description": "The PowerShell script performs a storage inventory by recursively scanning C: for files larger than a configurable threshold and exports results to a CSV. Key observations: the script is plaintext (not obfuscated), references DataVault program data paths and log/report files, and is executed by a service account named DataBackupAgent which aligns with backup/agent activity. This matches expected backup inventory behavior and lacks indicators of malicious intent, so it is assessed as Low Priority.",
-    "Script Summary": "Recursively enumerates files on C: exceeding a size threshold, logs progress to C:\\ProgramData\\DataVault\\Logs\\inventory_scan.log, and exports findings to C:\\ProgramData\\DataVault\\Temp\\large_files.csv.",
     "OS": "Windows Server 2019 Standard",
-    "Log Path": "C:\\ProgramData\\DataVault\\Logs\\inventory_scan.log",
-    "Report Path": "C:\\ProgramData\\DataVault\\Temp\\large_files.csv",
-    "Technique": "File and Directory Discovery"
+    "Technique": "File and Directory Discovery",
+    "Recent Events": "No recent events found",
+    "Recent Similar Alerts": "No recent similar alerts found",
+    "Description": "The PowerShell script appears to be a DataVault backup pre-scan inventory executed by the NT SERVICE\\DataBackupAgent service account; it enumerates large files on C: and writes logs and a CSV under C:\\ProgramData\\DataVault. There are no external IPs referenced, no process SHA256 available for reputation checks, and no historical alerts or events indicating malicious activity. Given the service account context, script behavior consistent with maintenance, and lack of reputation or historical indicators, this alert is assessed as Low Priority (LP)."
   },
   "classification": "LP"
 }

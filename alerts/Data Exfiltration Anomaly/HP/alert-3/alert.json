@@ -1,0 +1,34 @@
+{
+  "alert_id": "SOC-13100",
+  "alert_name": "Data Exfiltration Anomaly",
+  "start_time": "2026-01-31T23:55:12.000Z",
+  "source_ip": "145.14.37.201",
+  "destination_ip": "40.108.201.15",
+  "endpoint": "MAINT-Kiosk-04",
+  "user": "Jaanus.Tamm@globalcorp.ee",
+  "user_id": "c33d44e5-f66g-77h8-i99j-00k11l22m33n",
+  "description": "An unusual volume of SharePoint file downloads (985) was observed from the user, which is higher than their 24-hour baseline.",
+  "evidence": {
+    "workload": "SharePoint",
+    "operation": "FileDownloaded",
+    "site_url": "https://globalcorp.sharepoint.com/sites/Strategy_and_Growth/",
+    "application": "Office 365 SharePoint Online",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+    "file_count": 985,
+    "baseline_24h": 50,
+    "geo_location": {
+      "city": "Tallinn",
+      "country": "Estonia"
+    },
+    "sample_files": [
+      "Project_Phoenix_Acquisition_Terms_Draft.pdf",
+      "Q1_Strategic_Market_Exit_Plan.docx",
+      "Board_Member_Private_Contact_List.xlsx"
+    ],
+    "sample_paths": [
+      "Shared Documents/Corporate_Development/M_A/Project_Phoenix/",
+      "Shared Documents/Executive_Office/Strategy/Confidential_2026/",
+      "Shared Documents/Legal/Governance/Contact_Directories/"
+    ]
+  }
+}

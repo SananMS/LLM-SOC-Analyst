@@ -1,0 +1,16 @@
+{
+  "alert_id": "SOC-84292",
+  "alert_name": "Suspicious PowerShell Script Execution",
+  "start_time": "2026-01-26T15:12:38.543Z",
+  "source_ip": "192.168.14.112",
+  "endpoint": "WKSTN-PROD-99",
+  "user": "t_doe",
+  "user_id": "S-1-5-21-984310-4421",
+  "description": "A suspicious PowerShell script was executed on the host.",
+  "evidence": {
+    "scriptblock": "powershell.exe -NoProfile -NonInteractive -InputFormat None -Command \"Get-AuthenticodeSignature 'C:\\Users\\t_doe\\AppData\\Local\\trainerroad-updater\\pending\\temp-TrainerRoad-2026.4.2.386.exe' | ConvertTo-Json -Compress | ForEach-Object { [Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($_)) }\"",
+    "initiating_process": "trainerroad.exe",
+    "process_sha256": "159cd40d11705ca90f15a789db5107d1deba86e7695984bfceaa1c88af20767a",
+    "parent_process": "explorer.exe"
+  }
+}

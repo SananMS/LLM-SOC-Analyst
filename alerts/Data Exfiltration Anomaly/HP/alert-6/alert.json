@@ -1,0 +1,48 @@
+{
+  "alert_id": "SOC-24100",
+  "alert_name": "Data Exfiltration Anomaly",
+  "start_time": "2026-02-01T22:15:44.000Z",
+  "source_ip": "85.253.110.42",
+  "destination_ip": "40.108.201.15",
+  "endpoint": "TAL-CS-WORKSTATION-05",
+  "user": "Mari.Tamm@globalcorp.ee",
+  "user_id": "m11t22a3-s44r-55i6-p77o-88k99l00m11n",
+  "description": "An unusual volume of SharePoint file downloads (750) was observed from the user, which is higher than their 24-hour baseline.",
+  "evidence": {
+    "workload": "SharePoint",
+    "operation": "FileDownloaded",
+    "site_url": "https://globalcorp.sharepoint.com/sites/Juhtkond_Ja_Finants/",
+    "application": "Office 365 SharePoint Online",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+    "file_count": 750,
+    "baseline_24h": 15,
+    "geo_location": {
+      "city": "Tallinn",
+      "country": "Estonia"
+    },
+    "sample_files": [
+      "Aasta_Eelarve_2026_Final.xlsx",
+      "Panga_Väljavõtted_Auditiks.pdf",
+      "Juhatuse_Koosoleku_Protokoll.docx",
+      "Töötajate_Palgainfo_Koond.csv",
+      "Ettevõtte_Laienemisstrateegia.pdf",
+      "Maksuameti_Kontrolli_Raport.pdf",
+      "Kassa_Inventureerimise_Akt.xlsx",
+      "Laenuleping_Swedbank_Lisa1.pdf",
+      "Kuluaruanded_Juhtkond_Q4.zip",
+      "Kasumiaruanne_Prognoos.xlsx"
+    ],
+    "sample_paths": [
+      "Finants/Eelarve/2026/",
+      "Finants/Audit/Pangad/",
+      "Juhtkond/Protokollid/2026/",
+      "Personal/Palgad/Konfidentsiaalne/",
+      "Strateegia/Arendusplaanid/Salajane/",
+      "Finants/Maksud/Raportid/",
+      "Finants/Inventureerimine/Aktid/",
+      "Juhtkond/Lepingud/Pangandus/",
+      "Finants/Kulud/Juhtkond/",
+      "Finants/Raportid/Kasum/"
+    ]
+  }
+}

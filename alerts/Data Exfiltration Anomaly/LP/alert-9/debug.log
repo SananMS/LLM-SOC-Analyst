@@ -1,0 +1,65 @@
+=== DEBUG SESSION START: 2026-02-01T19:25:13.590124+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Data Exfiltration Anomaly
+Selected Playbook: 'excessive_downloads.json'
+
+[TOOL CALL]
+Tool: lookup_users
+Arguments: {"emails": ["acc_svc@globalcorp.ee"]}
+
+[TOOL RESPONSE]
+No users found for emails: acc_svc@globalcorp.ee
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-20114",
+    "Start Time": "2026-03-01T15:10:00.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "90.190.150.10",
+    "Destination IP": "40.108.201.15",
+    "User": "acc_svc@globalcorp.ee",
+    "User ID": "d48eeaf9-2d48-4bc2-80f0-bd03723fb1a2",
+    "Playbook Used": "Excessive Download Triage",
+    "Workload": "SharePoint",
+    "Application": "Workday MSGraph",
+    "User Agent": "Mozilla/4.0 (compatible; Win32; WinHttp.WinHttpRequest.5)",
+    "File Count": 294,
+    "Baseline 24h": 25,
+    "Geo Location": "Tallinn, Estonia",
+    "Site URL": "https://globalcorp.sharepoint.com/sites/DACH_Finance_Central/",
+    "Sample Paths": [
+      "Finanzwesen/Personalabrechnung/Exporte/",
+      "Finanzwesen/Berichterstattung/Archiv/",
+      "Finanzwesen/Reingang/Eingangsrechnungen/",
+      "Finanzwesen/Gehälter/Monatslisten/",
+      "Finanzwesen/Steuern/Meldungen/",
+      "Finanzwesen/Banking/Ausz\u00fcge/",
+      "Finanzwesen/Buchhaltung/Forderungen/",
+      "Finanzwesen/Buchhaltung/Verbindlichkeiten/",
+      "Finanzwesen/Inventar/Anlagen/",
+      "Finanzwesen/Controlling/Berichte/"
+    ],
+    "User Lookup Result": "No users found for acc_svc@globalcorp.ee",
+    "Recent Events": "No recent events found.",
+    "Recent Similar Alerts": "No recent similar alerts found.",
+    "Description": "SharePoint logged 294 file downloads by acc_svc@globalcorp.ee from the DACH Finance site at 2026-03-01T15:10:00Z (Tallinn local time ~17:10). The downloaded files and paths are finance-related and align with an accounting/service account, the activity occurred during normal local business hours, and there are no recent related alerts or events. Although the volume is elevated (~11.8x the 24-hour baseline) and the user agent appears to be an automated HTTP client, the multiplier does not exceed the high-risk threshold and contextual signals do not indicate immediate compromise, so this is assessed as low priority."
+  },
+  "classification": "LP"
+}
+

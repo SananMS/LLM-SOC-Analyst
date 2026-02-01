@@ -6,12 +6,12 @@
     "Source IP": "10.5.14.92",
     "Endpoint": "HR-SRV-02",
     "User": "k.tamm",
-    "User ID": "S-1-5-21-88990011-22334455-66778899-1034",
     "Playbook Used": "Suspicious PowerShell Triage",
-    "Technique": "Credentials from Web Browsers",
-    "OS": "Windows Server 2019 Standard",
-    "Script Content": "Copy-Item 'C:\\Users\\*\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Login Data' -Destination C:\\ProgramData\\chrome_cache.db -Force; Copy-Item 'C:\\Users\\*\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\*.default-release\\logins.json' -Destination C:\\ProgramData\\ff_cache.json -Force",
-    "Description": "The PowerShell command copied Chrome 'Login Data' and Firefox 'logins.json' from all user profiles to C:\\ProgramData, indicating extraction of stored browser credentials. The command uses wildcard paths to target all users and was executed by a non-service user on a server, with no indicators of legitimate administrative tooling or vendor-managed activity. Because this behavior clearly targets credential stores across multiple accounts and was run by an individual account on a server, the activity is classified as High Priority (HP)."
+    "Scriptblock": "Copy-Item 'C:\\Users\\*\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Login Data' -Destination C:\\ProgramData\\chrome_cache.db -Force; Copy-Item 'C:\\Users\\*\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\*.default-release\\logins.json' -Destination C:\\ProgramData\\ff_cache.json -Force",
+    "Operating System": "Windows Server 2019 Standard",
+    "Recent Events": "No recent events found.",
+    "Recent Similar Alerts": "No recent similar alerts found.",
+    "Description": "A PowerShell script executed on HR-SRV-02 by user k.tamm copied Chrome and Firefox credential stores from all user profiles into C:\\ProgramData, which matches credential-harvesting behavior. No physical file path or process hash was provided, so this assessment is based on the in-memory scriptblock and host context; no historical events or similar alerts were found to indicate benign activity. No VirusTotal or external IP reputation data is available or applicable. Given the sensitive nature of the files accessed, the execution context on a server, and lack of benign correlation, this is assessed as High Priority."
   },
   "classification": "HP"
 }

@@ -1,0 +1,20 @@
+[
+  {
+    "event_time": "2026-02-01T18:40:00.000Z",
+    "operation": "AnonymousLinkCreated",
+    "user": "Jonas.Laitis@globalcorp.ee",
+    "object_id": "https://globalcorp-my.sharepoint.com/personal/jonas_laitis_globalcorp_ee/Documents/Gamybos_Planai_Export.zip"
+  },
+  {
+    "event_time": "2026-02-01T18:45:15.000Z",
+    "operation": "AnonymousLinkCreated",
+    "user": "Jonas.Laitis@globalcorp.ee",
+    "object_id": "https://globalcorp-my.sharepoint.com/personal/jonas_laitis_globalcorp_ee/Documents/Klientu_Kontaktai.csv"
+  },
+  {
+    "event_time": "2026-02-01T18:52:30.000Z",
+    "operation": "AnonymousLinkCreated",
+    "user": "Jonas.Laitis@globalcorp.ee",
+    "object_id": "https://globalcorp-my.sharepoint.com/personal/jonas_laitis_globalcorp_ee/Documents/Strategija_2026.pdf"
+  }
+]

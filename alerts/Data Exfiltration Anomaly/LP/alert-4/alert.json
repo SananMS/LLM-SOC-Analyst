@@ -1,0 +1,36 @@
+{
+  "alert_id": "SOC-12880",
+  "alert_name": "Data Exfiltration Anomaly",
+  "start_time": "2026-01-31T23:20:05.000Z",
+  "source_ip": "210.138.184.59",
+  "destination_ip": "40.108.201.15",
+  "endpoint": "ARC-DESK-012",
+  "user": "Tanel.Magi@globalcorp.ee",
+  "user_id": "c77d49e2-b11c-4e88-a8d2-3f1c9d8a7b5e",
+  "description": "An unusual volume of SharePoint file downloads (550) was observed from the user, which is higher than their 24-hour baseline.",
+  "evidence": {
+    "workload": "SharePoint",
+    "operation": "FileDownloaded",
+    "site_url": "https://globalcorp.sharepoint.com/sites/Arhitektuur_Projektid/",
+    "application": "Office 365 SharePoint Online",
+    "user_agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+    "file_count": 250,
+    "baseline_24h": 30,
+    "geo_location": {
+      "city": "Tokyo",
+      "country": "Japan"
+    },
+    "sample_files": [
+      "pohiprojekt_v4_joonis.dwg",
+      "vundamendi_spetsifikatsioon.pdf",
+      "materjalide_eelarve_2026.xlsx",
+      "tehnosüsteemide_skeem.dwg"
+    ],
+    "sample_paths": [
+      "Jagatud dokumendid/Ehitus_Projektid/Tallinna_Kesklinn/Joonised/",
+      "Jagatud dokumendid/Ehitus_Projektid/Tallinna_Kesklinn/Eelarve/",
+      "Jagatud dokumendid/Ehitus_Projektid/Tallinna_Kesklinn/Tehniline_Dokumentatsioon/",
+      "Jagatud dokumendid/Ehitus_Projektid/Arhiiv/2025/Valmis_Objektid/"
+    ]
+  }
+}

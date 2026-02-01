@@ -1,0 +1,104 @@
+=== DEBUG SESSION START: 2026-02-01T19:18:00.936056+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Data Exfiltration Anomaly
+Selected Playbook: 'excessive_downloads.json'
+
+[TOOL CALL]
+Tool: lookup_users
+Arguments: {"emails": ["Dace.Ozolina@globalcorp.ee"]}
+
+[TOOL RESPONSE]
+[
+  {
+    "email": "Dace.Ozolina@globalcorp.ee",
+    "full_name": "Dace Ozoli\u0146a",
+    "department": "P\u0101rdo\u0161ana",
+    "role": "P\u0101rdo\u0161anas speci\u0101lists"
+  }
+]
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+[
+  {
+    "event_time": "2026-02-01T19:45:00.000Z",
+    "operation": "AnonymousLinkCreated",
+    "user": "Dace.Ozolina@globalcorp.ee",
+    "object_id": "https://globalcorp-my.sharepoint.com/personal/dace_ozolina_globalcorp_ee/Documents/Klientu_Dati_Kopija.zip"
+  },
+  {
+    "event_time": "2026-02-01T20:02:15.000Z",
+    "operation": "FileDeleted",
+    "user": "Dace.Ozolina@globalcorp.ee",
+    "file_name": "Klientu_Portfelis_2026_Pilns.xlsx",
+    "url": "https://globalcorp.sharepoint.com/sites/Latvija_Klienti_un_Ligumi/Klienti/Portfelis/2026/Klientu_Portfelis_2026_Pilns.xlsx"
+  },
+  {
+    "event_time": "2026-02-01T20:05:40.000Z",
+    "operation": "FileDeleted",
+    "user": "Dace.Ozolina@globalcorp.ee",
+    "file_name": "Ieņēmumu_Prognoze_Q1_Q4.pdf",
+    "url": "https://globalcorp.sharepoint.com/sites/Latvija_Klienti_un_Ligumi/Finanses/Prognozes/Ienēmumi/Ieņēmumu_Prognoze_Q1_Q4.pdf"
+  },
+  {
+    "event_time": "2026-02-01T20:08:12.000Z",
+    "operation": "FileDeleted",
+    "user": "Dace.Ozolina@globalcorp.ee",
+    "file_name": "Galvenais_Partneribas_Ligums_2026.pdf",
+    "url": "https://globalcorp.sharepoint.com/sites/Latvija_Klienti_un_Ligumi/Ligumi/Partneri/Arhivs/Galvenais_Partneribas_Ligums_2026.pdf"
+  },
+  {
+    "event_time": "2026-02-01T20:10:05.000Z",
+    "operation": "FileDeleted",
+    "user": "Dace.Ozolina@globalcorp.ee",
+    "file_name": "Marketinga_Strategija_Konfidenciali.pdf",
+    "url": "https://globalcorp.sharepoint.com/sites/Latvija_Klienti_un_Ligumi/Strategija/Marketingas/Latvija/Marketinga_Strategija_Konfidenciali.pdf"
+  },
+  {
+    "event_time": "2026-02-01T20:12:30.000Z",
+    "operation": "FileDeleted",
+    "user": "Dace.Ozolina@globalcorp.ee",
+    "file_name": "Vadibas_Sanaksmes_Protokols_Janvaris.docx",
+    "url": "https://globalcorp.sharepoint.com/sites/Latvija_Klienti_un_Ligumi/Vadiba/Protokoli/Sanaksmes/Vadibas_Sanaksmes_Protokols_Janvaris.docx"
+  },
+  {
+    "event_time": "2026-02-01T20:14:55.000Z",
+    "operation": "FileDeleted",
+    "user": "Dace.Ozolina@globalcorp.ee",
+    "file_name": "Konkurentu_Cenu_Analize_Slepeni.csv",
+    "url": "https://globalcorp.sharepoint.com/sites/Latvija_Klienti_un_Ligumi/Cenas/Konfidenciali/Lapas/Konkurentu_Cenu_Analize_Slepeni.csv"
+  }
+]
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-27420",
+    "Start Time": "2026-02-01T20:15:30.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "92.240.64.18",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "RIX-SALES-LAP-22",
+    "User": "Dace.Ozolina@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "File Count": 1240,
+    "Baseline 24h": 45,
+    "Geo Local Time": "2026-02-01T22:15:30+02:00 (Riga local time)",
+    "Department": "Pārdošana (Sales)",
+    "Recent Events Summary": "AnonymousLinkCreated at 2026-02-01T19:45:00Z and multiple FileDeleted events by the same user between 2026-02-01T20:02:15Z and 2026-02-01T20:14:55Z on the same SharePoint site prior to the large download.",
+    "Description": "The user in Sales performed an unusually large set of SharePoint downloads (1,240 files), which is approximately 27x their 24-hour baseline. The activity originated from Riga at 22:15 local time and was preceded by an anonymous link creation and several file deletions on the same site, and many of the downloaded paths are outside typical Sales scope (finance, legal, strategy). Given the extreme volume relative to baseline, the cross-departmental file access, and the preceding suspicious events, this alert is assessed as high priority for further investigation."
+  },
+  "classification": "HP"
+}
+

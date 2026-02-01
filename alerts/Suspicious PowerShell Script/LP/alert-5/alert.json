@@ -10,9 +10,5 @@
   "evidence": {
     "scriptblock": "function PSTargetSupportsAlternateStreams\n        {\n            param (\n                [string] $supportAltStreamPath\n            )\n\n            $result = @{\n                TargetSupportsAlternateStreams = $false\n            }\n\n            # Resolve path in case it is a PSDrive\n            $resolvedPath = Microsoft.PowerShell.Management\\Resolve-Path -literal $supportAltStreamPath\n\n            $targetDrive = [IO.Path]::GetPathRoot($resolvedPath.ProviderPath)\n            if (-not $targetDrive)\n            {\n                return $result\n            }\n\n            # Check if the target drive is NTFS\n            $driveFormat = 'NTFS'\n            foreach ($drive in [System.IO.DriveInfo]::GetDrives())\n            {\n                if (($drive.Name -eq $targetDrive) -and ($drive.DriveFormat -eq $driveFormat))\n                {\n                    # Now, check if the target supports Add-Command -Stream. This functionality was introduced in version 3.0.\n                    $addContentCmdlet = Microsoft.PowerShell.Core\\Get-Command Microsoft.PowerShell.Management\\Add-Content -ErrorAction SilentlyContinue\n                    if ($addContentCmdlet.Parameters.Keys -contains 'Stream')\n                    {\n                        $result['TargetSupportsAlternateStreams'] = $true\n                        break\n                    }\n                }\n            }\n\n            return $result\n        }",
     "os": "Windows Server 2022 Datacenter"
-  },
-  "technique": {
-    "name": "NTFS File Attributes",
-    "killchain_stage": "Defense Evasion"
   }
 }

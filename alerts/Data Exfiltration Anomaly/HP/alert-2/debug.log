@@ -1,0 +1,59 @@
+=== DEBUG SESSION START: 2026-02-01T19:12:50.955351+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Data Exfiltration Anomaly
+Selected Playbook: 'excessive_downloads.json'
+
+[TOOL CALL]
+Tool: lookup_users
+Arguments: {"emails": ["Aleksei.Ivanov@globalcorp.ee"]}
+
+[TOOL RESPONSE]
+[
+  {
+    "email": "Aleksei.Ivanov@globalcorp.ee",
+    "full_name": "Aleksei Ivanov",
+    "department": "Engineering",
+    "role": "Senior Software Developer"
+  }
+]
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-12880",
+    "Start Time": "2026-01-31T23:04:12.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "145.14.37.179",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "HOST-VPN-PRIV-02",
+    "User": "Aleksei.Ivanov@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Workload": "SharePoint",
+    "Site URL": "https://globalcorp.sharepoint.com/sites/Global_HR_Restricted/",
+    "File Count": 1120,
+    "Baseline 24h": 10,
+    "User Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+    "Geo Location": "Tallinn, Estonia",
+    "User Role": "Senior Software Developer",
+    "Department": "Engineering",
+    "Local Time (Tallinn)": "2026-02-01T01:04:12+02:00",
+    "Description": "SharePoint recorded a bulk download of 1,120 files from a restricted HR site by Aleksei.Ivanov@globalcorp.ee on 2026-01-31T23:04:12Z. The account is for a Senior Software Developer in Engineering, which does not align with the sensitive payroll/finance/leadership paths accessed, and the volume (~1120 vs a 24-hour baseline of 10) is unusually high. The activity occurred at 01:04 local time in Tallinn (UTC+2), within the 'dead of night' window, and there are no recent events or similar alerts to indicate this is an authorized recurring activity, so this is considered High Priority."
+  },
+  "classification": "HP"
+}
+

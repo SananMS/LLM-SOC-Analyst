@@ -1,0 +1,48 @@
+{
+  "alert_id": "SOC-25600",
+  "alert_name": "Data Exfiltration Anomaly",
+  "start_time": "2026-02-01T19:05:10.000Z",
+  "source_ip": "88.119.20.145",
+  "destination_ip": "40.108.201.15",
+  "endpoint": "VIL-LT-DSK-12",
+  "user": "Jonas.Laitis@globalcorp.ee",
+  "user_id": "j22l33t4-a55i-66t7-i88s-99l00m11n22o",
+  "description": "An unusual volume of SharePoint file downloads (920) was observed from the user, which is higher than their 24-hour baseline.",
+  "evidence": {
+    "workload": "SharePoint",
+    "operation": "FileDownloaded",
+    "site_url": "https://globalcorp.sharepoint.com/sites/Gamyba_ir_Eksportas/",
+    "application": "Office 365 SharePoint Online",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+    "file_count": 920,
+    "baseline_24h": 10,
+    "geo_location": {
+      "city": "Vilnius",
+      "country": "Lithuania"
+    },
+    "sample_files": [
+      "Gamybos_Procesų_Schema.pdf",
+      "Eksporto_Kainoraštis_2026.xlsx",
+      "Klientų_Sąrašas_Baltijos_Šalys.csv",
+      "Tiekimo_Grandinės_Ataskaita.pdf",
+      "Naujo_Produkto_Specifikacija.docx",
+      "Pardavimų_Prognozė_Q1_Q2.xlsx",
+      "Logistikos_Sutartis_Saugoma.pdf",
+      "Rinkos_Tyrimas_Konkurentai.pdf",
+      "Gamyklos_Saugumo_Protokolas.docx",
+      "Metinis_Strateginis_Planas.pdf"
+    ],
+    "sample_paths": [
+      "Dokumentai/Gamyba/Schemos/",
+      "Dokumentai/Eksportas/Kainos/",
+      "Dokumentai/Klientai/Kontaktai/",
+      "Dokumentai/Logistika/Ataskaitos/",
+      "Dokumentai/R_D/Projektai/",
+      "Dokumentai/Pardavimai/Prognozes/",
+      "Dokumentai/Teise/Sutartys/",
+      "Dokumentai/Marketingas/Tyrimai/",
+      "Dokumentai/Saugumas/Protokolai/",
+      "Dokumentai/Valdyba/Strategija/"
+    ]
+  }
+}

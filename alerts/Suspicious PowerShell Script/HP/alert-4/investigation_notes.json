@@ -9,10 +9,10 @@
     "User ID": "S-1-5-21-55667788-33445566-11223344-1021",
     "Playbook Used": "Suspicious PowerShell Triage",
     "Scriptblock": "Get-ChildItem C:\\Users -Recurse -Include *.kdbx,*.pst,*.docx -ErrorAction SilentlyContinue | Select-Object FullName,Length | Export-Csv C:\\ProgramData\\user_cache.csv -NoTypeInformation",
-    "OS": "Windows Server 2019 Standard",
-    "Technique": "Sensitive File Discovery",
-    "Export Path": "C:\\ProgramData\\user_cache.csv",
-    "Description": "The PowerShell command recursively searches C:\\Users for .kdbx, .pst, and .docx files and exports file names and sizes to C:\\ProgramData\\user_cache.csv. It was executed on FIN-SRV-01 by user m.laane (a non-service account) and targets high-value data types on a financial server, with no parent process or known administrative tool indicated in the alert. Given the selection of sensitive file types, export to a common system path, and interactive user execution on a sensitive host, this activity is classified as High Priority due to likely data collection or staging behavior consistent with unauthorized harvesting."
+    "Operating System": "Windows Server 2019 Standard",
+    "Recent Events": "No recent events found.",
+    "Recent Similar Alerts": "No recent similar alerts found.",
+    "Description": "The PowerShell command recursively enumerates C:\\Users for *.kdbx, *.pst, and *.docx files and exports results to C:\\ProgramData\\user_cache.csv, indicating potential targeted data collection of credentials/mailbox and documents. There are no VirusTotal or AbuseIPDB indicators available for this alert and no historical events or similar alerts to suggest benign maintenance. Because this activity involves harvesting sensitive file types on a finance server by a non-service user account with no prior benign context, it is considered high risk and prioritized accordingly."
   },
   "classification": "HP"
 }

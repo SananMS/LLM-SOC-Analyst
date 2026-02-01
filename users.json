@@ -1,0 +1,86 @@
+[
+  {
+    "email": "Marcus.Webb@globalcorp.ee",
+    "full_name": "Marcus Webb",
+    "department": "Legal & Corporate Secretary",
+    "role": "Senior Legal Operations Manager"
+  },
+  {
+    "email": "Linda.Kask@globalcorp.ee",
+    "full_name": "Linda Kask",
+    "department": "Finance",
+    "role": "Senior Accountant"
+  },
+  {
+    "email": "Aleksei.Ivanov@globalcorp.ee",
+    "full_name": "Aleksei Ivanov",
+    "department": "Engineering",
+    "role": "Senior Software Developer"
+  },
+  {
+    "email": "Tanel.Magi@globalcorp.ee",
+    "full_name": "Tanel Mägi",
+    "department": "Architecture & Infrastructure",
+    "role": "Principal Structural Architect"
+  },
+  {
+    "email": "Liam.O-Sullivan@globalcorp.ee",
+    "full_name": "Liam O'Sullivan",
+    "department": "Supply Chain & Logistics",
+    "role": "Regional Logistics Coordinator (Ireland)"
+  },
+  {
+    "email": "Jaanus.Tamm@globalcorp.ee",
+    "full_name": "Jaanus Tamm",
+    "department": "Facilities & Maintenance",
+    "role": "Maintenance Technician"
+  },
+  {
+    "email": "Tanel.Lepp@globalcorp.ee",
+    "full_name": "Tanel Lepp",
+    "department": "Engineering",
+    "role": "Software Engineer"
+  },
+  {
+    "email": "Kevin.Smit@globalcorp.ee",
+    "full_name": "Kevin Smit",
+    "department": "Engineering",
+    "role": "Junior Developer (Intern)"
+  },
+  {
+    "email": "Tomas.Kazlauskas@globalcorp.ee",
+    "full_name": "Tomas Kazlauskas",
+    "department": "Supply Chain & Logistics",
+    "role": "Regional Supply Coordinator"
+  },
+  {
+    "email": "Mari.Tamm@globalcorp.ee",
+    "full_name": "Mari Tamm",
+    "department": "Klienditugi",
+    "role": "Vanem-klienditeenindaja"
+  },
+  {
+    "email": "Jonas.Laitis@globalcorp.ee",
+    "full_name": "Jonas Laitis",
+    "department": "Gamyba",
+    "role": "Gamybos darbuotojas"
+  },
+  {
+    "email": "Dace.Ozolina@globalcorp.ee",
+    "full_name": "Dace Ozoliņa",
+    "department": "Pārdošana",
+    "role": "Pārdošanas speciālists"
+  },
+  {
+    "email": "Linas.Pavilionis@globalcorp.ee",
+    "full_name": "Linas Pavilionis",
+    "department": "Techninė priežiūra",
+    "role": "Priežiūros inžinierius"
+  },
+  {
+    "email": "Tiina.Koppel@globalcorp.ee",
+    "full_name": "Tiina Koppel",
+    "department": "R&D",
+    "role": "Head of Research & Development"
+  }
+]

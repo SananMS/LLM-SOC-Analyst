@@ -17,9 +17,5 @@
       "city": "Mumbai",
       "country": "India"
     }
-  },
-  "technique": {
-    "name": "XDR Location Anomaly",
-    "killchain_stage": "Initial Attempts"
   }
 }

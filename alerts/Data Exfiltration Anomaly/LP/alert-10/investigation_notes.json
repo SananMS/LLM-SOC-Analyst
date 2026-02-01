@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-21550",
+    "Start Time": "2026-03-01T15:10:00.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "90.184.0.1",
+    "Destination IP": "40.108.201.15",
+    "User": "svc_aem_assets@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Workload": "SharePoint",
+    "User Agent": "Mozilla/4.0 (compatible; Win32; WinHttp.WinHttpRequest.5)",
+    "File Count vs Baseline": "340 (baseline 24h: 35)",
+    "Geo Location": "Copenhagen, Denmark",
+    "User Lookup Result": "No user record found for svc_aem_assets@globalcorp.ee in directory lookup; likely a service/integration account."
+  },
+  "classification": "LP"
+}

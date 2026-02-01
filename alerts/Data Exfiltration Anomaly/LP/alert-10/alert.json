@@ -1,0 +1,47 @@
+{
+  "alert_id": "SOC-21550",
+  "alert_name": "Data Exfiltration Anomaly",
+  "start_time": "2026-03-01T15:10:00.000Z",
+  "source_ip": "90.184.0.1",
+  "destination_ip": "40.108.201.15",
+  "user": "svc_aem_assets@globalcorp.ee",
+  "user_id": "e55aaaf9-2d59-5cd3-91g1-cd148fb42b1b",
+  "description": "An unusual volume of SharePoint file downloads (340) was observed from the user, which is higher than their 24-hour baseline.",
+  "evidence": {
+    "workload": "SharePoint",
+    "operation": "FileDownloaded",
+    "site_url": "https://globalcorp.sharepoint.com/sites/Nordic_Marketing_Content/",
+    "application": "Adobe Experience Manager MSGraph",
+    "user_agent": "Mozilla/4.0 (compatible; Win32; WinHttp.WinHttpRequest.5)",
+    "file_count": 340,
+    "baseline_24h": 35,
+    "geo_location": {
+      "city": "Copenhagen",
+      "country": "Denmark"
+    },
+    "sample_files": [
+      "Produkt_Billeder_Foraar_2026.zip",
+      "Markedsføring_Video_Kampagne_HD.mp4",
+      "Virksomhed_Logo_Sæt_Vektor.eps",
+      "Katalog_Layout_Forside_Udkast.indt",
+      "Sociale_Medier_Indhold_Marts.psd",
+      "Brand_Retningslinjer_Nordic.pdf",
+      "Pressemeddelelse_Billeder_Lokal.zip",
+      "Event_Plakat_Print_Klar.pdf",
+      "Nyhedsbrev_Grafik_Samling.png",
+      "Webside_Ikon_Bibliotek.svg"
+    ],
+    "sample_paths": [
+      "Markedsføring/Aktiver/Billeder/",
+      "Markedsføring/Projekter/Video/",
+      "Markedsføring/Branding/Logoer/",
+      "Markedsføring/Design/Layouts/",
+      "Markedsføring/Digital/Sociale_Medier/",
+      "Markedsføring/Dokumentation/Retningslinjer/",
+      "Markedsføring/PR/Presse/",
+      "Markedsføring/Events/Grafik/",
+      "Markedsføring/Kommunikation/Nyhedsbrev/",
+      "Markedsføring/Web/Ikoner/"
+    ]
+  }
+}

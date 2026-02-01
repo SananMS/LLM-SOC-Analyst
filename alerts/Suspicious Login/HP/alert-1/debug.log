@@ -1,4 +1,4 @@
-=== DEBUG SESSION START: 2026-01-25T16:26:24.776473 UTC ===
+=== DEBUG SESSION START: 2026-01-27T12:18:53.032728 UTC ===
 
 [PLAYBOOK SELECTION]
 Alert Name: User Login Location Anomaly
@@ -9,7 +9,8 @@ Tool: check_ip_reputation
 Arguments: {"ip": "103.1.64.118"}
 
 [TOOL RESPONSE]
-Source IP: 103.1.64.118 | Security Score: 0/100 | ISP: China Unicom Global IP Service | Usage Type: Data Center/Web Hosting/Transit | Privacy Status: Neither VPN nor Proxy nor Tor Node nor Relay
+Error during IP reputation check: Server error '500 Internal Server Error' for url 'https://api.abuseipdb.com/api/v2/check?ipAddress=103.1.64.118&verbose=true'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
 
 [TOOL CALL]
 Tool: get_recent_events
@@ -29,13 +30,14 @@ Arguments: {}
     "Destination IP": "13.80.23.7",
     "Endpoint": "G882941",
     "User": "Elena.Vasiliev@client.ee",
+    "User ID": "3d5c18f1-b93e-42a7-bc6d-2e1f59c8d0a4",
     "Playbook Used": "Suspicious Login Triage",
-    "IP Reputation Score": "0/100",
-    "ISP": "China Unicom Global IP Service",
-    "ISP Usage Type": "Data Center/Web Hosting/Transit",
-    "MFA Used": true,
-    "Recent Confirmed Locations": "Tallinn, Estonia (successful logins on 2025-07-09)",
-    "Description": "A successful Office 365 login for Elena.Vasiliev@client.ee was observed from Singapore, which is outside her recent confirmed region. The login used MFA and the same Windows Azure AD authentication user agent as prior logins, but the source IP is tied to a Data Center/Web Hosting ISP and is not marked as a VPN. There are no prior client-confirmed logins from Singapore and recent activity shows confirmed logins from Tallinn, Estonia. Because the source IP's usage type is high-risk and the country is novel without client confirmation, this alert is considered High Priority."
+    "Login Result": "success",
+    "MFA Status": true,
+    "Geo Location": "Singapore, Singapore",
+    "Recent Login Locations": "Tallinn, Estonia (2025-07-09T08:15:00Z and 2025-07-09T09:00:00Z)",
+    "IP Reputation Check Status": "Failed — external reputation service returned 500 error",
+    "Description": "An Office 365 login for Elena.Vasiliev@client.ee was recorded from Singapore and the login succeeded using the Windows-AzureAD-Authentication-Provider on a Windows host. MFA was present and prior recent successful logins for this user are from Tallinn, Estonia, so Singapore is outside the user's typical region. IP reputation lookup failed and the Singapore location is not regionally plausible relative to prior activity, so this is considered High Priority given the novel country and inability to verify the source IP's trustworthiness despite MFA."
   },
   "classification": "HP"
 }

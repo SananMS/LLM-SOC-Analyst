@@ -1,4 +1,4 @@
-=== DEBUG SESSION START: 2026-01-25T16:30:53.263744 UTC ===
+=== DEBUG SESSION START: 2026-01-27T12:23:24.841339 UTC ===
 
 [PLAYBOOK SELECTION]
 Alert Name: User Login Location Anomaly
@@ -9,7 +9,8 @@ Tool: check_ip_reputation
 Arguments: {"ip": "83.110.250.231"}
 
 [TOOL RESPONSE]
-Source IP: 83.110.250.231 | Security Score: 0/100 | ISP: Emirates Telecommunications Corporation | Usage Type: Fixed Line ISP | Privacy Status: Neither VPN nor Proxy nor Tor Node nor Relay
+Error during IP reputation check: Server error '500 Internal Server Error' for url 'https://api.abuseipdb.com/api/v2/check?ipAddress=83.110.250.231&verbose=true'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
 
 [TOOL CALL]
 Tool: get_recent_events
@@ -30,12 +31,12 @@ Arguments: {}
     "Endpoint": "F12347565",
     "User": "riina.maasik@client.ee",
     "Playbook Used": "Suspicious Login Triage",
+    "Description": "An Office 365 login succeeded from Dubai, UAE for user riina.maasik@client.ee, which is outside the user's typical region. The endpoint is company-managed and MFA was present, and the user has a recent confirmed login from Muscat, Oman (2025-07-30) that was validated by the client, making regional travel plausible. IP reputation and VPN status could not be retrieved due to an API error, but given the managed device, MFA, realistic travel history, and prior analyst confirmation, this activity is assessed as low priority.",
+    "MFA Present": true,
     "Login Result": "success",
-    "Has MFA": true,
-    "Company Managed and Compliant": true,
-    "ISP": "Emirates Telecommunications Corporation",
-    "Security Score": 0,
-    "Description": "An Office 365 login succeeded from Dubai, UAE which is outside the user's usual region. The login used MFA, originated from a company-managed device, and the source IP is a fixed-line ISP with a low security score. There is recent confirmed activity for this user in a nearby country (Muscat, Oman) and a prior similar alert for that activity was closed as a false positive after client confirmation, so regional travel plausibility and low IP risk reduce concern. Based on these observations, this event is assessed as low priority because of MFA, device management, low IP risk, and regional historical context."
+    "Geo Location": "Dubai, UAE",
+    "Recent Confirmed Location": "Muscat, Oman (2025-07-30) - confirmed by client",
+    "IP Reputation Check": "unavailable - API error"
   },
   "classification": "LP"
 }

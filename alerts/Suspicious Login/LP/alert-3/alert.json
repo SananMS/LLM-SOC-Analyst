@@ -19,9 +19,5 @@
       "city": "Istanbul",
       "country": "Turkey"
     }
-  },
-  "technique": {
-    "name": "XDR Location Anomaly",
-    "killchain_stage": "Initial Attempts"
   }
 }

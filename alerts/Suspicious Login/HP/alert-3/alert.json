@@ -17,9 +17,5 @@
       "city": "Saint Petersburg",
       "country": "Russia"
     }
-  },
-  "technique": {
-    "name": "XDR Location Anomaly",
-    "killchain_stage": "Initial Attempts"
   }
 }

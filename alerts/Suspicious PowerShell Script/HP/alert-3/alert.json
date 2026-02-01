@@ -10,9 +10,5 @@
   "evidence": {
     "scriptblock": "New-ItemProperty -Path 'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Run' -Name 'WindowsUpdateSvc' -Value 'powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File C:\\ProgramData\\winupd.ps1' -PropertyType String -Force",
     "os": "Windows Server 2019 Standard"
-  },
-  "technique": {
-    "name": "Registry Run Keys / Startup Folder",
-    "killchain_stage": "Persistence"
   }
 }

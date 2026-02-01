@@ -1,4 +1,4 @@
-=== DEBUG SESSION START: 2026-01-25T16:26:58.419550 UTC ===
+=== DEBUG SESSION START: 2026-01-27T12:19:31.055899 UTC ===
 
 [PLAYBOOK SELECTION]
 Alert Name: User Login Location Anomaly
@@ -9,7 +9,8 @@ Tool: check_ip_reputation
 Arguments: {"ip": "45.78.217.136"}
 
 [TOOL RESPONSE]
-Source IP: 45.78.217.136 | Security Score: 100/100 | ISP: BYTEPLUS | Usage Type: Data Center/Web Hosting/Transit | Privacy Status: Neither VPN nor Proxy nor Tor Node nor Relay
+Error during IP reputation check: Server error '500 Internal Server Error' for url 'https://api.abuseipdb.com/api/v2/check?ipAddress=45.78.217.136&verbose=true'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500
 
 [TOOL CALL]
 Tool: get_recent_events
@@ -29,12 +30,12 @@ Arguments: {}
     "Destination IP": "13.80.23.7",
     "User": "martin.kask@client.ee",
     "Playbook Used": "Suspicious Login Triage",
-    "IP Reputation Score": "100/100",
-    "ISP": "BYTEPLUS",
-    "Usage Type": "Data Center/Web Hosting/Transit",
-    "IP Privacy Status": "Neither VPN nor Proxy nor Tor Node nor Relay",
-    "Last Known Confirmed Location": "Tallinn, Estonia (recent successful logins)",
-    "Description": "Anomalous successful Office 365 login for martin.kask@client.ee was observed from Singapore (45.78.217.136) at 2025-07-17T14:22:15Z and the authentication succeeded without MFA. Enrichment shows the source IP is tied to BYTEPLUS with a Data Center/Web Hosting usage type and a high reputation/security score of 100; recent successful logins for this user are from Tallinn, Estonia. Because the IP is high-risk infrastructure, the country is novel compared to historical activity, and MFA was not used, this event is considered High Priority for further analyst follow-up."
+    "Has MFA": false,
+    "User Agent": "Windows-AzureAD-Authentication-Provider/1.0",
+    "Geo Location": "Singapore, Singapore",
+    "IP Reputation Check Status": "Failed - external reputation service returned 500 error",
+    "Recent Events Summary": "Two recent successful logins for the same user from Tallinn, Estonia (IP 145.14.37.180) earlier on 2025-07-17, both without MFA and using the same user agent.",
+    "Description": "A successful Office 365 login occurred for martin.kask@client.ee from Singapore without MFA, while the user's recent successful logins originated from Tallinn, Estonia. The login location is novel and geographically distant from prior activity, and an IP reputation lookup failed with no device management signals available. Because the country is unconfirmed for this user, MFA was not used, and reputation data is unavailable, this is considered High Priority for follow-up."
   },
   "classification": "HP"
 }

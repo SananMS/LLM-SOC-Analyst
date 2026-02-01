@@ -1,0 +1,16 @@
+{
+  "alert_id": "SOC-66382",
+  "alert_name": "Suspicious PowerShell Script Execution",
+  "start_time": "2026-01-27T11:22:18.992Z",
+  "source_ip": "10.0.4.155",
+  "endpoint": "WKSTN-DEV-19",
+  "user": "t_doe",
+  "user_id": "S-1-5-21-984310-4431",
+  "description": "A suspicious PowerShell script was executed on the host.",
+  "evidence": {
+    "scriptblock": "powershell.exe -NoProfile -NonInteractive -InputFormat None -Command \"Get-AuthenticodeSignature 'C:\\Users\\t_doe\\AppData\\Local\\Postman\\app-10.21.0\\Postman.exe' | ConvertTo-Json -Compress | ForEach-Object { [Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($_)) }\"",
+    "initiating_process": "Postman.exe",
+    "process_sha256": "145c75624d30ef5a088048904ac268d9bb24568df442cc8ab39bceb3cddbb24e",
+    "parent_process": "explorer.exe"
+  }
+}

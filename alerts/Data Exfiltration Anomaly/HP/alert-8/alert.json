@@ -1,0 +1,47 @@
+{
+  "alert_id": "SOC-27420",
+  "alert_name": "Data Exfiltration Anomaly",
+  "start_time": "2026-02-01T20:15:30.000Z",
+  "source_ip": "92.240.64.18",
+  "destination_ip": "40.108.201.15",
+  "endpoint": "RIX-SALES-LAP-22",
+  "user": "Dace.Ozolina@globalcorp.ee",
+  "user_id": "d11o22z3-a44l-55i6-n77a-88b99c00d11e",
+  "description": "An unusual volume of SharePoint file downloads (1,240) was observed from the user, which is higher than their 24-hour baseline.",
+  "evidence": {
+    "workload": "SharePoint",
+    "operation": "FileDownloaded",
+    "site_url": "https://globalcorp.sharepoint.com/sites/Latvija_Klienti_un_Ligumi/",
+    "application": "Office 365 SharePoint Online",
+    "file_count": 1240,
+    "baseline_24h": 45,
+    "geo_location": {
+      "city": "Riga",
+      "country": "Latvia"
+    },
+    "sample_files": [
+      "Klientu_Portfelis_2026_Pilns.xlsx",
+      "Gada_Ligums_Ar_Partneriem.pdf",
+      "Cenu_Lapas_Konfidenciali.csv",
+      "Atlaizu_Struktura_Baltija.xlsx",
+      "Tikshanas_Protokoli_Vadiba.docx",
+      "Potencialie_Klienti_Pipeline.xlsx",
+      "Pakalpojumu_Ligums_Sablons.docx",
+      "Ieņēmumu_Prognoze_Q1_Q4.pdf",
+      "Debitoru_Paradu_Saraksts.csv",
+      "Mārketinga_Stratēģija_Latvija.pdf"
+    ],
+    "sample_paths": [
+      "Klienti/Portfelis/2026/",
+      "Ligumi/Partneri/Arhivs/",
+      "Cenas/Konfidenciali/Lapas/",
+      "Finanses/Atlaides/Baltija/",
+      "Vadiba/Protokoli/Sanaksmes/",
+      "Sales/Pipeline/Potencialie/",
+      "Juridiska/Sabloni/Pakalpojumi/",
+      "Finanses/Prognozes/Ienēmumi/",
+      "Finanses/Paradi/Debitori/",
+      "Strategija/Marketingas/Latvija/"
+    ]
+  }
+}

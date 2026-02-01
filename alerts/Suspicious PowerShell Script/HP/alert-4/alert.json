@@ -10,9 +10,5 @@
   "evidence": {
     "scriptblock": "Get-ChildItem C:\\Users -Recurse -Include *.kdbx,*.pst,*.docx -ErrorAction SilentlyContinue | Select-Object FullName,Length | Export-Csv C:\\ProgramData\\user_cache.csv -NoTypeInformation",
     "os": "Windows Server 2019 Standard"
-  },
-  "technique": {
-    "name": "File and Directory Discovery",
-    "killchain_stage": "Discovery"
   }
 }

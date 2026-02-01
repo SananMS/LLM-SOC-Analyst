@@ -1,0 +1,18 @@
+[
+  {
+    "event_time": "2026-01-27T13:44:02.000Z",
+    "event_name": "UserGroupDiscovery",
+    "user": "s_keller",
+    "source_ip": "10.50.11.92",
+    "command_line": "net localgroup administrators"
+  },
+  {
+    "event_time": "2026-01-27T13:44:45.000Z",
+    "event_name": "ProcessAccess",
+    "user": "s_keller",
+    "source_ip": "10.50.11.92",
+    "target_process": "lsass.exe",
+    "granted_access": "0x1fffff",
+    "call_stack": "C:\\Windows\\System32\\ntdll.dll+0xa1b2|C:\\Windows\\System32\\kernelbase.dll+0x23c4"
+  }
+]

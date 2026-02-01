@@ -10,9 +10,5 @@
   "evidence": {
     "scriptblock": "$l = (Get-Process lsass).Id\nrundll32.exe C:\\Windows\\System32\\comsvcs.dll, MiniDump $l C:\\Windows\\Temp\\debug_report.log full",
     "os": "Windows Server 2019 Standard"
-  },
-  "technique": {
-    "name": "LSASS Memory",
-    "killchain_stage": "Credential Access"
   }
 }
