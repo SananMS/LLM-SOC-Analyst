@@ -1,0 +1,75 @@
+=== DEBUG SESSION START: 2026-02-06T16:21:49.312364+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: DNS Tunneling Anomaly
+Selected Playbook: suspicious_dns_queries.json
+
+[TOOL CALL]
+Tool: get_domain_age
+Arguments: {"domain": "x1j2k3-v9.biz"}
+
+[TOOL RESPONSE]
+Domain: x1j2k3-v9.biz | Created: 2026-02-05 | Age: 1 days old.
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+[
+  {
+    "event_time": "2026-02-06T17:40:00.000Z",
+    "source_ip": "10.150.22.201",
+    "query": "a9z8y7-v1.biz",
+    "query_type": "A",
+    "status": "NXDOMAIN"
+  },
+  {
+    "event_time": "2026-02-06T17:42:15.000Z",
+    "source_ip": "10.150.22.201",
+    "query": "b8x7w6-v2.biz",
+    "query_type": "A",
+    "status": "NXDOMAIN"
+  },
+  {
+    "event_time": "2026-02-06T17:44:00.000Z",
+    "source_ip": "10.150.22.201",
+    "query": "x1j2k3-v9.biz",
+    "query_type": "A",
+    "status": "NOERROR"
+  }
+]
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14571",
+    "Start Time": "2026-02-06T17:45:10.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.150.22.201",
+    "Destination IP": "203.0.113.42",
+    "Endpoint": "srv-sql-core-01",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Normalized Root Domain": "x1j2k3-v9.biz",
+    "Domain Age": "Created 2026-02-05 (1 days old)",
+    "Observed Query Type": "TXT",
+    "Byte Anomaly": "2420 actual bytes vs 12 typical bytes",
+    "Decoded Payloads": [
+      "SELECT config, value FROM syscfg.",
+      "DBPASS_encrypted=abc1234567890",
+      "admin_email=soc_mgr@corp.com",
+      "SSL_C_KEY_bf4412c4aaabbccdd"
+    ],
+    "Recent Events Summary": "Multiple prior queries from the same source IP to similarly structured, randomly named .biz domains (two NXDOMAINs followed by a NOERROR for x1j2k3-v9.biz within the same 5-minute window). No recent similar alerts found in the alert history.",
+    "Description": "A high-entropy DNS TXT stream from srv-sql-core-01 to x1j2k3-v9.biz carried Base64-like subdomain labels that decode to SQL queries, credential-like strings, an admin email, and an SSL key identifier. The root domain was registered 1 day ago and the host showed rapid queries to similarly named domains immediately prior to this event, which together strongly suggest active data exfiltration rather than benign diagnostics. Given the presence of decoded sensitive host/credential artifacts and the domain's newness, this alert is prioritized as High Priority."
+  },
+  "classification": "HP"
+}
+

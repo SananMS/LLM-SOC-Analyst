@@ -1,0 +1,23 @@
+{
+  "alert_id": "SOC-14568",
+  "alert_name": "DNS Tunneling Anomaly",
+  "start_time": "2026-02-06T11:20:00.000Z",
+  "source_ip": "10.200.15.44",
+  "destination_ip": "104.21.41.202",
+  "endpoint": "dev-linux-node-03",
+  "description": "An anomalously large amount (412 Bytes) of tunneled, high-entropy traffic through DNS (domain: github-status.com) was observed.",
+  "evidence": {
+    "workload": "Network",
+    "application": "DNS",
+    "query_type": "TXT",
+    "actual_bytes": 412,
+    "typical_bytes": 22,
+    "sample_queries": [
+      "70-61-73-73-77-6f-72-64.github-status.com",
+      "3d-53-74-72-6f-6e-67-21.github-status.com",
+      "61-64-6d-69-6e-2d-64-62.github-status.com",
+      "node-03.github-status.com",
+      "health-check-01.github-status.com"
+    ]
+  }
+}

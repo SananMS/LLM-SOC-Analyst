@@ -1,0 +1,23 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10243",
+    "Start Time": "2026-01-16T16:51:45.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.150.22.41",
+    "Destination IP": "158.20.144.11",
+    "Endpoint": "dc-prod-02",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Sample Queries": [
+      "root-key-sentinel-is-ta-42911.0ds-u9b22a1f-d12-c90-s1768557820.eu.dotnxdomain.net",
+      "0du-v7a33b2c-e55-f81-s1768557820-i9ccba1bc-0.eu.dotnxdomain.net",
+      "04u-w1d88e4f-g22-h33-s1768557820-j0ddfe1bc-0.eu.dotnxdomain.net",
+      "nseu.dotnxdomain.net",
+      "rs.dotnxdomain.net"
+    ],
+    "Domain Age": "dotnxdomain.net — Created 2012-09-04 (approx. 4903 days)",
+    "Recent Events Count": "6 (includes prior eu.dotnxdomain.net and sentinel-style queries from same host)",
+    "Recent Similar Alerts": "None found",
+    "Description": "The alert was triggered by multiple high-entropy DNS queries under dotnxdomain.net, including sentinel-style subdomains and region identifiers (eu). The root domain is long-established (created 2012) and the subdomain patterns appear consistent with diagnostic/monitoring naming rather than obvious Base64-encoded exfiltration; no decoded sensitive host strings were found. Correlation shows the host has recent legitimate DNS activity and there are no prior similar alerts, so this is assessed as Low Priority due to benign indicators and the mature domain age."
+  },
+  "classification": "LP"
+}

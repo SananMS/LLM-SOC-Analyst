@@ -1,0 +1,44 @@
+[
+  {
+    "event_time": "2026-01-26T06:08:32.000Z",
+    "source_ip": "10.44.12.198",
+    "query": "raw.githubusercontent.com",
+    "query_type": "A",
+    "status": "NOERROR"
+  },
+  {
+    "event_time": "2026-01-26T06:08:38.000Z",
+    "source_ip": "10.44.12.198",
+    "query": "checkip.amazonaws.com",
+    "query_type": "A",
+    "status": "NOERROR"
+  },
+  {
+    "event_time": "2026-01-26T06:11:05.000Z",
+    "source_ip": "10.44.12.198",
+    "query": "tiktokcdn.com",
+    "query_type": "NS",
+    "status": "NOERROR"
+  },
+  {
+    "event_time": "2026-01-26T06:12:15.000Z",
+    "source_ip": "10.44.12.198",
+    "query": "v1.056f3f10a64f61b1dbbd2998bf6cee11642a587f.tiktokcdn.com",
+    "query_type": "A",
+    "status": "NOERROR"
+  },
+  {
+    "event_time": "2026-01-26T06:13:02.000Z",
+    "source_ip": "10.44.12.198",
+    "query": "v2.8e22c1b0dcf755eddb8af294a373c0b87b249866.tiktokcdn.com",
+    "query_type": "A",
+    "status": "NOERROR"
+  },
+  {
+    "event_time": "2026-01-26T06:13:30.000Z",
+    "source_ip": "10.44.12.198",
+    "query": "v3.a4f129d33b21c44e9281a772f9100d281a7b42f1.tiktokcdn.com",
+    "query_type": "A",
+    "status": "NOERROR"
+  }
+]

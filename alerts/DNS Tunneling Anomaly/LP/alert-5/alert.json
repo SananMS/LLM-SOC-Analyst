@@ -1,0 +1,23 @@
+{
+  "alert_id": "SOC-10243",
+  "alert_name": "DNS Tunneling Anomaly",
+  "start_time": "2026-01-16T16:51:45.000Z",
+  "source_ip": "10.150.22.41",
+  "destination_ip": "158.20.144.11",
+  "endpoint": "dc-prod-02",
+  "description": "An anomalously large amount (574 Bytes) of tunneled, high-entropy traffic through DNS (domain: dotnxdomain.net) was observed.",
+  "evidence": {
+    "workload": "Network",
+    "application": "DNS",
+    "query_type": "A",
+    "actual_bytes": 574,
+    "typical_bytes": 28,
+    "sample_queries": [
+      "root-key-sentinel-is-ta-42911.0ds-u9b22a1f-d12-c90-s1768557820.eu.dotnxdomain.net",
+      "0du-v7a33b2c-e55-f81-s1768557820-i9ccba1bc-0.eu.dotnxdomain.net",
+      "04u-w1d88e4f-g22-h33-s1768557820-j0ddfe1bc-0.eu.dotnxdomain.net",
+      "nseu.dotnxdomain.net",
+      "rs.dotnxdomain.net"
+    ]
+  }
+}

@@ -75,7 +75,7 @@ async def soc_analyst_role(alert_json, playbook_content, playbook_filename, mcp_
         "Use the template above as a guide. If a specific field within the template guide "
         "does not exist or cannot be found in the alert evidence, do not include it in the final output. "
         "You may include up to 4-5 additional relevant keys inside investigation_notes, "
-        "but only if they are truly needed, make sense, and would be useful for solving the ticket in a system like JIRA. "
+        "but only if they are truly needed, make sense, and provide actionable value for a client or a SOC analyst solving the ticket in a system like JIRA. "
         "Keep all fields single-level (no nested objects inside extra fields). "
         "All keys inside investigation_notes must be written in clear, regular English with spaces "
         "(e.g., 'IP Reputation Score', not snake_case or underscored keys). "
@@ -95,6 +95,7 @@ async def soc_analyst_role(alert_json, playbook_content, playbook_filename, mcp_
     tools = [
         {"type": "function", "function": {"name": "check_ip_reputation", "parameters": {"type": "object", "properties": {"ip": {"type": "string"}}, "required": ["ip"]}}},
         {"type": "function", "function": {"name": "check_hash_reputation", "parameters": {"type": "object", "properties": {"hash": {"type": "string"}}, "required": ["hash"]}}},
+        {"type": "function", "function": {"name": "get_domain_age", "parameters": {"type": "object", "properties": {"domain": {"type": "string"}}, "required": ["domain"]}}},
         {"type": "function", "function": {"name": "lookup_users", "parameters": {"type": "object", "properties": {"emails": {"type": "array", "items": {"type": "string"}}}, "required": ["emails"]}}},
         {"type": "function", "function": {"name": "get_recent_events", "parameters": {"type": "object", "properties": {}}}},
         {"type": "function", "function": {"name": "get_recent_similar_alerts", "parameters": {"type": "object", "properties": {}}}}
@@ -119,7 +120,7 @@ async def soc_analyst_role(alert_json, playbook_content, playbook_filename, mcp_
         messages.append(msg)
 
         # Define which tools live on the MCP server to avoid crashing on hallucinations
-        mcp_tool_whitelist = ["check_ip_reputation", "check_hash_reputation", "lookup_users"]
+        mcp_tool_whitelist = ["check_ip_reputation", "check_hash_reputation", "lookup_users", "get_domain_age"]
 
         for tc in msg.tool_calls:
             f_name = tc.function.name

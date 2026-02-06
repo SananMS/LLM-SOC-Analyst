@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14569",
+    "Start Time": "2026-02-06T15:22:10.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.150.22.110",
+    "Destination IP": "162.255.119.41",
+    "Endpoint": "srv-linux-prod-db",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Description": "Anomalously large, high-entropy DNS TXT traffic was observed for the domain cdn-check-cache.top with multiple base64-like subdomains. The root domain was created 2026-02-03 (≈3 days old) and decoded subdomain payloads contain sensitive artifacts including an RSA private key header, apparent credentials, and an SSH key backup filename, indicating likely data exfiltration. Based on the newly registered domain and the presence of sensitive host data in decoded payloads, this alert is escalated as High Priority.",
+    "Root Domain Age": "3 days (created 2026-02-03)",
+    "Decoded Payloads": "Decoded subdomains reveal: '-----BEGIN RSA PRIVATE KEY-----', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)', 'admin:aA23b3bb4cc5dd6eefgg77hh' (apparent credentials), and 'ssh-key-backup-2026.tar.gz'.",
+    "Sample Query Count": "4",
+    "Recent Host Events": "Recent DNS queries from host include github.com (A) at 2026-02-06T15:15:00Z and an NS query to cdn-check-cache.top at 2026-02-06T15:20:05Z.",
+    "Recent Similar Alerts": "No recent similar alerts found"
+  },
+  "classification": "HP"
+}

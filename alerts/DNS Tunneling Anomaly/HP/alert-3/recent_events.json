@@ -1,0 +1,16 @@
+[
+  {
+    "event_time": "2026-02-06T15:15:00.000Z",
+    "source_ip": "10.150.22.110",
+    "query": "github.com",
+    "query_type": "A",
+    "status": "NOERROR"
+  },
+  {
+    "event_time": "2026-02-06T15:20:05.000Z",
+    "source_ip": "10.150.22.110",
+    "query": "cdn-check-cache.top",
+    "query_type": "NS",
+    "status": "NOERROR"
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "alert_id": "SOC-10234",
+  "alert_name": "DNS Tunneling Anomaly",
+  "start_time": "2026-02-06T09:58:16.000Z",
+  "source_ip": "192.168.153.249",
+  "destination_ip": "172.16.40.3",
+  "endpoint": "srv-prod-infra-01",
+  "description": "An anomalously large amount (313 Bytes) of tunneled, high-entropy traffic through DNS (domain: sharepoint.com) was observed.",
+  "evidence": {
+    "workload": "Network",
+    "application": "DNS",
+    "query_type": "CNAME",
+    "actual_bytes": 313,
+    "typical_bytes": 50,
+    "sample_queries": [
+      "9941-v4v6-cdn.glob-zone.dprod.sharepoint.com",
+      "102934-v4v6-farm.cluster01.sharepointonline.com.akadns.net",
+      "edge-standard-001.msedge.net",
+      "prod-relay-af-092.spo-msedge.net",
+      "tenant-files-api.sharepoint.com.res.office365.com",
+      "storage-blob-v12.dprodmgd.aa-rt.sharepoint.com",
+      "ns-priority-1.spo-msedge.net"
+    ]
+  }
+}

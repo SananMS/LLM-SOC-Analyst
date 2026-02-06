@@ -1,0 +1,48 @@
+=== DEBUG SESSION START: 2026-02-06T16:24:22.792772+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: DNS Tunneling Anomaly
+Selected Playbook: 'suspicious_dns_queries.json'
+
+[TOOL CALL]
+Tool: get_domain_age
+Arguments: {"domain": "dnsjedi.org"}
+
+[TOOL RESPONSE]
+Domain: dnsjedi.org | Created: 2014-07-03 | Age: 4236 days old.
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10241",
+    "Start Time": "2026-02-06T13:45:10.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "192.168.177.244",
+    "Destination IP": "19.240.126.129",
+    "Endpoint": "host-812-workstation",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Description": "High-entropy, large DNS A queries (953 bytes vs typical 46 bytes) were observed targeting dnsjedi.org, with sample subdomains that include diagnostic-like names (e.g., node-east-04, latency-check-v4). The root domain dnsjedi.org is long-established (created 2014-07-03) and inspection of the subdomain strings did not reveal Base64-encoded payloads or decoded content containing system paths or credentials. No recent events or similar alerts were found for this host, so the activity is assessed as Low Priority because the aged domain and diagnostic naming reduce the likelihood of newly created infrastructure for exfiltration and no sensitive payloads were identified."
+  ,
+    "Root Domain": "dnsjedi.org",
+    "Root Domain Age (days)": 4236,
+    "Observed Bytes vs Typical": "953 vs 46",
+    "Recent Events": "No recent events found for this host",
+    "Recent Similar Alerts": "No recent similar alerts found"
+  },
+  "classification": "LP"
+}
+

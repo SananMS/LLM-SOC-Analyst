@@ -1,0 +1,22 @@
+{
+  "alert_id": "SOC-14567",
+  "alert_name": "DNS Tunneling Anomaly",
+  "start_time": "2026-02-06T14:30:10.000Z",
+  "source_ip": "10.150.22.105",
+  "destination_ip": "45.15.201.33",
+  "endpoint": "srv-prod-web-01",
+  "description": "An anomalously large amount (2,140 Bytes) of tunneled, high-entropy traffic through DNS (domain: update-check-cdn.xyz) was observed.",
+  "evidence": {
+    "workload": "Network",
+    "application": "DNS",
+    "query_type": "TXT",
+    "actual_bytes": 2140,
+    "typical_bytes": 15,
+    "sample_queries": [
+      "ZmlsZW5hbWU9c2hhZG93LmJhaw.update-check-cdn.xyz",
+      "Y2h1bms9MDF8ZGF0YT1IZWxsbyU.update-check-cdn.xyz",
+      "Y2h1bms9MDJ8ZGF0YT0yMHdvcmxk.update-check-cdn.xyz",
+      "Y2h1bms9MDN8ZGF0YT1leGZpbA.update-check-cdn.xyz"
+    ]
+  }
+}

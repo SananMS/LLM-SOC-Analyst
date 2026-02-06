@@ -1,0 +1,22 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10242",
+    "Start Time": "2026-01-22T06:13:41.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.44.12.198",
+    "Destination IP": "184.28.193.72",
+    "Endpoint": "wkst-mktg-prod-04",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Root Domain": "tiktokcdn.com",
+    "Root Domain Creation Date": "2017-09-20",
+    "Root Domain Age (days)": "3061",
+    "Sample Queries Count": 5,
+    "Actual Bytes": 535,
+    "Typical Bytes": 29,
+    "Recent Host Event Count": 6,
+    "Base64 Indicators Found": "No",
+    "Recent Similar Alerts": "No recent similar alerts found",
+    "Description": "The alert was triggered by an unusually large DNS transaction (535 bytes) for domain tiktokcdn.com and high-entropy queries listed in sample_queries. The root domain tiktokcdn.com is long-established (created 2017) and the observed subdomains match common CDN naming conventions rather than Base64-encoded payloads or system file indicators; no decoded sensitive host strings were found. Recent host activity shows prior and repeated queries to tiktokcdn.com and several v*-prefixed subdomains, indicating recurring CDN use from this endpoint. Given the domain age, benign subdomain patterns, and historical host behavior, this is assessed as Low Priority."
+  },
+  "classification": "LP"
+}

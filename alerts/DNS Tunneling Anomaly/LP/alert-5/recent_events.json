@@ -1,0 +1,44 @@
+[
+  {
+    "event_time": "2026-02-06T16:40:12.000Z",
+    "source_ip": "10.150.22.41",
+    "query": "ctldl.windowsupdate.com",
+    "query_type": "A",
+    "status": "NOERROR"
+  },
+  {
+    "event_time": "2026-02-06T16:42:05.000Z",
+    "source_ip": "10.150.22.41",
+    "query": "time.cloudflare.com",
+    "query_type": "A",
+    "status": "NOERROR"
+  },
+  {
+    "event_time": "2026-02-06T16:44:30.000Z",
+    "source_ip": "10.150.22.41",
+    "query": "static.fastly.net",
+    "query_type": "CNAME",
+    "status": "NOERROR"
+  },
+  {
+    "event_time": "2026-02-06T16:48:10.000Z",
+    "source_ip": "10.150.22.41",
+    "query": "eu.dotnxdomain.net",
+    "query_type": "NS",
+    "status": "NOERROR"
+  },
+  {
+    "event_time": "2026-02-06T16:51:39.000Z",
+    "source_ip": "10.150.22.41",
+    "query": "root-key-sentinel-is-ta-42911.0ds-u9b22a1f-d12-c90-s1768557820.eu.dotnxdomain.net",
+    "query_type": "A",
+    "status": "NOERROR"
+  },
+  {
+    "event_time": "2026-02-06T16:51:42.000Z",
+    "source_ip": "10.150.22.41",
+    "query": "0du-v7a33b2c-e55-f81-s1768557820-i9ccba1bc-0.eu.dotnxdomain.net",
+    "query_type": "A",
+    "status": "NOERROR"
+  }
+]

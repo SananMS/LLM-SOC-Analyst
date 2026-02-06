@@ -5,6 +5,8 @@ import base64
 from dotenv import load_dotenv
 from mcp.server.fastmcp import FastMCP
 import json
+# Change these imports to be explicit
+from datetime import datetime, UTC
 
 # Load API keys from .env file
 load_dotenv()
@@ -14,6 +16,40 @@ VPNAPI_KEY = os.getenv("VPNAPI_KEY")
 
 mcp = FastMCP("Live-SOC-Tools")
 
+@mcp.tool()
+async def get_domain_age(domain: str) -> str:
+    """
+    Retrieve the age of a domain from the local domain_age.json file.
+    The file must be in the same folder as mcp_server.py.
+    """
+    file_path = os.path.join(os.path.dirname(__file__), "domain_age.json")
+    
+    if not os.path.exists(file_path):
+        return f"Error: {file_path} not found. Ensure the database exists."
+
+    try:
+        with open(file_path, "r", encoding="utf-8") as f:
+            domain_db = json.load(f)
+        
+        domain_info = domain_db.get(domain.lower())
+
+        if not domain_info:
+            return f"Domain '{domain}' not found in local database. Treat as Unknown/Suspicious."
+
+        creation_date = domain_info.get("creation_date", "Unknown")
+        
+        if creation_date != "Unknown":
+            # Now 'datetime.strptime' works because we imported the class specifically
+            creation_dt = datetime.strptime(creation_date, "%Y-%m-%d").replace(tzinfo=UTC)
+            now = datetime.now(UTC)
+            age_days = (now - creation_dt).days
+            return f"Domain: {domain} | Created: {creation_date} | Age: {age_days} days old."
+        
+        return f"Domain: {domain} | Created: Unknown | Age: Unknown"
+
+    except Exception as e:
+        return f"Error reading domain_age.json: {str(e)}"
+        
 @mcp.tool()
 async def lookup_users(emails: list[str]) -> str:
     """

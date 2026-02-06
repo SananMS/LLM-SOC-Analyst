@@ -1,0 +1,22 @@
+{
+  "alert_id": "SOC-14571",
+  "alert_name": "DNS Tunneling Anomaly",
+  "start_time": "2026-02-06T17:45:10.000Z",
+  "source_ip": "10.150.22.201",
+  "destination_ip": "203.0.113.42",
+  "endpoint": "srv-sql-core-01",
+  "description": "An anomalously large amount (2,420 Bytes) of tunneled, high-entropy traffic through DNS (domain: x1j2k3-v9.biz) was observed.",
+  "evidence": {
+    "workload": "Network",
+    "application": "DNS",
+    "query_type": "TXT",
+    "actual_bytes": 2420,
+    "typical_bytes": 12,
+    "sample_queries": [
+      "U0VMRUNUIGNvbmZpZywgdmFsdWUgRlJPTSBzeXNjZmcu.x1j2k3-v9.biz",
+      "REJQQVNTX2VuY3J5cHRlZD1hYmMxMjM0NTY3ODkw.x1j2k3-v9.biz",
+      "YWRtaW5fZW1haWw9c29jX21nckBjb3JwLmNvbQ.x1j2k3-v9.biz",
+      "U1NMX0NfS0VZX2JmNDQxMmM0YWFhYmJjY2Rk.x1j2k3-v9.biz"
+    ]
+  }
+}

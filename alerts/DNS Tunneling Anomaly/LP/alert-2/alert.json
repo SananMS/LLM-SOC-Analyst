@@ -1,0 +1,24 @@
+{
+  "alert_id": "SOC-10238",
+  "alert_name": "DNS Tunneling Anomaly",
+  "start_time": "2026-02-06T16:15:22.000Z",
+  "source_ip": "192.168.1.22",
+  "destination_ip": "172.16.40.3",
+  "endpoint": "wkst-dev-14",
+  "description": "An anomalously large amount (580 Bytes) of tunneled, high-entropy traffic through DNS (domain: mdnplay.dev) was observed.",
+  "evidence": {
+    "workload": "Network",
+    "application": "DNS",
+    "query_type": "A",
+    "actual_bytes": 580,
+    "typical_bytes": 38,
+    "sample_queries": [
+      "056f3f10a64f61b1dbbd2998bf6cee11642a587f.mdnplay.dev",
+      "8e22c1b0dcf755eddb8af294a373c0b87b249866.mdnplay.dev",
+      "a4f129d33b21c44e9281a772f9100d281a7b42f1.mdnplay.dev",
+      "c99a1122bb33cc44dd55ee66ff77889900aabbcc.mdnplay.dev",
+      "f230918230918230918230918230918230918230.mdnplay.dev",
+      "build-meta-056f3f10a64f61b1dbbd2998bf6cee11.mdnplay.dev"
+    ]
+  }
+}
