@@ -54,6 +54,7 @@ async def get_domain_age(domain: str) -> str:
 async def lookup_users(emails: list[str]) -> str:
     """
     Search for user details in the local users.json file based on a list of emails.
+    Comparison is case-insensitive.
     """
     file_path = os.path.join(os.path.dirname(__file__), "users.json")
     
@@ -64,12 +65,17 @@ async def lookup_users(emails: list[str]) -> str:
         with open(file_path, "r", encoding="utf-8") as f:
             users_db = json.load(f)
         
-        # Ensure users_db is a list
         if not isinstance(users_db, list):
             return "Error: users.json format is invalid. Expected a list of user objects."
 
-        # Filter users matching the provided emails
-        found_users = [u for u in users_db if u.get("email") in emails]
+        # 1. Normalize input emails to lowercase
+        normalized_input_emails = [email.casefold() for email in emails]
+
+        # 2. Filter users by comparing normalized email strings
+        found_users = [
+            u for u in users_db 
+            if u.get("email") and u.get("email").casefold() in normalized_input_emails
+        ]
 
         if not found_users:
             return f"No users found for emails: {', '.join(emails)}"

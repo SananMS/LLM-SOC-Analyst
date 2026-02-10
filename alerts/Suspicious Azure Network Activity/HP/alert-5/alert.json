@@ -1,0 +1,29 @@
+{
+  "alert_id": "SOC-99803",
+  "alert_name": "Azure Network Security Modification",
+  "start_time": "2026-02-10T22:50:00.000Z",
+  "description": "A suspicious Azure activity was detected. This detection was triggered by a rule with the following description:\"Identifies when a network security configuration is modified or deleted.\"",
+  "evidence": {
+    "principalId": "a1k2k3v4-b5i6-4a7b-8c9d-0e1f2a3b4c5d",
+    "principalType": "User",
+    "role": "Contributor",
+    "scope": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-baltic-prod-core/providers/Microsoft.Network/virtualNetworks/vnet-tallinn-prod-01/virtualNetworkPeerings/peering-to-central-soc",
+    "operationName": "MICROSOFT.NETWORK/VIRTUALNETWORKS/VIRTUALNETWORKPEERINGS/DELETE",
+    "correlationId": "b2c3d4e5-f6a7-8b9c-0d1e-2d3a4b5c6d7e",
+    "resultSignature": "Succeeded",
+    "caller_ip": "194.126.101.99",
+    "caller_ip_geo": {
+      "city": "Tallinn",
+      "countryCode": "EE",
+      "countryName": "Estonia",
+      "region": "Harju County"
+    },
+    "claims": {
+      "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name": "andrus.kivi@globalcorp.ee",
+      "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn": "andrus.kivi@globalcorp.ee",
+      "http://schemas.microsoft.com/claims/authnmethodsreferences": "pwd,mfa",
+      "ipaddr": "194.126.101.99",
+      "name": "Andrus Kivi"
+    }
+  }
+}

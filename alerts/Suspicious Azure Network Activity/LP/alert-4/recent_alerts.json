@@ -1,0 +1,15 @@
+[
+  {
+    "alert_id": "SOC-22456",
+    "alert_name": "User Login Location Anomaly",
+    "start_time": "2026-02-09T12:30:00.000Z",
+    "source_ip": "102.89.1.20",
+    "destination_ip": "13.80.23.7",
+    "user": "olumide.adeyemi@globalcorp.ee",
+    "geo_location": {
+      "city": "Lagos",
+      "country": "Nigeria"
+    },
+    "analyst_comment": "Alert closed as FP. Confirmed by client: User is back to their home country Nigeria for a month."
+  }
+]

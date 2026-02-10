@@ -1,0 +1,53 @@
+=== DEBUG SESSION START: 2026-02-10T22:23:42.625665+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Azure Network Security Modification
+Selected Playbook: 'suspicious_cloud_network_activity.json'
+
+[TOOL CALL]
+Tool: lookup_users
+Arguments: {"emails": ["margus.tamm@eestitehnika.ee"]}
+
+[TOOL RESPONSE]
+[
+  {
+    "email": "margus.tamm@eestitehnika.ee",
+    "full_name": "Margus Tamm",
+    "department": "IT Operations",
+    "role": "Cloud Infrastructure Administrator"
+  }
+]
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-22550",
+    "Start Time": "2026-01-22T14:12:40.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "194.126.101.99",
+    "Endpoint": "vnet-tallinn-prod-01",
+    "User": "margus.tamm@eestitehnika.ee",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Resource": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-baltic-prod-connectivity/providers/Microsoft.Network/virtualNetworks/vnet-tallinn-prod-01",
+    "Operation": "MICROSOFT.NETWORK/VIRTUALNETWORKS/DELETE",
+    "User Role": "Cloud Infrastructure Administrator (Owner)",
+    "Caller Location": "Tallinn, Estonia (EE)",
+    "Description": "A delete operation was initiated against the production virtual network vnet-tallinn-prod-01 by margus.tamm@eestitehnika.ee. The actor is identified as a Cloud Infrastructure Administrator and the activity originated from an Estonian IP (Tallinn) at 16:12 local time, which is within normal working hours. There is no request_body available for rule-delta analysis and no recent correlated events or similar alerts; given the legitimate admin role, expected geolocation, and timing, this is classified as Low Priority (LP)."
+  },
+  "classification": "LP"
+}
+

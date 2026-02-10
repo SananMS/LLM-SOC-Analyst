@@ -1,0 +1,26 @@
+=== DEBUG SESSION START: 2026-02-10T22:22:31.844791+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Azure Network Security Modification
+Selected Playbook: 'suspicious_cloud_network_activity.json'
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14600",
+    "Start Time": "2026-10-18T14:16:17.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Resource ID": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-nordic-prod-001/providers/Microsoft.Network/networkSecurityGroups/nsg-aks-prod-northeast",
+    "Endpoint": "nsg-aks-prod-northeast",
+    "Destination IP": "40.113.112.55",
+    "User": "ServicePrincipal: 7f2a8c12-3391-4e1a-b672-9d3c11bc99a1",
+    "Principal Type": "ServicePrincipal",
+    "Role": "Contributor",
+    "Resource Group": "rg-nordic-prod-001",
+    "Local Time (EEST)": "2026-10-18T17:16:17+03:00",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Description": "A Network Security Group change was made to nsg-aks-prod-northeast by a ServicePrincipal with Contributor privileges at 17:16 EEST, which is within normal Tallinn business hours. The request_body shows a Deny rule blocking numerous Russian IP ranges and an Allow rule permitting inbound HTTP/HTTPS to the load balancer IP 40.113.112.55, indicating restriction plus expected public web access rather than exposure of management ports. Given the legitimate service principal identity, timing during working hours, and evidence of hardening and acceptable web traffic rules, this activity is assessed as Low Priority."
+  },
+  "classification": "LP"
+}
+

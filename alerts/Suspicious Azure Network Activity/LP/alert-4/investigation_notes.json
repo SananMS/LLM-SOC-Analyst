@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-22700",
+    "Start Time": "2026-02-10T12:30:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "102.89.1.20",
+    "User": "olumide.adeyemi@globalcorp.ee",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Role": "Owner",
+    "Scope": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-baltic-prod-connectivity/providers/Microsoft.Network/virtualNetworks/vnet-tallinn-prod-01",
+    "Operation Name": "MICROSOFT.NETWORK/VIRTUALNETWORKS/DELETE",
+    "Caller Location": "Lagos, Nigeria",
+    "User Job Title": "IT System Administrator",
+    "Description": "The alert records a delete operation for virtual network vnet-tallinn-prod-01 in rg-baltic-prod-connectivity initiated by olumide.adeyemi@globalcorp.ee from IP 102.89.1.20 (Lagos, NG). The user is an IT System Administrator with Owner privileges and the action occurred at 2026-02-10 14:30 EET, which is within Estonian working hours; a recent similar alert involving the same IP (SOC-22456) was closed as a false positive after the user was confirmed to be in Nigeria temporarily. Because the identity, role, timing, and prior confirmation of travel align with the activity, this alert is assessed as Low Priority even though it affected a production resource."
+  },
+  "classification": "LP"
+}

@@ -82,5 +82,29 @@
     "full_name": "Tiina Koppel",
     "department": "R&D",
     "role": "Head of Research & Development"
+  },
+  {
+    "email": "margus.tamm@eestitehnika.ee",
+    "full_name": "Margus Tamm",
+    "department": "IT Operations",
+    "role": "Cloud Infrastructure Administrator"
+  },
+  {
+    "email": "olumide.adeyemi@globalcorp.ee",
+    "full_name": "Olumide Adeyemi",
+    "department": "IT Operations",
+    "role": "IT System Administrator"
+  },
+  {
+    "email": "mateo.rodriguez@globalcorp.ee",
+    "full_name": "Mateo Rodriguez",
+    "department": "Architecture & Infrastructure",
+    "role": "Senior DevOps Engineer"
+  },
+  {
+    "email": "andrus.kivi@globalcorp.ee",
+    "full_name": "Andrus Kivi",
+    "department": "Supply Chain & Logistics",
+    "role": "Regional Logistics Coordinator"
   }
 ]

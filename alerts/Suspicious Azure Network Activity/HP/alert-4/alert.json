@@ -1,0 +1,34 @@
+{
+  "alert_id": "SOC-99500",
+  "alert_name": "Azure Network Security Modification",
+  "start_time": "2026-02-10T21:15:00.000Z",
+  "description": "A suspicious Azure activity was detected. This detection was triggered by a rule with the following description:\"Identifies when a network security configuration is modified or deleted.\"",
+  "evidence": {
+    "principalId": "a1i2v3a4-n5o6-4a7b-8c9d-0e1f2a3b4c5d",
+    "principalType": "User",
+    "role": "Owner",
+    "roleAssignmentId": "4f5e6d7c-8b9a-0123-4567-89abcdef0123",
+    "roleAssignmentScope": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566",
+    "roleDefinitionId": "b24988ac-6180-42a0-ab88-20f7382dd24c",
+    "scope": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-baltic-prod-data/providers/Microsoft.Network/networkSecurityGroups/nsg-prod-db-cluster",
+    "operationName": "MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/WRITE",
+    "correlationId": "b2c3d4e5-f6a7-8b9c-0d1e-2f3a4b5c6d7e",
+    "resultSignature": "Succeeded",
+    "caller_ip": "82.102.15.144",
+    "caller_ip_geo": {
+      "city": "Tallinn",
+      "countryCode": "EE",
+      "countryName": "Estonia",
+      "region": "Harju County"
+    },
+    "claims": {
+      "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name": "aleksei.ivanov@globalcorp.ee",
+      "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn": "aleksei.ivanov@globalcorp.ee",
+      "http://schemas.microsoft.com/claims/authnmethodsreferences": "pwd,mfa",
+      "http://schemas.microsoft.com/identity/claims/tenantid": "d1c2b3a4-e5f6-7a8b-9c0d-1e2f3a4b5c6d",
+      "ipaddr": "82.102.15.144",
+      "name": "Aleksei Ivanov"
+    },
+    "request_body": "{\"properties\":{\"securityRules\":[{\"name\":\"Allow_LB_HealthCheck_Internal\",\"properties\":{\"access\":\"Allow\",\"description\":\"Routine synchronization for load balancer health probes\",\"destinationAddressPrefix\":\"10.0.5.2\",\"destinationPortRange\":\"443\",\"direction\":\"Inbound\",\"priority\":100,\"protocol\":\"Tcp\",\"sourceAddressPrefix\":\"*\"}}]}}"
+  }
+}

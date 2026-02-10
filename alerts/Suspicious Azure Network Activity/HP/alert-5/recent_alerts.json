@@ -1,0 +1,43 @@
+[
+  {
+    "alert_id": "SOC-99799",
+    "alert_name": "Azure Network Security Modification",
+    "timestamp": "2026-02-10T22:40:00.000Z",
+    "user": "andrus.kivi@globalcorp.ee",
+    "operation": "MICROSOFT.AUTHORIZATION/LOCKS/DELETE",
+    "resource_id": "/subscriptions/228e1d3b/resourceGroups/rg-baltic-prod-core",
+    "status": "Succeeded",
+    "analyst_comment": ""
+  },
+  {
+    "alert_id": "SOC-99800",
+    "alert_name": "Azure Network Security Modification",
+    "timestamp": "2026-02-10T22:42:00.000Z",
+    "user": "andrus.kivi@globalcorp.ee",
+    "operation": "MICROSOFT.INSIGHTS/DIAGNOSTICSETTINGS/DELETE",
+    "resource_id": "/subscriptions/228e1d3b/resourceGroups/rg-baltic-prod-core/providers/Microsoft.Network/networkSecurityGroups/nsg-prod-db-cluster",
+    "status": "Succeeded",
+    "analyst_comment": ""
+  },
+  {
+    "alert_id": "SOC-99801",
+    "alert_name": "Azure Network Security Modification",
+    "timestamp": "2026-02-10T22:43:00.000Z",
+    "user": "andrus.kivi@globalcorp.ee",
+    "operation": "MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/WRITE",
+    "resource_id": "/subscriptions/228e1d3b/resourceGroups/rg-baltic-prod-core/providers/Microsoft.Network/networkSecurityGroups/nsg-prod-db-cluster",
+    "status": "Succeeded",
+    "request_body": "{\"properties\":{\"securityRules\":[{\"name\":\"Internal_Sync_Legacy\",\"properties\":{\"access\":\"Allow\",\"description\":\"Temporary sync for database migration\",\"destinationAddressPrefix\":\"13.71.172.5\",\"destinationPortRange\":\"22\",\"direction\":\"Inbound\",\"priority\":105,\"protocol\":\"Tcp\",\"sourceAddressPrefix\":\"185.220.101.44\"}}]}}",
+    "analyst_comment": ""
+  },
+  {
+    "alert_id": "SOC-99802",
+    "alert_name": "Azure Network Security Modification",
+    "timestamp": "2026-02-10T22:44:00.000Z",
+    "user": "andrus.kivi@globalcorp.ee",
+    "operation": "MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/DELETE",
+    "resource_id": "/subscriptions/228e1d3b/resourceGroups/rg-baltic-prod-core/providers/Microsoft.Network/networkSecurityGroups/nsg-prod-web-frontend",
+    "status": "Succeeded",
+    "analyst_comment": ""
+  }
+]

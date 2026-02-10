@@ -13,6 +13,18 @@ client = OpenAI()
 current_folder_events = ""
 current_folder_alerts = ""
 
+stats = {"total": 0, "correct": 0, "incorrect": 0}
+
+def print_summary():
+    accuracy = (stats["correct"] / stats["total"] * 100) if stats["total"] > 0 else 0
+    print("\n" + "="*30)
+    print(f"TRIAGE SUMMARY")
+    print(f"Total processed: {stats['total']}")
+    print(f"Correct: {stats['correct']}")
+    print(f"Incorrect: {stats['incorrect']}")
+    print(f"Accuracy: {accuracy:.2f}%")
+    print("="*30 + "\n")
+
 def write_debug(root_path, text):
     debug_path = os.path.join(root_path, "debug.log")
     with open(debug_path, "a", encoding="utf-8") as f:
@@ -220,6 +232,24 @@ async def process_dataset(root_dir, playbook_dir, mcp_session):
             
             parsed_result = json.loads(result)
 
+            actual = parsed_result.get("classification", "").upper()
+            parent_dir = os.path.dirname(root)
+            # basename gives us the folder name (e.g., HP)
+            expected = os.path.basename(parent_dir).upper()
+
+            # Ensure we only care about HP or LP; default to UNKNOWN if folder isn't named correctly
+            if expected not in ["HP", "LP"]:
+                expected = "UNKNOWN"
+            # ----------------------------------
+
+            stats["total"] += 1
+            if actual == expected:
+                stats["correct"] += 1
+                print(f"✅ CORRECT: {alert_data.get('alert_name')} | Folder: {expected} (Got: {actual})")
+            else:
+                stats["incorrect"] += 1
+                print(f"❌ INCORRECT: {alert_data.get('alert_name')} | Expected: {expected} (Got: {actual})")
+
             with open(os.path.join(root, "investigation_notes.json"), "w", encoding="utf-8") as f:
                 json.dump(parsed_result, f, ensure_ascii=False, indent=2)
 
@@ -251,6 +281,7 @@ async def main():
         async with ClientSession(read, write) as session:
             await session.initialize()
             await process_dataset(alert_root, "playbooks", session)
+            print_summary()
 
 if __name__ == "__main__":
     asyncio.run(main())

@@ -1,0 +1,24 @@
+{
+  "alert_id": "SOC-22410",
+  "alert_name": "Azure Network Security Modification",
+  "start_time": "2026-02-10T15:33:45.000Z",
+  "description": "A suspicious Azure activity was detected. This detection was triggered by a rule with the following description:\"Identifies when a network security configuration is modified or deleted.\"",
+  "evidence": {
+    "workload": "Microsoft.Network",
+    "operation": "MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/WRITE",
+    "resource_id": "/subscriptions/d1c2b3a4-e5f6-7a8b-9c0d-1e2f3a4b5c6d/resourceGroups/rg-nordic-dev-test/providers/Microsoft.Network/networkSecurityGroups/nsg-aks-dev-01",
+    "correlation_id": "a1b2c3d4-e5f6-7a8b-9c0d-e1f2a3b4c5d6",
+    "result": "Started",
+    "geo_location": {
+      "region": "North Europe",
+      "stamp": "DB4"
+    },
+    "authorization_details": {
+      "principal_id": "b4a3c2d1-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "principal_type": "ServicePrincipal",
+      "role": "Contributor",
+      "scope": "/subscriptions/d1c2b3a4-e5f6-7a8b-9c0d-1e2f3a4b5c6d/resourceGroups/rg-nordic-dev-test"
+    },
+    "request_body": "{\"etag\":\"W/\\\"2b3c4d5e-6f7a-8b9c-0d1e-2f3a4b5c6d7e\\\"\",\"id\":\"/subscriptions/d1c2b3a4-e5f6-7a8b-9c0d-1e2f3a4b5c6d/resourceGroups/rg-nordic-dev-test/providers/Microsoft.Network/networkSecurityGroups/nsg-aks-dev-01\",\"location\":\"northeurope\",\"name\":\"nsg-aks-dev-01\",\"properties\":{\"securityRules\":[{\"name\":\"AllowDevWebService\",\"properties\":{\"access\":\"Allow\",\"description\":\"Temporary Web Service for API Testing\",\"destinationAddressPrefix\":\"13.75.144.22\",\"destinationPortRange\":\"8080\",\"direction\":\"Inbound\",\"priority\":1010,\"protocol\":\"Tcp\",\"sourceAddressPrefix\":\"*\"}},{\"name\":\"AllowVnetInBound\",\"properties\":{\"access\":\"Allow\",\"direction\":\"Inbound\",\"priority\":65000,\"protocol\":\"*\"}}],\"provisioningState\":\"Succeeded\"}}"
+  }
+}

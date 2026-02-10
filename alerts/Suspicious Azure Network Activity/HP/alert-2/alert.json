@@ -1,0 +1,34 @@
+{
+  "alert_id": "SOC-99300",
+  "alert_name": "Azure Network Security Modification",
+  "start_time": "2026-02-10T10:30:00.000Z",
+  "description": "A suspicious Azure activity was detected. This detection was triggered by a rule with the following description:\"Identifies when a network security configuration is modified or deleted.\"",
+  "evidence": {
+    "principalId": "l1k2k3k4-f5n6-4a7b-8c9d-0e1f2a3b4c5d",
+    "principalType": "User",
+    "role": "Contributor",
+    "roleAssignmentId": "8b7c6d5e-4f3a-2b1c-0d9e-8f7a6b5c4d3e",
+    "roleAssignmentScope": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566",
+    "roleDefinitionId": "b24988ac-6180-42a0-ab88-20f7382dd24c",
+    "scope": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-baltic-prod-data/providers/Microsoft.Network/networkSecurityGroups/nsg-prod-db-core",
+    "operationName": "MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/WRITE",
+    "correlationId": "f1e2d3c4-b5a6-7e8f-9g0h-1i2j3k4l5m6n",
+    "resultSignature": "Succeeded",
+    "caller_ip": "194.126.101.99",
+    "caller_ip_geo": {
+      "city": "Tallinn",
+      "countryCode": "EE",
+      "countryName": "Estonia",
+      "region": "Harju County"
+    },
+    "claims": {
+      "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name": "linda.kask@globalcorp.ee",
+      "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn": "linda.kask@globalcorp.ee",
+      "http://schemas.microsoft.com/claims/authnmethodsreferences": "pwd,mfa",
+      "http://schemas.microsoft.com/identity/claims/tenantid": "d1c2b3a4-e5f6-7a8b-9c0d-1e2f3a4b5c6d",
+      "ipaddr": "194.126.101.99",
+      "name": "Linda Kask"
+    },
+    "request_body": "{\"properties\":{\"securityRules\":[{\"name\":\"Data_Transfer_Fix\",\"properties\":{\"access\":\"Allow\",\"description\":\"Manual override for report sync\",\"destinationAddressPrefix\":\"10.0.1.4\",\"destinationPortRange\":\"445\",\"direction\":\"Inbound\",\"priority\":105,\"protocol\":\"Tcp\",\"sourceAddressPrefix\":\"*\"}}]}}"
+  }
+}

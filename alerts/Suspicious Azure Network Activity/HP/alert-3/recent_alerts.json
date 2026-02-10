@@ -1,0 +1,15 @@
+[
+  {
+    "alert_id": "SOC-99398",
+    "alert_name": "User Login Location Anomaly",
+    "start_time": "2026-02-10T10:45:00.000Z",
+    "source_ip": "186.155.12.88",
+    "destination_ip": "13.80.23.7",
+    "user": "mateo.rodriguez@globalcorp.ee",
+    "geo_location": {
+      "city": "Bogota",
+      "country": "Colombia"
+    },
+    "analyst_comment": ""
+  }
+]

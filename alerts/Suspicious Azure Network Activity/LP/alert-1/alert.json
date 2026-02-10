@@ -1,0 +1,24 @@
+{
+  "alert_id": "SOC-14600",
+  "alert_name": "Azure Network Security Modification",
+  "start_time": "2026-10-18T14:16:17.000Z",
+  "description": "A suspicious Azure activity was detected. This detection was triggered by a rule with the following description:\"Identifies when a network security configuration is modified or deleted.\"",
+  "evidence": {
+    "workload": "Microsoft.Network",
+    "operation": "MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/WRITE",
+    "resource_id": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-nordic-prod-001/providers/Microsoft.Network/networkSecurityGroups/nsg-aks-prod-northeast",
+    "correlation_id": "e512d1c1-42a1-4991-9921-1a2b3c4d5e6f",
+    "result": "Started",
+    "geo_location": {
+      "region": "Norway East",
+      "stamp": "FDWeb"
+    },
+    "authorization_details": {
+      "principal_id": "7f2a8c12-3391-4e1a-b672-9d3c11bc99a1",
+      "principal_type": "ServicePrincipal",
+      "role": "Contributor",
+      "scope": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-nordic-prod-001"
+    },
+    "request_body": "{\"etag\":\"W/\\\"7fca213d-e405-424f-ae76-2e9771bb94de\\\"\",\"id\":\"/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-nordic-prod-001/providers/Microsoft.Network/networkSecurityGroups/nsg-aks-prod-northeast\",\"location\":\"norwayeast\",\"name\":\"nsg-aks-prod-northeast\",\"properties\":{\"defaultSecurityRules\":[{\"name\":\"AllowVnetInBound\",\"properties\":{\"access\":\"Allow\",\"direction\":\"Inbound\",\"priority\":65000,\"protocol\":\"*\"}}],\"securityRules\":[{\"name\":\"SanctionBlocks\",\"properties\":{\"access\":\"Deny\",\"description\":\"RUS RegionBlock\",\"destinationAddressPrefix\":\"40.113.112.55\",\"destinationPortRanges\":[\"80\",\"443\"],\"direction\":\"Inbound\",\"priority\":499,\"protocol\":\"TCP\",\"sourceAddressPrefixes\":[\"2.56.24.0/22\",\"2.57.0.0/24\",\"5.1.41.0/24\",\"5.8.0.0/20\",\"5.16.0.0/14\",\"31.13.64.0/18\",\"31.28.192.0/19\",\"45.8.156.0/22\",\"46.17.40.0/21\",\"80.89.128.0/18\",\"81.19.64.0/19\",\"91.200.12.0/22\",\"92.242.0.0/18\",\"94.100.176.0/20\",\"95.161.0.0/17\",\"109.106.136.0/21\",\"176.10.0.0/16\",\"178.154.128.0/18\",\"185.129.100.0/22\",\"188.128.0.0/17\",\"193.19.164.0/22\",\"194.67.0.0/16\",\"195.208.0.0/16\",\"212.192.0.0/18\",\"213.180.192.0/19\"],\"provisioningState\":\"Succeeded\"}},{\"name\":\"k8s-azure-lb-allow\",\"properties\":{\"access\":\"Allow\",\"destinationAddressPrefix\":\"40.113.112.55\",\"destinationPortRanges\":[\"443\",\"80\"],\"direction\":\"Inbound\",\"priority\":502,\"protocol\":\"Tcp\",\"sourceAddressPrefix\":\"Internet\"}}],\"provisioningState\":\"Succeeded\"}}"
+  }
+}

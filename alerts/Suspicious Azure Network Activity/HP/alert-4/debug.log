@@ -1,0 +1,54 @@
+=== DEBUG SESSION START: 2026-02-10T22:21:24.472987+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Azure Network Security Modification
+Selected Playbook: 'suspicious_cloud_network_activity.json'
+
+[TOOL CALL]
+Tool: lookup_users
+Arguments: {"emails": ["aleksei.ivanov@globalcorp.ee"]}
+
+[TOOL RESPONSE]
+[
+  {
+    "email": "Aleksei.Ivanov@globalcorp.ee",
+    "full_name": "Aleksei Ivanov",
+    "department": "Engineering",
+    "role": "Senior Software Developer"
+  }
+]
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-99500",
+    "Start Time": "2026-02-10T21:15:00.000Z",
+    "Local Time (EET)": "2026-02-10T23:15:00+02:00",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "82.102.15.144",
+    "Destination IP": "10.0.5.2",
+    "User": "aleksei.ivanov@globalcorp.ee (Aleksei Ivanov)",
+    "Role": "Owner",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Resource ID": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-baltic-prod-data/providers/Microsoft.Network/networkSecurityGroups/nsg-prod-db-cluster",
+    "IP Geolocation": "Tallinn, Estonia (EE)",
+    "Security Rule Summary": "Added Allow_LB_HealthCheck_Internal: Inbound Allow TCP 443 to 10.0.5.2 from * (priority 100) — described as load balancer health probes.",
+    "Description": "An Owner-level change to NSG nsg-prod-db-cluster in the production resource group rg-baltic-prod-data was performed at 2026-02-10T21:15:00Z (23:15 EET) by Aleksei Ivanov, whose user profile lists him as a Senior Software Developer. The request_body shows an inbound Allow rule for TCP 443 to an internal address that appears to be a load-balancer health-check, which is normally low risk for internal traffic. However, the change occurred outside Estonian working hours, the user's job title does not clearly match typical infrastructure administration, and there are no recent correlated deployment events, so this requires escalation for further review."
+  },
+  "classification": "HP"
+}
+

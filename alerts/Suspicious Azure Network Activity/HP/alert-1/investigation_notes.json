@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-99200",
+    "Start Time": "2026-02-10T09:15:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "194.126.101.99",
+    "User": "marcus.webb@globalcorp.ee (Marcus Webb)",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Resource": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-baltic-prod-connectivity/providers/Microsoft.Network/networkSecurityGroups/nsg-prod-core",
+    "Role": "Contributor",
+    "User Department": "Legal & Corporate Secretary",
+    "Caller IP Geolocation": "Tallinn, Estonia (EE)",
+    "Request Body Summary": "Added inbound Allow rule 'Test' allowing TCP 3389 from * to * (destinationAddressPrefix='*', sourceAddressPrefix='*', destinationPortRange=3389) with priority 110.",
+    "Description": "A contributor-level account (marcus.webb@globalcorp.ee) modified a production NSG (nsg-prod-core) at 11:15 EET and successfully added an Allow rule permitting RDP (TCP/3389) from any source. The activity occurred during local working hours and from an Estonia-based IP, but the account owner’s job is in Legal and not infrastructure, there are no recent correlated deployment events, and the rule creates broad public exposure of a sensitive management port. Because of the unexpected identity-context and the creation of an unrestricted RDP Allow rule to a production NSG, this change is considered High Priority."
+  },
+  "classification": "HP"
+}
