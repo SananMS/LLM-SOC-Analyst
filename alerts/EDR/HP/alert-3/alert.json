@@ -1,0 +1,24 @@
+{
+  "alert_id": "SOC-29900",
+  "alert_name": "Trend Micro: Possible Data Encrypted for Impact",
+  "threat_display_name": "Ransom.Win32.LOCKY.SMYABHD.note",
+  "threat_family_name": "Locky Ransomware",
+  "status": "new",
+  "start_time": "2026-01-09T21:57:45.000Z",
+  "description": "Ransomware detection on host HOST-01. Indicators include ransomware file detection, ransom note detection, and heuristic analysis suggesting possible data encryption for impact.",
+  "alert_web_url": "https://portal.eu.xdr.trendmicro.com/index.html#/workbench/alerts/WB-20260109",
+  "evidence": {
+    "endpoint": "HOST-01",
+    "source_ip": "10.20.5.245",
+    "file_path": "C:\\Data\\Financials\\2025\\_RECOVER_INSTRUCTIONS.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996db92427ae41e4649b934ca495991b7852b855",
+    "indicators": [
+      "Ransomware File Detected",
+      "Ransom Note Detection (Real-time Scan)",
+      "Heuristic: Possible Data Encrypted for Impact"
+    ],
+    "first_seen": "2026-01-09T16:02:01Z",
+    "last_seen": "2026-01-09T21:55:16Z",
+    "remediation_status": "quarantined"
+  }
+}

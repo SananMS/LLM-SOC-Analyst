@@ -1,0 +1,26 @@
+{
+  "alert_id": "SOC-29890",
+  "alert_name": "SentinelOne: XDR Miscellaneous Malware",
+  "threat_display_name": "Malware",
+  "status": "new",
+  "start_time": "2026-01-30T11:01:53.000Z",
+  "description": "A threat 'Malware' related to a JavaScript asset within a Chrome Extension was detected. SentinelOne Cloud has blacklisted this hash as a known malicious component.",
+  "alert_web_url": "https://sentinelone.net/threats/24036866778695455241/overview",
+  "evidence": {
+    "endpoint": "WKSTN-SALES-080",
+    "source_ip": "10.40.15.22",
+    "external_ip": "95.12.170.44",
+    "user": "a.jakub@client.ee",
+    "user_domain": "CORP-AD",
+    "os_name": "Windows 11 Business",
+    "file_name": "ea4feaebb8fce87a082623ec5d08d8e7.js",
+    "file_path": "C:\\Users\\a.jakub\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\inhcgfpbfdjbjogdfjbclgolkmhnooop\\1.6.5_1\\aitopia\\assets\\ea4feaebb8fce87a082623ec5d08d8e7.js",
+    "file_sha256": "4a365b80f0de287dcfbf7860075e0956e450048933ddebb0506837afbced404e",
+    "process_parent": "chrome.exe",
+    "detection_engine": "SentinelOne Cloud",
+    "cloud_verdict": "black",
+    "confidence_level": "malicious",
+    "remediation_status": "mitigated",
+    "mitigation_actions": ["kill", "quarantine"]
+  }
+}

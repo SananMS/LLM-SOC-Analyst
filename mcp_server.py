@@ -140,7 +140,7 @@ async def check_ip_reputation(ip: str) -> str:
         
 @mcp.tool()
 async def check_hash_reputation(hash: str) -> str:
-    """Query VirusTotal for file hash reputation."""
+    """Query VirusTotal for file hash reputation, name, and community score."""
     url = f"https://www.virustotal.com/api/v3/files/{hash}"
     headers = {"x-apikey": VT_API_KEY}
 
@@ -151,14 +151,33 @@ async def check_hash_reputation(hash: str) -> str:
                 return f"Hash {hash} not found in VirusTotal database."
             
             response.raise_for_status()
-            stats = response.json()["data"]["attributes"]["last_analysis_stats"]
+            data = response.json()["data"]["attributes"]
             
+            # 1. Engine Analysis Stats
+            stats = data.get("last_analysis_stats", {})
             malicious = stats.get("malicious", 0)
             suspicious = stats.get("suspicious", 0)
             
-            return f"VT Results for {hash}: Malicious: {malicious} | Suspicious: {suspicious}"
+            # 2. Community Reputation Score
+            # This is a net score calculated from community votes.
+            community_reputation = data.get("reputation", 0)
+            
+            # 3. Community Votes breakdown (Optional but helpful)
+            votes = data.get("total_votes", {})
+            harmless_votes = votes.get("harmless", 0)
+            malicious_votes = votes.get("malicious", 0)
+            
+            # Extract names
+            file_name = data.get("meaningful_name") or (data.get("names", ["Unknown"])[0])
+            
+            return (
+                f"VT Results for {hash} ({file_name}):\n"
+                f"  - Engines: {malicious} Malicious | {suspicious} Suspicious\n"
+                f"  - Community Score: {community_reputation}\n"
+                f"  - Community Votes: {malicious_votes} Malicious vs {harmless_votes} Harmless"
+            )
         except Exception as e:
             return f"Error querying VirusTotal: {str(e)}"
-
+        
 if __name__ == "__main__":
     mcp.run()

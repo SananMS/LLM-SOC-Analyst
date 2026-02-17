@@ -1,0 +1,20 @@
+{
+  "alert_id": "SOC-29905",
+  "alert_name": "Microsoft Defender: Antivirus Tampering Attempt Prevented",
+  "threat_display_name": "MpTamperSrvDisableAV",
+  "threat_family_name": "Defense Evasion / Tampering",
+  "status": "new",
+  "start_time": "2025-10-09T15:39:02.000Z",
+  "description": "An attempt to stop the Microsoft Defender Antivirus service (WinDefend) via the Service Control Manager (sc.exe) was detected and blocked.",
+  "alert_web_url": "https://security.microsoft.com/alerts/mptamp-stop-windefend-cl202",
+  "evidence": {
+    "endpoint": "WKSTN-FIN-092b",
+    "source_ip": "10.10.44.112",
+    "user": "GlobalAdmin_svc",
+    "process_name": "sc.exe",
+    "process_path": "C:\\Windows\\System32\\sc.exe",
+    "command_line": "C:\\windows\\system32\\sc.exe stop WinDefend",
+    "remediation_status": "success",
+    "remediation_action": "remove / blocked"
+   }
+}

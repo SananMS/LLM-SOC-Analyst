@@ -1,0 +1,23 @@
+{
+  "alert_id": "SOC-29908",
+  "alert_name": "Malware Prevention: Trojan:Win32/SparkOnSoft",
+  "threat_display_name": "Trojan:Win32/SparkOnSoft!AMTB",
+  "status": "new",
+  "start_time": "2026-02-12T09:44:07.000Z",
+  "description": "A high-risk Trojan masquerading was detected.",
+  "alert_web_url": "https://security.microsoft.com/alerts/78369289",
+  "evidence": {
+    "endpoint": "WKSTN-912A",
+    "source_ip": "10.45.20.114",
+    "user": "m.tamm@client.ee",
+    "file_name": "$RYRO9NW.exe",
+    "file_path": "C:\\$Recycle.Bin\\S-1-12-1-4290317762-1184293048-956127341-2105834469\\$RYFO7NF.exe",
+    "file_signer": "Hawk Integrated Inc.",
+    "file_signature_issuer": "Sectigo Public Code Signing CA EV R36",
+    "file_size": "9 MB",
+    "file_sha256": "686d018c86c03165925ebd3773c622f182c93f54b98db9616bae86f5e8684e4c",
+    "detection_engine": "Microsoft Defender Antivirus",
+    "remediation_status": "quarantined",
+    "remediation_result": "Success"
+  }
+}

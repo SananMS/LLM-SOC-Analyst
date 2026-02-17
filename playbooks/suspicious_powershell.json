@@ -11,8 +11,8 @@
     {
       "step_id": 2,
       "task": "External Reputation Check",
-      "action": "MAKE SURE TO INVOKE 'check_virustotal' using the 'process_sha256' of the initiating process, if it exists. If not, skip this step.",
-      "tool_integration": "check_virustotal",
+      "action": "MAKE SURE TO INVOKE 'check_hash_reputation' using the 'process_sha256' of the initiating process, if it exists. If not, skip this step.",
+      "tool_integration": "check_hash_reputation",
       "logic": "Determines if the binary responsible for spawning PowerShell is known-malicious. If detections >= 5, immediately flag for HP."
     },
     {

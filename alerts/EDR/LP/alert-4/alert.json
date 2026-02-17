@@ -1,0 +1,25 @@
+{
+  "alert_id": "SOC-29678",
+  "alert_name": "SentinelOne: XDR Miscellaneous Malware",
+  "threat_display_name": "Malware",
+  "status": "new",
+  "start_time": "2025-09-16T06:37:45.000Z",
+  "description": "A threat 'Malware' related to the file 'extension.js' has been detected by SentinelOne on the device 'MAC-DEV-204'.",
+  "alert_web_url": "https://sentinelone.net/threats/2304983245147901057/overview",
+  "evidence": {
+    "endpoint": "MAC-DEV-204",
+    "source_ip": "192.168.1.88",
+    "external_ip": "93.184.216.34",
+    "user": "l.martinez@client.ee",
+    "os_name": "OS X",
+    "os_revision": "15.6.1 (24G90)",
+    "file_name": "extension.js",
+    "file_path": "/Users/l.martinez/.vscode/extensions/github.copilot-1.372.0/dist/extension.js",
+    "file_sha1": "7b3c5cfcdfc93d77f5ab40b826334268d3c49d56",
+    "parent": "Code Helper",
+    "detection_engine": "On-Write Static AI",
+    "remediation_status": "mitigated",
+    "mitigation_action": "quarantine",
+    "agent_version": "23.2.2.6951"
+  }
+}

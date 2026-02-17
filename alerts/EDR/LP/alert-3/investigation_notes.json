@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-29495",
+    "Start Time": "2026-01-26T09:23:44.000Z",
+    "Alert Name": "SentinelOne: XDR Miscellaneous Malware",
+    "Source IP": "10.15.22.84",
+    "Destination IP": "185.122.40.11",
+    "Endpoint": "WKSTN-FIN-992",
+    "User": "a.miller@client.ee",
+    "Playbook Used": "EDR Malware Triage",
+    "File Name": "advanced_ip_scanner.exe",
+    "File Path": "\\Device\\HarddiskVolume2\\Users\\a.miller\\Downloads\\Advanced_IP_Scanner\\advanced_ip_scanner.exe",
+    "File SHA256": "8c3b2a1f0e9d8c7b6a5f4e3d2c1b0a9f8e7d6c5b4a3f2e1d0c9b8a7f6e5d4c3b",
+    "Process Parent": "Advanced_IP_Scanner_Setup_2.5.tmp",
+    "IP Reputation Score": "0/100 (ISP: KHnet.info, Fixed Line ISP; not a VPN/Proxy/Tor node)",
+    "Description": "SentinelOne flagged advanced_ip_scanner.exe in the user's Downloads folder after an installer process executed on WKSTN-FIN-992. The file hash was not found in VirusTotal and the external IP 185.122.40.11 has a very low reputation score, but there are no recent related events or similar alerts and the activity appears to be a user‑initiated installer execution. Given the installer context, absence of follow-on malicious activity, and lack of corroborating detections, this event is assessed as Low Priority while remaining noted for continued monitoring due to the unknown file hash and low‑reputation external IP."
+  },
+  "classification": "LP"
+}

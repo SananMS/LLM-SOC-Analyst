@@ -1,0 +1,28 @@
+{
+  "alert_id": "SOC-29679",
+  "alert_name": "SentinelOne: Privilege Escalation",
+  "threat_display_name": "Malware",
+  "status": "new",
+  "start_time": "2025-09-07T17:47:55.000Z",
+  "description": "A threat 'Malware' related to the file 'Grammarly Desktop' has been detected by SentinelOne on the device 'MAC-WKSTN-043'. Detection triggered by behavioral indicators including Keychain queries and Plist modifications.",
+  "alert_web_url": "https://sentinelone.net/threats/2298798226456159896/overview",
+  "evidence": {
+    "endpoint": "MAC-WKSTN-043",
+    "source_ip": "192.168.1.115",
+    "external_ip": "82.102.45.18",
+    "user": "m.tamm@clint.ee",
+    "os_name": "OS X",
+    "os_revision": "15.6.1 (24G90)",
+    "file_name": "Grammarly Desktop",
+    "file_path": "/Users/m.tamm/Applications/Grammarly Desktop.app/Contents/MacOS/Grammarly Desktop",
+    "file_sha1": "1ee1a2bf448091a4e218a78f80752b136bc62f8a",
+    "process_parent": "launchd",
+    "detection_engine": "Behavioral AI",
+    "confidence_level": "suspicious",
+    "remediation_status": "detected",
+    "mitigation_status": "not_mitigated",
+    "publisher_name": "Grammarly, Inc",
+    "parent": "launchd",
+    "certificate_id": "<Type=DevID/ID=com.grammarly.ProjectLlama/Subject=OU:W8F65F92G2>"
+  }
+}

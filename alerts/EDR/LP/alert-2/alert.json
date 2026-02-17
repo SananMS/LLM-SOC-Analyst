@@ -1,0 +1,17 @@
+{
+  "alert_id": "SOC-29490",
+  "alert_name": "Trend Micro Vision One: Suspicious Mailbox Rule Deletes All Incoming Emails",
+  "status": "new",
+  "start_time": "2026-02-17T11:05:17.000Z",
+  "description": "Trend Micro Vision One reported a suspicious alert with the following details - Threat Name of \"Suspicious Mailbox Rule Deletes All Incoming Emails\"",
+  "evidence": {
+    "alert_id": "WB-31720-20260208-00003",
+    "affected_entities": [
+      "email: noreply-alerts@client.ee"
+    ],
+    "user_account": "autoreply",
+    "detection_source": "trendmicro_visionone",
+    "msg_class": "trendmicro_visionone_alerts",
+    "detection_rule":"SC-17"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-29900",
+    "Start Time": "2026-01-09T21:57:45.000Z",
+    "Alert Name": "Trend Micro: Possible Data Encrypted for Impact",
+    "Source IP": "10.20.5.245",
+    "Endpoint": "HOST-01",
+    "Playbook Used": "EDR Malware Triage",
+    "File Path": "C:\\Data\\Financials\\2025\\_RECOVER_INSTRUCTIONS.txt",
+    "File SHA256": "e3b0c44298fc1c149afbf4c8996db92427ae41e4649b934ca495991b7852b855",
+    "Remediation Status": "quarantined",
+    "Threat Family Name": "Locky Ransomware",
+    "Hash Reputation Result": "Hash not found in VirusTotal database",
+    "Description": "Trend Micro identified Locky ransomware artifacts on HOST-01, including a ransom note file and heuristic indications of possible data encryption, and the detected file was quarantined. The provided file hash was not found in VirusTotal and there are no recent related events or similar alerts on this host, suggesting this may be an isolated or heuristic detection. However, the presence of a ransom note and a Locky family detection indicate a significant risk of data impact, so this alert is classified as High Priority."
+  },
+  "classification": "HP"
+}

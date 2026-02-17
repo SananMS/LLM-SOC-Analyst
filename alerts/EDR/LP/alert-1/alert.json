@@ -1,0 +1,29 @@
+{
+  "alert_id": "SOC-29481",
+  "alert_name": "Microsoft Defender: Potentially Unwanted Application Prevented",
+  "threat_display_name": "PUA:MacOS/MacKeeper",
+  "threat_family_name": "MacKeeper",
+  "status": "new",
+  "start_time": "2026-02-17T11:05:17.000Z",
+  "description": "'MacKeeper' unwanted software was prevented.",
+  "alert_web_url": "https://security.microsoft.com/alerts/f3e8d2c1-9a4b-4c7e-8d5f-1b0a2c3d4e5f_1?tid=a1b2c3d4-e5f6-4a3b-8c7d-9e0f1a2b3c4d",
+  "incident_web_url": "https://security.microsoft.com/incident2/441920/overview?tid=a1b2c3d4-e5f6-4a3b-8c7d-9e0f1a2b3c4d",
+  "evidence": {
+    "source_ip": "10.44.12.190",
+    "endpoint": "WKSTN-DEV-772",
+    "user": "r.hunter@client.ee",
+    "user_id": "S-1-5-21-99824-33105-66741-2104",
+    "mde_device_id": "8f7e6d5c4b3a2f1e0d9c8b7a6f5e4d3c2b1a0f9e",
+    "azure_ad_device_id": "c7a8b9d0-e1f2-4321-b5a4-9876d5c4b3a2",
+    "os": "Windows 11 Enterprise",
+    "created_date_time": "2026-02-17T11:04:12.15Z",
+    "last_update_date_time": "2026-02-17T11:04:14.45Z",
+    "detection_source": "antivirus",
+    "remediation_status": "prevented",
+    "file_path": "C:\\repo-gradle\\caches\\9.1.2\\a7b8c9d0e1f2\\a7b8c9d0e1f2.lock",
+    "sha256": "f4e3d2c1b0a9f8e7d6c5b4a3f2e1d0c9b8a7f6e5d4c3b2a1f0e9d8c7b6a5f4e3",
+    "md5": "d41d8cd98f00b204e9800998ecf8427e",
+    "process_tree": "[PID: 25280] idea64.exe -> [PID: 15368] java.exe",
+    "command_line": "java.exe --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED --add-opens=java.base/java.nio.charset=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens=java.xml/javax.xml.namespace=ALL-UNNAMED --add-opens=java.base/java.time=ALL-UNNAMED -XX:MaxMetaspaceSize=512m -Xmx2048M -Dfile.encoding=UTF-8 -cp C:\\repo-gradle\\wrapper\\dists\\gradle-9.1.2-bin\\k8j2m9n3p5q7\\gradle-9.1.2\\lib\\gradle-daemon-main-9.1.2.jar -javaagent:C:\\repo-gradle\\wrapper\\dists\\gradle-9.1.2-bin\\k8j2m9n3p5q7\\gradle-9.1.2\\lib\\agents\\gradle-instrumentation-agent-9.1.2.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 9.1.2"
+  }
+}

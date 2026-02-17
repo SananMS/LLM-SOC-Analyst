@@ -106,5 +106,35 @@
     "full_name": "Andrus Kivi",
     "department": "Supply Chain & Logistics",
     "role": "Regional Logistics Coordinator"
+  },
+  {
+    "email": "a.miller@client.ee",
+    "full_name": "Alice Miller",
+    "department": "IT Operations",
+    "role": "Network Administrator"
+  },
+  {
+    "email": "l.martinez@client.ee",
+    "full_name": "Luis Martinez",
+    "department": "Engineering",
+    "role": "Junior Software Developer"
+  },
+  {
+    "email": "r.hunter@client.ee",
+    "full_name": "Robert Hunter",
+    "department": "Engineering",
+    "role": "Junior Software Developer"
+  },
+  {
+    "email": "m.tamm@client.ee",
+    "full_name": "Marcus Tamm",
+    "department": "IT Operations",
+    "role": "Junior IT Operations Manager"
+  },
+  {
+    "email": "a.jakub@client.ee",
+    "full_name": "Anna Jakub", 
+    "department": "Sales",
+    "role": "Sales Representative"
   }
 ]
