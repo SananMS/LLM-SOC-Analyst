@@ -6,7 +6,7 @@
   "status": "new",
   "start_time": "2025-10-09T15:39:02.000Z",
   "description": "An attempt to stop the Microsoft Defender Antivirus service (WinDefend) via the Service Control Manager (sc.exe) was detected and blocked.",
-  "alert_web_url": "https://security.microsoft.com/alerts/mptamp-stop-windefend-cl202",
+  "alert_web_url": "https://security.microsoft.com/alerts/cl202",
   "evidence": {
     "endpoint": "WKSTN-FIN-092b",
     "source_ip": "10.10.44.112",

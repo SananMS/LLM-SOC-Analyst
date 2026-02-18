@@ -1,0 +1,18 @@
+{
+  "alert_id": "SOC-54655",
+  "alert_name": "Brand Logo Detection",
+  "threat": "LogoDetection:VitalisHealthcare",
+  "category": "Brand Monitoring",
+  "status": "new",
+  "start_time": "2026-02-18T16:45:10.000Z",
+  "description": "Vitalis Healthcare logo detected on vitalislab-diagnostics.de.",
+  "evidence": {
+    "detection_source": "Logo-Scanner",
+    "target_brand": "Vitalis Healthcare",
+    "target_brand_domain": "vitalis.com",
+    "scanned_url": "https://www.vitalislab-diagnostics.de/leistungen",
+    "domain_ip": "104.26.10.224",
+    "domain_age": "7 years",
+    "registrar": "NameCheap, Inc."
+  }
+}

@@ -6,6 +6,7 @@ from mcp import ClientSession, StdioServerParameters
 from datetime import datetime, UTC
 import argparse
 from mcp.client.stdio import stdio_client
+import base64
 
 client = OpenAI()
 
@@ -14,6 +15,10 @@ current_folder_events = ""
 current_folder_alerts = ""
 
 stats = {"total": 0, "correct": 0, "incorrect": 0}
+
+def encode_image(image_path):
+    with open(image_path, "rb") as image_file:
+        return base64.b64encode(image_file.read()).decode('utf-8')
 
 def print_summary():
     accuracy = (stats["correct"] / stats["total"] * 100) if stats["total"] > 0 else 0
@@ -64,7 +69,7 @@ async def select_playbook(alert_data, playbook_dir):
     )
     return response.choices[0].message.content.strip()
 
-async def soc_analyst_role(alert_json, playbook_content, playbook_filename, mcp_session, root_path):
+async def soc_analyst_role(alert_json, playbook_content, playbook_filename, mcp_session, root_path, image_path=None):
 
     """Analyze alert and generate investigation notes using template as a guide"""
     template_guide = {
@@ -104,6 +109,40 @@ async def soc_analyst_role(alert_json, playbook_content, playbook_filename, mcp_
         "Output the final JSON in a readable, beautified format with proper indentation, not as a single-line minified string."
     )
 
+    # Construct the user content dynamically
+    user_content = [
+        {
+            "type": "text", 
+            "text": f"Playbook: {json.dumps(playbook_content)}\nAlert: {json.dumps(alert_json)}"
+        }
+    ]
+
+    # 2. Check if an EVIDENCE image exists in the alert folder
+    if image_path and os.path.exists(image_path):
+        # A. Encode and add the Evidence Screenshot
+        base64_evidence = encode_image(image_path)
+        user_content.append({
+            "type": "text",
+            "text": "EVIDENCE SCREENSHOT: This was captured from the suspicious domain."
+        })
+        user_content.append({
+            "type": "image_url",
+            "image_url": {"url": f"data:image/jpeg;base64,{base64_evidence}"}
+        })
+
+        # B. ONLY if the evidence exists, add the REFERENCE logo for comparison
+        ref_logo_path = "vitalis_icon.jpg"
+        if os.path.exists(ref_logo_path):
+            base64_ref = encode_image(ref_logo_path)
+            user_content.append({
+                "type": "text",
+                "text": "REFERENCE LOGO: This is the legitimate brand logo. Use this to check for impersonation or unauthorized use in the evidence screenshot."
+            })
+            user_content.append({
+                "type": "image_url",
+                "image_url": {"url": f"data:image/jpeg;base64,{base64_ref}"}
+            })
+            
     tools = [
         {"type": "function", "function": {"name": "check_ip_reputation", "parameters": {"type": "object", "properties": {"ip": {"type": "string"}}, "required": ["ip"]}}},
         {"type": "function", "function": {"name": "check_hash_reputation", "parameters": {"type": "object", "properties": {"hash": {"type": "string"}}, "required": ["hash"]}}},
@@ -115,7 +154,7 @@ async def soc_analyst_role(alert_json, playbook_content, playbook_filename, mcp_
 
     messages = [
         {"role": "system", "content": f"You are a Tier-1 SOC Analyst. Output JSON only: {json.dumps(template_guide)}\n\nNote: {template_note}"},
-        {"role": "user", "content": f"Playbook: {json.dumps(playbook_content)}\nAlert: {json.dumps(alert_json)}"}
+        {"role": "user", "content": user_content}
     ]
 
     write_debug(
@@ -221,13 +260,20 @@ async def process_dataset(root_dir, playbook_dir, mcp_session):
                 if "recent_alerts.json" in files else ""
             )
 
+            image_file = None
+            for f in files:
+                if f.lower().endswith(('.png', '.jpg', '.jpeg')):
+                    image_file = os.path.join(root, f)
+                    break
+
             # --- ROUND 2: Triage ---
             result = await soc_analyst_role(
                 alert_data,
                 playbook_content,
                 pb_filename,
                 mcp_session,
-                root
+                root,
+                image_file 
             )
             
             parsed_result = json.loads(result)

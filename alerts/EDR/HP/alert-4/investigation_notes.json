@@ -11,7 +11,7 @@
     "Command Line": "C:\\windows\\system32\\sc.exe stop WinDefend",
     "Remediation Status": "success (removed/blocked)",
     "Threat Family": "Defense Evasion / Tampering",
-    "Alert URL": "https://security.microsoft.com/alerts/mptamp-stop-windefend-cl202",
+    "Alert URL": "https://security.microsoft.com/alerts/cl202",
     "Description": "The alert shows a blocked attempt to stop Microsoft Defender (WinDefend) using sc.exe on WKSTN-FIN-092b, initiated by the service account 'GlobalAdmin_svc'. Remediation succeeded and there were no recent similar alerts or preceding events found on this host in the hour before the attempt. Because the action targeted a security service and was executed by a privileged service account, this activity presents a high risk of defense-evasion and potential compromise and is therefore treated as High Priority."
   },
   "classification": "HP"

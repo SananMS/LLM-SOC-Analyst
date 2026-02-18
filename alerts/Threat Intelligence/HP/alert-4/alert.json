@@ -1,0 +1,18 @@
+{
+  "alert_id": "SOC-55102",
+  "alert_name": "Brand Logo Detection",
+  "threat": "LogoDetection:VitalisHealthcare",
+  "category": "Brand Monitoring",
+  "status": "new",
+  "start_time": "2026-02-18T16:10:05.000Z",
+  "description": "Vitalis Healthcare logo detected on vitalis-hr-benefits.com.",
+  "evidence": {
+    "detection_source": "Logo-Scanner",
+    "target_brand": "Vitalis Healthcare",
+    "target_brand_domain": "vitalis.com",
+    "scanned_url": "https://www.vitalis-hr-benefits.com/auth/login?service=payroll",
+    "domain_ip": "192.185.112.40",
+    "domain_age": "5 hours",
+    "registrar": "Public Domain Registry"
+  }
+}

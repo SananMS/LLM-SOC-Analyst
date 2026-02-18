@@ -1,0 +1,16 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-54921",
+    "Start Time": "2026-02-18T16:15:45.000Z",
+    "Alert Name": "Brand Logo Detection",
+    "Source IP": "185.212.131.54",
+    "Scanned URL": "https://www.vitalis-care-verification.net/update-info",
+    "Domain Age": "1 day",
+    "Registrar": "Hostinger, Inc.",
+    "IP Reputation Score": "0/100 (ISP: IT WEB LTD; Usage Type: Data Center/Web Hosting; Privacy: VPN)",
+    "Playbook Used": "Visual Brand Abuse & Logo Triage",
+    "Visual Findings": "Screenshot shows the Vitalis Healthcare logo matching the reference, a prominent 'Patient Information Update Required' banner, and a multi-field form requesting Full Name, DOB, Social Security Number (SSN), and Member ID.",
+    "Description": "The Vitalis Healthcare logo was found on a newly-registered domain (vitalis-care-verification.net) that displays an urgent \"Patient Information Update Required\" page with form fields requesting SSN and other PII. The domain is one day old, hosted on an IP with a poor reputation (0/100) from a data center provider, and the scanned URL does not match the official brand domain (vitalis.com); no recent similar alerts or partner association were identified. The combination of a pixel-accurate logo on an unauthorized, newly-registered domain plus visible PII collection indicates impersonation and credential/PII harvesting, so this is classified as High Priority."
+  },
+  "classification": "HP"
+}
