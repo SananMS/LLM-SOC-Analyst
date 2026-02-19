@@ -1,0 +1,18 @@
+{
+  "alert_id": "SOC-75988",
+  "alert_name": "Brand Mention in External Document",
+  "threat": "DocumentExposure:VitalisHealthcare",
+  "category": "Brand Monitoring",
+  "status": "new",
+  "start_time": "2026-02-19T21:15:45.000Z",
+  "description": "Vitalis Healthcare mentioned in a potentially leaked document.",
+  "evidence": {
+    "detection_source": "TI-Monitor-DarkWeb",
+    "source_url": "http://x7y9z1a3b5c7d9e1f3g5h7i9j1k2l3m5n7o9p1q3r5s7t9u1v3w5x7y9.onion/dump/exfiltrated/2026/02/",
+    "relative_paths": [
+      "/mnt/storage/breach_vault/vitalis_healthcare/clinical_ops/patient_records_2025_full.sql",
+      "/mnt/storage/breach_vault/vitalis_healthcare/finance/q4_insurance_claims_processing.csv",
+      "/mnt/storage/breach_vault/vitalis_healthcare/it_admin/network_topology_and_firewall_rules.pdf"
+    ]
+  }
+}

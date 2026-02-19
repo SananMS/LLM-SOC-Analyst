@@ -1,0 +1,15 @@
+{
+  "alert_id": "SOC-75502",
+  "alert_name": "Brand Mention in External Document",
+  "threat": "DocumentExposure:VitalisHealthcare",
+  "category": "Brand Monitoring",
+  "status": "new",
+  "start_time": "2026-02-19T13:10:00.000Z",
+  "description": "Vitalis Healthcare mentioned in a potentially leaked document.",
+  "evidence": {
+    "detection_source": "TI-Monitor-SlideShare",
+    "document_title": "Vitalis_Healthcare_Annual_Sustainability_Goals.pdf",
+    "source_url": "https://www.slideshare.net/vitalis-marketing/annual-sustainability-goals-2026",
+    "matched_content": "...As part of our 2026 initiative, Vitalis Healthcare is committed to reducing plastic waste across all regional clinics by 30%. This document serves as an open resource for our partners and patients to track our progress toward a greener future in medical care. We believe transparency is key to fostering trust within the communities we serve..."
+  }
+}

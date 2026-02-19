@@ -1,0 +1,34 @@
+=== DEBUG SESSION START: 2026-02-19T12:01:42.122243+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Brand Mention in External Document
+Selected Playbook: potentially_leaked_document.json
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-76214",
+    "Start Time": "2026-02-19T13:50:42.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Playbook Used": "Document Exposure & Threat Intel Triage",
+    "Detection Source": "TI-Monitor-DarkWeb",
+    "Source URL": "http://v3estvtl7x2m9n3p1q5r9t0v2w4x6y8z1a3b5c7d9e1f3g5h7i9j1k2l3.onion/dumps/baltic_sector/healthcare/",
+    "Relative Paths": [
+      "/var/backups/vitalis_healthcare_estonia/admin/ssh_keys/id_rsa_prod_gateway.key",
+      "/var/backups/vitalis_healthcare_estonia/andmebaasid/patsiendid/ravikaardid_tallinn_haigla_2026.dump",
+      "/var/backups/vitalis_healthcare_estonia/vorguseaded/VPN_klientide_konfiguratsioon_eesti.conf"
+    ],
+    "Sensitive Data Identified": "PHI/PII (patient records), SSH private key, VPN client configurations",
+    "Recent Similar Alerts": "No recent similar alerts found (query executed)",
+    "Description": "The alert reports Vitalis Healthcare content hosted on an anonymous .onion dump site and lists paths which, when translated from Estonian, reference patient databases and treatment records (patsiendid, ravikaardid), VPN configurations, and an SSH private key. These indicators point to exposure of PHI/PII and operational secrets hosted on a high-risk breach repository, which increases the likelihood of malicious use. No recent similar alerts were found, and due to the nature of the data and the hosting context this alert is classified as High Priority."
+  },
+  "classification": "HP"
+}
+

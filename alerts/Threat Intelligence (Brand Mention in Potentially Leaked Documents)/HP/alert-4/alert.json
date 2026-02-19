@@ -1,0 +1,18 @@
+{
+  "alert_id": "SOC-76015",
+  "alert_name": "Brand Mention in External Document",
+  "threat": "DocumentExposure:VitalisHealthcare",
+  "category": "Brand Monitoring",
+  "status": "new",
+  "start_time": "2026-02-19T11:45:00.000Z",
+  "description": "Vitalis Healthcare mentioned in a potentially leaked document.",
+  "evidence": {
+    "detection_source": "TI-Monitor-DarkWeb",
+    "source_url": "http://v377w88x99y00z11a22b33c44d55e66f77g88h99i00j11k22.onion/dump/vitalis_espana/",
+    "relative_paths": [
+      "/srv/data/breach_assets/vitalis_healthcare_spain/pacientes/base_datos_pacientes_madrid_2026.sql",
+      "/srv/data/breach_assets/vitalis_healthcare_spain/rrhh/nominas_empleados_barcelona.xlsx",
+      "/srv/data/breach_assets/vitalis_healthcare_spain/sistemas/backup_configuracion_firewall_central.cfg"
+    ]
+  }
+}

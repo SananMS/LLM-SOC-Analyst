@@ -1,0 +1,15 @@
+{
+  "alert_id": "SOC-75901",
+  "alert_name": "Brand Mention in External Document",
+  "threat": "DocumentExposure:VitalisHealthcare",
+  "category": "Brand Monitoring",
+  "status": "new",
+  "start_time": "2026-02-19T18:12:05.000Z",
+  "description": "Vitalis Healthcare mentioned in an external dataset or publication.",
+  "evidence": {
+    "detection_source": "TI-Monitor-Scribd",
+    "document_title": "Vitalis_Internal_VPN_Config_v3.pdf",
+    "source_url": "https://www.scribd.com/document/882145/vitalis-internal-infrastructure-guide",
+    "matched_content": "...Access to the Vitalis Healthcare primary data center requires connection to the internal VPN gateway at 10.45.2.112. Authentication is handled via the Vitalis-DC01 domain controller. If the primary tunnel fails, technicians should failover to the secondary Cisco ASA node (v-asa-ext-02.vitalis.com) using the shared certificate stored in the /dev/certs/internal/ directory..."
+  }
+}

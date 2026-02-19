@@ -1,0 +1,34 @@
+=== DEBUG SESSION START: 2026-02-19T12:00:14.618875+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Brand Mention in External Document
+Selected Playbook: potentially_leaked_document.json
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-75988",
+    "Start Time": "2026-02-19T21:15:45.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Playbook Used": "Document Exposure & Threat Intel Triage",
+    "Detection Source": "TI-Monitor-DarkWeb",
+    "Source URL": "http://x7y9z1a3b5c7d9e1f3g5h7i9j1k2l3m5n7o9p1q3r5s7t9u1v3w5x7y9.onion/dump/exfiltrated/2026/02/",
+    "Relative Paths": [
+      "/mnt/storage/breach_vault/vitalis_healthcare/clinical_ops/patient_records_2025_full.sql",
+      "/mnt/storage/breach_vault/vitalis_healthcare/finance/q4_insurance_claims_processing.csv",
+      "/mnt/storage/breach_vault/vitalis_healthcare/it_admin/network_topology_and_firewall_rules.pdf"
+    ],
+    "Historical Similar Alerts": "No recent similar alerts found",
+    "Evidence Sensitivity": "Matched paths indicate PHI/PII (patient records), financial data, and internal IT/network configuration files, suggesting high sensitivity and technical exposure.",
+    "Description": "Threat intelligence detected Vitalis Healthcare referenced on a dark web .onion dump site that includes file paths for patient_records_2025_full.sql, q4_insurance_claims_processing.csv, and network_topology_and_firewall_rules.pdf. The filenames and paths strongly indicate exposure of PHI/PII, financial records, and internal network/IT configuration, which are high-risk sensitive assets. No recent similar alerts were found, and because the source is an anonymity-focused breach repository with database dumps and topology data, this alert is classified as High Priority."
+  },
+  "classification": "HP"
+}
+

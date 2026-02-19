@@ -1,0 +1,18 @@
+{
+  "alert_id": "SOC-75655",
+  "alert_name": "Brand Mention in External Document",
+  "threat": "DocumentExposure:VitalisHealthcare",
+  "category": "Brand Monitoring",
+  "status": "new",
+  "start_time": "2026-02-19T13:42:10.000Z",
+  "description": "Vitalis Healthcare mentioned in a potentially leaked document.",
+  "evidence": {
+    "detection_source": "TI-Monitor-DarkWeb",
+    "source_url": "http://v3vitalis7x2m9n3p1q5r9t0v2w4x6y8z1a3b5c7d9e1f3g5h7i9j1k2l3.onion/data/archives/",
+    "relative_paths": [
+      "/home/tor_service/storage/industrial/manufacturing/vitalis-pumps/manuals/Vitalis_Water_Pump_Maintenance_Manual.pdf",
+      "/home/tor_service/storage/industrial/manufacturing/vitalis-pumps/spec_sheets/Vitalis_V-Series_Piston_V12.doc",
+      "/home/tor_service/storage/industrial/manufacturing/vitalis-pumps/inventory/2026_Vitalis_Stock_List.xlsx"
+    ]
+  }
+}

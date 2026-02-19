@@ -1,0 +1,16 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-75502",
+    "Start Time": "2026-02-19T13:10:00.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Playbook Used": "Document Exposure & Threat Intel Triage",
+    "Detection Source": "TI-Monitor-SlideShare",
+    "Source URL": "https://www.slideshare.net/vitalis-marketing/annual-sustainability-goals-2026",
+    "Document Title": "Vitalis_Healthcare_Annual_Sustainability_Goals.pdf",
+    "Content Language": "English",
+    "Matched Content Summary": "Public-facing statement about Vitalis Healthcare's 2026 initiative to reduce plastic waste by 30%, presented as an open resource for partners and patients.",
+    "Recent Similar Alerts": "No recent similar alerts found.",
+    "Description": "The alert was triggered by a public SlideShare presentation titled 'Vitalis_Healthcare_Annual_Sustainability_Goals.pdf' that mentions Vitalis Healthcare and outlines a sustainability initiative. The matched content is promotional and refers to public environmental goals, with no PII, PHI, technical secrets, or sensitive administrative labels observed. The document is hosted on a public professional sharing platform and there are no prior related alerts, so this appears to be benign public marketing content and is assessed as Low Priority. Classification is based on the public context and absence of sensitive data."
+  },
+  "classification": "LP"
+}

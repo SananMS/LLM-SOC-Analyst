@@ -1,0 +1,18 @@
+{
+  "alert_id": "SOC-76214",
+  "alert_name": "Brand Mention in External Document",
+  "threat": "DocumentExposure:VitalisHealthcare",
+  "category": "Brand Monitoring",
+  "status": "new",
+  "start_time": "2026-02-19T13:50:42.000Z",
+  "description": "Vitalis Healthcare in a potentially leaked document.",
+  "evidence": {
+    "detection_source": "TI-Monitor-DarkWeb",
+    "source_url": "http://v3estvtl7x2m9n3p1q5r9t0v2w4x6y8z1a3b5c7d9e1f3g5h7i9j1k2l3.onion/dumps/baltic_sector/healthcare/",
+    "relative_paths": [
+      "/var/backups/vitalis_healthcare_estonia/admin/ssh_keys/id_rsa_prod_gateway.key",
+      "/var/backups/vitalis_healthcare_estonia/andmebaasid/patsiendid/ravikaardid_tallinn_haigla_2026.dump",
+      "/var/backups/vitalis_healthcare_estonia/vorguseaded/VPN_klientide_konfiguratsioon_eesti.conf"
+    ]
+  }
+}

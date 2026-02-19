@@ -1,0 +1,15 @@
+{
+  "alert_id": "SOC-75850",
+  "alert_name": "Brand Mention in External Document",
+  "threat": "DocumentExposure:VitalisHealthcare",
+  "category": "Brand Monitoring",
+  "status": "new",
+  "start_time": "2026-02-19T13:46:15.000Z",
+  "description": "Vitalis Healthcare mentioned in a potentially leaked document.",
+  "evidence": {
+    "detection_source": "TI-Monitor-Scribd",
+    "document_title": "Vitalis_Bio-Tech_Crop_Fertilization_Whitepaper_2026.pdf",
+    "source_url": "https://www.scribd.com/document/774210934/Vitalis-Bio-Tech-Crop-Fertilization-Whitepaper-2026",
+    "matched_content": "...The 2026 Vitalis Bio-Tech initiative focuses on sustainable soil enrichment and crop fertilization techniques for large-scale wheat farming. Vitalis Bio-Tech is a registered trademark of Vitalis Agricultural Solutions Ltd. and is not affiliated with any medical or insurance services. For information on the Vitalis fertilizer line, please contact our agricultural distribution center directly..."
+  }
+}
