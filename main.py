@@ -69,7 +69,7 @@ async def select_playbook(alert_data, playbook_dir):
     )
     return response.choices[0].message.content.strip()
 
-async def soc_analyst_role(alert_json, playbook_content, playbook_filename, mcp_session, root_path, image_path=None):
+async def soc_analyst_role(alert_json, playbook_content, playbook_filename, mcp_session, root_path, image_path=None, general_mode=False):
 
     """Analyze alert and generate investigation notes using template as a guide"""
     template_guide = {
@@ -152,8 +152,28 @@ async def soc_analyst_role(alert_json, playbook_content, playbook_filename, mcp_
         {"type": "function", "function": {"name": "get_recent_similar_alerts", "parameters": {"type": "object", "properties": {}}}}
     ]
 
+    if general_mode:
+        system_instruction = (
+            f"You are a Tier-1 SOC Analyst. Output JSON only matching this structure: {json.dumps(template_guide)}\n\n"
+            f"Note: {template_note}\n\n"
+            "GENERAL TRIAGE GUIDANCE:\n"
+            "1. Classify as HP if the alert is a legitimate threat or needs escalation.\n"
+            "2. Classify as LP if it is a False Positive or authorized activity.\n\n"
+            "TOOL USAGE & PURPOSE:\n"
+            "Use the following tools if necessary and if the alert contains the relevant data points:\n"
+            "- 'check_ip_reputation': Use this to check if a source or destination IP is known for malicious activity.\n"
+            "- 'check_hash_reputation': Use this to verify if a file hash is associated with known malware.\n"
+            "- 'get_domain_age': Use this to check if a domain was recently created, which is a common indicator of phishing or C2 infrastructure.\n"
+            "- 'lookup_users': Use this to verify if an email address belongs to an internal employee and check their organizational role.\n"
+            "- 'get_recent_events': Use this to check for recent logs which happened before the alert timestamp from same entity.\n"
+            "- 'get_recent_similar_alerts': Use this to see if the same activity has been flagged before and how it was resolved.\n\n"
+            "Return ONLY the JSON object."
+        )
+    else:
+        system_instruction = f"You are a Tier-1 SOC Analyst. Output JSON only: {json.dumps(template_guide)}\n\nNote: {template_note}"
+
     messages = [
-        {"role": "system", "content": f"You are a Tier-1 SOC Analyst. Output JSON only: {json.dumps(template_guide)}\n\nNote: {template_note}"},
+        {"role": "system", "content": system_instruction},
         {"role": "user", "content": user_content}
     ]
 
@@ -220,7 +240,7 @@ async def soc_analyst_role(alert_json, playbook_content, playbook_filename, mcp_
     write_debug(root_path, "[FINAL LLM OUTPUT]\n" + msg.content)
     return msg.content
 
-async def process_dataset(root_dir, playbook_dir, mcp_session):
+async def process_dataset(root_dir, playbook_dir, mcp_session, general_mode=False):
     global current_folder_events, current_folder_alerts
     
     for root, dirs, files in os.walk(root_dir):
@@ -232,22 +252,28 @@ async def process_dataset(root_dir, playbook_dir, mcp_session):
             with open(os.path.join(root, "alert.json"), "r", encoding="utf-8") as f:
                 alert_data = json.load(f)
             
-            # --- ROUND 1: Dynamic Selection ---
-            pb_filename = await select_playbook(alert_data, playbook_dir)
+            # --- ROUND 1: Selection Logic ---
+            playbook_content = None
+            pb_filename = "General Triage (No Playbook)"
+
+            if not general_mode:
+                # Only perform playbook selection if NOT in general mode
+                raw_pb_filename = await select_playbook(alert_data, playbook_dir)
+                pb_filename = raw_pb_filename.strip().replace("'", "").replace('"', "")
+                
+                print(f"--- Decided on Playbook: {pb_filename} for {root} ---")
+                
+                pb_path = os.path.join(playbook_dir, pb_filename)
+                if os.path.exists(pb_path):
+                    with open(pb_path, "r", encoding="utf-8") as f:
+                        playbook_content = json.load(f)
+            else:
+                print(f"--- General Triage Mode: Skipping playbook selection for {root} ---")
 
             write_debug(
                 root,
                 f"[PLAYBOOK SELECTION]\nAlert Name: {alert_data.get('alert_name')}\nSelected Playbook: {pb_filename}"
             )
-
-            # Clean the filename of any quotes the LLM might have added
-            pb_filename = pb_filename.strip().replace("'", "").replace('"', "")
-
-            print(f"--- Decided on Playbook: {pb_filename} for {root} ---")
-
-            # Now this open() will work correctly
-            with open(os.path.join(playbook_dir, pb_filename), "r", encoding="utf-8") as f:
-                playbook_content = json.load(f)
 
             # Load local evidence
             current_folder_events = (
@@ -273,20 +299,28 @@ async def process_dataset(root_dir, playbook_dir, mcp_session):
                 pb_filename,
                 mcp_session,
                 root,
-                image_file 
+                image_file,
+                general_mode=general_mode
             )
             
-            parsed_result = json.loads(result)
+            clean_result = result.strip()
+            if clean_result.startswith("```json"):
+                clean_result = clean_result.replace("```json", "", 1).replace("```", "", 1).strip()
+            elif clean_result.startswith("```"):
+                clean_result = clean_result.replace("```", "", 2).strip()
 
+            try:
+                parsed_result = json.loads(clean_result)
+            except json.JSONDecodeError as e:
+                print(f"❌ FAILED TO PARSE LLM RESPONSE in {root}: {clean_result[:100]}...")
+                write_debug(root, f"[PARSING ERROR]\nRaw Result: {result}\nError: {str(e)}")
+                continue # Skip to the next alert folder instead of crashing
+            
             actual = parsed_result.get("classification", "").upper()
-            parent_dir = os.path.dirname(root)
-            # basename gives us the folder name (e.g., HP)
-            expected = os.path.basename(parent_dir).upper()
+            expected = os.path.basename(os.path.dirname(root)).upper()
 
-            # Ensure we only care about HP or LP; default to UNKNOWN if folder isn't named correctly
             if expected not in ["HP", "LP"]:
                 expected = "UNKNOWN"
-            # ----------------------------------
 
             stats["total"] += 1
             if actual == expected:
@@ -300,20 +334,19 @@ async def process_dataset(root_dir, playbook_dir, mcp_session):
                 json.dump(parsed_result, f, ensure_ascii=False, indent=2)
 
 def parse_args():
-    parser = argparse.ArgumentParser(
-        description="SOC alert investigation runner"
-    )
-    parser.add_argument(
-        "--alert-folder",
-        required=True,
-        help="Alert subfolder under 'alerts/' to process (e.g. 'Suspicious Powershell Script')"
-    )
+    parser = argparse.ArgumentParser(description="SOC alert investigation runner")
+    parser.add_argument("--alert-folder", default="alerts", help="Alert subfolder (default: alerts)")
+    # Add this line:
+    parser.add_argument("--general", action="store_true", help="Bypass playbook selection and use general triage logic")
     return parser.parse_args()
 
 async def main():
     args = parse_args()
 
-    alert_root = os.path.join("alerts", args.alert_folder)
+    if args.alert_folder == "alerts":
+        alert_root = "alerts"
+    else:
+        alert_root = os.path.join("alerts", args.alert_folder)
 
     if not os.path.isdir(alert_root):
         raise ValueError(f"Alert folder does not exist: {alert_root}")
@@ -326,7 +359,7 @@ async def main():
     async with stdio_client(server_params) as (read, write):
         async with ClientSession(read, write) as session:
             await session.initialize()
-            await process_dataset(alert_root, "playbooks", session)
+            await process_dataset(alert_root, "playbooks", session, general_mode=args.general)
             print_summary()
 
 if __name__ == "__main__":

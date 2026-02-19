@@ -1,6 +1,0 @@
-=== DEBUG SESSION START: 2026-01-27T12:22:23.216526 UTC ===
-
-[PLAYBOOK SELECTION]
-Alert Name: User Login Location Anomaly
-Selected Playbook: 'suspicious_login.json'
-
