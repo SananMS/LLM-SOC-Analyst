@@ -6,7 +6,7 @@
   "destination_ip": "40.108.201.15",
   "user": "Tanel.Lepp@globalcorp.ee",
   "user_id": "d44e55f6-g77h-88i9-j00k-11l22m33n44o",
-  "description": "An unusual volume of SharePoint file downloads (985) was observed from the user, which is higher than their 24-hour baseline.",
+  "description": "An unusual volume of SharePoint file downloads (1450) was observed from the user, which is higher than their 24-hour baseline.",
   "evidence": {
     "workload": "SharePoint",
     "operation": "FileDownloaded",

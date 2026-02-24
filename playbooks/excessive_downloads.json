@@ -38,7 +38,7 @@
       "step_id": 6,
       "task": "Final Triage Classification",
       "action": "Assign triage priority (LP or HP) based on role, location, time, and volume.",
-      "logic": "Classification rules:\n\n1. **Low Priority (LP)** if:\n   - Geolocation is within Europe and occurs during typical business hours.\n   - AND role matches data sensitivity.\n   - OR history shows this is a recurring monthly sync.\n\n2. **High Priority (HP)** if:\n   - Activity occurs during 'Dead of Night' (e.g., 01:00 - 05:00) local time without prior history of night shifts.\n   - OR Geolocation is anomalous/outside Europe.\n   - OR there is a significant role-to-data mismatch.\n   - OR the download volume is 20x higher than the baseline."
+      "logic": "Classification rules:\n\n1. **Low Priority (LP)** if:\n   - Geolocation is within Europe and occurs during typical business hours.\n   - AND role matches data sensitivity.\n   - OR history shows this is a recurring monthly sync.\n   - OR activity appears to be part of some kind of integration or automated app process.\n\n2. **High Priority (HP)** if:\n   - Activity occurs during 'Dead of Night' (e.g., 01:00 - 05:00) local time without prior history of night shifts.\n   - OR Geolocation is anomalous/outside Europe.\n   - OR there is a significant role-to-data mismatch.\n   - OR the download volume is extremely large with no potentially reasonable justification."
     },
     {
       "step_id": 7,

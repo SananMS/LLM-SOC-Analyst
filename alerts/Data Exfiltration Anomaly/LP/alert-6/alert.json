@@ -7,7 +7,7 @@
   "endpoint": "LT-VIL-LAPTOP-44",
   "user": "Tomas.Kazlauskas@globalcorp.ee",
   "user_id": "t11k22z3-x44y-55z6-a77b-88c9d0e1f2a3",
-  "description": "An unusual volume of SharePoint file downloads (615) was observed from the user, which is higher than their 24-hour baseline.",
+  "description": "An unusual volume of SharePoint file downloads (250) was observed from the user, which is higher than their 24-hour baseline.",
   "evidence": {
     "workload": "SharePoint",
     "operation": "FileDownloaded",

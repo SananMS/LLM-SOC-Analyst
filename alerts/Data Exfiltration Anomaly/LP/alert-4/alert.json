@@ -7,7 +7,7 @@
   "endpoint": "ARC-DESK-012",
   "user": "Tanel.Magi@globalcorp.ee",
   "user_id": "c77d49e2-b11c-4e88-a8d2-3f1c9d8a7b5e",
-  "description": "An unusual volume of SharePoint file downloads (550) was observed from the user, which is higher than their 24-hour baseline.",
+  "description": "An unusual volume of SharePoint file downloads (250) was observed from the user, which is higher than their 24-hour baseline.",
   "evidence": {
     "workload": "SharePoint",
     "operation": "FileDownloaded",

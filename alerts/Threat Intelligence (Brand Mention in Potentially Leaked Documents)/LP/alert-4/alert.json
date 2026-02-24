@@ -1,18 +1,18 @@
 {
-  "alert_id": "SOC-75691",
+  "alert_id": "SOC-75693",
   "alert_name": "Brand Mention in External Document",
   "threat": "DocumentExposure:VitalisHealthcare",
   "category": "Brand Monitoring",
   "status": "new",
-  "start_time": "2026-02-19T13:58:45.000Z",
+  "start_time": "2026-02-24T14:20:00.000Z",
   "description": "Vitalis Healthcare mentioned in a potentially leaked document.",
   "evidence": {
     "detection_source": "TI-Monitor-DarkWeb",
-    "source_url": "http://n6p9q2r8t0v4w5x1y3z7a9b1c3d5e7f9g1h3i5j7k9l1m3n5o7p9q1r3.onion/repository/legal/intellectual-property/",
+    "source_url": "http://n6p9q2r8t0v4w5x1y3z7a9b1c3d5e7f9g1h3i5j7k9l1m3n5o7p9q1r3.onion/repository/leaks/commercial-real-estate-sector/",
     "relative_paths": [
-      "/var/www/html/secure_dump/legal_archived/vitalis-estates/trust_agreements/Vitalis_Family_Trust_Agreement_2026.pdf",
-      "/var/www/html/secure_dump/legal_archived/vitalis-estates/real_estate/Vitalis_Manor_Deed_Transfer.docx",
-      "/var/www/html/secure_dump/legal_archived/vitalis-estates/beneficiaries/Vitalis_Estate_Asset_Distribution_List.xlsx"
+      "/dumps/uk_property_agents/vitalis_estates_london/listings/Residential_Portfolio_2025.pdf",
+      "/dumps/uk_property_agents/vitalis_estates_london/contracts/Rental_Agreement_Template.docx",
+      "/dumps/uk_property_agents/vitalis_estates_london/staff/Branch_Manager_Directory.xlsx"
     ]
   }
 }
