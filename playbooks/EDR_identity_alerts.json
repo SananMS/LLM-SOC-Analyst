@@ -12,7 +12,7 @@
       "step_id": 2,
       "task": "Analyze Rule Intent",
       "action": "Examine the 'logic' of the mailbox rule.",
-      "logic": "Threat actors use 'Delete' or 'Move to Folder' rules to hide their communication from the actual user and to suppress security notifications."
+      "logic": "Differentiate between stealth (hiding human communication) and maintenance (managing automated/system traffic). Actors hide mail to suppress security alerts; users delete mail to manage high-volume automated senders."
     },
     {
       "step_id": 3,
@@ -31,7 +31,7 @@
       "step_id": 5,
       "task": "Final Triage Classification",
       "action": "Assign triage priority (LP or HP) based on the legitimacy of the access and the impact of the rule.",
-      "logic": "Classification rules:\n\n1. **Low Priority (LP)** if:\n   - Action performed by a known account as part of documented cleanup.\n   - Geolocation and IP match the user's standard office/VPN profile.\n   - The rule is a standard 'Move to Folder' for organization.\n\n2. **High Priority (HP)** if:\n   - **Stealth Behavior**: Rule deletes or hides incoming mail on a human-user account.\n   - **Credential Compromise**: Rule was created following an 'Anomalous Login' or 'MFA Bypass'.\n   - **Exfiltration**: Rule forwards internal email to an external, unauthorized address.\n   - **Origin**: Action originated from a high-risk IP or unexpected country."
+      "logic": "Classification rules:\n\n1. **Low Priority (LP)** if:\n   - Action performed by a known account as part of documented cleanup.\n   - The rule is a standard 'Move to Folder' for organization.\n   - The rule targets automated system traffic or is part of routine administrative inbox management.\n\n2. **High Priority (HP)** if:\n   - **Stealth Behavior**: Rule deletes or hides incoming mail from human users or security systems on a human-user account.\n   - **Credential Compromise**: Rule was created following an 'Anomalous Login' or 'MFA Bypass'.\n   - **Exfiltration**: Rule forwards internal email to an external, unauthorized address.\n   - **Origin**: Action originated from a high-risk IP or unexpected country."
     }
   ]
 }

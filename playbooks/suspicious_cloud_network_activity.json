@@ -25,7 +25,7 @@
       "step_id": 4,
       "task": "Geolocation Verification",
       "action": "Inspect source geolocation.",
-      "logic": "1. **Expected Location:** The default expected location for employees is Estonia (EE).\n2. **Anomaly Detection:** If the activity originates from a foreign countryCode  without a recorded business travel profile, escalate to High Priority (HP)."
+      "logic": "1. **Expected Location:** The default expected location for employees is Estonia (EE).\n2. **Anomaly Detection:** If the activity originates from a foreign country without a recorded business travel profile, escalate to High Priority (HP)."
     },
     {
       "step_id": 5,

@@ -9,8 +9,7 @@
   "evidence": {
     "endpoint": "MAC-WKSTN-043",
     "source_ip": "192.168.1.115",
-    "external_ip": "82.102.45.18",
-    "user": "m.tamm@clint.ee",
+    "user": "m.tamm@client.ee",
     "os_name": "OS X",
     "os_revision": "15.6.1 (24G90)",
     "file_name": "Grammarly Desktop",

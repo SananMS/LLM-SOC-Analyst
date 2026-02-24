@@ -9,7 +9,6 @@
   "evidence": {
     "endpoint": "WKSTN-SALES-080",
     "source_ip": "10.40.15.22",
-    "external_ip": "95.12.170.44",
     "user": "a.jakub@client.ee",
     "user_domain": "CORP-AD",
     "os_name": "Windows 11 Business",

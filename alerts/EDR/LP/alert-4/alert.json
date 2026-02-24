@@ -9,7 +9,6 @@
   "evidence": {
     "endpoint": "MAC-DEV-204",
     "source_ip": "192.168.1.88",
-    "external_ip": "93.184.216.34",
     "user": "l.martinez@client.ee",
     "os_name": "OS X",
     "os_revision": "15.6.1 (24G90)",

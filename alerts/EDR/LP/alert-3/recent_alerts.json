@@ -1,0 +1,28 @@
+[
+  {
+    "alert_id": "SOC-29104",
+    "alert_name": "SentinelOne: XDR Miscellaneous Malware",
+    "threat_display_name": "Malware",
+    "threat_family_name": "Discovery / Hacktool",
+    "status": "closed",
+    "start_time": "2026-01-23T14:45:10.000Z",
+    "description": "A threat 'Malware' related to the file 'advanced_ip_scanner.exe' has been detected on device 'WKSTN-FIN-992'.",
+    "alert_web_url": "https://sentinelone.net/threats/2401992837465102938/overview",
+    "evidence": {
+      "endpoint": "WKSTN-FIN-992",
+      "source_ip": "10.15.22.84",
+      "user": "a.miller@client.ee",
+      "os_name": "Windows 11 Pro",
+      "os_revision": "22631",
+      "file_name": "advanced_ip_scanner.exe",
+      "file_path": "\\Device\\HarddiskVolume2\\Users\\a.miller\\Downloads\\Advanced_IP_Scanner\\advanced_ip_scanner.exe",
+      "file_sha256": "8c3b2a1f0e9d8c7b6a5f4e3d2c1b0a9f8e7d6c5b4a3f2e1d0c9b8a7f6e5d4c3b",
+      "file_sha1": "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0",
+      "process_parent": "explorer.exe",
+      "detection_engine": "On-Write Static AI - Suspicious",
+      "confidence_level": "suspicious",
+      "sentinelone_agent_id": "9930818167598319157"
+    },
+    "analyst_comment": "Alert closed as FP. Investigation confirmed the user is a network administrator and runs this scanner periodically for legitimate internal discovery. No malicious intent found; activity aligns with job role."
+  }
+]

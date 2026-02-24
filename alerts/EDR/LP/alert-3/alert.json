@@ -10,9 +10,7 @@
   "evidence": {
     "endpoint": "WKSTN-FIN-992",
     "source_ip": "10.15.22.84",
-    "external_ip": "185.122.40.11",
     "user": "a.miller@client.ee",
-    "user_domain": "CORP-GLOBAL",
     "os_name": "Windows 11 Pro",
     "os_revision": "22631",
     "file_name": "advanced_ip_scanner.exe",
