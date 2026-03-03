@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-102",
+    "Start Time": "2025-07-26T08:50:00.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "195.88.86.50",
+    "Destination IP": "13.80.23.7",
+    "Endpoint": "F31647565",
+    "User": "marko.talvik@client.ee",
+    "Playbook Used": "Suspicious Login Triage",
+    "Description": "An Office 365 login occurred from Istanbul, Turkey, which is outside the user's typical region. The source IP resolves to a VPN-enabled data center with a low abuse score, and the device is company managed. Historical logins were from Tallinn, Estonia, indicating a geographic shift; MFA was used during the login, and there are no recent similar alerts. The combination of MFA usage, compliant device, and limited evidence of unauthorized access leads to a Low Priority assessment at this time.",
+    "IP Reputation": "Data Center/Web Hosting/Transit; VPN; Abuse Score 0/100; ISP Packethub S.A.",
+    "VPN Usage": "Yes",
+    "Historical Geolocations": "Tallinn, Estonia (previous); Istanbul, Turkey (current)",
+    "Device Management": "Company managed and compliant"
+  },
+  "classification": "LP"
+}

@@ -1,0 +1,22 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-12880",
+    "Start Time": "2026-01-31T23:04:12.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "145.14.37.179",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "HOST-VPN-PRIV-02",
+    "User": "Aleksei.Ivanov@globalcorp.ee",
+    "Description": "Anomalous activity detected where the user downloaded 1,120 files from a restricted SharePoint site, which is far above their 24-hour baseline of 10. Sample files include payroll, executive performance reviews, and bank account details, indicating access to high-sensitivity data. Activity originated from a VPN-hosted endpoint in Tallinn and used a modern Chrome user agent, consistent with interactive access but notable for the unusually large volume. Because of the significant deviation from baseline and the sensitive nature of the content accessed, this behavior is considered high priority and requires further investigation.",
+    "Workload": "SharePoint",
+    "File Count": 1120,
+    "Baseline 24h": 10,
+    "Site URL": "https://globalcorp.sharepoint.com/sites/Global_HR_Restricted/",
+    "Sample Files": [
+      "Employee_Salary_List_2026_Full.csv",
+      "Performance_Review_Executive_Leadership.pdf",
+      "Bank_Account_Details_Export.xlsx"
+    ]
+  },
+  "classification": "HP"
+}

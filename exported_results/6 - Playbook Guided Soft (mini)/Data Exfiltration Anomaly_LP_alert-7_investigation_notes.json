@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-19220",
+    "Start Time": "2026-02-01T14:10:00.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "90.190.150.10",
+    "Destination IP": "40.108.201.15",
+    "User": "globalcorp@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Application": "Directo MSGraph",
+    "User Agent": "Mozilla/4.0 (compatible; Win32; WinHttp.WinHttpRequest.5)",
+    "File Count": 290,
+    "Baseline 24h": 50,
+    "User Lookup Result": "No directory record found for globalcorp@globalcorp.ee; may be a service or integration account",
+    "Description": "A spike of 290 SharePoint downloads (baseline 50) was observed from globalcorp@globalcorp.ee accessing the Directo-related SharePoint site and paths containing financial reports and statements. The access used an automated-style user agent (WinHttpRequest) and the site naming and application (Directo MSGraph) indicate an integration or connector performing bulk exports. The activity occurred at 16:10 local Tallinn time, which falls within normal business hours, and there are no recent events or similar alerts to suggest ongoing malicious activity. Given the automated access pattern, matching application name, business-hour timing, and absence of historical alerts, this alert is assessed as Low Priority but owner verification of the service/integration account is recommended."
+  },
+  "classification": "LP"
+}

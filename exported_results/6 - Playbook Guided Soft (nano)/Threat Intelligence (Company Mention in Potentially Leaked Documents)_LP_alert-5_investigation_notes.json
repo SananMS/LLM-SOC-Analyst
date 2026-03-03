@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-75691",
+    "Start Time": "2026-02-19T13:58:45.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Playbook Used": "Document Exposure & Threat Intel Triage",
+    "Evidence Source": "TI-Monitor-DarkWeb",
+    "Evidence Source URL": "http://n6p9q2r8t0v4w5x1y3z7a9b1c3d5e7f9g1h3i5j7k9l1m3n5o7p9q1r3.onion/repository/legal/intellectual-property/",
+    "Internal Document Paths": [
+      "/var/www/html/secure_dump/legal_archived/vitalis-estates/trust_agreements/Vitalis_Family_Trust_Agreement_2026.pdf",
+      "/var/www/html/secure_dump/legal_archived/vitalis-estates/real_estate/Vitalis_Manor_Deed_Transfer.docx",
+      "/var/www/html/secure_dump/legal_archived/vitalis-estates/beneficiaries/Vitalis_Estate_Asset_Distribution_List.xlsx"
+    ],
+    "Description": "Vitalis Healthcare is mentioned in a document surfaced via a dark web monitoring source, indicating potential external exposure. The evidence includes internal paths under secure_dump/legal_archived related to Vitalis Estates and beneficiaries, suggesting confidential material may have been exposed. Combined with a dark web source and explicit references to legal documents, this represents a credible exposure risk to sensitive brand information and warrants immediate high-priority investigation."
+  },
+  "classification": "HP"
+}

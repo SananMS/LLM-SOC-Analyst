@@ -1,0 +1,44 @@
+{
+  "playbook_name": "Suspicious DNS Query Triage",
+  "description": "SOP for triaging DNS Tunneling anomalies by normalizing the alert domain to its root (eTLD+1) and performing conditional age checks.",
+  "steps": [
+    {
+      "step_id": 1,
+      "task": "Extract DNS Context from Alert",
+      "action": "Identify the primary domain from the Alert 'description' or 'evidence.sample_queries'.",
+      "requirement": "Use the domain that triggered this specific alert. Do not use domains from the Recent Events list for the primary triage check."
+    },
+    {
+      "step_id": 2,
+      "task": "Conditional Root Domain Age Analysis",
+      "action": "Strip all subdomains to identify the root domain (eTLD+1). IF this root domain is unknown, invoke 'get_domain_age' on the root domain.",
+      "tool_integration": "get_domain_age",
+      "logic": "1. **Normalization:** If the alert query is '***.domain.net', run the check only on 'domain.net'.\n2. **Conditional Trigger:** Skip the API call if the root domain is a globally trusted provider.\n3. **Risk Profile:** If the root domain is quite recently created, consider escalation to High Priority (HP) as it suggests newly created infrastructure for exfiltration."
+    },
+    {
+      "step_id": 3,
+      "task": "Base64 Decoding and Payload Inspection",
+      "action": "Inspect the subdomains in 'sample_queries' for Base64 characteristics. If found, attempt to decode the string.",
+      "logic": "If the decoded payload reveals system-related strings, consider escalating to High Priority (HP)."
+    },
+    {
+      "step_id": 4,
+      "task": "Subdomain Pattern and Payload Analysis",
+      "action": "Analyze 'sample_queries' for structural indicators of legitimate diagnostics",
+      "logic": "Legitimate diagnostic patterns on a normalized root domain are strong Low Priority (LP) indicators."
+    },
+    {
+      "step_id": 5,
+      "task": "Correlate with Historical Host Activity",
+      "action": "Invoke 'get_recent_events' AND 'get_recent_similar_alerts' to understand host context.",
+      "tool_integration": ["get_recent_events", "get_recent_similar_alerts"],
+      "logic": "Determine if the host has a history of similar volume spikes or communication with this root domain."
+    },
+    {
+      "step_id": 6,
+      "task": "Final Correlation and Triage Decision",
+      "action": "Evaluate the normalized domain age, decoded payload results, and the endpoint's role.",
+      "logic": "Classification rules:\n\n1. **Low Priority (LP)** if:\n   - The root domain is verified infrastructure.\n   - AND the subdomains match known patterns.\n\n2. **High Priority (HP)** if:\n   - **Decoded payloads contain sensitive host data.**\n   - OR the root domain is quite newly registered."
+    }
+  ]
+}

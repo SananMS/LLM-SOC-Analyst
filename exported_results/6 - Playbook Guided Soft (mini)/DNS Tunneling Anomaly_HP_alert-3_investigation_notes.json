@@ -1,0 +1,23 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14569",
+    "Start Time": "2026-02-06T15:22:10.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.150.22.110",
+    "Destination IP": "162.255.119.41",
+    "Endpoint": "srv-linux-prod-db",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Query Type": "TXT",
+    "Actual Bytes": 2840,
+    "Sample Queries": [
+      "LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQ.cdn-check-cache.top",
+      "TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCk.cdn-check-cache.top",
+      "YWRtaW46YUEyM2IzYmI0Y2M1ZGQ2ZWVmZ2c3N2ho.cdn-check-cache.top",
+      "c3NoLWtleS1iYWNrdXAtMjAyNi50YXIuZ3o.cdn-check-cache.top"
+    ],
+    "Domain Age": "Created: 2026-02-03 (28 days old)",
+    "Recent Host Events": "Prior events show this host queried github.com (A) at 2026-02-06T15:15:00Z and performed an NS query for cdn-check-cache.top at 2026-02-06T15:20:05Z.",
+    "Description": "Large TXT DNS responses (2,840 bytes vs typical 12 bytes) to cdn-check-cache.top were observed from srv-linux-prod-db. The root domain is newly registered (28 days old) and is not recognized as a known legitimate service, raising risk. Subdomain labels contain high-entropy Base64 strings which decode to sensitive artifacts including an RSA private key header, an admin credential-like string, a User-Agent string, and an ssh-key backup filename, consistent with data being carried in DNS. Given the decoded sensitive content, anomalous payload size, and recent domain registration, this activity is assessed as a genuine threat requiring escalation."
+  },
+  "classification": "HP"
+}

@@ -1,0 +1,24 @@
+=== DEBUG SESSION START: 2026-03-02T23:00:48.596762+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Azure Network Security Modification
+Selected Playbook: suspicious_cloud_network_activity.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-99500",
+    "Start Time": "2026-02-10T21:15:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "82.102.15.144",
+    "User": "aleksei.ivanov@globalcorp.ee",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Resource Scope": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-baltic-prod-data/providers/Microsoft.Network/networkSecurityGroups/nsg-prod-db-cluster",
+    "Operation": "MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/WRITE",
+    "Request Body Present": "Yes",
+    "Request Body Summary": "securityRules contains Allow_LB_HealthCheck_Internal for inbound to 10.0.5.2 port 443 from any source",
+    "Description": "An Azure NSG modification was detected for NSG nsg-prod-db-cluster in resource group rg-baltic-prod-data. The change includes a newly added security rule Allow_LB_HealthCheck_Internal, permitting inbound TCP traffic on port 443 to 10.0.5.2 from any source. The activity originated from IP 82.102.15.144 with user aleksei.ivanov@globalcorp.ee (Owner) and shows Tallinn, Estonia as the geolocation, occurring at 21:15 UTC, which is outside typical admin hours. The combination of a broad source, production scope, and off-hours origin increases risk and warrants further investigation to confirm legitimacy."
+  },
+  "classification": "HP"
+}
+

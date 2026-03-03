@@ -1,0 +1,15 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-9623",
+    "Start Time": "2026-01-26T06:14:39.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.3.80.44",
+    "Endpoint": "SRV-WEB-02",
+    "User": "r.kuznetsov",
+    "User SID": "S-1-5-21-44332211-66778899-11002233-1019",
+    "Operating System": "Windows Server 2019 Standard",
+    "Scriptblock": "New-ItemProperty -Path 'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Run' -Name 'WindowsUpdateSvc' -Value 'powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File C:\\ProgramData\\winupd.ps1' -PropertyType String -Force",
+    "Description": "A registry Run entry was created to launch powershell.exe with ExecutionPolicy Bypass and a hidden window to execute C:\\ProgramData\\winupd.ps1, indicating an attempt to establish persistence. The use of execution policy bypass, hidden execution, and a non-standard 'winupd.ps1' file name on a Windows Server host is consistent with malicious behavior. These indicators elevate risk and warrant immediate follow-up to confirm ownership of the file, the legitimacy of the account, and potential lateral or persistent activity."
+  },
+  "classification": "HP"
+}

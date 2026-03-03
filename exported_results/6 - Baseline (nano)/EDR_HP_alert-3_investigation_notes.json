@@ -1,0 +1,20 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-29900",
+    "Start Time": "2026-01-09T21:57:45.000Z",
+    "Alert Name": "Trend Micro: Possible Data Encrypted for Impact",
+    "Source IP": "10.20.5.245",
+    "Endpoint": "HOST-01",
+    "Description": "Ransomware indicators were detected on host HOST-01, including a ransomware file, ransom note, and a heuristic suggesting data encryption for impact. The observed file path is C:\\Data\\Financials\\2025\\_RECOVER_INSTRUCTIONS.txt with SHA-256 c17fe4a49e12034f44ad74793d520d17a1c6585bec5f3f03b5558da37a0b4617; last seen 2026-01-09T21:55:16Z. The endpoint was quarantined, but the activity represents a high-risk ransomware scenario due to known family and potential data loss risk. The incident should be prioritized for rapid containment and cross-device investigation.",
+    "Ransomware Family": "Locky Ransomware",
+    "File Path": "C:\\Data\\Financials\\2025\\_RECOVER_INSTRUCTIONS.txt",
+    "SHA256 Hash": "c17fe4a49e12034f44ad74793d520d17a1c6585bec5f3f03b5558da37a0b4617",
+    "Indicators Observed": [
+      "Ransomware File Detected",
+      "Ransom Note Detection (Real-time Scan)",
+      "Heuristic: Possible Data Encrypted for Impact"
+    ],
+    "Remediation Status": "quarantined"
+  },
+  "classification": "HP"
+}

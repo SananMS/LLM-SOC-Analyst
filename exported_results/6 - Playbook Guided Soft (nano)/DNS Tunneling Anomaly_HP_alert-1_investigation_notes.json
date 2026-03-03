@@ -1,0 +1,21 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14567",
+    "Start Time": "2026-02-06T14:30:10.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.150.22.105",
+    "Destination IP": "45.15.201.33",
+    "Endpoint": "srv-prod-web-01",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Description": "Anomalous DNS TXT traffic amounting to 2,140 bytes was observed from 10.150.22.105 on srv-prod-web-01 to 45.15.201.33 targeting update-check-cdn.xyz. The sample_queries contain encoded or high-entropy strings that resemble data payloads, indicating potential DNS tunneling or covert channel activity. Given the unusual volume, encoding patterns, and lack of clear legitimate use for this host-domain combination, this activity is treated as high risk and warrants urgent investigation.",
+    "Domain Observed": "update-check-cdn.xyz",
+    "Sample Queries": [
+      "ZmlsZW5hbWU9c2hhZG93LmJhaw.update-check-cdn.xyz",
+      "Y2h1bms9MDF8ZGF0YT1IZWxsbyU.update-check-cdn.xyz",
+      "Y2h1bms9MDJ8ZGF0YT0yMHdvcmxk.update-check-cdn.xyz",
+      "Y2h1bms9MDN8ZGF0YT1leGZpbA.update-check-cdn.xyz"
+    ],
+    "Bytes Observed": "2140"
+  },
+  "classification": "HP"
+}

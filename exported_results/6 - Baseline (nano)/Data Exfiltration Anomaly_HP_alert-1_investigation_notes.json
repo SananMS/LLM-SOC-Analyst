@@ -1,0 +1,27 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-12200",
+    "Start Time": "2026-01-31T14:45:10.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "194.126.101.99",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "WKSTN-OFFSITE-04",
+    "User": "Liam.O-Sullivan@globalcorp.ee",
+    "Description": "Anomalous data exfiltration indicator observed: an unusually high volume of SharePoint downloads (850 files) by user Liam.O-Sullivan@globalcorp.ee from the Executive_Board_Confidential site, far above the 24-hour baseline of 5. The activity originated from an offsite workstation (WKSTN-OFFSITE-04) in Tallinn, Estonia, using an older user agent and accessing confidential documents such as merger terms and board minutes. The combination of high data volume, access to sensitive materials, and offsite origin is suspicious for potential data exfiltration or credential compromise and warrants high-priority investigation.",
+    "Evidence Site URL": "https://globalcorp.sharepoint.com/sites/Executive_Board_Confidential/",
+    "File Count": 850,
+    "Baseline 24h": 5,
+    "Geo Location": "Tallinn, Estonia",
+    "Sample Files": [
+      "Project_Zeus_Merger_Terms_v4.pdf",
+      "Q1_Shareholder_Divestment_Plan.xlsx",
+      "Board_Meeting_Minutes_January.docx"
+    ],
+    "Sample Paths": [
+      "Shared Documents/Strategy/Acquisitions/Zeus/",
+      "Shared Documents/Finance/Shareholder_Relations/",
+      "Shared Documents/Executive/Board_Minutes/"
+    ]
+  },
+  "classification": "HP"
+}

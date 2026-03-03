@@ -1,0 +1,34 @@
+=== DEBUG SESSION START: 2026-03-03T00:13:36.995980+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Brand Logo Detection
+Selected Playbook: logo_abuse_detection.json
+
+[TOOL CALL]
+Tool: check_ip_reputation
+Arguments: {"ip": "185.212.131.54"}
+
+[TOOL RESPONSE]
+Source IP: 185.212.131.54 | Abuse Confidence Score: 0/100 | ISP: IT WEB LTD | Usage Type: Data Center/Web Hosting/Transit | Privacy Status: VPN
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-54921",
+    "Start Time": "2026-02-18T16:15:45.000Z",
+    "Alert Name": "Brand Logo Detection",
+    "Source IP": "185.212.131.54",
+    "Destination IP": "185.212.131.54",
+    "Playbook Used": "Visual Brand Abuse & Logo Triage",
+    "Description": "Vitalis Healthcare logo detected on the domain vitalis-care-verification.net, which appears to be a newly registered site hosting a page that asks for personal information. The domain resolves to IP 185.212.131.54 and is only 1 day old, registered with Hostinger, indicating a high-risk, potentially fraudulent hosting setup. While the IP reputation shows no abuse flag, the combination of brand impersonation, recent domain creation, and a credential-collection page suggests a high-risk phishing scenario requiring escalation."
+  },
+  "classification": "HP"
+}
+

@@ -1,0 +1,28 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14569",
+    "Start Time": "2026-02-06T15:22:10.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.150.22.110",
+    "Destination IP": "162.255.119.41",
+    "Endpoint": "srv-linux-prod-db",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Query Type": "TXT",
+    "Sample Queries": [
+      "LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQ.cdn-check-cache.top",
+      "TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCk.cdn-check-cache.top",
+      "YWRtaW46YUEyM2IzYmI0Y2M1ZGQ2ZWVmZ2c3N2ho.cdn-check-cache.top",
+      "c3NoLWtleS1iYWNrdXAtMjAyNi50YXIuZ3o.cdn-check-cache.top"
+    ],
+    "Decoded Payloads": [
+      "LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQ -> \"-----BEGIN RSA PRIVATE KEY-----\"",
+      "TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCk -> \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"",
+      "YWRtaW46YUEyM2IzYmI0Y2M1ZGQ2ZWVmZ2c3N2ho -> \"admin:aA23b3bb4cc5dd6eefgg77hh\"",
+      "c3NoLWtleS1iYWNrdXAtMjAyNi50YXIuZ3o -> \"ssh-key-backup-2026.tar.gz\""
+    ],
+    "Domain Age": "cdn-check-cache.top — Registered 2026-02-03 (≈28 days old at time of alert)",
+    "Recent Host Events Summary": "Host performed an A query for github.com at 2026-02-06T15:15:00 and an NS query for cdn-check-cache.top at 2026-02-06T15:20:05. No recent similar alerts were found for this host.",
+    "Description": "Multiple DNS TXT queries to cdn-check-cache.top contained Base64-encoded subdomains that decode to sensitive artifacts, including an RSA private key header, apparent credentials, and an SSH key archive filename. The root domain is newly registered (~28 days old) and the observed payload volume (2,840 bytes vs a typical 12 bytes) is consistent with data-carrying DNS traffic rather than benign lookups. Taken together, the decoded contents, large/tunneled DNS TXT data, and the domain age indicate likely DNS-based data exfiltration originating from the host, so the alert is classified as High Priority."
+  },
+  "classification": "HP"
+}

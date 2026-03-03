@@ -1,0 +1,6 @@
+{
+  "input_tokens": 4516,
+  "output_tokens": 1679,
+  "time_seconds": 29.838025,
+  "use_case": "Threat Intelligence (Company Mention in Potentially Leaked Documents)"
+}

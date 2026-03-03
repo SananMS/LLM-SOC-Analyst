@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-29678",
+    "Start Time": "2025-09-16T06:37:45.000Z",
+    "Alert Name": "SentinelOne: XDR Miscellaneous Malware",
+    "Source IP": "192.168.1.88",
+    "Endpoint": "MAC-DEV-204",
+    "User": "l.martinez@client.ee",
+    "Playbook Used": "EDR Malware Triage",
+    "File Name": "extension.js",
+    "File Path": "/Users/l.martinez/.vscode/extensions/github.copilot-1.372.0/dist/extension.js",
+    "File SHA1": "7b3c5cfcdfc93d77f5ab40b826334268d3c49d56",
+    "Parent Process": "Code Helper",
+    "Description": "SentinelOne detected a malware-related event involving a JavaScript file named extension.js in the user's VSCode extensions folder. The file resides under the Copilot extension path and includes a SHA-1 hash; the parent process is Code Helper. The file was quarantined by the remediation action, indicating an automated block, and there is no clear evidence of network activity or broader host impact in the provided data, suggesting a likely false positive or legitimate extension behavior. Given the containment and lack of corroborating indicators, this is classified as Low Priority."
+  },
+  "classification": "LP"
+}

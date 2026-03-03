@@ -1,0 +1,15 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-54412",
+    "Start Time": "2026-02-18T13:10:05.000Z",
+    "Alert Name": "Brand Logo Detection",
+    "Threat": "LogoDetection:VitalisHealthcare",
+    "Category": "Brand Monitoring",
+    "Destination IP": "151.101.2.132",
+    "Scanned URL": "https://www.healthsync-integrations.io/ecosystem",
+    "Detection Source": "Logo-Scanner",
+    "Domain Age": "3 years",
+    "Description": "Logo scanner detected Vitalis Healthcare branding on the healthsync-integrations.io ecosystem page and captured a screenshot showing the logo displayed in a 'Strategic Partners' section. The domain resolves to a Fastly CDN IP with an abuse score of 0 and has a three-year registration, and no recent similar alerts were found. These factors suggest likely authorized partner branding or benign use rather than clear impersonation, so the activity is assessed as Low Priority."
+  },
+  "classification": "LP"
+}

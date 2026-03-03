@@ -1,0 +1,50 @@
+=== DEBUG SESSION START: 2026-03-02T23:48:49.591194+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Azure Network Security Modification
+Selected Playbook: suspicious_cloud_network_activity.json
+
+[TOOL CALL]
+Tool: lookup_users
+Arguments: {"emails": ["linda.kask@globalcorp.ee"]}
+
+[TOOL RESPONSE]
+[
+  {
+    "email": "Linda.Kask@globalcorp.ee",
+    "full_name": "Linda Kask",
+    "department": "Finance",
+    "role": "Senior Accountant"
+  }
+]
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-99300",
+    "Start Time": "2026-02-10T10:30:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "194.126.101.99",
+    "Destination IP": "10.0.1.4",
+    "Endpoint": "nsg-prod-db-core",
+    "User": "Linda Kask",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Description": "An inbound rule change was detected on NSG nsg-prod-db-core in the prod resource group, allowing traffic from any source to 10.0.1.4 on port 445 with a description indicating a manual override for report sync. The request_body contains securityRules with a rule named Data_Transfer_Fix that permits inbound SMB to the target. The change was initiated by Linda Kask (Senior Accountant) from Tallinn, Estonia, which is inconsistent with typical network security administration roles. The rule broadens access in a production environment and could enable unauthorized access or data exposure; combined with the role mismatch, this represents elevated risk and warrants further investigation."
+  },
+  "classification": "HP"
+}
+

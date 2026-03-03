@@ -1,0 +1,54 @@
+=== DEBUG SESSION START: 2026-03-03T01:15:54.374526+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Data Exfiltration Anomaly
+Selected Playbook: excessive_downloads.json
+
+[TOOL CALL]
+Tool: lookup_users
+Arguments: {"emails": ["Tiina.Koppel@globalcorp.ee"]}
+
+[TOOL RESPONSE]
+[
+  {
+    "email": "Tiina.Koppel@globalcorp.ee",
+    "full_name": "Tiina Koppel",
+    "department": "R&D",
+    "role": "Head of Research & Development"
+  }
+]
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-31050",
+    "Start Time": "2026-02-01T03:05:22.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "78.60.112.55",
+    "Destination IP": "40.108.201.15",
+    "User": "Tiina.Koppel@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "User Role": "Head of Research & Development",
+    "Department": "R&D",
+    "User Agent": "Python/3.12 aiohttp/3.11.18",
+    "File Count": 3450,
+    "Local Time": "2026-02-01T05:05:22 EET (UTC+2)",
+    "Description": "A bulk download of 3,450 SharePoint files was observed for Tiina.Koppel@globalcorp.ee, far above the 24-hour baseline of 12 files, occurring at 05:05 local time in Klaipeda, Lithuania. Sample filenames and paths include highly sensitive R&D, proprietary model weights, source code, encryption keys, and M&A materials, and the access used a Python/aiohttp user-agent indicative of scripted or automated retrieval rather than normal interactive behavior. Given the large volume, sensitive content, atypical access method, and unusual local time relative to expected business hours, this activity is assessed as a high-priority concern for potential data exfiltration and requires escalation for deeper investigation."
+  },
+  "classification": "HP"
+}
+

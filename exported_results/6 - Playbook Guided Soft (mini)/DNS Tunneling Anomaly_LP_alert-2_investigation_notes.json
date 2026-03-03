@@ -1,0 +1,25 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10238",
+    "Start Time": "2026-02-06T16:15:22.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "192.168.1.22",
+    "Destination IP": "172.16.40.3",
+    "Endpoint": "wkst-dev-14",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Application": "DNS",
+    "Sample Queries": [
+      "a91c4f7e3d082b650471fe23c8b5aa12d934e017.mdnplay.dev",
+      "f3e72a91-1bc4-47e9-b830-54d721a0fc38.mdnplay.dev",
+      "3b8d1e0c94f72a651bc309e8d4f0a72b1e839c45.mdnplay.dev",
+      "e6f190ad-23b7-4d81-a912-7c340be85f21.mdnplay.dev",
+      "7c52b3e1f094d8a62c451be70f9832d10c74a981.mdnplay.dev",
+      "91d4c8fa-67a3-4f02-bc51-2e908d7f43a6.mdnplay.dev"
+    ],
+    "Data Size (Actual/Typical Bytes)": "580 / 38",
+    "Root Domain Registered Date": "2021-12-14",
+    "Root Domain Age (days)": 1540,
+    "Description": "Anomalously large DNS A queries to mdnplay.dev were observed from wkst-dev-14 with repeated high-entropy and UUID-like subdomains, producing 580 bytes compared to the typical 38 bytes. The root domain mdnplay.dev is several years old (registered 2021-12-14), which reduces the likelihood of immediate malicious registration, but the persistent high-entropy labels and elevated payload size are consistent with DNS tunneling or encoded payloads. No recent events or similar alerts were found for this host, making the activity anomalous for this endpoint and increasing concern. Based on the combination of encoded-looking subdomains and abnormal data volume, this alert is considered High Priority because it potentially indicates data exfiltration and warrants escalation."
+  },
+  "classification": "HP"
+}

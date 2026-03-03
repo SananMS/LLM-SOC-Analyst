@@ -1,0 +1,22 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-11100",
+    "Start Time": "2026-01-28T10:39:49.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "145.14.39.150",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "HOST-WS-03",
+    "User": "Marcus.Webb@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Description": "An unusual volume of SharePoint file downloads (315) was observed from Marcus.Webb@globalcorp.ee, targeting the Legal_M_A site. The 24-hour baseline is 50, and the sample files include multiple sensitive documents such as a confidential board minutes and due diligence file, indicating potential data exposure. The activity occurred during Tallinn local business hours, which is plausible, but the high data volume and presence of sensitive documents elevate risk and may warrant escalation for business justification and access review.",
+    "Sample Files": [
+      "Project_Alpha_Contract_Draft.pdf",
+      "M_A_Due_Diligence_Q1.xlsx",
+      "Confidential_Board_Minutes_Jan2026.pdf"
+    ],
+    "File Count": 315,
+    "Baseline 24h": 50,
+    "Site URL": "https://globalcorp.sharepoint.com/sites/Legal_M_A/"
+  },
+  "classification": "HP"
+}

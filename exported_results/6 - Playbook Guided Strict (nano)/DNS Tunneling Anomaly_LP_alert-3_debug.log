@@ -1,0 +1,47 @@
+=== DEBUG SESSION START: 2026-03-02T23:42:10.833242+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: DNS Tunneling Anomaly
+Selected Playbook: suspicious_dns_queries.json
+
+[TOOL CALL]
+Tool: get_domain_age
+Arguments: {"domain": "contentdelivery.net"}
+
+[TOOL RESPONSE]
+Domain: contentdelivery.net | Created: 2003-10-10 | Age: 8179 days old.
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10241",
+    "Start Time": "2026-02-06T13:45:10.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "192.168.177.244",
+    "Destination IP": "19.240.126.129",
+    "Endpoint": "host-812-workstation",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Description": "Anomalous DNS tunneling activity was observed from host-812-workstation, with 953 bytes of high-entropy DNS traffic to 19.240.126.129 using the domain contentdelivery.net and multiple encoded-looking subdomains. Sample_queries contain long hex-like strings and httpcache prefixes, indicating potential encoded payloads being carried in DNS queries. The root domain contentdelivery.net is established (registered in 2003), so while not necessarily malicious by itself, the combination of high entropy and encoded payloads in DNS traffic warrants HP classification and deeper investigation for possible data exfiltration.",
+    "Root Domain": "contentdelivery.net",
+    "Root Domain Age (days)": 8179,
+    "Encoded Payload Indicators": "sample_queries show long hex/base64-like strings in subdomains, suggesting encoded payloads",
+    "Recent Events Context": "No recent events found for this host",
+    "Recent Similar Alerts Context": "No recent similar alerts found"
+  },
+  "classification": "HP"
+}
+

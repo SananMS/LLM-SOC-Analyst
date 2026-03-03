@@ -1,0 +1,22 @@
+=== DEBUG SESSION START: 2026-03-03T00:22:09.363645+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Brand Mention in External Document
+Selected Playbook: potentially_leaked_document.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-75468",
+    "Start Time": "2026-02-19T14:45:30.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Playbook Used": "Document Exposure & Threat Intel Triage",
+    "Description": "Vitalis Healthcare was mentioned in an external document hosted on Scribd, with a file titled Vitalis_Healthcare_Environmental_Policy_2026.pdf. The matched content describes a public-facing environmental policy and CSR reporting, implying publicly accessible information rather than internal data. There is no immediate evidence of sensitive data exposure, exfiltration, or targeted risk to the brand, and the hosting platform is a public repository, leading to a Low Priority classification.",
+    "Evidence Source": "TI-Monitor-Scribd",
+    "Document Title": "Vitalis_Healthcare_Environmental_Policy_2026.pdf",
+    "Source URL": "https://www.scribd.com/document/991283/vitalis-environmental-policy",
+    "Matched Content Summary": "Content mentions Vitalis Healthcare 2026 Environmental and Sustainability Policy; appears public-facing."
+  },
+  "classification": "LP"
+}
+

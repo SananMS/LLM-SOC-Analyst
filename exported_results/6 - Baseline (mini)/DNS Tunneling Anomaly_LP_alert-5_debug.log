@@ -1,0 +1,34 @@
+=== DEBUG SESSION START: 2026-03-03T00:40:59.035285+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: DNS Tunneling Anomaly
+Selected Playbook: General Triage (No Playbook)
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10243",
+    "Start Time": "2026-01-16T16:51:45.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.150.22.41",
+    "Destination IP": "158.20.144.11",
+    "Endpoint": "dc-prod-02",
+    "Application": "DNS",
+    "Query Type": "A",
+    "Actual Bytes": 574,
+    "Typical Bytes": 28,
+    "Domain": "dotnxdomain.net",
+    "Sample Queries": [
+      "0di-af31927c-e42-c1284-s192837465-i5fg6789-0.eu.dotnxdomain.net",
+      "0ds-af31927c-e42-c1284-s192837465-i5fg6789-0.eu.dotnxdomain.net",
+      "04u-af31927c-e42-c1284-s192837465-i5fg6789-0.eu.dotnxdomain.net",
+      "0du-results-af31927c-e42-c1284-s192837465-i5fg6789-0.eu.dotnxdomain.net",
+      "root-key-sentinel-is-ta-51204.0ds-af31927c-e42-c1284-s192837465-i5fg6789-20.eu.dotnxdomain.net",
+      "root-key-sentinel-is-ta-18492.0ds-af31927c-e42-c1284-s192837465-i5fg6789-30.eu.dotnxdomain.net",
+      "root-key-sentinel-not-ta-18492.0ds-af31927c-e42-c1284-s192837465-i5fg6789-10.eu.dotnxdomain.net"
+    ],
+    "Description": "Multiple high-entropy DNS A queries to dotnxdomain.net with unusually large payloads (574 bytes vs typical 28 bytes) were observed from dc-prod-02 (10.150.22.41) to an external IP. Query names contain long encoded tokens and 'root-key-sentinel' strings consistent with DNS tunneling or a covert channel. Because the source is a production domain controller and the traffic is anomalous, externally directed, and structurally indicative of tunneling, this activity is considered High Priority and requires further investigation."
+  },
+  "classification": "HP"
+}
+

@@ -1,0 +1,24 @@
+=== DEBUG SESSION START: 2026-03-02T23:15:58.822161+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Suspicious PowerShell Script Execution
+Selected Playbook: suspicious_powershell.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-5592",
+    "Start Time": "2026-01-25T19:12:05.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.20.30.45",
+    "Endpoint": "HOST-SRV-01",
+    "User": "backupVeeam",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Description": "A PowerShell script executed on HOST-SRV-01 by the backupVeeam user contains a function to assess NTFS alternate data streams and verify if the target drive supports Add-Content -Stream. There is no evidence of command obfuscation, encoding, or external network activity in the provided scriptblock. Given the service-account context and the lack of network indicators or anomalous behavior, this activity aligns with routine administration rather than a malicious operation and is therefore classified as Low Priority.",
+    "Account Type": "Service account (backup software)",
+    "Script Characteristics": "Scriptblock defines PSTargetSupportsAlternateStreams to determine if the target supports Alternate Data Streams on NTFS and to verify capability to use Add-Content -Stream",
+    "Notable Observations": "No file_path in evidence; no encoding or obfuscation observed; no external IPs or network calls detected in the snippet"
+  },
+  "classification": "LP"
+}
+

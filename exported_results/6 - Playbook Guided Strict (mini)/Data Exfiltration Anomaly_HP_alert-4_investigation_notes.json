@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14220",
+    "Start Time": "2026-01-31T23:58:45.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "113.161.12.88",
+    "Destination IP": "40.108.201.15",
+    "User": "Tanel.Lepp@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Description": "An unusually large volume of SharePoint downloads (1450 files vs a 24h baseline of 15) was observed from a user in the Engineering department accessing a Human Resources Confidential site and restricted payroll, tax, and legal paths. The activity originated from Đồng Hới, Vietnam at 2026-01-31T23:58:45Z (local time 2026-02-01 06:58:45), which is outside typical working hours and follows a recent login-location anomaly for the same user and IP. The combination of high-volume access, role-to-data mismatch, sensitive content accessed, and a related anomalous login increases the likelihood of unauthorized access or data exfiltration, so this is classified as high priority.",
+    "User Role": "Software Engineer",
+    "Department": "Engineering",
+    "File Count": 1450,
+    "Baseline 24h": 15,
+    "Related Alerts": "SOC-14215: User Login Location Anomaly (2026-01-31T23:40:12.000Z) — same user, same source IP"
+  },
+  "classification": "HP"
+}

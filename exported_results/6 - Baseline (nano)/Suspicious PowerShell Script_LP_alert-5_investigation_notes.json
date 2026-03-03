@@ -1,0 +1,12 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-5592",
+    "Start Time": "2026-01-25T19:12:05.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.20.30.45",
+    "Endpoint": "HOST-SRV-01",
+    "User": "backupVeeam",
+    "Description": "A PowerShell script block was captured on HOST-SRV-01 that defines a function to determine if a target supports alternate data streams on NTFS and uses Resolve-Path to resolve paths. The script enumerates drives and checks for NTFS format, then verifies the presence of the Add-Content -Stream parameter, which could be used to hide data in alternate streams. While the activity involves a single script block by a backup-associated user, there are potential anti-forensics or data-hiding techniques observed, warranting cautious monitoring but lacking definitive malicious indicators at this time."
+  },
+  "classification": "LP"
+}

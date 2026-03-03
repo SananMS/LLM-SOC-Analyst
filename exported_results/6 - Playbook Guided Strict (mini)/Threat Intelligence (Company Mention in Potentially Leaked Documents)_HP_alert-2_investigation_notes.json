@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-75925",
+    "Start Time": "2026-02-19T19:30:12.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Playbook Used": "Document Exposure & Threat Intel Triage",
+    "Detection Source": "TI-Monitor-Scribd",
+    "Document Title": "Vitalis_Staff_Directory_and_System_Roles_Q1.xlsx",
+    "Source URL": "https://www.scribd.com/document/7721543/vitalis-staff-roles-2026",
+    "Exposed Personnel": "Sarah Jenkins (Admin), Mark Thompson (DevOps), Elena Rodriguez (HR)",
+    "Related User Emails": [
+      "s.jenkins@vitalis.com",
+      "m.thompson@vitalis.com"
+    ],
+    "Description": "A publicly hosted Scribd document contains a staff directory that lists Vitalis Healthcare personnel with elevated privileges and direct contact emails. The content explicitly references access to PHI/EMR databases, production AWS buckets and CI/CD pipelines, and payroll/PII, which represents sensitive internal access details and identifiable employee information. No recent similar alerts were found, and because the document is publicly accessible and exposes privileged roles tied to critical systems, this represents a genuine exposure of sensitive information and is classified as High Priority."
+  },
+  "classification": "HP"
+}

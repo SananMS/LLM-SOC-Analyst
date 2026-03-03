@@ -1,0 +1,25 @@
+=== DEBUG SESSION START: 2026-03-03T00:36:08.607750+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: DNS Tunneling Anomaly
+Selected Playbook: General Triage (No Playbook)
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14567",
+    "Start Time": "2026-02-06T14:30:10.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.150.22.105",
+    "Destination IP": "45.15.201.33",
+    "Endpoint": "srv-prod-web-01",
+    "Description": "Large, high-entropy DNS TXT queries (~2,140 bytes compared with a typical 15 bytes) to update-check-cdn.xyz were observed from the internal host srv-prod-web-01 to an external IP. Sample subdomains contain base64-like payloads that decode to file-related strings (for example, filename=shadow.bak), which is consistent with DNS-based data exfiltration rather than benign update checks. This is classified as High Priority because the size, entropy, payload content, and external destination strongly indicate malicious DNS tunneling and potential sensitive data exfiltration.",
+    "Application": "DNS",
+    "Query Type": "TXT",
+    "Actual Bytes": 2140,
+    "Typical Bytes": 15,
+    "Domain": "update-check-cdn.xyz"
+  },
+  "classification": "HP"
+}
+

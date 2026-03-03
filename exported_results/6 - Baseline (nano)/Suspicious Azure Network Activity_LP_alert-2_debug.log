@@ -1,0 +1,23 @@
+=== DEBUG SESSION START: 2026-03-02T22:26:13.713744+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Azure Network Security Modification
+Selected Playbook: General Triage (No Playbook)
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-22410",
+    "Start Time": "2026-02-10T15:33:45.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Destination IP": "13.75.144.22",
+    "Resource ID": "/subscriptions/d1c2b3a4-e5f6-7a8b-9c0d-1e2f3a4b5c6d/resourceGroups/rg-nordic-dev-test/providers/Microsoft.Network/networkSecurityGroups/nsg-aks-dev-01",
+    "Region": "North Europe",
+    "Correlation ID": "a1b2c3d4-e5f6-7a8b-9c0d-e1f2a3b4c5d6",
+    "Principal Type": "ServicePrincipal",
+    "Security Rules Updated": "Inbound rule AllowDevWebService to destination 13.75.144.22:8080 from any source; including an existing AllowVnetInBound inbound rule.",
+    "Description": "Azure NSG nsg-aks-dev-01 in resource group rg-nordic-dev-test was modified to add an inbound rule allowing traffic to 13.75.144.22 on port 8080 from any source, along with the existing VNet inbound rule. The change was made by a Service Principal with Contributor rights on the subscription, consistent with automated development/testing workflows. While the explicit testing context is noted, the inbound exposure to an external address on port 8080 should be validated against the current testing scope."
+  },
+  "classification": "LP"
+}
+

@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-29905",
+    "Start Time": "2025-10-09T15:39:02.000Z",
+    "Alert Name": "Microsoft Defender: Antivirus Tampering Attempt Prevented",
+    "Source IP": "10.10.44.112",
+    "Endpoint": "WKSTN-FIN-092b",
+    "User": "GlobalAdmin_svc",
+    "Description": "An attempt to stop the Microsoft Defender Antivirus service (WinDefend) via the Service Control Manager (sc.exe) was detected and blocked on the endpoint. The command executed was 'sc.exe stop WinDefend' from C:\\Windows\\System32\\sc.exe, and remediation shows the action was blocked with a successful outcome. This behavior aligns with defense evasion attempts to disable security tooling; while the attempt was thwarted, it indicates a potential threat actor activity and should be monitored for any follow-up actions.",
+    "Threat Display Name": "MpTamperSrvDisableAV",
+    "Threat Family": "Defense Evasion / Tampering",
+    "Process Name": "sc.exe",
+    "Process Path": "C:\\Windows\\System32\\sc.exe",
+    "Command Line": "C:\\Windows\\System32\\sc.exe stop WinDefend"
+  },
+  "classification": "HP"
+}

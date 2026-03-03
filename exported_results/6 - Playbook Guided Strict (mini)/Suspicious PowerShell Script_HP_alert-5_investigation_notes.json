@@ -1,0 +1,16 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-9826",
+    "Start Time": "2026-01-27T01:36:54.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.5.14.92",
+    "Endpoint": "HR-SRV-02",
+    "User": "k.tamm",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Scriptblock": "Copy-Item 'C:\\Users\\*\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Login Data' -Destination C:\\ProgramData\\chrome_cache.db -Force; Copy-Item 'C:\\Users\\*\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\*.default-release\\logins.json' -Destination C:\\ProgramData\\ff_cache.json -Force",
+    "OS": "Windows Server 2019 Standard",
+    "Historical Activity": "No recent events found. No recent similar alerts found.",
+    "Description": "A PowerShell command executed on HR-SRV-02 that copies Chrome and Firefox stored login databases from multiple user profile locations to C:\\ProgramData, indicating likely collection and staging of browser credentials. The use of wildcard user paths and staging sensitive files to a common ProgramData location is consistent with credential harvesting or data exfiltration preparation and is unexpected on a server host. No process hash was available for reputation checks and no prior similar activity was observed in the environment, so this activity is classified as High Priority due to access to sensitive credential stores on a server."
+  },
+  "classification": "HP"
+}

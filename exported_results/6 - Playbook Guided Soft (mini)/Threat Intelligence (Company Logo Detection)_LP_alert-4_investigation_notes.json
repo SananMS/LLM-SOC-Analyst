@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-54521",
+    "Start Time": "2026-02-18T14:30:45.000Z",
+    "Alert Name": "Brand Logo Detection",
+    "Source IP": "104.26.10.225",
+    "Scanned URL": "https://www.vitali-pharmacy.it/contatti",
+    "Target Brand": "Vitalis Healthcare",
+    "Target Brand Domain": "vitalis.com",
+    "Domain Age": "8 years",
+    "Registrar": "NameCheap, Inc.",
+    "Playbook Used": "Visual Brand Abuse & Logo Triage",
+    "Hosting Reputation": "Cloudflare CDN, Abuse Confidence Score 0/100",
+    "Similar Alerts": "No recent similar alerts found.",
+    "Description": "The alert flagged a supposed Vitalis Healthcare logo on vitali-pharmacy.it. The evidence screenshot shows a local pharmacy branded as \"VITALI Farmacia\" with different wordmark text and a different logo/icon style than the reference Vitalis Healthcare logo, and the page is a simple contact form with visible contact details (email and address) rather than credential collection prompts. The domain is 8 years old and hosted via a Cloudflare IP with a zero abuse score, and no prior related alerts were identified; these factors indicate a low likelihood of malicious impersonation and support a Low Priority classification."
+  },
+  "classification": "LP"
+}

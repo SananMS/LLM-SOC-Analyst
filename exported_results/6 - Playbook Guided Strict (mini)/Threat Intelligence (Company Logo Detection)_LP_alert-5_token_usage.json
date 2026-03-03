@@ -1,0 +1,6 @@
+{
+  "input_tokens": 7000,
+  "output_tokens": 2744,
+  "time_seconds": 48.47597,
+  "use_case": "Threat Intelligence (Company Logo Detection)"
+}

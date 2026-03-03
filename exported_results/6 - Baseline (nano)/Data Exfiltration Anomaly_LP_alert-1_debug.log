@@ -1,0 +1,27 @@
+=== DEBUG SESSION START: 2026-03-02T22:14:08.931560+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Data Exfiltration Anomaly
+Selected Playbook: General Triage (No Playbook)
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-11100",
+    "Start Time": "2026-01-28T10:39:49.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "145.14.39.150",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "HOST-WS-03",
+    "User": "Marcus.Webb@globalcorp.ee",
+    "Playbook Used": "Not specified",
+    "SharePoint Site": "https://globalcorp.sharepoint.com/sites/Legal_M_A/",
+    "Downloaded Files": 315,
+    "Baseline 24h": 50,
+    "Geo Location": "Tallinn, Estonia",
+    "Sample Files": ["Project_Alpha_Contract_Draft.pdf", "M_A_Due_Diligence_Q1.xlsx", "Confidential_Board_Minutes_Jan2026.pdf"],
+    "Description": "An anomalously high volume of SharePoint file downloads (315) was observed from Marcus Webb to external destination 40.108.201.15, significantly above the 24-hour baseline of 50 files. The activity includes several sensitive documents and occurred from an internal endpoint (HOST-WS-03) with a standard user agent. This pattern is consistent with potential data exfiltration or unauthorized data access, warranting high priority because it poses a risk to data confidentiality."
+  },
+  "classification": "HP"
+}
+

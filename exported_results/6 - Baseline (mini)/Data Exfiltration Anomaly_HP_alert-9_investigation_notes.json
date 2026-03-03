@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-29100",
+    "Start Time": "2026-02-01T21:30:00.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "78.60.112.55",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "VIL-MTN-WKS-02",
+    "User": "Linas.Pavilionis@globalcorp.ee",
+    "Description": "User account Linas.Pavilionis@globalcorp.ee downloaded 840 files from SharePoint, which is significantly above the 24-hour baseline of 4. The sample files accessed span sensitive categories including R&D recipes, payroll, patent filings, contracts, and audit reports, and the activity originated from an IP geolocated to Vilnius while targeting SharePoint Online. This is considered High Priority because the unusually high download volume combined with access to multiple sensitive repositories indicates a plausible data exfiltration event that warrants immediate escalation.",
+    "Workload": "SharePoint",
+    "Operation": "FileDownloaded",
+    "File Count": 840,
+    "Source IP Reputation Score": "0/100 (Telia Lietuva, fixed line ISP; no VPN/proxy/Tor detected)",
+    "Destination IP Reputation Score": "0/100 (Microsoft Corporation data center)"
+  },
+  "classification": "HP"
+}

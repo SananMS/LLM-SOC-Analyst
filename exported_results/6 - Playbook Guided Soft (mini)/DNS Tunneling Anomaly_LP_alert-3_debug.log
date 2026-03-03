@@ -1,0 +1,49 @@
+=== DEBUG SESSION START: 2026-03-03T01:32:50.110647+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: DNS Tunneling Anomaly
+Selected Playbook: suspicious_dns_queries.json
+
+[TOOL CALL]
+Tool: get_domain_age
+Arguments: {"domain": "contentdelivery.net"}
+
+[TOOL RESPONSE]
+Domain: contentdelivery.net | Created: 2003-10-10 | Age: 8180 days old.
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10241",
+    "Start Time": "2026-02-06T13:45:10.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "192.168.177.244",
+    "Destination IP": "19.240.126.129",
+    "Endpoint": "host-812-workstation",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Application": "DNS",
+    "Query Type": "A",
+    "Actual Bytes": 953,
+    "Typical Bytes": 46,
+    "Root Domain": "contentdelivery.net",
+    "Root Domain Age (days)": 8180,
+    "Sample Query Count": 5,
+    "Description": "An anomalously large DNS A query (953 bytes vs typical 46 bytes) to contentdelivery.net was observed from host-812-workstation, with sample queries containing long hex-like prefixes followed by structured cache-like tokens (e.g., httpcacheX-#####-cacheodY.dna.contentdelivery.net) indicating high-entropy subdomains. The root domain contentdelivery.net is long-established (registered 2003) and the subdomain patterns are consistent with CDN/caching keys or hashed identifiers rather than obvious Base64 or other decoded exfiltration payloads; no decodable sensitive host information was identified in the observed subdomains. No recent events or similar alerts were found for this host, and the combination of a historical, well-known root domain plus cache-like subdomain structure supports treating this as benign behavior at this time."
+  },
+  "classification": "LP"
+}
+

@@ -1,0 +1,12 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-9921",
+    "Start Time": "2026-01-20T02:15:44.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "192.168.1.45",
+    "Endpoint": "FS-PROD-02",
+    "User": "NT SERVICE\\DataBackupAgent",
+    "Description": "A PowerShell script used for a DataVault backup pre-scan inventory was executed on FS-PROD-02. It inventories files larger than 10 GB on C: and logs results to a ProgramData path, typical of a scheduled maintenance task. The script runs under the NT SERVICE\\DataBackupAgent account, with no outbound network activity evident in the evidence. Overall, this appears to be legitimate backup/inventory activity rather than an immediate threat, so it is classified as Low Priority pending confirmation of the task's scheduled window and policy alignment."
+  },
+  "classification": "LP"
+}

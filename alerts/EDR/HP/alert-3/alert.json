@@ -11,7 +11,7 @@
     "endpoint": "HOST-01",
     "source_ip": "10.20.5.245",
     "file_path": "C:\\Data\\Financials\\2025\\_RECOVER_INSTRUCTIONS.txt",
-    "sha256": "e3b0c44298fc1c149afbf4c8996db92427ae41e4649b934ca495991b7852b855",
+    "sha256": "c17fe4a49e12034f44ad74793d520d17a1c6585bec5f3f03b5558da37a0b4617",
     "indicators": [
       "Ransomware File Detected",
       "Ransom Note Detection (Real-time Scan)",

@@ -1,0 +1,52 @@
+=== DEBUG SESSION START: 2026-03-03T00:40:22.886423+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: DNS Tunneling Anomaly
+Selected Playbook: General Triage (No Playbook)
+
+[TOOL CALL]
+Tool: check_ip_reputation
+Arguments: {"ip": "184.28.193.72"}
+
+[TOOL RESPONSE]
+Source IP: 184.28.193.72 | Abuse Confidence Score: 0/100 | ISP: Akamai Technologies, Inc. | Usage Type: Data Center/Web Hosting/Transit | Privacy Status: VPN
+
+[TOOL CALL]
+Tool: get_domain_age
+Arguments: {"domain": "tiktokcdn.com"}
+
+[TOOL RESPONSE]
+Domain: tiktokcdn.com | Created: 2017-09-20 | Age: 3086 days old.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10242",
+    "Start Time": "2026-01-22T06:13:41.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.44.12.198",
+    "Destination IP": "184.28.193.72",
+    "Endpoint": "wkst-mktg-prod-04",
+    "Description": "Anomalously large, high-entropy DNS activity (535 bytes vs typical 29) was observed from the internal host to tiktokcdn.com. Sample queries resemble legitimate TikTok CDN streaming endpoints and the destination IP is associated with a reputable CDN provider with no abuse history, while the domain is long-established. No recent similar alerts were found and the endpoint name suggests a marketing workstation, which aligns with expected streaming behavior. Based on these contextual indicators, the activity is assessed as low risk and likely benign CDN traffic rather than covert DNS tunneling.",
+    "IP Reputation Score": "0/100 (Akamai Technologies, Data Center/Web Hosting)",
+    "Domain Created": "2017-09-20 (approx. 3086 days old)",
+    "Bytes Observed": 535,
+    "Typical Bytes": 29,
+    "Sample Queries": [
+      "pull-rtmp-v99-aws02.tiktokcdn.com",
+      "stream-hls-a12-fcdn01.tiktokcdn.com",
+      "edge-live-b55-cdn77.tiktokcdn.com",
+      "pull-cmaf-v102-gcp04.tiktokcdn.com",
+      "res-static-ak-09.tiktokcdn.com"
+    ]
+  },
+  "classification": "LP"
+}
+

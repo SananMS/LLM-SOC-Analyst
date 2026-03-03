@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-99300",
+    "Start Time": "2026-02-10T10:30:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "194.126.101.99",
+    "Destination IP": "10.0.1.4",
+    "User": "linda.kask@globalcorp.ee",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Resource Group": "rg-baltic-prod-data",
+    "Network Security Group": "nsg-prod-db-core",
+    "Role": "Contributor",
+    "User Department": "Finance (Senior Accountant)",
+    "Local Time (Estonia)": "2026-02-10T12:30:00+02:00",
+    "Description": "A successful MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/WRITE modified a rule on nsg-prod-db-core in the production resource group, adding an inbound TCP 445 rule allowing any source to reach 10.0.1.4. The change was performed by linda.kask@globalcorp.ee from 194.126.101.99 in Tallinn at 12:30 EET, and the user lookup shows a Finance department role (Senior Accountant) which does not align with typical infrastructure administration. Because the modification increases exposure to SMB on a production database subnet, was performed by a business user with a role mismatch, and is an isolated event with no recent correlated deployment activity, this alert is classified as High Priority."
+  },
+  "classification": "HP"
+}

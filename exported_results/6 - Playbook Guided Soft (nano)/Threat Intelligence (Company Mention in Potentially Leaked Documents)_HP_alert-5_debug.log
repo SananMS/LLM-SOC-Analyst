@@ -1,0 +1,27 @@
+=== DEBUG SESSION START: 2026-03-02T23:26:35.716224+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Brand Mention in External Document
+Selected Playbook: potentially_leaked_document.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-76214",
+    "Start Time": "2026-02-19T13:50:42.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Source IP": "",
+    "Destination IP": "",
+    "Endpoint": "",
+    "User": "",
+    "Playbook Used": "Document Exposure & Threat Intel Triage",
+    "Description": "Vitalis Healthcare is mentioned in a potentially leaked document detected via TI-Monitor-DarkWeb. The leak includes sensitive artifacts such as an SSH private key, a patient data dump, and a VPN configuration file associated with the organization, suggesting internal data exposure. The combination of brand context, sensitive artifacts, and the hosting on a dark web onion site indicates a credible data breach risk, warranting High Priority."
+    ,
+    "Evidence Source": "TI-Monitor-DarkWeb",
+    "Source URL": "http://v3estvtl7x2m9n3p1q5r9t0v2w4x6y8z1a3b5c7d9e1f3g5h7i9j1k2l3.onion/dumps/baltic_sector/healthcare/",
+    "Relevant Files Found": "/var/backups/vitalis_healthcare_estonia/admin/ssh_keys/id_rsa_prod_gateway.key; /var/backups/vitalis_healthcare_estonia/andmebaasid/patsiendid/ravikaardid_tallinn_haigla_2026.dump; /var/backups/vitalis_healthcare_estonia/vorguseaded/VPN_klientide_konfiguratsioon_eesti.conf",
+    "Platform Context": "Dark Web / Onion-hosted dumps"
+  },
+  "classification": "HP"
+}
+

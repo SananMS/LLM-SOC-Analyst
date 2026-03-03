@@ -1,0 +1,21 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-22410",
+    "Start Time": "2026-02-10T15:33:45.000Z",
+    "Local Time (Estonia)": "2026-02-10T17:33:45+02:00",
+    "Alert Name": "Azure Network Security Modification",
+    "Endpoint": "/subscriptions/d1c2b3a4-e5f6-7a8b-9c0d-1e2f3a4b5c6d/resourceGroups/rg-nordic-dev-test/providers/Microsoft.Network/networkSecurityGroups/nsg-aks-dev-01",
+    "Resource Group": "rg-nordic-dev-test",
+    "Environment": "dev/test",
+    "Principal Type": "ServicePrincipal",
+    "Principal ID": "b4a3c2d1-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+    "Role": "Contributor",
+    "Destination IP": "13.75.144.22",
+    "Rule Changes Summary": "Added 'AllowDevWebService' inbound TCP rule permitting source '*' to destination 13.75.144.22 on port 8080 (description: 'Temporary Web Service for API Testing'); also present 'AllowVnetInBound' allowing inbound from VNet.",
+    "Correlation with recent activity": "No recent events found. No recent similar alerts found.",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Description": "An NSG modification was performed on nsg-aks-dev-01 in the rg-nordic-dev-test resource group by a ServicePrincipal (Contributor) at 2026-02-10T15:33:45Z (17:33 local Estonia time). The request body shows a new rule that allows inbound TCP 8080 from any source to a specific destination IP and is labeled as a temporary web service for testing, which increases exposure but is scoped to a development/test environment. Because the actor has a Contributor role, the change occurred during normal local working hours, and there are no corroborating or anomalous deployment events, the activity is assessed as Low Priority while noting the increased exposure risk from the open source prefix.",
+    "Description Note": "Description provides reasoning for Low Priority classification based on actor role, timing, environment criticality, lack of corroborating events, and the observed rule changes."
+  },
+  "classification": "LP"
+}

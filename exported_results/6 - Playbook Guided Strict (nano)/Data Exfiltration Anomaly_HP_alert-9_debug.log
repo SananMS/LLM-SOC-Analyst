@@ -1,0 +1,22 @@
+=== DEBUG SESSION START: 2026-03-02T23:34:28.077569+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Data Exfiltration Anomaly
+Selected Playbook: excessive_downloads.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-29100",
+    "Start Time": "2026-02-01T21:30:00.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "78.60.112.55",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "VIL-MTN-WKS-02",
+    "User": "Linas.Pavilionis@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Description": "An unusually high volume of SharePoint downloads was observed for user Linas.Pavilionis@globalcorp.ee, totaling 840 files, far above the 24-hour baseline of 4. The activity originated from Vilnius, Lithuania at 21:30 UTC (about 23:30 local), occurring outside typical business hours. The download list includes several sensitive documents, and the destination IP appears to point to an external endpoint; these factors collectively raise the potential for data exfiltration and warrant further investigation."
+  },
+  "classification": "HP"
+}
+

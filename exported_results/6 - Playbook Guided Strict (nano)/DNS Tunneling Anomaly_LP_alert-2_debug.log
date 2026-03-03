@@ -1,0 +1,45 @@
+=== DEBUG SESSION START: 2026-03-02T23:41:46.168177+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: DNS Tunneling Anomaly
+Selected Playbook: suspicious_dns_queries.json
+
+[TOOL CALL]
+Tool: get_domain_age
+Arguments: {"domain": "mdnplay.dev"}
+
+[TOOL RESPONSE]
+Domain: mdnplay.dev | Created: 2021-12-14 | Age: 1539 days old.
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10238",
+    "Start Time": "2026-02-06T16:15:22.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "192.168.1.22",
+    "Destination IP": "172.16.40.3",
+    "Endpoint": "wkst-dev-14",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Description": "Anomalous DNS tunneling behavior was observed with a high-entropy payload contained in DNS queries to mdnplay.dev. Sample queries show subdomains that resemble encoded data, and the overall volume (580 bytes vs typical 38 bytes) is unusually large for DNS traffic. The root domain mdnplay.dev is an established domain (created 2021), and there are no recent related events, but the encoding and data volume suggest a potential exfiltration or C2 channel via DNS, leading to a High Priority classification.",
+    "Domain Age (days)": 1539,
+    "Recent Events": "No recent events found.",
+    "Recent Similar Alerts": "No recent similar alerts found."
+  },
+  "classification": "HP"
+}
+

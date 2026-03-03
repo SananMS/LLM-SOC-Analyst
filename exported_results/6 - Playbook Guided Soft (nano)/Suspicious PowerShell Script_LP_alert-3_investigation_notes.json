@@ -1,0 +1,13 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-2281",
+    "Start Time": "2026-01-25T14:40:12.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.10.15.22",
+    "Endpoint": "DC-EAST-01",
+    "User": "SYSTEM",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Description": "PowerShell script executed on DC-EAST-01 under SYSTEM account. The embedded script block collects Active Directory domain/password policy details and appears consistent with automated administrative checks rather than a direct payload. A prior similar alert (SOC-2105) exists on the same endpoint with identical script content, which was closed as a false positive by the client as part of a daily compliance check. Based on this corroborating context and lack of external network indicators, the activity is classified as Low Priority (LP)."
+  },
+  "classification": "LP"
+}

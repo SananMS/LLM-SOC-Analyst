@@ -1,0 +1,27 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10234",
+    "Start Time": "2026-02-06T09:58:16.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "192.168.153.249",
+    "Destination IP": "172.16.40.3",
+    "Endpoint": "srv-prod-infra-01",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Application": "DNS",
+    "Query Type": "CNAME",
+    "Sample Queries": [
+      "9941-v4v6-cdn.glob-zone.dprod.sharepoint.com",
+      "102934-v4v6-farm.cluster01.sharepointonline.com.akadns.net",
+      "edge-standard-001.msedge.net",
+      "prod-relay-af-092.spo-msedge.net",
+      "tenant-files-api.sharepoint.com.res.office365.com",
+      "storage-blob-v12.dprodmgd.aa-rt.sharepoint.com",
+      "ns-priority-1.spo-msedge.net"
+    ],
+    "Root Domain": "sharepoint.com",
+    "Domain Creation Date": "1998-05-18",
+    "Domain Age (days)": 10151,
+    "Description": "An unusually large (313 bytes) high-entropy DNS CNAME activity was observed targeting sharepoint.com and related Microsoft domains from srv-prod-infra-01. The root domain is long-established (registered 1998) and the queries reference recognized Microsoft/Office365 service hostnames consistent with file sync and CDN behavior. Historical alerts for this host show similar SharePoint/Office365 sync activity that was previously classified as low priority. Given the domain's age, clear association with known Microsoft services, and matching host history, the activity is assessed as Low Priority."
+  },
+  "classification": "LP"
+}

@@ -1,0 +1,13 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10242",
+    "Start Time": "2026-01-22T06:13:41.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.44.12.198",
+    "Destination IP": "184.28.193.72",
+    "Endpoint": "wkst-mktg-prod-04",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Description": "An anomalous DNS pattern was observed from wkst-mktg-prod-04 involving high-entropy DNS queries to tiktokcdn.com with a total of 535 bytes, far above the typical 29 bytes. Sample_queries include CDN-related hostnames such as pull-rtmp-v99-aws02.tiktokcdn.com and edge-live-b55-cdn77.tiktokcdn.com, which are commonly used by legitimate media delivery services. Because tiktokcdn.com is a well-known public domain and there is no clear encoded payload observed in the provided samples, the activity is considered Low Priority, though continued monitoring for changes or unusual patterns is advised."
+  },
+  "classification": "LP"
+}

@@ -1,0 +1,30 @@
+=== DEBUG SESSION START: 2026-03-02T22:17:49.986813+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: DNS Tunneling Anomaly
+Selected Playbook: General Triage (No Playbook)
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14569",
+    "Start Time": "2026-02-06T15:22:10.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.150.22.110",
+    "Destination IP": "162.255.119.41",
+    "Endpoint": "srv-linux-prod-db",
+    "DNS Domain": "cdn-check-cache.top",
+    "DNS Query Type": "TXT",
+    "Observed Bytes": 2840,
+    "Typical Bytes": 12,
+    "Sample DNS TXT Queries": [
+      "LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQ.cdn-check-cache.top",
+      "TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCk.cdn-check-cache.top",
+      "YWRtaW46YUEyM2IzYmI0Y2M1ZGQ2ZWVmZ2c3N2ho.cdn-check-cache.top",
+      "c3NoLWtleS1iYWNrdXAtMjAyNi50YXIuZ3o.cdn-check-cache.top"
+    ],
+    "Description": "An anomalously large amount of DNS TXT traffic from 10.150.22.110 to 162.255.119.41 using the domain cdn-check-cache.top was observed, with 2,840 bytes of high-entropy payload across samples. The payload exceeds typical DNS TXT sizes and appears encoded, consistent with a potential covert channel or data exfiltration via DNS. This activity is considered high risk due to the potential for data leakage or command and control communication, requiring escalation."
+  },
+  "classification": "HP"
+}
+

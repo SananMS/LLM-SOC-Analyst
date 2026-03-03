@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-23105",
+    "Start Time": "2026-02-11T09:15:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "145.14.39.114",
+    "Endpoint": "nsg-tallinn-prod-01",
+    "User": "markus.tamm@globalcorp.ee",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Resource Group": "rg-baltic-prod-connectivity",
+    "User Role": "Contributor",
+    "Geolocation": "Tallinn, Estonia",
+    "Correlated Alerts": "SOC-23101 (2026-02-10) - similar NSG rule deletion by same user/IP; previously closed as False Positive and documented under Change Request CR-2026-044",
+    "Description": "A security rule deletion was executed against NSG 'nsg-tallinn-prod-01' in resource group 'rg-baltic-prod-connectivity' by markus.tamm@globalcorp.ee from IP 145.14.39.114 (Tallinn, Estonia). The activity occurred at 2026-02-11T09:15:00Z (11:15 local Estonian time) and completed successfully. The actor's role, matching Estonian geolocation, and local working-hour timing are consistent with expected administrative activity, and a recent similar alert for the same user/IP was closed as a false positive and tied to approved Change Request CR-2026-044. Given these factors and the lack of conflicting recent events, the activity is assessed as Low Priority."
+  },
+  "classification": "LP"
+}

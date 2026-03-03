@@ -1,0 +1,56 @@
+=== DEBUG SESSION START: 2026-03-02T23:11:28.817162+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Suspicious PowerShell Script Execution
+Selected Playbook: suspicious_powershell.json
+
+[TOOL CALL]
+Tool: check_hash_reputation
+Arguments: {"hash": "75d216cde89d62ae1f9a8137ce7ee32fec7a1da96826be471e664223651720bc"}
+
+[TOOL RESPONSE]
+VT Results for 75d216cde89d62ae1f9a8137ce7ee32fec7a1da96826be471e664223651720bc (WinWord.exe):
+  - Engines: 0 Malicious | 0 Suspicious
+  - Community Score: 0
+  - Community Votes: 0 Malicious vs 0 Harmless
+
+[TOOL CALL]
+Tool: check_ip_reputation
+Arguments: {"ip": "45.33.19.121"}
+
+[TOOL RESPONSE]
+Source IP: 45.33.19.121 | Abuse Confidence Score: 0/100 | ISP: Linode | Usage Type: Data Center/Web Hosting/Transit | Privacy Status: VPN
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10002",
+    "Start Time": "2026-01-27T09:44:12.112Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.4.88.29",
+    "Destination IP": "45.33.19.121",
+    "Endpoint": "WKSTN-FIN-04",
+    "User": "j_smith",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Description": "PowerShell was executed on WKSTN-FIN-04 via a process chain starting with winword.exe (parent outlook.exe) under user j_smith. The script opens a TCP connection to 45.33.19.121:443 and decodes+executes payload in memory, which is consistent with remote command and control techniques. Hash reputation for the initiating process is clean and the external IP has no notable history, but the active outbound connection from a trusted app to an external host raises high-risk concerns and merits escalation.",
+    "Initiating Process": "winword.exe",
+    "Parent Process": "outlook.exe",
+    "Process SHA256": "75d216cde89d62ae1f9a8137ce7ee32fec7a1da96826be471e664223651720bc"
+  },
+  "classification": "HP"
+}
+

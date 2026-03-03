@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-55",
+    "Start Time": "2025-07-11T14:22:15.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "103.1.64.118",
+    "Destination IP": "13.80.23.7",
+    "User": "Elena.Vasiliev@client.ee",
+    "Description": "An Office 365 login occurred from Singapore, Singapore, outside the user's typical login region. The authentication was successful and MFA was enabled during the session, with the request originating from a Windows-based user agent. With a single anomalous login and no signs of credential compromise in the evidence, this alert is categorized as Low Priority.",
+    "Login Type": "Office 365 login",
+    "Login Result": "Success",
+    "MFA Enabled": "true",
+    "Login Location": "Singapore, Singapore",
+    "User Agent": "Windows-AzureAD-Authentication-Provider/1.0"
+  },
+  "classification": "LP"
+}

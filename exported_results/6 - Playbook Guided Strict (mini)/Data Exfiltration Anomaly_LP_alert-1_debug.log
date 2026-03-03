@@ -1,0 +1,55 @@
+=== DEBUG SESSION START: 2026-03-03T02:26:11.067448+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Data Exfiltration Anomaly
+Selected Playbook: excessive_downloads.json
+
+[TOOL CALL]
+Tool: lookup_users
+Arguments: {"emails": ["Marcus.Webb@globalcorp.ee"]}
+
+[TOOL RESPONSE]
+[
+  {
+    "email": "Marcus.Webb@globalcorp.ee",
+    "full_name": "Marcus Webb",
+    "department": "Legal & Corporate Secretary",
+    "role": "Senior Legal Operations Manager"
+  }
+]
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-11100",
+    "Start Time": "2026-01-28T10:39:49.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "145.14.39.150",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "HOST-WS-03",
+    "User": "Marcus.Webb@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "User Role": "Senior Legal Operations Manager",
+    "Department": "Legal & Corporate Secretary",
+    "Application": "Office 365 SharePoint Online",
+    "File Count": 315,
+    "Baseline 24h": 50,
+    "Description": "The user Marcus Webb, a Senior Legal Operations Manager in Legal & Corporate Secretary, downloaded 315 files from the Legal M&A SharePoint site during local business hours in Tallinn. The sampled files and paths are directly related to M&A, legal, and executive board materials and align with the user's role, and the access was via a standard browser user agent to a Microsoft-hosted destination. No recent events or similar alerts were found that would indicate broader compromise, and while the volume exceeds the 24-hour baseline, contextual factors suggest the activity is likely authorized and not an active exfiltration."
+  },
+  "classification": "LP"
+}
+

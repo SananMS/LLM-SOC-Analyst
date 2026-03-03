@@ -1,0 +1,39 @@
+=== DEBUG SESSION START: 2026-03-03T02:12:10.152493+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Brand Logo Detection
+Selected Playbook: logo_abuse_detection.json
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[TOOL CALL]
+Tool: check_ip_reputation
+Arguments: {"ip": "50.62.0.1"}
+
+[TOOL RESPONSE]
+Source IP: 50.62.0.1 | Abuse Confidence Score: 0/100 | ISP: GoDaddy.com, LLC | Usage Type: Data Center/Web Hosting/Transit | Privacy Status: VPN
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-54389",
+    "Start Time": "2026-02-18T12:45:10.000Z",
+    "Alert Name": "Brand Logo Detection",
+    "Source IP": "50.62.0.1",
+    "Endpoint": "apexwellness.com",
+    "Playbook Used": "Visual Brand Abuse & Logo Triage",
+    "Scanned URL": "https://www.apexwellness.com/partners",
+    "Target Brand": "Vitalis Healthcare",
+    "Domain Age": "5 years",
+    "IP Reputation Score": "Abuse Confidence Score 0/100 (GoDaddy hosting)",
+    "Historical Alerts": "No recent similar alerts found.",
+    "Description": "Vitalis Healthcare logo was detected on apexwellness.com/partners inside a partner tile that includes descriptive text indicating an integration. The domain is five years old and resolves to a hosting IP with an abuse score of 0/100, showing no known malicious infrastructure. Visual comparison shows high fidelity with the reference logo and the page layout appears to be a legitimate partner listing rather than a credential-harvesting or impersonation page. Given the established domain history, clean IP reputation, explicit partner labeling, and absence of prior malicious activity, this detection is assessed as Low Priority."
+  },
+  "classification": "LP"
+}
+

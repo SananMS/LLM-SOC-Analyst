@@ -1,0 +1,20 @@
+=== DEBUG SESSION START: 2026-03-03T00:20:42.986141+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Brand Mention in External Document
+Selected Playbook: potentially_leaked_document.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-75988",
+    "Start Time": "2026-02-19T21:15:45.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Playbook Used": "Document Exposure & Threat Intel Triage",
+    "Description": "Vitalis Healthcare was mentioned in a document surfaced on a dark web monitoring feed. The evidence includes file paths pointing to patient records, insurance claims, and IT network topology documentation, suggesting internal or sensitive data could be exposed. The combination of brand-specific mention, access to filenames that imply patient and financial data, and a dark web source increases the likelihood of a data exposure risk and warrants high-priority investigation.",
+    "Evidence Source": "TI-Monitor-DarkWeb",
+    "Relative Paths": "/mnt/storage/breach_vault/vitalis_healthcare/clinical_ops/patient_records_2025_full.sql; /mnt/storage/breach_vault/vitalis_healthcare/finance/q4_insurance_claims_processing.csv; /mnt/storage/breach_vault/vitalis_healthcare/it_admin/network_topology_and_firewall_rules.pdf"
+  },
+  "classification": "HP"
+}
+

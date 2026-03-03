@@ -1,0 +1,30 @@
+=== DEBUG SESSION START: 2026-03-02T22:19:45.844402+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: DNS Tunneling Anomaly
+Selected Playbook: General Triage (No Playbook)
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10242",
+    "Start Time": "2026-01-22T06:13:41.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.44.12.198",
+    "Destination IP": "184.28.193.72",
+    "Endpoint": "wkst-mktg-prod-04",
+    "Description": "An anomalously large amount (535 bytes) of tunneled, high-entropy DNS traffic was observed from endpoint wkst-mktg-prod-04 to destination 184.28.193.72, using domain tiktokcdn.com. Actual DNS traffic (535 bytes) far exceeds typical baseline (29 bytes), and sample queries show multiple tiktokcdn.com subdomains, which is characteristic of DNS tunneling or data exfiltration attempts. Given the potential for data leakage or C2 over DNS, this alert should be treated as high priority and requires further investigation to determine if the activity is legitimate or indicates a compromise.",
+    "DNS Domain Observed": "tiktokcdn.com",
+    "Actual DNS Traffic bytes": 535,
+    "Typical DNS Traffic bytes": 29,
+    "Sample DNS Queries": [
+      "pull-rtmp-v99-aws02.tiktokcdn.com",
+      "stream-hls-a12-fcdn01.tiktokcdn.com",
+      "edge-live-b55-cdn77.tiktokcdn.com",
+      "pull-cmaf-v102-gcp04.tiktokcdn.com",
+      "res-static-ak-09.tiktokcdn.com"
+    ]
+  },
+  "classification": "HP"
+}
+

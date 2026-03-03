@@ -1,0 +1,25 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10238",
+    "Start Time": "2026-02-06T16:15:22.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "192.168.1.22",
+    "Destination IP": "172.16.40.3",
+    "Endpoint": "wkst-dev-14",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Description": "Anomalous DNS tunneling activity detected from host wkst-dev-14 toward mdnplay.dev, with six high-entropy subdomains and a total payload of 580 bytes, well above typical DNS query sizes. The root domain mdnplay.dev is 1539 days old (created 2021-12-14), and there were no recent events or similar alerts to provide context. Given the combination of encoded-looking subdomains, elevated data transfer in DNS, and lack of an obvious legitimate use for this domain, the alert is classified as High Priority due to potential data exfiltration or command-and-control activity.",
+    "Domain": "mdnplay.dev",
+    "Domain Age": "1539 days old (Created 2021-12-14)",
+    "Encoded Payload Detected": "Yes",
+    "Sample Queries": [
+      "a91c4f7e3d082b650471fe23c8b5aa12d934e017.mdnplay.dev",
+      "f3e72a91-1bc4-47e9-b830-54d721a0fc38.mdnplay.dev",
+      "3b8d1e0c94f72a651bc309e8d4f0a72b1e839c45.mdnplay.dev",
+      "e6f190ad-23b7-4d81-a912-7c340be85f21.mdnplay.dev",
+      "7c52b3e1f094d8a62c451be70f9832d10c74a981.mdnplay.dev",
+      "91d4c8fa-67a3-4f02-bc51-2e908d7f43a6.mdnplay.dev"
+    ],
+    "Recent Activity Context": "No recent events found; No recent similar alerts found."
+  },
+  "classification": "HP"
+}

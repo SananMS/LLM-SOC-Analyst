@@ -1,0 +1,89 @@
+=== DEBUG SESSION START: 2026-03-02T22:55:03.054659+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: DNS Tunneling Anomaly
+Selected Playbook: suspicious_dns_queries.json
+
+[TOOL CALL]
+Tool: get_domain_age
+Arguments: {"domain": "dotnxdomain.net"}
+
+[TOOL RESPONSE]
+Domain: dotnxdomain.net | Created: 2012-09-04 | Age: 4927 days old.
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+[
+  {
+    "event_time": "2026-02-06T16:40:12.000Z",
+    "source_ip": "10.150.22.41",
+    "query": "ctldl.windowsupdate.com",
+    "query_type": "A",
+    "status": "NOERROR"
+  },
+  {
+    "event_time": "2026-02-06T16:42:05.000Z",
+    "source_ip": "10.150.22.41",
+    "query": "time.cloudflare.com",
+    "query_type": "A",
+    "status": "NOERROR"
+  },
+  {
+    "event_time": "2026-02-06T16:44:30.000Z",
+    "source_ip": "10.150.22.41",
+    "query": "static.fastly.net",
+    "query_type": "CNAME",
+    "status": "NOERROR"
+  },
+  {
+    "event_time": "2026-02-06T16:48:10.000Z",
+    "source_ip": "10.150.22.41",
+    "query": "eu.dotnxdomain.net",
+    "query_type": "NS",
+    "status": "NOERROR"
+  },
+  {
+    "event_time": "2026-02-06T16:51:39.000Z",
+    "source_ip": "10.150.22.41",
+    "query": "root-key-sentinel-is-ta-42911.0ds-u9b22a1f-d12-c90-s1768557820.eu.dotnxdomain.net",
+    "query_type": "A",
+    "status": "NOERROR"
+  },
+  {
+    "event_time": "2026-02-06T16:51:42.000Z",
+    "source_ip": "10.150.22.41",
+    "query": "0du-v7a33b2c-e55-f81-s1768557820-i9ccba1bc-0.eu.dotnxdomain.net",
+    "query_type": "A",
+    "status": "NOERROR"
+  }
+]
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10243",
+    "Start Time": "2026-01-16T16:51:45.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.150.22.41",
+    "Destination IP": "158.20.144.11",
+    "Endpoint": "dc-prod-02",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Description": "Anomalous DNS tunneling activity was observed from dc-prod-02 to 158.20.144.11 with 574 bytes, significantly higher than typical 28 bytes. Sample queries reveal highly structured and high-entropy subdomains under dotnxdomain.net, including long identifiers that resemble encoded payloads. The root domain dotnxdomain.net is established (created 2012), which lowers some risk but the combination of elevated traffic, potential encoding patterns, and the host’s DNS behavior is consistent with potentially exfiltration or C2 over DNS. This justifies a High Priority classification.",
+    "Domain Age": "Created 2012-09-04; Age 4927 days.",
+    "Domain Reputation": "dotnxdomain.net is an established domain (since 2012) with no inherent malicious reputation, but it is associated in this context with DNS tunneling activity patterns; risk increases with high-entropy subdomains and elevated traffic.",
+    "Recent DNS Queries Context": "Recent events show the source host performing DNS lookups to ctldl.windowsupdate.com, time.cloudflare.com, static.fastly.net, and eu.dotnxdomain.net, along with high-entropy dotnxdomain.net subdomains, indicating a mix of legitimate lookups and patterns seen in DNS tunneling.",
+    "Similar Alerts": "No recent similar alerts found."
+  },
+  "classification": "HP"
+}
+

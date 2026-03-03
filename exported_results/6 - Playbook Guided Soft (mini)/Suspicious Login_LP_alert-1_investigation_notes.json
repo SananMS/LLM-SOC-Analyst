@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-25",
+    "Start Time": "2025-07-11T07:50:00.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "41.160.0.2",
+    "Destination IP": "13.80.23.7",
+    "Endpoint": "G315745",
+    "User": "Fred.Mercedes@client.ee",
+    "Playbook Used": "Suspicious Login Triage",
+    "MFA": true,
+    "Company Managed and Compliant": true,
+    "IP Abuse Score": "0/100",
+    "ISP": "Liquid Telecommunications Operations Limited",
+    "Historical Confirmations": "Previous alerts SOC-15 and SOC-22 for Johannesburg were closed as false positives and confirmed by the client (user on vacation / monthly travel).",
+    "Description": "A successful Office 365 login from Johannesburg, South Africa was observed on a company-managed Windows endpoint using Azure AD authentication and MFA. The source IP is a fixed-line ISP address with an abuse score of 0 and shows no VPN/proxy/Tor indicators, and there are recent, confirmed successful logins from Johannesburg for this user (SOC-15, SOC-22). Given the presence of MFA, a compliant managed device, benign IP reputation, and prior client confirmations of travel, this activity is consistent with authorized behavior and is classified as Low Priority."
+  },
+  "classification": "LP"
+}

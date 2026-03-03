@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-16200",
+    "Start Time": "2026-02-01T10:15:30.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "78.56.121.10",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "LT-VIL-LAPTOP-44",
+    "User": "Tomas.Kazlauskas@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Workload": "SharePoint",
+    "File Count": 250,
+    "Baseline 24h": 20,
+    "Local Time (Vilnius)": "2026-02-01T12:15:30+02:00",
+    "User Role": "Regional Supply Coordinator, Supply Chain & Logistics",
+    "Description": "An unusually large volume of SharePoint downloads (250 files vs. a 24-hour baseline of 20) was observed from the user originating in Vilnius. The activity occurred at local time 12:15 and the sample file names and paths are directly related to Supply Chain & Logistics, matching the user's role and providing a plausible business justification for bulk access. There are no recent related events or similar alerts and the user agent appears to be a standard desktop browser, so the activity is assessed as Low Priority because contextual indicators support legitimate business activity despite the spike in volume."
+  },
+  "classification": "LP"
+}

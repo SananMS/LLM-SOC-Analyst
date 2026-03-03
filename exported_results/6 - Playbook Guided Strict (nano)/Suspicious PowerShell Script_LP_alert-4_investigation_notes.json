@@ -1,0 +1,15 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-8812",
+    "Start Time": "2026-01-25T14:46:27.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.15.5.30",
+    "Endpoint": "MGMT-TERM-01",
+    "User": "j.smith",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Description": "PowerShell execution on host MGMT-TERM-01 involved a Get-ADGroup command with a specific ObjectGUID. The evidence shows a single, straightforward AD enumeration command with no encoded content, file path, or additional scripts. The activity appears consistent with routine administrative AD enumeration by user j.smith, so the alert is treated as Low Priority; monitor for any follow-up actions that could indicate broader compromise.",
+    "Evidence Scriptblock": "Get-ADGroup -Filter 'ObjectGUID -eq \"a1b2c3d4-e5f6-4a5b-bc6d-7e8f90123456\"'",
+    "Operating System": "Windows Server 2019 Standard"
+  },
+  "classification": "LP"
+}

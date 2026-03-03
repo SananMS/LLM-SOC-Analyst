@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-12200",
+    "Start Time": "2026-01-31T14:45:10.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "194.126.101.99",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "WKSTN-OFFSITE-04",
+    "User": "Liam.O-Sullivan@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Workload": "SharePoint",
+    "File Count": 850,
+    "Baseline 24h": 5,
+    "Geo Location": "Tallinn, Estonia",
+    "User Role": "Regional Logistics Coordinator (Ireland)",
+    "Description": "An unusually large volume of SharePoint downloads (850 files vs a 24-hour baseline of 5) was observed from the account while accessing an executive/board confidential site at approximately 16:45 local time in Tallinn. The account is associated with a regional logistics role that does not align with access to executive, financial, and M&A documents, and the observed user agent (WinHttp.WinHttpRequest.5) suggests scripted or automated retrieval rather than interactive browsing. No recent related events or similar alerts were found, but the combination of high volume, sensitive content, role mismatch, and programmatic access warrants escalation for further investigation."
+  },
+  "classification": "HP"
+}

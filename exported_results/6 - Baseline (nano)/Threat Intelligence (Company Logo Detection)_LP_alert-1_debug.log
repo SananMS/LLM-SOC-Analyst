@@ -1,0 +1,25 @@
+=== DEBUG SESSION START: 2026-03-02T22:39:09.403905+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Brand Logo Detection
+Selected Playbook: General Triage (No Playbook)
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-54389",
+    "Start Time": "2026-02-18T12:45:10.000Z",
+    "Alert Name": "Brand Logo Detection",
+    "Source IP": "50.62.0.1",
+    "Endpoint": "apexwellness.com",
+    "Target Brand": "Vitalis Healthcare",
+    "Target Brand Domain": "vitalis.com",
+    "Scanned URL": "https://www.apexwellness.com/partners",
+    "Domain IP": "50.62.0.1",
+    "Domain Age": "5 years",
+    "Registrar": "GoDaddy.com, LLC",
+    "Description": "Vitalis Healthcare logo detected on apexwellness.com/partners by the Logo-Scanner. The scanned URL points to a domain that displays branding for Vitalis Healthcare, with the domain resolving to 50.62.0.1 and registered with GoDaddy five years ago. The use of a major brand logo on a domain whose affiliation is unclear could indicate impersonation or unauthorized branding. Given the potential risk of brand abuse and user confusion, this alert is categorized as High Priority and should be escalated for verification of ownership and branding permissions."
+  },
+  "classification": "HP"
+}
+

@@ -1,0 +1,38 @@
+=== DEBUG SESSION START: 2026-03-03T01:30:43.239013+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: DNS Tunneling Anomaly
+Selected Playbook: suspicious_dns_queries.json
+
+[TOOL CALL]
+Tool: get_domain_age
+Arguments: {"domain": "x1j2k3-v9.biz"}
+
+[TOOL RESPONSE]
+Domain: x1j2k3-v9.biz | Created: 2026-02-05 | Age: 26 days old.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14571",
+    "Start Time": "2026-02-06T17:45:10.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.150.22.201",
+    "Destination IP": "203.0.113.42",
+    "Endpoint": "srv-sql-core-01",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Description": "The alert was generated for unusually large, high-entropy DNS TXT traffic (2,420 bytes vs typical 12) to x1j2k3-v9.biz originating from a SQL server. The root domain was created 26 days ago and the subdomain labels decode to clear sensitive items including a SELECT query, an encrypted DB password token, an admin email, and an SSL key fragment. The combination of recent domain registration, high-volume TXT payloads, and decoded content that appears to contain confidential system and credential data indicates likely DNS-based data exfiltration and elevates this to High Priority.",
+    "Query Type": "TXT",
+    "Actual Bytes": 2420,
+    "Typical Bytes": 12,
+    "Domain Age": "26 days (created 2026-02-05)",
+    "Decoded Sample Payloads": [
+      "SELECT config, value FROM syscfg.",
+      "DBPASS_encrypted=abc1234567890",
+      "admin_email=soc_mgr@corp.com",
+      "SSL_C_KEY_bf4412c4aaababccdd"
+    ]
+  },
+  "classification": "HP"
+}
+

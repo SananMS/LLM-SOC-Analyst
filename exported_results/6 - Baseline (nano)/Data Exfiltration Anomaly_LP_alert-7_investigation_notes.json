@@ -1,0 +1,28 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-19220",
+    "Start Time": "2026-02-01T14:10:00.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "90.190.150.10",
+    "Destination IP": "40.108.201.15",
+    "User": "globalcorp@globalcorp.ee",
+    "Description": "Unusually high volume of file downloads from a SharePoint site by the user, totaling 290 files and exceeding the 24-hour baseline of 50. The activity uses SharePoint/Directo MSGraph with the destination appearing as a Microsoft data center, and no malicious IP reputation was observed for the source. No recent similar alerts or events were found to corroborate a confirmed exfiltration attempt, suggesting this is likely a legitimate data export, though it warrants monitoring for data sensitivity and user intent.",
+    "Site URL": "https://globalcorp.sharepoint.com/sites/Latvija_Finanses_Directo/",
+    "File Count": 290,
+    "Baseline 24h": 50,
+    "Geo Location": "Tallinn, Estonia",
+    "Sample Files": [
+      "Directo_Ienakumi_Eksports_Jan.csv",
+      "Gada_Parskats_2025_Final.pdf",
+      "Piegadataja_Saskaita_8821.pdf",
+      "Algas_Izmaksas_Saraksts.xlsx",
+      "Nodoklu_Deklaracija_PVN_2026.pdf",
+      "Bankas_Izraksts_Janvaris.csv",
+      "Debitoru_Paradu_Analize.xlsx",
+      "Kreditoru_Saraksts_UAB.csv",
+      "Pamatlidzeklu_Inventarizacija.xlsx",
+      "Finansu_Plosmas_Zinojums.pdf"
+    ]
+  },
+  "classification": "LP"
+}

@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10000",
+    "Start Time": "2026-01-05T19:08:48.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "172.18.99.41",
+    "Endpoint": "SRV-APPS-PRD02",
+    "User": "svc_backup_veeam",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Script Encoding": "PowerShell EncodedCommand (Base64, UTF-16LE)",
+    "Decoded Summary": "The encoded command contains a utility-style function that checks for Alternate Data Streams and uses Add-Content with -ErrorAction SilentlyContinue and Microsoft.PowerShell.Core cmdlets. There are no obvious downloader actions or hardcoded external IPs visible in the decoded content.",
+    "External IPs Found": "None identified in the decoded script",
+    "Recent Events": "No recent events found.",
+    "File Path Observed": "Not provided in the alert",
+    "Description": "An encoded PowerShell command was executed by svc_backup_veeam on SRV-APPS-PRD02. Decoding indicates a utility-style function that inspects alternate data stream support and performs local Add-Content operations, with no embedded external IPs or downloader behavior and no initiating process hash available for reputation lookup. The executing account is a known backup service account and the observed behavior is consistent with maintenance/backup activity on this host. Based on the benign intent of the script, absence of external indicators, and no historical precedence in the environment, this alert is assessed as Low Priority."
+  },
+  "classification": "LP"
+}

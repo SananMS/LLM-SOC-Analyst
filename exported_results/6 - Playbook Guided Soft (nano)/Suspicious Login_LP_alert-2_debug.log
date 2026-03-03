@@ -1,0 +1,85 @@
+=== DEBUG SESSION START: 2026-03-02T23:07:08.100041+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: User Login Location Anomaly
+Selected Playbook: suspicious_login.json
+
+[TOOL CALL]
+Tool: check_ip_reputation
+Arguments: {"ip": "155.133.15.2"}
+
+[TOOL RESPONSE]
+Source IP: 155.133.15.2 | Abuse Confidence Score: 0/100 | ISP: Packethub S.A. | Usage Type: Data Center/Web Hosting/Transit | Privacy Status: VPN
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+[
+  {
+    "event_time": "2025-07-23T07:30:00.000Z",
+    "event_name": "UserLogin",
+    "user": "lisa.korhonen@client.ee",
+    "source_ip": "194.126.101.50",
+    "destination_ip": "13.80.23.7",
+    "endpoint": "G3154545",
+    "location": "Tallinn, Estonia",
+    "login_result": "success",
+    "has_mfa": true,
+    "user_agent": "Windows-AzureAD-Authentication-Provider/1.0"
+  },
+  {
+    "event_time": "2025-07-24T10:15:00.000Z",
+    "event_name": "UserLogin",
+    "user": "lisa.korhonen@client.ee",
+    "source_ip": "194.126.101.51",
+    "destination_ip": "13.80.23.7",
+    "endpoint": "G3154545",
+    "location": "Tallinn, Estonia",
+    "login_result": "success",
+    "has_mfa": true,
+    "user_agent": "Windows-AzureAD-Authentication-Provider/1.0"
+  },
+  {
+    "event_time": "2025-07-25T07:30:00.000Z",
+    "event_name": "UserLogin",
+    "user": "lisa.korhonen@client.ee",
+    "source_ip": "194.126.101.51",
+    "destination_ip": "13.80.23.7",
+    "endpoint": "G3154545",
+    "location": "Tallinn, Estonia",
+    "login_result": "success",
+    "has_mfa": true,
+    "user_agent": "Windows-AzureAD-Authentication-Provider/1.0"
+  }
+]
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-100",
+    "Start Time": "2025-07-25T07:50:00.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "155.133.15.2",
+    "Destination IP": "13.80.23.7",
+    "Endpoint": "G3154545",
+    "User": "lisa.korhonen@client.ee",
+    "Playbook Used": "Suspicious Login Triage",
+    "Description": "An Office 365 login occurred from Santiago de Queretaro, Mexico, outside the user's typical region. The source IP is VPN-based and associated with a data center, and prior logins originated from Tallinn, Estonia. MFA was used for this login, but the geographic anomaly and VPN-based origin increase risk, suggesting a high-priority review to verify legitimacy.",
+    "IP Reputation Score": "0/100",
+    "ISP": "Packethub S.A.",
+    "Usage Type": "Data Center/Web Hosting/Transit",
+    "VPN Status": "Yes",
+    "Geolocation History": "Previous logins from Tallinn, Estonia; current login from Santiago de Queretaro, Mexico"
+  },
+  "classification": "HP"
+}
+

@@ -1,0 +1,52 @@
+=== DEBUG SESSION START: 2026-03-03T00:39:38.967086+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: DNS Tunneling Anomaly
+Selected Playbook: General Triage (No Playbook)
+
+[TOOL CALL]
+Tool: check_ip_reputation
+Arguments: {"ip": "19.240.126.129"}
+
+[TOOL RESPONSE]
+Source IP: 19.240.126.129 | Abuse Confidence Score: 0/100 | ISP: Ford Motor Company | Usage Type: None | Privacy Status: Neither VPN nor Proxy nor Tor Node nor Relay
+
+[TOOL CALL]
+Tool: check_ip_reputation
+Arguments: {"ip": "192.168.177.244"}
+
+[TOOL RESPONSE]
+Source IP: 192.168.177.244 | Abuse Confidence Score: 0/100 | ISP: None | Usage Type: Reserved | Privacy Status: Neither VPN nor Proxy nor Tor Node nor Relay
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10241",
+    "Start Time": "2026-02-06T13:45:10.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "192.168.177.244",
+    "Destination IP": "19.240.126.129",
+    "Endpoint": "host-812-workstation",
+    "Description": "Anomalously large (953 bytes) and high-entropy DNS A queries from host-812-workstation to contentdelivery.net were observed, with encoded-looking subdomain labels consistent with DNS tunneling. The destination IP shows an abuse score of 0 but is registered to Ford Motor Company which does not align with the contentdelivery.net naming, and no recent similar alerts were found. Because of the unusually large payload, high-entropy query labels, and the domain/IP mismatch, this activity is considered a high-risk indicator that warrants escalation.",
+    "Query Type": "A",
+    "Actual Bytes": 953,
+    "Typical Bytes": 46,
+    "Sample Queries": [
+      "e9d82f310a44b7c21098bcad7e6f5a41-httpcache0-08247-cacheod1.dna.contentdelivery.net",
+      "4a2b1c3d5e6f7890a1b2c3d4e5f60712-httpcache1-05529-cacheod2.dna.contentdelivery.net",
+      "bc3a21f876e940d240e1d827f311a2b9-httpcache0-11203-cacheod3.dna.contentdelivery.net"
+    ],
+    "Destination IP Reputation Score": "0/100",
+    "Destination ISP": "Ford Motor Company",
+    "Recent Similar Alerts": "None found"
+  },
+  "classification": "HP"
+}
+

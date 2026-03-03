@@ -1,0 +1,14 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-11500",
+    "Start Time": "2026-01-05T10:33:46.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "194.126.101.43",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "SRV-PROD",
+    "User": "globalcorp@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Description": "An unusual volume of SharePoint file downloads (300 files) was observed from user globalcorp@globalcorp.ee, with a programmatic user agent using Python aiohttp and labeled as ChatGPT to access the internal SharePoint site. The download count far exceeds the 24-hour baseline (300 vs 0) and the destination appears external to the organization, which, in combination with automated access and lack of an obvious business justification, suggests potential data exfiltration and warrants High Priority."
+  },
+  "classification": "HP"
+}

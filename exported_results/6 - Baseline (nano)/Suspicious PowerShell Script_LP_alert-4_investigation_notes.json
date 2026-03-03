@@ -1,0 +1,14 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-8812",
+    "Start Time": "2026-01-25T14:46:27.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.15.5.30",
+    "Endpoint": "MGMT-TERM-01",
+    "User": "j.smith",
+    "Description": "PowerShell script executed on MGMT-TERM-01 by user j.smith, performing a Get-ADGroup query filtering by a GUID. There are no malware indicators or external connections observed, and there are no recent related events. A prior similar alert SOC-1988 was closed as a false positive after IT validated that j.smith is a Senior Systems Administrator conducting routine AD audits. Based on the evidence, this activity is likely legitimate administrative action and is categorized as LP.",
+    "IP Reputation": "10.15.5.30 – Abuse Confidence Score 0/100; Usage Type: Reserved; Not known for malicious activity.",
+    "Previous Similar Alert": "SOC-1988: Suspicious PowerShell Script Execution on MGMT-TERM-01 by j.smith; closed as false positive; IT manager confirmed user is Senior Systems Administrator performing routine AD audits."
+  },
+  "classification": "LP"
+}

@@ -1,0 +1,16 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-110",
+    "Start Time": "2025-08-01T08:30:00.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "83.110.250.231",
+    "Destination IP": "13.80.23.7",
+    "Endpoint": "F12347565",
+    "User": "riina.maasik@client.ee",
+    "Playbook Used": "Suspicious Login Triage",
+    "Description": "An Office 365 login for user riina.maasik@client.ee occurred from Dubai, UAE, representing a location outside the user's typical region. Source IP 83.110.250.231 is not associated with VPN or proxy activity and is linked to Emirates Telecommunications Corporation, a fixed-line ISP, while MFA was completed and the login was successful. Historical activity shows prior logins from Tallinn, Estonia and Muscat, Oman, with a previous Oman travel alert that the client later confirmed as not suspicious, indicating travel can be legitimate. Overall, the combination of MFA use, non-proxy IP, and an established travel history reduces the likelihood of immediate malicious activity, so this alert is classified as Low Priority, though the new country location should continue to be monitored.",
+    "IP Reputation Score": "0/100",
+    "VPN Status": "No"
+  },
+  "classification": "LP"
+}

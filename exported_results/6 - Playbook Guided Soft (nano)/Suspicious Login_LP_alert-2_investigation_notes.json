@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-100",
+    "Start Time": "2025-07-25T07:50:00.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "155.133.15.2",
+    "Destination IP": "13.80.23.7",
+    "Endpoint": "G3154545",
+    "User": "lisa.korhonen@client.ee",
+    "Playbook Used": "Suspicious Login Triage",
+    "Description": "An Office 365 login occurred from Santiago de Queretaro, Mexico, outside the user's typical region. The source IP is VPN-based and associated with a data center, and prior logins originated from Tallinn, Estonia. MFA was used for this login, but the geographic anomaly and VPN-based origin increase risk, suggesting a high-priority review to verify legitimacy.",
+    "IP Reputation Score": "0/100",
+    "ISP": "Packethub S.A.",
+    "Usage Type": "Data Center/Web Hosting/Transit",
+    "VPN Status": "Yes",
+    "Geolocation History": "Previous logins from Tallinn, Estonia; current login from Santiago de Queretaro, Mexico"
+  },
+  "classification": "HP"
+}

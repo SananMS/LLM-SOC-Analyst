@@ -1,0 +1,108 @@
+=== DEBUG SESSION START: 2026-03-02T23:01:09.250218+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Azure Network Security Modification
+Selected Playbook: suspicious_cloud_network_activity.json
+
+[TOOL CALL]
+Tool: check_ip_reputation
+Arguments: {"ip": "194.126.101.99"}
+
+[TOOL RESPONSE]
+Source IP: 194.126.101.99 | Abuse Confidence Score: 0/100 | ISP: backbone and servers | Usage Type: Fixed Line ISP | Privacy Status: Neither VPN nor Proxy nor Tor Node nor Relay
+
+[TOOL CALL]
+Tool: lookup_users
+Arguments: {"emails": ["andrus.kivi@globalcorp.ee"]}
+
+[TOOL RESPONSE]
+[
+  {
+    "email": "andrus.kivi@globalcorp.ee",
+    "full_name": "Andrus Kivi",
+    "department": "Supply Chain & Logistics",
+    "role": "Regional Logistics Coordinator"
+  }
+]
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+[
+  {
+    "alert_id": "SOC-99799",
+    "alert_name": "Azure Network Security Modification",
+    "timestamp": "2026-02-10T22:40:00.000Z",
+    "user": "andrus.kivi@globalcorp.ee",
+    "operation": "MICROSOFT.AUTHORIZATION/LOCKS/DELETE",
+    "resource_id": "/subscriptions/228e1d3b/resourceGroups/rg-baltic-prod-core",
+    "status": "Succeeded",
+    "analyst_comment": ""
+  },
+  {
+    "alert_id": "SOC-99800",
+    "alert_name": "Azure Network Security Modification",
+    "timestamp": "2026-02-10T22:42:00.000Z",
+    "user": "andrus.kivi@globalcorp.ee",
+    "operation": "MICROSOFT.INSIGHTS/DIAGNOSTICSETTINGS/DELETE",
+    "resource_id": "/subscriptions/228e1d3b/resourceGroups/rg-baltic-prod-core/providers/Microsoft.Network/networkSecurityGroups/nsg-prod-db-cluster",
+    "status": "Succeeded",
+    "analyst_comment": ""
+  },
+  {
+    "alert_id": "SOC-99801",
+    "alert_name": "Azure Network Security Modification",
+    "timestamp": "2026-02-10T22:43:00.000Z",
+    "user": "andrus.kivi@globalcorp.ee",
+    "operation": "MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/WRITE",
+    "resource_id": "/subscriptions/228e1d3b/resourceGroups/rg-baltic-prod-core/providers/Microsoft.Network/networkSecurityGroups/nsg-prod-db-cluster",
+    "status": "Succeeded",
+    "request_body": "{\"properties\":{\"securityRules\":[{\"name\":\"Internal_Sync_Legacy\",\"properties\":{\"access\":\"Allow\",\"description\":\"Temporary sync for database migration\",\"destinationAddressPrefix\":\"13.71.172.5\",\"destinationPortRange\":\"22\",\"direction\":\"Inbound\",\"priority\":105,\"protocol\":\"Tcp\",\"sourceAddressPrefix\":\"185.220.101.44\"}}]}}",
+    "analyst_comment": ""
+  },
+  {
+    "alert_id": "SOC-99802",
+    "alert_name": "Azure Network Security Modification",
+    "timestamp": "2026-02-10T22:44:00.000Z",
+    "user": "andrus.kivi@globalcorp.ee",
+    "operation": "MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/DELETE",
+    "resource_id": "/subscriptions/228e1d3b/resourceGroups/rg-baltic-prod-core/providers/Microsoft.Network/networkSecurityGroups/nsg-prod-web-frontend",
+    "status": "Succeeded",
+    "analyst_comment": ""
+  }
+]
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-99803",
+    "Start Time": "2026-02-10T22:50:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "194.126.101.99",
+    "User": "andrus.kivi@globalcorp.ee",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Description": "Anomalous activity from 194.126.101.99 by andrus.kivi@globalcorp.ee with Contributor access included a DELETE of a virtual network peering and subsequent NSG-related changes in the Baltic prod core environment. The action occurred at 22:50 UTC, corresponding to about 00:50 local Estonian time, which is outside typical admin hours in Estonia and from a Tallinn-based location. The sequence of changes increases risk to connectivity and security controls, suggesting potential unauthorized or high-risk activity that requires escalation."
+    ,
+    "Actor Email": "andrus.kivi@globalcorp.ee",
+    "Actor Role": "Contributor",
+    "Estonia Local Time": "2026-02-11 00:50",
+    "Environment Resource": "Virtual Network Peering: vnet-tallinn-prod-01/peering-to-central-soc in resource group rg-baltic-prod-core",
+    "Recent Similar Alerts": [
+      "SOC-99799",
+      "SOC-99800",
+      "SOC-99801",
+      "SOC-99802"
+    ]
+  },
+  "classification": "HP"
+}
+

@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-21550",
+    "Start Time": "2026-03-01T15:10:00.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "90.184.0.1",
+    "Destination IP": "40.108.201.15",
+    "User": "svc_aem_assets@globalcorp.ee",
+    "Workload": "SharePoint",
+    "Application": "Adobe Experience Manager MSGraph",
+    "Site URL": "https://globalcorp.sharepoint.com/sites/Nordic_Marketing_Content/",
+    "File Count": 340,
+    "Baseline 24h": 35,
+    "Description": "The alert was generated due to a large volume of SharePoint downloads (340 files) from svc_aem_assets@globalcorp.ee, well above the 24-hour baseline of 35. Activity originated from Copenhagen and targeted the corporate Nordic marketing SharePoint site using the Adobe Experience Manager MSGraph integration with an automated WinHttp user-agent, which is consistent with service-based content synchronization. Because the account name, application context, sample file paths, and file types align with marketing asset ingestion rather than suspicious exfiltration behavior, this event is assessed as Low Priority."
+  },
+  "classification": "LP"
+}

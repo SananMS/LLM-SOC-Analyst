@@ -1,0 +1,20 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-27420",
+    "Start Time": "2026-02-01T20:15:30.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "92.240.64.18",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "RIX-SALES-LAP-22",
+    "User": "Dace.Ozolina@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Workload": "SharePoint",
+    "File Count": 1240,
+    "Baseline 24h": 45,
+    "Site URL": "https://globalcorp.sharepoint.com/sites/Latvija_Klienti_un_Ligumi/",
+    "Geo Location": "Riga, Latvia",
+    "Local Time": "2026-02-01 22:15:30 EET",
+    "Description": "A large volume of SharePoint file downloads (1,240 files) was observed from the user account on 2026-02-01 at 22:15 local time, which is significantly above the 24-hour baseline of 45. The downloads targeted client, contracts, finance, and marketing paths on a SharePoint site that aligns with the user's apparent regional function, and the endpoint hostname suggests a sales laptop which plausibly justifies access to these documents. No external malicious indicators (such as non-standard application or unknown third-party destinations) are visible in the alert, so the activity is assessed as Low Priority based on contextual relevance to the user's role despite the high volume and after-hours timing."
+  },
+  "classification": "LP"
+}

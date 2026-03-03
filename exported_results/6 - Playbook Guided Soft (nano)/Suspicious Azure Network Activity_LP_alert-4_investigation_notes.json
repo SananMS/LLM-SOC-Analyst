@@ -1,0 +1,15 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-22700",
+    "Start Time": "2026-02-10T12:30:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "102.89.1.20",
+    "User": "olumide.adeyemi@globalcorp.ee",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Description": "An Azure virtual network delete operation was initiated from Lagos, Nigeria (IP 102.89.1.20) by Olumide Adeyemi, owner-level access, targeting a test environment VNet in resource group rg-baltic-test-connectivity. A prior similar alert indicated a location anomaly for this user in Nigeria, which was closed as a false positive, suggesting travel-related or legitimate administrative activity. Given the non-production target and the user's role, this activity is assessed as Low Priority, though continued monitoring is recommended to confirm ongoing authorized behavior.",
+    "Geolocation": "Lagos, Nigeria",
+    "Actor Role": "IT System Administrator",
+    "Recent Similar Alert": "SOC-22456 - User Login Location Anomaly; FP; user observed from Lagos, Nigeria"
+  },
+  "classification": "LP"
+}

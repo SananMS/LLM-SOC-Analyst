@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-99400",
+    "Start Time": "2026-02-10T14:45:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "186.155.12.88",
+    "Endpoint": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-baltic-prod-connectivity/providers/Microsoft.Network/networkSecurityGroups/nsg-prod-edge-01",
+    "User": "mateo.rodriguez@globalcorp.ee",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Role": "Contributor",
+    "Resource Group": "rg-baltic-prod-connectivity",
+    "Caller Location": "Bogotá, Colombia",
+    "User Department": "Architecture & Infrastructure",
+    "Previous Similar Alert": "SOC-99398 (User Login Location Anomaly at 2026-02-10T10:45:00.000Z from same IP)",
+    "Description": "A deletion of a production network security group succeeded against rg-baltic-prod-connectivity and was performed by a user assigned the Contributor role. The actor is a Senior DevOps Engineer in Architecture & Infrastructure with MFA registered, and the activity occurred at 16:45 EET which is within typical working hours. However, the source IP geolocates to Bogotá, Colombia and there is a prior related login-location anomaly from the same IP earlier that day; given the high impact of deleting a production NSG and the unusual geolocation, this activity is considered High Priority because it may represent an unexpected or unauthorized change despite a seemingly legitimate user context."
+  },
+  "classification": "HP"
+}

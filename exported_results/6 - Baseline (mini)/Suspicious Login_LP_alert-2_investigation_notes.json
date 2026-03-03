@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-100",
+    "Start Time": "2025-07-25T07:50:00.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "155.133.15.2",
+    "Destination IP": "13.80.23.7",
+    "Endpoint": "G3154545",
+    "User": "lisa.korhonen@client.ee",
+    "Description": "A successful Office 365 login for lisa.korhonen@client.ee was observed from Santiago de Queretaro, Mexico, which is outside the user's typical region. The authentication was performed with MFA from a company-managed and compliant Windows endpoint and the source IP has an abuse score of 0 and is associated with a VPN/data center provider. There are no additional suspicious indicators such as failed logon storms, unusual device profile, or known-malicious IP reputation, so the activity is assessed as low priority. The anomalous geo-location is noted for contextual awareness but is not presently corroborated by other risk factors.",
+    "Company Managed and Compliant": true,
+    "MFA Present": true,
+    "Login Result": "success",
+    "IP Reputation Score": "0/100",
+    "IP Usage Type": "VPN / Data Center"
+  },
+  "classification": "LP"
+}

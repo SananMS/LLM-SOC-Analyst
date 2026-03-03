@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-29100",
+    "Start Time": "2026-02-01T21:30:00.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "78.60.112.55",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "VIL-MTN-WKS-02",
+    "User": "Linas.Pavilionis@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Geographic Context": "Vilnius, Lithuania (UTC+2 at event)",
+    "Observed Volume vs Baseline": "File Count 840; Baseline 4 in 24h",
+    "Site URL": "https://globalcorp.sharepoint.com/sites/Inovacijos_ir_Finansai/",
+    "Description": "An unusual bulk download of 840 SharePoint files was observed for user Linas.Pavilionis@globalcorp.ee, using Office 365 SharePoint Online from the Inovacijos_ir_Finansai site. The activity greatly exceeds the 24-hour baseline (840 vs 4) and occurred at 21:30 UTC from Vilnius, Lithuania, implying late local hours. The combination of volume, timing, and the presence of sensitive sample files suggests potential data exfiltration risk and warrants high-priority investigation."
+  },
+  "classification": "HP"
+}

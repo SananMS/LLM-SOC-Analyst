@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-29481",
+    "Start Time": "2026-02-17T11:05:17.000Z",
+    "Alert Name": "Microsoft Defender: Potentially Unwanted Application Prevented",
+    "Source IP": "10.44.12.190",
+    "Endpoint": "WKSTN-DEV-772",
+    "User": "r.hunter@client.ee",
+    "Playbook Used": "EDR Malware Triage",
+    "File Path": "C:\\repo-gradle\\caches\\9.1.2\\a7b8c9d0e1f2\\a7b8c9d0e1f2.lock",
+    "File Hash": "f4e3d2c1b0a9f8e7d6c5b4a3f2e1d0c9b8a7f6e5d4c3b2a1f0e9d8c7b6a5f4e3",
+    "Process Tree": "[PID: 25280] idea64.exe -> [PID: 15368] java.exe",
+    "Remediation Status": "prevented",
+    "User Role": "Junior Software Developer",
+    "Description": "PUA:MacKeeper was prevented on host WKSTN-DEV-772. The detected process chain (idea64.exe -> java.exe) and the Gradle-related file path appear consistent with normal software development activity for the user. Hash reputation search did not return results and there are no related events or external communications, supporting a low likelihood of active compromise; the alert is considered Low Priority."
+  },
+  "classification": "LP"
+}

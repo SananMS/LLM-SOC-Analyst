@@ -1,0 +1,16 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-55102",
+    "Start Time": "2026-02-18T16:10:05.000Z",
+    "Alert Name": "Brand Logo Detection",
+    "Destination IP": "192.185.112.40",
+    "Playbook Used": "Visual Brand Abuse & Logo Triage",
+    "Target Brand": "Vitalis Healthcare",
+    "Scanned URL": "https://www.vitalis-hr-benefits.com/auth/login?service=payroll",
+    "Domain Age": "5 hours",
+    "Hosting Provider": "HostGator.com LLC",
+    "IP Abuse Score": "0/100",
+    "Description": "The Vitalis Healthcare logo appears on a freshly registered domain presenting an employee payroll/login page that requests credentials. The screenshot shows a high-fidelity logo placement and a clear payroll/W-2 access prompt on a domain different from the official brand, which is consistent with credential-harvesting intent. The domain's 5-hour age and mismatched registration increase the risk despite the hosting IP showing a low abuse score, so the combined visual and domain signals indicate active impersonation and warrant escalation."
+  },
+  "classification": "HP"
+}

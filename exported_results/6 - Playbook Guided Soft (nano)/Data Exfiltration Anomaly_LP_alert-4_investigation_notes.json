@@ -1,0 +1,14 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-12880",
+    "Start Time": "2026-01-31T23:20:05.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "210.138.184.59",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "ARC-DESK-012",
+    "User": "Tanel.Magi@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Description": "An unusual volume of SharePoint file downloads (250) was observed from the user, far above the 24-hour baseline of 30. The activity originated from 210.138.184.59 to 40.108.201.15 using Office 365 SharePoint Online. Geo location shows Tokyo, Japan, while sample paths reference Tallinn, Estonia, indicating a geographic/path mismatch. The combination of high data volume and conflicting location signals points to a potential data exfiltration attempt or insider risk, thus classified as HP."
+  },
+  "classification": "HP"
+}

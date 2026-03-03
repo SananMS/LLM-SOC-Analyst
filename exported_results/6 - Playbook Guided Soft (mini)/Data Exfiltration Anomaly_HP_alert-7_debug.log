@@ -1,0 +1,27 @@
+=== DEBUG SESSION START: 2026-03-03T01:20:09.912312+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Data Exfiltration Anomaly
+Selected Playbook: excessive_downloads.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-25600",
+    "Start Time": "2026-02-01T19:05:10.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "88.119.20.145",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "VIL-LT-DSK-12",
+    "User": "Jonas.Laitis@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Workload": "SharePoint (Office 365 SharePoint Online)",
+    "File Count": 920,
+    "Baseline 24h": 10,
+    "Geo Location": "Vilnius, Lithuania",
+    "User Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+    "Description": "Anomalous activity detected where the user downloaded 920 SharePoint files, substantially above their 24-hour baseline of 10, and spanning folders that include legal, R&D, security, contracts, and board strategy documents. The source IP geolocates to Vilnius, Lithuania and the user agent appears as a standard Chrome browser, which is consistent with the user's email domain, but the activity occurred at ~21:05 local time, outside typical business hours. Given the large deviation from baseline, the broad set of sensitive directories accessed, and the after-hours timing with no contextual justification in the alert, this is assessed as a potential data exfiltration risk and is classified as High Priority."
+  },
+  "classification": "HP"
+}
+

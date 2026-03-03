@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-15900",
+    "Start Time": "2026-01-31T23:59:59.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "109.70.100.1",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "CLOUD-AUTOMATE-NODE",
+    "User": "Kevin.Smit@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Application": "Python-urllib/3.12",
+    "File Count": 2100,
+    "Baseline 24h": 40,
+    "User Role": "Engineering — Junior Developer (Intern)",
+    "IP Reputation Score": "Abuse Confidence 100/100; identified as Tor exit (ISP: Foundation for Applied Privacy)",
+    "Description": "A large volume of SharePoint downloads (2,100 files) from a Recovery vault was observed, including database dumps and encryption keys, which is substantially above the user's 24-hour baseline of 40. The activity used a Python-urllib user agent consistent with scripted access and originated from an IP flagged as a Tor exit with a 100/100 abuse score; the account is a junior developer intern with no clear business need for these recovery and secret files. There was a related alert earlier the same night showing multiple failed login attempts for the same user, which increases the likelihood of account compromise. Based on the high volume, sensitive content accessed, automated access pattern, risky IP reputation, and recent authentication anomalies, this alert is classified as High Priority."
+  },
+  "classification": "HP"
+}

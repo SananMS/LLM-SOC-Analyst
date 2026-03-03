@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-115",
+    "Start Time": "2025-08-03T16:30:00.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "154.86.26.91",
+    "Destination IP": "13.80.23.7",
+    "Endpoint": "T12345785",
+    "User": "arne.tamm@client.ee",
+    "Playbook Used": "Suspicious Login Triage",
+    "Has MFA": true,
+    "Company Managed and Compliant": true,
+    "IP Reputation Score": "0/100",
+    "ISP Name": "HONG KONG COMMUNICATIONS INTERNATIONAL CO.,LIMITED",
+    "Recent Activity Summary": "Prior successful logins include Tallinn (2025-07-31) and Macao (2025-08-03). A related alert (SOC-110) for the Macao login was closed as a false positive after client confirmation that the user was on vacation.",
+    "Description": "An Office 365 login succeeded from Hong Kong on a company-managed Windows device where MFA was enabled and the source IP has a benign reputation. The same user had a successful login from Macao earlier the same day and a related alert was previously closed after client confirmation of travel. Given the managed device, MFA, clean IP reputation, and corroborating travel evidence, the activity is assessed as Low Priority. The combined signals indicate a low likelihood of malicious access despite the atypical location."
+  },
+  "classification": "LP"
+}

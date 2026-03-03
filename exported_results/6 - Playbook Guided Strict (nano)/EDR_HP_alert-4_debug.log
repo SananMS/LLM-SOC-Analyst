@@ -1,0 +1,21 @@
+=== DEBUG SESSION START: 2026-03-02T23:45:07.416966+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Microsoft Defender: Antivirus Tampering Attempt Prevented
+Selected Playbook: EDR_anti_tampering.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-29905",
+    "Start Time": "2025-10-09T15:39:02.000Z",
+    "Alert Name": "Microsoft Defender: Antivirus Tampering Attempt Prevented",
+    "Source IP": "10.10.44.112",
+    "Endpoint": "WKSTN-FIN-092b",
+    "User": "GlobalAdmin_svc",
+    "Playbook Used": "EDR Anti-Tampering Triage",
+    "Description": "An attempt to stop the Microsoft Defender Antivirus service (WinDefend) using sc.exe was detected on WKSTN-FIN-092b from a privileged service account (GlobalAdmin_svc). The action was blocked and remediation reported as blocked/removed, so Defender remained active. The attempt indicates defense evasion by a high-privilege account and should be monitored for follow-on activity."
+  },
+  "classification": "HP"
+}
+

@@ -1,0 +1,16 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-88",
+    "Start Time": "2025-07-23T23:55:15.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "182.95.178.158",
+    "Destination IP": "13.80.23.7",
+    "User": "karl.saare@client.ee",
+    "IP Reputation Score": "Abuse Confidence Score 100/100; ISP: Bharti Airtel Limited",
+    "Has MFA": false,
+    "Recent Login Locations": "Tallinn, Estonia (successful logins on 2025-07-22 and 2025-07-23)",
+    "Directory Account Found": false,
+    "Description": "A successful Office 365 login for karl.saare@client.ee was observed from Mumbai, India, which is outside the user's normal region of Tallinn, Estonia. The source IP has a high abuse confidence score (100/100) and the account did not use MFA during the login, increasing the risk of account compromise. Prior recent successful logins were from Tallinn and no similar alerts were found, which further elevates concern. This activity is considered High Priority because the geographic anomaly combined with a high-risk IP and lack of MFA indicates a credible potential compromise that warrants escalation."
+  },
+  "classification": "HP"
+}

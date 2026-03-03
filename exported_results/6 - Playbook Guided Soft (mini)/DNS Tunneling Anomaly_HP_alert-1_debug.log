@@ -1,0 +1,47 @@
+=== DEBUG SESSION START: 2026-03-03T01:27:32.820177+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: DNS Tunneling Anomaly
+Selected Playbook: suspicious_dns_queries.json
+
+[TOOL CALL]
+Tool: get_domain_age
+Arguments: {"domain": "update-check-cdn.xyz"}
+
+[TOOL RESPONSE]
+Domain: update-check-cdn.xyz | Created: 2026-02-02 | Age: 29 days old.
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14567",
+    "Start Time": "2026-02-06T14:30:10.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.150.22.105",
+    "Destination IP": "45.15.201.33",
+    "Endpoint": "srv-prod-web-01",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Description": "A high-volume, high-entropy DNS TXT tunneling event was observed from srv-prod-web-01 to update-check-cdn.xyz with 2,140 bytes versus a typical 15 bytes. Subdomain labels contain Base64-encoded fragments that decode to strings such as 'filename=shadow.bak' and chunked data markers (e.g., 'chunk=01|data=...'), which is consistent with staged data exfiltration over DNS. The root domain is newly registered (29 days old) and the host has no recent related events, which increases the likelihood this is malicious rather than benign tooling. Because of the decoded payload contents, elevated byte volume, and young domain age, this activity is treated as High Priority for escalation.",
+    "Root Domain": "update-check-cdn.xyz",
+    "Domain Age": "29 days (created 2026-02-02)",
+    "Decoded Payloads": "filename=shadow.bak; chunk=01|data=Hello%; chunk=02|data=20world; chunk=03|data=exfil",
+    "Query Type": "TXT",
+    "Observed Bytes": 2140
+  },
+  "classification": "HP"
+}
+

@@ -1,0 +1,14 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-75988",
+    "Start Time": "2026-02-19T21:15:45.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Playbook Used": "Document Exposure & Threat Intel Triage",
+    "Description": "VitalisHealthcare is mentioned in a document surfaced through TI-Monitor-DarkWeb. The evidence includes an onion-hosted URL and local relative_paths pointing to potentially sensitive files such as patient_records_2025_full.sql, q4_insurance_claims_processing.csv, and it_admin/network_topology_and_firewall_rules.pdf. The combination suggests a possible exposure of protected health information and internal documents associated with the brand, indicating a high-priority risk that warrants further investigation.",
+    "Threat Source": "TI-Monitor-DarkWeb",
+    "External URL": "http://x7y9z1a3b5c7d9e1f3g5h7i9j1k2l3m5n7o9p1q3r5s7t9u1v3w5x7y9.onion/dump/exfiltrated/2026/02/",
+    "Evidence Files Referenced": "/mnt/storage/breach_vault/vitalis_healthcare/clinical_ops/patient_records_2025_full.sql; /mnt/storage/breach_vault/vitalis_healthcare/finance/q4_insurance_claims_processing.csv; /mnt/storage/breach_vault/vitalis_healthcare/it_admin/network_topology_and_firewall_rules.pdf",
+    "Brand": "VitalisHealthcare"
+  },
+  "classification": "HP"
+}

@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-21550",
+    "Start Time": "2026-03-01T15:10:00.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "90.184.0.1",
+    "Destination IP": "40.108.201.15",
+    "User": "svc_aem_assets@globalcorp.ee",
+    "Playbook Used": "None",
+    "Description": "An unusually high volume of SharePoint file downloads was observed from the service account svc_aem_assets@globalcorp.ee, totaling 340 files, well above the 24-hour baseline of 35. The activity targets the Nordic Marketing Content SharePoint site and shows traffic from external source IP 90.184.0.1 to destination 40.108.201.15, which could indicate data exfiltration or credential misuse. The combination of a service account, external source, and large asset set warrants high-priority investigation to verify legitimate business need and potential data exposure.",
+    "Workload": "SharePoint",
+    "Site URL": "https://globalcorp.sharepoint.com/sites/Nordic_Marketing_Content/",
+    "Download Count": "340",
+    "Baseline 24h": "35",
+    "Sample Files": "Produkt_Billeder_Foraar_2026.zip; Markedsføring_Video_Kampagne_HD.mp4; Virksomhed_Logo_Sæt_Vektor.eps; Katalog_Layout_Forside_Udkast.indt; Sociale_Medier_Indhold_Marts.psd; Brand_Retningslinjer_Nordic.pdf; Pressemeddelelse_Billeder_Lokal.zip; Event_Plakat_Print_Klar.pdf; Nyhedsbrev_Grafik_Samling.png; Webside_Ikon_Bibliotek.svg"
+  },
+  "classification": "HP"
+}

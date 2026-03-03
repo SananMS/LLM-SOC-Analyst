@@ -1,0 +1,24 @@
+=== DEBUG SESSION START: 2026-03-03T01:00:04.920431+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Suspicious PowerShell Script Execution
+Selected Playbook: General Triage (No Playbook)
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-9745",
+    "Start Time": "2026-01-26T02:47:19.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.4.22.18",
+    "Endpoint": "FIN-SRV-01",
+    "User": "m.laane",
+    "User ID": "S-1-5-21-55667788-33445566-11223344-1021",
+    "Script Block": "Get-ChildItem C:\\Users -Recurse -Include *.kdbx,*.pst,*.docx -ErrorAction SilentlyContinue | Select-Object FullName,Length | Export-Csv C:\\ProgramData\\user_cache.csv -NoTypeInformation",
+    "Operating System": "Windows Server 2019 Standard",
+    "Exported File Path": "C:\\ProgramData\\user_cache.csv",
+    "Description": "A PowerShell command was executed on FIN-SRV-01 that recursively enumerated user directories for .kdbx, .pst, and .docx files and exported the results to C:\\ProgramData\\user_cache.csv. The targeted file types include sensitive credential and mailbox file formats and the output is placed in a common system location, which is atypical for normal user activity. The action was performed by user m.laane on a financial server and shows characteristics of data discovery or consolidation that could precede exfiltration, so this alert is considered High Priority."
+  },
+  "classification": "HP"
+}
+

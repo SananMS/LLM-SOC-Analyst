@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-12880",
+    "Start Time": "2026-01-31T23:04:12.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "145.14.37.179",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "HOST-VPN-PRIV-02",
+    "User": "Aleksei.Ivanov@globalcorp.ee",
+    "Playbook Used": "Unassigned",
+    "Description": "An unusual spike in SharePoint downloads was observed for user Aleksei Ivanov, totaling 1,120 files in 24 hours, well above the baseline of 10. The downloads include payroll and banking data from HR/Finance folders and were accessed through the VPN endpoint HOST-VPN-PRIV-02. The destination resolves to Microsoft SharePoint Online, a legitimate service, but the combination of high volume and sensitive data raises the risk of data exfiltration or insider risk requiring investigation. This activity is considered high priority due to potential exposure of payroll and banking information and the abnormal pattern."
+  },
+  "classification": "HP",
+  "Source IP Reputation": "Abuse Confidence Score: 0/100; Not a VPN; ISP: Elisa Eesti AS",
+  "Destination IP Reputation": "Abuse Confidence Score: 0/100; Privacy Status: VPN; ISP: Microsoft Corporation",
+  "Recent Events": "No recent events found.",
+  "Recent Similar Alerts": "No recent similar alerts found."
+}

@@ -1,0 +1,14 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-24100",
+    "Start Time": "2026-02-01T22:15:44.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "85.253.110.42",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "TAL-CS-WORKSTATION-05",
+    "User": "Mari.Tamm@globalcorp.ee",
+    "Playbook Used": null,
+    "Description": "An unusually large volume of SharePoint file downloads (750) was detected for user Mari.Tamm@globalcorp.ee, significantly above the 24-hour baseline of 15. The activity targets an external destination (40.108.201.15) via SharePoint Online at site https://globalcorp.sharepoint.com/sites/Juhtkond_Ja_Finants/, with a sample of files including Aasta_Eelarve_2026_Final.xlsx and Kuluaruanded_Juhtkond_Q4.zip. Combined with the user’s Tallinn, Estonia location and the high download count, this pattern is suspicious and indicates potential data exfiltration risk requiring escalation."
+  },
+  "classification": "HP"
+}

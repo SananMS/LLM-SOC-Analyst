@@ -1,0 +1,50 @@
+=== DEBUG SESSION START: 2026-03-03T03:10:44.945464+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Suspicious PowerShell Script Execution
+Selected Playbook: suspicious_powershell.json
+
+[TOOL CALL]
+Tool: check_hash_reputation
+Arguments: {"hash": "9785001b0dcf755eddb8af294a373c0b87b2498660f724e76c4d53f9c217c7a3"}
+
+[TOOL RESPONSE]
+VT Results for 9785001b0dcf755eddb8af294a373c0b87b2498660f724e76c4d53f9c217c7a3 (PowerShell.EXE):
+  - Engines: 0 Malicious | 0 Suspicious
+  - Community Score: -24
+  - Community Votes: 29 Malicious vs 20 Harmless
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10882",
+    "Start Time": "2026-01-27T16:20:45.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.30.15.11",
+    "Endpoint": "WKSTN-SR-42",
+    "User": "Administrator",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Initiating Process": "powershell.exe",
+    "Parent Process": "cmd.exe",
+    "Process SHA256": "9785001b0dcf755eddb8af294a373c0b87b2498660f724e76c4d53f9c217c7a3",
+    "Scriptblock (decoded)": "vssadmin delete shadows /all /quiet; bcdedit /set {default} recoveryenabled no; bcdedit /set {default} bootstatuspolicy ignoreallfailures",
+    "Reputation Summary": "0 AV engines flagged malicious; Community Score -24 with community votes 29 Malicious vs 20 Harmless.",
+    "Description": "An obfuscated PowerShell encoded command was executed by the Administrator account on WKSTN-SR-42 and decodes to commands that delete volume shadow copies and disable recovery/boot status protections, behavior consistent with ransomware or destructive activity. The command was run via powershell.exe launched from cmd.exe with no file path recorded, indicating in-memory or direct encoded execution which increases risk. VirusTotal shows no engine detections but a negative community score and many community malicious votes, and no recent similar events were found, so the observable behavior and intent drive a High Priority classification."
+  },
+  "classification": "HP"
+}
+

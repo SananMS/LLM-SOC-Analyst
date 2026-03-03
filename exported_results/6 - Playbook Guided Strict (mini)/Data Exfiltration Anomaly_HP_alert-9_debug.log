@@ -1,0 +1,102 @@
+=== DEBUG SESSION START: 2026-03-03T02:25:41.439264+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Data Exfiltration Anomaly
+Selected Playbook: excessive_downloads.json
+
+[TOOL CALL]
+Tool: lookup_users
+Arguments: {"emails": ["Linas.Pavilionis@globalcorp.ee"]}
+
+[TOOL RESPONSE]
+[
+  {
+    "email": "Linas.Pavilionis@globalcorp.ee",
+    "full_name": "Linas Pavilionis",
+    "department": "Technin\u0117 prie\u017ei\u016bra",
+    "role": "Prie\u017ei\u016bros in\u017einierius"
+  }
+]
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+[
+  {
+    "event_time": "2026-02-01T20:45:00.000Z",
+    "operation": "SearchQueryPerformed",
+    "user": "Linas.Pavilionis@globalcorp.ee",
+    "query_text": "atlyginimas OR premija OR biudžetas"
+  },
+  {
+    "event_time": "2026-02-01T20:50:12.000Z",
+    "operation": "SearchQueryPerformed",
+    "user": "Linas.Pavilionis@globalcorp.ee",
+    "query_text": "slaptas OR receptas OR patentas"
+  },
+  {
+    "event_time": "2026-02-01T21:05:00.000Z",
+    "operation": "AnonymousLinkCreated",
+    "user": "Linas.Pavilionis@globalcorp.ee",
+    "object_id": "https://globalcorp-my.sharepoint.com/personal/linas_pavilionis_globalcorp_ee/Documents/Eksportui_Skirta.zip"
+  },
+  {
+    "event_time": "2026-02-01T21:15:20.000Z",
+    "operation": "FileDeleted",
+    "user": "Linas.Pavilionis@globalcorp.ee",
+    "file_name": "Slaptas_Produkto_Receptas_V2.pdf",
+    "url": "https://globalcorp.sharepoint.com/sites/Inovacijos_ir_Finansai/R_D/Receptūros/Slapta/Slaptas_Produkto_Receptas_V2.pdf"
+  },
+  {
+    "event_time": "2026-02-01T21:18:45.000Z",
+    "operation": "FileDeleted",
+    "user": "Linas.Pavilionis@globalcorp.ee",
+    "file_name": "Investicijų_Planas_Vokietija.pdf",
+    "url": "https://globalcorp.sharepoint.com/sites/Inovacijos_ir_Finansai/Investicijos/Projektai/Vokietija/Investicijų_Planas_Vokietija.pdf"
+  },
+  {
+    "event_time": "2026-02-01T21:22:10.000Z",
+    "operation": "FileDeleted",
+    "user": "Linas.Pavilionis@globalcorp.ee",
+    "file_name": "Algu_Biudzetas_Visi_Darbuotojai.csv",
+    "url": "https://globalcorp.sharepoint.com/sites/Inovacijos_ir_Finansai/Personalas/Atlyginimai/Biudžetas/Algu_Biudzetas_Visi_Darbuotojai.csv"
+  },
+  {
+    "event_time": "2026-02-01T21:25:55.000Z",
+    "operation": "FileDeleted",
+    "user": "Linas.Pavilionis@globalcorp.ee",
+    "file_name": "Mokesčių_Auditas_2025_Išvados.pdf",
+    "url": "https://globalcorp.sharepoint.com/sites/Inovacijos_ir_Finansai/Finansai/Auditas/Mokesčiai/Mokesčių_Auditas_2025_Išvados.pdf"
+  }
+]
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-29100",
+    "Start Time": "2026-02-01T21:30:00.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "78.60.112.55",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "VIL-MTN-WKS-02",
+    "User": "Linas.Pavilionis@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Description": "A large volume of SharePoint downloads (840 files vs a 24-hour baseline of 4) was performed from an endpoint in Vilnius at 23:30 local time, accessing sensitive areas such as R&D recipes, payroll, patents, contracts, and financial audits. Correlated activity shows searches for sensitive terms, creation of an anonymous link to a personal SharePoint export, and subsequent deletion of several sampled files, which together indicate likely deliberate exfiltration rather than routine use. The user's role (maintenance engineer in Techninė priežiūra) does not plausibly justify access to many of the downloaded paths, and the late-night timing further elevates concern; therefore the activity is considered High Priority for escalation and containment.",
+    "Workload": "SharePoint",
+    "File Count": 840,
+    "Baseline 24h": 4,
+    "User Department": "Techninė priežiūra",
+    "Recent Events Summary": "Search queries for salary/patent/secret terms (20:45-20:50 UTC), anonymous link created to a personal SharePoint export (21:05 UTC), and multiple file deletions of sampled files between 21:15-21:25 UTC."
+  },
+  "classification": "HP"
+}
+

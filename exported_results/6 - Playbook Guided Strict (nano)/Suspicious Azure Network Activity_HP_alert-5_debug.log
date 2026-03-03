@@ -1,0 +1,21 @@
+=== DEBUG SESSION START: 2026-03-02T23:50:11.984536+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Azure Network Security Modification
+Selected Playbook: suspicious_cloud_network_activity.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-99803",
+    "Start Time": "2026-02-10T22:50:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "194.126.101.99",
+    "User": "andrus.kivi@globalcorp.ee",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Environment": "Production environment in resourceGroup rg-baltic-prod-core",
+    "Description": "A VNet peering named 'peering-to-central-soc' in the production resource group rg-baltic-prod-core was deleted by user andrus.kivi@globalcorp.ee (Contributor) from IP 194.126.101.99. The action could disrupt connectivity to central networks and was performed outside typical Estonia administrative hours. The combination of production scope, elevated permissions, and timing elevates risk, so this is classified as High Priority pending further validation."
+  },
+  "classification": "HP"
+}
+

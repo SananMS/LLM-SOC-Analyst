@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-99999",
+    "Start Time": "2026-01-26T00:02:54.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "192.168.2.10",
+    "Endpoint": "MEETINGROOM-01",
+    "User": "NT AUTHORITY\\SYSTEM",
+    "Description": "A PowerShell encoded command was executed on MEETINGROOM-01 under NT AUTHORITY\\SYSTEM with parent process svchost.exe, triggering the Suspicious PowerShell Script Execution alert. Decoded script content appears to import the MTRP.PowerShell.Utils module from a versioned Program Files module folder and performs checks on endpoint protection logs and Windows Update/reset actions, consistent with endpoint-management or remediation activity. Given the execution context (SYSTEM and svchost), the module location and versioned path, the script logic aligned with maintenance behavior, and no external network indicators or known malicious artifacts were observed, this alert is assessed as Low Priority.",
+    "Initiating Process": "powershell.exe",
+    "Parent Process": "svchost.exe",
+    "Process SHA256": "9785001b0dcf755eddb8af294a373c0b87b2498660f724e76c4d53f9c217c7a3",
+    "File Path": "C:\\Program Files\\WindowsPowerShell\\Modules\\MTRP.PowerShell.Utils\\2025.12.10.1\\Public\\Logging.ps1",
+    "Module Version": "2025.12.10.1",
+    "Encoded Command Present": "Yes (base64, likely UTF-16LE - PowerShell -EncodedCommand)"
+  },
+  "classification": "LP"
+}

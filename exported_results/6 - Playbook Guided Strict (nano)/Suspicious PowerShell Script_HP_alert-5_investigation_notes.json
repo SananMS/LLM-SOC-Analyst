@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-9826",
+    "Start Time": "2026-01-27T01:36:54.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.5.14.92",
+    "Endpoint": "HR-SRV-02",
+    "User": "k.tamm",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Description": "A PowerShell script attempted to copy sensitive credential data from user profiles to a staging location on the host. It copies Chrome Login Data and Firefox logins.json from user directories to ProgramData. This behavior is unusual for routine admin tasks and may indicate credential access or data exfiltration; given access to multiple browser credential stores and lack of clear admin justification, this should be treated as high risk.",
+    "Evidence Snippet": "Copy-Item 'C:\\Users\\*\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Login Data' -Destination C:\\ProgramData\\chrome_cache.db -Force; Copy-Item 'C:\\Users\\*\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\*.default-release\\logins.json' -Destination C:\\ProgramData\\ff_cache.json -Force",
+    "Files Involved": "Chrome Login Data, Firefox logins.json",
+    "Potential Data Sensitivity": "Browser credential stores",
+    "Observed User Behavior": "Unapproved data access to credential stores with staging of data on the host"
+  },
+  "classification": "HP"
+}

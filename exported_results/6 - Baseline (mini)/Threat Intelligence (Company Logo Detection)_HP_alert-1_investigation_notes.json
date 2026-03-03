@@ -1,0 +1,16 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-54812",
+    "Start Time": "2026-02-18T15:02:14.000Z",
+    "Alert Name": "Brand Logo Detection",
+    "Destination IP": "195.178.110.15",
+    "Scanned URL": "https://www.vitalis-portal-security.com/login/auth",
+    "Domain Age": "2 days",
+    "Registrar": "NameCheap, Inc.",
+    "Detection Source": "Logo-Scanner",
+    "Target Brand": "Vitalis Healthcare",
+    "Target Brand Domain": "vitalis.com",
+    "Description": "The Vitalis Healthcare logo was detected on a login page at https://www.vitalis-portal-security.com/login/auth, which is different from the legitimate brand domain (vitalis.com). The domain was registered two days ago through NameCheap and resolves to 195.178.110.15, and the page presents a patient portal login form consistent with credential harvesting. This is considered High Priority because a newly created lookalike site is using the brand logo to impersonate Vitalis Healthcare and is likely a phishing page targeting patient credentials, so escalation and takedown are warranted."
+  },
+  "classification": "HP"
+}

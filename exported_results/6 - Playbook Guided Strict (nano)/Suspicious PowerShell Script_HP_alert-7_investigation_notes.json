@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10003",
+    "Start Time": "2026-01-27T22:15:00.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.10.50.44",
+    "Endpoint": "GF3456",
+    "User": "NT AUTHORITY\\SYSTEM",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Description": "Encoded PowerShell command was executed with -ExecutionPolicy Bypass and -EncodedCommand, loading a script from C:\\Windows\\Temp\\system_maintenance.ps1. The execution shows powershell.exe initiated by svchost.exe and a registry modification creating a scheduled task, which can indicate persistence effort. Hash reputation for the initiating binary is inconclusive, with a negative community score but no engines flagging as malicious, and external network indicators exist, warranting escalation.",
+    "Process Hash Reputation": "Engines: 0 Malicious | 0 Suspicious; Community Score: -24; 29 Malicious vs 20 Harmless",
+    "Scriptblock Encoding Detected": "Base64 encoded payload detected in scriptblock",
+    "Recent Network Context": "Earlier observed external connection to 183.56.231.216:80 from 10.10.50.44 (msedge.exe), indicating potential external communication context",
+    "Historical Activity Correlation": "No recent similar alerts found"
+  },
+  "classification": "HP"
+}

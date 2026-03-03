@@ -1,0 +1,20 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-25600",
+    "Start Time": "2026-02-01T19:05:10.000Z",
+    "Local Time": "2026-02-01T21:05:10+02:00",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "88.119.20.145",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "VIL-LT-DSK-12",
+    "User": "Jonas.Laitis@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Workload": "SharePoint",
+    "File Count": 920,
+    "Baseline 24h": 10,
+    "User Role": "Gamybos darbuotojas (Gamyba department)",
+    "Recent Events": "Three AnonymousLinkCreated events (18:40–18:52 UTC) from the same user creating shareable links to personal OneDrive/SharePoint objects.",
+    "Description": "An unusually high volume of SharePoint downloads (920 vs a 24-hour baseline of 10) was observed from a manufacturing user in Vilnius at ~21:05 local time, accessing files across sensitive areas including client lists, legal contracts, board strategy, and security protocols. Multiple anonymous sharing links were created from the account shortly before the downloads, indicating possible external sharing. The user's role does not align with the breadth and sensitivity of the accessed data and the activity occurred outside typical working hours; these combined factors raise concern for potential data exposure and warrant higher-priority investigation."
+  },
+  "classification": "HP"
+}

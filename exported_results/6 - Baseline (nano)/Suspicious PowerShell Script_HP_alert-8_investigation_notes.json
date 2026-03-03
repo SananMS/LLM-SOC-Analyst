@@ -1,0 +1,15 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10004",
+    "Start Time": "2026-01-27T13:45:10.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.50.11.92",
+    "Endpoint": "SRV-APPS-02",
+    "User": "s_keller",
+    "Description": "PowerShell was executed with an encoded command on the host SRV-APPS-02. The initiating process was powershell.exe with wmiprvse.exe as the parent, and the command appears obfuscated. The combination of encoded PowerShell and a system process as parent is commonly associated with evasive malware or credential access attempts, so this is flagged as High Priority for further investigation.",
+    "Process SHA256": "9785001b0dcf755eddb8af294a373c0b87b2498660f724e76c4d53f9c217c7a3",
+    "Initiating Process": "powershell.exe",
+    "Parent Process": "wmiprvse.exe"
+  },
+  "classification": "HP"
+}

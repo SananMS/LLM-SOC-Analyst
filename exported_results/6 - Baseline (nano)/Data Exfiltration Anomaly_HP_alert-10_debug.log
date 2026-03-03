@@ -1,0 +1,25 @@
+=== DEBUG SESSION START: 2026-03-02T22:11:26.057865+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Data Exfiltration Anomaly
+Selected Playbook: General Triage (No Playbook)
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-31050",
+    "Start Time": "2026-02-01T03:05:22.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "78.60.112.55",
+    "Destination IP": "40.108.201.15",
+    "User": "Tiina.Koppel@globalcorp.ee",
+    "Site URL": "https://globalcorp.sharepoint.com/sites/Global_Innovation_Master_Vault/",
+    "User Agent": "Python/3.12 aiohttp/3.11.18",
+    "Files Exfiltration Count": 3450,
+    "Baseline 24h": 12,
+    "Geolocation": "Klaipeda, Lithuania",
+    "Description": "An unusually large volume of SharePoint file downloads (3,450) was observed for the user Tiina.Koppel@globalcorp.ee, far above the 24-hour baseline of 12. The activity used a Python-based user agent indicating automated tooling, and the destination IP appears external, which raises concern for potential data exfiltration. The sample set includes sensitive documents such as patents and internal roadmaps, and the combination of high volume, external destination, and sensitive data makes this a high-priority incident requiring investigation."
+  },
+  "classification": "HP"
+}
+

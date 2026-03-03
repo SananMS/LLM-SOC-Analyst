@@ -1,0 +1,58 @@
+=== DEBUG SESSION START: 2026-03-02T22:59:29.632307+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Azure Network Security Modification
+Selected Playbook: suspicious_cloud_network_activity.json
+
+[TOOL CALL]
+Tool: lookup_users
+Arguments: {"emails": ["marcus.webb@globalcorp.ee"]}
+
+[TOOL RESPONSE]
+[
+  {
+    "email": "Marcus.Webb@globalcorp.ee",
+    "full_name": "Marcus Webb",
+    "department": "Legal & Corporate Secretary",
+    "role": "Senior Legal Operations Manager"
+  }
+]
+
+[TOOL CALL]
+Tool: check_ip_reputation
+Arguments: {"ip": "194.126.101.99"}
+
+[TOOL RESPONSE]
+Source IP: 194.126.101.99 | Abuse Confidence Score: 0/100 | ISP: backbone and servers | Usage Type: Fixed Line ISP | Privacy Status: Neither VPN nor Proxy nor Tor Node nor Relay
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-99200",
+    "Start Time": "2026-02-10T09:15:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "194.126.101.99",
+    "User": "Marcus Webb",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Description": "An Azure NSG in production (rg-baltic-prod-connectivity) was modified to add a rule allowing inbound TCP traffic on port 3389 from any source. The change originated from 194.126.101.99 in Tallinn, Estonia, associated with Marcus Webb. The requested rule appears labeled as a temporary access for review, but the action targets a production NSG and temporarily broadens remote access (RDP), increasing exposure risk. The actor's role in the alert payload differs from the user profile result, prompting heightened scrutiny.",
+    "Geolocation": "Tallinn, Estonia",
+    "Rule Change Details": "Inbound RDP rule (port 3389) allowed from any to any; rule name Test; priority 110; described as temporary for review",
+    "Actor Role in Evidence": "Contributor"
+  },
+  "classification": "HP"
+}
+

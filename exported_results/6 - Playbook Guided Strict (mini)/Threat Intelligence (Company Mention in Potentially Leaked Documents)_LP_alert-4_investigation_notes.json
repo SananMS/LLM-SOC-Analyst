@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-75693",
+    "Start Time": "2026-02-24T14:20:00.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Threat": "DocumentExposure:VitalisHealthcare",
+    "Detection Source": "TI-Monitor-DarkWeb",
+    "Source URL": "http://n6p9q2r8t0v4w5x1y3z7a9b1c3d5e7f9g1h3i5j7k9l1m3n5o7p9q1r3.onion/repository/leaks/commercial-real-estate-sector/",
+    "Relative Paths": [
+      "/dumps/uk_property_agents/vitalis_estates_london/listings/Residential_Portfolio_2025.pdf",
+      "/dumps/uk_property_agents/vitalis_estates_london/contracts/Rental_Agreement_Template.docx",
+      "/dumps/uk_property_agents/vitalis_estates_london/staff/Branch_Manager_Directory.xlsx"
+    ],
+    "Recent Similar Alerts": "None found",
+    "Playbook Used": "Document Exposure & Threat Intel Triage",
+    "Description": "The alert references files hosted on a dark web repository with directory names and filenames that indicate a UK property agent labeled 'vitalis_estates_london', which aligns with real-estate materials rather than healthcare content. There is no available extracted content showing internal Vitalis Healthcare data or sensitive patient information, and no prior similar alerts were found. Because the indicators point to a likely unrelated organization sharing a similar name despite the dark web hosting, this is assessed as Low Priority (LP) as a probable false positive."
+  },
+  "classification": "LP"
+}

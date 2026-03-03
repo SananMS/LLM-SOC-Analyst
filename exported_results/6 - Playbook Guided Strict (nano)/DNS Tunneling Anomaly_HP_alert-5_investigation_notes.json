@@ -1,0 +1,15 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14571",
+    "Start Time": "2026-02-06T17:45:10.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.150.22.201",
+    "Destination IP": "203.0.113.42",
+    "Endpoint": "srv-sql-core-01",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Root Domain": "x1j2k3-v9.biz",
+    "Encoded Payload Observed": "Base64-like encoded strings present in sample_queries",
+    "Description": "Anomalously large amount (2,420 Bytes) of high-entropy DNS TXT traffic was observed to domain x1j2k3-v9.biz. The sample_queries contain encoded payloads that decode to potentially sensitive strings, consistent with DNS tunneling or data exfiltration attempts. The root domain appears non-legitimate and not associated with a known trusted service, and the traffic volume diverges from typical DNS behavior."
+  },
+  "classification": "HP"
+}

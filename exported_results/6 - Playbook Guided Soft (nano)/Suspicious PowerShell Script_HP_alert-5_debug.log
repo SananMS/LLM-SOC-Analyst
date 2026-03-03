@@ -1,0 +1,23 @@
+=== DEBUG SESSION START: 2026-03-02T23:11:08.275849+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Suspicious PowerShell Script Execution
+Selected Playbook: suspicious_powershell.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-9826",
+    "Start Time": "2026-01-27T01:36:54.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.5.14.92",
+    "Endpoint": "HR-SRV-02",
+    "User": "k.tamm",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Description": "PowerShell script executed on the host copies sensitive browser credential stores from user profiles to ProgramData, including Chrome Login Data and Firefox logins.json. This behavior is unusual for routine administrative tasks and could indicate credential access or data exfiltration attempts. Given the combination of browser credential targeting and file copy to a writable system directory, the activity is assigned a high priority pending further validation.",
+    "Script Observations": "The scriptblock contains two Copy-Item commands that copy browser credential stores from user profiles to a system directory (ProgramData), which is atypical for routine tasks and could facilitate credential theft.",
+    "Credential Stores Targeted": "Chrome Login Data and Firefox logins.json from user profiles."
+  },
+  "classification": "HP"
+}
+

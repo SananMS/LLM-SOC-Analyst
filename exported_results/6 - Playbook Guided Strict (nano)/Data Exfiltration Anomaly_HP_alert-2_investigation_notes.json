@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-12880",
+    "Start Time": "2026-01-31T23:04:12.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "145.14.37.179",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "HOST-VPN-PRIV-02",
+    "User": "Aleksei.Ivanov@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Description": "An unusual volume of SharePoint file downloads (1120) was observed from the user Aleksei.Ivanov@globalcorp.ee to the Global HR Restricted SharePoint site, significantly above the 24-hour baseline of 10. The downloads include sensitive files such as Employee_Salary_List_2026_Full.csv, Performance_Review_Executive_Leadership.pdf, and Bank_Account_Details_Export.xlsx, and were directed to an external destination (40.108.201.15). The activity originates from Tallinn, Estonia, with the workload labeled SharePoint Online. The combination of high data volume, sensitive content, external destination, and geographic deviation supports a high-risk assessment and warrants immediate investigation and possible escalation.",
+    "Geographic Context": "Tallinn, Estonia",
+    "Volume vs Baseline": "1120 files vs baseline 10 in 24h",
+    "Sensitive Files Accessed": "Employee_Salary_List_2026_Full.csv, Performance_Review_Executive_Leadership.pdf, Bank_Account_Details_Export.xlsx",
+    "Target Site": "https://globalcorp.sharepoint.com/sites/Global_HR_Restricted/"
+  },
+  "classification": "HP"
+}

@@ -1,0 +1,96 @@
+=== DEBUG SESSION START: 2026-03-03T01:48:06.164624+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Azure Network Security Modification
+Selected Playbook: suspicious_cloud_network_activity.json
+
+[TOOL CALL]
+Tool: lookup_users
+Arguments: {"emails": ["andrus.kivi@globalcorp.ee"]}
+
+[TOOL RESPONSE]
+[
+  {
+    "email": "andrus.kivi@globalcorp.ee",
+    "full_name": "Andrus Kivi",
+    "department": "Supply Chain & Logistics",
+    "role": "Regional Logistics Coordinator"
+  }
+]
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+[
+  {
+    "alert_id": "SOC-99799",
+    "alert_name": "Azure Network Security Modification",
+    "timestamp": "2026-02-10T22:40:00.000Z",
+    "user": "andrus.kivi@globalcorp.ee",
+    "operation": "MICROSOFT.AUTHORIZATION/LOCKS/DELETE",
+    "resource_id": "/subscriptions/228e1d3b/resourceGroups/rg-baltic-prod-core",
+    "status": "Succeeded",
+    "analyst_comment": ""
+  },
+  {
+    "alert_id": "SOC-99800",
+    "alert_name": "Azure Network Security Modification",
+    "timestamp": "2026-02-10T22:42:00.000Z",
+    "user": "andrus.kivi@globalcorp.ee",
+    "operation": "MICROSOFT.INSIGHTS/DIAGNOSTICSETTINGS/DELETE",
+    "resource_id": "/subscriptions/228e1d3b/resourceGroups/rg-baltic-prod-core/providers/Microsoft.Network/networkSecurityGroups/nsg-prod-db-cluster",
+    "status": "Succeeded",
+    "analyst_comment": ""
+  },
+  {
+    "alert_id": "SOC-99801",
+    "alert_name": "Azure Network Security Modification",
+    "timestamp": "2026-02-10T22:43:00.000Z",
+    "user": "andrus.kivi@globalcorp.ee",
+    "operation": "MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/WRITE",
+    "resource_id": "/subscriptions/228e1d3b/resourceGroups/rg-baltic-prod-core/providers/Microsoft.Network/networkSecurityGroups/nsg-prod-db-cluster",
+    "status": "Succeeded",
+    "request_body": "{\"properties\":{\"securityRules\":[{\"name\":\"Internal_Sync_Legacy\",\"properties\":{\"access\":\"Allow\",\"description\":\"Temporary sync for database migration\",\"destinationAddressPrefix\":\"13.71.172.5\",\"destinationPortRange\":\"22\",\"direction\":\"Inbound\",\"priority\":105,\"protocol\":\"Tcp\",\"sourceAddressPrefix\":\"185.220.101.44\"}}]}}",
+    "analyst_comment": ""
+  },
+  {
+    "alert_id": "SOC-99802",
+    "alert_name": "Azure Network Security Modification",
+    "timestamp": "2026-02-10T22:44:00.000Z",
+    "user": "andrus.kivi@globalcorp.ee",
+    "operation": "MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/DELETE",
+    "resource_id": "/subscriptions/228e1d3b/resourceGroups/rg-baltic-prod-core/providers/Microsoft.Network/networkSecurityGroups/nsg-prod-web-frontend",
+    "status": "Succeeded",
+    "analyst_comment": ""
+  }
+]
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-99803",
+    "Start Time": "2026-02-10T22:50:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "194.126.101.99",
+    "Destination IP": "13.71.172.5",
+    "User": "andrus.kivi@globalcorp.ee",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Resource Group": "rg-baltic-prod-core",
+    "Resource": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-baltic-prod-core/providers/Microsoft.Network/virtualNetworks/vnet-tallinn-prod-01/virtualNetworkPeerings/peering-to-central-soc",
+    "User Role": "Contributor",
+    "User Department": "Supply Chain & Logistics",
+    "Start Time (Estonia)": "2026-02-11T00:50:00+02:00 (EET)",
+    "Description": "Multiple successive configuration changes in the production resource group rg-baltic-prod-core were performed by andrus.kivi@globalcorp.ee from IP 194.126.101.99 in Tallinn, with the virtual network peering deletion recorded at 2026-02-11 00:50 EET. Correlated alerts show prior deletion of locks, NSG modifications (including an added inbound SSH rule permitting 185.220.101.44 to reach 13.71.172.5), and deletions impacting production networking, which increase exposure. The actor's corporate role (Regional Logistics Coordinator) does not align with infrastructure administration and the activity occurred outside normal Estonian working hours, so the combined evidence indicates elevated risk and warrants high-priority follow-up."
+  },
+  "classification": "HP"
+}
+

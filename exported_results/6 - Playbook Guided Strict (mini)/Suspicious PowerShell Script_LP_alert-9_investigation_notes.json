@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-99999",
+    "Start Time": "2026-01-26T00:02:54.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "192.168.2.10",
+    "Endpoint": "MEETINGROOM-01",
+    "User": "NT AUTHORITY\\SYSTEM",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Process SHA256": "9785001b0dcf755eddb8af294a373c0b87b2498660f724e76c4d53f9c217c7a3",
+    "Parent Process": "svchost.exe",
+    "File Path": "C:\\Program Files\\WindowsPowerShell\\Modules\\MTRP.PowerShell.Utils\\2025.12.10.1\\Public\\Logging.ps1",
+    "Hash Reputation Summary": "VirusTotal engines: 0 Malicious | 0 Suspicious; Community score -24 with community votes 29 Malicious vs 20 Harmless (mixed community signals).",
+    "Script Summary": "The encoded command decodes to a PowerShell script that imports MTRP.PowerShell.Utils and performs logging/maintenance operations (setting last run times, parsing args, optional update/reset of MTRP logging/task settings). There are no hardcoded external IPs observed in the decoded script.",
+    "Description": "A PowerShell encoded command was executed by powershell.exe running as NT AUTHORITY\\SYSTEM and loaded a module located under Program Files (MTRP.PowerShell.Utils), which suggests a legitimate installed PowerShell module was used. VirusTotal static engine detections are zero and no recent related events or similar alerts were found, though community votes on the hash are mixed. The decoded script behavior appears to be logging and maintenance actions rather than obvious malicious behavior, and there are no external network indicators. Based on the module location, benign script content, lack of detection from engines, and absence of related activity, this alert is considered Low Priority."
+  },
+  "classification": "LP"
+}

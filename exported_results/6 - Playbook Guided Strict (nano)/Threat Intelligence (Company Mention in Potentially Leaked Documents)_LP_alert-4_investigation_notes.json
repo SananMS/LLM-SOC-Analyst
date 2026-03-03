@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-75693",
+    "Start Time": "2026-02-24T14:20:00.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Source URL": "http://n6p9q2r8t0v4w5x1y3z7a9b1c3d5e7f9g1h3i5j7k9l1m3n5o7p9q1r3.onion/repository/leaks/commercial-real-estate-sector/",
+    "Evidence Source": "TI-Monitor-DarkWeb",
+    "Relative Paths": [
+      "/dumps/uk_property_agents/vitalis_estates_london/listings/Residential_Portfolio_2025.pdf",
+      "/dumps/uk_property_agents/vitalis_estates_london/contracts/Rental_Agreement_Template.docx",
+      "/dumps/uk_property_agents/vitalis_estates_london/staff/Branch_Manager_Directory.xlsx"
+    ],
+    "Playbook Used": "Document Exposure & Threat Intel Triage",
+    "Description": "Vitalis Healthcare is mentioned in a potentially leaked document hosted on a dark web repository, with the source URL pointing to an onion site. The relative paths reference internal UK property documents associated with Vitalis Estates London, including a portfolio, a rental agreement template, and a staff directory. Given the uncertain relevance to Vitalis Healthcare and lack of direct sensitive content within the extracted metadata, this alert is classified as Low Priority."
+  },
+  "classification": "LP"
+}

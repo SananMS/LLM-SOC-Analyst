@@ -1,0 +1,16 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-22550",
+    "Start Time": "2026-01-22T14:12:40.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "194.126.101.99",
+    "User": "margus.tamm@eestitehnika.ee",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Resource ID": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-baltic-dev-connectivity/providers/Microsoft.Network/virtualNetworks/vnet-tallinn-dev-01",
+    "Local Time (EET)": "2026-01-22T16:12:40 EET",
+    "User Role": "Cloud Infrastructure Administrator (IT Operations); Azure role: Owner",
+    "Recent Activity Correlation": "No recent events found and no recent similar alerts found.",
+    "Description": "An attempted deletion of virtual network vnet-tallinn-dev-01 was initiated at 2026-01-22T14:12:40Z (16:12:40 EET) by margus.tamm@eestitehnika.ee, an identified Cloud Infrastructure Administrator with an Owner assignment. The request originated from IP 194.126.101.99 geolocated to Tallinn and authenticated using FIDO and MFA; the resource is in rg-baltic-dev-connectivity which indicates a development environment. Given the actor's legitimate administrative role, local geolocation, strong multi-factor authentication, and the lower-criticality environment, the activity appears authorized and lower risk, so the alert is classified as Low Priority."
+  },
+  "classification": "LP"
+}

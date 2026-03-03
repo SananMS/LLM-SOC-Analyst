@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14567",
+    "Start Time": "2026-02-06T14:30:10.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.150.22.105",
+    "Destination IP": "45.15.201.33",
+    "Endpoint": "srv-prod-web-01",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Description": "Anomalously large amount of high-entropy DNS TXT traffic to update-check-cdn.xyz was observed (2140 bytes compared to typical 15). Sample queries appear to contain encoded payloads, which is consistent with DNS tunneling or data exfiltration attempts. The root domain is only 28 days old and there are no prior events or similar alerts associated with it, increasing concern for potential misuse. Overall, the combination of encoded payloads, elevated DNS data transfer, and a recently created domain supports classifying this as high risk and warrants escalation.",
+    "Domain": "update-check-cdn.xyz",
+    "Domain Age": "28 days",
+    "Encoded Payload Detected": "Yes; base64-like encoded patterns observed in sample_queries",
+    "Recent Events Context": "No recent events found; No similar alerts found"
+  },
+  "classification": "HP"
+}

@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10242",
+    "Start Time": "2026-01-22T06:13:41.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.44.12.198",
+    "Destination IP": "184.28.193.72",
+    "Endpoint": "wkst-mktg-prod-04",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Description": "The alert identified unusually large (535 bytes) high-entropy DNS traffic to tiktokcdn.com originating from the workstation. The root domain tiktokcdn.com is long-established (created 2017) and the observed subdomain patterns (pull-rtmp, stream-hls, edge-live, pull-cmaf, res-static) match CDN/streaming resource naming; some hashed-looking labels were observed in recent host queries but are consistent with CDN object identifiers rather than clear encoded exfiltration. Recent host activity also includes legitimate developer/service queries (raw.githubusercontent.com, checkip.amazonaws.com) and there are no prior similar alerts, so the activity is assessed as Low Priority.",
+    "Domain Age (Days)": 3086,
+    "Domain Created": "2017-09-20",
+    "Sample Queries Count": 5,
+    "Encoded/High-Entropy Subdomains Observed": "Some hashed-looking subdomains seen in recent events, likely CDN resource identifiers; no decodable payload identified",
+    "Recent Host Activity Summary": "Host queried raw.githubusercontent.com and checkip.amazonaws.com and made multiple tiktokcdn.com queries with hashed resource labels; no recent similar alerts found"
+  },
+  "classification": "LP"
+}

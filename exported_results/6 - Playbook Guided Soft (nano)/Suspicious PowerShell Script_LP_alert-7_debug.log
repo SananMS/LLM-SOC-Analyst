@@ -1,0 +1,25 @@
+=== DEBUG SESSION START: 2026-03-02T23:16:46.993224+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Suspicious PowerShell Script Execution
+Selected Playbook: suspicious_powershell.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-77219",
+    "Start Time": "2026-01-27T11:05:14.220Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "192.168.1.56",
+    "Endpoint": "WKSTN-PROD-11",
+    "User": "jenifer",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Process SHA256": "63854e78780866d2ae56a58958a1fda017a71f54b71fe70cf5403958e961862a",
+    "Initiating Process": "GoogleUpdate.exe",
+    "Parent Process": "services.exe",
+    "Script Command Observed": "powershell.exe -NoProfile -NonInteractive -InputFormat None -Command \"Get-AuthenticodeSignature 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe' | ConvertTo-Json -Compress | ForEach-Object { [Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($_)) }\"",
+    "Description": "PowerShell was used to run a signed-check on Chrome using Get-AuthenticodeSignature, packaging the result as JSON and base64. The initiating process is GoogleUpdate.exe with a parent of services.exe, invoked with no profile and non-interactive options. The activity focuses on binary validation rather than downloading or exfiltration, which reduces immediate risk, but the use of a system updater as the initiator and the non-interactive context warrants watchful consideration for potential abuse."
+  },
+  "classification": "LP"
+}
+

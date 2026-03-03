@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-54655",
+    "Start Time": "2026-02-18T16:45:10.000Z",
+    "Alert Name": "Brand Logo Detection",
+    "Destination IP": "104.26.10.224",
+    "Endpoint": "vitalislab-diagnostics.de",
+    "Playbook Used": "Visual Brand Abuse & Logo Triage",
+    "Scanned URL": "https://www.vitalislab-diagnostics.de/leistungen",
+    "Detection Source": "Logo-Scanner",
+    "Domain Age": "7 years",
+    "Hosting Reputation": "Cloudflare, Inc. (CDN); Abuse Confidence Score 0/100",
+    "Screenshot Observations": "Header shows 'Vitalis Lab Medizinische Diagnostik' with a different heart/microscope icon and German wording. Typography, layout, and iconography differ from the provided reference logo, and the page appears informational with service tiles visible and no obvious credential-collection forms.",
+    "Description": "Logo detection flagged Vitalis Healthcare on a German diagnostic lab site, but the visible branding reads 'Vitalis Lab Medizinische Diagnostik' and uses a different icon and wordmark than the official reference. The domain is seven years old and served via Cloudflare with no abuse reputation and no recent related alerts, and the page content appears informational rather than deceptive. Given the clear visual differences, established domain age, and benign hosting reputation, this is assessed as low priority because evidence suggests local or distinct branding rather than malicious impersonation."
+  },
+  "classification": "LP"
+}

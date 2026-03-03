@@ -1,0 +1,22 @@
+=== DEBUG SESSION START: 2026-03-02T22:23:59.521690+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Azure Network Security Modification
+Selected Playbook: General Triage (No Playbook)
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-99300",
+    "Start Time": "2026-02-10T10:30:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "194.126.101.99",
+    "Destination IP": "10.0.1.4",
+    "Endpoint": "nsg-prod-db-core",
+    "User": "linda.kask@globalcorp.ee",
+    "Playbook Used": "None",
+    "Description": "Azure NSG nsg-prod-db-core was modified to add an inbound rule Data_Transfer_Fix allowing TCP 445 traffic from any source to 10.0.1.4. The change was performed by Linda Kask (Contributor) from IP 194.126.101.99, located in Tallinn, Estonia, with a Succeeded result. The combination of exposing SMB port 445 to an internal host and the use of a generic external source is high risk and requires rapid verification of business justification and potential data exposure."
+  },
+  "classification": "HP"
+}
+

@@ -1,0 +1,22 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-11205",
+    "Start Time": "2026-01-31T09:15:22.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "194.126.101.44",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "FIN-LAPTOP-09",
+    "User": "Linda.Kask@globalcorp.ee",
+    "Playbook Used": "None",
+    "Description": "An unusual volume of SharePoint file downloads (420) was observed from Linda.Kask@globalcorp.ee, significantly above the 24-hour baseline of 45. The activity involved downloading multiple sensitive documents from the Finance Reporting site via SharePoint Online on FIN-LAPTOP-09, with the destination pointing to a Microsoft data center. While the destination is expected for SharePoint, the spike could indicate data exfiltration or policy misuse; this requires confirmation of user intent and data sensitivity, so the alert is prioritized for investigation.",
+    "File Count": 420,
+    "Baseline 24h": 45,
+    "SharePoint Site": "https://globalcorp.sharepoint.com/sites/Finance_Reporting/",
+    "Sample Files": [
+      "Q4_Vat_Report_Final.xlsx",
+      "Invoice_Archive_Jan_2026.zip",
+      "Payroll_Summary_Global_Corp.pdf"
+    ]
+  },
+  "classification": "HP"
+}

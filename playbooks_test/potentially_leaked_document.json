@@ -1,0 +1,49 @@
+{
+    "playbook_name": "Document Exposure & Threat Intel Triage",
+    "description": "SOP for evaluating brand mentions within external datasets and leaked documents. NOTE: Field availability varies by source; 'matched_content', 'relative_paths', or 'document_title' may be missing. Triage must pivot based on available indicators. If any content or metadata is in a language other than English, it must be translated before analysis.",
+    "steps": [
+      {
+        "step_id": 1,
+        "task": "Extract Available Metadata & Source Info",
+        "action": "Parse alert JSON for all available evidence. This may include 'document_title', 'source_url', 'relative_paths', 'matched_content', and 'detection_source'.",
+        "logic": "The analysis must adapt to the specific data provided. If certain fields are absent, rely more heavily on the remaining indicators to form a contextual assessment."
+      },
+      {
+        "step_id": 2,
+        "task": "Language Detection & Translation",
+        "action": "Check 'matched_content', 'document_title', and 'relative_paths' for non-English text. If the language is not English, translate it to ensure full contextual understanding.",
+        "logic": "Accurate triage depends on understanding the specific intent and technical nature of the document. Misinterpretation due to language barriers can lead to incorrect prioritization."
+      },
+      {
+        "step_id": 3,
+        "task": "Analyze Matched Content Sensitivity",
+        "action": "If 'matched_content' is present, assess whether it contains information that would be considered sensitive, confidential, or internal to an organization.",
+        "logic": "Content-based analysis is the strongest indicator of exposure severity. If content is missing, proceed to subsequent steps for environmental and metadata analysis."
+      },
+      {
+        "step_id": 4,
+        "task": "Evaluate Source Platform Intent",
+        "action": "Determine the nature and reputation of the hosting platform.",
+        "logic": "Consider whether the platform is associated with legitimate public sharing, developer collaboration, or environments known for hosting leaked or malicious content. The platform context is a meaningful fallback signal when content itself is unavailable."
+      },
+      {
+        "step_id": 5,
+        "task": "Perform Path & Vertical Context Check",
+        "action": "Analyze 'relative_paths' and 'document_title' if present. Determine whether the naming conventions and context align with the monitored brand or suggest an unrelated organization.",
+        "logic": "Assess whether the document's context is consistent with the monitored brand's industry and operations, or whether it more plausibly belongs to a different organization that shares similar naming."
+      },
+      {
+        "step_id": 6,
+        "task": "Cross-Reference with Historic Alerting Patterns",
+        "action": "MAKE SURE TO INVOKE 'get_recent_similar_alerts' to check if the available identifiers have been flagged previously.",
+        "tool_integration": "get_recent_similar_alerts",
+        "logic": "Prior assessments of the same source provide meaningful context. Repeated appearances of the same source with consistent prior conclusions are relevant to the current triage decision."
+      },
+      {
+        "step_id": 7,
+        "task": "Final Triage Classification",
+        "action": "Based on all evidence gathered in the previous steps, make a holistic triage judgment.",
+        "logic": "Weigh the relevance of the content to the monitored brand, the sensitivity of any exposed information, the nature of the hosting platform, the document's content and naming context, and any historical patterns together. No single factor should determine the outcome — consider whether the combined picture suggests a genuine exposure of the monitored brand's information or a coincidental match with no material risk. Classify the alert as High Priority (HP) if it represents a legitimate threat, requires further investigation, or warrants escalation — this includes notifying senior analysts or the client. Classify as Low Priority (LP) if the activity is a false positive or represents content with no credible connection to the monitored brand that requires no further action. Provide a clear written justification explaining which factors drove your decision and why."
+      }
+    ]
+  }

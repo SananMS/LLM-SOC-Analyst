@@ -1,0 +1,24 @@
+=== DEBUG SESSION START: 2026-03-02T23:53:40.146928+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: User Login Location Anomaly
+Selected Playbook: suspicious_login.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-65",
+    "Start Time": "2025-07-17T14:22:15.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "45.78.217.136",
+    "Destination IP": "13.80.23.7",
+    "Endpoint": "D235423",
+    "User": "martin.kask@client.ee",
+    "Playbook Used": "Suspicious Login Triage",
+    "MFA Status": "Not used",
+    "Geolocation": "Singapore, Singapore",
+    "Description": "An Office 365 login occurred from Singapore, Singapore, which is outside the user's typical login region. The login was successful and MFA was not used, increasing the risk of account compromise or unauthorized access. The destination was Office 365 and the login stemmed from an external IP, which warrants further verification of device trust and user intent."
+  },
+  "classification": "HP"
+}
+

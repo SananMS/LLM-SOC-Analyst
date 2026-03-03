@@ -1,0 +1,16 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-99400",
+    "Start Time": "2026-02-10T14:45:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "186.155.12.88",
+    "User": "mateo.rodriguez@globalcorp.ee",
+    "Description": "The alert captures deletion of a production network security group by Mateo Rodriguez, a Senior DevOps Engineer with Contributor privileges. The action originated from 186.155.12.88 in Bogotá, Colombia, targeting a NSG under the provided subscription scope. A prior alert indicates a login location anomaly for this user from the same IP; while there are no recent events suggesting related activity, the combination of a privileged change from a location with anomalous history warrants verification of authorization and could indicate credential misuse. The IP reputation shows no abuse detected, but the sensitive nature of the change and the anomalous location justify High Priority.",
+    "User Full Name": "Mateo Rodriguez",
+    "User Department": "Architecture & Infrastructure",
+    "User Role": "Senior DevOps Engineer",
+    "Previous Similar Alert": "SOC-99398 (User Login Location Anomaly) on 2026-02-10T10:45:00.000Z from 186.155.12.88",
+    "Source IP Reputation": "Abuse Confidence Score: 0/100; ISP: ETB - Colombia; Usage Type: Fixed Line; Privacy Status: Neither VPN nor Proxy nor Tor Node nor Relay"
+  },
+  "classification": "HP"
+}

@@ -132,7 +132,7 @@ async def check_ip_reputation(ip: str) -> str:
             privacy_label = ", ".join(privacy_status) if privacy_status else "Neither VPN nor Proxy nor Tor Node nor Relay"
 
             # Formatted output for the LLM Analyst
-            return (f"Source IP: {ip} | Security Score: {score}/100 | ISP: {isp} | "
+            return (f"Source IP: {ip} | Abuse Confidence Score: {score}/100 | ISP: {isp} | "
                     f"Usage Type: {usage_type} | Privacy Status: {privacy_label}")
             
         except Exception as e:

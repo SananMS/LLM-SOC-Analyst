@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-75",
+    "Start Time": "2025-07-20T15:22:15.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "176.120.22.47",
+    "Destination IP": "13.80.23.7",
+    "User": "laura.tamm@client.ee",
+    "User ID": "f4b8a2d9-3c6e-4a1f-9e27-8c5d1b0e7a63",
+    "IP Abuse Confidence": "100/100",
+    "ISP": "Proton66 OOO (Data Center/Web Hosting/Transit)",
+    "MFA Present": true,
+    "User Exists Internally": "No record found for this email in user directory",
+    "Description": "A successful Office 365 login for laura.tamm@client.ee was observed from Saint Petersburg, Russia, which is outside the user's typical region. The source IP has an abuse confidence score of 100/100 and is tied to a data center hosting provider, increasing the likelihood that this access is malicious or automated. MFA was present but the login still succeeded, and the email did not resolve to a known internal user, which raises concern for possible credential misuse or an external account. Given the high-risk IP reputation, atypical geolocation, and successful authentication, this alert merits immediate escalation for further investigation."
+  },
+  "classification": "HP"
+}

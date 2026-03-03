@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14220",
+    "Start Time": "2026-01-31T23:58:45.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "113.161.12.88",
+    "Destination IP": "40.108.201.15",
+    "User": "Tanel.Lepp@globalcorp.ee",
+    "Site URL": "https://globalcorp.sharepoint.com/sites/Human_Resources_Confidential/",
+    "File Count": 1450,
+    "Baseline 24h": 15,
+    "Geo Location City": "Đồng Hới",
+    "Geo Location Country": "Vietnam",
+    "Description": "An unusually high volume of SharePoint file downloads (1450) was observed for user Tanel.Lepp@globalcorp.ee, far above the 24-hour baseline of 15. The downloads targeted the Human Resources Confidential site and included sensitive files such as Executive Compensation, Employee Tax ID Database, and Termination Templates, located in restricted folders. The activity originated from external IP 113.161.12.88 to destination 40.108.201.15 with an anomalous geo-location (Vietnam), indicating potential data exfiltration or account compromise and warranting high-priority investigation."
+  },
+  "classification": "HP"
+}

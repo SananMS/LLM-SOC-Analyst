@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-29908",
+    "Start Time": "2026-02-12T09:44:07.000Z",
+    "Alert Name": "Malware Prevention: Trojan:Win32/SparkOnSoft",
+    "Source IP": "10.45.20.114",
+    "Endpoint": "WKSTN-912A",
+    "User": "m.tamm@client.ee",
+    "Threat Display Name": "Trojan:Win32/SparkOnSoft!AMTB",
+    "File SHA256": "686d018c86c03165925ebd3773c622f182c93f54b98db9616bae86f5e8684e4c",
+    "File Signer": "Hawk Integrated Inc.",
+    "Remediation Status": "quarantined",
+    "Remediation Result": "Success",
+    "Description": "Microsoft Defender detected a high-risk Trojan (Trojan:Win32/SparkOnSoft!AMTB) on endpoint WKSTN-912A associated with user m.tamm@client.ee; the malicious executable was located in the user's Recycle Bin. The file has been quarantined successfully, which reduces immediate execution risk, but the trojan classification and presence on a user workstation indicate potential compromise that merits further investigation of the user and related activity. The binary is signed with an EV certificate which could represent legitimate software or an abused signing identity, so verification of the signer and the file hash is recommended; for these reasons the alert is classified as high priority."
+  },
+  "classification": "HP"
+}

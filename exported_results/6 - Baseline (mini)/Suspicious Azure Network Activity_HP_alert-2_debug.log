@@ -1,0 +1,26 @@
+=== DEBUG SESSION START: 2026-03-03T00:47:04.310930+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Azure Network Security Modification
+Selected Playbook: General Triage (No Playbook)
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-99300",
+    "Start Time": "2026-02-10T10:30:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "194.126.101.99",
+    "Destination IP": "10.0.1.4",
+    "User": "linda.kask@globalcorp.ee",
+    "Role": "Contributor",
+    "Operation": "MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/WRITE",
+    "Result": "Succeeded",
+    "Security Rule Name": "Data_Transfer_Fix",
+    "Scope": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-baltic-prod-data/providers/Microsoft.Network/networkSecurityGroups/nsg-prod-db-core",
+    "Caller Location": "Tallinn, Estonia",
+    "Description": "A network security group rule was successfully modified to add an inbound rule named 'Data_Transfer_Fix' allowing TCP port 445 from any source to 10.0.1.4. The change was made by linda.kask@globalcorp.ee (Contributor) from an IP in Tallinn and authenticated with password+MFA. Because the rule exposes SMB (port 445) from any source to a production database core resource, the modification introduces a significant external exposure and is considered High Priority. The user appears to be an internal account, but that does not mitigate the risk posed by the open SMB access."
+  },
+  "classification": "HP"
+}
+

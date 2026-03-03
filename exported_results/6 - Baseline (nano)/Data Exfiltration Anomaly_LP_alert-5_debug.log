@@ -1,0 +1,27 @@
+=== DEBUG SESSION START: 2026-03-02T22:15:50.242755+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Data Exfiltration Anomaly
+Selected Playbook: General Triage (No Playbook)
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-11500",
+    "Start Time": "2026-01-05T10:33:46.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "194.126.101.43",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "SRV-PROD",
+    "User": "globalcorp@globalcorp.ee",
+    "Playbook Used": "No playbook selected",
+    "Description": "An unusual spike in SharePoint file downloads (300) by globalcorp@globalcorp.ee was observed, far above the 24-hour baseline. The activity shows a Python-based client (Python/3.12 aiohttp/3.11.18) downloading files from the SharePoint site at https://globalcorp.sharepoint.com/ using SRV-PROD, with 300 files including sensitive names. The destination is an external IP (40.108.201.15) and the file set includes order, contact, and inventory data, which together with the external destination and automated client behavior indicates potential data exfiltration and requires HP classification.",
+    "Evidence Site": "https://globalcorp.sharepoint.com/",
+    "Evidence File Count": "300",
+    "User Agent": "Python/3.12 aiohttp/3.11.18",
+    "Geo Location": "Tallinn, Estonia",
+    "Sample Files": "Online_Orders_Registry_2026.xlsx; Wholesale_Contact_List.xlsx; Daily_Inventory_Update.csv"
+  },
+  "classification": "HP"
+}
+

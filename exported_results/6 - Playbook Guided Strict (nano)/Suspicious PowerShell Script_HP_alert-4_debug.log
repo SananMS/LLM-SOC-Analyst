@@ -1,0 +1,37 @@
+=== DEBUG SESSION START: 2026-03-03T00:00:51.351418+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Suspicious PowerShell Script Execution
+Selected Playbook: suspicious_powershell.json
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-9745",
+    "Start Time": "2026-01-26T02:47:19.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.4.22.18",
+    "Endpoint": "FIN-SRV-01",
+    "User": "m.laane",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Description": "The PowerShell command enumerates files under C:\\Users with extensions commonly associated with sensitive data (kdbx, pst, docx) and exports the results to a local CSV. This behavior could be a legitimate inventory or data discovery task, but the targeted file types and recursive search raise potential for sensitive data gathering. There are no obvious network indicators or confirmed malicious reputation in the available evidence, so the activity is considered Low Priority pending additional context.",
+    "Observed PowerShell Command": "Get-ChildItem C:\\Users -Recurse -Include *.kdbx,*.pst,*.docx -ErrorAction SilentlyContinue | Select-Object FullName,Length | Export-Csv C:\\ProgramData\\user_cache.csv -NoTypeInformation",
+    "Execution Host OS": "Windows Server 2019 Standard"
+  },
+  "classification": "LP"
+}
+

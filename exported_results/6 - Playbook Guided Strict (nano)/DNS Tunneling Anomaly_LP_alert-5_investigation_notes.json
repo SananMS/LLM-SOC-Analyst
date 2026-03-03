@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10243",
+    "Start Time": "2026-01-16T16:51:45.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.150.22.41",
+    "Destination IP": "158.20.144.11",
+    "Endpoint": "dc-prod-02",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Description": "Anomalously high DNS data transfer was observed (574 bytes vs typical 28) from dc-prod-02 to 158.20.144.11, using the domain dotnxdomain.net. Sample queries include long, high-entropy subdomains such as root-key-sentinel-is-ta-... and eu.dotnxdomain.net, indicating encoded payloads or data exfiltration within DNS traffic. While dotnxdomain.net is an older domain, the current query patterns and payload indicators are suspicious and could indicate DNS tunneling or C2 activity, warranting escalation.",
+    "Domain Age": "4927 days old (Created 2012-09-04)",
+    "Encoded Payload Observed": "Yes (high-entropy, long subdomains in sample_queries)",
+    "Recent Events Context": "From get_recent_events: ctldl.windowsupdate.com, time.cloudflare.com, static.fastly.net queries observed; subsequent queries include eu.dotnxdomain.net NS and dotnxdomain.net subdomains.",
+    "Similar Alerts": "No recent similar alerts found."
+  },
+  "classification": "HP"
+}

@@ -1,0 +1,67 @@
+=== DEBUG SESSION START: 2026-03-03T02:22:55.608021+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Data Exfiltration Anomaly
+Selected Playbook: excessive_downloads.json
+
+[TOOL CALL]
+Tool: lookup_users
+Arguments: {"emails": ["Tanel.Lepp@globalcorp.ee"]}
+
+[TOOL RESPONSE]
+[
+  {
+    "email": "Tanel.Lepp@globalcorp.ee",
+    "full_name": "Tanel Lepp",
+    "department": "Engineering",
+    "role": "Software Engineer"
+  }
+]
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+[
+  {
+    "alert_id": "SOC-14215",
+    "alert_name": "User Login Location Anomaly",
+    "start_time": "2026-01-31T23:40:12.000Z",
+    "user": "Tanel.Lepp@globalcorp.ee",
+    "source_ip": "113.161.12.88",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+    "geo_location": {
+      "city": "Đồng Hới",
+      "country": "Vietnam"
+    }
+  }
+]
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14220",
+    "Start Time": "2026-01-31T23:58:45.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "113.161.12.88",
+    "Destination IP": "40.108.201.15",
+    "User": "Tanel.Lepp@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Description": "An unusually large volume of SharePoint downloads (1450 files vs a 24h baseline of 15) was observed from a user in the Engineering department accessing a Human Resources Confidential site and restricted payroll, tax, and legal paths. The activity originated from Đồng Hới, Vietnam at 2026-01-31T23:58:45Z (local time 2026-02-01 06:58:45), which is outside typical working hours and follows a recent login-location anomaly for the same user and IP. The combination of high-volume access, role-to-data mismatch, sensitive content accessed, and a related anomalous login increases the likelihood of unauthorized access or data exfiltration, so this is classified as high priority.",
+    "User Role": "Software Engineer",
+    "Department": "Engineering",
+    "File Count": 1450,
+    "Baseline 24h": 15,
+    "Related Alerts": "SOC-14215: User Login Location Anomaly (2026-01-31T23:40:12.000Z) — same user, same source IP"
+  },
+  "classification": "HP"
+}
+

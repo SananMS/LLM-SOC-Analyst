@@ -1,0 +1,25 @@
+=== DEBUG SESSION START: 2026-03-02T22:25:53.676056+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Azure Network Security Modification
+Selected Playbook: General Triage (No Playbook)
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14600",
+    "Start Time": "2026-10-18T14:16:17.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Destination IP": "40.113.112.55",
+    "Endpoint": "nsg-aks-prod-northeast",
+    "User": "ServicePrincipal 7f2a8c12-3391-4e1a-b672-9d3c11bc99a1",
+    "Correlation ID": "e512d1c1-42a1-4991-9921-1a2b3c4d5e6f",
+    "Resource ID": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-nordic-prod-001/providers/Microsoft.Network/networkSecurityGroups/nsg-aks-prod-northeast",
+    "Operation": "MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/WRITE",
+    "Region": "Norway East",
+    "NSG Provisioning State": "Succeeded",
+    "Description": "An Azure network security group was modified by a service principal with Contributor rights, resulting in new inbound rules including a Deny rule targeting a specific IP. The change appears automated, evidenced by the service identity and the NSG provisioning state showing Succeeded. The combination of privileged modification and targeted Deny rules to external traffic raises security risk and warrants further investigation for potential misconfiguration or credential compromise."
+  },
+  "classification": "HP"
+}
+

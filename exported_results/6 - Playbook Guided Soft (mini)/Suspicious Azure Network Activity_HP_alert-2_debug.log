@@ -1,0 +1,54 @@
+=== DEBUG SESSION START: 2026-03-03T01:45:19.137385+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Azure Network Security Modification
+Selected Playbook: suspicious_cloud_network_activity.json
+
+[TOOL CALL]
+Tool: lookup_users
+Arguments: {"emails": ["linda.kask@globalcorp.ee"]}
+
+[TOOL RESPONSE]
+[
+  {
+    "email": "Linda.Kask@globalcorp.ee",
+    "full_name": "Linda Kask",
+    "department": "Finance",
+    "role": "Senior Accountant"
+  }
+]
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-99300",
+    "Start Time": "2026-02-10T10:30:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "194.126.101.99",
+    "Destination IP": "10.0.1.4",
+    "User": "linda.kask@globalcorp.ee",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Resource Group": "rg-baltic-prod-data",
+    "NSG Name": "nsg-prod-db-core",
+    "User Department": "Finance (Senior Accountant)",
+    "Local Time (Europe/Tallinn)": "2026-02-10T12:30:00+02:00",
+    "Rule Change Summary": "Security rule 'Data_Transfer_Fix' configured to Allow inbound TCP from source '*' to destination 10.0.1.4 on port 445 (priority 105), described as 'Manual override for report sync'.",
+    "Description": "A production Network Security Group (rg-baltic-prod-data / nsg-prod-db-core) was modified to permit inbound SMB (TCP/445) from any source to host 10.0.1.4. The change succeeded and was executed by linda.kask@globalcorp.ee from an IP geolocated to Tallinn at 12:30 local time. The rule increases external exposure to a production host and the actor is a Finance senior accountant, a role that does not align with infrastructure administration; there are no recent correlated deployment events or similar alerts to justify the change. Because the modification materially increases risk on a production resource, and the actor/approval context is unclear, this is classified as High Priority."
+  },
+  "classification": "HP"
+}
+

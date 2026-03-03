@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-22550",
+    "Start Time": "2026-01-22T14:12:40.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "194.126.101.99",
+    "Endpoint": "vnet-tallinn-dev-01",
+    "Resource Group": "rg-baltic-dev-connectivity",
+    "User": "margus.tamm@eestitehnika.ee",
+    "Role": "Owner",
+    "Principal ID": "df4fceaf91c54687a4fbc790161a64fa",
+    "Operation": "MICROSOFT.NETWORK/VIRTUALNETWORKS/DELETE",
+    "Caller Location": "Tallinn, Harju County, Estonia",
+    "Correlation ID": "856fb662-5562-4607-a8d2-182406868b98",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Description": "A delete operation targeting virtual network vnet-tallinn-dev-01 in the rg-baltic-dev-connectivity resource group was initiated at 2026-01-22T14:12:40Z (16:12 EET). The action was performed by an account with Owner role (margus.tamm@eestitehnika.ee) using FIDO and MFA, and the request originated from an IP geolocated to Tallinn, Estonia. The resource appears to be a development environment and the activity occurred during local business hours, which together with strong authentication and matching geolocation reduce suspicion. For these reasons the activity is considered Low Priority as it aligns with expected administrative behavior and lacks clear indicators of malicious activity."
+  },
+  "classification": "LP"
+}

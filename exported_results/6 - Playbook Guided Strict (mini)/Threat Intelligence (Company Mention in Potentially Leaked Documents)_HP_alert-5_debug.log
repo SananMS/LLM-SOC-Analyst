@@ -1,0 +1,35 @@
+=== DEBUG SESSION START: 2026-03-03T03:26:34.398263+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Brand Mention in External Document
+Selected Playbook: potentially_leaked_document.json
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-76214",
+    "Start Time": "2026-02-19T13:50:42.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Threat": "DocumentExposure:VitalisHealthcare",
+    "Detection Source": "TI-Monitor-DarkWeb",
+    "Source URL": "http://v3estvtl7x2m9n3p1q5r9t0v2w4x6y8z1a3b5c7d9e1f3g5h7i9j1k2l3.onion/dumps/baltic_sector/healthcare/",
+    "Relative Paths": [
+      "/var/backups/vitalis_healthcare_estonia/admin/ssh_keys/id_rsa_prod_gateway.key",
+      "/var/backups/vitalis_healthcare_estonia/andmebaasid/patsiendid/ravikaardid_tallinn_haigla_2026.dump",
+      "/var/backups/vitalis_healthcare_estonia/vorguseaded/VPN_klientide_konfiguratsioon_eesti.conf"
+    ],
+    "Language Detected": "Estonian (file and path names)",
+    "Recent Similar Alerts": "No recent similar alerts found",
+    "Playbook Used": "Document Exposure & Threat Intel Triage",
+    "Description": "A Dark Web .onion dump was identified referencing Vitalis Healthcare with filenames indicating an SSH private key, a patient database dump for Tallinn hospital (2026), and VPN client configuration files, with Estonian-language path components. The filenames and paths indicate exposure of highly sensitive data and infrastructure credentials rather than benign brand mention. The presence of private keys and patient records increases the likelihood of immediate abuse and operational impact, so this alert is assessed as High Priority based on the sensitivity and credibility of the artifacts and hosting context."
+  },
+  "classification": "HP"
+}
+

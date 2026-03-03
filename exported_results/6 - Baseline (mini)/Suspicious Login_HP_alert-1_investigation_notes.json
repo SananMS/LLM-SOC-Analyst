@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-55",
+    "Start Time": "2025-07-11T14:22:15.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "103.1.64.118",
+    "Destination IP": "13.80.23.7",
+    "User": "Elena.Vasiliev@client.ee",
+    "Login Result": "success",
+    "MFA Present": true,
+    "User Agent": "Windows-AzureAD-Authentication-Provider/1.0",
+    "IP Reputation (Source)": "Abuse Confidence: 0/100; ISP: China Unicom Global; Usage Type: Data Center/Web Hosting/Transit",
+    "User Directory Match": "No internal user record found for this email in lookup",
+    "Description": "An anomalous successful Office 365 login was observed from Singapore for Elena.Vasiliev@client.ee using the Windows Azure AD authentication provider. MFA was completed and the source IP has a clean reputation with no abuse reports; the destination is a Microsoft data-center IP and there are no recent similar alerts. The alert is assessed as Low Priority because strong authentication (MFA) succeeded and external indicators of malicious activity are absent, although follow-up validation with the user or identity team is recommended to confirm legitimacy of the location."
+  },
+  "classification": "LP"
+}

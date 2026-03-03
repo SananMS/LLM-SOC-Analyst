@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14220",
+    "Start Time": "2026-01-31T23:58:45.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "113.161.12.88",
+    "Destination IP": "40.108.201.15",
+    "User": "Tanel.Lepp@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Geographic Location": "Dong Hoi, Vietnam",
+    "Site URL": "https://globalcorp.sharepoint.com/sites/Human_Resources_Confidential/",
+    "Files Accessed": "Executive_Compensation_Full.xlsx; Employee_Tax_ID_Database.csv; Termination_Agreement_Templates.zip",
+    "Evidence Volume": "1450 files downloaded (baseline 15 in 24h)",
+    "Application": "Office 365 SharePoint Online",
+    "Description": "An unusually large bulk download of sensitive HR and legal documents was observed from user Tanel.Lepp@globalcorp.ee on SharePoint Online. The user accessed restricted paths and downloaded 1450 files, far above the 24-hour baseline of 15, including files such as Executive_Compensation_Full.xlsx and Employee_Tax_ID_Database.csv. The activity originated from 113.161.12.88 to a SharePoint site hosted at globalcorp.sharepoint.com, with a geographic location shown as Dong Hoi, Vietnam, which differs from the user's typical location. The combination of high data volume, sensitivity of the data, and geographic/temporal context indicates potential data exfiltration or automated bulk retrieval and should be treated as high priority."
+  },
+  "classification": "HP"
+}

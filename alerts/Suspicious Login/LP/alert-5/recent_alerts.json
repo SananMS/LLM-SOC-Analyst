@@ -5,6 +5,7 @@
     "start_time": "2025-08-03T10:15:00.000Z",
     "source_ip": "74.119.64.2",
     "destination_ip": "13.80.23.7",
+    "endpoint": "T12345785",
     "user": "arne.tamm@client.ee",
     "geo_location": {
       "city": "Zhuojiacun",

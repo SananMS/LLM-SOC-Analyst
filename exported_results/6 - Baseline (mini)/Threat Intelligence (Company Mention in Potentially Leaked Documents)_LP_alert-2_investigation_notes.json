@@ -1,0 +1,14 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-75502",
+    "Start Time": "2026-02-19T13:10:00.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Detection Source": "TI-Monitor-SlideShare",
+    "Document Title": "Vitalis_Healthcare_Annual_Sustainability_Goals.pdf",
+    "Source URL": "https://www.slideshare.net/vitalis-marketing/annual-sustainability-goals-2026",
+    "Category": "Brand Monitoring",
+    "Threat": "DocumentExposure:VitalisHealthcare",
+    "Description": "The alert was triggered by the presence of 'Vitalis Healthcare' in a SlideShare-hosted document titled 'Vitalis_Healthcare_Annual_Sustainability_Goals.pdf' linked from the provided URL. The matched excerpt is public-facing corporate sustainability messaging intended for partners and patients and does not include sensitive or confidential information. The document is hosted on an apparent official marketing SlideShare account and shows no indicators of unauthorized exposure or data leakage. Based on the public nature and lack of sensitive content, this is assessed as a low-priority brand monitoring item rather than an incident requiring escalation."
+  },
+  "classification": "LP"
+}

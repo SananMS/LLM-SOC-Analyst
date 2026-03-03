@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-100",
+    "Start Time": "2025-07-25T07:50:00.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "155.133.15.2",
+    "Destination IP": "13.80.23.7",
+    "Endpoint": "G3154545",
+    "User": "lisa.korhonen@client.ee",
+    "Playbook Used": "Suspicious Login Triage",
+    "Description": "An Office 365 login succeeded from IP 155.133.15.2 geolocated to Santiago de Queretaro, Mexico, which is outside the user's historical region. The session used MFA and originated from a company-managed, compliant Windows device with the same user agent and endpoint seen in multiple recent successful logins from Tallinn, Estonia; the source IP is associated with a datacenter/hosting provider and flagged as a VPN but shows an abuse score of 0. Given the strong mitigations (MFA, corporate-managed device, consistent device/user agent, and clean abuse score) outweigh the anonymized datacenter/VPN signal and there is no corroborating malicious activity, this alert is assessed as Low Priority.",
+    "IP Reputation Score": "0/100",
+    "ISP Name": "Packethub S.A.",
+    "Usage Type": "Data Center/Web Hosting/Transit",
+    "Recent Activity Summary": "Multiple recent successful logins from Tallinn, Estonia on 2025-07-23 through 2025-07-25 from the same endpoint with MFA enabled and the same user agent; no recent similar alerts found."
+  },
+  "classification": "LP"
+}

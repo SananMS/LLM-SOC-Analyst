@@ -1,0 +1,13 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-29890",
+    "Start Time": "2026-01-30T11:01:53.000Z",
+    "Alert Name": "SentinelOne: XDR Miscellaneous Malware",
+    "Source IP": "10.40.15.22",
+    "Endpoint": "WKSTN-SALES-080",
+    "User": "a.jakub@client.ee",
+    "Playbook Used": "EDR Malware Triage",
+    "Description": "The alert reports a JavaScript file inside a Chrome extension identified as Trojan:JS/ChatGPTStealer.GVA!MTB, with a known malicious hash blacklisted by SentinelOne Cloud. The file path shows it resides within a user Chrome extension directory and is executed by chrome.exe, indicating potential user-driven or extension-based deployment. Remediation mitigated the payload via kill and quarantine, but the combination of a known stealer and extension-based delivery on a corporate endpoint constitutes a high risk to sensitive data and warrants escalation and user confirmation."
+  },
+  "classification": "HP"
+}

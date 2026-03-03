@@ -1,0 +1,45 @@
+=== DEBUG SESSION START: 2026-03-02T22:24:53.171006+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Azure Network Security Modification
+Selected Playbook: General Triage (No Playbook)
+
+[TOOL CALL]
+Tool: check_ip_reputation
+Arguments: {"ip": "82.102.15.144"}
+
+[TOOL RESPONSE]
+Source IP: 82.102.15.144 | Abuse Confidence Score: 0/100 | ISP: AlmaHost | Usage Type: Data Center/Web Hosting/Transit | Privacy Status: Neither VPN nor Proxy nor Tor Node nor Relay
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-99500",
+    "Start Time": "2026-02-10T21:15:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "82.102.15.144",
+    "User": "aleksei.ivanov@globalcorp.ee",
+    "Description": "A network security group in Azure was modified via a WRITE operation. The change was initiated by Aleksei Ivanov (Owner) from IP 82.102.15.144, located in Tallinn, Estonia. The request body reveals a new inbound health-check rule for 10.0.5.2:443 targeting the NSG scope. The source IP reputation is clean and there are no recent related alerts or events, suggesting this may be authorized maintenance; however, the use of Owner privileges and the remote origin warrant confirmation to rule out misconfiguration or abuse.",
+    "Operation Name": "MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/WRITE",
+    "Resource Scope": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-baltic-prod-data/providers/Microsoft.Network/networkSecurityGroups/nsg-prod-db-cluster",
+    "Request Body Snippet": "{\"properties\":{\"securityRules\":[{\"name\":\"Allow_LB_HealthCheck_Internal\",\"properties\":{\"access\":\"Allow\",\"description\":\"Routine synchronization for load balancer health probes\",\"destinationAddressPrefix\":\"10.0.5.2\",\"destinationPortRange\":\"443\",\"direction\":\"Inbound\",\"priority\":100,\"protocol\":\"Tcp\",\"sourceAddressPrefix\":\"*\"}}]}}",
+    "Caller IP Geography": "Tallinn, Harju County, Estonia",
+    "User Role": "Owner"
+  },
+  "classification": "LP"
+}
+

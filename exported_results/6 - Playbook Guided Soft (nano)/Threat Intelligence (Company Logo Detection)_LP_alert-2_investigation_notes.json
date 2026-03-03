@@ -1,0 +1,16 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-54412",
+    "Start Time": "2026-02-18T13:10:05.000Z",
+    "Alert Name": "Brand Logo Detection",
+    "Source IP": "151.101.2.132",
+    "Destination IP": "151.101.2.132",
+    "Playbook Used": "Visual Brand Abuse & Logo Triage",
+    "Description": "Vitalis Healthcare logo was detected on the HealthSync Integrations site at healthsync-integrations.io. The hosting IP resolves to a Fastly CDN address and the IP reputation is clean (0/100). Domain age is not found in the local database, and there are no recent similar alerts for this domain. Given the unknown domain provenance but legitimate logo context, this is classified as Low Priority unless further evidence indicates authorized usage or direct impersonation.",
+    "IP Reputation Score": "0/100 (no abuse detected)",
+    "Domain Registrar": "Fastly, Inc.",
+    "Domain Reputation": "Unknown / Suspicious",
+    "Recent Similar Alerts": "No recent similar alerts found."
+  },
+  "classification": "LP"
+}

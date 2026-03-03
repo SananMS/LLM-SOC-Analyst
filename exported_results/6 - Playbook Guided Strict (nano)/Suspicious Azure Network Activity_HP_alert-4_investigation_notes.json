@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-99500",
+    "Start Time": "2026-02-10T21:15:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "82.102.15.144",
+    "User": "aleksei.ivanov@globalcorp.ee",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Resource": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-baltic-prod-data/providers/Microsoft.Network/networkSecurityGroups/nsg-prod-db-cluster",
+    "Operation": "MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/WRITE",
+    "Request Body Present": true,
+    "Geo Location": "Tallinn, Harju County, Estonia",
+    "Role": "Owner",
+    "Description": "Azure Network Security Group modification detected for NSG nsg-prod-db-cluster in resource group rg-baltic-prod-data. The change was initiated by aleksei.ivanov@globalcorp.ee (Owner) from IP 82.102.15.144 in Tallinn, Estonia, and appears to be a write operation modifying security rules. The request_body includes an inbound rule Allow_LB_HealthCheck_Internal for 10.0.5.2:443 with source '*' which could broaden exposure beyond normal health-check needs. Given the production scope, ownership level, off-hours timing, and the potential for unnecessary broad access, this activity is classified as High Priority and warrants immediate validation."
+  },
+  "classification": "HP"
+}

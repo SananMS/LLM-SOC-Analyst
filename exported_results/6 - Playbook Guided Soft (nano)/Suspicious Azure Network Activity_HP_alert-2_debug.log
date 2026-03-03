@@ -1,0 +1,26 @@
+=== DEBUG SESSION START: 2026-03-02T23:00:08.780785+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Azure Network Security Modification
+Selected Playbook: suspicious_cloud_network_activity.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-99300",
+    "Start Time": "2026-02-10T10:30:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "194.126.101.99",
+    "Destination IP": "10.0.1.4",
+    "Endpoint": "nsg-prod-db-core",
+    "User": "Linda Kask",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Description": "Azure Network Security Group modification detected: Linda Kask (Contributor) from IP 194.126.101.99 modified NSG nsg-prod-db-core in the production resource group rg-baltic-prod-data. The request body includes a rule named Data_Transfer_Fix allowing inbound TCP traffic to 10.0.1.4 from any source on port 445. The event occurred at 12:30 local time in Estonia. While the actor's role and the local time suggest administrative activity, the rule permits inbound SMB traffic to a private address from any source, which presents a potential security risk and warrants verification of authorization and necessity."
+  },
+  "classification": "HP",
+  "Rule Change Summary": "Rule Data_Transfer_Fix allows inbound traffic to 10.0.1.4 on port 445 from any source, which can expose internal systems to unnecessary risk.",
+  "Local Time Context": "12:30 local time in Estonia (UTC+2) on 2026-02-10",
+  "Geolocation": "Tallinn, Estonia",
+  "Environment Criticality": "Production environment under resource group rg-baltic-prod-data with NSG nsg-prod-db-core"
+}
+

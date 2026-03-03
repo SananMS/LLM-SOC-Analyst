@@ -1,0 +1,12 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-11005",
+    "Start Time": "2026-01-27T11:05:22.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.40.2.88",
+    "Endpoint": "WKSTN-RND-07",
+    "User": "NT AUTHORITY\\SYSTEM",
+    "Description": "A PowerShell script was executed on the host using powershell.exe with -NoP -NonI -W Hidden -EncodedCommand, indicating obfuscated payload execution. The parent process was cmd.exe and the encoded scriptblock contains suspicious operations, including attempts to read data and execute subsequent commands. The activity is noteworthy due to the higher privilege account involved and the use of hidden execution, which is commonly associated with attempts to evade detection; correlation with other signals is recommended to determine whether this is legitimate administration or malicious activity."
+  },
+  "classification": "HP"
+}

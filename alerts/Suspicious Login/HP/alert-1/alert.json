@@ -4,7 +4,6 @@
   "start_time": "2025-07-11T14:22:15.000Z",
   "source_ip": "103.1.64.118",
   "destination_ip": "13.80.23.7",
-  "endpoint": "G882941",
   "user": "Elena.Vasiliev@client.ee", 
   "user_id": "3d5c18f1-b93e-42a7-bc6d-2e1f59c8d0a4",
   "description": "An anomalous Office 365 login occurred from Singapore, Singapore, which is outside the user's typical login region.",

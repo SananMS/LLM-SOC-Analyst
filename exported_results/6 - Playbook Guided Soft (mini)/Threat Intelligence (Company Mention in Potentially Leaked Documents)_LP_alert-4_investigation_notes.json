@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-75693",
+    "Start Time": "2026-02-24T14:20:00.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Playbook Used": "Document Exposure & Threat Intel Triage",
+    "Detection Source": "TI-Monitor-DarkWeb",
+    "Source URL": "http://n6p9q2r8t0v4w5x1y3z7a9b1c3d5e7f9g1h3i5j7k9l1m3n5o7p9q1r3.onion/repository/leaks/commercial-real-estate-sector/",
+    "Relative Paths": [
+      "/dumps/uk_property_agents/vitalis_estates_london/listings/Residential_Portfolio_2025.pdf",
+      "/dumps/uk_property_agents/vitalis_estates_london/contracts/Rental_Agreement_Template.docx",
+      "/dumps/uk_property_agents/vitalis_estates_london/staff/Branch_Manager_Directory.xlsx"
+    ],
+    "Threat": "DocumentExposure:VitalisHealthcare",
+    "Category": "Brand Monitoring",
+    "Description": "Alert flagged by a dark web repository containing documents whose paths reference 'vitalis_estates_london' and file types consistent with real estate operations (listings, contracts, staff directory). The contextual naming strongly indicates these artifacts belong to a property firm (Vitalis Estates) rather than the monitored healthcare brand, and no matched content or healthcare-related PII was provided in the alert evidence. No recent similar alerts were found, reducing urgency and supporting a determination that this is likely a coincidental brand-name overlap rather than a confirmed exposure of Vitalis Healthcare data."
+  },
+  "classification": "LP"
+}

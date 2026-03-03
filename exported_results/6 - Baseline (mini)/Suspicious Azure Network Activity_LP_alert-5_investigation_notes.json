@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-23105",
+    "Start Time": "2026-02-11T09:15:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "145.14.39.114",
+    "Endpoint": "nsg-tallinn-prod-01",
+    "User": "markus.tamm@globalcorp.ee",
+    "Role": "Contributor",
+    "Operation": "MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/SECURITYRULES/DELETE",
+    "Result": "Succeeded",
+    "Caller Location": "Tallinn, Harjumaa, Estonia",
+    "Correlation ID": "f9e8d7c6-b5a4-4321-8877-665544332211",
+    "Description": "A security rule deletion on NSG 'nsg-tallinn-prod-01' was detected and completed successfully. The action was performed by markus.tamm@globalcorp.ee using a Contributor role from IP 145.14.39.114 (Tallinn, Estonia), and authentication claims indicate MFA/FIDO were used. Because the change was executed by an authorized privileged account with multi-factor authentication and the event metadata shows a successful, non-anomalous login from the claimed location, this alert is assessed as Low Priority."
+  },
+  "classification": "LP"
+}

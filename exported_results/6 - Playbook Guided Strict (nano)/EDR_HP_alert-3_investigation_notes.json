@@ -1,0 +1,16 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-29900",
+    "Start Time": "2026-01-09T21:57:45.000Z",
+    "Alert Name": "Trend Micro: Possible Data Encrypted for Impact",
+    "Source IP": "10.20.5.245",
+    "Endpoint": "HOST-01",
+    "Playbook Used": "EDR Malware Triage",
+    "Description": "Ransomware indicators were detected on HOST-01, including a ransomware file and a ransom note with a heuristic suggesting data encryption for impact. The detected file path is C:\\Data\\Financials\\2025\\_RECOVER_INSTRUCTIONS.txt and the file hash is c17fe4a49e12034f44ad74793d520d17a1c6585bec5f3f03b5558da37a0b4617; the item has been quarantined. Given the ransomware indicators and presence in a financials directory, this represents a high risk event requiring ongoing triage and potential escalation, even though containment has been enacted.",
+    "File Path": "C:\\Data\\Financials\\2025\\_RECOVER_INSTRUCTIONS.txt",
+    "SHA256 Hash": "c17fe4a49e12034f44ad74793d520d17a1c6585bec5f3f03b5558da37a0b4617",
+    "Remediation Status": "Quarantined",
+    "Indicators Observed": "Ransomware File Detected; Ransom Note Detection; Heuristic: Possible Data Encrypted for Impact"
+  },
+  "classification": "HP"
+}

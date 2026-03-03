@@ -10,7 +10,7 @@
     "roleAssignmentId": "1a7846b2ff93487b9130ecdfb95c29a3",
     "roleAssignmentScope": "/providers/Microsoft.Management/managementGroups/d1c2b3a4-e5f6-7a8b-9c0d-1e2f3a4b5c6d",
     "roleDefinitionId": "8e3af657a8ff443ca75c2fe8c4bcb635",
-    "scope": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-baltic-prod-connectivity/providers/Microsoft.Network/virtualNetworks/vnet-tallinn-prod-01",
+    "scope": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-baltic-dev-connectivity/providers/Microsoft.Network/virtualNetworks/vnet-tallinn-dev-01",
     "operationName": "MICROSOFT.NETWORK/VIRTUALNETWORKS/DELETE",
     "correlationId": "856fb662-5562-4607-a8d2-182406868b98",
     "resultSignature": "Started.",

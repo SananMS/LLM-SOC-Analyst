@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-22700",
+    "Start Time": "2026-02-10T12:30:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "102.89.1.20",
+    "User": "olumide.adeyemi@globalcorp.ee",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Resource": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-baltic-test-connectivity/providers/Microsoft.Network/virtualNetworks/vnet-tallinn-test-01",
+    "Operation": "MICROSOFT.NETWORK/VIRTUALNETWORKS/DELETE",
+    "Role": "Owner",
+    "Caller IP Geolocation": "Lagos, Nigeria",
+    "IP Reputation Score": "Abuse Confidence Score 0/100, ISP: MTNN-OJOTA-REGION-PREFIXES, Mobile ISP, not a VPN/proxy/Tor",
+    "Description": "A DELETE operation for a virtual network in resource group 'rg-baltic-test-connectivity' was initiated by a user whose UPN maps to an IT System Administrator with Owner privileges. The activity occurred at 2026-02-10T12:30:00Z (14:30 EET), which is within normal Estonian working hours, and the resource group name contains 'test' indicating lower environment criticality. The source IP geolocation is Lagos, Nigeria, but prior related alerts show the same user and IP and were closed as false positives after client confirmation that the user was temporarily located in Nigeria; the IP has a clean abuse score. Given the actor's administrative role, the non-production target, corroborating previous alerts, normal timing, and benign IP reputation, this alert is assessed as Low Priority."
+  },
+  "classification": "LP"
+}

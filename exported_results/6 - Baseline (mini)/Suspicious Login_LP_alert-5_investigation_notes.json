@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-115",
+    "Start Time": "2025-08-03T16:30:00.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "154.86.26.91",
+    "Destination IP": "13.80.23.7",
+    "Endpoint": "T12345785",
+    "User": "arne.tamm@client.ee",
+    "Company Managed And Compliant": true,
+    "Has MFA": true,
+    "Geo Location": "Hong Kong, Hong Kong",
+    "IP Reputation Score": 0,
+    "Recent Similar Alert": "SOC-110 on 2025-08-03T10:15:00Z was closed as a false positive after the user confirmed travel to Macao.",
+    "Description": "An anomalous successful Office 365 login was observed for arne.tamm@client.ee from Hong Kong, which is outside the user's typical region. The session originated from IP 154.86.26.91 which has a clean reputation (Abuse Confidence Score 0), the endpoint is company-managed and compliant, and MFA was present, which collectively reduce the likelihood of account compromise. A near-term similar alert (SOC-110) was previously resolved as benign due to user travel, supporting a travel-related explanation. Based on these factors the activity is assessed as low priority because there is credible contextual evidence supporting legitimate access."
+  },
+  "classification": "LP"
+}

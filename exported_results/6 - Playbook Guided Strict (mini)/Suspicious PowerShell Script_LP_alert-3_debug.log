@@ -1,0 +1,49 @@
+=== DEBUG SESSION START: 2026-03-03T03:13:54.836795+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Suspicious PowerShell Script Execution
+Selected Playbook: suspicious_powershell.json
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+[
+  {
+    "alert_id": "SOC-2105",
+    "alert_name": "Suspicious PowerShell Script Execution",
+    "start_time": "2026-01-10T09:00:00.000Z",
+    "endpoint": "DC-EAST-01",
+    "user": "SYSTEM",
+    "scriptblock": "[Console]::OutputEncoding = [System.Text.Encoding]::UTF8; $ProgressPreference = 'SilentlyContinue'\n\n# Helper function to handle null values and escape special characters\nfunction HandleString($value) {\n    if ($null -eq $value) { \n        return \"-\" \n    } else { \n        return $value -replace '\"', '\\\"'  # Escape double quotes\n    }\n}\n\ntry {\n    $details = @()\n    $domain = HandleString((Get-ADDomainController).Forest)\n\n    # Default Domain Password Policy\n    $passwordPolicy = Get-ADDefaultDomainPasswordPolicy \n    $details += @{\n        domain = $domain\n        name = \"Default Domain Policy\"\n        complexityenabled = $passwordPolicy.ComplexityEnabled\n        distinguishedname = HandleString($passwordPolicy.DistinguishedName)\n        lockoutduration = [String]$passwordPolicy.lockoutDuration\n        lockoutobservationwindow = [String]$passwordPolicy.LockoutObservationWindow\n        lockoutthreshold = [String]$passwordPolicy.LockoutThreshold\n        objectguid = HandleString([String]$passwordPolicy.ObjectGuid)\n        maxpwdage = $passwordPolicy.MaxPasswordAge.Days\n        minpwdage = $passwordPolicy.MinPasswordAge.Days\n        minpwdlength = $passwordPolicy.MinPasswordLength\n        pwdhistorylength = $passwordPolicy.PasswordHistoryCount\n        reversibleencryptionenabled = $passwordPolicy.reversibleEncryptionEnabled\n    }\n\n    # Fine-Grained Password Policies\n    $ADFineGrainedPasswordPolicy = Get-ADFineGrainedPasswordPolicy -Filter *\n    if ($ADFineGrainedPasswordPolicy) {\n        foreach ($o in $ADFineGrainedPasswordPolicy) {\n            $details += @{\n                domain = $domain\n                name = HandleString($o.Name)\n                complexityenabled = $o.ComplexityEnabled\n                distinguishedname = HandleString($o.DistinguishedName)\n                lockoutduration = [String]$o.lockoutDuration\n                lockoutobservationwindow = [String]$o.LockoutObservationWindow\n                lockoutthreshold = [String]$o.LockoutThreshold\n                maxpwdage = $o.MaxPasswordAge.Days\n                objectguid = HandleString([String]$o.ObjectGuid)\n                minpwdage = $o.MinPasswordAge.Days\n                minpwdlength = $o.MinPasswordLength\n                pwdhistorylength = $o.PasswordHistoryCount\n                reversibleencryptionenabled = $o.reversibleEncryptionEnabled\n            }\n        }\n    }\n\n    # Convert details to JSON with proper depth\n    ConvertTo-Json -Depth 5 -Compress @{\n        status = $true\n        data = $details\n    }\n}\ncatch {\n    ConvertTo-Json -Depth 5 -Compress @{\n        status = $false\n        msg = $( $_.Exception.Message )\n        stackTrace = $_ | Out-String\n    }\n}",
+    "analyst_comment": "Alert closed as FP. Confirmed by client: This script is part of a daily automated compliance check to verify domain password policy settings."
+  }
+]
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-2281",
+    "Start Time": "2026-01-25T14:40:12.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.10.15.22",
+    "Endpoint": "DC-EAST-01",
+    "User": "SYSTEM",
+    "User ID": "S-1-5-18",
+    "OS": "Windows Server 2022 Datacenter",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Scriptblock Summary": "PowerShell script enumerates Active Directory domain controller and domain password policies (Get-ADDomainController, Get-ADDefaultDomainPasswordPolicy, Get-ADFineGrainedPasswordPolicy) and outputs JSON.",
+    "Related Alert(s)": "SOC-2105 (identical script on same host; previously closed as false positive after client confirmed it is part of a daily automated compliance check)",
+    "Description": "A PowerShell script executed by the SYSTEM account on DC-EAST-01 that enumerates AD domain controllers and domain password policy settings and returns JSON. The script's behavior and execution context on a domain controller are consistent with legitimate automated compliance or inventory tasks, and no file paths, process hashes, or external IP indicators of compromise were observed. A prior identical alert on this host was validated by the client as a scheduled compliance check, so this activity is considered Low Priority."
+  },
+  "classification": "LP"
+}
+

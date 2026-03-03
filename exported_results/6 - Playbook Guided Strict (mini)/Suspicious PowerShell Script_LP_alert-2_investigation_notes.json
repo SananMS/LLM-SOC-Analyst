@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-9921",
+    "Start Time": "2026-01-20T02:15:44.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "192.168.1.45",
+    "Endpoint": "FS-PROD-02",
+    "User": "NT SERVICE\\DataBackupAgent",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "OS": "Windows Server 2019 Standard",
+    "Scriptblock Summary": "Cleartext PowerShell script that performs a storage inventory scan of the C: drive, identifies files larger than a configurable threshold (default 10 GB), logs progress, and exports results to a CSV in ProgramData. No encoding, obfuscation, or external network calls are present in the script content.",
+    "Script Referenced Paths": "C:\\ProgramData\\DataVault\\Logs\\inventory_scan.log; C:\\ProgramData\\DataVault\\Temp\\large_files.csv; TargetDrive default C: ",
+    "Historical Activity": "No recent events found. No recent similar alerts found.",
+    "Description": "A PowerShell storage-inventory script executed under the NT SERVICE\\DataBackupAgent account and wrote logs/exports to ProgramData paths, which triggered the alert. The script is readable, references local backup product paths, and contains no obfuscated or network-related behavior. There is no initiating process hash or parent process information available for reputation checks and no related historical activity, which reduces suspicion. Based on the service account context, benign script behavior, and lack of malicious indicators, this alert is considered Low Priority."
+  },
+  "classification": "LP"
+}

@@ -1,0 +1,43 @@
+=== DEBUG SESSION START: 2026-03-03T00:58:20.333451+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Suspicious PowerShell Script Execution
+Selected Playbook: General Triage (No Playbook)
+
+[TOOL CALL]
+Tool: check_ip_reputation
+Arguments: {"ip": "195.55.224.28"}
+
+[TOOL RESPONSE]
+Source IP: 195.55.224.28 | Abuse Confidence Score: 0/100 | ISP: Caja De Ahorros y Monte Piedad de Zaragoza | Usage Type: Fixed Line ISP | Privacy Status: Neither VPN nor Proxy nor Tor Node nor Relay
+
+[TOOL CALL]
+Tool: check_hash_reputation
+Arguments: {"hash": "9785001b0dcf755eddb8af294a373c0b87b2498660f724e76c4d53f9c217c7a3"}
+
+[TOOL RESPONSE]
+VT Results for 9785001b0dcf755eddb8af294a373c0b87b2498660f724e76c4d53f9c217c7a3 (PowerShell.EXE):
+  - Engines: 0 Malicious | 0 Suspicious
+  - Community Score: -24
+  - Community Votes: 29 Malicious vs 20 Harmless
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-11005",
+    "Start Time": "2026-01-27T11:05:22.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.40.2.88",
+    "Destination IP": "195.55.224.28",
+    "Endpoint": "WKSTN-RND-07",
+    "User": "NT AUTHORITY\\SYSTEM",
+    "Process SHA256": "9785001b0dcf755eddb8af294a373c0b87b2498660f724e76c4d53f9c217c7a3",
+    "Initiating Process": "powershell.exe",
+    "Parent Process": "cmd.exe",
+    "Script Summary": "Base64-encoded PowerShell decoded to logic that checks the hosts file and, if missing, appends the entry '195.55.224.28 update.microsoft.com' to redirect Windows Update to an external IP.",
+    "Reputation Notes": "External IP (195.55.224.28) shows low abuse score from IP reputation lookup, while the process hash shows 0/engines detections but has mixed community votes indicating suspicion.",
+    "Description": "A Base64-encoded PowerShell command executed on WKSTN-RND-07 under the SYSTEM account decoded to a script that would add a hosts-file entry redirecting update.microsoft.com to 195.55.224.28. The executable's hash has no AV detections but has community-sourced suspicion, and the action targets a critical update domain. Because the behavior modifies system host resolution for a Windows update domain and was executed as SYSTEM, this represents potentially malicious activity and is escalated as high priority."
+  },
+  "classification": "HP"
+}
+

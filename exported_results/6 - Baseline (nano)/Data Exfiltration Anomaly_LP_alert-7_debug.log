@@ -1,0 +1,64 @@
+=== DEBUG SESSION START: 2026-03-02T22:16:21.831456+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Data Exfiltration Anomaly
+Selected Playbook: General Triage (No Playbook)
+
+[TOOL CALL]
+Tool: check_ip_reputation
+Arguments: {"ip": "90.190.150.10"}
+
+[TOOL RESPONSE]
+Source IP: 90.190.150.10 | Abuse Confidence Score: 0/100 | ISP: Endla Datacenter (Client application hosting center) | Usage Type: Fixed Line ISP | Privacy Status: Neither VPN nor Proxy nor Tor Node nor Relay
+
+[TOOL CALL]
+Tool: check_ip_reputation
+Arguments: {"ip": "40.108.201.15"}
+
+[TOOL RESPONSE]
+Source IP: 40.108.201.15 | Abuse Confidence Score: 0/100 | ISP: Microsoft Corporation | Usage Type: Data Center/Web Hosting/Transit | Privacy Status: VPN
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-19220",
+    "Start Time": "2026-02-01T14:10:00.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "90.190.150.10",
+    "Destination IP": "40.108.201.15",
+    "User": "globalcorp@globalcorp.ee",
+    "Description": "Unusually high volume of file downloads from a SharePoint site by the user, totaling 290 files and exceeding the 24-hour baseline of 50. The activity uses SharePoint/Directo MSGraph with the destination appearing as a Microsoft data center, and no malicious IP reputation was observed for the source. No recent similar alerts or events were found to corroborate a confirmed exfiltration attempt, suggesting this is likely a legitimate data export, though it warrants monitoring for data sensitivity and user intent.",
+    "Site URL": "https://globalcorp.sharepoint.com/sites/Latvija_Finanses_Directo/",
+    "File Count": 290,
+    "Baseline 24h": 50,
+    "Geo Location": "Tallinn, Estonia",
+    "Sample Files": [
+      "Directo_Ienakumi_Eksports_Jan.csv",
+      "Gada_Parskats_2025_Final.pdf",
+      "Piegadataja_Saskaita_8821.pdf",
+      "Algas_Izmaksas_Saraksts.xlsx",
+      "Nodoklu_Deklaracija_PVN_2026.pdf",
+      "Bankas_Izraksts_Janvaris.csv",
+      "Debitoru_Paradu_Analize.xlsx",
+      "Kreditoru_Saraksts_UAB.csv",
+      "Pamatlidzeklu_Inventarizacija.xlsx",
+      "Finansu_Plosmas_Zinojums.pdf"
+    ]
+  },
+  "classification": "LP"
+}
+

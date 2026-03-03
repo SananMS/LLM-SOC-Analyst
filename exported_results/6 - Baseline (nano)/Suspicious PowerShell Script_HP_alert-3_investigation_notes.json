@@ -1,0 +1,16 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-9623",
+    "Start Time": "2026-01-26T06:14:39.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.3.80.44",
+    "Endpoint": "SRV-WEB-02",
+    "User": "r.kuznetsov",
+    "Description": "A PowerShell script was executed that writes a Run registry entry under HKCU to launch a PowerShell script at C:\\ProgramData\\winupd.ps1 with ExecutionPolicy bypass and a hidden window. This combination of bypassed policy, hidden window, and a Run key for persistence on a Windows Server 2019 host is commonly associated with malware and unauthorized automation. Given the combination of bypassed policy, persistence via Run key, and non-standard script location, this alert is high priority and requires immediate validation of the user's intent and potential containment steps.",
+    "Registry Run Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+    "Registry Run Value Name": "WindowsUpdateSvc",
+    "Observed PowerShell Command": "powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File C:\\ProgramData\\winupd.ps1",
+    "Script Path": "C:\\ProgramData\\winupd.ps1"
+  },
+  "classification": "HP"
+}

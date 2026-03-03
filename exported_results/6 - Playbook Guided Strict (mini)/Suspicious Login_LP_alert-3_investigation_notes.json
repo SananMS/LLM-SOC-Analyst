@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-102",
+    "Start Time": "2025-07-26T08:50:00.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "195.88.86.50",
+    "Destination IP": "13.80.23.7",
+    "Endpoint": "F31647565",
+    "User": "marko.talvik@client.ee",
+    "Playbook Used": "Suspicious Login Triage",
+    "ISP": "Packethub S.A.",
+    "IP Usage Type": "Data Center / Web Hosting / Transit",
+    "IP Reputation Score": "Abuse Confidence Score 0/100",
+    "IP Privacy Status": "VPN",
+    "Device Managed and Compliant": true,
+    "Description": "An Office 365 login succeeded from Istanbul, Turkey for marko.talvik@client.ee on a company-managed Windows endpoint with MFA enabled. The source IP is tied to a hosting/data-center provider and is marked as a VPN but has a low abuse score, and recent events show multiple successful MFA-protected logins from the same device and user agent within the last two days. Given the managed device, MFA success, matching user agent, and prior legitimate logins on the same endpoint, this is assessed as Low Priority because the evidence favors a VPN-related location discrepancy rather than confirmed malicious access."
+  },
+  "classification": "LP"
+}

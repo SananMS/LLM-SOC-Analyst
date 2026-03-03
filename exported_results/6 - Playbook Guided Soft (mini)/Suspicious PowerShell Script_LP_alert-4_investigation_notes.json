@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-8812",
+    "Start Time": "2026-01-25T14:46:27.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.15.5.30",
+    "Endpoint": "MGMT-TERM-01",
+    "User": "j.smith",
+    "User ID": "S-1-5-21-9988776655-1122334455-6677889900-1002",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "OS": "Windows Server 2019 Standard",
+    "Scriptblock": "Get-ADGroup -Filter 'ObjectGUID -eq \"a1b2c3d4-e5f6-4a5b-bc6d-7e8f90123456\"'",
+    "Related Alerts": "SOC-1988 (2026-01-04): same user and endpoint executed a similar AD GUID lookup; closed as false positive after verification with IT Manager that j.smith is a Senior Systems Administrator.",
+    "Description": "A PowerShell command performed an Active Directory group lookup by GUID from a management workstation using account j.smith. The scriptblock is a plain Get-ADGroup query with no obfuscation, no file path or binary hash was provided, and there are no external network indicators. Historical context shows a prior, similar alert on the same user and host that was verified as legitimate administrative activity. Given the administrative account, simple AD lookup behavior, and prior verification, this alert is assessed as Low Priority (LP)."
+  },
+  "classification": "LP"
+}

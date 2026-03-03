@@ -1,0 +1,26 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10238",
+    "Start Time": "2026-02-06T16:15:22.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "192.168.1.22",
+    "Destination IP": "172.16.40.3",
+    "Endpoint": "wkst-dev-14",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Root Domain": "mdnplay.dev",
+    "Root Domain Creation Date": "2021-12-14",
+    "Root Domain Age (days)": 1540,
+    "Observed Bytes": "580 (typical 38)",
+    "Sample Queries": [
+      "a91c4f7e3d082b650471fe23c8b5aa12d934e017.mdnplay.dev",
+      "f3e72a91-1bc4-47e9-b830-54d721a0fc38.mdnplay.dev",
+      "3b8d1e0c94f72a651bc309e8d4f0a72b1e839c45.mdnplay.dev",
+      "e6f190ad-23b7-4d81-a912-7c340be85f21.mdnplay.dev",
+      "7c52b3e1f094d8a62c451be70f9832d10c74a981.mdnplay.dev",
+      "91d4c8fa-67a3-4f02-bc51-2e908d7f43a6.mdnplay.dev"
+    ],
+    "Encoded Payload Detected": "No — subdomains are formatted as UUIDs and SHA1-like hex strings, not base64 or other obvious encodings.",
+    "Description": "An anomalously large DNS transfer (580 bytes vs typical 38) to mdnplay.dev was observed from wkst-dev-14 using high-entropy subdomains. The root domain is 1540 days old and appears to be a developer/playground service, and the subdomain patterns are consistent with UUIDs and SHA1-like identifiers rather than encoded or obfuscated payloads. No decoded sensitive host information or clear exfiltration markers were identified, and there are no recent events or similar alerts associated with this host. Based on the established domain age, benign-looking identifier patterns, and lack of historical indicators, this activity is assessed as Low Priority."
+  },
+  "classification": "LP"
+}

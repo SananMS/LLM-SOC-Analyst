@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-99500",
+    "Start Time": "2026-02-10T21:15:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "82.102.15.144",
+    "User": "aleksei.ivanov@globalcorp.ee",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Role": "Owner",
+    "User Job Title": "Senior Software Developer",
+    "Resource Group": "rg-baltic-prod-data",
+    "NSG": "nsg-prod-db-cluster",
+    "Local Time (EET)": "2026-02-10T23:15:00+02:00",
+    "Description": "An Owner-level write to NSG 'nsg-prod-db-cluster' in resource group 'rg-baltic-prod-data' modified/added a rule named 'Allow_LB_HealthCheck_Internal' that allows inbound TCP 443 to 10.0.5.2 from any source and the operation completed successfully. The actor's account maps to a Senior Software Developer in Engineering rather than a clear infrastructure administrator, the change occurred at 23:15 EET (outside normal working hours), and no recent deployment events or similar alerts were found to corroborate this activity. Because the change increases exposure in a production environment, was performed by a high-privilege principal whose job title does not clearly justify the action, and occurred after hours with no corroborating activity, the alert is classified as High Priority."
+  },
+  "classification": "HP"
+}

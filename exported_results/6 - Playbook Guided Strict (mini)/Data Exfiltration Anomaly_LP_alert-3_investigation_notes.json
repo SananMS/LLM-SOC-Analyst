@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-11340",
+    "Start Time": "2026-01-31T14:45:10.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "82.131.44.12",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "DEV-STATION-44",
+    "User": "Aleksei.Ivanov@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Description": "A single user performed an elevated volume of SharePoint downloads (550 files vs a 24-hour baseline of 120) from an engineering project repository. The activity originated from Tallinn, Estonia at 16:45 local time, used a standard Chrome user agent, and the accessed files are code-related (e.g., .py, requirements.txt), which aligns with the user's role in Engineering. There are no recent related events or similar alerts, and the user's role and department provide a plausible business justification for bulk access, so this activity is assessed as low priority despite the higher-than-baseline file count.",
+    "User Role": "Senior Software Developer",
+    "Department": "Engineering",
+    "File Count": 550,
+    "Baseline 24h": 120,
+    "Local Time": "2026-01-31T16:45:10 (EET)"
+  },
+  "classification": "LP"
+}

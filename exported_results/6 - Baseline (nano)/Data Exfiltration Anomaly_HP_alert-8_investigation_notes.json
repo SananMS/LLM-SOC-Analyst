@@ -1,0 +1,13 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-27420",
+    "Start Time": "2026-02-01T20:15:30.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "92.240.64.18",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "RIX-SALES-LAP-22",
+    "User": "Dace.Ozolina@globalcorp.ee",
+    "Description": "Anomalous data exfiltration pattern detected: 1,240 SharePoint files were downloaded by user Dace.Ozolina@globalcorp.ee from the Latvia-based site https://globalcorp.sharepoint.com/sites/Latvija_Klienti_un_Ligumi/. The 24-hour baseline is 45, indicating a substantial increase in data transfer. The activity targets an external destination IP 40.108.201.15 and includes several confidential-looking files, suggesting potential data leakage. The combination of high volume, external destination, and presence of sensitive documents indicates a high-risk event requiring urgent investigation and escalation."
+  },
+  "classification": "HP"
+}

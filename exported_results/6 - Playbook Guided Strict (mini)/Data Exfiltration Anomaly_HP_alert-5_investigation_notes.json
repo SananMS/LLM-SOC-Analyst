@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-15900",
+    "Start Time": "2026-01-31T23:59:59.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "109.70.100.1",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "CLOUD-AUTOMATE-NODE",
+    "User": "Kevin.Smit@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Application": "Python-urllib/3.12",
+    "File Count": 2100,
+    "Baseline 24h": 40,
+    "User Role": "Junior Developer (Intern)",
+    "Recent Similar Alert": "SOC-15885 - Multiple Failed Login Attempts for same user earlier same night",
+    "Description": "Approximately 2,100 SharePoint files were downloaded using a Python HTTP client at ~00:59 local time (CET) in Vienna, which is far above the user's 24-hour baseline of 40. Sampled items include a production SQL dump and encryption key material stored under Recovery_Vault, indicating access to highly sensitive data. Prior alerts show multiple failed login attempts for the same account earlier that night and the user is a Junior Developer (Intern), creating a mismatch between role and the sensitive data accessed. The off-hours timing, scripted user-agent, large volume, sensitive file types, and prior anomalous authentication activity increase the likelihood of compromise or malicious action and warrant high-priority investigation."
+  },
+  "classification": "HP"
+}

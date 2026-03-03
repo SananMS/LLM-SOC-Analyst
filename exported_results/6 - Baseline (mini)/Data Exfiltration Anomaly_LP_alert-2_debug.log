@@ -1,0 +1,33 @@
+=== DEBUG SESSION START: 2026-03-03T00:31:12.632262+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Data Exfiltration Anomaly
+Selected Playbook: General Triage (No Playbook)
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-11205",
+    "Start Time": "2026-01-31T09:15:22.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "194.126.101.44",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "FIN-LAPTOP-09",
+    "User": "Linda.Kask@globalcorp.ee",
+    "Description": "A large volume of SharePoint downloads (420 files) was observed from the user's device and account, significantly exceeding the 24-hour baseline of 45 files. Downloads targeted the Finance Reporting site and included sensitive payroll and invoice documents, and activity was associated with a Tallinn geolocation consistent with the user's region. The anomalous volume combined with the sensitive content increases the likelihood of data exfiltration and justifies escalation for further review, therefore this event is treated as High Priority.",
+    "File Count": 420,
+    "Baseline 24h": 45,
+    "Site URL": "https://globalcorp.sharepoint.com/sites/Finance_Reporting/",
+    "Sample Files": [
+      "Q4_Vat_Report_Final.xlsx",
+      "Invoice_Archive_Jan_2026.zip",
+      "Payroll_Summary_Global_Corp.pdf"
+    ],
+    "Geo Location": {
+      "city": "Tallinn",
+      "country": "Estonia"
+    }
+  },
+  "classification": "HP"
+}
+

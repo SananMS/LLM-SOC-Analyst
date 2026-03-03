@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-29495",
+    "Start Time": "2026-01-26T09:23:44.000Z",
+    "Alert Name": "SentinelOne: XDR Miscellaneous Malware",
+    "Source IP": "10.15.22.84",
+    "Endpoint": "WKSTN-FIN-992",
+    "User": "a.miller@client.ee",
+    "Playbook Used": "EDR Malware Triage",
+    "File Name": "advanced_ip_scanner.exe",
+    "File SHA256": "8c3b2a1f0e9d8c7b6a5f4e3d2c1b0a9f8e7d6c5b4a3f2e1d0c9b8a7f6e5d4c3b",
+    "Process Parent": "Advanced_IP_Scanner_Setup_2.5.tmp",
+    "User Role": "Network Administrator (IT Operations)",
+    "Previous Similar Alert": "SOC-29104 (closed as FP on 2026-01-23; analyst confirmed legitimate use by network admin)",
+    "Description": "SentinelOne detected advanced_ip_scanner.exe written to the user's Downloads path on WKSTN-FIN-992 with an 'On-Write Static AI - Suspicious' detection. The file hash is not present in public reputation databases and there are no recent related host events; the parent process appears to be an installer, consistent with a user-initiated execution from Downloads. The user is a network administrator and a highly similar alert for the same file on this host was recently closed as a false positive after confirming legitimate use for internal discovery. Based on role alignment, installer context, lack of malicious reputation, and the prior closure, this alert is assessed as Low Priority."
+  },
+  "classification": "LP"
+}

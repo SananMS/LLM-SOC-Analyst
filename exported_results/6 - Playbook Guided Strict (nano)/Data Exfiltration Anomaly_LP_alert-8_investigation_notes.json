@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-19458",
+    "Start Time": "2026-03-01T13:10:00.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "62.248.150.12",
+    "Destination IP": "40.108.201.15",
+    "User": "acc@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Geographic Location": "Tampere, Finland",
+    "Site URL": "https://globalcorp.sharepoint.com/sites/Finland_HR_Mepco_Sync/",
+    "Application": "Mepco MSGraph",
+    "File Count": 305,
+    "Baseline 24h": 28,
+    "Description": "An unusually high volume of file downloads (305 files) was detected for user acc@globalcorp.ee targeting the Finland HR Mepco Sync SharePoint site. The activity occurs from Tampere, Finland, and uses the Mepco MSGraph application with a standard browser user agent, exceeding the 24-hour baseline by a large margin. Accessed documents include payroll and other HR/financial files, raising potential risk of data exfiltration or misuse; this pattern in combination with the external destination IP warrants high priority investigation and escalation."
+  },
+  "classification": "HP"
+}

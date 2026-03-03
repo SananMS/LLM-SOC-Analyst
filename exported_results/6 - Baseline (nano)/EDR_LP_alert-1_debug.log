@@ -1,0 +1,23 @@
+=== DEBUG SESSION START: 2026-03-02T22:22:05.777253+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Microsoft Defender: Potentially Unwanted Application Prevented
+Selected Playbook: General Triage (No Playbook)
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-29481",
+    "Start Time": "2026-02-17T11:05:17.000Z",
+    "Alert Name": "Microsoft Defender: Potentially Unwanted Application Prevented",
+    "Source IP": "10.44.12.190",
+    "Endpoint": "WKSTN-DEV-772",
+    "User": "r.hunter@client.ee",
+    "Process Chain": "[PID: 25280] idea64.exe -> [PID: 15368] java.exe",
+    "File Path": "C:\\repo-gradle\\caches\\9.1.2\\a7b8c9d0e1f2\\a7b8c9d0e1f2.lock",
+    "SHA256": "f4e3d2c1b0a9f8e7d6c5b4a3f2e1d0c9b8a7f6e5d4c3b2a1f0e9d8c7b6a5f4e3",
+    "Description": "Microsoft Defender prevented a potentially unwanted MacKeeper application from running on WKSTN-DEV-772. The event shows the detection occurred in a Windows 11 environment with a Java/Gradle-related process chain and a cache file path, and the remediation status is prevented. There are no clear indicators of network activity or data exfiltration in the provided evidence, and the presence of a legitimate development toolchain suggests this may be a low-risk false positive."
+  },
+  "classification": "LP"
+}
+

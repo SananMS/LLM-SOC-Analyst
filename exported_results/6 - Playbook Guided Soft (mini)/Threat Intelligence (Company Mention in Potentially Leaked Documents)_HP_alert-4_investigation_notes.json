@@ -1,0 +1,21 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-76015",
+    "Start Time": "2026-02-19T11:45:00.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Playbook Used": "Document Exposure & Threat Intel Triage",
+    "Threat": "DocumentExposure:VitalisHealthcare",
+    "Category": "Brand Monitoring",
+    "Detection Source": "TI-Monitor-DarkWeb",
+    "Source URL": "http://v377w88x99y00z11a22b33c44d55e66f77g88h99i00j11k22.onion/dump/vitalis_espana/",
+    "Relative Paths": [
+      "/srv/data/breach_assets/vitalis_healthcare_spain/pacientes/base_datos_pacientes_madrid_2026.sql",
+      "/srv/data/breach_assets/vitalis_healthcare_spain/rrhh/nominas_empleados_barcelona.xlsx",
+      "/srv/data/breach_assets/vitalis_healthcare_spain/sistemas/backup_configuracion_firewall_central.cfg"
+    ],
+    "Sensitive Items Observed": "Patient database SQL, employee payroll spreadsheet, and firewall configuration backup indicating personal data and internal infrastructure information exposure.",
+    "Recent Similar Alerts": "No recent similar alerts found",
+    "Description": "Multiple files referencing Vitalis Healthcare were located on a dark web .onion dump and include a patient database, employee payroll spreadsheet, and a central firewall configuration backup. The combination of patient records and payroll data represents exposure of highly sensitive personal and internal information, and the hosting on a dark web leak site increases the likelihood that these are authentic leaked assets. No recent similar sightings were found for these identifiers, indicating this is a new potential exposure event that requires attention. Given the sensitivity of the exposed items and the credible hosting platform, this alert is classified as High Priority."
+  },
+  "classification": "HP"
+}

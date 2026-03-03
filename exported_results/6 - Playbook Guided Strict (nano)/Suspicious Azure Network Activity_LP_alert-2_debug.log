@@ -1,0 +1,39 @@
+=== DEBUG SESSION START: 2026-03-02T23:51:23.810711+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Azure Network Security Modification
+Selected Playbook: suspicious_cloud_network_activity.json
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-22410",
+    "Start Time": "2026-02-10T15:33:45.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Endpoint": "nsg-aks-dev-01",
+    "User": "Service Principal",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Description": "An Azure Network Security Group modification was detected for NSG nsg-aks-dev-01 in resource group rg-nordic-dev-test. The change adds two inbound rules, including an open AllowDevWebService from any source to 13.75.144.22:8080, and the request body describes this as a temporary web service for API testing. The action was performed by a Service Principal with Contributor role under the subscription, targeting a dev-test environment, which suggests a legitimate testing activity rather than an unauthorized modification. No recent events or similar alerts were found to correlate this change, supporting a Low Priority classification unless further corroboration indicates broader deployment activity."
+  },
+  "classification": "LP",
+  "NSG Name": "nsg-aks-dev-01",
+  "Resource Group": "rg-nordic-dev-test",
+  "Destination IP": "13.75.144.22",
+  "Correlation ID": "a1b2c3d4-e5f6-7a8b-9c0d-e1f2a3b4c5d6",
+  "Rule Change Description": "Temporary Web Service for API Testing"
+}
+

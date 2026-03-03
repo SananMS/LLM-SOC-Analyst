@@ -1,0 +1,26 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10234",
+    "Start Time": "2026-02-06T09:58:16.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "192.168.153.249",
+    "Destination IP": "172.16.40.3",
+    "Endpoint": "srv-prod-infra-01",
+    "Workload": "Network",
+    "Application": "DNS",
+    "Query Type": "CNAME",
+    "Actual Bytes": 313,
+    "Typical Bytes": 50,
+    "Sample Queries": [
+      "9941-v4v6-cdn.glob-zone.dprod.sharepoint.com",
+      "102934-v4v6-farm.cluster01.sharepointonline.com.akadns.net",
+      "edge-standard-001.msedge.net",
+      "prod-relay-af-092.spo-msedge.net",
+      "tenant-files-api.sharepoint.com.res.office365.com",
+      "storage-blob-v12.dprodmgd.aa-rt.sharepoint.com",
+      "ns-priority-1.spo-msedge.net"
+    ],
+    "Description": "Alert was raised for larger-than-baseline, high-entropy CNAME DNS queries (313 B vs typical 50 B) referencing sharepoint.com and related Microsoft CDN/edge domains. The sample queries map to Microsoft SharePoint/Edge/CDN and tenant-specific hosts, which is consistent with legitimate Office365/SharePoint activity rather than clear command-and-control tunneling. The traffic originates from an internal production server to an internal resolver and no known malicious domains or external suspicious infrastructure are present in the samples. Based on these observations and the presence of well-known Microsoft service domains, this activity is assessed as Low Priority (LP)."
+  },
+  "classification": "LP"
+}

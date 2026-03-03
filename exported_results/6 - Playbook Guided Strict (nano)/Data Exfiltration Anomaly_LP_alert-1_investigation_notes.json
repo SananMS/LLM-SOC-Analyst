@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-11100",
+    "Start Time": "2026-01-28T10:39:49.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "145.14.39.150",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "HOST-WS-03",
+    "User": "Marcus.Webb@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Description": "315 SharePoint file downloads were observed from Marcus Webb in Tallinn, Estonia, significantly above the 24-hour baseline of 50. The activity targeted the Legal_M_A site on SharePoint Online and included confidential documents such as Confidential_Board_Minutes_Jan2026.pdf, indicating access to sensitive data. Access used a standard browser through Office 365 SharePoint Online during local working hours; due to the volume and data sensitivity, this activity is high-priority pending verification of legitimate business justification.",
+    "Geo Location": "Tallinn, Estonia",
+    "Sample Files Accessed": "Project_Alpha_Contract_Draft.pdf; M_A_Due_Diligence_Q1.xlsx; Confidential_Board_Minutes_Jan2026.pdf",
+    "Data Volume": "315 files downloaded in 24h (baseline 50)",
+    "Target Site": "https://globalcorp.sharepoint.com/sites/Legal_M_A/"
+  },
+  "classification": "HP"
+}

@@ -1,0 +1,26 @@
+=== DEBUG SESSION START: 2026-03-03T00:28:44.592533+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Data Exfiltration Anomaly
+Selected Playbook: General Triage (No Playbook)
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-25600",
+    "Start Time": "2026-02-01T19:05:10.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "88.119.20.145",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "VIL-LT-DSK-12",
+    "User": "Jonas.Laitis@globalcorp.ee",
+    "Workload": "SharePoint",
+    "File Count": 920,
+    "Baseline 24h": 10,
+    "Site URL": "https://globalcorp.sharepoint.com/sites/Gamyba_ir_Eksportas/",
+    "Geo Location": "Vilnius, Lithuania",
+    "Description": "An unusually high volume of SharePoint downloads (920 vs a 24-hour baseline of 10) was observed for the user Jonas.Laitis@globalcorp.ee from the corporate SharePoint site. The downloaded items span multiple sensitive directories and include client lists, contracts, product specifications, and strategic plans, which increases the potential impact. Activity originated from a Vilnius IP and a standard browser user agent that align with the user's location, but the magnitude and breadth of downloads are inconsistent with normal behavior and raise concern for mass data exfiltration. Classified as High Priority because the volume and sensitivity of accessed files warrant immediate follow-up and escalation for potential compromise or unauthorized bulk data transfer."
+  },
+  "classification": "HP"
+}
+

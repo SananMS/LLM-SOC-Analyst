@@ -1,0 +1,47 @@
+=== DEBUG SESSION START: 2026-03-03T00:46:26.036424+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Azure Network Security Modification
+Selected Playbook: General Triage (No Playbook)
+
+[TOOL CALL]
+Tool: lookup_users
+Arguments: {"emails": ["marcus.webb@globalcorp.ee"]}
+
+[TOOL RESPONSE]
+[
+  {
+    "email": "Marcus.Webb@globalcorp.ee",
+    "full_name": "Marcus Webb",
+    "department": "Legal & Corporate Secretary",
+    "role": "Senior Legal Operations Manager"
+  }
+]
+
+[TOOL CALL]
+Tool: check_ip_reputation
+Arguments: {"ip": "194.126.101.99"}
+
+[TOOL RESPONSE]
+Source IP: 194.126.101.99 | Abuse Confidence Score: 0/100 | ISP: backbone and servers | Usage Type: Fixed Line ISP | Privacy Status: Neither VPN nor Proxy nor Tor Node nor Relay
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-99200",
+    "Start Time": "2026-02-10T09:15:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "194.126.101.99",
+    "User": "marcus.webb@globalcorp.ee",
+    "Role": "Contributor",
+    "Resource": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-baltic-prod-connectivity/providers/Microsoft.Network/networkSecurityGroups/nsg-prod-core",
+    "Operation Name": "MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/WRITE",
+    "Result": "Succeeded",
+    "Account Department": "Legal & Corporate Secretary",
+    "IP Reputation Score": "0/100 (clean)",
+    "Caller IP Geo": "Tallinn, Estonia",
+    "Description": "A network security group (nsg-prod-core) was modified to add an inbound Allow rule named 'Test' permitting RDP (TCP/3389) from any source. The change was performed by marcus.webb@globalcorp.ee (Contributor) from IP 194.126.101.99, the operation completed successfully and MFA was indicated in the claims. The user is listed in Legal & Corporate Secretary and is not typically responsible for networking changes, and the new rule exposes production infrastructure to the internet which increases risk; for these reasons the activity is considered high risk and requires further investigation."
+  },
+  "classification": "HP"
+}
+

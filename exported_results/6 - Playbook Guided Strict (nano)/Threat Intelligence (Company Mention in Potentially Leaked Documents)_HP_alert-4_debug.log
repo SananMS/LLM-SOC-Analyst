@@ -1,0 +1,18 @@
+=== DEBUG SESSION START: 2026-03-03T00:21:10.262382+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Brand Mention in External Document
+Selected Playbook: potentially_leaked_document.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-76015",
+    "Start Time": "2026-02-19T11:45:00.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Playbook Used": "Document Exposure & Threat Intel Triage",
+    "Description": "Vitalis Healthcare is mentioned in a document allegedly leaked to a dark web host, linked via a .onion URL. The associated file paths indicate potentially sensitive assets, including a patient database, payroll data, and firewall configuration details. The combination of dark web hosting and explicit internal assets suggests a credible data exposure risk, warranting High Priority investigation to verify authenticity and potential impact."
+  },
+  "classification": "HP"
+}
+

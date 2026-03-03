@@ -1,0 +1,22 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14571",
+    "Start Time": "2026-02-06T17:45:10.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.150.22.201",
+    "Destination IP": "203.0.113.42",
+    "Endpoint": "srv-sql-core-01",
+    "Description": "Anomalous DNS-based data transfer was observed, with a high-entropy DNS TXT query to domain x1j2k3-v9.biz and a total of 2,420 bytes compared with a typical 12 bytes. The traffic appears tunneled and designed to exfiltrate data or act as a covert C2 channel, using the DNS TXT records to carry payload. The pattern is suspicious and warrants investigation due to the unusual payload size, the DNS-based channel, and a new-domain observed in the sample queries.",
+    "Observed DNS domain": "x1j2k3-v9.biz",
+    "Query Type": "TXT",
+    "Actual Bytes": 2420,
+    "Typical Bytes": 12,
+    "Sample DNS Queries": [
+      "U0VMRUNUIGNvbmZpZywgdmFsdWUgRlJPTSBzeXNjZmcu.x1j2k3-v9.biz",
+      "REJQQVNTX2VuY3J5cHRlZD1hYmMxMjM0NTY3ODkw.x1j2k3-v9.biz",
+      "YWRtaW5fZW1haWw9c29jX21nckBjb3JwLmNvbQ.x1j2k3-v9.biz",
+      "U1NMX0NfS0VZX2JmNDQxMmM0YWFhYmJjY2Rk.x1j2k3-v9.biz"
+    ]
+  },
+  "classification": "HP"
+}

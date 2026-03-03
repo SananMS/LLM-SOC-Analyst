@@ -1,0 +1,47 @@
+=== DEBUG SESSION START: 2026-03-03T00:37:01.385131+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: DNS Tunneling Anomaly
+Selected Playbook: General Triage (No Playbook)
+
+[TOOL CALL]
+Tool: check_ip_reputation
+Arguments: {"ip": "162.255.119.41"}
+
+[TOOL RESPONSE]
+Source IP: 162.255.119.41 | Abuse Confidence Score: 0/100 | ISP: Namecheap, Inc. | Usage Type: Content Delivery Network | Privacy Status: VPN
+
+[TOOL CALL]
+Tool: get_domain_age
+Arguments: {"domain": "cdn-check-cache.top"}
+
+[TOOL RESPONSE]
+Domain: cdn-check-cache.top | Created: 2026-02-03 | Age: 28 days old.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14569",
+    "Start Time": "2026-02-06T15:22:10.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.150.22.110",
+    "Destination IP": "162.255.119.41",
+    "Endpoint": "srv-linux-prod-db",
+    "Application": "DNS",
+    "Query Type": "TXT",
+    "Actual Bytes": 2840,
+    "Typical Bytes": 12,
+    "Domain Age": "28 days (created 2026-02-03)",
+    "IP Reputation Score": "0/100 (Abuse Confidence)",
+    "ISP": "Namecheap, Inc.",
+    "Sample Queries": [
+      "LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQ.cdn-check-cache.top",
+      "TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV2luNjQ7IHg2NCk.cdn-check-cache.top",
+      "YWRtaW46YUEyM2IzYmI0Y2M1ZGQ2ZWVmZ2c3N2ho.cdn-check-cache.top",
+      "c3NoLWtleS1iYWNrdXAtMjAyNi50YXIuZ3o.cdn-check-cache.top"
+    ],
+    "Description": "Anomalously large DNS TXT traffic (2,840 bytes vs typical 12 bytes) was observed from a production database host to a recently registered external domain. The TXT query contents are high-entropy and include base64-like fragments that decode to sensitive artifacts (RSA key header, user-agent strings, and apparent credentials), consistent with DNS-based data exfiltration. The destination is hosted via a Namecheap/CDN provider with privacy, and the domain is only ~28 days old; these indicators together support treating this as a high-priority incident requiring escalation."
+  },
+  "classification": "HP"
+}
+

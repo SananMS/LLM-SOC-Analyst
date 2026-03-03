@@ -1,0 +1,55 @@
+=== DEBUG SESSION START: 2026-03-03T01:17:09.889477+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Data Exfiltration Anomaly
+Selected Playbook: excessive_downloads.json
+
+[TOOL CALL]
+Tool: lookup_users
+Arguments: {"emails": ["Jaanus.Tamm@globalcorp.ee"]}
+
+[TOOL RESPONSE]
+[
+  {
+    "email": "Jaanus.Tamm@globalcorp.ee",
+    "full_name": "Jaanus Tamm",
+    "department": "Facilities & Maintenance",
+    "role": "Maintenance Technician"
+  }
+]
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-13100",
+    "Start Time": "2026-01-31T23:55:12.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "145.14.37.201",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "MAINT-Kiosk-04",
+    "User": "Jaanus.Tamm@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Workload": "SharePoint",
+    "File Count": 985,
+    "Baseline 24h": 50,
+    "User Role": "Maintenance Technician",
+    "Local Time (Tallinn)": "2026-02-01T01:55:12 (EET)",
+    "Description": "An unusually large volume of SharePoint downloads (985 files vs a 24-hour baseline of 50) was observed from a maintenance account and included sensitive corporate and executive files in Strategy_and_Growth paths. The activity occurred at ~01:55 local Tallinn time, outside normal working hours, and the user's role does not plausibly justify access to acquisition, executive strategy, and board contact data. These factors—high volume deviation, sensitive content accessed, role mismatch, and off-hours timing—collectively indicate probable unauthorized access and justify classification as High Priority for further investigation."
+  },
+  "classification": "HP"
+}
+

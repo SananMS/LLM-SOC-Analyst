@@ -1,0 +1,15 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-99200",
+    "Start Time": "2026-02-10T09:15:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "194.126.101.99",
+    "User": "Marcus Webb",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Description": "An Azure NSG in production (rg-baltic-prod-connectivity) was modified to add a rule allowing inbound TCP traffic on port 3389 from any source. The change originated from 194.126.101.99 in Tallinn, Estonia, associated with Marcus Webb. The requested rule appears labeled as a temporary access for review, but the action targets a production NSG and temporarily broadens remote access (RDP), increasing exposure risk. The actor's role in the alert payload differs from the user profile result, prompting heightened scrutiny.",
+    "Geolocation": "Tallinn, Estonia",
+    "Rule Change Details": "Inbound RDP rule (port 3389) allowed from any to any; rule name Test; priority 110; described as temporary for review",
+    "Actor Role in Evidence": "Contributor"
+  },
+  "classification": "HP"
+}

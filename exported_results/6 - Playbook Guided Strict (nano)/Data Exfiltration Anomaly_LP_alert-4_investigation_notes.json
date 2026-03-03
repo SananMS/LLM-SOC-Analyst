@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-12880",
+    "Start Time": "2026-01-31T23:20:05.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "210.138.184.59",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "ARC-DESK-012",
+    "User": "Tanel.Magi@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Description": "An unusual volume of SharePoint file downloads (250) was observed from the user, which is higher than their 24-hour baseline. The activity originated from Tokyo, Japan, and targeted a SharePoint site with sensitive project files, indicating bulk access. This combination of high data volume and non-local geolocation raises the risk of data exfiltration or automated access and warrants expedited verification of user intent and access scope.",
+    "Geo Location": "Tokyo, Japan",
+    "File Count": 250,
+    "Baseline 24h": 30,
+    "Site URL": "https://globalcorp.sharepoint.com/sites/Arhitektuur_Projektid/",
+    "Local Time Context": "2026-02-01 08:20 JST"
+  },
+  "classification": "HP"
+}

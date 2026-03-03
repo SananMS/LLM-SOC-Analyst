@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-75691",
+    "Start Time": "2026-02-19T13:58:45.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Playbook Used": "Document Exposure & Threat Intel Triage",
+    "Description": "Vitalis Healthcare is named in a document allegedly leaked to a dark web repository, with a source URL pointing to an onion site. The evidence includes explicit internal file paths for legal and real estate documents, indicating sensitive information associated with the brand was exposed. The combination of a dark web source, direct references to confidential files, and multiple document types suggests a credible exposure risk requiring high-priority attention and follow-up.",
+    "Source URL": "http://n6p9q2r8t0v4w5x1y3z7a9b1c3d5e7f9g1h3i5j7k9l1m3n5o7p9q1r3.onion/repository/legal/intellectual-property/",
+    "Relative Paths": [
+      "/var/www/html/secure_dump/legal_archived/vitalis-estates/trust_agreements/Vitalis_Family_Trust_Agreement_2026.pdf",
+      "/var/www/html/secure_dump/legal_archived/vitalis-estates/real_estate/Vitalis_Manor_Deed_Transfer.docx",
+      "/var/www/html/secure_dump/legal_archived/vitalis-estates/beneficiaries/Vitalis_Estate_Asset_Distribution_List.xlsx"
+    ],
+    "Detected Files": "Internal legal and real estate documents including a family trust agreement, manor deed, and asset distribution list."
+  },
+  "classification": "HP"
+}

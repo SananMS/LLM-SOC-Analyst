@@ -1,0 +1,16 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-80",
+    "Start Time": "2025-07-22T23:22:15.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "152.32.141.199",
+    "Destination IP": "13.80.23.7",
+    "Endpoint": "HOST-123456",
+    "User": "risto.pohjal@client.ee",
+    "Description": "An Office 365 login for user risto.pohjal@client.ee was observed from Lagos, Nigeria, far outside the user’s typical login region. The login succeeded with MFA enabled, but the source IP is associated with VPN/datacenter activity and has a high abuse confidence score. Recent activity shows two prior logins from Tallinn, Estonia earlier the same day, which may indicate credential compromise or travel; given the geographic anomaly and suspicious IP, this should be treated as high priority and escalated for review.",
+    "Geo Location Observed": "Lagos, Nigeria",
+    "IP Reputation": "Abuse Confidence Score: 95/100; VPN/Data Center/Transit provider",
+    "Recent login history": "Two prior Office 365 logins from Tallinn, Estonia (145.14.37.164) on 2025-07-21 11:15:00Z and 2025-07-22 09:10:00Z, both with MFA."
+  },
+  "classification": "HP"
+}

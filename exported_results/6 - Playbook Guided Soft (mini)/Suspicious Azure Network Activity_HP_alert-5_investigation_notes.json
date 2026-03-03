@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-99803",
+    "Start Time": "2026-02-10T22:50:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "194.126.101.99",
+    "Destination IP": "13.71.172.5",
+    "User": "andrus.kivi@globalcorp.ee",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Resource Group": "rg-baltic-prod-core",
+    "Resource": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-baltic-prod-core/providers/Microsoft.Network/virtualNetworks/vnet-tallinn-prod-01/virtualNetworkPeerings/peering-to-central-soc",
+    "User Role": "Contributor",
+    "User Department": "Supply Chain & Logistics",
+    "Start Time (Estonia)": "2026-02-11T00:50:00+02:00 (EET)",
+    "Description": "Multiple successive configuration changes in the production resource group rg-baltic-prod-core were performed by andrus.kivi@globalcorp.ee from IP 194.126.101.99 in Tallinn, with the virtual network peering deletion recorded at 2026-02-11 00:50 EET. Correlated alerts show prior deletion of locks, NSG modifications (including an added inbound SSH rule permitting 185.220.101.44 to reach 13.71.172.5), and deletions impacting production networking, which increase exposure. The actor's corporate role (Regional Logistics Coordinator) does not align with infrastructure administration and the activity occurred outside normal Estonian working hours, so the combined evidence indicates elevated risk and warrants high-priority follow-up."
+  },
+  "classification": "HP"
+}

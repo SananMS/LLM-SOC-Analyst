@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-29495",
+    "Start Time": "2026-01-26T09:23:44.000Z",
+    "Alert Name": "SentinelOne: XDR Miscellaneous Malware",
+    "Source IP": "10.15.22.84",
+    "Endpoint": "WKSTN-FIN-992",
+    "User": "a.miller@client.ee",
+    "Playbook Used": "EDR Malware Triage",
+    "Description": "A threat 'Malware' related to the file 'advanced_ip_scanner.exe' was detected on WKSTN-FIN-992 by SentinelOne. The file is located in the user's Downloads folder and appears to be launched by a temporary setup process, with hash reputation limited in VirusTotal and no recent host events indicating broader activity. A prior similar alert for this host and file was closed as a false positive, with investigation attributing the behavior to legitimate internal discovery activity by a Network Administrator. Based on the user's role and the absence of convincing malicious indicators, the event is classified as Low Priority.",
+    "File Name": "advanced_ip_scanner.exe",
+    "File Path": "\\Device\\HarddiskVolume2\\Users\\a.miller\\Downloads\\Advanced_IP_Scanner\\advanced_ip_scanner.exe",
+    "File Hash": "8c3b2a1f0e9d8c7b6a5f4e3d2c1b0a9f8e7d6c5b4a3f2e1d0c9b8a7f6e5d4c3b",
+    "Process Parent": "Advanced_IP_Scanner_Setup_2.5.tmp"
+  },
+  "classification": "LP"
+}

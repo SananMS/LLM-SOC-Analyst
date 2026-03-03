@@ -4,6 +4,7 @@
   "start_time": "2025-07-22T23:22:15.000Z",
   "source_ip": "152.32.141.199",
   "destination_ip": "13.80.23.7",
+  "endpoint": "HOST-123456",
   "user": "risto.pohjal@client.ee",
   "user_id": "9c2e7b41-5d6a-4f83-b1a9-0e8d4c3f72ab",
   "description": "An anomalous Office 365 login occurred from Lagos, Nigeria, which is outside the user's typical login region.",

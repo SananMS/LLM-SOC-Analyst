@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-29896",
+    "Start Time": "2026-02-02T15:35:51.000Z",
+    "Alert Name": "Trend Micro: Malware Detected on Endpoint",
+    "Source IP": "172.19.12.77",
+    "Endpoint": "T10397-WKSTN",
+    "User": "srvs_ADMIN_LOCAL",
+    "Description": "Trend Micro detected a CRCK_KEYGEN (PUA) binary named 'MS Office Activator (Crack).exe' in a user Downloads directory on the endpoint. The detection occurred via real-time scan and an attempt to quarantine the file failed, indicating the artifact may still be present. Because the file is a known PUA keygen, was placed in a user-accessible location, and quarantine did not succeed, this activity warrants further investigation and remediation.",
+    "Threat Name": "CRCK_KEYGEN",
+    "Threat Family": "Potentially Unwanted Application (PUA)",
+    "Remediation Status": "quarantine failed",
+    "File Path": "C:\\Users\\srvs_ADMIN_LOCAL\\Downloads\\MS Office Activator (Crack)\\MS Office Activator (Crack).exe",
+    "Alert URL": "https://portal.eu.xdr.trendmicro.com/index.html#/workbench/alerts/WB-31720-20360202-00003",
+    "Detection Engine": "Trend Micro Real-time Scan"
+  },
+  "classification": "HP"
+}

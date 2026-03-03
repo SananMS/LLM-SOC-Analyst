@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-29896",
+    "Start Time": "2026-02-02T15:35:51.000Z",
+    "Alert Name": "Trend Micro: Malware Detected on Endpoint",
+    "Source IP": "172.19.12.77",
+    "Endpoint": "T10397-WKSTN",
+    "User": "srvs_ADMIN_LOCAL",
+    "Playbook Used": "EDR Malware Triage",
+    "Description": "Trend Micro detected a crack/keygen file named MS Office Activator (Crack).exe in the Downloads folder on endpoint T10397-WKSTN, associated with a CRCK_KEYGEN detection. The file was quarantined, but remediation status shows quarantine failed, indicating it may not have been fully contained. The activity involved the administrative user srvs_ADMIN_LOCAL and an executable commonly used to bypass licensing, a scenario that could enable further payloads if not fully mitigated. This combination of suspicious origin, potential persistence risk, and incomplete containment warrants high-priority investigation.",
+    "Detection Name": "CRCK_KEYGEN",
+    "File Name": "MS Office Activator (Crack).exe",
+    "File Path": "C:\\Users\\srvs_ADMIN_LOCAL\\Downloads\\MS Office Activator (Crack)\\MS Office Activator (Crack).exe",
+    "Remediation Status": "quarantine failed"
+  },
+  "classification": "HP"
+}

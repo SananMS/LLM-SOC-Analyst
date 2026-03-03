@@ -1,0 +1,22 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14568",
+    "Start Time": "2026-02-06T11:20:00.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.200.15.44",
+    "Destination IP": "104.21.41.202",
+    "Endpoint": "dev-linux-node-03",
+    "Description": "An anomalously large amount of tunneled, high-entropy traffic was observed over DNS targeting the domain github-status.com from the internal host dev-linux-node-03. The DNS TXT queries show unusual payload size (412 bytes) compared to typical DNS traffic (around 22 bytes), with a set of sample queries indicating potential data exfiltration or covert channel activity. This pattern is suspicious and likely represents DNS tunneling or C2 communication rather than legitimate DNS health checks.",
+    "DNS Query Type": "TXT",
+    "Observed Bytes": 412,
+    "Typical Bytes": 22,
+    "Sample Queries": [
+      "70-61-73-73-77-6f-72-64.github-status.com",
+      "3d-53-74-72-6f-6e-67-21.github-status.com",
+      "61-64-6d-69-6e-2d-64-62.github-status.com",
+      "node-03.github-status.com",
+      "health-check-01.github-status.com"
+    ]
+  },
+  "classification": "HP"
+}

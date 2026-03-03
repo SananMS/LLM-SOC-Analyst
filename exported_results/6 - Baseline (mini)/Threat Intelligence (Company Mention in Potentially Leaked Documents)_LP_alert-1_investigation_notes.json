@@ -1,0 +1,14 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-75468",
+    "Start Time": "2026-02-19T14:45:30.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Detection Source": "TI-Monitor-Scribd",
+    "Document Title": "Vitalis_Healthcare_Environmental_Policy_2026.pdf",
+    "Source URL": "https://www.scribd.com/document/991283/vitalis-environmental-policy",
+    "Category": "Brand Monitoring",
+    "Threat": "DocumentExposure:VitalisHealthcare",
+    "Description": "Alert triggered by detection of the Vitalis Healthcare name in a Scribd-hosted document titled as the 2026 Environmental and Sustainability Policy. The matched excerpt appears to be public-facing corporate messaging with no sensitive patient data, credentials, or PII observed in the provided evidence, and the document is hosted on a common public document repository. Given the public nature of the content, lack of sensitive information, and no additional malicious indicators, this is assessed as Low Priority (LP)."
+  },
+  "classification": "LP"
+}

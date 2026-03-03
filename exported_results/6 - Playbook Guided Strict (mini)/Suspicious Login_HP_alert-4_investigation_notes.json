@@ -1,0 +1,22 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-80",
+    "Start Time": "2025-07-22T23:22:15.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "152.32.141.199",
+    "Destination IP": "13.80.23.7",
+    "Endpoint": "HOST-123456",
+    "User": "risto.pohjal@client.ee",
+    "Playbook Used": "Suspicious Login Triage",
+    "Login Result": "success",
+    "MFA Status": "true",
+    "User Agent": "Windows-AzureAD-Authentication-Provider/1.0",
+    "IP Reputation Score": "95/100",
+    "ISP": "UCLOUD INFORMATION TECHNOLOGY (HK) LIMITED",
+    "Usage Type": "Data Center / Web Hosting / Transit",
+    "Privacy Status": "VPN",
+    "Recent Events Summary": "Prior successful Office 365 logins on 2025-07-21T11:15:00Z and 2025-07-22T09:10:00Z from Tallinn, Estonia using IP 145.14.37.164 with MFA enabled.",
+    "Description": "A successful Office 365 login occurred from Lagos, Nigeria, which is outside the user’s normal region. The source IP is associated with data center/web hosting infrastructure and flagged as a VPN with a high abuse score (95/100), while recent historical activity shows consistent logins from Tallinn, Estonia using a different IP. Although MFA was present on this login, the combination of a high-risk anonymizing IP and a new country of access increases the likelihood of suspicious activity, so the event is treated as High Priority."
+  },
+  "classification": "HP"
+}

@@ -1,0 +1,38 @@
+=== DEBUG SESSION START: 2026-03-03T01:29:59.233028+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: DNS Tunneling Anomaly
+Selected Playbook: suspicious_dns_queries.json
+
+[TOOL CALL]
+Tool: get_domain_age
+Arguments: {"domain": "ntp-update.space"}
+
+[TOOL RESPONSE]
+Domain: ntp-update.space | Created: 2026-02-05 | Age: 26 days old.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14570",
+    "Start Time": "2026-02-06T16:45:10.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.150.22.15",
+    "Destination IP": "185.112.10.4",
+    "Endpoint": "srv-prod-web-02",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Query Type": "TXT",
+    "Actual Bytes": 740,
+    "Typical Bytes": 20,
+    "Domain Registration Date": "2026-02-05",
+    "Decoded Payloads": [
+      "hostname=web-02",
+      "os=ubuntu-22.04",
+      "uptime=44211",
+      "cmd=idle"
+    ],
+    "Description": "High-entropy DNS TXT queries to ntp-update.space from srv-prod-web-02 contained subdomain labels that decode to cleartext host attributes (hostname, OS, uptime) and a command field, indicating data is being embedded in DNS queries. The root domain ntp-update.space was registered on 2026-02-05 (approximately 26 days old) and the observed record sizes (740 bytes vs typical 20) are anomalous for normal DNS activity. Given the production host context, the encoded payloads revealing host-identifying metadata, and the recent domain registration, the activity is consistent with DNS-based exfiltration or C2 and warrants escalation."
+  },
+  "classification": "HP"
+}
+

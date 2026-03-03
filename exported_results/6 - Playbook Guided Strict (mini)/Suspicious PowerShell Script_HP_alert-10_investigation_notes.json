@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-11005",
+    "Start Time": "2026-01-27T11:05:22.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.40.2.88",
+    "Endpoint": "WKSTN-RND-07",
+    "User": "NT AUTHORITY\\SYSTEM",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Initiating Process": "powershell.exe",
+    "Process SHA256": "9785001b0dcf755eddb8af294a373c0b87b2498660f724e76c4d53f9c217c7a3",
+    "Decoded Script Summary": "The encoded command decodes to a PowerShell routine that checks for and, if absent, appends a hosts-file entry mapping update.microsoft.com to 195.554.224.28. The target IP is syntactically invalid (octet 554), which suggests a misconfiguration, obfuscation, or malformed payload; an automated IP reputation lookup failed due to the invalid IP format.",
+    "Hash Reputation Summary": "No AV engines flagged the binary, but community signals are mixed: community score -24 with 29 'Malicious' vs 20 'Harmless' votes, indicating community suspicion despite zero engine detections.",
+    "Recent Activity Summary": "Recent events show a C:\\Windows\\System32\\fodhelper.exe process created at 2026-01-27T11:00:10 by user a.vargas, followed by a PowerShell execution at 2026-01-27T11:02:45 as SYSTEM. No recent similar alerts were found in the environment.",
+    "Description": "A PowerShell command executed as SYSTEM attempted to modify the local hosts file to redirect update.microsoft.com to a non-routable/malformed IP. The action modifies a system file with administrative intent, the process reputation shows community suspicion despite no engine detections, and there was a recent fodhelper.exe execution by an interactive user on the same host prior to this event. Because of the hosts-file modification intent, SYSTEM context, preceding suspicious process activity, and community flags on the initiating binary, this alert warrants High Priority investigation."
+  },
+  "classification": "HP"
+}

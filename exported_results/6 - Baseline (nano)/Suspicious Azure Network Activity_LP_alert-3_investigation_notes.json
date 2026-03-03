@@ -1,0 +1,16 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-22550",
+    "Start Time": "2026-01-22T14:12:40.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "194.126.101.99",
+    "User": "Margus Tamm",
+    "Playbook Used": "None",
+    "Description": "An Azure Virtual Network delete action was detected, initiated by Margus Tamm with Owner privileges from IP 194.126.101.99, targeting VNet vnet-tallinn-dev-01. The event shows a delete operation on the specified network resource within the subscription and resource group. Because a privileged account executed a network modification with potential disruption to connectivity, the activity should be treated as high priority pending confirmation of legitimate business justification and recent change approvals.",
+    "Operation Observed": "MICROSOFT.NETWORK/VIRTUALNETWORKS/DELETE",
+    "Resource Scope": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-baltic-dev-connectivity/providers/Microsoft.Network/virtualNetworks/vnet-tallinn-dev-01",
+    "Caller IP Geo": "Tallinn, Estonia",
+    "User Email": "margus.tamm@eestitehnika.ee"
+  },
+  "classification": "HP"
+}

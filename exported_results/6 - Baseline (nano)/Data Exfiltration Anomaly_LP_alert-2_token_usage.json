@@ -1,0 +1,6 @@
+{
+  "input_tokens": 3122,
+  "output_tokens": 3941,
+  "time_seconds": 22.171549,
+  "use_case": "Data Exfiltration Anomaly"
+}

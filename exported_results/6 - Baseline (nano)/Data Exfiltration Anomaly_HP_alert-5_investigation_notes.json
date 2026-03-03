@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-15900",
+    "Start Time": "2026-01-31T23:59:59.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "109.70.100.1",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "CLOUD-AUTOMATE-NODE",
+    "User": "Kevin.Smit@globalcorp.ee",
+    "Description": "An unusual volume of SharePoint file downloads was observed from Kevin.Smit@globalcorp.ee, totaling 2,100 files in the last 24 hours, well above the baseline of 40. The activity targeted the Production_Backups_RECOVERY site and used Python-urllib/3.12, with sample files including PROD_SQL_DUMP_JAN_2026.bak, Customer_Encryption_Keys.txt, and Global_Sales_Database_Export.sql. The source appears to be 109.70.100.1 communicating with 40.108.201.15, indicating data leaving the network and potential exfiltration of sensitive data; the combination of external destination, high volume, and sensitive sample files supports escalating this as HP for immediate investigation.",
+    "Site URL": "https://globalcorp.sharepoint.com/sites/Production_Backups_RECOVERY/",
+    "File Count": 2100,
+    "Baseline 24h": 40,
+    "Sample Files": "PROD_SQL_DUMP_JAN_2026.bak, Customer_Encryption_Keys.txt, Global_Sales_Database_Export.sql",
+    "Geo Location": "Vienna, Austria"
+  },
+  "classification": "HP"
+}

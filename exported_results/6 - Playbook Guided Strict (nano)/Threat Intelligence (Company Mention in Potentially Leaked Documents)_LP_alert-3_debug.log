@@ -1,0 +1,32 @@
+=== DEBUG SESSION START: 2026-03-03T00:23:17.652963+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Brand Mention in External Document
+Selected Playbook: potentially_leaked_document.json
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-75655",
+    "Start Time": "2026-02-19T13:42:10.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Playbook Used": "Document Exposure & Threat Intel Triage",
+    "Evidence Source": "TI-Monitor-DarkWeb",
+    "Source URL": "http://v3vitalis7x2m9n3p1q5r9t0v2w4x6y8z1a3b5c7d9e1f3g5h7i9j1k2l3.onion/data/archives/",
+    "Relative Paths": [
+      "/home/tor_service/storage/industrial/manufacturing/vitalis-pumps/manuals/Vitalis_Water_Pump_Maintenance_Manual.pdf",
+      "/home/tor_service/storage/industrial/manufacturing/vitalis-pumps/spec_sheets/Vitalis_V-Series_Piston_V12.doc",
+      "/home/tor_service/storage/industrial/manufacturing/vitalis-pumps/inventory/2026_Vitalis_Stock_List.xlsx"
+    ],
+    "Description": "Vitalis Healthcare is mentioned in an external document surfaced by a Dark Web monitoring source. The evidence includes internal-looking file paths for maintenance manuals, product specs, and stock lists, suggesting potential exposure of proprietary materials. The dark web hosting context and the filenames indicate a credible risk of confidential information being leaked tied to the Vitalis brand. The combination of exposure indicators and the sensitive content implied by the filenames supports a high priority classification that requires escalation."
+  },
+  "classification": "HP"
+}
+

@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-11340",
+    "Start Time": "2026-01-31T14:45:10.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "82.131.44.12",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "DEV-STATION-44",
+    "User": "Aleksei.Ivanov@globalcorp.ee",
+    "Workload": "SharePoint",
+    "File Count": 550,
+    "Baseline 24h": 120,
+    "Site URL": "https://globalcorp.sharepoint.com/sites/Engineering_Repo_Backup/",
+    "User Role": "Senior Software Developer",
+    "Description": "A large number of SharePoint file downloads (550) were performed by the engineering user, significantly above their 24-hour baseline (550 vs 120). The files are code-related and were downloaded from the Engineering_Repo_Backup SharePoint site, the source IP geolocates to Tallinn consistent with the user, and both source and destination IP reputations are clean. No recent similar alerts or suspicious events were found, and the user’s role and the workload context support legitimate bulk access rather than clear malicious exfiltration. Based on these factors the activity is considered Low Priority because the indicators align with expected developer behavior and there is no external malicious signal."
+  },
+  "classification": "LP"
+}

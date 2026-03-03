@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-55",
+    "Start Time": "2025-07-11T14:22:15.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "103.1.64.118",
+    "Destination IP": "13.80.23.7",
+    "User": "Elena.Vasiliev@client.ee",
+    "Playbook Used": "Suspicious Login Triage",
+    "Description": "An Office 365 login for Elena.Vasiliev@client.ee occurred from Singapore, Singapore, outside the user's typical Tallinn, Estonia region. Source IP 103.1.64.118 maps to a data center hosting provider (China Unicom Global IP Service) and is not associated with VPN or proxy usage; MFA was completed and the login succeeded. Historical activity shows logins from Estonia, with no prior Singapore activity, making the combination of unusual geography and hosting-origin IP suspicious and warranting High Priority assessment.",
+    "IP Reputation Score": "0/100",
+    "ISP Name": "China Unicom Global IP Service",
+    "Usage Type": "Data Center/Web Hosting/Transit",
+    "VPN Status": "No VPN/Proxy/Tor"
+  },
+  "classification": "HP"
+}

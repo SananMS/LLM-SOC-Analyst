@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-20114",
+    "Start Time": "2026-03-01T15:10:00.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "90.190.150.10",
+    "Destination IP": "40.108.201.15",
+    "User": "acc_svc@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Application": "Workday MSGraph",
+    "User Agent": "Mozilla/4.0 (compatible; Win32; WinHttp.WinHttpRequest.5)",
+    "File Count": 294,
+    "Baseline 24h": 25,
+    "Geo Location": "Tallinn, Estonia",
+    "Description": "A large number of SharePoint file downloads (294 vs a 24-hour baseline of 25) occurred from acc_svc@globalcorp.ee against the DACH_Finance_Central site, with sample files including payroll, bank statements, and financial reports. The activity originated from Tallinn and took place at ~17:10 local time, and the user-agent indicates automated/scripted access (WinHttpRequest) via the Workday MSGraph integration. The account name indicates a service/integration account and a directory lookup returned no matching user record, and there are no recent related events or similar alerts; because the accessed content is highly sensitive and the volume is an order-of-magnitude above baseline, this activity is considered suspicious and high risk. Given the sensitivity of the data, the unknown directory presence of the account, and the magnitude of the spike, this alert is classified as High Priority for further investigation."
+  },
+  "classification": "HP"
+}

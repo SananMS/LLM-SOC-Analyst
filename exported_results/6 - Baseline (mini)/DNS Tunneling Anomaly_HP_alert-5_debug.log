@@ -1,0 +1,30 @@
+=== DEBUG SESSION START: 2026-03-03T00:38:26.203248+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: DNS Tunneling Anomaly
+Selected Playbook: General Triage (No Playbook)
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14571",
+    "Start Time": "2026-02-06T17:45:10.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.150.22.201",
+    "Destination IP": "203.0.113.42",
+    "Endpoint": "srv-sql-core-01",
+    "Query Type": "TXT",
+    "Domain": "x1j2k3-v9.biz",
+    "Actual Bytes": 2420,
+    "Typical Bytes": 12,
+    "Sample Queries": [
+      "U0VMRUNUIGNvbmZpZywgdmFsdWUgRlJPTSBzeXNjZmcu.x1j2k3-v9.biz",
+      "REJQQVNTX2VuY3J5cHRlZD1hYmMxMjM0NTY3ODkw.x1j2k3-v9.biz",
+      "YWRtaW5fZW1haWw9c29jX21nckBjb3JwLmNvbQ.x1j2k3-v9.biz",
+      "U1NMX0NfS0VZX2JmNDQxMmM0YWFhYmJjY2Rk.x1j2k3-v9.biz"
+    ],
+    "Description": "An unusually large amount of high-entropy DNS TXT traffic (2,420 bytes vs typical 12 bytes) was observed from srv-sql-core-01 to 203.0.113.42 targeting x1j2k3-v9.biz. The queries contain base64-like payloads and references suggestive of credentials and encrypted tokens, which is consistent with DNS tunneling for data exfiltration or command-and-control. Because the activity is high-volume, encoded, and originates from a critical SQL server, it is assessed as a high-risk event requiring escalation."
+  },
+  "classification": "HP"
+}
+

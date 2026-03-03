@@ -1,0 +1,12 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-66382",
+    "Start Time": "2026-01-27T11:22:18.992Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.0.4.155",
+    "Endpoint": "WKSTN-DEV-19",
+    "User": "t_doe",
+    "Description": "PowerShell was invoked by Postman.exe to retrieve the AuthenticodeSignature of Postman.exe and encode the resulting JSON output in Base64. The initiating process is a legitimate application, and there is no visible network exfiltration or follow-on actions in the alert. This behavior is unusual for normal Postman usage and could be a data collection or reconnaissance attempt, but with the current evidence it is most consistent with a low-priority, tolerable flag requiring watch for repeat activity."
+  },
+  "classification": "LP"
+}

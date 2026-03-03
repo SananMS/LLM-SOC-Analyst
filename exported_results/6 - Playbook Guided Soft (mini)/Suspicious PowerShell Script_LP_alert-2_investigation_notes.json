@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-9921",
+    "Start Time": "2026-01-20T02:15:44.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "192.168.1.45",
+    "Endpoint": "FS-PROD-02",
+    "User": "NT SERVICE\\DataBackupAgent",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "OS": "Windows Server 2019 Standard",
+    "Script Intent": "Pre-scan inventory for backup identifying files larger than 10 GB and exporting results to a CSV/report.",
+    "Log Path": "C:\\ProgramData\\DataVault\\Logs\\inventory_scan.log",
+    "Report Path": "C:\\ProgramData\\DataVault\\Temp\\large_files.csv",
+    "Large File Threshold": "10 GB",
+    "Description": "A PowerShell script titled 'DataVault Backup - Pre-Scan Inventory Script' executed on FS-PROD-02 under the service account NT SERVICE\\DataBackupAgent and performed a recursive scan of C: for files exceeding 10 GB, exporting results to ProgramData\\DataVault locations. The script content and referenced file paths indicate legitimate backup/inventory activity and show no signs of obfuscation, external network calls, or malicious commands. Based on the clear administrative intent and fit with the service account's role, this alert is considered Low Priority."
+  },
+  "classification": "LP"
+}

@@ -1,0 +1,20 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-75691",
+    "Start Time": "2026-02-19T13:58:45.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Playbook Used": "Document Exposure & Threat Intel Triage",
+    "Threat": "DocumentExposure:VitalisHealthcare",
+    "Category": "Brand Monitoring",
+    "Detection Source": "TI-Monitor-DarkWeb",
+    "Source URL": "http://n6p9q2r8t0v4w5x1y3z7a9b1c3d5e7f9g1h3i5j7k9l1m3n5o7p9q1r3.onion/repository/legal/intellectual-property/",
+    "Relative Paths": [
+      "/var/www/html/secure_dump/legal_archived/vitalis-estates/trust_agreements/Vitalis_Family_Trust_Agreement_2026.pdf",
+      "/var/www/html/secure_dump/legal_archived/vitalis-estates/real_estate/Vitalis_Manor_Deed_Transfer.docx",
+      "/var/www/html/secure_dump/legal_archived/vitalis-estates/beneficiaries/Vitalis_Estate_Asset_Distribution_List.xlsx"
+    ],
+    "Recent Similar Alerts": "No recent similar alerts found.",
+    "Description": "Alert triggered by a brand mention of Vitalis Healthcare detected on a Tor-hosted repository; available evidence consists of directory paths and filenames referencing Vitalis estate documents such as a trust agreement, deed transfer, and beneficiary distribution list. The onion hosting combined with the document types suggests exposure of legal and potentially sensitive personal or financial information, increasing the likelihood this is a genuine data exposure. No prior similar alerts were found, and given the potential sensitivity and dark web context this alert is classified as High Priority for further verification and escalation."
+  },
+  "classification": "HP"
+}

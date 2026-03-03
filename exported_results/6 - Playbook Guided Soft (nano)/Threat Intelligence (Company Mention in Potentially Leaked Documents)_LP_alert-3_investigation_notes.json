@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-75655",
+    "Start Time": "2026-02-19T13:42:10.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Evidence Source": "TI-Monitor-DarkWeb",
+    "Source URL": "http://v3vitalis7x2m9n3p1q5r9t0v2w4x6y8z1a3b5c7d9e1f3g5h7i9j1k2l3.onion/data/archives/",
+    "Relative File Paths": [
+      "/home/tor_service/storage/industrial/manufacturing/vitalis-pumps/manuals/Vitalis_Water_Pump_Maintenance_Manual.pdf",
+      "/home/tor_service/storage/industrial/manufacturing/vitalis-pumps/spec_sheets/Vitalis_V-Series_Piston_V12.doc",
+      "/home/tor_service/storage/industrial/manufacturing/vitalis-pumps/inventory/2026_Vitalis_Stock_List.xlsx"
+    ],
+    "Playbook Used": "Document Exposure & Threat Intel Triage",
+    "Description": "Vitalis Healthcare was mentioned in a document surfaced via TI-Monitor-DarkWeb. The evidence includes a source URL on an onion domain and three relative_paths pointing to internal documents such as a maintenance manual, a product specification, and a stock list. The combination of dark web hosting, brand-specific exposure, and the presence of internal files indicates a credible risk to the confidentiality of Vitalis Healthcare information, warranting High Priority classification."
+  },
+  "classification": "HP"
+}

@@ -1,0 +1,55 @@
+=== DEBUG SESSION START: 2026-03-03T02:22:14.703308+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Data Exfiltration Anomaly
+Selected Playbook: excessive_downloads.json
+
+[TOOL CALL]
+Tool: lookup_users
+Arguments: {"emails": ["Jaanus.Tamm@globalcorp.ee"]}
+
+[TOOL RESPONSE]
+[
+  {
+    "email": "Jaanus.Tamm@globalcorp.ee",
+    "full_name": "Jaanus Tamm",
+    "department": "Facilities & Maintenance",
+    "role": "Maintenance Technician"
+  }
+]
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-13100",
+    "Start Time": "2026-01-31T23:55:12.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "145.14.37.201",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "MAINT-Kiosk-04",
+    "User": "Jaanus.Tamm@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Department": "Facilities & Maintenance",
+    "Role": "Maintenance Technician",
+    "File Count": 985,
+    "Baseline 24h": 50,
+    "Local Time (Tallinn)": "2026-02-01T01:55:12 (EET)",
+    "Description": "A large volume of SharePoint downloads (985 files vs a 24‑hour baseline of 50) was observed from Jaanus.Tamm@globalcorp.ee on 2026-01-31T23:55:12Z originating from MAINT-Kiosk-04 (145.14.37.201) and accessing the Strategy_and_Growth site. The activity occurred at 01:55 local time in Tallinn and the account's role (Maintenance Technician, Facilities & Maintenance) does not align with access to the sampled high-sensitivity documents (acquisition terms, executive strategy, board contact list). No recent related events or similar alerts were found, and the combination of high download volume, off-hours timing, role-data mismatch, and use of a kiosk endpoint increases the likelihood of account compromise or unauthorized exfiltration, so this requires escalation."
+  },
+  "classification": "HP"
+}
+

@@ -1,0 +1,40 @@
+=== DEBUG SESSION START: 2026-03-02T23:20:57.734872+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Brand Logo Detection
+Selected Playbook: logo_abuse_detection.json
+
+[TOOL CALL]
+Tool: check_ip_reputation
+Arguments: {"ip": "45.138.27.112"}
+
+[TOOL RESPONSE]
+Source IP: 45.138.27.112 | Abuse Confidence Score: 0/100 | ISP: ITGLOBAL.COM NL B.V. | Usage Type: Data Center/Web Hosting/Transit | Privacy Status: Neither VPN nor Proxy nor Tor Node nor Relay
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-55287",
+    "Start Time": "2026-02-18T16:45:30.000Z",
+    "Alert Name": "Brand Logo Detection",
+    "Source IP": "45.138.27.112",
+    "Destination IP": "45.138.27.112",
+    "Playbook Used": "Visual Brand Abuse & Logo Triage",
+    "Description": "Vitalis Healthcare logo was detected on a suspicious domain hosting a login page that asks for user credentials. The domain is only 25 days old, registered with NIC.xyz, and resolves to IP 45.138.27.112, a data center host. The logo matches the reference with high fidelity, but the domain is not Vitalis-controlled, suggesting potential brand impersonation and credential harvesting. Given the impersonation signals and the credential-login context, the alert is classified as High Priority."
+   ,
+    "Scanned URL": "https://www.vtl-a8f2-x91z.net/auth/portal/unified-login",
+    "Domain Age": "25 days",
+    "Domain Registrar": "NIC.xyz",
+    "Evidence Source": "Logo-Scanner",
+    "Logo Fidelity Match": "High"
+  },
+  "classification": "HP"
+}
+

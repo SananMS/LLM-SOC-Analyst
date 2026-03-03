@@ -1,0 +1,27 @@
+=== DEBUG SESSION START: 2026-03-03T00:29:03.627473+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Data Exfiltration Anomaly
+Selected Playbook: General Triage (No Playbook)
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-27420",
+    "Start Time": "2026-02-01T20:15:30.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "92.240.64.18",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "RIX-SALES-LAP-22",
+    "User": "Dace.Ozolina@globalcorp.ee",
+    "User ID": "d11o22z3-a44l-55i6-n77a-88b99c00d11e",
+    "Workload": "SharePoint",
+    "Site URL": "https://globalcorp.sharepoint.com/sites/Latvija_Klienti_un_Ligumi/",
+    "File Count": 1240,
+    "Baseline 24h": 45,
+    "Geo Location": "Riga, Latvia",
+    "Description": "An unusual volume of SharePoint file downloads (1,240 files) was observed from the user's endpoint RIX-SALES-LAP-22, which is far above the user's 24-hour baseline of 45 files. The sample files include client portfolios, contracts, pricing sheets, and financial forecasts, indicating access to sensitive corporate data. This alert is classified as High Priority because the large deviation from baseline combined with the sensitivity and breadth of downloaded content suggests a credible risk of data exfiltration and requires immediate investigation."
+  },
+  "classification": "HP"
+}
+

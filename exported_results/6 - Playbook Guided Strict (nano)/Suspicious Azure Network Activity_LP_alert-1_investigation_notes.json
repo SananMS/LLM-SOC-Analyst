@@ -1,0 +1,14 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14600",
+    "Start Time": "2026-10-18T14:16:17.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Destination IP": "40.113.112.55",
+    "Environment": "Production (rg-nordic-prod-001)",
+    "Resource Group": "rg-nordic-prod-001",
+    "NSG Name": "nsg-aks-prod-northeast",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Description": "Azure NSG modification detected on a production resource group targeting the nsg-aks-prod-northeast, with a request_body containing a Deny rule named SanctionBlocks and an Allow rule permitting inbound traffic to 40.113.112.55 from Internet. The change was initiated by a Service Principal with Contributor role and originates from a region listed as Norway East, with no immediate corroborating recent admin activity. Given the production scope and the potential exposure risk from allowing Internet access to an external IP, this event warrants escalation for authorization validation and further investigation."
+  },
+  "classification": "HP"
+}

@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-29481",
+    "Start Time": "2026-02-17T11:05:17.000Z",
+    "Alert Name": "Microsoft Defender: Potentially Unwanted Application Prevented",
+    "Source IP": "10.44.12.190",
+    "Destination IP": "Not provided",
+    "Endpoint": "WKSTN-DEV-772",
+    "User": "r.hunter@client.ee",
+    "Playbook Used": "EDR Malware Triage",
+    "Description": "Microsoft Defender prevented a potentially unwanted application detected as MacKeeper on the Windows host WKSTN-DEV-772. The suspicious file is located in the Gradle caches path and the observed process chain shows idea64.exe invoking java.exe, indicating a typical development tool workflow rather than a confirmed payload. Remediation status is prevented, with no evidence of execution or external communication. Based on the blocked status, lack of execution, and normal development tooling context, this alert is classified as LP.",
+    "File Path": "C:\\repo-gradle\\caches\\9.1.2\\a7b8c9d0e1f2\\a7b8c9d0e1f2.lock",
+    "SHA256": "f4e3d2c1b0a9f8e7d6c5b4a3f2e1d0c9b8a7f6e5d4c3b2a1f0e9d8c7b6a5f4e3",
+    "Process Tree": "[PID: 25280] idea64.exe -> [PID: 15368] java.exe",
+    "Remediation Status": "prevented"
+  },
+  "classification": "LP"
+}

@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14569",
+    "Start Time": "2026-02-06T15:22:10.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.150.22.110",
+    "Destination IP": "162.255.119.41",
+    "Endpoint": "srv-linux-prod-db",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Description": "Anomalously large DNS TXT traffic was observed from 10.150.22.110 to domain cdn-check-cache.top, indicating a potential DNS tunneling pattern. Sample queries appear base64-encoded and, if decoded, show content that resembles sensitive data or credentials, suggesting possible data exfiltration via DNS. The root domain cdn-check-cache.top is 27 days old and there is at least one prior legitimate DNS query from the same host, with no prior similar alerts detected. Given the encoding and payload indicators, this alert warrants high-priority investigation and escalation for containment and further analysis.",
+    "Root Domain": "cdn-check-cache.top",
+    "Root Domain Age": "27 days old",
+    "Encoded Payload Detected": "Yes",
+    "Recent Events Context": "2026-02-06T15:15:00.000Z from 10.150.22.110 queried github.com (A) - NOERROR; 2026-02-06T15:20:05.000Z from 10.150.22.110 queried cdn-check-cache.top (NS) - NOERROR",
+    "Similar Alerts History": "No recent similar alerts found."
+  },
+  "classification": "HP"
+}

@@ -1,0 +1,75 @@
+=== DEBUG SESSION START: 2026-03-02T22:52:13.029431+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: DNS Tunneling Anomaly
+Selected Playbook: suspicious_dns_queries.json
+
+[TOOL CALL]
+Tool: get_domain_age
+Arguments: {"domain": "ntp-update.space"}
+
+[TOOL RESPONSE]
+Domain: ntp-update.space | Created: 2026-02-05 | Age: 25 days old.
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+[
+  {
+    "event_time": "2026-02-06T16:30:05.000Z",
+    "source_ip": "10.150.22.15",
+    "query": "pool.ntp.org",
+    "query_type": "A",
+    "status": "NOERROR"
+  },
+  {
+    "event_time": "2026-02-06T16:35:12.000Z",
+    "source_ip": "10.150.22.15",
+    "query": "time.google.com",
+    "query_type": "A",
+    "status": "NOERROR"
+  },
+  {
+    "event_time": "2026-02-06T16:45:12.000Z",
+    "source_ip": "10.150.22.15",
+    "query": "b3M9dWJ1bnR1LTIyLjA0.ntp-update.space",
+    "query_type": "TXT",
+    "status": "NOERROR"
+  },
+  {
+    "event_time": "2026-02-06T16:45:10.000Z",
+    "source_ip": "10.150.22.15",
+    "query": "aG9zdG5hbWU9d2ViLTAy.ntp-update.space",
+    "query_type": "TXT",
+    "status": "NOERROR"
+  }
+]
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14570",
+    "Start Time": "2026-02-06T16:45:10.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.150.22.15",
+    "Destination IP": "185.112.10.4",
+    "Endpoint": "srv-prod-web-02",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Description": "Anomalous DNS traffic was observed: 740 bytes of high-entropy TXT queries to ntp-update.space from 10.150.22.15 targeting 185.112.10.4 on srv-prod-web-02. The TXT sample_queries appear to embed encoded host, OS and uptime data, suggesting possible data being carried through DNS tunneling. ntp-update.space is 25 days old and lacks long-standing reputation; when combined with the encoded payloads and elevated DNS activity, this pattern is suspicious and merits escalation for containment and investigation.",
+    "Root Domain": "ntp-update.space",
+    "Domain Age (days)": 25,
+    "Recent Similar Alerts": "No recent similar alerts found.",
+    "Encoded Payload Detected": "Yes, sample_queries contain TXT records with base64-encoded strings representing hostname, os, uptime, and cmd."
+  },
+  "classification": "HP"
+}
+

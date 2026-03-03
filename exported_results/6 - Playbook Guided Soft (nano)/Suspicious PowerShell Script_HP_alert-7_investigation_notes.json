@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10003",
+    "Start Time": "2026-01-27T22:15:00.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.10.50.44",
+    "Destination IP": "183.56.231.216",
+    "Endpoint": "GF3456",
+    "User": "NT AUTHORITY\\SYSTEM",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Description": "PowerShell.exe was executed with bypass and an encoded command, likely to obfuscate the payload. A local script was saved to C:\\Windows\\Temp\\system_maintenance.ps1 and a registry modification created a scheduled task (MTRPWatchdog), indicating persistence intent. An external network connection to 183.56.231.216:80 alongside a low-confidence hash reputation suggests potentially malicious activity requiring escalation.",
+    "Hash Reputation": "Process hash 9785001b0dcf755eddb8af294a373c0b87b2498660f724e76c4d53f9c217c7a3 shows Community Score -24 with more malicious votes (29) than harmless (20); engines report no definitive malicious detections. Overall signal is suspicious but not conclusively malicious.",
+    "Recent Network Indicators": "External connection observed to 183.56.231.216:80 from 10.10.50.44; initiating process was msedge.exe, indicating possible legitimate browsing traffic coinciding with PowerShell activity.",
+    "Persistence Indicators": "Creation of registry task under HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tasks\\MTRPWatchdog and creation of C:\\Windows\\Temp\\system_maintenance.ps1.",
+    "Execution Context": "PowerShell launched with -ExecutionPolicy Bypass and -EncodedCommand; parent process is svchost.exe; executed under SYSTEM context, which is unusual for regular administrative tasks and may indicate abuse or automated scripting."
+  },
+  "classification": "HP"
+}

@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-99200",
+    "Start Time": "2026-02-10T09:15:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "194.126.101.99",
+    "User": "marcus.webb@globalcorp.ee",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Resource ID": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-baltic-prod-connectivity/providers/Microsoft.Network/networkSecurityGroups/nsg-prod-core",
+    "Role (evidence)": "Contributor",
+    "Local Time (Europe/Tallinn)": "2026-02-10T11:15:00+02:00",
+    "Rule Change Summary": "Added inbound Allow rule 'Test' permitting TCP port 3389 from any source to any destination (sourceAddressPrefix '*' destinationAddressPrefix '*'), priority 110, description 'Temporary access for review', which increases external exposure by allowing RDP from the internet.",
+    "IP Reputation Score": "0 (Abuse Confidence Score 0/100; ISP: backbone and servers; Usage Type: Fixed Line ISP; No VPN/Proxy/Tor detected)",
+    "Description": "An inbound Network Security Group rule was added to nsg-prod-core in the production connectivity resource group that allows TCP/3389 from any source, increasing external exposure and enabling RDP from the internet. The activity originated from a Tallinn IP during local business hours and the IP has a clean reputation, but the requesting user (Senior Legal Operations Manager) does not have a job function that typically requires infrastructure changes and there are no correlated deployment events or similar alerts. Given the broad access introduced in a production environment, the identity-role mismatch, and lack of corroborating activity, this alert is classified as High Priority for further investigation."
+  },
+  "classification": "HP"
+}

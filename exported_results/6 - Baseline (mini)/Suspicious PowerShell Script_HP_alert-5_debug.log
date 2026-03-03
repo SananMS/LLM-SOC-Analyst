@@ -1,0 +1,23 @@
+=== DEBUG SESSION START: 2026-03-03T01:00:23.620590+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Suspicious PowerShell Script Execution
+Selected Playbook: General Triage (No Playbook)
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-9826",
+    "Start Time": "2026-01-27T01:36:54.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.5.14.92",
+    "Endpoint": "HR-SRV-02",
+    "User": "k.tamm",
+    "User ID": "S-1-5-21-88990011-22334455-66778899-1034",
+    "Operating System": "Windows Server 2019 Standard",
+    "Evidence Script": "Copy-Item 'C:\\Users\\*\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Login Data' -Destination C:\\ProgramData\\chrome_cache.db -Force; Copy-Item 'C:\\Users\\*\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\*.default-release\\logins.json' -Destination C:\\ProgramData\\ff_cache.json -Force",
+    "Description": "A PowerShell command was executed on HR-SRV-02 that copies Chrome and Firefox stored login data from all user profiles into centralized files under C:\\ProgramData. The command targets sensitive browser credential stores across multiple users and persists them in a common location, which is consistent with credential harvesting rather than normal administrative activity. This behavior is high risk given the sensitivity of the data and the server's role, and it warrants immediate further investigation and escalation."
+  },
+  "classification": "HP"
+}
+

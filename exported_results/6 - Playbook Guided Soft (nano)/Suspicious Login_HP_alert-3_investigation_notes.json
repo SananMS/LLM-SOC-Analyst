@@ -1,0 +1,13 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-75",
+    "Start Time": "2025-07-20T15:22:15.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "176.120.22.47",
+    "Destination IP": "13.80.23.7",
+    "User": "laura.tamm@client.ee",
+    "Playbook Used": "Suspicious Login Triage",
+    "Description": "An Office 365 login for user laura.tamm@client.ee occurred from Saint Petersburg, Russia, outside the user's typical region. The login succeeded with MFA enabled, but the source IP 176.120.22.47 is a data center hosting provider with no VPN, and prior logins were from Tallinn, Estonia. The combination of a non-residential IP and a sudden country change increases the risk of account compromise or suspicious activity, warranting rapid analyst review."
+  },
+  "classification": "HP"
+}

@@ -1,0 +1,16 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-54921",
+    "Start Time": "2026-02-18T16:15:45.000Z",
+    "Alert Name": "Brand Logo Detection",
+    "Target Brand": "Vitalis Healthcare",
+    "Scanned URL": "https://www.vitalis-care-verification.net/update-info",
+    "Destination IP": "185.212.131.54",
+    "Endpoint": "vitalis-care-verification.net",
+    "Playbook Used": "Visual Brand Abuse & Logo Triage",
+    "Domain Age": "1 day",
+    "IP Reputation Score": "0/100",
+    "Description": "The Vitalis Healthcare logo was detected on a newly registered domain (1 day old) that hosts a page explicitly requesting sensitive personal data including Social Security Number and Member ID. The screenshot shows a close visual match to the legitimate brand placed on a form designed to collect credentials or sensitive information, which indicates intent to impersonate. The hosting IP is a data-center/web-hosting address with privacy enabled and no established domain history, increasing risk despite a low automated abuse score. These combined factors point to likely phishing and justify prioritizing further investigation as a potential active impersonation."
+  },
+  "classification": "HP"
+}

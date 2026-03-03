@@ -1,0 +1,24 @@
+=== DEBUG SESSION START: 2026-03-02T23:48:33.636104+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Azure Network Security Modification
+Selected Playbook: suspicious_cloud_network_activity.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-99200",
+    "Start Time": "2026-02-10T09:15:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "194.126.101.99",
+    "User": "Marcus Webb",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Resource Group": "rg-baltic-prod-connectivity",
+    "Environment": "Production (rg-baltic-prod-connectivity NSG)",
+    "Rule Change Summary": "New security rule named Test allowing inbound TCP 3389 from any to any with priority 110.",
+    "Geolocation": "Tallinn, Estonia",
+    "Description": "An NSG in the production environment (rg-baltic-prod-connectivity) was modified by Marcus Webb (Contributor) from IP 194.126.101.99 on 2026-02-10 09:15 UTC. The request_body reveals a new security rule named Test that allows inbound TCP 3389 from any to any with priority 110 and description 'Temporary access for review', creating wide exposure for RDP to the environment. The combination of internet-facing RDP, the production scope, and the user's role warrants high-priority investigation to confirm legitimate business justification and detect potential abuse."
+  },
+  "classification": "HP"
+}
+

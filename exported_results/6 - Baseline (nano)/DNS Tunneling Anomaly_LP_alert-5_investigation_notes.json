@@ -1,0 +1,26 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10243",
+    "Start Time": "2026-01-16T16:51:45.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.150.22.41",
+    "Destination IP": "158.20.144.11",
+    "Endpoint": "dc-prod-02",
+    "Description": "An anomalously large amount of high-entropy DNS traffic was observed, using A queries to the domain dotnxdomain.net. The sample queries show repetitive subdomain patterns that are characteristic of DNS tunneling activity. The traffic originates from an internal host 10.150.22.41 to an external resolver and is significantly higher than typical DNS payloads, indicating potential data exfiltration or C2 activity. This pattern is suspicious and warrants escalation for further investigation.",
+    "Domain Observed": "dotnxdomain.net",
+    "Actual DNS Query Bytes": 574,
+    "Baseline DNS Query Bytes": 28,
+    "Query Type Observed": "A",
+    "Sample DNS Queries Count": 7,
+    "Sample DNS Queries": [
+      "0di-af31927c-e42-c1284-s192837465-i5fg6789-0.eu.dotnxdomain.net",
+      "0ds-af31927c-e42-c1284-s192837465-i5fg6789-0.eu.dotnxdomain.net",
+      "04u-af31927c-e42-c1284-s192837465-i5fg6789-0.eu.dotnxdomain.net",
+      "0du-results-af31927c-e42-c1284-s192837465-i5fg6789-0.eu.dotnxdomain.net",
+      "root-key-sentinel-is-ta-51204.0ds-af31927c-e42-c1284-s192837465-i5fg6789-20.eu.dotnxdomain.net",
+      "root-key-sentinel-is-ta-18492.0ds-af31927c-e42-c1284-s192837465-i5fg6789-30.eu.dotnxdomain.net",
+      "root-key-sentinel-not-ta-18492.0ds-af31927c-e42-c1284-s192837465-i5fg6789-10.eu.dotnxdomain.net"
+    ]
+  },
+  "classification": "HP"
+}

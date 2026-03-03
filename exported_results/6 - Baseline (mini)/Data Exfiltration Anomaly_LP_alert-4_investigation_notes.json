@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-12880",
+    "Start Time": "2026-01-31T23:20:05.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "210.138.184.59",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "ARC-DESK-012",
+    "User": "Tanel.Magi@globalcorp.ee",
+    "Description": "An unusually high volume of SharePoint downloads (250 files vs a 24-hour baseline of 30) from the user account triggered the alert. The downloaded files and paths are architecture/project artifacts that align with the user’s role as Principal Structural Architect, the source IP has a clean reputation and resolves to a fixed-line ISP in Tokyo, and the destination is Microsoft SharePoint Online. Given the alignment of file types with job function, reputable IP/destination signals, and lack of known malicious indicators, this event is considered Low Priority but should be monitored for further anomalous activity.",
+    "File Count": 250,
+    "Baseline 24h": 30,
+    "Workload": "SharePoint",
+    "User Role": "Principal Structural Architect (Architecture & Infrastructure)",
+    "Source IP Reputation": "Abuse Confidence Score: 0/100; ISP: IIJ Internet; Usage Type: Fixed Line ISP; Privacy Status: Not a VPN/Proxy/Tor"
+  },
+  "classification": "LP"
+}

@@ -1,0 +1,28 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-19458",
+    "Start Time": "2026-03-01T13:10:00.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "62.248.150.12",
+    "Destination IP": "40.108.201.15",
+    "User": "acc@globalcorp.ee",
+    "Description": "An unusually high volume of SharePoint file downloads was observed for the user acc@globalcorp.ee, totaling 305 files in the last 24 hours, compared to a baseline of 28. The activity originated from the user's source IP and targeted an external destination, involving several sensitive documents such as payroll and financial reports. This pattern raises concern for potential data exfiltration or leakage to an external endpoint and warrants escalation.",
+    "Site URL": "https://globalcorp.sharepoint.com/sites/Finland_HR_Mepco_Sync/",
+    "File Count": 305,
+    "Baseline 24h": 28,
+    "Geo Location": "Tampere, Finland",
+    "Sample Files": [
+      "Mepco_Palkat_Vienti_Helmikuu.csv",
+      "Vuosiraportti_2025_Lopullinen.pdf",
+      "Toimittaja_Lasku_8821.pdf",
+      "Palkkalista_Maaliskuu.xlsx",
+      "Veroilmoitus_ALV_2026.pdf",
+      "Pankkiote_Helmikuu.csv",
+      "Myyntireskontra_Analyysi.xlsx",
+      "Ostoreskontra_Lista_OY.csv",
+      "Kayttoomaisuus_Inventointi.xlsx",
+      "Rahavirta_Raportti_Talous.pdf"
+    ]
+  },
+  "classification": "HP"
+}

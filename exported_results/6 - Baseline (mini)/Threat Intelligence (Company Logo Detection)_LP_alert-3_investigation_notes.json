@@ -1,0 +1,15 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-54488",
+    "Start Time": "2026-02-18T14:05:22.000Z",
+    "Alert Name": "Brand Logo Detection",
+    "Source IP": "104.26.10.227",
+    "Description": "Vitalis Healthcare's logo was detected on themedicalbulletin.org in a press-style article. The domain is 12 years old, registered through NameCheap, and resolves to a Cloudflare IP with an abuse score of 0/100, with no immediate malicious indicators observed. The page screenshot shows a standard article layout and the logo used appears consistent with legitimate co-branded or press coverage rather than an obvious impersonation or phishing asset. Given the established domain age, CDN hosting, and lack of malicious signals, this alert is considered Low Priority.",
+    "Target Brand": "Vitalis Healthcare",
+    "Scanned URL": "https://www.themedicalbulletin.org/features/top-innovators-2026",
+    "Domain Age": "12 years",
+    "Registrar": "NameCheap, Inc.",
+    "IP Reputation Score": "0/100 (Cloudflare, Inc. — Content Delivery Network)"
+  },
+  "classification": "LP"
+}

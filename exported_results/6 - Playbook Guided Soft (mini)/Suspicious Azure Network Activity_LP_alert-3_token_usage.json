@@ -1,0 +1,6 @@
+{
+  "input_tokens": 2951,
+  "output_tokens": 1814,
+  "time_seconds": 23.048788,
+  "use_case": "Suspicious Azure Network Activity"
+}

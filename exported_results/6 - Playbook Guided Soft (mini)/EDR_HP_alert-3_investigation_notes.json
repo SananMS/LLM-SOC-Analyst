@@ -1,0 +1,25 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-29900",
+    "Start Time": "2026-01-09T21:57:45.000Z",
+    "Alert Name": "Trend Micro: Possible Data Encrypted for Impact",
+    "Threat Display Name": "Ransom.Win32.LOCKY.SMYABHD.note",
+    "Threat Family Name": "Locky Ransomware",
+    "Endpoint": "HOST-01",
+    "Source IP": "10.20.5.245",
+    "File Path": "C:\\Data\\Financials\\2025\\_RECOVER_INSTRUCTIONS.txt",
+    "SHA256": "c17fe4a49e12034f44ad74793d520d17a1c6585bec5f3f03b5558da37a0b4617",
+    "First Seen": "2026-01-09T16:02:01Z",
+    "Last Seen": "2026-01-09T21:55:16Z",
+    "Remediation Status": "quarantined",
+    "Indicators": [
+      "Ransomware File Detected",
+      "Ransom Note Detection (Real-time Scan)",
+      "Heuristic: Possible Data Encrypted for Impact"
+    ],
+    "Alert Web URL": "https://portal.eu.xdr.trendmicro.com/index.html#/workbench/alerts/WB-20260109",
+    "Playbook Used": "EDR Malware Triage",
+    "Description": "Trend Micro detected a ransom note file and heuristic indicators consistent with Locky ransomware on HOST-01, with the file path located in a critical data directory. The detection spans several hours and the file was quarantined, but the presence of a ransom note and heuristic \"possible data encrypted\" finding indicate likely data impact prior to containment. Given the ransomware family, matching indicators, and timeframe of activity, this event presents a high risk of completed or ongoing encryption and warrants escalation for further host-level and network investigation."
+  },
+  "classification": "HP"
+}

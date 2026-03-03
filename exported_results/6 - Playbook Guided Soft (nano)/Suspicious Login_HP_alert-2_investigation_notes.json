@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-65",
+    "Start Time": "2025-07-17T14:22:15.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "45.78.217.136",
+    "Destination IP": "13.80.23.7",
+    "Endpoint": "D235423",
+    "User": "martin.kask@client.ee",
+    "Playbook Used": "Suspicious Login Triage",
+    "Description": "An Office 365 login occurred from Singapore with a successful result and MFA not used. The source IP is a known data center/web hosting address, and the current geolocation (Singapore) is outside the user's typical Tallinn, Estonia pattern evidenced by past logins, which also lacked MFA. Given the hosting IP and lack of MFA, the combination represents elevated risk for credential misuse or unusual access patterns requiring further investigation.",
+    "IP Reputation Score": "100/100",
+    "ISP": "BYTEPLUS",
+    "Usage Type": "Data Center/Web Hosting/Transit",
+    "VPN or Proxy": "Not VPN or Proxy",
+    "Historical Locations": "Tallinn, Estonia (previous); Singapore (current)"
+  },
+  "classification": "HP"
+}

@@ -1,0 +1,72 @@
+=== DEBUG SESSION START: 2026-03-02T23:07:41.801870+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: User Login Location Anomaly
+Selected Playbook: suspicious_login.json
+
+[TOOL CALL]
+Tool: check_ip_reputation
+Arguments: {"ip": "195.88.86.50"}
+
+[TOOL RESPONSE]
+Source IP: 195.88.86.50 | Abuse Confidence Score: 0/100 | ISP: Packethub S.A. | Usage Type: Data Center/Web Hosting/Transit | Privacy Status: VPN
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+[
+  {
+    "event_time": "2025-07-24T07:35:00.000Z",
+    "event_name": "UserLogin",
+    "user": "marko.talvik@client.ee",
+    "source_ip": "194.126.101.49",
+    "destination_ip": "13.80.23.7",
+    "endpoint": "F31647565",
+    "location": "Tallinn, Estonia",
+    "login_result": "success",
+    "has_mfa": true,
+    "user_agent": "Windows-AzureAD-Authentication-Provider/1.0"
+  },
+  {
+    "event_time": "2025-07-26T08:20:22.000Z",
+    "event_name": "UserLogin",
+    "user": "marko.talvik@client.ee",
+    "source_ip": "194.126.101.51",
+    "destination_ip": "13.80.23.7",
+    "endpoint": "F31647565",
+    "location": "Tallinn, Estonia",
+    "login_result": "success",
+    "has_mfa": true,
+    "user_agent": "Windows-AzureAD-Authentication-Provider/1.0"
+  }
+]
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-102",
+    "Start Time": "2025-07-26T08:50:00.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "195.88.86.50",
+    "Destination IP": "13.80.23.7",
+    "Endpoint": "F31647565",
+    "User": "marko.talvik@client.ee",
+    "Playbook Used": "Suspicious Login Triage",
+    "Description": "An Office 365 login occurred from Istanbul, Turkey, which is outside the user's typical region. The source IP resolves to a VPN-enabled data center with a low abuse score, and the device is company managed. Historical logins were from Tallinn, Estonia, indicating a geographic shift; MFA was used during the login, and there are no recent similar alerts. The combination of MFA usage, compliant device, and limited evidence of unauthorized access leads to a Low Priority assessment at this time.",
+    "IP Reputation": "Data Center/Web Hosting/Transit; VPN; Abuse Score 0/100; ISP Packethub S.A.",
+    "VPN Usage": "Yes",
+    "Historical Geolocations": "Tallinn, Estonia (previous); Istanbul, Turkey (current)",
+    "Device Management": "Company managed and compliant"
+  },
+  "classification": "LP"
+}
+

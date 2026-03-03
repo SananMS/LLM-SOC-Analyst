@@ -1,0 +1,71 @@
+=== DEBUG SESSION START: 2026-03-02T23:06:13.259502+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: User Login Location Anomaly
+Selected Playbook: suspicious_login.json
+
+[TOOL CALL]
+Tool: check_ip_reputation
+Arguments: {"ip": "182.95.178.158"}
+
+[TOOL RESPONSE]
+Source IP: 182.95.178.158 | Abuse Confidence Score: 100/100 | ISP: Bharti Airtel Limited | Usage Type: Fixed Line ISP | Privacy Status: Neither VPN nor Proxy nor Tor Node nor Relay
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+[
+  {
+    "event_time": "2025-07-22T10:14:00.000Z",
+    "event_name": "UserLogin",
+    "user": "karl.saare@client.ee",
+    "source_ip": "145.14.37.163",
+    "destination_ip": "13.80.23.7",
+    "location": "Tallinn, Estonia",
+    "login_result": "success",
+    "has_mfa": false,
+    "user_agent": "Windows-AzureAD-Authentication-Provider/1.0"
+  },
+  {
+    "event_time": "2025-07-23T08:10:00.000Z",
+    "event_name": "UserLogin",
+    "user": "karl.saare@client.ee",
+    "source_ip": "145.14.37.163",
+    "destination_ip": "13.80.23.7",
+    "location": "Tallinn, Estonia",
+    "login_result": "success",
+    "has_mfa": false,
+    "user_agent": "Windows-AzureAD-Authentication-Provider/1.0"
+  }
+]
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-88",
+    "Start Time": "2025-07-23T23:55:15.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "182.95.178.158",
+    "Destination IP": "13.80.23.7",
+    "User": "karl.saare@client.ee",
+    "Playbook Used": "Suspicious Login Triage",
+    "Description": "An anomalous Office 365 login occurred from Mumbai, India for user karl.saare@client.ee. The login succeeded without MFA and the source IP has a high abuse confidence score with no VPN or proxy detected; prior logins for this user were from Tallinn, Estonia. The geographic mismatch combined with the lack of MFA and the IP reputation makes this activity suspicious and warrants high-priority investigation.",
+    "IP Reputation Score": "Abuse Confidence Score 100/100; ISP Bharti Airtel Limited; Usage Type Fixed Line ISP; Not VPN/Proxy",
+    "Previous Locations": "Tallinn, Estonia",
+    "MFA Status": "False",
+    "Login Result": "Success",
+    "Current Geo": "Mumbai, India",
+    "VPN/Proxy Status": "Not detected"
+  },
+  "classification": "HP"
+}
+

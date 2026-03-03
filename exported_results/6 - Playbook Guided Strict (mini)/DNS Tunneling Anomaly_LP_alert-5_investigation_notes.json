@@ -1,0 +1,25 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10243",
+    "Start Time": "2026-01-16T16:51:45.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.150.22.41",
+    "Destination IP": "158.20.144.11",
+    "Endpoint": "dc-prod-02",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Primary Domain": "dotnxdomain.net",
+    "Root Domain Age": "Created: 2012-09-04 (≈4928 days old)",
+    "Sample Queries": [
+      "0di-af31927c-e42-c1284-s192837465-i5fg6789-0.eu.dotnxdomain.net",
+      "0ds-af31927c-e42-c1284-s192837465-i5fg6789-0.eu.dotnxdomain.net",
+      "04u-af31927c-e42-c1284-s192837465-i5fg6789-0.eu.dotnxdomain.net",
+      "0du-results-af31927c-e42-c1284-s192837465-i5fg6789-0.eu.dotnxdomain.net",
+      "root-key-sentinel-is-ta-51204.0ds-af31927c-e42-c1284-s192837465-i5fg6789-20.eu.dotnxdomain.net",
+      "root-key-sentinel-is-ta-18492.0ds-af31927c-e42-c1284-s192837465-i5fg6789-30.eu.dotnxdomain.net",
+      "root-key-sentinel-not-ta-18492.0ds-af31927c-e42-c1284-s192837465-i5fg6789-10.eu.dotnxdomain.net"
+    ],
+    "Encoded Payload Detected": "Yes — subdomains contain high-entropy segmented tokens and structured labels (e.g., af31927c, s192837465, i5fg6789, root-key-sentinel) consistent with embedded/obfuscated payloads.",
+    "Recent Host Events": "The host made prior DNS queries to eu.dotnxdomain.net and other high-entropy dotnxdomain subdomains within minutes before the alert; no recent similar alerts were found for wider environment."
+  },
+  "classification": "HP"
+}

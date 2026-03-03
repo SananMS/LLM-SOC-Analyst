@@ -1,0 +1,22 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-13100",
+    "Start Time": "2026-01-31T23:55:12.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "145.14.37.201",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "MAINT-Kiosk-04",
+    "User": "Jaanus.Tamm@globalcorp.ee",
+    "Description": "Anomalous activity detected where the user downloaded 985 SharePoint files, significantly above their 24-hour baseline of 50, including documents located in executive and legal confidential paths. The large volume of downloads and the presence of highly sensitive documents (M&A terms, executive strategy and board contact lists), combined with access from a kiosk-class endpoint, indicate elevated risk of data exfiltration or account compromise. This activity is classified as high priority due to the sensitivity and scale of the downloads and deviation from typical user behavior.",
+    "File Count": 985,
+    "Baseline 24h": 50,
+    "Workload": "SharePoint",
+    "Sample Paths": [
+      "Shared Documents/Corporate_Development/M_A/Project_Phoenix/",
+      "Shared Documents/Executive_Office/Strategy/Confidential_2026/",
+      "Shared Documents/Legal/Governance/Contact_Directories/"
+    ],
+    "Geo Location": "Tallinn, Estonia"
+  },
+  "classification": "HP"
+}

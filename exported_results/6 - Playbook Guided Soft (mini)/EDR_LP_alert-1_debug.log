@@ -1,0 +1,29 @@
+=== DEBUG SESSION START: 2026-03-03T01:40:13.337237+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Microsoft Defender: Potentially Unwanted Application Prevented
+Selected Playbook: EDR_malware_alerts.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-29481",
+    "Start Time": "2026-02-17T11:05:17.000Z",
+    "Alert Name": "Microsoft Defender: Potentially Unwanted Application Prevented",
+    "Source IP": "10.44.12.190",
+    "Endpoint": "WKSTN-DEV-772",
+    "User": "r.hunter@client.ee",
+    "Playbook Used": "EDR Malware Triage",
+    "Threat": "PUA:MacOS/MacKeeper (MacKeeper)",
+    "File Path": "C:\\repo-gradle\\caches\\9.1.2\\a7b8c9d0e1f2\\a7b8c9d0e1f2.lock",
+    "File SHA256": "f4e3d2c1b0a9f8e7d6c5b4a3f2e1d0c9b8a7f6e5d4c3b2a1f0e9d8c7b6a5f4e3",
+    "File MD5": "d41d8cd98f00b204e9800998ecf8427e",
+    "Process Tree": "[PID: 25280] idea64.exe -> [PID: 15368] java.exe",
+    "Detection Source": "antivirus",
+    "Remediation Status": "prevented",
+    "Command Line": "java.exe --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED --add-opens=java.base/java.nio.charset=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens=java.xml/javax.xml.namespace=ALL-UNNAMED --add-opens=java.base/java.time=ALL-UNNAMED -XX:MaxMetaspaceSize=512m -Xmx2048M -Dfile.encoding=UTF-8 -cp C:\\repo-gradle\\wrapper\\dists\\gradle-9.1.2-bin\\k8j2m9n3p5q7\\gradle-9.1.2\\lib\\gradle-daemon-main-9.1.2.jar -javaagent:C:\\repo-gradle\\wrapper\\dists\\gradle-9.1.2-bin\\k8j2m9n3p5q7\\gradle-9.1.2\\lib\\agents\\gradle-instrumentation-agent-9.1.2.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 9.1.2",
+    "Description": "An antivirus detection flagged a MacKeeper PUA in a Gradle cache .lock file on a Windows 11 host and the item was prevented. The process lineage (idea64.exe -> java.exe) and the file path indicate developer tooling (IntelliJ/Gradle daemon) activity, and the file MD5 corresponds to an empty/lock file which is commonly benign. There are no external IPs or network indicators in the alert and no evidence the file executed outside the developer process, so this appears to be a false positive and is assessed as low priority."
+  },
+  "classification": "LP"
+}
+

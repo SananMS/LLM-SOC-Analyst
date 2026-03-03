@@ -1,0 +1,29 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14568",
+    "Start Time": "2026-02-06T11:20:00.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.200.15.44",
+    "Destination IP": "104.21.41.202",
+    "Endpoint": "dev-linux-node-03",
+    "Description": "An unusually large DNS TXT payload (412 bytes vs typical 22 bytes) containing high-entropy, hex-encoded subdomain labels was observed, with decoded tokens including readable strings such as \"password\" and \"admin-db\", consistent with possible credential or data exfiltration over DNS. The queries target github-status.com but use crafted subdomains that embed apparent secrets, and the volume and encoding are inconsistent with normal health-check DNS traffic. This activity is classified as High Priority because it demonstrates likely covert data leakage from an internal host to an external resolver and warrants immediate deeper investigation.",
+    "Query Type": "TXT",
+    "Actual Bytes": 412,
+    "Typical Bytes": 22,
+    "Sample Queries": [
+      "70-61-73-73-77-6f-72-64.github-status.com",
+      "3d-53-74-72-6f-6e-67-21.github-status.com",
+      "61-64-6d-69-6e-2d-64-62.github-status.com",
+      "node-03.github-status.com",
+      "health-check-01.github-status.com"
+    ],
+    "Sample Decoded Strings": [
+      "password",
+      "=Strong!",
+      "admin-db",
+      "node-03",
+      "health-check-01"
+    ]
+  },
+  "classification": "HP"
+}

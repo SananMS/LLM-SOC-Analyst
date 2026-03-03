@@ -1,0 +1,16 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10238",
+    "Start Time": "2026-02-06T16:15:22.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "192.168.1.22",
+    "Destination IP": "172.16.40.3",
+    "Endpoint": "wkst-dev-14",
+    "Playbook Used": "None",
+    "Description": "An anomalously large amount (580 Bytes) of tunneled, high-entropy traffic through DNS was observed, associated with domain mdnplay.dev. DNS queries show long, random subdomains and actual bytes far exceed the typical baseline (580 vs 38), which is indicative of a potential DNS tunnel. The traffic originates from wkst-dev-14 (192.168.1.22) and involves an internal DNS resolver (172.16.40.3), suggesting possible data exfiltration or command and control via DNS. Given the suspicious pattern and deviation from baseline, this alert is prioritized for further investigation.",
+    "DNS Query Type": "A",
+    "DNS Domain": "mdnplay.dev",
+    "Actual DNS Payload Bytes": 580
+  },
+  "classification": "HP"
+}

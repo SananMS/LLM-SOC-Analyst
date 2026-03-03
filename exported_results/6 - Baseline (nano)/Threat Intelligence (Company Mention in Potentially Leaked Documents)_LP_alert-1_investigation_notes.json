@@ -1,0 +1,13 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-75468",
+    "Start Time": "2026-02-19T14:45:30.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Document Title": "Vitalis_Healthcare_Environmental_Policy_2026.pdf",
+    "Document Source": "TI-Monitor-Scribd",
+    "Document URL": "https://www.scribd.com/document/991283/vitalis-environmental-policy",
+    "Matched Content": "...This document outlines the Vitalis Healthcare 2026 Environmental and Sustainability Policy for all regional office locations. It serves as a public-facing commitment to reducing our carbon footprint and implementing green energy solutions across our clinical network. Stakeholders can review our progress in the annual CSR report published on the official Vitalis website...",
+    "Description": "An external document mentioning Vitalis Healthcare was detected by TI-Monitor-Scribd and is publicly accessible via Scribd. The document appears to outline the Vitalis Healthcare Environmental Policy for 2026 and references public CSR reporting. Based on the public nature of the document and available content, this exposure is likely legitimate brand information rather than a leak of confidential material, suggesting a Low Priority (LP) risk."
+  },
+  "classification": "LP"
+}

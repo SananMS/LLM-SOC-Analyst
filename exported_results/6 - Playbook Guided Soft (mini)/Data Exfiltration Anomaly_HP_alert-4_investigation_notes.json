@@ -1,0 +1,33 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14220",
+    "Start Time": "2026-01-31T23:58:45.000Z",
+    "Local Time (Vietnam)": "2026-02-01T06:58:45+07:00",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "113.161.12.88",
+    "Destination IP": "40.108.201.15",
+    "User": "Tanel.Lepp@globalcorp.ee",
+    "User ID": "d44e55f6-g77h-88i9-j00k-11l22m33n44o",
+    "User Role": "Software Engineer",
+    "Department": "Engineering",
+    "Playbook Used": "Excessive Download Triage",
+    "Application": "Office 365 SharePoint Online",
+    "Workload": "SharePoint",
+    "Site URL": "https://globalcorp.sharepoint.com/sites/Human_Resources_Confidential/",
+    "File Count": 1450,
+    "Baseline 24h": 15,
+    "Geo Location": "Đồng Hới, Vietnam",
+    "Sample Files": [
+      "2026_Executive_Compensation_Full.xlsx",
+      "Employee_Tax_ID_Database.csv",
+      "Termination_Agreement_Templates.zip"
+    ],
+    "Sample Paths": [
+      "Restricted/Payroll/Executive_Board/",
+      "Restricted/Compliance/Tax_Reporting/",
+      "Restricted/Legal/Employee_Records/"
+    ],
+    "Related Alert": "SOC-14215 - User Login Location Anomaly (2026-01-31T23:40:12.000Z) from same IP and user"
+  },
+  "classification": "HP"
+}

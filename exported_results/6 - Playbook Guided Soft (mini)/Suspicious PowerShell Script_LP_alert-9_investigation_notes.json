@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-99999",
+    "Start Time": "2026-01-26T00:02:54.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "192.168.2.10",
+    "Endpoint": "MEETINGROOM-01",
+    "User": "NT AUTHORITY\\SYSTEM",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Description": "A Base64-encoded PowerShell command executed under the SYSTEM account and loaded a module from C:\\Program Files\\WindowsPowerShell\\Modules\\MTRP.PowerShell.Utils. The decoded script performs log parsing and maintenance-style actions (reading agent log lines, resetting/updating settings, and writing/updating MTRP maintenance logs) and contains no hardcoded external IPs or network indicators. The initiating binary's SHA256 shows 0 engine detections but mixed community votes on VirusTotal; taken together with the module path and system-level context, the activity is assessed as Low Priority because it aligns with expected maintenance/agent logging behavior and lacks strong malicious indicators. The VirusTotal community signals should be monitored if similar, out-of-hours, or unexpected executions recur.",
+    "Process SHA256": "9785001b0dcf755eddb8af294a373c0b87b2498660f724e76c4d53f9c217c7a3",
+    "Parent Process": "svchost.exe",
+    "File Path": "C:\\Program Files\\WindowsPowerShell\\Modules\\MTRP.PowerShell.Utils\\2025.12.10.1\\Public\\Logging.ps1",
+    "Decoded Script Summary": "Imports MTRP.PowerShell.Utils and performs maintenance/logging operations: retrieves last agent log lines, parses timestamps, may reset or update MTRP logging/settings, writes maintenance logs; no external network calls detected.",
+    "Hash Reputation Summary": "VirusTotal: 0 AV detections, Community Score -24 with 29 Malicious vs 20 Harmless votes (ambiguous community signal)"
+  },
+  "classification": "LP"
+}

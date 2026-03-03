@@ -1,0 +1,24 @@
+=== DEBUG SESSION START: 2026-03-02T22:27:29.213599+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Azure Network Security Modification
+Selected Playbook: General Triage (No Playbook)
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-23105",
+    "Start Time": "2026-02-11T09:15:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "145.14.39.114",
+    "User": "markus.tamm@globalcorp.ee",
+    "Resource": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-baltic-prod-connectivity/providers/Microsoft.Network/networkSecurityGroups/nsg-tallinn-prod-01",
+    "Subscription": "228e1d3b-9311-4477-8c1d-112233445566",
+    "Operation Name": "MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/SECURITYRULES/DELETE",
+    "Correlation ID": "f9e8d7c6-b5a4-4321-8877-665544332211",
+    "Caller IP Geolocation": "Tallinn, Harjumaa, Estonia",
+    "Description": "An NSG security rule was deleted in NSG nsg-tallinn-prod-01 by user markus.tamm@globalcorp.ee (Contributor) from IP 145.14.39.114. The operation Microsoft.Network/NetworkSecurityGroups/SecurityRules/Delete completed with a successful result. The change could affect network access and requires confirmation of authorization and expected change window."
+  },
+  "classification": "HP"
+}
+

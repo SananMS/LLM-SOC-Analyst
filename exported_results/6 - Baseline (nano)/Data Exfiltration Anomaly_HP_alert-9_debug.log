@@ -1,0 +1,25 @@
+=== DEBUG SESSION START: 2026-03-02T22:13:51.700125+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Data Exfiltration Anomaly
+Selected Playbook: General Triage (No Playbook)
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-29100",
+    "Start Time": "2026-02-01T21:30:00.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "78.60.112.55",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "VIL-MTN-WKS-02",
+    "User": "Linas.Pavilionis@globalcorp.ee",
+    "Description": "An unusual volume of SharePoint file downloads (840 files) was observed for user Linas.Pavilionis@globalcorp.ee, well above the 24-hour baseline of 4. The activity originated from 78.60.112.55 to 40.108.201.15 on endpoint VIL-MTN-WKS-02, targeting the SharePoint Online site https://globalcorp.sharepoint.com/sites/Inovacijos_ir_Finansai/. The combination of high volume and external destination to retrieve a wide set of documents could indicate data exfiltration or account compromise and warrants immediate investigation with business context and access controls.",
+    "File Count": 840,
+    "Baseline 24h": 4,
+    "Site URL": "https://globalcorp.sharepoint.com/sites/Inovacijos_ir_Finansai/",
+    "Geo Location": "Vilnius, Lithuania"
+  },
+  "classification": "HP"
+}
+

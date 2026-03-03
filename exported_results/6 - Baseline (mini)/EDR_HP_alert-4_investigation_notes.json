@@ -1,0 +1,20 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-29905",
+    "Start Time": "2025-10-09T15:39:02.000Z",
+    "Alert Name": "Microsoft Defender: Antivirus Tampering Attempt Prevented",
+    "Threat Display Name": "MpTamperSrvDisableAV",
+    "Threat Family": "Defense Evasion / Tampering",
+    "Source IP": "10.10.44.112",
+    "Endpoint": "WKSTN-FIN-092b",
+    "User": "GlobalAdmin_svc",
+    "Process Name": "sc.exe",
+    "Process Path": "C:\\Windows\\System32\\sc.exe",
+    "Command Line": "C:\\windows\\system32\\sc.exe stop WinDefend",
+    "Remediation Status": "success",
+    "Remediation Action": "remove / blocked",
+    "Alert URL": "https://security.microsoft.com/alerts/cl202",
+    "Description": "An attempt to stop the Microsoft Defender Antivirus service (WinDefend) via sc.exe was detected and blocked on endpoint WKSTN-FIN-092b at 2025-10-09T15:39:02Z. The action originated from internal IP 10.10.44.112 and was executed under account GlobalAdmin_svc using the explicit command 'C:\\windows\\system32\\sc.exe stop WinDefend', indicating a targeted tampering attempt against antivirus functionality. Because this was a deliberate attempt to disable endpoint protection performed by an account with elevated privileges, the activity is considered High Priority despite successful automatic remediation and requires further investigation for possible credential compromise or insider misuse."
+  },
+  "classification": "HP"
+}

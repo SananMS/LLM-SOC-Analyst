@@ -1,0 +1,26 @@
+=== DEBUG SESSION START: 2026-03-02T22:12:11.836853+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Data Exfiltration Anomaly
+Selected Playbook: General Triage (No Playbook)
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-13100",
+    "Start Time": "2026-01-31T23:55:12.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "145.14.37.201",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "MAINT-Kiosk-04",
+    "User": "Jaanus.Tamm@globalcorp.ee",
+    "Description": "An unusually high volume of SharePoint file downloads was observed for user Jaanus.Tamm@globalcorp.ee, totaling 985 items in a 24-hour window compared to a baseline of 50. The activity targets a SharePoint site at https://globalcorp.sharepoint.com/sites/Strategy_and_Growth/ and includes sensitive-looking sample files. The volume and scope suggest potential data exfiltration, though legitimate business needs could explain a large project download; given the potential for leakage of sensitive information, this is treated as High Priority pending verification of user intent and data classification.",
+    "Site URL": "https://globalcorp.sharepoint.com/sites/Strategy_and_Growth/",
+    "File Count": 985,
+    "Baseline 24h": 50,
+    "User Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+    "City": "Tallinn"
+  },
+  "classification": "HP"
+}
+

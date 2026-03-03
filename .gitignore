@@ -1,4 +1,13 @@
 .env
-exported_results
+exported_results/*
 token_usage.json
 calculate.py
+logs
+
+debug.log
+!exported_results/6 - Baseline (mini)/
+!exported_results/6 - Baseline (nano)/
+!exported_results/6 - Playbook Guided Soft (mini)/
+!exported_results/6 - Playbook Guided Soft (nano)/
+!exported_results/6 - Playbook Guided Strict (mini)/
+!exported_results/6 - Playbook Guided Strict (nano)/

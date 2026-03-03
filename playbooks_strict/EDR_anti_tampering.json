@@ -1,0 +1,43 @@
+{
+  "playbook_name": "EDR Anti-Tampering Triage",
+  "description": "SOP for triaging attempts to disable, bypass, or tamper with security services.",
+  "steps": [
+    {
+      "step_id": 1,
+      "task": "Identify the Actor and Source",
+      "action": "Look at the alert details to find the computer name, the user account running the command, and the specific process used.",
+      "logic": "Tampering requires high privileges. If the user is a service account or a 'Global Admin', the risk of a full system compromise is extremely high."
+    },
+    {
+      "step_id": 2,
+      "task": "Evaluate the Command Intent",
+      "action": "Analyze the exact command line. Is it specifically targeting a security service or attempting to hide logs?",
+      "logic": "Legitimate IT maintenance rarely involves stopping the AV service via a manual command line. This behavior is a primary indicator of an active human attacker or a malicious script."
+    },
+    {
+      "step_id": 3,
+      "task": "Check for Preceding 'Malware' or 'Exploit' Alerts",
+      "action": "MAKE SURE TO INVOKE 'get_recent_similar_alerts' and 'get_recent_events' for this computer to see actions before tampering attempt.",
+      "tool_integration": ["get_recent_similar_alerts", "get_recent_events"],
+      "logic": "Attackers usually run a 'tamper' command *after* a malware detection is blocked, in an attempt to disable the protection before trying to run the malware again."
+    },
+    {
+      "step_id": 4,
+      "task": "Investigate the Parent Process (The 'Who called Who')",
+      "action": "Identify what started the tampering process. Was it a remote management tool, a script, or a suspicious unknown file?",
+      "logic": "If the parent is a 'Remote Access' tool not used by your IT team, this can be a confirmed intrusion (HP)."
+    },
+    {
+      "step_id": 5,
+      "task": "Verify Remediation Effectiveness",
+      "action": "Check the 'remediation status'. If it says 'Failed' or 'Partial', the system is currently unprotected.",
+      "logic": "Even if 'Blocked', the attempt itself proves the attacker has sufficient permissions to issue the command, which is a critical security failure."
+    },
+    {
+      "step_id": 6,
+      "task": "Final Triage Classification",
+      "action": "Assign triage priority (LP or HP) based on whether the action was authorized.",
+      "logic": "Classification rules:\n\n1. **Low Priority (LP)** if:\n   - The command was run by a verified IT Administrator during a documented maintenance window.\n   - The command is part of a known-good software uninstaller/updater (verified by signer).\n\n2. **High Priority (HP)** if:\n   - **Defense Evasion**: Any attempt to stop security services, clear security logs, or disable MFA.\n   - **Suspicious Actor**: Command run by a non-admin user or a service account that shouldn't be running system commands.\n   - **Active Intrusion**: The tampering follows a blocked malware alert or originates from a suspicious parent process."
+    }
+  ]
+}

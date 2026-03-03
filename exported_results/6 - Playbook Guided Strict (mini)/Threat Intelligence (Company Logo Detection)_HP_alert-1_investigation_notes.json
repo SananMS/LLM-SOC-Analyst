@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-54812",
+    "Start Time": "2026-02-18T15:02:14.000Z",
+    "Alert Name": "Brand Logo Detection",
+    "Source IP": "195.178.110.15",
+    "Endpoint": "vitalis-portal-security.com",
+    "Playbook Used": "Visual Brand Abuse & Logo Triage",
+    "Target Brand": "Vitalis Healthcare",
+    "Scanned URL": "https://www.vitalis-portal-security.com/login/auth",
+    "Domain Age": "2 days",
+    "IP Reputation Score": "100/100 (Abuse Confidence Score)",
+    "Hosting Provider": "TECHOFF SRV LIMITED (Data Center / Web Hosting)",
+    "Description": "A login page on vitalis-portal-security.com was captured displaying a logo and copy closely matching the official Vitalis Healthcare branding and a credential collection form labeled for the patient portal. The domain was registered 2 days ago via NameCheap and resolves to an IP with a 100/100 abuse score hosted in a data center; no recent similar alerts for this domain were found. These factors — accurate visual impersonation combined with a newly created domain, credential capture UI, and high infrastructure abuse score — indicate a likely credential-harvesting impersonation and justify treating this alert as High Priority."
+  },
+  "classification": "HP"
+}

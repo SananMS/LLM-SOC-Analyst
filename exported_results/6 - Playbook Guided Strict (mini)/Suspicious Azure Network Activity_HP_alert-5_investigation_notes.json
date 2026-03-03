@@ -1,0 +1,23 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-99803",
+    "Start Time": "2026-02-10T22:50:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "194.126.101.99",
+    "User": "andrus.kivi@globalcorp.ee",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "User Role": "Regional Logistics Coordinator (Supply Chain & Logistics) - not an infrastructure administrator",
+    "Target Resource": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-baltic-prod-core/providers/Microsoft.Network/virtualNetworks/vnet-tallinn-prod-01/virtualNetworkPeerings/peering-to-central-soc",
+    "Operation": "MICROSOFT.NETWORK/VIRTUALNETWORKS/VIRTUALNETWORKPEERINGS/DELETE",
+    "Caller Location": "Tallinn, Harju County, Estonia",
+    "Result": "Succeeded",
+    "Related Alerts": [
+      "SOC-99799",
+      "SOC-99800",
+      "SOC-99801",
+      "SOC-99802"
+    ],
+    "Description": "An authenticated user (andrus.kivi@globalcorp.ee) with Contributor privileges deleted a virtual network peering in the production resource group rg-baltic-prod-core; the operation succeeded. The activity originated from an IP geolocated to Tallinn and occurred at 2026-02-10T22:50:00Z (00:50 EET local), which is outside typical working hours. This event is part of a rapid sequence of successful privileged modifications and deletions across production resources by the same user, and the user's organizational role does not align with performing infrastructure changes. Because of the role-to-action mismatch, the out-of-hours timing, and the clustered nature of these production-impacting changes, the activity is considered high risk and requires escalation."
+  },
+  "classification": "HP"
+}

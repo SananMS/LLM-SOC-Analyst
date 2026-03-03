@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-12200",
+    "Start Time": "2026-01-31T14:45:10.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "194.126.101.99",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "WKSTN-OFFSITE-04",
+    "User": "Liam.O-Sullivan@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Geographic Context": "Tallinn, Estonia",
+    "Site URL": "https://globalcorp.sharepoint.com/sites/Executive_Board_Confidential/",
+    "Total Files Exfiltrated": "850",
+    "Baseline 24h": "5",
+    "Description": "An unusual volume of SharePoint file downloads (850) was observed from the user, far exceeding the 24-hour baseline of 5 files. The activity targeted the Executive Board Confidential site and included 850 files across multiple paths to an external destination IP. The activity originated from Tallinn, Estonia, using Office 365 SharePoint Online; given the volume and external destination, this pattern is highly suggestive of potential data exfiltration and warrants high-priority investigation."
+  },
+  "classification": "HP"
+}

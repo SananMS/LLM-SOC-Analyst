@@ -1,0 +1,28 @@
+=== DEBUG SESSION START: 2026-03-02T22:57:08.065150+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Malware Prevention: Trojan:Win32/SparkOnSoft
+Selected Playbook: EDR_malware_alerts.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-29908",
+    "Start Time": "2026-02-12T09:44:07.000Z",
+    "Alert Name": "Malware Prevention: Trojan:Win32/SparkOnSoft",
+    "Source IP": "10.45.20.114",
+    "Endpoint": "WKSTN-912A",
+    "User": "m.tamm@client.ee",
+    "Playbook Used": "EDR Malware Triage",
+    "Description": "Detected Trojan:Win32/SparkOnSoft on endpoint WKSTN-912A by Microsoft Defender Antivirus. The associated file is $RYRO9NW.exe (9 MB) located in the Recycle Bin, signed by Hawk Integrated Inc., with certificate issued by Sectigo Public Code Signing CA EV R36. Quarantine action succeeded, indicating containment; however the presence of a signed dropper in a user-writable location and the unusual Recycle Bin path justify HP classification and further validation to ensure no secondary components are present.",
+    "File Name": "$RYRO9NW.exe",
+    "File Path": "C:\\$Recycle.Bin\\S-1-12-1-4290317762-1184293048-956127341-2105834469\\$RYFO7NF.exe",
+    "File Hash": "686d018c86c03165925ebd3773c622f182c93f54b98db9616bae86f5e8684e4c",
+    "File Size": "9 MB",
+    "Signer": "Hawk Integrated Inc.",
+    "Signature Issuer": "Sectigo Public Code Signing CA EV R36",
+    "File Signature": "Code Signing"
+  },
+  "classification": "HP"
+}
+

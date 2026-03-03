@@ -1,0 +1,23 @@
+=== DEBUG SESSION START: 2026-03-02T23:04:09.513302+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Azure Network Security Modification
+Selected Playbook: suspicious_cloud_network_activity.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-23105",
+    "Start Time": "2026-02-11T09:15:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "145.14.39.114",
+    "User": "markus.tamm@globalcorp.ee",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Description": "An Azure Network Security Group rule was deleted (SECURITYRULES/DELETE) on NSG nsg-tallinn-prod-01 in resource group rg-baltic-prod-connectivity. The action was performed by markus.tamm@globalcorp.ee, a Contributor, from 145.14.39.114 in Tallinn, Estonia, at 09:15 UTC. The change affects production network controls and could alter access exposure; given the potential impact and the user's role, this activity warrants HP investigation.",
+    "Geolocation": "Tallinn, Estonia",
+    "Rule Change Type": "Delete",
+    "Environment": "Production"
+  },
+  "classification": "HP"
+}
+

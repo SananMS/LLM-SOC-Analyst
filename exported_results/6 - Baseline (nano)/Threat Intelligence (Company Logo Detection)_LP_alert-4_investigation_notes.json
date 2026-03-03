@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-54521",
+    "Start Time": "2026-02-18T14:30:45.000Z",
+    "Alert Name": "Brand Logo Detection",
+    "Source IP": "104.26.10.225",
+    "Destination IP": "104.26.10.225",
+    "Endpoint": "www.vitali-pharmacy.it",
+    "Description": "Vitalis Healthcare logo was detected on the domain vitali-pharmacy.it, which appears unrelated to the official Vitalis site (vitalis.com). The scanned page at https://www.vitali-pharmacy.it/contatti shows branding consistent with Vitalis Healthcare, and the domain resolves to 104.26.10.225 with NameCheap as registrar and an age of about 8 years. This could be brand impersonation or misuse to mislead visitors; given the branding mismatch and hosting behind a CDN, this warrants further investigation to confirm legitimacy and potential risk.",
+    "Evidence Source": "Logo-Scanner",
+    "Scanned URL": "https://www.vitali-pharmacy.it/contatti",
+    "Target Brand Domain": "vitalis.com",
+    "Domain IP": "104.26.10.225",
+    "Domain Age": "8 years"
+  },
+  "classification": "HP"
+}

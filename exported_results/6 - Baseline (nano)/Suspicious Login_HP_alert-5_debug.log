@@ -1,0 +1,23 @@
+=== DEBUG SESSION START: 2026-03-02T22:29:28.566423+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: User Login Location Anomaly
+Selected Playbook: General Triage (No Playbook)
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-88",
+    "Start Time": "2025-07-23T23:55:15.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "182.95.178.158",
+    "Destination IP": "13.80.23.7",
+    "User": "karl.saare@client.ee",
+    "Description": "An Office 365 login from Mumbai, India was observed for user karl.saare@client.ee, which is outside the user's typical login region. The authentication was successful but MFA was not enforced, increasing the risk of credential misuse. Combined with the unusual source IP contacting Office 365 at 13.80.23.7, this activity is suspicious and warrants further investigation.",
+    "Login Type": "o365_login",
+    "MFA Enabled": "No",
+    "Geolocation": "Mumbai, India"
+  },
+  "classification": "HP"
+}
+

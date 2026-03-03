@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-65",
+    "Start Time": "2025-07-17T14:22:15.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "45.78.217.136",
+    "Destination IP": "13.80.23.7",
+    "Endpoint": "D235423",
+    "User": "martin.kask@client.ee",
+    "User ID": "a7f2c9e4-61bd-4f8b-9c32-5d4a18b6f0e9",
+    "MFA Enabled": false,
+    "Login Result": "success",
+    "IP Abuse Confidence": "100/100",
+    "IP Owner": "BYTEPLUS",
+    "Description": "Anomalous successful Office 365 login was observed from Singapore, which is outside the user's typical region. The login did not use MFA and originated from an IP with a 100/100 abuse confidence score registered to a data center provider, increasing the likelihood of unauthorized or automated access. The account lookup did not resolve to an internal user record, supporting suspicion of credential misuse. Based on the high-risk source and lack of MFA with a successful login, this activity is classified as High Priority for further investigation."
+  },
+  "classification": "HP"
+}

@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14600",
+    "Start Time": "2026-10-18T14:16:17.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Destination IP": "40.113.112.55",
+    "Endpoint": "nsg-aks-prod-northeast",
+    "User": "ServicePrincipal (ID: 7f2a8c12-3391-4e1a-b672-9d3c11bc99a1)",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Description": "A production NSG (nsg-aks-prod-northeast in rg-nordic-prod-001) was modified by a ServicePrincipal with Contributor scope at 2026-10-18T14:16:17Z (17:16:17 Europe/Tallinn). The request_body shows a deny rule targeting multiple Russia-related prefixes and an allow rule permitting Internet access to 40.113.112.55 on ports 80/443, consistent with exposing an AKS load balancer while also applying geo-based blocks. Activity originated in Norway East and occurred during normal administrative hours for Estonia, and no recent events or similar alerts were found; taken together the change appears to be plausible automated deployment activity and is assessed as Low Priority.",
+    "Resource Group": "rg-nordic-prod-001",
+    "Actor": "ServicePrincipal (principal_type: ServicePrincipal, role: Contributor, principal_id: 7f2a8c12-3391-4e1a-b672-9d3c11bc99a1)",
+    "Local Time (Europe/Tallinn)": "2026-10-18 17:16:17",
+    "Rule Changes Summary": "Added/modified 'SanctionBlocks' (Deny) targeting multiple Russia-related source prefixes and 'k8s-azure-lb-allow' (Allow) permitting Internet -> 40.113.112.55 on TCP ports 80/443.",
+    "Correlation Findings": "No recent deployment events found. No recent similar alerts found."
+  },
+  "classification": "LP"
+}

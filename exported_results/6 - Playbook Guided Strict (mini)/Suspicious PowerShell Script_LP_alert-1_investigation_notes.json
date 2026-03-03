@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-4104",
+    "Start Time": "2025-12-21T15:39:16.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.0.0.1",
+    "Endpoint": "HOST-01",
+    "User": "SYSTEM",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "OS": "Windows Server 2022 Datacenter",
+    "File Path Written": "C:\\Program Files (x86)\\CyberCNSAgent\\agent_temp\\ad_ous.json (primary) or C:\\Windows\\cybercnsagent\\agent_temp\\ad_ous.json (fallback)",
+    "Observed Behavior": "Performs Active Directory enumeration (Get-ADOrganizationalUnit, Get-ADComputer, Get-ADGroup, Get-ADUser, Get-GPInheritance), builds JSON of OUs and linked objects, and writes output to local agent directories.",
+    "Recent Events Correlated": "No recent events found. No recent similar alerts found.",
+    "Description": "The executed PowerShell script performs Active Directory discovery and collects OU, GPO link, computer, group, and user information, then writes the results to a local CyberCNSAgent agent_temp JSON file (with a Windows fallback path). The script is plain-text, uses standard AD cmdlets, and contains no obfuscation, embedded external IPs, or other clear malicious indicators. No process hash was available for reputation checking and no correlated historical alerts or events were observed; given the behavior aligns with telemetry or inventory collection running as SYSTEM, the activity is considered Low Priority."
+  },
+  "classification": "LP"
+}

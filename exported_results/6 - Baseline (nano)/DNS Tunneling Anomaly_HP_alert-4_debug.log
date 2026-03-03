@@ -1,0 +1,47 @@
+=== DEBUG SESSION START: 2026-03-02T22:18:08.744804+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: DNS Tunneling Anomaly
+Selected Playbook: General Triage (No Playbook)
+
+[TOOL CALL]
+Tool: check_ip_reputation
+Arguments: {"ip": "10.150.22.15"}
+
+[TOOL RESPONSE]
+Source IP: 10.150.22.15 | Abuse Confidence Score: 0/100 | ISP: None | Usage Type: Reserved | Privacy Status: Neither VPN nor Proxy nor Tor Node nor Relay
+
+[TOOL CALL]
+Tool: check_ip_reputation
+Arguments: {"ip": "185.112.10.4"}
+
+[TOOL RESPONSE]
+Source IP: 185.112.10.4 | Abuse Confidence Score: 0/100 | ISP: Zattoo AG | Usage Type: Data Center/Web Hosting/Transit | Privacy Status: Neither VPN nor Proxy nor Tor Node nor Relay
+
+[TOOL CALL]
+Tool: get_domain_age
+Arguments: {"domain": "ntp_update.space"}
+
+[TOOL RESPONSE]
+Domain 'ntp_update.space' not found in local database. Treat as Unknown/Suspicious.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14570",
+    "Start Time": "2026-02-06T16:45:10.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.150.22.15",
+    "Destination IP": "185.112.10.4",
+    "Endpoint": "srv-prod-web-02",
+    "DNS Traffic Observed": "TXT queries carrying high-entropy data; actual 740 bytes vs typical 20 bytes",
+    "Domain": "ntp_update.space",
+    "DNS Query Type": "TXT",
+    "Domain Reputation": "ntp_update.space not found in local database; Unknown / Suspicious",
+    "Source IP Reputation": "Abuse score 0/100; IP is in private/reserved range; no abuse flagged",
+    "Destination IP Reputation": "Abuse score 0/100; ISP: Zattoo AG; Usage: Data Center/Web Hosting/Transit; No known abuse",
+    "Description": "Anomalous DNS TXT traffic to ntp_update.space with high-entropy data was observed from srv-prod-web-02. The payload size is 740 bytes, far above typical DNS TXT records, suggesting possible DNS tunneling for data exfiltration or C2. The source IP is in a private address space with no known public abuse, and the destination domain appears suspicious, indicating a high-risk pattern that requires immediate investigation."
+  },
+  "classification": "HP"
+}
+

@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-75691",
+    "Start Time": "2026-02-19T13:58:45.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Playbook Used": "Document Exposure & Threat Intel Triage",
+    "Detection Source": "TI-Monitor-DarkWeb",
+    "Source URL": "http://n6p9q2r8t0v4w5x1y3z7a9b1c3d5e7f9g1h3i5j7k9l1m3n5o7p9q1r3.onion/repository/legal/intellectual-property/",
+    "Relative Paths": [
+      "/var/www/html/secure_dump/legal_archived/vitalis-estates/trust_agreements/Vitalis_Family_Trust_Agreement_2026.pdf",
+      "/var/www/html/secure_dump/legal_archived/vitalis-estates/real_estate/Vitalis_Manor_Deed_Transfer.docx",
+      "/var/www/html/secure_dump/legal_archived/vitalis-estates/beneficiaries/Vitalis_Estate_Asset_Distribution_List.xlsx"
+    ],
+    "Threat": "DocumentExposure:VitalisHealthcare",
+    "Category": "Brand Monitoring",
+    "Description": "A dark-web repository was identified containing multiple file paths that explicitly reference Vitalis and appear to be legal and estate documents, including a trust agreement, deed transfer, and beneficiary asset distribution list. The filenames and the Tor hosting context indicate a credible risk of exposure of confidential legal and beneficiary information, although the actual document contents were not provided in the alert to directly confirm PII. No recent similar alerts were found, which increases the need to validate authenticity and scope of the material. Given the likely sensitivity of these document types and the illicit hosting environment, this alert is prioritized as High Priority due to potential reputational and legal impact."
+  },
+  "classification": "HP"
+}

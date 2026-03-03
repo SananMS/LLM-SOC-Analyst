@@ -1,0 +1,15 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-9826",
+    "Start Time": "2026-01-27T01:36:54.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.5.14.92",
+    "Endpoint": "HR-SRV-02",
+    "User": "k.tamm",
+    "Playbook Used": null,
+    "Description": "An unusual PowerShell script executed on HR-SRV-02 attempts to copy browser credential stores (Chrome Login Data and Firefox logins.json) to C:\\ProgramData. The command uses wildcards to target multiple user profiles, indicating credential access or data exfiltration attempts. This combination of actions, if not part of a sanctioned process, elevates the risk of credential harvesting and data compromise.",
+    "Evidence Scriptblock": "Copy-Item 'C:\\Users\\*\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Login Data' -Destination C:\\ProgramData\\chrome_cache.db -Force; Copy-Item 'C:\\Users\\*\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\*.default-release\\logins.json' -Destination C:\\ProgramData\\ff_cache.json -Force",
+    "Operating System": "Windows Server 2019 Standard"
+  },
+  "classification": "HP"
+}

@@ -1,0 +1,14 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-9471",
+    "Start Time": "2026-01-26T03:42:18.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.2.60.77",
+    "Destination IP": "185.199.88.22",
+    "Endpoint": "SRV-APP-03",
+    "User": "a.petrov",
+    "Description": "A PowerShell script was executed on SRV-APP-03 that downloads code from http://185.199.88.22/update.bin and executes it in memory using IEX. This delivery method is commonly associated with malware or exploit payloads. The external host shows no known abuse in the performed check, but the combination of external fetch and in-memory execution is high risk and warrants rapid investigation.",
+    "External IP Reputation": "IP 185.199.88.22 – Abuse Confidence Score: 0/100; No known abuse detected; ISP: KKB KREDI KAYIT BUROSU ANONIM SIRKETI"
+  },
+  "classification": "HP"
+}

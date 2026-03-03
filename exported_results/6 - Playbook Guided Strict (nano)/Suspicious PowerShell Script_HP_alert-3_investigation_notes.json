@@ -1,0 +1,15 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-9623",
+    "Start Time": "2026-01-26T06:14:39.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.3.80.44",
+    "Endpoint": "SRV-WEB-02",
+    "User": "r.kuznetsov",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Description": "A PowerShell command was observed that attempts to create a Run key in HKCU to launch C:\\ProgramData\\winupd.ps1 via powershell.exe with -ExecutionPolicy Bypass and -WindowStyle Hidden. The Run entry is named WindowsUpdateSvc, which suggests a persistence mechanism often used to ensure script execution on logon. This behavior, combined with the hidden window and policy bypass, indicates stealthy execution that could be used for malicious purposes or unauthorized administrative activity. Given the lack of context of legitimate use and the potential for persistence, this alert is classified as HP and warrants immediate investigation.",
+    "Observed Persistence Technique": "Registry Run key modification under HKCU to run a PowerShell script at C:\\ProgramData\\winupd.ps1",
+    "Scriptblock Context": "New-ItemProperty -Path 'HKCU:\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run' -Name 'WindowsUpdateSvc' -Value 'powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File C:\\\\ProgramData\\\\winupd.ps1' -PropertyType String -Force"
+  },
+  "classification": "HP"
+}

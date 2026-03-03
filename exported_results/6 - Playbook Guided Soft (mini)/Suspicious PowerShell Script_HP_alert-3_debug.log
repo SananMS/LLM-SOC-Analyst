@@ -1,0 +1,26 @@
+=== DEBUG SESSION START: 2026-03-03T01:59:45.982675+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Suspicious PowerShell Script Execution
+Selected Playbook: suspicious_powershell.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-9623",
+    "Start Time": "2026-01-26T06:14:39.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.3.80.44",
+    "Endpoint": "SRV-WEB-02",
+    "User": "r.kuznetsov",
+    "User ID": "S-1-5-21-44332211-66778899-11002233-1019",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Scriptblock": "New-ItemProperty -Path 'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Run' -Name 'WindowsUpdateSvc' -Value 'powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File C:\\ProgramData\\winupd.ps1' -PropertyType String -Force",
+    "Operating System": "Windows Server 2019 Standard",
+    "Registry Key Created": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\WindowsUpdateSvc",
+    "Persisted File Path": "C:\\ProgramData\\winupd.ps1",
+    "Description": "A Run key was created under the current user that launches PowerShell with -ExecutionPolicy Bypass and -WindowStyle Hidden to run C:\\ProgramData\\winupd.ps1, indicating an attempt to establish stealthy persistence. The combination of persistence via a Run key, bypassing execution policy, a hidden window, and a ProgramData script named to mimic a Windows update service is inconsistent with normal administrative activity on a web server and is strongly indicative of malicious behavior. This warrants escalation and further investigation, so the alert is classified as High Priority."
+  },
+  "classification": "HP"
+}
+

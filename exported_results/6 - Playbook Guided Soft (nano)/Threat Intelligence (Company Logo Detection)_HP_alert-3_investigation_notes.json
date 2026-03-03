@@ -1,0 +1,14 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-55014",
+    "Start Time": "2026-02-18T15:40:12.000Z",
+    "Alert Name": "Brand Logo Detection",
+    "Source IP": "103.45.12.89",
+    "Destination IP": "103.45.12.89",
+    "Playbook Used": "Visual Brand Abuse & Logo Triage",
+    "Domain Age": "3 hours",
+    "Registrar": "NameSilo, LLC",
+    "Description": "Vitalis Healthcare logo detected on the domain vitalis-connect-update.com, which resolves to IP 103.45.12.89. The domain is newly registered (3 hours old) with registrar NameSilo and appears to host a security patch download page using official branding. This combination of impersonated branding on a recently created domain and an unfamiliar hosting source indicates a potential brand abuse or phishing attempt, warranting HP."
+  },
+  "classification": "HP"
+}

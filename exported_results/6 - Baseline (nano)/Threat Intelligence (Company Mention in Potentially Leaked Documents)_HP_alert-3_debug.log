@@ -1,0 +1,24 @@
+=== DEBUG SESSION START: 2026-03-02T22:41:08.058465+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Brand Mention in External Document
+Selected Playbook: General Triage (No Playbook)
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-75988",
+    "Start Time": "2026-02-19T21:15:45.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Evidence Source": "TI-Monitor-DarkWeb",
+    "Source URL": "http://x7y9z1a3b5c7d9e1f3g5h7i9j1k2l3m5n7o9p1q3r5s7t9u1v3w5x7y9.onion/dump/exfiltrated/2026/02/",
+    "Affected Paths": [
+      "/mnt/storage/breach_vault/vitalis_healthcare/clinical_ops/patient_records_2025_full.sql",
+      "/mnt/storage/breach_vault/vitalis_healthcare/finance/q4_insurance_claims_processing.csv",
+      "/mnt/storage/breach_vault/vitalis_healthcare/it_admin/network_topology_and_firewall_rules.pdf"
+    ],
+    "Description": "Vitalis Healthcare is mentioned in an external document detected by TI-Monitor-DarkWeb. The evidence includes an onion URL hosting exfiltrated material and internal file paths to patient records, insurance claims, and network topology. This combination indicates potential exposure of sensitive data and warrants high-priority investigation and escalation."
+  },
+  "classification": "HP"
+}
+

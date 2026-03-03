@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-21550",
+    "Start Time": "2026-03-01T15:10:00.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "90.184.0.1",
+    "Destination IP": "40.108.201.15",
+    "User": "svc_aem_assets@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Application": "Adobe Experience Manager MSGraph",
+    "User Agent": "Mozilla/4.0 (compatible; Win32; WinHttp.WinHttpRequest.5)",
+    "File Count": 340,
+    "Baseline 24h": 35,
+    "Local Time": "2026-03-01 16:10:00 (CET)",
+    "Description": "A spike of SharePoint downloads (340 files vs a 24-hour baseline of 35) was observed from svc_aem_assets@globalcorp.ee targeting the Nordic Marketing Content site, with sample files and paths consistent with marketing asset repositories. The account name and the Adobe Experience Manager application, combined with a WinHttp user agent, indicate automated service-to-service activity likely tied to asset synchronization or batch processing, and the activity occurred at 16:10 local Copenhagen time which is within normal business hours. Lookup of the email returned no directory entry and there are no recent correlated events or similar alerts, so the activity appears to be authorized service behavior and is classified as Low Priority."
+  },
+  "classification": "LP"
+}

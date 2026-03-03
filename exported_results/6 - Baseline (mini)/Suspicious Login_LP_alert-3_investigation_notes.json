@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-102",
+    "Start Time": "2025-07-26T08:50:00.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "195.88.86.50",
+    "Destination IP": "13.80.23.7",
+    "Endpoint": "F31647565",
+    "User": "marko.talvik@client.ee",
+    "MFA Present": true,
+    "IP Reputation Summary": "Abuse Confidence Score 0/100; ISP Packethub S.A.; Usage Type: Data Center/Web Hosting/Transit; Privacy/VPN indicated",
+    "Recent Authentication History": "Successful Office 365 logins from Tallinn, Estonia on 2025-07-24T07:35:00Z and 2025-07-26T08:20:22Z from the same endpoint, both with MFA.",
+    "User Directory Lookup": "No user found for marko.talvik@client.ee in directory lookup results",
+    "Description": "An anomalous Office 365 login was observed from Istanbul, Turkey for marko.talvik@client.ee while the user's recent successful logins originated from Tallinn, Estonia. The authentication succeeded with MFA and came from an IP classified as data-center/VPN with no abuse history, and the endpoint is company-managed and compliant. There are recent, legitimate logins from the same device which reduces likelihood of immediate compromise. Based on the presence of MFA, a managed compliant endpoint, and clean IP reputation, this alert is assessed as Low Priority."
+  },
+  "classification": "LP"
+}

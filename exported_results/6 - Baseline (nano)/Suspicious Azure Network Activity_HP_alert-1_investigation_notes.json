@@ -1,0 +1,14 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-99200",
+    "Start Time": "2026-02-10T09:15:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "194.126.101.99",
+    "User": "marcus.webb@globalcorp.ee",
+    "Resource Scope": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-baltic-prod-connectivity/providers/Microsoft.Network/networkSecurityGroups/nsg-prod-core",
+    "Requested Change Details": "{\"properties\":{\"securityRules\":[{\"name\":\"Test\",\"properties\":{\"access\":\"Allow\",\"description\":\"Temporary access for review\",\"destinationAddressPrefix\":\"*\",\"destinationPortRange\":\"3389\",\"direction\":\"Inbound\",\"priority\":110,\"protocol\":\"Tcp\",\"sourceAddressPrefix\":\"*\"}}]}}",
+    "Caller IP Geo": "Tallinn, Estonia",
+    "Description": "Azure network security configuration was modified by a user with Contributor privileges from IP 194.126.101.99. The change appears to add a temporary inbound RDP rule to a network security group, potentially exposing external access. The activity originates from Tallinn, Estonia and involves a privileged role, which raises concern for improper or unauthorized configuration changes and justifies a high-priority investigation."
+  },
+  "classification": "HP"
+}

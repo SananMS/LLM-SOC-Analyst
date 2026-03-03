@@ -1,0 +1,60 @@
+{
+  "run_timestamp": "2026-03-03T01:15:01.014767+00:00",
+  "overall_stats": {
+    "total_alerts": 100,
+    "accuracy": 87.0,
+    "avg_input_tokens": 2737.3,
+    "avg_output_tokens": 1855.86,
+    "avg_time_seconds": 29.72040842
+  },
+  "use_case_breakdown": {
+    "Data Exfiltration Anomaly": {
+      "alert_count": 20,
+      "avg_input": 2703.95,
+      "avg_output": 1946.9,
+      "avg_time_seconds": 31.9854367
+    },
+    "DNS Tunneling Anomaly": {
+      "alert_count": 10,
+      "avg_input": 2024.4,
+      "avg_output": 1830.1,
+      "avg_time_seconds": 31.761574700000004
+    },
+    "EDR": {
+      "alert_count": 10,
+      "avg_input": 1938.1,
+      "avg_output": 1734.4,
+      "avg_time_seconds": 29.979234400000003
+    },
+    "Suspicious Azure Network Activity": {
+      "alert_count": 10,
+      "avg_input": 2579.4,
+      "avg_output": 1902.2,
+      "avg_time_seconds": 28.142994899999998
+    },
+    "Suspicious Login": {
+      "alert_count": 10,
+      "avg_input": 3304.5,
+      "avg_output": 2171.6,
+      "avg_time_seconds": 40.3572261
+    },
+    "Suspicious PowerShell Script": {
+      "alert_count": 20,
+      "avg_input": 3123.85,
+      "avg_output": 1891.7,
+      "avg_time_seconds": 28.9590396
+    },
+    "Threat Intelligence (Company Logo Detection)": {
+      "alert_count": 10,
+      "avg_input": 4396.3,
+      "avg_output": 1731.1,
+      "avg_time_seconds": 24.647670799999997
+    },
+    "Threat Intelligence (Company Mention in Potentially Leaked Documents)": {
+      "alert_count": 10,
+      "avg_input": 1474.7,
+      "avg_output": 1512.0,
+      "avg_time_seconds": 20.426430700000004
+    }
+  }
+}

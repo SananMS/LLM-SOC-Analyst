@@ -1,0 +1,21 @@
+=== DEBUG SESSION START: 2026-03-02T23:14:05.295488+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Suspicious PowerShell Script Execution
+Selected Playbook: suspicious_powershell.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10000",
+    "Start Time": "2026-01-05T19:08:48.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "172.18.99.41",
+    "Endpoint": "SRV-APPS-PRD02",
+    "User": "svc_backup_veeam",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Description": "A PowerShell script was executed with -ExecutionPolicy Unrestricted and an -EncodedCommand payload on SRV-APPS-PRD02 by the svc_backup_veeam service account. The encoded scriptblock implies obfuscated content, which can obscure its intent and hinder quick analysis. At this stage, there is no observable external beacon or file path to corroborate a malicious action, and the hash reputation for the initiating process is not available in the alert. Given the lack of definitive indicators of compromise or outbound connections, this activity is tentatively categorized as Low Priority, but it warrants monitoring for any changes or additional indicators."
+  },
+  "classification": "LP"
+}
+

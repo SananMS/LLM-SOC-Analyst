@@ -1,0 +1,27 @@
+=== DEBUG SESSION START: 2026-03-03T01:14:37.129344+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Brand Mention in External Document
+Selected Playbook: General Triage (No Playbook)
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-75691",
+    "Start Time": "2026-02-19T13:58:45.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Threat": "DocumentExposure:VitalisHealthcare",
+    "Category": "Brand Monitoring",
+    "Status": "new",
+    "Detection Source": "TI-Monitor-DarkWeb",
+    "Source URL": "http://n6p9q2r8t0v4w5x1y3z7a9b1c3d5e7f9g1h3i5j7k9l1m3n5o7p9q1r3.onion/repository/legal/intellectual-property/",
+    "Detected File Paths": [
+      "/var/www/html/secure_dump/legal_archived/vitalis-estates/trust_agreements/Vitalis_Family_Trust_Agreement_2026.pdf",
+      "/var/www/html/secure_dump/legal_archived/vitalis-estates/real_estate/Vitalis_Manor_Deed_Transfer.docx",
+      "/var/www/html/secure_dump/legal_archived/vitalis-estates/beneficiaries/Vitalis_Estate_Asset_Distribution_List.xlsx"
+    ],
+    "Description": "Multiple Vitalis-branded legal documents were discovered hosted on a dark web onion repository, including trust agreements, deed transfers, and a beneficiary asset distribution list. These file types are likely to contain personally identifiable information and proprietary legal/estate details, and their presence on an external onion site indicates potential data exfiltration or unauthorized exposure. Based on the sensitivity of the materials and external hosting, this alert is classified as High Priority and should be escalated for further forensic review and validation."
+  },
+  "classification": "HP"
+}
+

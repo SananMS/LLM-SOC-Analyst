@@ -1,0 +1,23 @@
+=== DEBUG SESSION START: 2026-03-02T23:14:30.971818+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Suspicious PowerShell Script Execution
+Selected Playbook: suspicious_powershell.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-9921",
+    "Start Time": "2026-01-20T02:15:44.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "192.168.1.45",
+    "Endpoint": "FS-PROD-02",
+    "User": "NT SERVICE\\\\DataBackupAgent",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Description": "PowerShell script executed on FS-PROD-02 by NT SERVICE\\\\DataBackupAgent. The scriptblock implements a data storage inventory workflow that scans the C: drive for files larger than 10 GB and exports results to a CSV under ProgramData\\\\DataVault\\\\Temp. There are no indications of encoded or obfuscated content, and no network activity is evident in the script. Given the use of a legitimate service account and file-system–oriented operations aligned with backup/maintenance tasks, this activity is assessed as Low Priority (LP) at this time.",
+    "Observed File Paths": "C:\\\\ProgramData\\\\DataVault\\\\Logs\\\\inventory_scan.log; C:\\\\ProgramData\\\\DataVault\\\\Temp\\\\large_files.csv",
+    "Script Content Summary": "PowerShell script performing storage inventory, listing large files on C: drive and exporting to a CSV; executed by a system service account."
+  },
+  "classification": "LP"
+}
+

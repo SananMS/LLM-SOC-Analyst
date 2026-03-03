@@ -1,0 +1,25 @@
+=== DEBUG SESSION START: 2026-03-02T22:46:47.244424+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Data Exfiltration Anomaly
+Selected Playbook: excessive_downloads.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-21550",
+    "Start Time": "2026-03-01T15:10:00.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "90.184.0.1",
+    "Destination IP": "40.108.201.15",
+    "User": "svc_aem_assets@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Geo Location": "Copenhagen, Denmark",
+    "Site URL": "https://globalcorp.sharepoint.com/sites/Nordic_Marketing_Content/",
+    "File Count": 340,
+    "Baseline 24h": 35,
+    "Description": "An unusual volume of SharePoint file downloads (340) was observed from the service account svc_aem_assets@globalcorp.ee, significantly above the 24-hour baseline of 35. The downloads target the Nordic Marketing Content site and include various asset types, suggesting bulk retrieval, and originate from Copenhagen during business hours using automated tooling (Adobe Experience Manager MSGraph) with an older user agent. Given the combination of high volume, automation signals, and the plausible business context, this alert is classified as LP, though continued monitoring is recommended for any future spikes or deviations."
+  },
+  "classification": "LP"
+}
+

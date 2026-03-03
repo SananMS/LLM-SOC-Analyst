@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-25",
+    "Start Time": "2025-07-11T07:50:00.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "41.160.0.2",
+    "Destination IP": "13.80.23.7",
+    "Endpoint": "G315745",
+    "User": "Fred.Mercedes@client.ee",
+    "Playbook Used": "Suspicious Login Triage",
+    "Description": "An Office 365 login from Johannesburg, South Africa was detected for Fred.Mercedes@client.ee. The login succeeded and MFA was used. Historical events show Johannesburg as a recent travel location for this user, and the current IP is not associated with VPN or anonymization, supporting legitimate activity. Therefore, classify as Low Priority as the behavior aligns with expected travel and authenticated access, with no indicators of credential compromise.",
+    "IP Reputation Score": "0/100",
+    "ISP Name": "Liquid Telecommunications Operations Limited",
+    "Usage Type": "Fixed Line ISP",
+    "VPN Status": "Neither VPN nor Proxy nor Tor Node nor Relay",
+    "Historical Travel Match": true
+  },
+  "classification": "LP"
+}

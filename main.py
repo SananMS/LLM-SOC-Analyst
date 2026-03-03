@@ -19,6 +19,7 @@ stats = {
     "correct": 0, 
     "incorrect": 0,
     "total_input_tokens": 0,
+    "total_time_seconds": 0,
     "total_output_tokens": 0,
     "use_cases": {}  # Format: {"usecase1": {"input": 0, "output": 0, "count": 0}}
 }
@@ -40,6 +41,8 @@ def print_summary():
     if stats["total"] > 0:
         avg_in = stats["total_input_tokens"] / stats["total"]
         avg_out = stats["total_output_tokens"] / stats["total"]
+        avg_time = stats["total_time_seconds"] / stats["total"]
+        print(f"  Avg Time: {avg_time:.2f} sec")
         print(f"OVERALL AVG TOKENS PER ALERT:")
         print(f"  Input:  {avg_in:.2f}")
         print(f"  Output: {avg_out:.2f}")
@@ -50,9 +53,11 @@ def print_summary():
         if data["count"] > 0:
             u_avg_in = data["input"] / data["count"]
             u_avg_out = data["output"] / data["count"]
+            u_avg_time = data["time"] / data["count"]
             print(f"  [{uc}] ({data['count']} alerts):")
             print(f"    Avg Input:  {u_avg_in:.2f}")
             print(f"    Avg Output: {u_avg_out:.2f}")
+            print(f"    Avg Time:   {u_avg_time:.2f} sec")
     print("="*40 + "\n")
 
 def write_debug(root_path, text):
@@ -66,7 +71,7 @@ def get_recent_events():
 def get_recent_similar_alerts():
     return current_folder_alerts if current_folder_alerts else "No recent similar alerts found."
 
-async def select_playbook(alert_data, playbook_dir):
+async def select_playbook(alert_data, playbook_dir, llm_model="gpt-5-mini"):
     """Round 1: Let the LLM choose the correct JSON file based on summaries."""
     playbook_summaries = []
     
@@ -89,14 +94,14 @@ async def select_playbook(alert_data, playbook_dir):
     )
 
     response = client.chat.completions.create(
-        model="gpt-5-mini", # Or your preferred model
+        model=llm_model, 
         messages=[{"role": "user", "content": prompt}]
     )
 
     usage = response.usage
     return response.choices[0].message.content.strip(), usage.prompt_tokens, usage.completion_tokens
 
-async def soc_analyst_role(alert_json, playbook_content, playbook_filename, mcp_session, root_path, image_path=None, general_mode=False):
+async def soc_analyst_role(alert_json, playbook_content, playbook_filename, mcp_session, root_path, image_path=None, general_mode=False, llm_model="gpt-5-mini"):
 
     total_in = 0
     total_out = 0
@@ -129,7 +134,7 @@ async def soc_analyst_role(alert_json, playbook_content, playbook_filename, mcp_
         "The Description should summarize what happened and the key observations clearly in full sentences, "
         "written as if a Tier 1 SOC analyst is reporting it, with a natural human-written tone. "
         "It should be between 2 and 4 brief sentences that are not too long, covering all main information. "
-        "Remember that Description field is a MUST for the investigation notes. "
+        "Remember that Description field is a MUST for the investigation notes and that it should not use first person (e.g., 'I classified this alert as HP'). "
         "In addition to summarizing, the Description should provide reasoning for why the alert is considered Low Priority (LP) or High Priority (HP), "
         "without explicitly mentioning playbooks or SOPs. "
         "There is no need to include remediation actions in the Description. "
@@ -187,8 +192,9 @@ async def soc_analyst_role(alert_json, playbook_content, playbook_filename, mcp_
             f"You are a Tier-1 SOC Analyst. Output JSON only matching this structure: {json.dumps(template_guide)}\n\n"
             f"Note: {template_note}\n\n"
             "GENERAL TRIAGE GUIDANCE:\n"
-            "1. Classify as HP if the alert is a legitimate threat or needs escalation.\n"
-            "2. Classify as LP if it is a False Positive or authorized activity.\n\n"
+            "Weigh all available evidence together. No single factor should determine the outcome. Consider how the indicators interact and whether the overall picture is consistent with legitimate activity or suspicious behavior.\n\n"
+            "Classify as High Priority (HP) if the alert represents a legitimate threat, requires further investigation, or warrants escalation — this includes notifying senior analysts or the client.\n"
+            "Classify as Low Priority (LP) if the activity is a false positive or represents authorized behavior that requires no further action.\n\n"
             "TOOL USAGE & PURPOSE:\n"
             "Use the following tools if necessary and if the alert contains the relevant data points:\n"
             "- 'check_ip_reputation': Use this to check if a source or destination IP is known for malicious activity.\n"
@@ -196,7 +202,7 @@ async def soc_analyst_role(alert_json, playbook_content, playbook_filename, mcp_
             "- 'get_domain_age': Use this to check if a domain was recently created, which is a common indicator of phishing or C2 infrastructure.\n"
             "- 'lookup_users': Use this to verify if an email address belongs to an internal employee and check their organizational role.\n"
             "- 'get_recent_events': Use this to check for recent logs which happened before the alert timestamp from same entity.\n"
-            "- 'get_recent_similar_alerts': Use this to see if the same activity has been flagged before and how it was resolved.\n\n"
+            "- 'get_recent_similar_alerts': Use this to see if the same or similar activity has been flagged before from the same entity or in the broader environment, and how it was previously resolved.\n\n"
             "Return ONLY the JSON object."
         )
     else:
@@ -212,7 +218,7 @@ async def soc_analyst_role(alert_json, playbook_content, playbook_filename, mcp_
         "[SOC ANALYST PROMPT]\n" + json.dumps(messages, indent=2)
     )
     # Initial call
-    response = client.chat.completions.create(model="gpt-5-mini", messages=messages, tools=tools)
+    response = client.chat.completions.create(model=llm_model, messages=messages,tools=tools)
     total_in += response.usage.prompt_tokens
     total_out += response.usage.completion_tokens
     msg = response.choices[0].message
@@ -230,9 +236,10 @@ async def soc_analyst_role(alert_json, playbook_content, playbook_filename, mcp_
             f_args = json.loads(tc.function.arguments) if tc.function.arguments else {}
 
             write_debug(root_path, f"[TOOL CALL]\nTool: {f_name}\nArguments: {json.dumps(f_args)}")
-
+            
             # 2. Merged Routing Logic
             if f_name in mcp_tool_whitelist:
+
                 # Call the MCP server only for whitelisted tools
                 try:
                     mcp_res = await mcp_session.call_tool(f_name, arguments=f_args)
@@ -261,7 +268,7 @@ async def soc_analyst_role(alert_json, playbook_content, playbook_filename, mcp_
             })
 
         # 4. Call the model again with the updated message history
-        response = client.chat.completions.create(model="gpt-5-mini", messages=messages, tools=tools)
+        response = client.chat.completions.create(model=llm_model, messages=messages, tools=tools)
         total_in += response.usage.prompt_tokens
         total_out += response.usage.completion_tokens
         msg = response.choices[0].message
@@ -270,7 +277,7 @@ async def soc_analyst_role(alert_json, playbook_content, playbook_filename, mcp_
     write_debug(root_path, "[FINAL LLM OUTPUT]\n" + msg.content)
     return msg.content, total_in, total_out
 
-async def process_dataset(root_dir, playbook_dir, mcp_session, general_mode=False):
+async def process_dataset(root_dir, playbook_dir, mcp_session, general_mode=False, llm_model="gpt-5-mini"):
     global current_folder_events, current_folder_alerts, stats
     
     for root, dirs, files in os.walk(root_dir):
@@ -285,11 +292,16 @@ async def process_dataset(root_dir, playbook_dir, mcp_session, general_mode=Fals
                 use_case = "unclassified"
 
             if use_case not in stats["use_cases"]:
-                stats["use_cases"][use_case] = {"input": 0, "output": 0, "count": 0}
+                stats["use_cases"][use_case] = {
+                    "input": 0,
+                    "output": 0,
+                    "count": 0,
+                    "time": 0   # NEW
+                }
 
-            # --- NEW: Local Token Counter for this specific alert ---
             this_alert_in = 0
             this_alert_out = 0
+            alert_start_time = datetime.now(UTC)
 
             debug_path = os.path.join(root, "debug.log")
             with open(debug_path, "w", encoding="utf-8") as f:
@@ -304,7 +316,7 @@ async def process_dataset(root_dir, playbook_dir, mcp_session, general_mode=Fals
 
             if not general_mode:
                 # Capture the three return values: filename, input_tokens, output_tokens
-                raw_pb_filename, in_t, out_t = await select_playbook(alert_data, playbook_dir)
+                raw_pb_filename, in_t, out_t = await select_playbook(alert_data, playbook_dir, llm_model=llm_model)
                 this_alert_in += in_t
                 this_alert_out += out_t
                 
@@ -332,25 +344,35 @@ async def process_dataset(root_dir, playbook_dir, mcp_session, general_mode=Fals
 
             # --- ROUND 2: Triage (UPDATED to capture tokens) ---
             result, in_t, out_t = await soc_analyst_role(
-                alert_data, playbook_content, pb_filename, mcp_session, root, image_file, general_mode=general_mode
+                alert_data, playbook_content, pb_filename, mcp_session, root, image_file, general_mode=general_mode, llm_model=llm_model
             )
             this_alert_in += in_t
             this_alert_out += out_t
+            alert_end_time = datetime.now(UTC)
+            alert_duration = (alert_end_time - alert_start_time).total_seconds()
 
-            # --- NEW: Update the Global Stats and print to Terminal ---
             stats["total_input_tokens"] += this_alert_in
             stats["total_output_tokens"] += this_alert_out
+            stats["total_time_seconds"] += alert_duration
+
             stats["use_cases"][use_case]["input"] += this_alert_in
             stats["use_cases"][use_case]["output"] += this_alert_out
+            stats["use_cases"][use_case]["time"] += alert_duration 
             stats["use_cases"][use_case]["count"] += 1
             
-            print(f"📊 Token usage for {os.path.basename(root)}: Input: {this_alert_in} | Output: {this_alert_out}")
+            print(
+                f"📊 {os.path.basename(root)} | "
+                f"Input: {this_alert_in} | "
+                f"Output: {this_alert_out} | "
+                f"Time: {alert_duration:.2f} sec"
+            )
 
-            # --- NEW: Write token usage to a file in the folder ---
+            #  Write token usage to a file in the folder ---
             with open(os.path.join(root, "token_usage.json"), "w", encoding="utf-8") as f:
                 json.dump({
                     "input_tokens": this_alert_in,
                     "output_tokens": this_alert_out,
+                    "time_seconds": alert_duration,
                     "use_case": use_case
                 }, f, indent=2)
 
@@ -386,8 +408,15 @@ async def process_dataset(root_dir, playbook_dir, mcp_session, general_mode=Fals
 def parse_args():
     parser = argparse.ArgumentParser(description="SOC alert investigation runner")
     parser.add_argument("--alert-folder", default="alerts", help="Alert subfolder (default: alerts)")
-    # Add this line:
-    parser.add_argument("--general", action="store_true", help="Bypass playbook selection and use general triage logic")
+
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument("--strict", action="store_true", help="Use playbooks from playbooks_strict folder")
+    group.add_argument("--soft", action="store_true", help="Use playbooks from playbooks_soft folder")
+    group.add_argument("--general", action="store_true", help="Bypass playbook selection and use general triage logic")
+
+    parser.add_argument("--model", choices=["gpt-5-mini", "gpt-5-nano"], default="gpt-5-mini",
+                        help="Choose which LLM model to use (default: gpt-5-mini)")
+
     return parser.parse_args()
 
 async def main():
@@ -409,7 +438,30 @@ async def main():
     async with stdio_client(server_params) as (read, write):
         async with ClientSession(read, write) as session:
             await session.initialize()
-            await process_dataset(alert_root, "playbooks", session, general_mode=args.general)
+            if args.strict:
+                playbook_dir = "playbooks_test"
+                general_mode = False
+
+            elif args.soft:
+                playbook_dir = "playbooks_test_soft"
+                general_mode = False
+
+            elif args.general:
+                playbook_dir = None  # Not used
+                general_mode = True
+
+            else:
+                raise ValueError("You must choose --strict, --soft, or --general")
+
+            llm_model = args.model
+
+            await process_dataset(
+                alert_root,
+                playbook_dir,
+                session,
+                general_mode=general_mode,
+                llm_model=llm_model
+            )
             print_summary()
 
             summary_report = {
@@ -418,7 +470,8 @@ async def main():
                     "total_alerts": stats["total"],
                     "accuracy": (stats["correct"] / stats["total"] * 100) if stats["total"] > 0 else 0,
                     "avg_input_tokens": stats["total_input_tokens"] / stats["total"] if stats["total"] > 0 else 0,
-                    "avg_output_tokens": stats["total_output_tokens"] / stats["total"] if stats["total"] > 0 else 0
+                    "avg_output_tokens": stats["total_output_tokens"] / stats["total"] if stats["total"] > 0 else 0,
+                    "avg_time_seconds": stats["total_time_seconds"] / stats["total"] if stats["total"] > 0 else 0
                 },
                 "use_case_breakdown": {}
             }
@@ -428,7 +481,8 @@ async def main():
                     summary_report["use_case_breakdown"][uc] = {
                         "alert_count": data["count"],
                         "avg_input": data["input"] / data["count"],
-                        "avg_output": data["output"] / data["count"]
+                        "avg_output": data["output"] / data["count"],
+                        "avg_time_seconds": data["time"] / data["count"]
                     }
 
             with open("final_stats_report.json", "w", encoding="utf-8") as f:

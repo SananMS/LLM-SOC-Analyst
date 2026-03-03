@@ -1,0 +1,16 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-21550",
+    "Start Time": "2026-03-01T15:10:00.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "90.184.0.1",
+    "Destination IP": "40.108.201.15",
+    "User": "svc_aem_assets@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Geographic Location": "Copenhagen, Denmark",
+    "Data Volume": "340 files downloaded against a 24h baseline of 35",
+    "Sample Files Count": "10 files sampled in evidence",
+    "Description": "Unusual bulk download activity detected from the service account svc_aem_assets@globalcorp.ee targeting SharePoint content, with 340 files downloaded across a 24-hour window. The downloads occurred from Copenhagen, Denmark to an external destination IP 40.108.201.15 and involved automated-looking traffic with a WinHttpRequest user agent. The combination of high data volume from a service account and external destination suggests a potential data exfiltration risk requiring escalation."
+  },
+  "classification": "HP"
+}

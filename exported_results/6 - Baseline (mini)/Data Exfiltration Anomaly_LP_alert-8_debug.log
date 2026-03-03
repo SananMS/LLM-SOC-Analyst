@@ -1,0 +1,26 @@
+=== DEBUG SESSION START: 2026-03-03T00:34:51.621594+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Data Exfiltration Anomaly
+Selected Playbook: General Triage (No Playbook)
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-19458",
+    "Start Time": "2026-03-01T13:10:00.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "62.248.150.12",
+    "Destination IP": "40.108.201.15",
+    "User": "acc@globalcorp.ee",
+    "Workload": "SharePoint",
+    "Site URL": "https://globalcorp.sharepoint.com/sites/Finland_HR_Mepco_Sync/",
+    "Application": "Mepco MSGraph",
+    "File Count": 305,
+    "Baseline 24h": 28,
+    "User Agent": "Mozilla/4.0 (compatible; Win32; WinHttp.WinHttpRequest.5)",
+    "Description": "An unusually high number of SharePoint file downloads (305) was observed for acc@globalcorp.ee, which is well above the 24-hour baseline of 28. The activity originated from Tampere, Finland and was performed via the Mepco MSGraph integration against the site named 'Finland_HR_Mepco_Sync', with a user agent consistent with automated integration clients. The site name, application, and file paths indicate a scheduled Mepco synchronization of HR and finance documents, making this activity consistent with authorized integration behavior and therefore assessed as Low Priority."
+  },
+  "classification": "LP"
+}
+

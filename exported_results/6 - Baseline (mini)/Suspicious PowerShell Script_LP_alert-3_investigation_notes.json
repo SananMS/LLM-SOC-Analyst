@@ -1,0 +1,15 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-2281",
+    "Start Time": "2026-01-25T14:40:12.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.10.15.22",
+    "Endpoint": "DC-EAST-01",
+    "User": "SYSTEM",
+    "OS": "Windows Server 2022 Datacenter",
+    "Description": "A PowerShell script executed under the SYSTEM account on the domain controller that enumerates Active Directory domain and password policy settings and outputs results as JSON. The script calls legitimate AD cmdlets (Get-ADDomainController, Get-ADDefaultDomainPasswordPolicy, Get-ADFineGrainedPasswordPolicy) and shows no signs of obfuscation or external network activity. A nearly identical alert (SOC-2105) was observed on the same host and user and was previously validated by the client as a scheduled automated compliance check. Based on execution context, commands used, and the prior validation, this activity is assessed as low priority.",
+    "Script Actions": "Enumerates AD domain controller forest and default/fine-grained password policies then converts results to JSON (Get-ADDomainController, Get-ADDefaultDomainPasswordPolicy, Get-ADFineGrainedPasswordPolicy, ConvertTo-Json).",
+    "Related Past Alert": "SOC-2105 (2026-01-10) — identical script on DC-EAST-01 executed by SYSTEM; previously closed as false positive after client confirmation that it is part of a daily automated compliance check."
+  },
+  "classification": "LP"
+}

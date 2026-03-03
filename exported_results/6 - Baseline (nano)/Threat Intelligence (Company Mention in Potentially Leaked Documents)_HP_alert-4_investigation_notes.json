@@ -1,0 +1,16 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-76015",
+    "Start Time": "2026-02-19T11:45:00.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Description": "Vitalis Healthcare was mentioned in an external document allegedly leaked to the dark web, linked via an onion URL. The leaked artifacts include a patient database dump, payroll data, and a firewall configuration file, indicating potential exposure of sensitive information and critical infrastructure details. The combination of exposed data and the dark-web source increases the risk of a targeted data breach or misuse, and warrants HP designation.",
+    "Evidence Source": "TI-Monitor-DarkWeb",
+    "Source URL": "http://v377w88x99y00z11a22b33c44d55e66f77g88h99i00j11k22.onion/dump/vitalis_espana/",
+    "Evidence Relative Paths": [
+      "/srv/data/breach_assets/vitalis_healthcare_spain/pacientes/base_datos_pacientes_madrid_2026.sql",
+      "/srv/data/breach_assets/vitalis_healthcare_spain/rrhh/nominas_empleados_barcelona.xlsx",
+      "/srv/data/breach_assets/vitalis_healthcare_spain/sistemas/backup_configuracion_firewall_central.cfg"
+    ]
+  },
+  "classification": "HP"
+}

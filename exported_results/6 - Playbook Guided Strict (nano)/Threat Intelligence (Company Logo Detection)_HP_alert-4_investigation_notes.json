@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-55102",
+    "Start Time": "2026-02-18T16:10:05.000Z",
+    "Alert Name": "Brand Logo Detection",
+    "Source IP": "192.185.112.40",
+    "Destination IP": "192.185.112.40",
+    "Playbook Used": "Visual Brand Abuse & Logo Triage",
+    "Description": "Vitalis Healthcare logo detected on a login page hosted at vitalis-hr-benefits.com. The domain age is 5 hours and resolves to 192.185.112.40, a hosting IP associated with a data center. The page presents a credential-style sign-in form using the official Vitalis logo, indicating potential brand impersonation and credential harvesting. Given the combination of brand spoofing on a newly registered domain and the login prompt, this is assessed as High Priority.",
+    "Domain Age": "5 hours",
+    "Registrar": "Public Domain Registry",
+    "URL Scanned": "https://www.vitalis-hr-benefits.com/auth/login?service=payroll",
+    "IP Reputation": "Abuse Confidence Score: 0/100; Hosting: Data Center/Web Hosting/Transit; ISP: HostGator.com LLC; Privacy Status: VPN",
+    "Recent Similar Alerts": "No recent similar alerts found."
+  },
+  "classification": "HP"
+}

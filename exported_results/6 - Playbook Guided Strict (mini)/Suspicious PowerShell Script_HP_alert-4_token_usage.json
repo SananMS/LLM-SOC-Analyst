@@ -1,0 +1,6 @@
+{
+  "input_tokens": 4543,
+  "output_tokens": 2290,
+  "time_seconds": 34.707869,
+  "use_case": "Suspicious PowerShell Script"
+}

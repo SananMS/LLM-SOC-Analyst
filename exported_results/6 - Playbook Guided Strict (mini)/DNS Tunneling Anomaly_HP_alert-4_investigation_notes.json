@@ -1,0 +1,24 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14570",
+    "Start Time": "2026-02-06T16:45:10.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.150.22.15",
+    "Destination IP": "185.112.10.4",
+    "Endpoint": "srv-prod-web-02",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Description": "Multiple DNS TXT queries to the domain ntp_update.space contained high-entropy subdomain labels that decode to host-identifying key/value pairs (hostname=web-02, os=ubuntu-22.04, uptime=44211, cmd=idle). The root domain is not recognized in the internal database and the domain age check returned no known registration data, while the query size (740 bytes vs typical 20 bytes) and encoded payloads are consistent with DNS tunneling. The host previously made legitimate NTP queries but has no history of similar tunneled DNS TXT activity, so the combined evidence indicates anomalous behavior that warrants escalation.",
+    "Root Domain Checked": "ntp_update.space",
+    "Domain Age Assessment": "Unknown / Not found in local database (suspicious)",
+    "Query Type": "TXT",
+    "Actual Bytes": 740,
+    "Decoded Subdomain Payloads": [
+      "hostname=web-02",
+      "os=ubuntu-22.04",
+      "uptime=44211",
+      "cmd=idle"
+    ],
+    "Recent Events Summary": "Prior to the detection the host queried pool.ntp.org and time.google.com (A records); the TXT queries to ntp_update.space occurred at the alert time. No recent similar alerts were found for this host."
+  },
+  "classification": "HP"
+}

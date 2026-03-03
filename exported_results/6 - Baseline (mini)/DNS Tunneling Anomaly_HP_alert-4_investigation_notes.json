@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14570",
+    "Start Time": "2026-02-06T16:45:10.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.150.22.15",
+    "Destination IP": "185.112.10.4",
+    "Endpoint": "srv-prod-web-02",
+    "Domain": "ntp-update.space",
+    "Query Type": "TXT",
+    "Actual Bytes": "740",
+    "Domain Age": "Created 2026-02-05 (26 days old)",
+    "Destination IP Abuse Confidence Score": "0/100 (ISP: Zattoo AG, Data Center/Web Hosting)",
+    "Description": "Multiple DNS TXT queries from srv-prod-web-02 contained large, high-entropy labels that decode to host metadata (e.g., hostname, OS, uptime, cmd), which is consistent with DNS-based data exfiltration or C2 signaling. The queried domain was registered recently and resolves to a data-center hosted IP, and the request size (740B) is far above the typical DNS payload observed for this host (20B), supporting the suspicion. Based on the encoded metadata, payload size, and recency of the domain, this activity is considered high risk and requires escalation for further investigation."
+  },
+  "classification": "HP"
+}

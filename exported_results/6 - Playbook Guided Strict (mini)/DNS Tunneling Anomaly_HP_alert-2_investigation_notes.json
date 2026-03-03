@@ -1,0 +1,22 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14568",
+    "Start Time": "2026-02-06T11:20:00.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.200.15.44",
+    "Destination IP": "104.21.41.202",
+    "Endpoint": "dev-linux-node-03",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Query Type": "TXT",
+    "Actual Bytes": 412,
+    "Root Domain": "github-status.com",
+    "Domain Age": "27 days (created 2026-02-04)",
+    "Decoded Subdomain Payloads": [
+      "70-61-73-73-77-6f-72-64 -> \"password\"",
+      "3d-53-74-72-6f-6e-67-21 -> \"=Strong!\"",
+      "61-64-6d-69-6e-2d-64-62 -> \"admin-db\""
+    ],
+    "Description": "Anomalously large, high-entropy DNS TXT queries to github-status.com were observed from dev-linux-node-03, with sample subdomains consisting of dashed hex sequences and standard host identifiers. The dashed hex segments decode to credential-like strings (e.g., \"password\", \"=Strong!\", \"admin-db\"), and the root domain was registered very recently (27 days old), reducing confidence in its legitimacy. Prior similar DNS tunneling alerts from the same endpoint increase concern that these queries represent data exfiltration rather than benign diagnostics, so the activity is treated as high priority."
+  },
+  "classification": "HP"
+}

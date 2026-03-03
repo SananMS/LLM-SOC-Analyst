@@ -1,0 +1,10 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-54921",
+    "Start Time": "2026-02-18T16:15:45.000Z",
+    "Alert Name": "Brand Logo Detection",
+    "Destination IP": "185.212.131.54",
+    "Description": "Vitalis Healthcare logo detected on a newly registered domain, vitalis-care-verification.net, which hosts a page prompting for personal information. The scanned URL https://www.vitalis-care-verification.net/update-info displays a Patient Information Update Required page, indicating a potential phishing site impersonating the Vitalis Healthcare brand. The domain resolves to IP 185.212.131.54 and was created just 1 day ago, with Hostinger as the registrar, which together suggest an impersonation or credential harvesting attempt requiring immediate investigation."
+  },
+  "classification": "HP"
+}

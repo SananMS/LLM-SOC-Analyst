@@ -1,0 +1,16 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-75901",
+    "Start Time": "2026-02-19T18:12:05.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Document Title": "Vitalis_Internal_VPN_Config_v3.pdf",
+    "Source URL": "https://www.scribd.com/document/882145/vitalis-internal-infrastructure-guide",
+    "Matched Content": "...Access to the Vitalis Healthcare primary data center requires connection to the internal VPN gateway at 10.45.2.112. Authentication is handled via the Vitalis-DC01 domain controller. If the primary tunnel fails, technicians should failover to the secondary Cisco ASA node (v-asa-ext-02.vitalis.com) using the shared certificate stored in the /dev/certs/internal/ directory...",
+    "Evidence Source": "TI-Monitor-Scribd",
+    "External Document Title": "Vitalis_Internal_VPN_Config_v3.pdf",
+    "External Document URL": "https://www.scribd.com/document/882145/vitalis-internal-infrastructure-guide",
+    "Observed Risk Indicators": "Internal VPN gateway IP, domain controller details, and failover endpoint information exposed in external document",
+    "Description": "An external document mentions Vitalis Healthcare and includes sensitive internal infrastructure details such as VPN gateway and authentication flow. The content reveals internal IPs and failover endpoints, which could enable targeted reconnaissance or misuse if publicly available. This exposure represents a genuine information leakage risk and warrants escalation and further review."
+  },
+  "classification": "HP"
+}

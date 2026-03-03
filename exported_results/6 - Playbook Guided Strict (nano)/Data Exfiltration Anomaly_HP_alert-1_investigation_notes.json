@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-12200",
+    "Start Time": "2026-01-31T14:45:10.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "194.126.101.99",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "WKSTN-OFFSITE-04",
+    "User": "Liam.O-Sullivan@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Description": "An unusually high volume of SharePoint files (850) was downloaded by the user from the Executive Board Confidential site, far exceeding the 24-hour baseline of 5 files. The access originated from an IP in Tallinn, Estonia and used SharePoint Online as the workload, with a legacy user agent. The combination of sensitive data exposure, large data volume, and cross-border access indicates a elevated risk of data exfiltration or credential misuse, requiring further investigation.",
+    "Geographic Context": "City Tallinn, Country Estonia; Local event time approximately 16:45 (UTC+2).",
+    "Volume Context": "Downloaded 850 files; baseline 24h prior: 5 files; target site includes Executive Board Confidential documents; sample files include terms and board materials.",
+    "User Role Context": "User is Regional Logistics Coordinator (Ireland) in Supply Chain & Logistics; access to confidential board documents appears misaligned with typical role responsibilities.",
+    "Reputation Insight": "Source IP 194.126.101.99 shows no abuse signals; Destination IP 40.108.201.15 is a Microsoft data center; traffic aligns with legitimate cloud service usage, but data sensitivity and volume elevate risk."
+  },
+  "classification": "HP"
+}

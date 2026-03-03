@@ -1,0 +1,61 @@
+{
+  "playbook_name": "Document Exposure & Threat Intel Triage",
+  "description": "SOP for evaluating brand mentions within external datasets and leaked documents. NOTE: Field availability varies by source; 'matched_content', 'relative_paths', or 'document_title' may be missing. Triage must pivot based on available indicators. If any content or metadata is in a language other than Estonian, it must be translated before analysis.",
+  "steps": [
+    {
+      "step_id": 1,
+      "task": "Extract Available Metadata & Source Info",
+      "action": "Parse alert JSON for all available evidence. This may include 'document_title', 'source_url', 'relative_paths', 'matched_content', and 'detection_source'.",
+      "logic": "The logic must adapt to the specific data provided. In some cases, one field may be missing, requiring reliance on other indicators. For example, if 'matched_content' is absent, the analysis must focus more heavily on 'document_title', 'source_url', and 'relative_paths' for contextual clues."
+    },
+    {
+      "step_id": 2,
+      "task": "Language Detection & Translation",
+      "action": "Check 'matched_content', 'document_title', and 'relative_paths' for non-English text. If the language is not English, translate it into English to ensure full contextual understanding.",
+      "logic": "Accurate triage depends on understanding the specific intent and technical nature of the document. Misinterpretation due to language barriers can lead to false negatives or incorrectly prioritized alerts."
+    },
+    {
+      "step_id": 3,
+      "task": "Analyze Matched Content Sensitivity (If Available)",
+      "action": "If 'matched_content' is present, scan for PII, PHI, Technical secrets, or Administrative labels.",
+      "logic": "Content-based verification is the strongest indicator of intent. If missing, move to Step 4 and 5 for environmental and metadata analysis."
+    },
+    {
+      "step_id": 4,
+      "task": "Evaluate Source Platform Intent",
+      "action": "Determine the reputation of the hosting platform. Is it a public repository, a developer paste site, or an anonymity-focused leak site?",
+      "logic": "Platform context is a critical fallback when content is missing. A hit on a known breach-hosting Onion site is inherently higher risk than a hit on a public marketing repository."
+    },
+    {
+      "step_id": 5,
+      "task": "Perform Path & Vertical Context Check",
+      "action": "Analyze 'relative_paths' and 'document_title' (if present). Determine if naming conventions align with the client's industry or a different vertical.",
+      "logic": "Crucial for identifying 'Same Name, Different Industry' false positives. If the path suggests manufacturing or retail for a healthcare client, it is likely a false positive."
+    },
+    {
+      "step_id": 6,
+      "task": "Cross-Reference with Historic Alerting Patterns",
+      "action": "Invoke 'get_recent_similar_alerts' to check if the available identifiers (URL, Title, or Path) have been flagged previously.",
+      "tool_integration": "get_recent_similar_alerts",
+      "logic": "Historical data is vital when current alert data is thin. Repeated false positives from a specific source suggest a persistent non-malicious context."
+    },
+    {
+      "step_id": 7,
+      "task": "Inspect Metadata for Internal Indicators",
+      "action": "If a document is accessible, extract metadata to check for internal file paths or server naming conventions.",
+      "logic": "Technical metadata exposure remains a primary pivot point for determining if a document is an accidental internal leak."
+    },
+    {
+      "step_id": 8,
+      "task": "Final Triage Classification",
+      "action": "Assign triage priority (LP or HP) based on the combined weight of available evidence.",
+      "logic": "Classification rules:\n\n1. **Low Priority (LP)** if:\n   - **Vertical Divergence:** Titles/paths clearly indicate a different industry.\n   - **Public Context:** Hosted on professional platforms with promotional titles, even if content is missing.\n   - **Historical False Positive:** 'get_recent_similar_alerts' confirms a pattern of benign hits from the source.\n\n2. **High Priority (HP)** only if:\n   - **Confirmed Brand Match (Mandatory):** The content, metadata, title, paths, or matched data clearly and directly relate to the monitored brand.\n   AND\n   - At least one of the following risk indicators is present:\n       - **High-Risk Infrastructure:** Found on a known dark web breach repository or anonymous 'dump' site.\n       - **Sensitive Metadata/Title:** 'document_title' or 'relative_paths' contain terms like 'DB_Dump', 'Credentials', or 'Confidential'.\n       - **Structured Sensitive Data:** 'matched_content' (if present) shows client-specific PII/PHI."
+    },
+    {
+      "step_id": 9,
+      "task": "Generate Investigation Summary",
+      "action": "Construct a concise summary based on available fields.",
+      "logic": "Ensures the analyst understands the evidentiary limitations and the reasoning for the risk level assigned."
+    }
+  ]
+}

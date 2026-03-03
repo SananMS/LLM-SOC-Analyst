@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-55014",
+    "Start Time": "2026-02-18T15:40:12.000Z",
+    "Alert Name": "Brand Logo Detection",
+    "Target Brand": "Vitalis Healthcare",
+    "Target Brand Domain": "vitalis.com",
+    "Scanned URL": "https://www.vitalis-connect-update.com/download/security-patch-v4",
+    "Destination IP": "103.45.12.89",
+    "Domain Age": "3 hours",
+    "Registrar": "NameSilo, LLC",
+    "Playbook Used": "Visual Brand Abuse & Logo Triage",
+    "IP Reputation Score": "0/100",
+    "Hosting Provider": "Shenzhen Qianhai bird cloud computing Co. Ltd",
+    "Recent Similar Alerts": "No recent similar alerts found.",
+    "Description": "Vitalis Healthcare branding was detected on vitalis-connect-update.com, a domain registered 3 hours ago that hosts a page offering a downloadable executable labeled as a 'Critical Security Patch'. The screenshot shows a near-identical logo and professional layout combined with messaging that urges 'Required for continued access', which strongly suggests deliberate impersonation and potential malware distribution rather than authorized vendor content. Although the IP shows a low abuse score, the newly created domain, convincing visual match, and presence of an unsolicited executable justify treating this as High Priority due to the active impersonation and distribution risk."
+  },
+  "classification": "HP"
+}

@@ -1,0 +1,32 @@
+=== DEBUG SESSION START: 2026-03-03T00:39:14.851818+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: DNS Tunneling Anomaly
+Selected Playbook: General Triage (No Playbook)
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10238",
+    "Start Time": "2026-02-06T16:15:22.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "192.168.1.22",
+    "Destination IP": "172.16.40.3",
+    "Endpoint": "wkst-dev-14",
+    "Description": "Anomalously large DNS queries (580 bytes vs 38 typical) to mdnplay.dev were observed from wkst-dev-14 using multiple high-entropy, encoded-looking subdomain labels. The volume and randomness of the subdomain labels are consistent with DNS tunneling and suggest possible data exfiltration or a C2 channel rather than benign DNS activity. This is classified as High Priority due to the internal host involvement, significant deviation from baseline byte size, and repeated randomized queries indicating covert channel behavior.",
+    "Domain": "mdnplay.dev",
+    "Query Type": "A",
+    "Actual Bytes": 580,
+    "Typical Bytes": 38,
+    "Sample Queries": [
+      "a91c4f7e3d082b650471fe23c8b5aa12d934e017.mdnplay.dev",
+      "f3e72a91-1bc4-47e9-b830-54d721a0fc38.mdnplay.dev",
+      "3b8d1e0c94f72a651bc309e8d4f0a72b1e839c45.mdnplay.dev",
+      "e6f190ad-23b7-4d81-a912-7c340be85f21.mdnplay.dev",
+      "7c52b3e1f094d8a62c451be70f9832d10c74a981.mdnplay.dev",
+      "91d4c8fa-67a3-4f02-bc51-2e908d7f43a6.mdnplay.dev"
+    ]
+  },
+  "classification": "HP"
+}
+

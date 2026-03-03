@@ -1,0 +1,35 @@
+=== DEBUG SESSION START: 2026-03-02T23:13:33.591940+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Suspicious PowerShell Script Execution
+Selected Playbook: suspicious_powershell.json
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-4104",
+    "Start Time": "2025-12-21T15:39:16.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.0.0.1",
+    "Endpoint": "HOST-01",
+    "User": "SYSTEM",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Description": "PowerShell script executed on HOST-01 enumerates Active Directory topology and writes a JSON report to a local agent_temp path. It runs under the SYSTEM account and uses Get-AD* cmdlets, which could indicate discovery activity; however, the target path points to a vendor directory (CyberCNSAgent), suggesting it may be a legitimate inventory task. Based on the evidence and absence of external network activity or known malware indicators, this alert is classified as Low Priority."
+  },
+  "classification": "LP"
+}
+

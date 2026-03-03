@@ -1,0 +1,27 @@
+=== DEBUG SESSION START: 2026-03-03T01:22:48.827223+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Data Exfiltration Anomaly
+Selected Playbook: excessive_downloads.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-11205",
+    "Start Time": "2026-01-31T09:15:22.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "194.126.101.44",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "FIN-LAPTOP-09",
+    "User": "Linda.Kask@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Workload": "SharePoint",
+    "File Count": 420,
+    "Baseline 24h": 45,
+    "Local Time": "2026-01-31T11:15:22 (EET)",
+    "Geo Location": "Tallinn, Estonia",
+    "Description": "An elevated number of SharePoint file downloads (420 files vs a 24-hour baseline of 45) was observed from the user's account on the Finance_Reporting site. The activity originated from Tallinn at 11:15 local time and used a standard browser user agent while accessing Office 365 SharePoint Online, which is consistent with expected human-driven access during business hours. Sample files are finance-related (tax, invoices, payroll) and align with the site's purpose and the user's corporate email domain, reducing indicators of external compromise. Given the geographic and application context and the relevancy of accessed content, this alert is considered Low Priority because the activity is plausibly legitimate despite the higher-than-baseline volume."
+  },
+  "classification": "LP"
+}
+

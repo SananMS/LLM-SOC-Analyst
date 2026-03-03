@@ -1,0 +1,14 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-54812",
+    "Start Time": "2026-02-18T15:02:14.000Z",
+    "Alert Name": "Brand Logo Detection",
+    "Source IP": "195.178.110.15",
+    "Destination IP": "195.178.110.15",
+    "Playbook Used": "Visual Brand Abuse & Logo Triage",
+    "Domain Age": "2 days",
+    "Registrar": "NameCheap, Inc.",
+    "Description": "Vitalis Healthcare logo was detected on a suspicious domain, vitalis-portal-security.com, hosting a login page that imitates the Vitalis patient portal. The domain is newly registered (2 days) and resolves to IP 195.178.110.15, which has a high abuse reputation. The combination of brand impersonation, a credential-collection page, and a hosting environment with known risk indicates a credential phishing attempt rather than legitimate brand usage, warranting HP prioritization."
+  },
+  "classification": "HP"
+}

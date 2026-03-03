@@ -1,0 +1,23 @@
+=== DEBUG SESSION START: 2026-03-02T23:52:07.447379+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Azure Network Security Modification
+Selected Playbook: suspicious_cloud_network_activity.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-22550",
+    "Start Time": "2026-01-22T14:12:40.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "194.126.101.99",
+    "Resource": "vnet-tallinn-dev-01",
+    "Resource Group": "rg-baltic-dev-connectivity",
+    "User": "margus.tamm@eestitehnika.ee",
+    "Correlation ID": "856fb662-5562-4607-a8d2-182406868b98",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Description": "The alert indicates deletion of Virtual Network vnet-tallinn-dev-01 in resource group rg-baltic-dev-connectivity performed by Margus Tamm from Estonia (IP 194.126.101.99). The event occurred at 14:12:40 UTC on 2026-01-22, which is 16:12 local time, during standard Estonia working hours, with MFA present in the claims. Because the actor holds an Owner role and the target is in a dev environment, this appears to be an authorized maintenance action; no indicators of broader suspicious activity are evident in the provided data."
+  },
+  "classification": "LP"
+}
+

@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10242",
+    "Start Time": "2026-01-22T06:13:41.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.44.12.198",
+    "Destination IP": "184.28.193.72",
+    "Endpoint": "wkst-mktg-prod-04",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Description": "Anomalously large amount (535 Bytes) of high-entropy DNS traffic was observed from wkst-mktg-prod-04 to 184.28.193.72, involving domain tiktokcdn.com with random-looking subdomains. The root domain tiktokcdn.com is a long-established CDN (registered 2017-09-20), suggesting this could be legitimate traffic on the surface, but the presence of high-entropy subdomains and elevated payload size raises concern for DNS-based data exfiltration. Historical DNS activity shows multiple lookups to the root domain and related hosts, strengthening the possibility of covert DNS channel use; due to potential risk, this alert is treated as high priority for further investigation.",
+    "Root Domain": "tiktokcdn.com",
+    "Domain Age": "3085 days old (Created 2017-09-20)",
+    "Encoded Payload Indicators": "High entropy subdomains observed; potential encoded data in DNS queries",
+    "Recent Events": "DNS queries from 10.44.12.198 to tiktokcdn.com and related hosts; no recent similar alerts observed"
+  },
+  "classification": "HP"
+}

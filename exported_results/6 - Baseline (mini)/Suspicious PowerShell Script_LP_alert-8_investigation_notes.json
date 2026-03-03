@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-66382",
+    "Start Time": "2026-01-27T11:22:18.992Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.0.4.155",
+    "Endpoint": "WKSTN-DEV-19",
+    "User": "t_doe",
+    "Description": "A PowerShell command executed on WKSTN-DEV-19 under user t_doe invoked Get-AuthenticodeSignature against the Postman executable and base64-encoded the JSON output. The initiating process is Postman.exe with parent explorer.exe, the binary's SHA256 shows no detections on VirusTotal and there are no recent similar alerts in the environment. This activity is consistent with a user-initiated integrity check of a known application and lacks telemetry indicative of malicious behavior, so it is assessed as low priority.",
+    "Initiating Process": "Postman.exe",
+    "Process SHA256": "145c75624d30ef5a088048904ac268d9bb24568df442cc8ab39bceb3cddbb24e",
+    "Parent Process": "explorer.exe",
+    "Scriptblock": "powershell.exe -NoProfile -NonInteractive -InputFormat None -Command \"Get-AuthenticodeSignature 'C:\\Users\\t_doe\\AppData\\Local\\Postman\\app-10.21.0\\Postman.exe' | ConvertTo-Json -Compress | ForEach-Object { [Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($_)) }\"",
+    "File Reputation": "No detections on VirusTotal; community score 0 (no engines flagged)"
+  },
+  "classification": "LP"
+}

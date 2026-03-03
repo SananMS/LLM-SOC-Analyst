@@ -1,0 +1,23 @@
+=== DEBUG SESSION START: 2026-03-03T01:49:08.691800+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Azure Network Security Modification
+Selected Playbook: suspicious_cloud_network_activity.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14600",
+    "Start Time": "2026-10-18T14:16:17.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Endpoint": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-nordic-prod-001/providers/Microsoft.Network/networkSecurityGroups/nsg-aks-prod-northeast",
+    "User": "ServicePrincipal (7f2a8c12-3391-4e1a-b672-9d3c11bc99a1) - role: Contributor",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Resource Group": "rg-nordic-prod-001",
+    "Geolocation": "Norway East (stamp: FDWeb)",
+    "Request Body Summary": "Request body shows update to NSG 'nsg-aks-prod-northeast' adding/confirming securityRules: 'SanctionBlocks' (access: Deny, priority: 499) blocking many listed IP ranges to destination 40.113.112.55 on ports 80/443, and 'k8s-azure-lb-allow' (access: Allow, priority: 502) allowing Internet to same destination on ports 443/80. Deny rule has higher priority than the Allow and provisioningState is Succeeded, indicating the net effect is a tightening of access for the targeted destination.",
+    "Description": "An NSG write operation was detected against a production NSG (nsg-aks-prod-northeast) in rg-nordic-prod-001. The action was performed by a ServicePrincipal with Contributor scope and the request adds a high-priority Deny rule that blocks multiple external ranges while a lower-priority Allow for the load balancer remains, resulting in a net reduction of exposure. The event occurred at 2026-10-18T14:16:17Z (17:16 EEST) originating from Norway East, which is consistent with cloud-region activity and falls within normal local working hours; given the authorized actor, the corrective/defensive nature of the rule change, and plausible timing/geolocation, this alert is assessed as Low Priority."
+  },
+  "classification": "LP"
+}
+

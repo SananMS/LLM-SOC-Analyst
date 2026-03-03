@@ -4,7 +4,7 @@
   "threat_display_name": "Malware",
   "status": "new",
   "start_time": "2026-01-30T11:01:53.000Z",
-  "description": "A threat 'Malware' related to a JavaScript asset within a Chrome Extension was detected. SentinelOne Cloud has blacklisted this hash as a known malicious component.",
+  "description": "A threat 'Malware' (Trojan:JS/ChatGPTStealer.GVA!MTB) related to a JavaScript asset within a Chrome Extension was detected. SentinelOne Cloud has blacklisted this hash as a known malicious component.",
   "alert_web_url": "https://sentinelone.net/threats/24036866778695455241/overview",
   "evidence": {
     "endpoint": "WKSTN-SALES-080",

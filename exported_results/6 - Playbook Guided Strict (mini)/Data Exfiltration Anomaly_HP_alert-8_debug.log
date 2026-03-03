@@ -1,0 +1,104 @@
+=== DEBUG SESSION START: 2026-03-03T02:25:05.974486+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Data Exfiltration Anomaly
+Selected Playbook: excessive_downloads.json
+
+[TOOL CALL]
+Tool: lookup_users
+Arguments: {"emails": ["Dace.Ozolina@globalcorp.ee"]}
+
+[TOOL RESPONSE]
+[
+  {
+    "email": "Dace.Ozolina@globalcorp.ee",
+    "full_name": "Dace Ozoli\u0146a",
+    "department": "P\u0101rdo\u0161ana",
+    "role": "P\u0101rdo\u0161anas speci\u0101lists"
+  }
+]
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+[
+  {
+    "event_time": "2026-02-01T19:45:00.000Z",
+    "operation": "AnonymousLinkCreated",
+    "user": "Dace.Ozolina@globalcorp.ee",
+    "object_id": "https://globalcorp-my.sharepoint.com/personal/dace_ozolina_globalcorp_ee/Documents/Klientu_Dati_Kopija.zip"
+  },
+  {
+    "event_time": "2026-02-01T20:02:15.000Z",
+    "operation": "FileDeleted",
+    "user": "Dace.Ozolina@globalcorp.ee",
+    "file_name": "Klientu_Portfelis_2026_Pilns.xlsx",
+    "url": "https://globalcorp.sharepoint.com/sites/Latvija_Klienti_un_Ligumi/Klienti/Portfelis/2026/Klientu_Portfelis_2026_Pilns.xlsx"
+  },
+  {
+    "event_time": "2026-02-01T20:05:40.000Z",
+    "operation": "FileDeleted",
+    "user": "Dace.Ozolina@globalcorp.ee",
+    "file_name": "Ieņēmumu_Prognoze_Q1_Q4.pdf",
+    "url": "https://globalcorp.sharepoint.com/sites/Latvija_Klienti_un_Ligumi/Finanses/Prognozes/Ienēmumi/Ieņēmumu_Prognoze_Q1_Q4.pdf"
+  },
+  {
+    "event_time": "2026-02-01T20:08:12.000Z",
+    "operation": "FileDeleted",
+    "user": "Dace.Ozolina@globalcorp.ee",
+    "file_name": "Galvenais_Partneribas_Ligums_2026.pdf",
+    "url": "https://globalcorp.sharepoint.com/sites/Latvija_Klienti_un_Ligumi/Ligumi/Partneri/Arhivs/Galvenais_Partneribas_Ligums_2026.pdf"
+  },
+  {
+    "event_time": "2026-02-01T20:10:05.000Z",
+    "operation": "FileDeleted",
+    "user": "Dace.Ozolina@globalcorp.ee",
+    "file_name": "Marketinga_Strategija_Konfidenciali.pdf",
+    "url": "https://globalcorp.sharepoint.com/sites/Latvija_Klienti_un_Ligumi/Strategija/Marketingas/Latvija/Marketinga_Strategija_Konfidenciali.pdf"
+  },
+  {
+    "event_time": "2026-02-01T20:12:30.000Z",
+    "operation": "FileDeleted",
+    "user": "Dace.Ozolina@globalcorp.ee",
+    "file_name": "Vadibas_Sanaksmes_Protokols_Janvaris.docx",
+    "url": "https://globalcorp.sharepoint.com/sites/Latvija_Klienti_un_Ligumi/Vadiba/Protokoli/Sanaksmes/Vadibas_Sanaksmes_Protokols_Janvaris.docx"
+  },
+  {
+    "event_time": "2026-02-01T20:14:55.000Z",
+    "operation": "FileDeleted",
+    "user": "Dace.Ozolina@globalcorp.ee",
+    "file_name": "Konkurentu_Cenu_Analize_Slepeni.csv",
+    "url": "https://globalcorp.sharepoint.com/sites/Latvija_Klienti_un_Ligumi/Cenas/Konfidenciali/Lapas/Konkurentu_Cenu_Analize_Slepeni.csv"
+  }
+]
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-27420",
+    "Start Time": "2026-02-01T20:15:30.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "92.240.64.18",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "RIX-SALES-LAP-22",
+    "User": "Dace.Ozolina@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Workload": "SharePoint",
+    "File Count": 1240,
+    "Baseline (24h)": 45,
+    "Geo Location": "Riga, Latvia (local time of event ≈ 2026-02-01 22:15 EET)",
+    "Recent Events Summary": "An anonymous sharing link was created at 2026-02-01T19:45:00Z, followed by multiple FileDeleted operations between 2026-02-01T20:02:15Z and 2026-02-01T20:14:55Z, immediately preceding the bulk FileDownloaded activity at 2026-02-01T20:15:30Z.",
+    "Description": "The alert reports an unusually high volume of SharePoint downloads (1,240) from the user, which greatly exceeds their 24-hour baseline of 45. Timeline evidence shows an anonymous sharing link was created before the downloads and several files were deleted immediately prior to the bulk download, and the activity occurred at approximately 22:15 local time in Riga. The user is in the Sales department and may have legitimate reasons to access client documents, but the large volume combined with anonymous link creation, pre-download deletions, and after-hours timing increases the likelihood of data exfiltration and warrants elevated attention."
+  },
+  "classification": "HP"
+}
+

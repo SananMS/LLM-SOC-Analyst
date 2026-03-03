@@ -1,0 +1,43 @@
+{
+    "playbook_name": "EDR Anti-Tampering Triage",
+    "description": "SOP for triaging attempts to disable, bypass, or tamper with security services.",
+    "steps": [
+      {
+        "step_id": 1,
+        "task": "Identify the Actor and Source",
+        "action": "Look at the alert details to find the computer name, the user account running the command, and the specific process used.",
+        "logic": "Assess whether the account performing the action has a legitimate reason to interact with security tooling. Highly privileged accounts performing unexpected actions represent a greater potential impact if the activity is malicious."
+      },
+      {
+        "step_id": 2,
+        "task": "Evaluate the Command Intent",
+        "action": "Analyze the exact command line. Is it specifically targeting a security service or attempting to hide logs?",
+        "logic": "Consider whether the command serves a plausible legitimate administrative purpose or whether it appears designed to reduce visibility or disable protective controls. Deliberate targeting of security services is a strong indicator of malicious intent."
+      },
+      {
+        "step_id": 3,
+        "task": "Check for Preceding Malicious Activity",
+        "action": "MAKE SURE TO INVOKE 'get_recent_similar_alerts' and 'get_recent_events' for this computer prior to the tampering attempt.",
+        "tool_integration": ["get_recent_similar_alerts", "get_recent_events"],
+        "logic": "Determine whether the tampering attempt follows other suspicious or blocked activity on the same host. Tampering that occurs in the context of a broader attack sequence carries significantly higher risk than an isolated event."
+      },
+      {
+        "step_id": 4,
+        "task": "Investigate the Parent Process",
+        "action": "Identify what initiated the tampering process. Was it a remote management tool, a script, or an unknown file?",
+        "logic": "Assess whether the parent process represents a trusted and expected administrative tool or something that suggests unauthorized remote access or scripted execution. An unexpected or unrecognized parent process is a strong indicator of compromise."
+      },
+      {
+        "step_id": 5,
+        "task": "Verify Remediation Effectiveness",
+        "action": "Check the remediation status of the detected action.",
+        "logic": "Consider both whether the action was blocked and whether the attempt itself reveals something about the attacker's level of access. A failed remediation means the system may currently be unprotected and requires urgent attention regardless of other factors."
+      },
+      {
+        "step_id": 6,
+        "task": "Final Triage Classification",
+        "action": "Based on all evidence gathered in the previous steps, make a holistic triage judgment.",
+        "logic": "Weigh the actor's identity and privilege level, the intent of the command, the broader activity context on the host, the origin of the process, and the remediation outcome together. No single factor should determine the outcome — consider whether the overall picture is consistent with authorized administrative activity or an attempt to undermine security controls. Classify the alert as High Priority (HP) if it represents a legitimate threat that requires action — this includes escalation to senior analysts, escalation to the client for awareness, further investigation, or any activity that warrants external notification. Classify as Low Priority (LP) if the activity is a false positive or represents authorized behavior that requires no further action. Provide a clear written justification explaining which factors drove your decision and why."
+      }
+    ]
+  }

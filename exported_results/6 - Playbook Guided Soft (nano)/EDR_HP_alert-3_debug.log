@@ -1,0 +1,20 @@
+=== DEBUG SESSION START: 2026-03-02T22:56:21.964165+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Trend Micro: Possible Data Encrypted for Impact
+Selected Playbook: EDR_malware_alerts.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-29900",
+    "Start Time": "2026-01-09T21:57:45.000Z",
+    "Alert Name": "Trend Micro: Possible Data Encrypted for Impact",
+    "Source IP": "10.20.5.245",
+    "Endpoint": "HOST-01",
+    "Playbook Used": "EDR Malware Triage",
+    "Description": "Ransomware indicators detected on host HOST-01, associated with the Locky ransomware family, including a ransomware file and ransom note with a heuristic suggesting encryption for impact. The involved file appears under the Financials directory with a SHA-256 of c17fe4a49e12034f44ad74793d520d17a1c6585bec5f3f03b5558da37a0b4617 and has been quarantined, along with ransom note detection. Given the ransomware context and encryption risk, this is a high-priority incident requiring immediate verification of containment and recovery readiness, even though remediation actions show quarantine."
+  },
+  "classification": "HP"
+}
+

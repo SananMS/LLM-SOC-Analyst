@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10003",
+    "Start Time": "2026-01-27T22:15:00.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.10.50.44",
+    "Endpoint": "GF3456",
+    "User": "NT AUTHORITY\\\\SYSTEM",
+    "Initiating Process": "powershell.exe",
+    "Parent Process": "svchost.exe",
+    "Process SHA256": "9785001b0dcf755eddb8af294a373c0b87b2498660f724e76c4d53f9c217c7a3",
+    "File Path": "C:\\Windows\\Temp\\system_maintenance.ps1",
+    "Hash Reputation": "0 AV engine detections; VirusTotal community votes 29 malicious vs 20 harmless (Community Score -24)",
+    "Description": "A PowerShell process executed an encoded command with '-ExecutionPolicy Bypass' and '-WindowStyle Hidden', launching a script from C:\\Windows\\Temp\\system_maintenance.ps1. The execution occurred under NT AUTHORITY\\SYSTEM with svchost.exe as the parent, and the combination of encoded command, bypassed policy, hidden window, and Temp location is atypical for legitimate maintenance. The file hash shows no AV detections but a negative community reputation, so these indicators increase the likelihood of malicious activity and support a High Priority classification."
+  },
+  "classification": "HP"
+}

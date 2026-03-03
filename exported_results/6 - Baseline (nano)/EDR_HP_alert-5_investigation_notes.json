@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-29908",
+    "Start Time": "2026-02-12T09:44:07.000Z",
+    "Alert Name": "Malware Prevention: Trojan:Win32/SparkOnSoft",
+    "Source IP": "10.45.20.114",
+    "Endpoint": "WKSTN-912A",
+    "User": "m.tamm@client.ee",
+    "Description": "Microsoft Defender Antivirus detected a high-risk Trojan (Win32/SparkOnSoft) on WKSTN-912A associated with user m.tamm@client.ee. The identified file $RYRO9NW.exe (9 MB) was quarantined after being signed by Hawk Integrated Inc. and issued by Sectigo Public Code Signing CA EV R36. The file path suggests it resided under a temporary or recycle bin directory, indicating potential obfuscation or cleanup activity. Given the active malware present on the endpoint, this alert is classified as High Priority because of potential data risk and lateral movement, even though remediation completed successfully.",
+    "File Name": "$RYRO9NW.exe",
+    "File Path": "C:\\$Recycle.Bin\\S-1-12-1-4290317762-1184293048-956127341-2105834469\\$RYFO7NF.exe",
+    "File Size": "9 MB",
+    "File SHA256": "686d018c86c03165925ebd3773c622f182c93f54b98db9616bae86f5e8684e4c",
+    "Detection Engine": "Microsoft Defender Antivirus",
+    "Remediation Status": "Quarantined",
+    "Remediation Result": "Success"
+  },
+  "classification": "HP"
+}

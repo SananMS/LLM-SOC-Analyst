@@ -1,0 +1,39 @@
+=== DEBUG SESSION START: 2026-03-03T01:44:24.275742+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Azure Network Security Modification
+Selected Playbook: suspicious_cloud_network_activity.json
+
+[TOOL CALL]
+Tool: lookup_users
+Arguments: {"emails": ["marcus.webb@globalcorp.ee"]}
+
+[TOOL RESPONSE]
+[
+  {
+    "email": "Marcus.Webb@globalcorp.ee",
+    "full_name": "Marcus Webb",
+    "department": "Legal & Corporate Secretary",
+    "role": "Senior Legal Operations Manager"
+  }
+]
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-99200",
+    "Start Time": "2026-02-10T09:15:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "194.126.101.99",
+    "User": "marcus.webb@globalcorp.ee",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Resource ID": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-baltic-prod-connectivity/providers/Microsoft.Network/networkSecurityGroups/nsg-prod-core",
+    "NSG Name": "nsg-prod-core",
+    "Role": "Contributor",
+    "User Department": "Legal & Corporate Secretary",
+    "Rule Change Summary": "Added rule 'Test' allowing inbound TCP port 3389 (RDP) from any source to any destination (sourceAddressPrefix='*', destinationAddressPrefix='*', destinationPortRange='3389', priority=110) with description 'Temporary access for review'.",
+    "Description": "A network security group in the production connectivity resource group was modified to add a rule permitting inbound TCP port 3389 from any source. The change succeeded and was performed by marcus.webb@globalcorp.ee (Senior Legal Operations Manager) from Tallinn during local working hours using an account with Contributor privileges. Because the new rule significantly broadens external exposure to RDP in a production NSG and the actor's job function does not align with infrastructure administration, this event is classified as High Priority."
+  },
+  "classification": "HP"
+}
+

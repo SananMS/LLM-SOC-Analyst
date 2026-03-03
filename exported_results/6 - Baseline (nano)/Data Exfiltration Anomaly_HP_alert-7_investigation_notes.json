@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-25600",
+    "Start Time": "2026-02-01T19:05:10.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "88.119.20.145",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "VIL-LT-DSK-12",
+    "User": "Jonas.Laitis@globalcorp.ee",
+    "Description": "An unusual volume of SharePoint file downloads (920) was observed from the user, which is higher than their 24-hour baseline. The downloads targeted the SharePoint Online site https://globalcorp.sharepoint.com/sites/Gamyba_ir_Eksportas/ and involved a large number of files, suggesting potential data export. The source and destination IPs show no explicit malicious reputation at this time, but the spike in activity warrants verification of data access patterns and user intent.",
+    "Site URL": "https://globalcorp.sharepoint.com/sites/Gamyba_ir_Eksportas/",
+    "File count observed": 920,
+    "Baseline 24h": 10,
+    "Geo location": "Vilnius, Lithuania"
+  },
+  "classification": "HP"
+}

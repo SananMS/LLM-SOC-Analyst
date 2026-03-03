@@ -1,0 +1,25 @@
+=== DEBUG SESSION START: 2026-03-03T00:49:26.099325+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Azure Network Security Modification
+Selected Playbook: General Triage (No Playbook)
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-22410",
+    "Start Time": "2026-02-10T15:33:45.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Resource ID": "/subscriptions/d1c2b3a4-e5f6-7a8b-9c0d-1e2f3a4b5c6d/resourceGroups/rg-nordic-dev-test/providers/Microsoft.Network/networkSecurityGroups/nsg-aks-dev-01",
+    "Endpoint": "nsg-aks-dev-01",
+    "Operation": "MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/WRITE",
+    "Destination IP": "13.75.144.22",
+    "User": "b4a3c2d1-e5f6-4a7b-8c9d-0e1f2a3b4c5d (ServicePrincipal)",
+    "Principal Type": "ServicePrincipal",
+    "Role": "Contributor",
+    "Geo Location": "North Europe (stamp DB4)",
+    "Description": "A network security group was modified to include an inbound rule allowing traffic from any source to destination IP 13.75.144.22 on port 8080 in the rg-nordic-dev-test resource group. The change was performed by a Service Principal with Contributor role and the change shows provisioning state 'Succeeded' in the request body. This modification introduces broad inbound access to a dev/test resource and was executed by an automated identity, so it is classified as high priority and requires follow-up to confirm the change was authorized and intended."
+  },
+  "classification": "HP"
+}
+

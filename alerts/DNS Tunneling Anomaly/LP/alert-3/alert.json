@@ -5,7 +5,7 @@
   "source_ip": "192.168.177.244",
   "destination_ip": "19.240.126.129",
   "endpoint": "host-812-workstation",
-  "description": "An anomalously large amount (953 Bytes) of tunneled, high-entropy traffic through DNS (domain: dnsjedi.org) was observed.",
+  "description": "An anomalously large amount (953 Bytes) of tunneled, high-entropy traffic through DNS (domain: contentdelivery.net) was observed.",
   "evidence": {
     "workload": "Network",
     "application": "DNS",
@@ -13,11 +13,11 @@
     "actual_bytes": 953,
     "typical_bytes": 46,
     "sample_queries": [
-      "8392019477501283941-1029384756-5566778899-42-12345.any.dnsjedi.org",
-      "2233445566778899001-9876543210-1122334455-88-54321.any.dnsjedi.org",
-      "7788990011223344556-5544332211-9988776655-12-99887.any.dnsjedi.org",
-      "node-east-04.dnsjedi.org",
-      "latency-check-v4.dnsjedi.org"
+      "e9d82f310a44b7c21098bcad7e6f5a41-httpcache0-08247-cacheod1.dna.contentdelivery.net",
+      "4a2b1c3d5e6f7890a1b2c3d4e5f60712-httpcache1-05529-cacheod2.dna.contentdelivery.net",
+      "bc3a21f876e940d240e1d827f311a2b9-httpcache0-11203-cacheod3.dna.contentdelivery.net",
+      "7d6c5b4a3210fedcba98765432109f8e-httpcache1-09841-cacheod1.dna.contentdelivery.net",
+      "19c02b8a284d7a110e55c9b2f4a7d33e-httpcache0-03462-cacheod2.dna.contentdelivery.net"
     ]
   }
 }

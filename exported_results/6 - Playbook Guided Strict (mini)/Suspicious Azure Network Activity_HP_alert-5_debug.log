@@ -1,0 +1,101 @@
+=== DEBUG SESSION START: 2026-03-03T02:52:55.773562+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Azure Network Security Modification
+Selected Playbook: suspicious_cloud_network_activity.json
+
+[TOOL CALL]
+Tool: lookup_users
+Arguments: {"emails": ["andrus.kivi@globalcorp.ee"]}
+
+[TOOL RESPONSE]
+[
+  {
+    "email": "andrus.kivi@globalcorp.ee",
+    "full_name": "Andrus Kivi",
+    "department": "Supply Chain & Logistics",
+    "role": "Regional Logistics Coordinator"
+  }
+]
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+[
+  {
+    "alert_id": "SOC-99799",
+    "alert_name": "Azure Network Security Modification",
+    "timestamp": "2026-02-10T22:40:00.000Z",
+    "user": "andrus.kivi@globalcorp.ee",
+    "operation": "MICROSOFT.AUTHORIZATION/LOCKS/DELETE",
+    "resource_id": "/subscriptions/228e1d3b/resourceGroups/rg-baltic-prod-core",
+    "status": "Succeeded",
+    "analyst_comment": ""
+  },
+  {
+    "alert_id": "SOC-99800",
+    "alert_name": "Azure Network Security Modification",
+    "timestamp": "2026-02-10T22:42:00.000Z",
+    "user": "andrus.kivi@globalcorp.ee",
+    "operation": "MICROSOFT.INSIGHTS/DIAGNOSTICSETTINGS/DELETE",
+    "resource_id": "/subscriptions/228e1d3b/resourceGroups/rg-baltic-prod-core/providers/Microsoft.Network/networkSecurityGroups/nsg-prod-db-cluster",
+    "status": "Succeeded",
+    "analyst_comment": ""
+  },
+  {
+    "alert_id": "SOC-99801",
+    "alert_name": "Azure Network Security Modification",
+    "timestamp": "2026-02-10T22:43:00.000Z",
+    "user": "andrus.kivi@globalcorp.ee",
+    "operation": "MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/WRITE",
+    "resource_id": "/subscriptions/228e1d3b/resourceGroups/rg-baltic-prod-core/providers/Microsoft.Network/networkSecurityGroups/nsg-prod-db-cluster",
+    "status": "Succeeded",
+    "request_body": "{\"properties\":{\"securityRules\":[{\"name\":\"Internal_Sync_Legacy\",\"properties\":{\"access\":\"Allow\",\"description\":\"Temporary sync for database migration\",\"destinationAddressPrefix\":\"13.71.172.5\",\"destinationPortRange\":\"22\",\"direction\":\"Inbound\",\"priority\":105,\"protocol\":\"Tcp\",\"sourceAddressPrefix\":\"185.220.101.44\"}}]}}",
+    "analyst_comment": ""
+  },
+  {
+    "alert_id": "SOC-99802",
+    "alert_name": "Azure Network Security Modification",
+    "timestamp": "2026-02-10T22:44:00.000Z",
+    "user": "andrus.kivi@globalcorp.ee",
+    "operation": "MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/DELETE",
+    "resource_id": "/subscriptions/228e1d3b/resourceGroups/rg-baltic-prod-core/providers/Microsoft.Network/networkSecurityGroups/nsg-prod-web-frontend",
+    "status": "Succeeded",
+    "analyst_comment": ""
+  }
+]
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-99803",
+    "Start Time": "2026-02-10T22:50:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "194.126.101.99",
+    "User": "andrus.kivi@globalcorp.ee",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "User Role": "Regional Logistics Coordinator (Supply Chain & Logistics) - not an infrastructure administrator",
+    "Target Resource": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-baltic-prod-core/providers/Microsoft.Network/virtualNetworks/vnet-tallinn-prod-01/virtualNetworkPeerings/peering-to-central-soc",
+    "Operation": "MICROSOFT.NETWORK/VIRTUALNETWORKS/VIRTUALNETWORKPEERINGS/DELETE",
+    "Caller Location": "Tallinn, Harju County, Estonia",
+    "Result": "Succeeded",
+    "Related Alerts": [
+      "SOC-99799",
+      "SOC-99800",
+      "SOC-99801",
+      "SOC-99802"
+    ],
+    "Description": "An authenticated user (andrus.kivi@globalcorp.ee) with Contributor privileges deleted a virtual network peering in the production resource group rg-baltic-prod-core; the operation succeeded. The activity originated from an IP geolocated to Tallinn and occurred at 2026-02-10T22:50:00Z (00:50 EET local), which is outside typical working hours. This event is part of a rapid sequence of successful privileged modifications and deletions across production resources by the same user, and the user's organizational role does not align with performing infrastructure changes. Because of the role-to-action mismatch, the out-of-hours timing, and the clustered nature of these production-impacting changes, the activity is considered high risk and requires escalation."
+  },
+  "classification": "HP"
+}
+

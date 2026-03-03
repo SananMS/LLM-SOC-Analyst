@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-24100",
+    "Start Time": "2026-02-01T22:15:44.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "85.253.110.42",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "TAL-CS-WORKSTATION-05",
+    "User": "Mari.Tamm@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Description": "An anomalous volume of SharePoint file downloads (750 files) was observed from the user targeting the Juhtkond_Ja_Finants site, markedly above the 24-hour baseline of 15. The downloaded items include multiple finance and payroll documents classified as sensitive, the activity occurred at 00:15 local time in Tallinn, and the account belongs to Customer Support which lacks an apparent business need for these files; no recent related events or similar alerts were found. Given the large volume, sensitive content, role-to-data mismatch, and after-hours access, this alert is High Priority because it could indicate insider misuse or an account compromise that requires escalation.",
+    "User Role": "Vanem-klienditeenindaja (Senior Customer Service)",
+    "Department": "Klienditugi (Customer Support)",
+    "Local Start Time": "2026-02-02T00:15:44+02:00 (Tallinn, EET)",
+    "File Count": 750,
+    "Baseline 24h": 15
+  },
+  "classification": "HP"
+}

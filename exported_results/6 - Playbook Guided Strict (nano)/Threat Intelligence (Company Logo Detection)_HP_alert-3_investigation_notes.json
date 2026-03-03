@@ -1,0 +1,15 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-55014",
+    "Start Time": "2026-02-18T15:40:12.000Z",
+    "Alert Name": "Brand Logo Detection",
+    "Source IP": "103.45.12.89",
+    "Destination IP": "103.45.12.89",
+    "Playbook Used": "Visual Brand Abuse & Logo Triage",
+    "Domain Registrar": "NameSilo, LLC",
+    "Domain Age": "3 hours",
+    "Evidence URL": "https://www.vitalis-connect-update.com/download/security-patch-v4",
+    "IP Reputation Summary": "Abuse Confidence Score: 0/100; Data Center/Web Hosting/Transit; ISP: Shenzhen Qianhai bird cloud computing Co. Ltd."
+  },
+  "classification": "HP"
+}

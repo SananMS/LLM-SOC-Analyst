@@ -1,0 +1,37 @@
+=== DEBUG SESSION START: 2026-03-03T01:09:09.345289+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Brand Logo Detection
+Selected Playbook: General Triage (No Playbook)
+
+[TOOL CALL]
+Tool: check_ip_reputation
+Arguments: {"ip": "50.62.0.1"}
+
+[TOOL RESPONSE]
+Source IP: 50.62.0.1 | Abuse Confidence Score: 0/100 | ISP: GoDaddy.com, LLC | Usage Type: Data Center/Web Hosting/Transit | Privacy Status: VPN
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-54389",
+    "Start Time": "2026-02-18T12:45:10.000Z",
+    "Alert Name": "Brand Logo Detection",
+    "Source IP": "50.62.0.1",
+    "Scanned URL": "https://www.apexwellness.com/partners",
+    "Target Brand": "Vitalis Healthcare",
+    "Domain Age": "5 years",
+    "Detection Source": "Logo-Scanner",
+    "IP Reputation": "Abuse Confidence Score: 0/100; ISP: GoDaddy.com, LLC; Usage Type: Data Center/Web Hosting",
+    "Description": "The Vitalis Healthcare logo was detected on the partners page of apexwellness.com (https://www.apexwellness.com/partners). The domain is 5 years old, hosted on GoDaddy infrastructure with an abuse score of 0, and no recent similar alerts were found. These signals suggest likely authorized partner branding rather than malicious impersonation, so the alert is considered Low Priority."
+  },
+  "classification": "LP"
+}
+

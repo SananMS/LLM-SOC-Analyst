@@ -1,0 +1,14 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-75925",
+    "Start Time": "2026-02-19T19:30:12.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Document Title": "Vitalis_Staff_Directory_and_System_Roles_Q1.xlsx",
+    "Source URL": "https://www.scribd.com/document/7721543/vitalis-staff-roles-2026",
+    "Evidence Source": "TI-Monitor-Scribd",
+    "Matched Content Summary": "The document snippet lists personnel with elevated privileges and access to PHI/EMR, production AWS resources, and PII (e.g., admin privileges for Sarah Jenkins, DevOps access, payroll data).",
+    "Playbook Used": "Document Exposure & Threat Intel Triage",
+    "Description": "External document on Scribd contains Vitalis Healthcare personnel with elevated privileges and access to PHI/EMR, production AWS, and payroll/PII data. The content demonstrates sensitive internal information exposed outside the organization and linked to the brand, suggesting a credible risk of data exposure or misuse. Given the sensitivity of the information and public availability, the alert is classified as High Priority and warrants further investigation by the security team."
+  },
+  "classification": "HP"
+}

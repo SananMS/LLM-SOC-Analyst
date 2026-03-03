@@ -1,0 +1,14 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-54812",
+    "Start Time": "2026-02-18T15:02:14.000Z",
+    "Alert Name": "Brand Logo Detection",
+    "Source IP": "195.178.110.15",
+    "Destination IP": "195.178.110.15",
+    "Endpoint": "",
+    "User": "",
+    "Playbook Used": "Visual Brand Abuse & Logo Triage",
+    "Description": "Vitalis Healthcare logo appears on a page at the suspicious domain, suggesting possible brand impersonation to harvest credentials. The domain vitalis-portal-security.com is only 2 days old and hosted on an IP with a known abusive reputation, indicating a high risk hosting environment. The page mimics the legitimate Vitalis patient portal, which raises the likelihood of credential theft or data collection. The combination of brand impersonation, new/short-lived domain, and abusive hosting strongly supports elevating this alert to High Priority for further investigation."
+  },
+  "classification": "HP"
+}

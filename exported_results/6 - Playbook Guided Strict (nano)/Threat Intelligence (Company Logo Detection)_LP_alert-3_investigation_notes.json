@@ -1,0 +1,16 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-54488",
+    "Start Time": "2026-02-18T14:05:22.000Z",
+    "Alert Name": "Brand Logo Detection",
+    "Source IP": "104.26.10.227",
+    "Playbook Used": "Visual Brand Abuse & Logo Triage",
+    "Description": "Vitalis Healthcare logo was detected on the medical news site themedicalbulletin.org, on a page that appears to be article content rather than an official Vitalis property. The page is hosted behind Cloudflare at IP 104.26.10.227, and the domain involved is not a known Vitalis domain; however, Vitalis.com is a registered domain with an established history and registrar. There is no evidence of credential harvesting or user interaction on the page, and no recent similar brand logo alerts were found, suggesting this is a low-risk incidental usage rather than deliberate brand impersonation.",
+    "Target Brand": "Vitalis Healthcare",
+    "Evidence URL": "https://www.themedicalbulletin.org/features/top-innovators-2026",
+    "IP Reputation": "Abuse Confidence Score: 0/100; ISP: Cloudflare; Privacy Status: VPN",
+    "Domain Registrar": "NameCheap, Inc.",
+    "Domain Age": "12 years"
+  },
+  "classification": "LP"
+}

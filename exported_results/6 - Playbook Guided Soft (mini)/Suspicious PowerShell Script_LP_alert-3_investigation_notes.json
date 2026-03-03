@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-2281",
+    "Start Time": "2026-01-25T14:40:12.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.10.15.22",
+    "Endpoint": "DC-EAST-01",
+    "User": "SYSTEM",
+    "User ID": "S-1-5-18",
+    "OS": "Windows Server 2022 Datacenter",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Script Summary": "PowerShell enumerates Active Directory domain controllers and collects default and fine-grained password policy settings, then outputs results as JSON. The script contains readable cmdlets (Get-ADDomainController, Get-ADDefaultDomainPasswordPolicy, Get-ADFineGrainedPasswordPolicy) and standard helper code for null handling and JSON conversion.",
+    "Execution Characteristics": "No file path or process SHA256 provided in the alert, no obvious obfuscation or encoded payloads detected in the scriptblock, and no external IPs or network indicators present in the script.",
+    "Description": "The PowerShell script executed on DC-EAST-01 as the SYSTEM account and performs Active Directory enumeration to collect domain password policy information, returning JSON output. The scriptblock is plaintext with standard AD cmdlets and shows no signs of obfuscation or embedded external network calls, and the alert contains no process hash or file path artifacts. Given the sensitive but clearly administrative intent, execution context on a domain controller as SYSTEM, and the absence of malicious indicators, this activity is assessed as Low Priority."
+  },
+  "classification": "LP"
+}

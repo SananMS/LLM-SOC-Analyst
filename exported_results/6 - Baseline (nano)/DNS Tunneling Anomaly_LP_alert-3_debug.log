@@ -1,0 +1,24 @@
+=== DEBUG SESSION START: 2026-03-02T22:19:35.511884+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: DNS Tunneling Anomaly
+Selected Playbook: General Triage (No Playbook)
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10241",
+    "Start Time": "2026-02-06T13:45:10.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "192.168.177.244",
+    "Destination IP": "19.240.126.129",
+    "Endpoint": "host-812-workstation",
+    "Domain Observed": "contentdelivery.net",
+    "DNS Query Type": "A",
+    "Actual Bytes": 953,
+    "Typical Bytes": 46,
+    "Description": "Anomalously large amount of high-entropy DNS traffic was observed from host-812-workstation (192.168.177.244) to an external IP, using domain contentdelivery.net with several httpcache-like subdomains. DNS payloads (953 bytes) far exceed typical DNS query sizes (46 bytes), indicating potential DNS tunneling or covert data exfiltration. The internal source and external destination, combined with the unusual query pattern, make this a high-priority incident requiring immediate investigation."
+  },
+  "classification": "HP"
+}
+

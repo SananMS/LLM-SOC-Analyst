@@ -1,0 +1,15 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-29490",
+    "Start Time": "2026-02-17T11:05:17.000Z",
+    "Alert Name": "Trend Micro Vision One: Suspicious Mailbox Rule Deletes All Incoming Emails",
+    "User": "autoreply",
+    "Affected Email": "noreply-alerts@client.ee",
+    "Detection Source": "trendmicro_visionone",
+    "Detection Rule": "SC-17",
+    "Evidence ID": "WB-31720-20260208-00003",
+    "Recent Similar Alerts": "No recent similar alerts found.",
+    "Description": "Trend Micro Vision One detected a mailbox rule that deletes all incoming emails for the account noreply-alerts@client.ee (user account 'autoreply'). The affected account appears to be a service/autoreply mailbox where deletion rules can be a legitimate configuration to prevent mail loops, and there are no associated endpoint events, source IPs, or other related alerts to suggest active compromise. Given the account type and lack of corroborating telemetry, this alert is assessed as Low Priority."
+  },
+  "classification": "LP"
+}

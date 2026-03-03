@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10000",
+    "Start Time": "2026-01-05T19:08:48.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "172.18.99.41",
+    "Endpoint": "SRV-APPS-PRD02",
+    "User": "svc_backup_veeam",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Description": "PowerShell was executed on SRV-APPS-PRD02 by the service account svc_backup_veeam with Unrestricted execution policy and an encoded command payload. The encoded script indicates potential obfuscation and attempts to run inline code, which increases the risk of unauthorized activity. No hash reputation is available for the initiating process, and there is no destination IP or recent related activity context; given the technique and lack of benign indicators, this is classified as high priority and warrants further investigation.",
+    "Encoded Script Detected": "Yes (Base64 UTF-16-LE encoded command)",
+    "Execution Policy": "Unrestricted",
+    "Scriptblock Encoding": "Base64 UTF-16-LE",
+    "Hash Reputation Checked": "Skipped - initiating process hash not available",
+    "Recent Events Context": "No recent events found",
+    "Recent Similar Alerts Context": "No recent similar alerts found"
+  },
+  "classification": "HP"
+}

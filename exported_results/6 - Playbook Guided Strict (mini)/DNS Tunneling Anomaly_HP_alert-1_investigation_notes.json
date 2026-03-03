@@ -1,0 +1,24 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14567",
+    "Start Time": "2026-02-06T14:30:10.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.150.22.105",
+    "Destination IP": "45.15.201.33",
+    "Endpoint": "srv-prod-web-01",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Domain": "update-check-cdn.xyz",
+    "Query Type": "TXT",
+    "Bytes Observed": "2140 (typical 15)",
+    "Domain Age": "Created 2026-02-02 (~29 days old)",
+    "Decoded Payloads": "Subdomain fragments decode to: 'filename=shadow.bak', 'chunk=01|data=Hello%', 'chunk=02|data=20world', 'chunk=03|data=exfil' which reassemble into chunked data referencing a file and an apparent exfil payload.",
+    "Sample Queries": [
+      "ZmlsZW5hbWU9c2hhZG93LmJhaw.update-check-cdn.xyz",
+      "Y2h1bms9MDF8ZGF0YT1IZWxsbyU.update-check-cdn.xyz",
+      "Y2h1bms9MDJ8ZGF0YT0yMHdvcmxk.update-check-cdn.xyz",
+      "Y2h1bms9MDN8ZGF0YT1leGZpbA.update-check-cdn.xyz"
+    ],
+    "Description": "An unusually large volume of high-entropy TXT DNS traffic was observed targeting update-check-cdn.xyz, with the query payloads containing base64-like subdomains. Decoded fragments reveal a filename ('shadow.bak') and chunked data segments ('Hello%','20world','exfil'), which are consistent with encoded data being transferred via DNS. The root domain is newly registered (~29 days old) and, combined with the high byte count and embedded filename, this activity is indicative of potential DNS-based exfiltration and warrants higher-priority handling."
+  },
+  "classification": "HP"
+}

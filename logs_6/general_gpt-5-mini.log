@@ -1,0 +1,905 @@
+--- General Triage Mode: Skipping playbook selection for alerts\Data Exfiltration Anomaly\HP\alert-1 ---
+📊 alert-1 | Input: 1445 | Output: 1697 | Time: 30.99 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Data Exfiltration Anomaly\HP\alert-10 ---
+[03/03/26 02:26:12] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/40.108.201.1                
+                             5?key=3a8955355abf49748efb87f626c4                
+                             92cc "HTTP/1.1 200 OK"                            
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=40.108.201.15&verbo                
+                             se=true "HTTP/1.1 200 OK"                         
+                    INFO     Processing request of type           server.py:713
+                             ListToolsRequest                                  
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-10 | Input: 3249 | Output: 2128 | Time: 36.59 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Data Exfiltration Anomaly\HP\alert-2 ---
+📊 alert-2 | Input: 1464 | Output: 1685 | Time: 25.51 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Data Exfiltration Anomaly\HP\alert-3 ---
+📊 alert-3 | Input: 1474 | Output: 1611 | Time: 24.11 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Data Exfiltration Anomaly\HP\alert-4 ---
+[03/03/26 02:27:34] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/113.161.12.8                
+                             8?key=3a8955355abf49748efb87f626c4                
+                             92cc "HTTP/1.1 200 OK"                            
+[03/03/26 02:27:36] INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=113.161.12.88&verbo                
+                             se=true "HTTP/1.1 200 OK"                         
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 02:27:37] INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/40.108.201.1                
+                             5?key=3a8955355abf49748efb87f626c4                
+                             92cc "HTTP/1.1 200 OK"                            
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=40.108.201.15&verbo                
+                             se=true "HTTP/1.1 200 OK"                         
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-4 | Input: 3127 | Output: 1932 | Time: 30.40 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Data Exfiltration Anomaly\HP\alert-5 ---
+📊 alert-5 | Input: 1418 | Output: 1563 | Time: 23.36 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Data Exfiltration Anomaly\HP\alert-6 ---
+📊 alert-6 | Input: 1659 | Output: 1513 | Time: 24.74 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Data Exfiltration Anomaly\HP\alert-7 ---
+📊 alert-7 | Input: 1675 | Output: 1357 | Time: 19.03 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Data Exfiltration Anomaly\HP\alert-8 ---
+📊 alert-8 | Input: 1611 | Output: 1231 | Time: 18.25 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Data Exfiltration Anomaly\HP\alert-9 ---
+[03/03/26 02:29:31] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/78.60.112.55                
+                             ?key=3a8955355abf49748efb87f626c49                
+                             2cc "HTTP/1.1 200 OK"                             
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=78.60.112.55&verbos                
+                             e=true "HTTP/1.1 200 OK"                          
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/40.108.201.1                
+                             5?key=3a8955355abf49748efb87f626c4                
+                             92cc "HTTP/1.1 200 OK"                            
+[03/03/26 02:29:32] INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=40.108.201.15&verbo                
+                             se=true "HTTP/1.1 200 OK"                         
+📊 alert-9 | Input: 3627 | Output: 2556 | Time: 41.64 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Data Exfiltration Anomaly\LP\alert-1 ---
+[03/03/26 02:30:14] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/145.14.39.15                
+                             0?key=3a8955355abf49748efb87f626c4                
+                             92cc "HTTP/1.1 200 OK"                            
+[03/03/26 02:30:15] INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=145.14.39.150&verbo                
+                             se=true "HTTP/1.1 200 OK"                         
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-1 | Input: 3102 | Output: 2458 | Time: 46.07 sec
+❌ INCORRECT: Data Exfiltration Anomaly | Expected: LP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Data Exfiltration Anomaly\LP\alert-10 ---
+📊 alert-10 | Input: 1641 | Output: 1380 | Time: 23.03 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\Data Exfiltration Anomaly\LP\alert-2 ---
+📊 alert-2 | Input: 1457 | Output: 1351 | Time: 23.09 sec
+❌ INCORRECT: Data Exfiltration Anomaly | Expected: LP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Data Exfiltration Anomaly\LP\alert-3 ---
+[03/03/26 02:31:44] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 02:31:45] INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/82.131.44.12                
+                             ?key=3a8955355abf49748efb87f626c49                
+                             2cc "HTTP/1.1 200 OK"                             
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=82.131.44.12&verbos                
+                             e=true "HTTP/1.1 200 OK"                          
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/40.108.201.1                
+                             5?key=3a8955355abf49748efb87f626c4                
+                             92cc "HTTP/1.1 200 OK"                            
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=40.108.201.15&verbo                
+                             se=true "HTTP/1.1 200 OK"                         
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-3 | Input: 4952 | Output: 2837 | Time: 47.85 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\Data Exfiltration Anomaly\LP\alert-4 ---
+[03/03/26 02:32:32] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 02:32:33] INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/210.138.184.                
+                             59?key=3a8955355abf49748efb87f626c                
+                             492cc "HTTP/1.1 200 OK"                           
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=210.138.184.59&verb                
+                             ose=true "HTTP/1.1 200 OK"                        
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 02:32:34] INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/40.108.201.1                
+                             5?key=3a8955355abf49748efb87f626c4                
+                             92cc "HTTP/1.1 200 OK"                            
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=40.108.201.15&verbo                
+                             se=true "HTTP/1.1 200 OK"                         
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-4 | Input: 3324 | Output: 2596 | Time: 41.79 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\Data Exfiltration Anomaly\LP\alert-5 ---
+[03/03/26 02:33:16] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 02:33:17] INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/194.126.101.                
+                             43?key=3a8955355abf49748efb87f626c                
+                             492cc "HTTP/1.1 200 OK"                           
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=194.126.101.43&verb                
+                             ose=true "HTTP/1.1 200 OK"                        
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 02:33:18] INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/40.108.201.1                
+                             5?key=3a8955355abf49748efb87f626c4                
+                             92cc "HTTP/1.1 200 OK"                            
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=40.108.201.15&verbo                
+                             se=true "HTTP/1.1 200 OK"                         
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-5 | Input: 3004 | Output: 2029 | Time: 37.59 sec
+❌ INCORRECT: Data Exfiltration Anomaly | Expected: LP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Data Exfiltration Anomaly\LP\alert-6 ---
+[03/03/26 02:33:51] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/78.56.121.10                
+                             ?key=3a8955355abf49748efb87f626c49                
+                             2cc "HTTP/1.1 200 OK"                             
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=78.56.121.10&verbos                
+                             e=true "HTTP/1.1 200 OK"                          
+[03/03/26 02:33:52] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 02:33:53] INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/40.108.201.1                
+                             5?key=3a8955355abf49748efb87f626c4                
+                             92cc "HTTP/1.1 200 OK"                            
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=40.108.201.15&verbo                
+                             se=true "HTTP/1.1 200 OK"                         
+[03/03/26 02:33:54] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-6 | Input: 7247 | Output: 2317 | Time: 35.85 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\Data Exfiltration Anomaly\LP\alert-7 ---
+[03/03/26 02:34:26] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 02:34:27] INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/90.190.150.1                
+                             0?key=3a8955355abf49748efb87f626c4                
+                             92cc "HTTP/1.1 200 OK"                            
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=90.190.150.10&verbo                
+                             se=true "HTTP/1.1 200 OK"                         
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/40.108.201.1                
+                             5?key=3a8955355abf49748efb87f626c4                
+                             92cc "HTTP/1.1 200 OK"                            
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=40.108.201.15&verbo                
+                             se=true "HTTP/1.1 200 OK"                         
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-7 | Input: 3507 | Output: 2158 | Time: 32.81 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\Data Exfiltration Anomaly\LP\alert-8 ---
+📊 alert-8 | Input: 1633 | Output: 1728 | Time: 27.93 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\Data Exfiltration Anomaly\LP\alert-9 ---
+[03/03/26 02:35:33] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/90.190.150.1                
+                             0?key=3a8955355abf49748efb87f626c4                
+                             92cc "HTTP/1.1 200 OK"                            
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=90.190.150.10&verbo                
+                             se=true "HTTP/1.1 200 OK"                         
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/40.108.201.1                
+                             5?key=3a8955355abf49748efb87f626c4                
+                             92cc "HTTP/1.1 200 OK"                            
+[03/03/26 02:35:34] INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=40.108.201.15&verbo                
+                             se=true "HTTP/1.1 200 OK"                         
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-9 | Input: 3463 | Output: 2811 | Time: 49.06 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\DNS Tunneling Anomaly\HP\alert-1 ---
+📊 alert-1 | Input: 1355 | Output: 1364 | Time: 22.65 sec
+✅ CORRECT: DNS Tunneling Anomaly | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\DNS Tunneling Anomaly\HP\alert-2 ---
+📊 alert-2 | Input: 1329 | Output: 1989 | Time: 30.12 sec
+✅ CORRECT: DNS Tunneling Anomaly | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\DNS Tunneling Anomaly\HP\alert-3 ---
+[03/03/26 02:37:12] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/162.255.119.                
+                             41?key=3a8955355abf49748efb87f626c                
+                             492cc "HTTP/1.1 200 OK"                           
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=162.255.119.41&verb                
+                             ose=true "HTTP/1.1 200 OK"                        
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-3 | Input: 2923 | Output: 2506 | Time: 45.81 sec
+✅ CORRECT: DNS Tunneling Anomaly | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\DNS Tunneling Anomaly\HP\alert-4 ---
+[03/03/26 02:37:56] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/185.112.10.4                
+                             ?key=3a8955355abf49748efb87f626c49                
+                             2cc "HTTP/1.1 200 OK"                             
+[03/03/26 02:37:57] INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=185.112.10.4&verbos                
+                             e=true "HTTP/1.1 200 OK"                          
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-4 | Input: 3088 | Output: 2320 | Time: 39.00 sec
+✅ CORRECT: DNS Tunneling Anomaly | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\DNS Tunneling Anomaly\HP\alert-5 ---
+📊 alert-5 | Input: 1412 | Output: 1529 | Time: 25.16 sec
+✅ CORRECT: DNS Tunneling Anomaly | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\DNS Tunneling Anomaly\LP\alert-1 ---
+📊 alert-1 | Input: 1348 | Output: 1488 | Time: 23.49 sec
+✅ CORRECT: DNS Tunneling Anomaly | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\DNS Tunneling Anomaly\LP\alert-2 ---
+📊 alert-2 | Input: 1436 | Output: 1544 | Time: 24.11 sec
+❌ INCORRECT: DNS Tunneling Anomaly | Expected: LP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\DNS Tunneling Anomaly\LP\alert-3 ---
+[03/03/26 02:39:49] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 02:39:50] INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/19.240.126.1                
+                             29?key=3a8955355abf49748efb87f626c                
+                             492cc "HTTP/1.1 200 OK"                           
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=19.240.126.129&verb                
+                             ose=true "HTTP/1.1 200 OK"                        
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/192.168.177.                
+                             244?key=3a8955355abf49748efb87f626                
+                             c492cc "HTTP/1.1 200 OK"                          
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=192.168.177.244&ver                
+                             bose=true "HTTP/1.1 200 OK"                       
+📊 alert-3 | Input: 3066 | Output: 2349 | Time: 43.92 sec
+❌ INCORRECT: DNS Tunneling Anomaly | Expected: LP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\DNS Tunneling Anomaly\LP\alert-4 ---
+[03/03/26 02:40:33] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/184.28.193.7                
+                             2?key=3a8955355abf49748efb87f626c4                
+                             92cc "HTTP/1.1 200 OK"                            
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=184.28.193.72&verbo                
+                             se=true "HTTP/1.1 200 OK"                         
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-4 | Input: 2800 | Output: 1665 | Time: 36.15 sec
+✅ CORRECT: DNS Tunneling Anomaly | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\DNS Tunneling Anomaly\LP\alert-5 ---
+📊 alert-5 | Input: 1487 | Output: 1547 | Time: 27.20 sec
+❌ INCORRECT: DNS Tunneling Anomaly | Expected: LP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\EDR\HP\alert-1 ---
+📊 alert-1 | Input: 1493 | Output: 1754 | Time: 33.09 sec
+✅ CORRECT: SentinelOne: XDR Miscellaneous Malware | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\EDR\HP\alert-2 ---
+📊 alert-2 | Input: 1347 | Output: 1418 | Time: 22.96 sec
+✅ CORRECT: Trend Micro: Malware Detected on Endpoint | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\EDR\HP\alert-3 ---
+📊 alert-3 | Input: 1411 | Output: 1668 | Time: 27.88 sec
+✅ CORRECT: Trend Micro: Possible Data Encrypted for Impact | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\EDR\HP\alert-4 ---
+📊 alert-4 | Input: 1316 | Output: 1262 | Time: 16.87 sec
+✅ CORRECT: Microsoft Defender: Antivirus Tampering Attempt Prevented | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\EDR\HP\alert-5 ---
+📊 alert-5 | Input: 1398 | Output: 1886 | Time: 40.55 sec
+✅ CORRECT: Malware Prevention: Trojan:Win32/SparkOnSoft | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\EDR\LP\alert-1 ---
+📊 alert-1 | Input: 2085 | Output: 1892 | Time: 35.39 sec
+✅ CORRECT: Microsoft Defender: Potentially Unwanted Application Prevented | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\EDR\LP\alert-2 ---
+📊 alert-2 | Input: 2550 | Output: 1688 | Time: 30.70 sec
+✅ CORRECT: Trend Micro Vision One: Suspicious Mailbox Rule Deletes All Incoming Emails | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\EDR\LP\alert-3 ---
+[03/03/26 02:45:07] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 02:45:08] INFO     HTTP Request: GET                  _client.py:1740
+                             https://www.virustotal.com/api/v3/                
+                             files/8c3b2a1f0e9d8c7b6a5f4e3d2c1b                
+                             0a9f8e7d6c5b4a3f2e1d0c9b8a7f6e5d4c                
+                             3b "HTTP/1.1 404 Not Found"                       
+[03/03/26 02:45:09] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-3 | Input: 4925 | Output: 2412 | Time: 45.99 sec
+✅ CORRECT: SentinelOne: XDR Miscellaneous Malware | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\EDR\LP\alert-4 ---
+📊 alert-4 | Input: 1396 | Output: 1721 | Time: 23.08 sec
+✅ CORRECT: SentinelOne: XDR Miscellaneous Malware | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\EDR\LP\alert-5 ---
+📊 alert-5 | Input: 1460 | Output: 1643 | Time: 23.28 sec
+✅ CORRECT: SentinelOne: Privilege Escalation | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious Azure Network Activity\HP\alert-1 ---
+[03/03/26 02:46:34] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 02:46:39] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 02:46:40] INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=194.126.101.99&verb                
+                             ose=true "HTTP/1.1 200 OK"                        
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/194.126.101.                
+                             99?key=3a8955355abf49748efb87f626c                
+                             492cc "HTTP/1.1 200 OK"                           
+📊 alert-1 | Input: 5373 | Output: 2200 | Time: 38.27 sec
+✅ CORRECT: Azure Network Security Modification | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious Azure Network Activity\HP\alert-2 ---
+📊 alert-2 | Input: 1719 | Output: 1822 | Time: 23.69 sec
+✅ CORRECT: Azure Network Security Modification | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious Azure Network Activity\HP\alert-3 ---
+[03/03/26 02:47:36] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-3 | Input: 3413 | Output: 2158 | Time: 29.66 sec
+✅ CORRECT: Azure Network Security Modification | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious Azure Network Activity\HP\alert-4 ---
+[03/03/26 02:48:05] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-4 | Input: 3521 | Output: 2061 | Time: 34.98 sec
+✅ CORRECT: Azure Network Security Modification | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious Azure Network Activity\HP\alert-5 ---
+📊 alert-5 | Input: 1513 | Output: 1894 | Time: 26.32 sec
+✅ CORRECT: Azure Network Security Modification | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious Azure Network Activity\LP\alert-1 ---
+📊 alert-1 | Input: 1947 | Output: 2009 | Time: 27.13 sec
+✅ CORRECT: Azure Network Security Modification | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious Azure Network Activity\LP\alert-2 ---
+📊 alert-2 | Input: 1675 | Output: 1713 | Time: 24.59 sec
+❌ INCORRECT: Azure Network Security Modification | Expected: LP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious Azure Network Activity\LP\alert-3 ---
+📊 alert-3 | Input: 1629 | Output: 1480 | Time: 20.55 sec
+❌ INCORRECT: Azure Network Security Modification | Expected: LP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious Azure Network Activity\LP\alert-4 ---
+[03/03/26 02:50:18] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-4 | Input: 3360 | Output: 2033 | Time: 32.67 sec
+❌ INCORRECT: Azure Network Security Modification | Expected: LP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious Azure Network Activity\LP\alert-5 ---
+📊 alert-5 | Input: 1644 | Output: 1652 | Time: 23.56 sec
+✅ CORRECT: Azure Network Security Modification | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious Login\HP\alert-1 ---
+[03/03/26 02:51:15] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 02:51:16] INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/103.1.64.118                
+                             ?key=3a8955355abf49748efb87f626c49                
+                             2cc "HTTP/1.1 200 OK"                             
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=103.1.64.118&verbos                
+                             e=true "HTTP/1.1 200 OK"                          
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/13.80.23.7?k                
+                             ey=3a8955355abf49748efb87f626c492c                
+                             c "HTTP/1.1 200 OK"                               
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=13.80.23.7&verbose=                
+                             true "HTTP/1.1 200 OK"                            
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-1 | Input: 2831 | Output: 2591 | Time: 59.65 sec
+❌ INCORRECT: User Login Location Anomaly | Expected: HP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious Login\HP\alert-2 ---
+[03/03/26 02:52:13] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/45.78.217.13                
+                             6?key=3a8955355abf49748efb87f626c4                
+                             92cc "HTTP/1.1 200 OK"                            
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=45.78.217.136&verbo                
+                             se=true "HTTP/1.1 200 OK"                         
+[03/03/26 02:52:14] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-2 | Input: 4143 | Output: 1957 | Time: 32.04 sec
+✅ CORRECT: User Login Location Anomaly | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious Login\HP\alert-3 ---
+[03/03/26 02:52:50] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/176.120.22.4                
+                             7?key=3a8955355abf49748efb87f626c4                
+                             92cc "HTTP/1.1 200 OK"                            
+[03/03/26 02:52:51] INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=176.120.22.47&verbo                
+                             se=true "HTTP/1.1 200 OK"                         
+[03/03/26 02:52:54] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-3 | Input: 4136 | Output: 2758 | Time: 48.33 sec
+✅ CORRECT: User Login Location Anomaly | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious Login\HP\alert-4 ---
+[03/03/26 02:53:34] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 02:53:35] INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/152.32.141.1                
+                             99?key=3a8955355abf49748efb87f626c                
+                             492cc "HTTP/1.1 200 OK"                           
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=152.32.141.199&verb                
+                             ose=true "HTTP/1.1 200 OK"                        
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-4 | Input: 3010 | Output: 2172 | Time: 33.76 sec
+✅ CORRECT: User Login Location Anomaly | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious Login\HP\alert-5 ---
+[03/03/26 02:54:08] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/182.95.178.1                
+                             58?key=3a8955355abf49748efb87f626c                
+                             492cc "HTTP/1.1 200 OK"                           
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=182.95.178.158&verb                
+                             ose=true "HTTP/1.1 200 OK"                        
+[03/03/26 02:54:09] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-5 | Input: 2996 | Output: 1999 | Time: 45.38 sec
+✅ CORRECT: User Login Location Anomaly | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious Login\LP\alert-1 ---
+[03/03/26 02:54:52] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/41.160.0.2?k                
+                             ey=3a8955355abf49748efb87f626c492c                
+                             c "HTTP/1.1 200 OK"                               
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=41.160.0.2&verbose=                
+                             true "HTTP/1.1 200 OK"                            
+[03/03/26 02:54:53] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-1 | Input: 4184 | Output: 2011 | Time: 40.46 sec
+✅ CORRECT: User Login Location Anomaly | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious Login\LP\alert-2 ---
+[03/03/26 02:55:34] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/155.133.15.2                
+                             ?key=3a8955355abf49748efb87f626c49                
+                             2cc "HTTP/1.1 200 OK"                             
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=155.133.15.2&verbos                
+                             e=true "HTTP/1.1 200 OK"                          
+📊 alert-2 | Input: 2740 | Output: 1868 | Time: 34.69 sec
+✅ CORRECT: User Login Location Anomaly | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious Login\LP\alert-3 ---
+[03/03/26 02:56:08] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 02:56:09] INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/195.88.86.50                
+                             ?key=3a8955355abf49748efb87f626c49                
+                             2cc "HTTP/1.1 200 OK"                             
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=195.88.86.50&verbos                
+                             e=true "HTTP/1.1 200 OK"                          
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/13.80.23.7?k                
+                             ey=3a8955355abf49748efb87f626c492c                
+                             c "HTTP/1.1 200 OK"                               
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=13.80.23.7&verbose=                
+                             true "HTTP/1.1 200 OK"                            
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-3 | Input: 3122 | Output: 2145 | Time: 37.24 sec
+✅ CORRECT: User Login Location Anomaly | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious Login\LP\alert-4 ---
+[03/03/26 02:56:44] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 02:56:45] INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/83.110.250.2                
+                             31?key=3a8955355abf49748efb87f626c                
+                             492cc "HTTP/1.1 200 OK"                           
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=83.110.250.231&verb                
+                             ose=true "HTTP/1.1 200 OK"                        
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-4 | Input: 2936 | Output: 2011 | Time: 35.46 sec
+✅ CORRECT: User Login Location Anomaly | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious Login\LP\alert-5 ---
+[03/03/26 02:57:21] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 02:57:22] INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/154.86.26.91                
+                             ?key=3a8955355abf49748efb87f626c49                
+                             2cc "HTTP/1.1 200 OK"                             
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=154.86.26.91&verbos                
+                             e=true "HTTP/1.1 200 OK"                          
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-5 | Input: 2947 | Output: 2204 | Time: 36.57 sec
+✅ CORRECT: User Login Location Anomaly | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious PowerShell Script\HP\alert-1 ---
+[03/03/26 02:57:55] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-1 | Input: 2574 | Output: 1820 | Time: 29.28 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious PowerShell Script\HP\alert-10 ---
+[03/03/26 02:58:41] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/195.55.224.2                
+                             8?key=3a8955355abf49748efb87f626c4                
+                             92cc "HTTP/1.1 200 OK"                            
+[03/03/26 02:58:42] INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=195.55.224.28&verbo                
+                             se=true "HTTP/1.1 200 OK"                         
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://www.virustotal.com/api/v3/                
+                             files/9785001b0dcf755eddb8af294a37                
+                             3c0b87b2498660f724e76c4d53f9c217c7                
+                             a3 "HTTP/1.1 200 OK"                              
+📊 alert-10 | Input: 3867 | Output: 3570 | Time: 53.21 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious PowerShell Script\HP\alert-2 ---
+[03/03/26 02:59:18] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 02:59:19] INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/185.199.88.2                
+                             2?key=3a8955355abf49748efb87f626c4                
+                             92cc "HTTP/1.1 200 OK"                            
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=185.199.88.22&verbo                
+                             se=true "HTTP/1.1 200 OK"                         
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-2 | Input: 2736 | Output: 1865 | Time: 31.58 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious PowerShell Script\HP\alert-3 ---
+📊 alert-3 | Input: 1291 | Output: 1158 | Time: 19.80 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious PowerShell Script\HP\alert-4 ---
+📊 alert-4 | Input: 1280 | Output: 1305 | Time: 18.70 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious PowerShell Script\HP\alert-5 ---
+📊 alert-5 | Input: 1309 | Output: 1228 | Time: 17.99 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious PowerShell Script\HP\alert-6 ---
+[03/03/26 03:00:47] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 03:00:48] INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/45.33.19.121                
+                             ?key=3a8955355abf49748efb87f626c49                
+                             2cc "HTTP/1.1 200 OK"                             
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=45.33.19.121&verbos                
+                             e=true "HTTP/1.1 200 OK"                          
+[03/03/26 03:00:50] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 03:00:51] INFO     HTTP Request: GET                  _client.py:1740
+                             https://www.virustotal.com/api/v3/                
+                             files/75d216cde89d62ae1f9a8137ce7e                
+                             e32fec7a1da96826be471e664223651720                
+                             bc "HTTP/1.1 200 OK"                              
+📊 alert-6 | Input: 6376 | Output: 1962 | Time: 29.22 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious PowerShell Script\HP\alert-7 ---
+[03/03/26 03:01:16] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 03:01:17] INFO     HTTP Request: GET                  _client.py:1740
+                             https://www.virustotal.com/api/v3/                
+                             files/9785001b0dcf755eddb8af294a37                
+                             3c0b87b2498660f724e76c4d53f9c217c7                
+                             a3 "HTTP/1.1 200 OK"                              
+📊 alert-7 | Input: 3761 | Output: 2064 | Time: 31.96 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious PowerShell Script\HP\alert-8 ---
+[03/03/26 03:02:00] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 03:02:01] INFO     HTTP Request: GET                  _client.py:1740
+                             https://www.virustotal.com/api/v3/                
+                             files/9785001b0dcf755eddb8af294a37                
+                             3c0b87b2498660f724e76c4d53f9c217c7                
+                             a3 "HTTP/1.1 200 OK"                              
+📊 alert-8 | Input: 3057 | Output: 3316 | Time: 47.61 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious PowerShell Script\HP\alert-9 ---
+[03/03/26 03:02:37] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 03:02:38] INFO     HTTP Request: GET                  _client.py:1740
+                             https://www.virustotal.com/api/v3/                
+                             files/9785001b0dcf755eddb8af294a37                
+                             3c0b87b2498660f724e76c4d53f9c217c7                
+                             a3 "HTTP/1.1 200 OK"                              
+📊 alert-9 | Input: 3163 | Output: 1932 | Time: 29.13 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious PowerShell Script\LP\alert-1 ---
+📊 alert-1 | Input: 4968 | Output: 2115 | Time: 29.43 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious PowerShell Script\LP\alert-10 ---
+📊 alert-10 | Input: 2989 | Output: 1525 | Time: 23.03 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious PowerShell Script\LP\alert-2 ---
+📊 alert-2 | Input: 1491 | Output: 953 | Time: 20.35 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious PowerShell Script\LP\alert-3 ---
+📊 alert-3 | Input: 4515 | Output: 1658 | Time: 26.34 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious PowerShell Script\LP\alert-4 ---
+📊 alert-4 | Input: 1273 | Output: 1309 | Time: 22.81 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious PowerShell Script\LP\alert-5 ---
+📊 alert-5 | Input: 1526 | Output: 1716 | Time: 28.18 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious PowerShell Script\LP\alert-6 ---
+[03/03/26 03:05:35] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 03:05:36] INFO     HTTP Request: GET                  _client.py:1740
+                             https://www.virustotal.com/api/v3/                
+                             files/159cd40d11705ca90f15a789db51                
+                             07d1deba86e7695984bfceaa1c88af2076                
+                             7a "HTTP/1.1 404 Not Found"                       
+[03/03/26 03:05:37] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-6 | Input: 4339 | Output: 1633 | Time: 25.71 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious PowerShell Script\LP\alert-7 ---
+[03/03/26 03:06:00] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 03:06:01] INFO     HTTP Request: GET                  _client.py:1740
+                             https://www.virustotal.com/api/v3/                
+                             files/63854e78780866d2ae56a58958a1                
+                             fda017a71f54b71fe70cf5403958e96186                
+                             2a "HTTP/1.1 200 OK"                              
+📊 alert-7 | Input: 2820 | Output: 2115 | Time: 31.36 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious PowerShell Script\LP\alert-8 ---
+[03/03/26 03:06:30] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://www.virustotal.com/api/v3/                
+                             files/145c75624d30ef5a088048904ac2                
+                             68d9bb24568df442cc8ab39bceb3cddbb2                
+                             4e "HTTP/1.1 200 OK"                              
+[03/03/26 03:06:32] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-8 | Input: 5950 | Output: 2281 | Time: 34.43 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\Suspicious PowerShell Script\LP\alert-9 ---
+📊 alert-9 | Input: 3192 | Output: 2309 | Time: 29.08 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\Threat Intelligence (Company Logo Detection)\HP\alert-1 ---
+📊 alert-1 | Input: 2607 | Output: 1238 | Time: 15.26 sec
+✅ CORRECT: Brand Logo Detection | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Threat Intelligence (Company Logo Detection)\HP\alert-2 ---
+📊 alert-2 | Input: 2607 | Output: 1534 | Time: 23.68 sec
+✅ CORRECT: Brand Logo Detection | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Threat Intelligence (Company Logo Detection)\HP\alert-3 ---
+📊 alert-3 | Input: 2609 | Output: 1267 | Time: 16.66 sec
+✅ CORRECT: Brand Logo Detection | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Threat Intelligence (Company Logo Detection)\HP\alert-4 ---
+📊 alert-4 | Input: 2612 | Output: 1795 | Time: 21.18 sec
+✅ CORRECT: Brand Logo Detection | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Threat Intelligence (Company Logo Detection)\HP\alert-5 ---
+[03/03/26 03:08:52] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/45.138.27.11                
+                             2?key=3a8955355abf49748efb87f626c4                
+                             92cc "HTTP/1.1 200 OK"                            
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=45.138.27.112&verbo                
+                             se=true "HTTP/1.1 200 OK"                         
+📊 alert-5 | Input: 5285 | Output: 1576 | Time: 22.31 sec
+✅ CORRECT: Brand Logo Detection | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Threat Intelligence (Company Logo Detection)\LP\alert-1 ---
+[03/03/26 03:09:14] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/50.62.0.1?ke                
+                             y=3a8955355abf49748efb87f626c492cc                
+                              "HTTP/1.1 200 OK"                                
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=50.62.0.1&verbose=t                
+                             rue "HTTP/1.1 200 OK"                             
+📊 alert-1 | Input: 8009 | Output: 2284 | Time: 35.78 sec
+✅ CORRECT: Brand Logo Detection | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\Threat Intelligence (Company Logo Detection)\LP\alert-2 ---
+[03/03/26 03:09:57] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 03:09:58] INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/151.101.2.13                
+                             2?key=3a8955355abf49748efb87f626c4                
+                             92cc "HTTP/1.1 200 OK"                            
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=151.101.2.132&verbo                
+                             se=true "HTTP/1.1 200 OK"                         
+📊 alert-2 | Input: 9724 | Output: 2652 | Time: 43.61 sec
+✅ CORRECT: Brand Logo Detection | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\Threat Intelligence (Company Logo Detection)\LP\alert-3 ---
+[03/03/26 03:10:31] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 03:10:32] INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/104.26.10.22                
+                             7?key=3a8955355abf49748efb87f626c4                
+                             92cc "HTTP/1.1 200 OK"                            
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=104.26.10.227&verbo                
+                             se=true "HTTP/1.1 200 OK"                         
+📊 alert-3 | Input: 5298 | Output: 1712 | Time: 25.76 sec
+✅ CORRECT: Brand Logo Detection | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\Threat Intelligence (Company Logo Detection)\LP\alert-4 ---
+📊 alert-4 | Input: 2605 | Output: 1421 | Time: 19.86 sec
+✅ CORRECT: Brand Logo Detection | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\Threat Intelligence (Company Logo Detection)\LP\alert-5 ---
+📊 alert-5 | Input: 2607 | Output: 1832 | Time: 22.38 sec
+✅ CORRECT: Brand Logo Detection | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\Threat Intelligence (Company Mention in Potentially Leaked Documents)\HP\alert-1 ---
+📊 alert-1 | Input: 1316 | Output: 1679 | Time: 22.94 sec
+✅ CORRECT: Brand Mention in External Document | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Threat Intelligence (Company Mention in Potentially Leaked Documents)\HP\alert-2 ---
+[03/03/26 03:12:05] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-2 | Input: 2762 | Output: 1641 | Time: 23.48 sec
+✅ CORRECT: Brand Mention in External Document | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Threat Intelligence (Company Mention in Potentially Leaked Documents)\HP\alert-3 ---
+📊 alert-3 | Input: 1341 | Output: 1474 | Time: 18.10 sec
+✅ CORRECT: Brand Mention in External Document | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Threat Intelligence (Company Mention in Potentially Leaked Documents)\HP\alert-4 ---
+📊 alert-4 | Input: 1322 | Output: 1378 | Time: 18.00 sec
+✅ CORRECT: Brand Mention in External Document | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Threat Intelligence (Company Mention in Potentially Leaked Documents)\HP\alert-5 ---
+📊 alert-5 | Input: 1352 | Output: 1578 | Time: 22.37 sec
+✅ CORRECT: Brand Mention in External Document | Folder: HP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Threat Intelligence (Company Mention in Potentially Leaked Documents)\LP\alert-1 ---
+📊 alert-1 | Input: 1296 | Output: 1594 | Time: 21.23 sec
+✅ CORRECT: Brand Mention in External Document | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\Threat Intelligence (Company Mention in Potentially Leaked Documents)\LP\alert-2 ---
+📊 alert-2 | Input: 1304 | Output: 1428 | Time: 17.75 sec
+✅ CORRECT: Brand Mention in External Document | Folder: LP (Got: LP)
+--- General Triage Mode: Skipping playbook selection for alerts\Threat Intelligence (Company Mention in Potentially Leaked Documents)\LP\alert-3 ---
+📊 alert-3 | Input: 1351 | Output: 1331 | Time: 16.66 sec
+❌ INCORRECT: Brand Mention in External Document | Expected: LP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Threat Intelligence (Company Mention in Potentially Leaked Documents)\LP\alert-4 ---
+📊 alert-4 | Input: 1341 | Output: 1534 | Time: 19.86 sec
+❌ INCORRECT: Brand Mention in External Document | Expected: LP (Got: HP)
+--- General Triage Mode: Skipping playbook selection for alerts\Threat Intelligence (Company Mention in Potentially Leaked Documents)\LP\alert-5 ---
+📊 alert-5 | Input: 1362 | Output: 1483 | Time: 23.88 sec
+❌ INCORRECT: Brand Mention in External Document | Expected: LP (Got: HP)
+
+========================================
+TRIAGE SUMMARY
+Total processed: 100
+Correct: 87 | Incorrect: 13
+Accuracy: 87.00%
+----------------------------------------
+  Avg Time: 29.72 sec
+OVERALL AVG TOKENS PER ALERT:
+  Input:  2737.30
+  Output: 1855.86
+----------------------------------------
+AVERAGES PER USE CASE (Subfolder):
+  [Data Exfiltration Anomaly] (20 alerts):
+    Avg Input:  2703.95
+    Avg Output: 1946.90
+    Avg Time:   31.99 sec
+  [DNS Tunneling Anomaly] (10 alerts):
+    Avg Input:  2024.40
+    Avg Output: 1830.10
+    Avg Time:   31.76 sec
+  [EDR] (10 alerts):
+    Avg Input:  1938.10
+    Avg Output: 1734.40
+    Avg Time:   29.98 sec
+  [Suspicious Azure Network Activity] (10 alerts):
+    Avg Input:  2579.40
+    Avg Output: 1902.20
+    Avg Time:   28.14 sec
+  [Suspicious Login] (10 alerts):
+    Avg Input:  3304.50
+    Avg Output: 2171.60
+    Avg Time:   40.36 sec
+  [Suspicious PowerShell Script] (20 alerts):
+    Avg Input:  3123.85
+    Avg Output: 1891.70
+    Avg Time:   28.96 sec
+  [Threat Intelligence (Company Logo Detection)] (10 alerts):
+    Avg Input:  4396.30
+    Avg Output: 1731.10
+    Avg Time:   24.65 sec
+  [Threat Intelligence (Company Mention in Potentially Leaked Documents)] (10 alerts):
+    Avg Input:  1474.70
+    Avg Output: 1512.00
+    Avg Time:   20.43 sec
+========================================
+
+📝 Final summary report saved to final_stats_report.json

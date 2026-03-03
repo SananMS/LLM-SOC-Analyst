@@ -1,0 +1,16 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-99500",
+    "Start Time": "2026-02-10T21:15:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "82.102.15.144",
+    "Endpoint": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-baltic-prod-data/providers/Microsoft.Network/networkSecurityGroups/nsg-prod-db-cluster",
+    "User": "aleksei.ivanov@globalcorp.ee (Aleksei Ivanov, Engineering, Senior Software Developer)",
+    "Role": "Owner",
+    "Operation": "MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/WRITE",
+    "Result": "Succeeded",
+    "Caller IP Location": "Tallinn, Harju County, Estonia",
+    "Description": "A Network Security Group rule was modified to add an inbound rule named Allow_LB_HealthCheck_Internal permitting sourceAddressPrefix '*' to destination 10.0.5.2 on TCP/443, and the change completed successfully. The action was performed by an internal user with Owner privileges who authenticated with password + MFA from an IP geolocated to Estonia. This change is considered high risk because the rule permits any source ('*') to reach an internal DB-facing IP, which could expose sensitive resources; although the user is internal and MFA was used, the broad source allowance and elevated role warrant further validation of authorization and purpose. No prior related alerts were available in the evidence to confirm this is part of an expected maintenance window."
+  },
+  "classification": "HP"
+}

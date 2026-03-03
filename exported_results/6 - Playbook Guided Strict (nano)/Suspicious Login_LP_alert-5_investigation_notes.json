@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-115",
+    "Start Time": "2025-08-03T16:30:00.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "154.86.26.91",
+    "Destination IP": "13.80.23.7",
+    "Endpoint": "T12345785",
+    "User": "arne.tamm@client.ee",
+    "Playbook Used": "Suspicious Login Triage",
+    "Description": "An Office 365 login occurred from Hong Kong, which is outside the user's typical login region. The login was successful and MFA was used, and the source IP shows no VPN or proxy from a fixed line ISP with a low abuse score. Historical activity includes logins from Tallinn and Macao, indicating travel in the APAC region, and a prior Macao alert was closed as false positive after client confirmation of vacation; given travel plausibility and low-risk indicators, this event is classified as Low Priority.",
+    "IP Reputation": "Abuse Confidence Score: 0/100; ISP: HONG KONG COMMUNICATIONS INTERNATIONAL CO.,LIMITED; Usage Type: Fixed Line ISP; VPN/Proxy: None",
+    "MFA Present": true,
+    "Historical Context": "Past logins from Tallinn (194.126.101.49) and Macao (74.119.64.2) in the same user; a prior alert for Macao was closed as false positive after client confirmation of vacation.",
+    "VPN/Proxy Detected": "No VPN or Proxy detected"
+  },
+  "classification": "LP"
+}

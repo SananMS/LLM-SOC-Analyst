@@ -1,0 +1,21 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14570",
+    "Start Time": "2026-02-06T16:45:10.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.150.22.15",
+    "Destination IP": "185.112.10.4",
+    "Endpoint": "srv-prod-web-02",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Description": "Anomalous DNS traffic with high-entropy content to ntp-update.space was observed, including two TXT queries carrying encoded parameters, alongside a total DNS payload of 740 bytes versus typical 20 bytes. The root domain ntp-update.space is 25 days old, and the encoded payloads contain hostname, OS, uptime, and command indicators, suggesting potential data exfiltration or beaconing via DNS. While standard DNS queries for time synchronization occurred (e.g., pool.ntp.org, time.google.com), the presence of encoded payloads to a suspicious domain elevates risk and warrants escalation.",
+    "Root Domain": "ntp-update.space",
+    "Domain Age": "25 days",
+    "Encoded Payload Detected": "Yes (TXT queries with base64-encoded parameters)",
+    "Sample Payloads": [
+      "aG9zdG5hbWU9d2ViLTAy.ntp-update.space",
+      "b3M9dWJ1bnR1LTIyLjA0.ntp-update.space"
+    ],
+    "Recent Events Context": "Recent host activity shows legitimate DNS lookups to pool.ntp.org and time.google.com, alongside TXT queries to ntp-update.space carrying base64-encoded data."
+  },
+  "classification": "HP"
+}

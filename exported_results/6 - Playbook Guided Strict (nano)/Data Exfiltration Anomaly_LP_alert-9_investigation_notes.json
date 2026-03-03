@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-20114",
+    "Start Time": "2026-03-01T15:10:00.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "90.190.150.10",
+    "Destination IP": "40.108.201.15",
+    "User": "acc_svc@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Description": "An anomalous bulk download of 294 files from the Finance SharePoint site was observed for user acc_svc@globalcorp.ee. The downloads exceed the 24-hour baseline by a large margin (294 vs 25) and include highly sensitive payroll and financial documents, raising data leakage risk. The activity originates from Tallinn, Estonia, to an external destination, using an older user agent, and appears to be automated in nature rather than typical user-driven access. Given the volume, data sensitivity, service account usage, and cross-border indicators, this event warrants high-priority investigation.",
+    "Geographic Location": "Tallinn, Estonia",
+    "File Count": 294,
+    "Baseline 24h": 25,
+    "SharePoint Site": "https://globalcorp.sharepoint.com/sites/DACH_Finance_Central/",
+    "Application Involved": "Workday MSGraph"
+  },
+  "classification": "HP"
+}

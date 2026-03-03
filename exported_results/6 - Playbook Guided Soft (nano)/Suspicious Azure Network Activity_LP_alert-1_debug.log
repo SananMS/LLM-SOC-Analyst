@@ -1,0 +1,22 @@
+=== DEBUG SESSION START: 2026-03-02T23:01:59.520644+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Azure Network Security Modification
+Selected Playbook: suspicious_cloud_network_activity.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14600",
+    "Start Time": "2026-10-18T14:16:17.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Description": "An NSG write operation was performed on nsg-aks-prod-northeast in resource group rg-nordic-prod-001 by a Service Principal with Contributor role. The request_body includes a Deny rule named SanctionBlocks for a large set of source prefixes toward 40.113.112.55 on ports 80 and 443, and an additional Allow rule from Internet to the same destination, which may indicate conflicting or misconfigured policy changes. The activity originates from Norway East, while the organization primarily operates from Estonia, and the production scope elevates risk, so this is classified as HP pending further validation.",
+    "Resource Group Name": "rg-nordic-prod-001",
+    "NSG Name": "nsg-aks-prod-northeast",
+    "Authorization Principal": "7f2a8c12-3391-4e1a-b672-9d3c11bc99a1 (Contributor)",
+    "NSG Provisioning State": "Succeeded"
+  },
+  "classification": "HP"
+}
+

@@ -1,0 +1,827 @@
+--- Decided on Playbook: excessive_downloads.json for alerts\Data Exfiltration Anomaly\HP\alert-1 ---
+[03/03/26 04:20:20] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     Processing request of type           server.py:713
+                             ListToolsRequest                                  
+📊 alert-1 | Input: 4847 | Output: 2338 | Time: 31.81 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: HP (Got: HP)
+--- Decided on Playbook: excessive_downloads.json for alerts\Data Exfiltration Anomaly\HP\alert-10 ---
+[03/03/26 04:20:49] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-10 | Input: 5041 | Output: 2884 | Time: 40.37 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: HP (Got: HP)
+--- Decided on Playbook: excessive_downloads.json for alerts\Data Exfiltration Anomaly\HP\alert-2 ---
+[03/03/26 04:21:29] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-2 | Input: 4881 | Output: 3753 | Time: 52.91 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: HP (Got: HP)
+--- Decided on Playbook: excessive_downloads.json for alerts\Data Exfiltration Anomaly\HP\alert-3 ---
+[03/03/26 04:22:28] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-3 | Input: 4900 | Output: 2327 | Time: 40.90 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: HP (Got: HP)
+--- Decided on Playbook: excessive_downloads.json for alerts\Data Exfiltration Anomaly\HP\alert-4 ---
+[03/03/26 04:23:05] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-4 | Input: 4989 | Output: 2243 | Time: 31.87 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: HP (Got: HP)
+--- Decided on Playbook: excessive_downloads.json for alerts\Data Exfiltration Anomaly\HP\alert-5 ---
+[03/03/26 04:23:33] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-5 | Input: 4873 | Output: 2043 | Time: 30.40 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: HP (Got: HP)
+--- Decided on Playbook: excessive_downloads.json for alerts\Data Exfiltration Anomaly\HP\alert-6 ---
+[03/03/26 04:24:04] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-6 | Input: 5273 | Output: 2372 | Time: 34.11 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: HP (Got: HP)
+--- Decided on Playbook: excessive_downloads.json for alerts\Data Exfiltration Anomaly\HP\alert-7 ---
+[03/03/26 04:24:38] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-7 | Input: 10488 | Output: 1986 | Time: 33.98 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: HP (Got: HP)
+--- Decided on Playbook: excessive_downloads.json for alerts\Data Exfiltration Anomaly\HP\alert-8 ---
+[03/03/26 04:25:11] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-8 | Input: 5942 | Output: 2172 | Time: 35.46 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: HP (Got: HP)
+--- Decided on Playbook: excessive_downloads.json for alerts\Data Exfiltration Anomaly\HP\alert-9 ---
+[03/03/26 04:25:50] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-9 | Input: 6078 | Output: 2086 | Time: 29.63 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: HP (Got: HP)
+--- Decided on Playbook: excessive_downloads.json for alerts\Data Exfiltration Anomaly\LP\alert-1 ---
+[03/03/26 04:26:23] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-1 | Input: 4864 | Output: 2067 | Time: 36.64 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: LP (Got: LP)
+--- Decided on Playbook: excessive_downloads.json for alerts\Data Exfiltration Anomaly\LP\alert-10 ---
+[03/03/26 04:26:56] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-10 | Input: 5207 | Output: 2996 | Time: 45.11 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: LP (Got: LP)
+--- Decided on Playbook: excessive_downloads.json for alerts\Data Exfiltration Anomaly\LP\alert-2 ---
+[03/03/26 04:27:43] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-2 | Input: 4858 | Output: 2088 | Time: 38.92 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: LP (Got: LP)
+--- Decided on Playbook: excessive_downloads.json for alerts\Data Exfiltration Anomaly\LP\alert-3 ---
+[03/03/26 04:28:18] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-3 | Input: 4897 | Output: 1633 | Time: 28.84 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: LP (Got: LP)
+--- Decided on Playbook: excessive_downloads.json for alerts\Data Exfiltration Anomaly\LP\alert-4 ---
+[03/03/26 04:28:53] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-4 | Input: 5170 | Output: 2666 | Time: 59.11 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: LP (Got: LP)
+--- Decided on Playbook: excessive_downloads.json for alerts\Data Exfiltration Anomaly\LP\alert-5 ---
+[03/03/26 04:29:51] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-5 | Input: 4876 | Output: 2241 | Time: 39.89 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: LP (Got: LP)
+--- Decided on Playbook: excessive_downloads.json for alerts\Data Exfiltration Anomaly\LP\alert-6 ---
+[03/03/26 04:30:29] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-6 | Input: 5327 | Output: 2539 | Time: 40.20 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: LP (Got: LP)
+--- Decided on Playbook: excessive_downloads.json for alerts\Data Exfiltration Anomaly\LP\alert-7 ---
+[03/03/26 04:31:12] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-7 | Input: 5179 | Output: 2264 | Time: 48.67 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: LP (Got: LP)
+--- Decided on Playbook: excessive_downloads.json for alerts\Data Exfiltration Anomaly\LP\alert-8 ---
+[03/03/26 04:31:57] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-8 | Input: 5185 | Output: 2752 | Time: 45.62 sec
+✅ CORRECT: Data Exfiltration Anomaly | Folder: LP (Got: LP)
+--- Decided on Playbook: excessive_downloads.json for alerts\Data Exfiltration Anomaly\LP\alert-9 ---
+[03/03/26 04:32:44] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-9 | Input: 5135 | Output: 2245 | Time: 39.87 sec
+❌ INCORRECT: Data Exfiltration Anomaly | Expected: LP (Got: HP)
+--- Decided on Playbook: suspicious_dns_queries.json for alerts\DNS Tunneling Anomaly\HP\alert-1 ---
+[03/03/26 04:33:22] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-1 | Input: 4924 | Output: 2613 | Time: 41.64 sec
+✅ CORRECT: DNS Tunneling Anomaly | Folder: HP (Got: HP)
+--- Decided on Playbook: suspicious_dns_queries.json for alerts\DNS Tunneling Anomaly\HP\alert-2 ---
+[03/03/26 04:34:11] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-2 | Input: 9204 | Output: 3163 | Time: 56.76 sec
+✅ CORRECT: DNS Tunneling Anomaly | Folder: HP (Got: HP)
+--- Decided on Playbook: suspicious_dns_queries.json for alerts\DNS Tunneling Anomaly\HP\alert-3 ---
+[03/03/26 04:35:09] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-3 | Input: 5102 | Output: 3994 | Time: 66.96 sec
+✅ CORRECT: DNS Tunneling Anomaly | Folder: HP (Got: HP)
+--- Decided on Playbook: suspicious_dns_queries.json for alerts\DNS Tunneling Anomaly\HP\alert-4 ---
+[03/03/26 04:36:17] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-4 | Input: 5106 | Output: 2918 | Time: 47.17 sec
+✅ CORRECT: DNS Tunneling Anomaly | Folder: HP (Got: HP)
+--- Decided on Playbook: suspicious_dns_queries.json for alerts\DNS Tunneling Anomaly\HP\alert-5 ---
+[03/03/26 04:37:05] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-5 | Input: 5227 | Output: 3001 | Time: 43.45 sec
+✅ CORRECT: DNS Tunneling Anomaly | Folder: HP (Got: HP)
+--- Decided on Playbook: suspicious_dns_queries.json for alerts\DNS Tunneling Anomaly\LP\alert-1 ---
+[03/03/26 04:37:41] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-1 | Input: 4907 | Output: 2209 | Time: 37.85 sec
+✅ CORRECT: DNS Tunneling Anomaly | Folder: LP (Got: LP)
+--- Decided on Playbook: suspicious_dns_queries.json for alerts\DNS Tunneling Anomaly\LP\alert-2 ---
+[03/03/26 04:38:14] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-2 | Input: 7282 | Output: 2694 | Time: 38.25 sec
+✅ CORRECT: DNS Tunneling Anomaly | Folder: LP (Got: LP)
+--- Decided on Playbook: suspicious_dns_queries.json for alerts\DNS Tunneling Anomaly\LP\alert-3 ---
+[03/03/26 04:38:57] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-3 | Input: 5087 | Output: 2583 | Time: 48.49 sec
+✅ CORRECT: DNS Tunneling Anomaly | Folder: LP (Got: LP)
+--- Decided on Playbook: suspicious_dns_queries.json for alerts\DNS Tunneling Anomaly\LP\alert-4 ---
+[03/03/26 04:39:44] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-4 | Input: 5262 | Output: 2132 | Time: 37.48 sec
+✅ CORRECT: DNS Tunneling Anomaly | Folder: LP (Got: LP)
+--- Decided on Playbook: suspicious_dns_queries.json for alerts\DNS Tunneling Anomaly\LP\alert-5 ---
+[03/03/26 04:40:23] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-5 | Input: 5588 | Output: 2334 | Time: 40.12 sec
+❌ INCORRECT: DNS Tunneling Anomaly | Expected: LP (Got: HP)
+--- Decided on Playbook: EDR_malware_alerts.json for alerts\EDR\HP\alert-1 ---
+[03/03/26 04:41:01] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 04:41:02] INFO     HTTP Request: GET                  _client.py:1740
+                             https://www.virustotal.com/api/v3/                
+                             files/4a365b80f0de287dcfbf7860075e                
+                             0956e450048933ddebb0506837afbced40                
+                             4e "HTTP/1.1 200 OK"                              
+📊 alert-1 | Input: 5257 | Output: 2826 | Time: 43.54 sec
+✅ CORRECT: SentinelOne: XDR Miscellaneous Malware | Folder: HP (Got: HP)
+--- Decided on Playbook: EDR_malware_alerts.json for alerts\EDR\HP\alert-2 ---
+[03/03/26 04:41:53] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-2 | Input: 4795 | Output: 2658 | Time: 42.11 sec
+❌ INCORRECT: Trend Micro: Malware Detected on Endpoint | Expected: HP (Got: LP)
+--- Decided on Playbook: EDR_malware_alerts.json for alerts\EDR\HP\alert-3 ---
+[03/03/26 04:42:31] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://www.virustotal.com/api/v3/                
+                             files/c17fe4a49e12034f44ad74793d52                
+                             0d17a1c6585bec5f3f03b5558da37a0b46                
+                             17 "HTTP/1.1 404 Not Found"                       
+[03/03/26 04:42:32] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-3 | Input: 7258 | Output: 2588 | Time: 47.44 sec
+✅ CORRECT: Trend Micro: Possible Data Encrypted for Impact | Folder: HP (Got: HP)
+--- Decided on Playbook: EDR_anti_tampering.json for alerts\EDR\HP\alert-4 ---
+📊 alert-4 | Input: 4202 | Output: 2099 | Time: 41.37 sec
+✅ CORRECT: Microsoft Defender: Antivirus Tampering Attempt Prevented | Folder: HP (Got: HP)
+--- Decided on Playbook: EDR_malware_alerts.json for alerts\EDR\HP\alert-5 ---
+[03/03/26 04:43:58] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 04:43:59] INFO     HTTP Request: GET                  _client.py:1740
+                             https://www.virustotal.com/api/v3/                
+                             files/686d018c86c03165925ebd3773c6                
+                             22f182c93f54b98db9616bae86f5e8684e                
+                             4c "HTTP/1.1 200 OK"                              
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/10.45.20.114                
+                             ?key=3a8955355abf49748efb87f626c49                
+                             2cc "HTTP/1.1 200 OK"                             
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=10.45.20.114&verbos                
+                             e=true "HTTP/1.1 200 OK"                          
+📊 alert-5 | Input: 5133 | Output: 3139 | Time: 56.32 sec
+✅ CORRECT: Malware Prevention: Trojan:Win32/SparkOnSoft | Folder: HP (Got: HP)
+--- Decided on Playbook: EDR_malware_alerts.json for alerts\EDR\LP\alert-1 ---
+[03/03/26 04:44:55] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 04:44:56] INFO     HTTP Request: GET                  _client.py:1740
+                             https://www.virustotal.com/api/v3/                
+                             files/f4e3d2c1b0a9f8e7d6c5b4a3f2e1                
+                             d0c9b8a7f6e5d4c3b2a1f0e9d8c7b6a5f4                
+                             e3 "HTTP/1.1 404 Not Found"                       
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/10.44.12.190                
+                             ?key=3a8955355abf49748efb87f626c49                
+                             2cc "HTTP/1.1 200 OK"                             
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=10.44.12.190&verbos                
+                             e=true "HTTP/1.1 200 OK"                          
+📊 alert-1 | Input: 6514 | Output: 2533 | Time: 40.16 sec
+✅ CORRECT: Microsoft Defender: Potentially Unwanted Application Prevented | Folder: LP (Got: LP)
+--- Decided on Playbook: EDR_identity_alerts.json for alerts\EDR\LP\alert-2 ---
+📊 alert-2 | Input: 3900 | Output: 1726 | Time: 28.99 sec
+✅ CORRECT: Trend Micro Vision One: Suspicious Mailbox Rule Deletes All Incoming Emails | Folder: LP (Got: LP)
+--- Decided on Playbook: EDR_malware_alerts.json for alerts\EDR\LP\alert-3 ---
+[03/03/26 04:46:02] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 04:46:03] INFO     HTTP Request: GET                  _client.py:1740
+                             https://www.virustotal.com/api/v3/                
+                             files/8c3b2a1f0e9d8c7b6a5f4e3d2c1b                
+                             0a9f8e7d6c5b4a3f2e1d0c9b8a7f6e5d4c                
+                             3b "HTTP/1.1 404 Not Found"                       
+📊 alert-3 | Input: 5724 | Output: 2503 | Time: 40.66 sec
+✅ CORRECT: SentinelOne: XDR Miscellaneous Malware | Folder: LP (Got: LP)
+--- Decided on Playbook: EDR_malware_alerts.json for alerts\EDR\LP\alert-4 ---
+[03/03/26 04:46:46] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://www.virustotal.com/api/v3/                
+                             files/7b3c5cfcdfc93d77f5ab40b82633                
+                             4268d3c49d56 "HTTP/1.1 200 OK"                    
+📊 alert-4 | Input: 5035 | Output: 2196 | Time: 39.15 sec
+✅ CORRECT: SentinelOne: XDR Miscellaneous Malware | Folder: LP (Got: LP)
+--- Decided on Playbook: EDR_anti_tampering.json for alerts\EDR\LP\alert-5 ---
+📊 alert-5 | Input: 4489 | Output: 4899 | Time: 93.95 sec
+✅ CORRECT: SentinelOne: Privilege Escalation | Folder: LP (Got: LP)
+--- Decided on Playbook: suspicious_cloud_network_activity.json for alerts\Suspicious Azure Network Activity\HP\alert-1 ---
+[03/03/26 04:49:02] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=194.126.101.99&verb                
+                             ose=true "HTTP/1.1 200 OK"                        
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/194.126.101.                
+                             99?key=3a8955355abf49748efb87f626c                
+                             492cc "HTTP/1.1 200 OK"                           
+📊 alert-1 | Input: 5571 | Output: 3360 | Time: 63.04 sec
+✅ CORRECT: Azure Network Security Modification | Folder: HP (Got: HP)
+--- Decided on Playbook: suspicious_cloud_network_activity.json for alerts\Suspicious Azure Network Activity\HP\alert-2 ---
+[03/03/26 04:50:01] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-2 | Input: 5523 | Output: 2427 | Time: 45.48 sec
+✅ CORRECT: Azure Network Security Modification | Folder: HP (Got: HP)
+--- Decided on Playbook: suspicious_cloud_network_activity.json for alerts\Suspicious Azure Network Activity\HP\alert-3 ---
+[03/03/26 04:50:42] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-3 | Input: 5519 | Output: 2614 | Time: 49.02 sec
+✅ CORRECT: Azure Network Security Modification | Folder: HP (Got: HP)
+--- Decided on Playbook: suspicious_cloud_network_activity.json for alerts\Suspicious Azure Network Activity\HP\alert-4 ---
+[03/03/26 04:51:37] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-4 | Input: 5526 | Output: 3518 | Time: 92.37 sec
+✅ CORRECT: Azure Network Security Modification | Folder: HP (Got: HP)
+--- Decided on Playbook: suspicious_cloud_network_activity.json for alerts\Suspicious Azure Network Activity\HP\alert-5 ---
+[03/03/26 04:53:13] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-5 | Input: 7901 | Output: 3357 | Time: 61.38 sec
+✅ CORRECT: Azure Network Security Modification | Folder: HP (Got: HP)
+--- Decided on Playbook: suspicious_cloud_network_activity.json for alerts\Suspicious Azure Network Activity\LP\alert-1 ---
+[03/03/26 04:54:18] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-1 | Input: 8603 | Output: 3444 | Time: 64.39 sec
+✅ CORRECT: Azure Network Security Modification | Folder: LP (Got: LP)
+--- Decided on Playbook: suspicious_cloud_network_activity.json for alerts\Suspicious Azure Network Activity\LP\alert-2 ---
+📊 alert-2 | Input: 5377 | Output: 3360 | Time: 68.47 sec
+✅ CORRECT: Azure Network Security Modification | Folder: LP (Got: LP)
+--- Decided on Playbook: suspicious_cloud_network_activity.json for alerts\Suspicious Azure Network Activity\LP\alert-3 ---
+[03/03/26 04:56:23] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-3 | Input: 5355 | Output: 2915 | Time: 42.49 sec
+✅ CORRECT: Azure Network Security Modification | Folder: LP (Got: LP)
+--- Decided on Playbook: suspicious_cloud_network_activity.json for alerts\Suspicious Azure Network Activity\LP\alert-4 ---
+[03/03/26 04:57:04] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/102.89.1.20?                
+                             key=3a8955355abf49748efb87f626c492                
+                             cc "HTTP/1.1 200 OK"                              
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=102.89.1.20&verbose                
+                             =true "HTTP/1.1 200 OK"                           
+📊 alert-4 | Input: 5562 | Output: 2558 | Time: 37.42 sec
+✅ CORRECT: Azure Network Security Modification | Folder: LP (Got: LP)
+--- Decided on Playbook: suspicious_cloud_network_activity.json for alerts\Suspicious Azure Network Activity\LP\alert-5 ---
+[03/03/26 04:57:39] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+📊 alert-5 | Input: 5589 | Output: 2254 | Time: 31.95 sec
+✅ CORRECT: Azure Network Security Modification | Folder: LP (Got: LP)
+--- Decided on Playbook: suspicious_login.json for alerts\Suspicious Login\HP\alert-1 ---
+[03/03/26 04:58:08] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/103.1.64.118                
+                             ?key=3a8955355abf49748efb87f626c49                
+                             2cc "HTTP/1.1 200 OK"                             
+[03/03/26 04:58:09] INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=103.1.64.118&verbos                
+                             e=true "HTTP/1.1 200 OK"                          
+📊 alert-1 | Input: 4373 | Output: 1812 | Time: 28.15 sec
+❌ INCORRECT: User Login Location Anomaly | Expected: HP (Got: LP)
+--- Decided on Playbook: suspicious_login.json for alerts\Suspicious Login\HP\alert-2 ---
+[03/03/26 04:58:40] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/45.78.217.13                
+                             6?key=3a8955355abf49748efb87f626c4                
+                             92cc "HTTP/1.1 200 OK"                            
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=45.78.217.136&verbo                
+                             se=true "HTTP/1.1 200 OK"                         
+📊 alert-2 | Input: 4385 | Output: 2078 | Time: 32.92 sec
+✅ CORRECT: User Login Location Anomaly | Folder: HP (Got: HP)
+--- Decided on Playbook: suspicious_login.json for alerts\Suspicious Login\HP\alert-3 ---
+[03/03/26 04:59:11] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/176.120.22.4                
+                             7?key=3a8955355abf49748efb87f626c4                
+                             92cc "HTTP/1.1 200 OK"                            
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=176.120.22.47&verbo                
+                             se=true "HTTP/1.1 200 OK"                         
+📊 alert-3 | Input: 4379 | Output: 2358 | Time: 35.96 sec
+✅ CORRECT: User Login Location Anomaly | Folder: HP (Got: HP)
+--- Decided on Playbook: suspicious_login.json for alerts\Suspicious Login\HP\alert-4 ---
+[03/03/26 04:59:45] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/152.32.141.1                
+                             99?key=3a8955355abf49748efb87f626c                
+                             492cc "HTTP/1.1 200 OK"                           
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=152.32.141.199&verb                
+                             ose=true "HTTP/1.1 200 OK"                        
+📊 alert-4 | Input: 4386 | Output: 1695 | Time: 25.11 sec
+✅ CORRECT: User Login Location Anomaly | Folder: HP (Got: HP)
+--- Decided on Playbook: suspicious_login.json for alerts\Suspicious Login\HP\alert-5 ---
+[03/03/26 05:00:11] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 05:00:12] INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/182.95.178.1                
+                             58?key=3a8955355abf49748efb87f626c                
+                             492cc "HTTP/1.1 200 OK"                           
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=182.95.178.158&verb                
+                             ose=true "HTTP/1.1 200 OK"                        
+📊 alert-5 | Input: 4373 | Output: 2279 | Time: 32.57 sec
+✅ CORRECT: User Login Location Anomaly | Folder: HP (Got: HP)
+--- Decided on Playbook: suspicious_login.json for alerts\Suspicious Login\LP\alert-1 ---
+[03/03/26 05:00:46] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/41.160.0.2?k                
+                             ey=3a8955355abf49748efb87f626c492c                
+                             c "HTTP/1.1 200 OK"                               
+[03/03/26 05:00:47] INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=41.160.0.2&verbose=                
+                             true "HTTP/1.1 200 OK"                            
+📊 alert-1 | Input: 4762 | Output: 2097 | Time: 32.00 sec
+✅ CORRECT: User Login Location Anomaly | Folder: LP (Got: LP)
+--- Decided on Playbook: suspicious_login.json for alerts\Suspicious Login\LP\alert-2 ---
+[03/03/26 05:01:18] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 05:01:19] INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/155.133.15.2                
+                             ?key=3a8955355abf49748efb87f626c49                
+                             2cc "HTTP/1.1 200 OK"                             
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=155.133.15.2&verbos                
+                             e=true "HTTP/1.1 200 OK"                          
+📊 alert-2 | Input: 4564 | Output: 2895 | Time: 51.05 sec
+✅ CORRECT: User Login Location Anomaly | Folder: LP (Got: LP)
+--- Decided on Playbook: suspicious_login.json for alerts\Suspicious Login\LP\alert-3 ---
+[03/03/26 05:02:10] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/195.88.86.50                
+                             ?key=3a8955355abf49748efb87f626c49                
+                             2cc "HTTP/1.1 200 OK"                             
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=195.88.86.50&verbos                
+                             e=true "HTTP/1.1 200 OK"                          
+📊 alert-3 | Input: 4433 | Output: 1758 | Time: 32.42 sec
+✅ CORRECT: User Login Location Anomaly | Folder: LP (Got: LP)
+--- Decided on Playbook: suspicious_login.json for alerts\Suspicious Login\LP\alert-4 ---
+[03/03/26 05:02:38] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 05:02:39] INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/83.110.250.2                
+                             31?key=3a8955355abf49748efb87f626c                
+                             492cc "HTTP/1.1 200 OK"                           
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=83.110.250.231&verb                
+                             ose=true "HTTP/1.1 200 OK"                        
+📊 alert-4 | Input: 4541 | Output: 1977 | Time: 30.92 sec
+✅ CORRECT: User Login Location Anomaly | Folder: LP (Got: LP)
+--- Decided on Playbook: suspicious_login.json for alerts\Suspicious Login\LP\alert-5 ---
+[03/03/26 05:03:10] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 05:03:11] INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=154.86.26.91&verbos                
+                             e=true "HTTP/1.1 200 OK"                          
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/154.86.26.91                
+                             ?key=3a8955355abf49748efb87f626c49                
+                             2cc "HTTP/1.1 200 OK"                             
+📊 alert-5 | Input: 4572 | Output: 1969 | Time: 32.37 sec
+✅ CORRECT: User Login Location Anomaly | Folder: LP (Got: LP)
+--- Decided on Playbook: suspicious_powershell.json for alerts\Suspicious PowerShell Script\HP\alert-1 ---
+📊 alert-1 | Input: 4517 | Output: 2553 | Time: 39.03 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: HP (Got: HP)
+--- Decided on Playbook: suspicious_powershell.json for alerts\Suspicious PowerShell Script\HP\alert-10 ---
+[03/03/26 05:04:43] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 05:04:44] INFO     HTTP Request: GET                  _client.py:1740
+                             https://www.virustotal.com/api/v3/                
+                             files/9785001b0dcf755eddb8af294a37                
+                             3c0b87b2498660f724e76c4d53f9c217c7                
+                             a3 "HTTP/1.1 200 OK"                              
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/195.554.224.                
+                             28?key=3a8955355abf49748efb87f626c                
+                             492cc "HTTP/1.1 200 OK"                           
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=195.554.224.28&verb                
+                             ose=true "HTTP/1.1 422                            
+                             Unprocessable Entity"                             
+📊 alert-10 | Input: 5964 | Output: 5255 | Time: 80.68 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: HP (Got: HP)
+--- Decided on Playbook: suspicious_powershell.json for alerts\Suspicious PowerShell Script\HP\alert-2 ---
+[03/03/26 05:05:47] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/185.199.88.2                
+                             2?key=3a8955355abf49748efb87f626c4                
+                             92cc "HTTP/1.1 200 OK"                            
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=185.199.88.22&verbo                
+                             se=true "HTTP/1.1 200 OK"                         
+📊 alert-2 | Input: 4611 | Output: 1750 | Time: 28.61 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: HP (Got: HP)
+--- Decided on Playbook: suspicious_powershell.json for alerts\Suspicious PowerShell Script\HP\alert-3 ---
+📊 alert-3 | Input: 4970 | Output: 1853 | Time: 30.63 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: HP (Got: HP)
+--- Decided on Playbook: suspicious_powershell.json for alerts\Suspicious PowerShell Script\HP\alert-4 ---
+📊 alert-4 | Input: 4543 | Output: 2290 | Time: 34.71 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: HP (Got: HP)
+--- Decided on Playbook: suspicious_powershell.json for alerts\Suspicious PowerShell Script\HP\alert-5 ---
+📊 alert-5 | Input: 4601 | Output: 2026 | Time: 30.39 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: HP (Got: HP)
+--- Decided on Playbook: suspicious_powershell.json for alerts\Suspicious PowerShell Script\HP\alert-6 ---
+[03/03/26 05:07:50] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://www.virustotal.com/api/v3/                
+                             files/75d216cde89d62ae1f9a8137ce7e                
+                             e32fec7a1da96826be471e664223651720                
+                             bc "HTTP/1.1 200 OK"                              
+                    INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 05:07:51] INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/45.33.19.121                
+                             ?key=3a8955355abf49748efb87f626c49                
+                             2cc "HTTP/1.1 200 OK"                             
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=45.33.19.121&verbos                
+                             e=true "HTTP/1.1 200 OK"                          
+📊 alert-6 | Input: 5087 | Output: 2054 | Time: 33.71 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: HP (Got: HP)
+--- Decided on Playbook: suspicious_powershell.json for alerts\Suspicious PowerShell Script\HP\alert-7 ---
+[03/03/26 05:08:42] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://www.virustotal.com/api/v3/                
+                             files/9785001b0dcf755eddb8af294a37                
+                             3c0b87b2498660f724e76c4d53f9c217c7                
+                             a3 "HTTP/1.1 200 OK"                              
+[03/03/26 05:09:16] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=183.56.231.216&verb                
+                             ose=true "HTTP/1.1 200 OK"                        
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/183.56.231.2                
+                             16?key=3a8955355abf49748efb87f626c                
+                             492cc "HTTP/1.1 200 OK"                           
+📊 alert-7 | Input: 9056 | Output: 7637 | Time: 106.93 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: HP (Got: HP)
+--- Decided on Playbook: suspicious_powershell.json for alerts\Suspicious PowerShell Script\HP\alert-8 ---
+[03/03/26 05:10:12] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 05:10:13] INFO     HTTP Request: GET                  _client.py:1740
+                             https://www.virustotal.com/api/v3/                
+                             files/9785001b0dcf755eddb8af294a37                
+                             3c0b87b2498660f724e76c4d53f9c217c7                
+                             a3 "HTTP/1.1 200 OK"                              
+📊 alert-8 | Input: 5194 | Output: 3466 | Time: 44.90 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: HP (Got: HP)
+--- Decided on Playbook: suspicious_powershell.json for alerts\Suspicious PowerShell Script\HP\alert-9 ---
+[03/03/26 05:11:01] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 05:11:02] INFO     HTTP Request: GET                  _client.py:1740
+                             https://www.virustotal.com/api/v3/                
+                             files/9785001b0dcf755eddb8af294a37                
+                             3c0b87b2498660f724e76c4d53f9c217c7                
+                             a3 "HTTP/1.1 200 OK"                              
+📊 alert-9 | Input: 5134 | Output: 3578 | Time: 53.90 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: HP (Got: HP)
+--- Decided on Playbook: suspicious_powershell.json for alerts\Suspicious PowerShell Script\LP\alert-1 ---
+📊 alert-1 | Input: 6877 | Output: 2175 | Time: 32.88 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: LP (Got: LP)
+--- Decided on Playbook: suspicious_powershell.json for alerts\Suspicious PowerShell Script\LP\alert-10 ---
+📊 alert-10 | Input: 7961 | Output: 4151 | Time: 66.15 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: LP (Got: LP)
+--- Decided on Playbook: suspicious_powershell.json for alerts\Suspicious PowerShell Script\LP\alert-2 ---
+📊 alert-2 | Input: 4965 | Output: 2167 | Time: 36.97 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: LP (Got: LP)
+--- Decided on Playbook: suspicious_powershell.json for alerts\Suspicious PowerShell Script\LP\alert-3 ---
+📊 alert-3 | Input: 6447 | Output: 1936 | Time: 31.96 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: LP (Got: LP)
+--- Decided on Playbook: suspicious_powershell.json for alerts\Suspicious PowerShell Script\LP\alert-4 ---
+📊 alert-4 | Input: 4659 | Output: 1805 | Time: 25.59 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: LP (Got: LP)
+--- Decided on Playbook: suspicious_powershell.json for alerts\Suspicious PowerShell Script\LP\alert-5 ---
+📊 alert-5 | Input: 5035 | Output: 1783 | Time: 32.47 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: LP (Got: LP)
+--- Decided on Playbook: suspicious_powershell.json for alerts\Suspicious PowerShell Script\LP\alert-6 ---
+[03/03/26 05:15:33] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 05:15:34] INFO     HTTP Request: GET                  _client.py:1740
+                             https://www.virustotal.com/api/v3/                
+                             files/159cd40d11705ca90f15a789db51                
+                             07d1deba86e7695984bfceaa1c88af2076                
+                             7a "HTTP/1.1 404 Not Found"                       
+📊 alert-6 | Input: 4798 | Output: 2411 | Time: 35.76 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: LP (Got: LP)
+--- Decided on Playbook: suspicious_powershell.json for alerts\Suspicious PowerShell Script\LP\alert-7 ---
+[03/03/26 05:16:08] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 05:16:09] INFO     HTTP Request: GET                  _client.py:1740
+                             https://www.virustotal.com/api/v3/                
+                             files/63854e78780866d2ae56a58958a1                
+                             fda017a71f54b71fe70cf5403958e96186                
+                             2a "HTTP/1.1 200 OK"                              
+📊 alert-7 | Input: 4791 | Output: 2322 | Time: 36.82 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: LP (Got: LP)
+--- Decided on Playbook: suspicious_powershell.json for alerts\Suspicious PowerShell Script\LP\alert-8 ---
+[03/03/26 05:16:46] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://www.virustotal.com/api/v3/                
+                             files/145c75624d30ef5a088048904ac2                
+                             68d9bb24568df442cc8ab39bceb3cddbb2                
+                             4e "HTTP/1.1 200 OK"                              
+📊 alert-8 | Input: 4817 | Output: 2412 | Time: 30.22 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: LP (Got: LP)
+--- Decided on Playbook: suspicious_powershell.json for alerts\Suspicious PowerShell Script\LP\alert-9 ---
+[03/03/26 05:17:19] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 05:17:20] INFO     HTTP Request: GET                  _client.py:1740
+                             https://www.virustotal.com/api/v3/                
+                             files/9785001b0dcf755eddb8af294a37                
+                             3c0b87b2498660f724e76c4d53f9c217c7                
+                             a3 "HTTP/1.1 200 OK"                              
+📊 alert-9 | Input: 8510 | Output: 2633 | Time: 45.42 sec
+✅ CORRECT: Suspicious PowerShell Script Execution | Folder: LP (Got: LP)
+--- Decided on Playbook: logo_abuse_detection.json for alerts\Threat Intelligence (Company Logo Detection)\HP\alert-1 ---
+[03/03/26 05:18:06] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/195.178.110.                
+                             15?key=3a8955355abf49748efb87f626c                
+                             492cc "HTTP/1.1 200 OK"                           
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=195.178.110.15&verb                
+                             ose=true "HTTP/1.1 200 OK"                        
+📊 alert-1 | Input: 7011 | Output: 2242 | Time: 40.93 sec
+✅ CORRECT: Brand Logo Detection | Folder: HP (Got: HP)
+--- Decided on Playbook: logo_abuse_detection.json for alerts\Threat Intelligence (Company Logo Detection)\HP\alert-2 ---
+[03/03/26 05:18:42] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/185.212.131.                
+                             54?key=3a8955355abf49748efb87f626c                
+                             492cc "HTTP/1.1 200 OK"                           
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=185.212.131.54&verb                
+                             ose=true "HTTP/1.1 200 OK"                        
+📊 alert-2 | Input: 7001 | Output: 2057 | Time: 39.75 sec
+✅ CORRECT: Brand Logo Detection | Folder: HP (Got: HP)
+--- Decided on Playbook: logo_abuse_detection.json for alerts\Threat Intelligence (Company Logo Detection)\HP\alert-3 ---
+[03/03/26 05:19:27] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/103.45.12.89                
+                             ?key=3a8955355abf49748efb87f626c49                
+                             2cc "HTTP/1.1 200 OK"                             
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=103.45.12.89&verbos                
+                             e=true "HTTP/1.1 200 OK"                          
+📊 alert-3 | Input: 7021 | Output: 2515 | Time: 40.23 sec
+✅ CORRECT: Brand Logo Detection | Folder: HP (Got: HP)
+--- Decided on Playbook: logo_abuse_detection.json for alerts\Threat Intelligence (Company Logo Detection)\HP\alert-4 ---
+[03/03/26 05:20:00] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 05:20:01] INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/192.185.112.                
+                             40?key=3a8955355abf49748efb87f626c                
+                             492cc "HTTP/1.1 200 OK"                           
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=192.185.112.40&verb                
+                             ose=true "HTTP/1.1 200 OK"                        
+📊 alert-4 | Input: 7013 | Output: 2236 | Time: 35.09 sec
+✅ CORRECT: Brand Logo Detection | Folder: HP (Got: HP)
+--- Decided on Playbook: logo_abuse_detection.json for alerts\Threat Intelligence (Company Logo Detection)\HP\alert-5 ---
+[03/03/26 05:20:39] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/45.138.27.11                
+                             2?key=3a8955355abf49748efb87f626c4                
+                             92cc "HTTP/1.1 200 OK"                            
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=45.138.27.112&verbo                
+                             se=true "HTTP/1.1 200 OK"                         
+📊 alert-5 | Input: 6951 | Output: 2465 | Time: 42.38 sec
+✅ CORRECT: Brand Logo Detection | Folder: HP (Got: HP)
+--- Decided on Playbook: logo_abuse_detection.json for alerts\Threat Intelligence (Company Logo Detection)\LP\alert-1 ---
+[03/03/26 05:21:22] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/50.62.0.1?ke                
+                             y=3a8955355abf49748efb87f626c492cc                
+                              "HTTP/1.1 200 OK"                                
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=50.62.0.1&verbose=t                
+                             rue "HTTP/1.1 200 OK"                             
+📊 alert-1 | Input: 6997 | Output: 1836 | Time: 29.03 sec
+✅ CORRECT: Brand Logo Detection | Folder: LP (Got: LP)
+--- Decided on Playbook: logo_abuse_detection.json for alerts\Threat Intelligence (Company Logo Detection)\LP\alert-2 ---
+[03/03/26 05:21:46] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/151.101.2.13                
+                             2?key=3a8955355abf49748efb87f626c4                
+                             92cc "HTTP/1.1 200 OK"                            
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=151.101.2.132&verbo                
+                             se=true "HTTP/1.1 200 OK"                         
+📊 alert-2 | Input: 8168 | Output: 2354 | Time: 45.05 sec
+✅ CORRECT: Brand Logo Detection | Folder: LP (Got: LP)
+--- Decided on Playbook: logo_abuse_detection.json for alerts\Threat Intelligence (Company Logo Detection)\LP\alert-3 ---
+[03/03/26 05:22:38] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/104.26.10.22                
+                             7?key=3a8955355abf49748efb87f626c4                
+                             92cc "HTTP/1.1 200 OK"                            
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=104.26.10.227&verbo                
+                             se=true "HTTP/1.1 200 OK"                         
+📊 alert-3 | Input: 7006 | Output: 2146 | Time: 32.73 sec
+✅ CORRECT: Brand Logo Detection | Folder: LP (Got: LP)
+--- Decided on Playbook: logo_abuse_detection.json for alerts\Threat Intelligence (Company Logo Detection)\LP\alert-4 ---
+[03/03/26 05:23:11] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/104.26.10.22                
+                             5?key=3a8955355abf49748efb87f626c4                
+                             92cc "HTTP/1.1 200 OK"                            
+[03/03/26 05:23:12] INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=104.26.10.225&verbo                
+                             se=true "HTTP/1.1 200 OK"                         
+📊 alert-4 | Input: 6996 | Output: 3244 | Time: 45.70 sec
+✅ CORRECT: Brand Logo Detection | Folder: LP (Got: LP)
+--- Decided on Playbook: logo_abuse_detection.json for alerts\Threat Intelligence (Company Logo Detection)\LP\alert-5 ---
+[03/03/26 05:23:59] INFO     Processing request of type           server.py:713
+                             CallToolRequest                                   
+[03/03/26 05:24:00] INFO     HTTP Request: GET                  _client.py:1740
+                             https://vpnapi.io/api/104.26.10.22                
+                             4?key=3a8955355abf49748efb87f626c4                
+                             92cc "HTTP/1.1 200 OK"                            
+                    INFO     HTTP Request: GET                  _client.py:1740
+                             https://api.abuseipdb.com/api/v2/c                
+                             heck?ipAddress=104.26.10.224&verbo                
+                             se=true "HTTP/1.1 200 OK"                         
+📊 alert-5 | Input: 7000 | Output: 2744 | Time: 48.48 sec
+✅ CORRECT: Brand Logo Detection | Folder: LP (Got: LP)
+--- Decided on Playbook: potentially_leaked_document.json for alerts\Threat Intelligence (Company Mention in Potentially Leaked Documents)\HP\alert-1 ---
+📊 alert-1 | Input: 4424 | Output: 2056 | Time: 30.39 sec
+✅ CORRECT: Brand Mention in External Document | Folder: HP (Got: HP)
+--- Decided on Playbook: potentially_leaked_document.json for alerts\Threat Intelligence (Company Mention in Potentially Leaked Documents)\HP\alert-2 ---
+📊 alert-2 | Input: 4484 | Output: 2331 | Time: 37.26 sec
+✅ CORRECT: Brand Mention in External Document | Folder: HP (Got: HP)
+--- Decided on Playbook: potentially_leaked_document.json for alerts\Threat Intelligence (Company Mention in Potentially Leaked Documents)\HP\alert-3 ---
+📊 alert-3 | Input: 4474 | Output: 1834 | Time: 28.15 sec
+✅ CORRECT: Brand Mention in External Document | Folder: HP (Got: HP)
+--- Decided on Playbook: potentially_leaked_document.json for alerts\Threat Intelligence (Company Mention in Potentially Leaked Documents)\HP\alert-4 ---
+📊 alert-4 | Input: 4436 | Output: 1517 | Time: 26.13 sec
+✅ CORRECT: Brand Mention in External Document | Folder: HP (Got: HP)
+--- Decided on Playbook: potentially_leaked_document.json for alerts\Threat Intelligence (Company Mention in Potentially Leaked Documents)\HP\alert-5 ---
+📊 alert-5 | Input: 4496 | Output: 2188 | Time: 34.81 sec
+✅ CORRECT: Brand Mention in External Document | Folder: HP (Got: HP)
+--- Decided on Playbook: potentially_leaked_document.json for alerts\Threat Intelligence (Company Mention in Potentially Leaked Documents)\LP\alert-1 ---
+📊 alert-1 | Input: 4384 | Output: 1815 | Time: 28.43 sec
+✅ CORRECT: Brand Mention in External Document | Folder: LP (Got: LP)
+--- Decided on Playbook: potentially_leaked_document.json for alerts\Threat Intelligence (Company Mention in Potentially Leaked Documents)\LP\alert-2 ---
+📊 alert-2 | Input: 4400 | Output: 1446 | Time: 26.72 sec
+✅ CORRECT: Brand Mention in External Document | Folder: LP (Got: LP)
+--- Decided on Playbook: potentially_leaked_document.json for alerts\Threat Intelligence (Company Mention in Potentially Leaked Documents)\LP\alert-3 ---
+📊 alert-3 | Input: 4494 | Output: 1919 | Time: 36.74 sec
+✅ CORRECT: Brand Mention in External Document | Folder: LP (Got: LP)
+--- Decided on Playbook: potentially_leaked_document.json for alerts\Threat Intelligence (Company Mention in Potentially Leaked Documents)\LP\alert-4 ---
+📊 alert-4 | Input: 4474 | Output: 2029 | Time: 31.53 sec
+✅ CORRECT: Brand Mention in External Document | Folder: LP (Got: LP)
+--- Decided on Playbook: potentially_leaked_document.json for alerts\Threat Intelligence (Company Mention in Potentially Leaked Documents)\LP\alert-5 ---
+📊 alert-5 | Input: 4516 | Output: 1679 | Time: 29.84 sec
+❌ INCORRECT: Brand Mention in External Document | Expected: LP (Got: HP)
+
+========================================
+TRIAGE SUMMARY
+Total processed: 100
+Correct: 95 | Incorrect: 5
+Accuracy: 95.00%
+----------------------------------------
+  Avg Time: 41.73 sec
+OVERALL AVG TOKENS PER ALERT:
+  Input:  5515.83
+  Output: 2521.38
+----------------------------------------
+AVERAGES PER USE CASE (Subfolder):
+  [Data Exfiltration Anomaly] (20 alerts):
+    Avg Input:  5400.50
+    Avg Output: 2384.75
+    Avg Time:   39.22 sec
+  [DNS Tunneling Anomaly] (10 alerts):
+    Avg Input:  5768.90
+    Avg Output: 2764.10
+    Avg Time:   45.82 sec
+  [EDR] (10 alerts):
+    Avg Input:  5230.70
+    Avg Output: 2716.70
+    Avg Time:   47.37 sec
+  [Suspicious Azure Network Activity] (10 alerts):
+    Avg Input:  6052.60
+    Avg Output: 2980.70
+    Avg Time:   55.60 sec
+  [Suspicious Login] (10 alerts):
+    Avg Input:  4476.80
+    Avg Output: 2091.80
+    Avg Time:   33.35 sec
+  [Suspicious PowerShell Script] (20 alerts):
+    Avg Input:  5626.85
+    Avg Output: 2812.85
+    Avg Time:   42.89 sec
+  [Threat Intelligence (Company Logo Detection)] (10 alerts):
+    Avg Input:  7116.40
+    Avg Output: 2383.90
+    Avg Time:   39.94 sec
+  [Threat Intelligence (Company Mention in Potentially Leaked Documents)] (10 alerts):
+    Avg Input:  4458.20
+    Avg Output: 1881.40
+    Avg Time:   31.00 sec
+========================================
+
+📝 Final summary report saved to final_stats_report.json

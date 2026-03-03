@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-11100",
+    "Start Time": "2026-01-28T10:39:49.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "145.14.39.150",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "HOST-WS-03",
+    "User": "Marcus.Webb@globalcorp.ee",
+    "Description": "A total of 315 SharePoint file downloads were observed from the user's session on the Legal M&A site, which is approximately six times the user's 24-hour baseline of 50. The downloaded items include highly sensitive artifacts (M&A due diligence, contract drafts, and confidential board minutes) and the account belongs to a Senior Legal Operations Manager, so the access pattern is plausible but the volume and sensitivity raise concern for potential bulk exfiltration. The source IP has a clean reputation and there are no recent similar alerts in the environment, however the combination of unusually high download volume and sensitive content warrants escalation for timely verification with the user and review of access context.",
+    "Workload": "SharePoint",
+    "File Count": 315,
+    "Baseline 24h": 50,
+    "User Department": "Legal & Corporate Secretary",
+    "Source IP Reputation Score": "Abuse Confidence Score 0/100 (Elisa Eesti AS, Fixed Line ISP)"
+  },
+  "classification": "HP"
+}

@@ -1,0 +1,16 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-77219",
+    "Start Time": "2026-01-27T11:05:14.220Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "192.168.1.56",
+    "Endpoint": "WKSTN-PROD-11",
+    "User": "jenifer",
+    "Initiating Process": "GoogleUpdate.exe",
+    "Hash Reputation": "Harmless (Community Score: 1)",
+    "Scriptblock Observations": "PowerShell command checks the Authenticode signature of chrome.exe and base64-encodes the JSON result. The command appears self-contained and does not show external I/O in the decoded payload.",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Description": "A PowerShell command was executed to obtain and process the Authenticode signature of chrome.exe, initiated by GoogleUpdate.exe on the host WKSTN-PROD-11 by user jenifer. The initiating process hash has a mostly benign reputation with a Community Score of 1 and no detections. No matching historical events or similar alerts were found, and no external IPs were observed in the activity, suggesting limited risk and likely legitimate administrative activity."
+  },
+  "classification": "LP"
+}

@@ -1,0 +1,28 @@
+=== DEBUG SESSION START: 2026-03-02T23:37:02.489953+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Data Exfiltration Anomaly
+Selected Playbook: excessive_downloads.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-11500",
+    "Start Time": "2026-01-05T10:33:46.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "194.126.101.43",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "SRV-PROD",
+    "User": "globalcorp@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Description": "An unusual volume of SharePoint file downloads (300 files) was observed from user globalcorp@globalcorp.ee, exceeding the 24-hour baseline of zero. Downloads targeted sensitive documents (e.g., Online_Orders_Registry_2026.xlsx, Wholesale_Contact_List.xlsx, Daily_Inventory_Update.csv) from the SharePoint site https://globalcorp.sharepoint.com/, executed via an automated Python aiohttp client with the ChatGPT application. Although the activity originates from Tallinn, Estonia, during local business hours, the combination of high-volume automated access to restricted data elevates risk of data exfiltration or insider misuse, supporting a High Priority assessment."
+    ,
+    "Geographic Location": "Tallinn, Estonia",
+    "Files Downloaded": 300,
+    "User Agent": "Python/3.12 aiohttp/3.11.18",
+    "Site URL": "https://globalcorp.sharepoint.com/",
+    "Application": "ChatGPT"
+  },
+  "classification": "HP"
+}
+

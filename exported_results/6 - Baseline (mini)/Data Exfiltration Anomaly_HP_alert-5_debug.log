@@ -1,0 +1,30 @@
+=== DEBUG SESSION START: 2026-03-03T00:27:56.483301+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Data Exfiltration Anomaly
+Selected Playbook: General Triage (No Playbook)
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-15900",
+    "Start Time": "2026-01-31T23:59:59.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "109.70.100.1",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "CLOUD-AUTOMATE-NODE",
+    "User": "Kevin.Smit@globalcorp.ee",
+    "User ID": "k88s99m0-p11o-22i3-u44y-55t66r77e88w",
+    "Workload": "SharePoint",
+    "File Count": 2100,
+    "Baseline 24h": 40,
+    "Sample Files": [
+      "PROD_SQL_DUMP_JAN_2026.bak",
+      "Customer_Encryption_Keys.txt",
+      "Global_Sales_Database_Export.sql"
+    ],
+    "Description": "An unusually large volume of SharePoint file downloads (2,100 files vs a 24-hour baseline of 40) was observed for user Kevin.Smit@globalcorp.ee from endpoint CLOUD-AUTOMATE-NODE using an automated Python user agent. Sampled filenames include database dumps and encryption key material, indicating access to highly sensitive data. The access pattern appears scripted and represents a significant deviation from the user's normal behavior, increasing the likelihood of unauthorized data exfiltration. This activity warrants High Priority due to the volume and sensitivity of the files involved."
+  },
+  "classification": "HP"
+}
+

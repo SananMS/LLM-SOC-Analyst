@@ -1,0 +1,26 @@
+=== DEBUG SESSION START: 2026-03-03T02:00:16.612010+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Suspicious PowerShell Script Execution
+Selected Playbook: suspicious_powershell.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-9745",
+    "Start Time": "2026-01-26T02:47:19.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.4.22.18",
+    "Endpoint": "FIN-SRV-01",
+    "User": "m.laane",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "OS": "Windows Server 2019 Standard",
+    "Scriptblock": "Get-ChildItem C:\\Users -Recurse -Include *.kdbx,*.pst,*.docx -ErrorAction SilentlyContinue | Select-Object FullName,Length | Export-Csv C:\\ProgramData\\user_cache.csv -NoTypeInformation",
+    "Exported File Path": "C:\\ProgramData\\user_cache.csv",
+    "Initiating Process Present": "No initiating process, file path, or process SHA256 provided in alert",
+    "Observed Targeted File Types": ".kdbx, .pst, .docx",
+    "Description": "A PowerShell command on FIN-SRV-01 enumerated user directories for .kdbx, .pst, and .docx files and exported file names and sizes to C:\\ProgramData\\user_cache.csv. No initiating process, executable path, or process hash was provided in the alert, which may indicate direct command-line execution or a logging limitation and increases concern about unexpected activity. This is classified as High Priority because the command targets sensitive data types on a finance server and writes aggregated results to a writable ProgramData location commonly used for staging, suggesting potential data collection or reconnaissance rather than routine administrative maintenance."
+  },
+  "classification": "HP"
+}
+

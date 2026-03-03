@@ -1,0 +1,12 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-20114",
+    "Start Time": "2026-03-01T15:10:00.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "90.190.150.10",
+    "Destination IP": "40.108.201.15",
+    "User": "acc_svc@globalcorp.ee",
+    "Description": "An unusual volume of SharePoint file downloads (294 files) was observed from service account acc_svc@globalcorp.ee to the SharePoint site at https://globalcorp.sharepoint.com/sites/DACH_Finance_Central/. The activity originated from 90.190.150.10 (Tallinn, Estonia) and involved several sensitive documents, raising data exfiltration concerns. No prior similar alerts were found and the IPs show no known malicious reputation. This combination of high volume, sensitive content, and geographic/context anomalies warrants HP prioritization for rapid validation of authorization."
+  },
+  "classification": "HP"
+}

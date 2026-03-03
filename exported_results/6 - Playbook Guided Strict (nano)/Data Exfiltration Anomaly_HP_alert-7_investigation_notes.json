@@ -1,0 +1,14 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-25600",
+    "Start Time": "2026-02-01T19:05:10.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "88.119.20.145",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "VIL-LT-DSK-12",
+    "User": "Jonas.Laitis@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Description": "An unusual volume of SharePoint file downloads (920) was observed from Jonas.Laitis@globalcorp.ee, far above the 24-hour baseline of 10 files. The downloads target a SharePoint Online site and include a mix of documents, with the user located in Vilnius, Lithuania. The combination of a very high data volume, bulk access to potentially sensitive documents, and the remote location relative to typical business hours supports classifying this as High Priority."
+  },
+  "classification": "HP"
+}

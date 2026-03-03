@@ -1,0 +1,13 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-75468",
+    "Start Time": "2026-02-19T14:45:30.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Playbook Used": "Document Exposure & Threat Intel Triage",
+    "Description": "Vitalis Healthcare is mentioned in a document exposed on a public platform (Scribd) with a title Vitalis_Healthcare_Environmental_Policy_2026.pdf. The evidence indicates the content is a public policy document rather than sensitive internal material, and there is no indication of internal data, patient information, or credentials being exposed. The hosting platform appears to be a general document-sharing site, not a controlled leak channel, reducing risk of targeted data exposure. Based on these indicators, the alert is Low Priority (LP) since the content seems publicly accessible and unlikely to imply a credible threat to the organization.",
+    "Platform": "Scribd",
+    "Document Title": "Vitalis_Healthcare_Environmental_Policy_2026.pdf",
+    "Source URL": "https://www.scribd.com/document/991283/vitalis-environmental-policy"
+  },
+  "classification": "LP"
+}

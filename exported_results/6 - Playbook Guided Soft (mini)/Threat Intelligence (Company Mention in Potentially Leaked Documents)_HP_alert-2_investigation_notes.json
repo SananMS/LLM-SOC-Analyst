@@ -1,0 +1,15 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-75925",
+    "Start Time": "2026-02-19T19:30:12.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Playbook Used": "Document Exposure & Threat Intel Triage",
+    "Detection Source": "TI-Monitor-Scribd",
+    "Document Title": "Vitalis_Staff_Directory_and_System_Roles_Q1.xlsx",
+    "Source URL": "https://www.scribd.com/document/7721543/vitalis-staff-roles-2026",
+    "Matched Content Summary": "Public listing of Vitalis personnel with names and corporate email addresses and explicit elevated privileges to sensitive assets, including full access to PHI/EMR databases, access to production AWS buckets and CI/CD pipelines, and access to payroll/PII.",
+    "Recent Similar Alerts": "No recent similar alerts found.",
+    "Description": "A publicly hosted Scribd document contains named Vitalis employees with email addresses and explicit elevated privileges to PHI/EMR systems, production AWS buckets/CI-CD pipelines, and payroll/PII. The content directly exposes sensitive access assignments and contact details that could enable targeted phishing, credential abuse, or unauthorized access to regulated data. No recent similar alerts were found, indicating this is a new public exposure. This is considered High Priority because the document discloses direct access to regulated PHI and production infrastructure and is publicly accessible."
+  },
+  "classification": "HP"
+}

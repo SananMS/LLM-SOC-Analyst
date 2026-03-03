@@ -1,0 +1,22 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-99803",
+    "Start Time": "2026-02-10T22:50:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "194.126.101.99",
+    "User": "andrus.kivi@globalcorp.ee",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Description": "Anomalous activity from 194.126.101.99 by andrus.kivi@globalcorp.ee with Contributor access included a DELETE of a virtual network peering and subsequent NSG-related changes in the Baltic prod core environment. The action occurred at 22:50 UTC, corresponding to about 00:50 local Estonian time, which is outside typical admin hours in Estonia and from a Tallinn-based location. The sequence of changes increases risk to connectivity and security controls, suggesting potential unauthorized or high-risk activity that requires escalation.",
+    "Actor Email": "andrus.kivi@globalcorp.ee",
+    "Actor Role": "Contributor",
+    "Estonia Local Time": "2026-02-11 00:50",
+    "Environment Resource": "Virtual Network Peering: vnet-tallinn-prod-01/peering-to-central-soc in resource group rg-baltic-prod-core",
+    "Recent Similar Alerts": [
+      "SOC-99799",
+      "SOC-99800",
+      "SOC-99801",
+      "SOC-99802"
+    ]
+  },
+  "classification": "HP"
+}

@@ -1,0 +1,21 @@
+=== DEBUG SESSION START: 2026-03-02T23:48:14.452617+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: SentinelOne: Privilege Escalation
+Selected Playbook: suspicious_powershell.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-29679",
+    "Start Time": "2025-09-07T17:47:55.000Z",
+    "Alert Name": "SentinelOne: Privilege Escalation",
+    "Source IP": "192.168.1.115",
+    "Endpoint": "MAC-WKSTN-043",
+    "User": "m.tamm@client.ee",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Description": "SentinelOne on macOS detected a trigger labeled as privilege escalation associated with Grammarly Desktop on MAC-WKSTN-043. The observed indicators include keychain queries and plist modifications, and the binary resides at the user’s Applications folder while being signed by Grammarly, Inc with a DevID certificate. Because privilege escalation-related activity can indicate credential access or persistence attempts and the mitigation status is not yet resolved, this alert is prioritized for further investigation."
+  },
+  "classification": "HP"
+}
+

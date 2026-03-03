@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10882",
+    "Start Time": "2026-01-27T16:20:45.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.30.15.11",
+    "Endpoint": "WKSTN-SR-42",
+    "User": "Administrator",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Description": "Encoded PowerShell payload executed on host WKSTN-SR-42 using PowerShell.exe with a parent process of cmd.exe. The scriptblock is Base64-encoded, indicating obfuscation, and the initiating process hash has mixed reputation with more community votes labeling it as malicious than harmless. No recent related events or similar alerts were found to provide additional context. The combination of obfuscated script, admin user activity, and uncertain hash reputation elevates the risk level and justifies high-priority escalation for further analysis.",
+    "Initiating Process": "powershell.exe",
+    "Parent Process": "cmd.exe",
+    "Scriptblock Encoding": "Base64-encoded command",
+    "Hash Reputation Summary": "Community score negative (-24) with more malicious votes (29) than harmless (20); engines reported no detections",
+    "Recent Activity Context": "No recent events or similar alerts observed"
+  },
+  "classification": "HP"
+}

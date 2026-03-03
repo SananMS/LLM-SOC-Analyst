@@ -1,0 +1,16 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10882",
+    "Start Time": "2026-01-27T16:20:45.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.30.15.11",
+    "Endpoint": "WKSTN-SR-42",
+    "User": "Administrator",
+    "Parent Process": "cmd.exe",
+    "Process SHA256": "9785001b0dcf755eddb8af294a373c0b87b2498660f724e76c4d53f9c217c7a3",
+    "Process Reputation Summary": "VirusTotal: 0 engines flagged as malicious, community score -24 with 29 votes Malicious vs 20 Harmless.",
+    "Decoded Script": "vssadmin deleteshadow /all /quiet; bcdedit /set {default} recoveryenabled no; bcdedit /set {default} bootstatuspolicy ignoreallfailures",
+    "Description": "A Base64-encoded PowerShell command was executed on WKSTN-SR-42 by the Administrator account and triggered the alert. The decoded commands delete all shadow copies and modify boot/recovery settings, actions commonly associated with ransomware and destructive activity. The process hash shows no AV detections but has a negative community reputation and the command ran under a high-privilege account, so this behavior warrants escalation as a High Priority incident."
+  },
+  "classification": "HP"
+}

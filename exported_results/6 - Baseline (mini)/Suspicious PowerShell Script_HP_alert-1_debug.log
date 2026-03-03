@@ -1,0 +1,31 @@
+=== DEBUG SESSION START: 2026-03-03T00:57:51.055694+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Suspicious PowerShell Script Execution
+Selected Playbook: General Triage (No Playbook)
+
+[TOOL CALL]
+Tool: lookup_users
+Arguments: {"emails": ["j.doe"]}
+
+[TOOL RESPONSE]
+No users found for emails: j.doe
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-9114",
+    "Start Time": "2026-01-25T17:35:44.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.2.40.15",
+    "Endpoint": "SRV-FILE-02",
+    "User": "j.doe",
+    "User ID": "S-1-5-21-99281-44521-88214-1001",
+    "OS": "Windows Server 2019 Standard",
+    "Command Observed": "rundll32.exe C:\\Windows\\System32\\comsvcs.dll, MiniDump <lsass_pid> C:\\Windows\\Temp\\debug_report.log full",
+    "Process Targeted": "lsass",
+    "Description": "A PowerShell script executed on SRV-FILE-02 invoking rundll32 to call comsvcs.dll MiniDump against the lsass process and writing the output to C:\\Windows\\Temp\\debug_report.log. This behavior matches credential-dumping activity and poses a high risk of account credential exposure or lateral movement due to the sensitive process targeted and the file written to a temporary location. Activity originated from internal IP 10.2.40.15 under account j.doe; no matching internal directory record was returned during lookup, so the event is considered High Priority for immediate follow-up."
+  },
+  "classification": "HP"
+}
+

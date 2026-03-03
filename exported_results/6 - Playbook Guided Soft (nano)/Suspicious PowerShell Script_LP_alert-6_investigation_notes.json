@@ -1,0 +1,13 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-84292",
+    "Start Time": "2026-01-26T15:12:38.543Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "192.168.14.112",
+    "Endpoint": "WKSTN-PROD-99",
+    "User": "t_doe",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Description": "PowerShell was used to query the digital signature of a temporary updater executable in the user's AppData Local directory, initiated by trainerroad.exe (parent: explorer.exe). The hash of the initiating process is not known in the reputation database, and there are no recent environment-wide alerts or events to correlate. The activity may reflect legitimate updater behavior for a consumer app, but the use of a pending temp executable in AppData and the direct signature inspection script raises potential risk. Based on current evidence, this is Low Priority (LP) pending additional context or corroborating indicators."
+  },
+  "classification": "LP"
+}

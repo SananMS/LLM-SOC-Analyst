@@ -1,0 +1,23 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-9826",
+    "Start Time": "2026-01-27T01:36:54.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.5.14.92",
+    "Endpoint": "HR-SRV-02",
+    "User": "k.tamm",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "OS": "Windows Server 2019 Standard",
+    "Scriptblock": "Copy-Item 'C:\\Users\\*\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Login Data' -Destination C:\\ProgramData\\chrome_cache.db -Force; Copy-Item 'C:\\Users\\*\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\*.default-release\\logins.json' -Destination C:\\ProgramData\\ff_cache.json -Force",
+    "Observed File Targets": [
+      "C:\\Users\\*\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Login Data",
+      "C:\\Users\\*\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\*.default-release\\logins.json",
+      "C:\\ProgramData\\chrome_cache.db",
+      "C:\\ProgramData\\ff_cache.json"
+    ],
+    "Recent Events": "No recent events found.",
+    "Recent Similar Alerts": "No recent similar alerts found.",
+    "Description": "A PowerShell command copied browser credential stores from multiple user profiles (Chrome 'Login Data' and Firefox 'logins.json') to local ProgramData files on HR-SRV-02 under account k.tamm. No initiating process hash or external network indicators were provided and there are no recent related events or similar alerts in the environment. The behavior is consistent with credential harvesting or local aggregation of sensitive data, which presents significant risk of credential exposure and potential lateral movement or exfiltration, so this is classified as High Priority."
+  },
+  "classification": "HP"
+}

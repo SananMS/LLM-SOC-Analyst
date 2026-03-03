@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-99999",
+    "Start Time": "2026-01-26T00:02:54.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "192.168.2.10",
+    "Endpoint": "MEETINGROOM-01",
+    "User": "NT AUTHORITY\\SYSTEM",
+    "Description": "PowerShell was executed with an encoded command and Unrestricted execution policy, which is often used to obscure actions. The process started as powershell.exe with a SVCHOST.exe parent and executed a script located in a non-standard module path, indicating potential abuse of legitimate tooling. Given the elevated SYSTEM context and the encoded payload, this activity is high risk and warrants immediate investigation.",
+    "Script Path": "C:\\Program Files\\WindowsPowerShell\\Modules\\MTRP.PowerShell.Utils\\2025.12.10.1\\Public\\Logging.ps1",
+    "Initiating Process": "powershell.exe",
+    "Parent Process": "svchost.exe",
+    "Execution Policy": "Unrestricted",
+    "Process Hash": "9785001b0dcf755eddb8af294a373c0b87b2498660f724e76c4d53f9c217c7a3"
+  },
+  "classification": "HP"
+}

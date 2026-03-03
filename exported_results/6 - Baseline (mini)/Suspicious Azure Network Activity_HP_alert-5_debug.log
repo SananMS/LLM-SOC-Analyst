@@ -1,0 +1,24 @@
+=== DEBUG SESSION START: 2026-03-03T00:48:32.648508+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Azure Network Security Modification
+Selected Playbook: General Triage (No Playbook)
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-99803",
+    "Start Time": "2026-02-10T22:50:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "194.126.101.99",
+    "User": "andrus.kivi@globalcorp.ee",
+    "Principal ID": "a1k2k3v4-b5i6-4a7b-8c9d-0e1f2a3b4c5d",
+    "Role": "Contributor",
+    "Operation": "MICROSOFT.NETWORK/VIRTUALNETWORKS/VIRTUALNETWORKPEERINGS/DELETE",
+    "Resource Scope": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-baltic-prod-core/providers/Microsoft.Network/virtualNetworks/vnet-tallinn-prod-01/virtualNetworkPeerings/peering-to-central-soc",
+    "Caller IP Location": "Tallinn, Estonia (Harju County)",
+    "Description": "A virtual network peering deletion was performed and reported as successful in the rg-baltic-prod-core production resource group, which triggered this alert. The operation was executed by andrus.kivi@globalcorp.ee (Contributor) using password+MFA from IP 194.126.101.99 located in Tallinn, Estonia. This is classified as High Priority because the change is destructive on a production network and succeeded, potentially impacting connectivity and services, so immediate verification and escalation are warranted."
+  },
+  "classification": "HP"
+}
+

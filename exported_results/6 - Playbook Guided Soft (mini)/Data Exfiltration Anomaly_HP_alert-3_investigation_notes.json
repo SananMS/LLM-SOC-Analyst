@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-13100",
+    "Start Time": "2026-01-31T23:55:12.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "145.14.37.201",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "MAINT-Kiosk-04",
+    "User": "Jaanus.Tamm@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Workload": "SharePoint",
+    "File Count": 985,
+    "Baseline 24h": 50,
+    "User Role": "Maintenance Technician",
+    "Local Time (Tallinn)": "2026-02-01T01:55:12 (EET)",
+    "Description": "An unusually large volume of SharePoint downloads (985 files vs a 24-hour baseline of 50) was observed from a maintenance account and included sensitive corporate and executive files in Strategy_and_Growth paths. The activity occurred at ~01:55 local Tallinn time, outside normal working hours, and the user's role does not plausibly justify access to acquisition, executive strategy, and board contact data. These factors—high volume deviation, sensitive content accessed, role mismatch, and off-hours timing—collectively indicate probable unauthorized access and justify classification as High Priority for further investigation."
+  },
+  "classification": "HP"
+}

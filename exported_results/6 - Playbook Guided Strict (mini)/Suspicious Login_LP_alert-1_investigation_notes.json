@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-25",
+    "Start Time": "2025-07-11T07:50:00.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "41.160.0.2",
+    "Destination IP": "13.80.23.7",
+    "Endpoint": "G315745",
+    "User": "Fred.Mercedes@client.ee",
+    "Playbook Used": "Suspicious Login Triage",
+    "Description": "An Office 365 login succeeded from Johannesburg, South Africa, which is outside the user's typical region but matches recent activity patterns. The login originated from a fixed-line ISP with an abuse score of 0/100 and showed no VPN/proxy indicators, the device is company-managed and compliant, and MFA was used. Multiple recent successful logins from Johannesburg (including alerts SOC-15 and SOC-22) were closed after the client confirmed the user was traveling, indicating this activity aligns with the user's known travel pattern. Based on the benign IP signals, device and MFA controls, and prior confirmations, this event is assessed as Low Priority.",
+    "IP Reputation Score": "0/100",
+    "ISP Name": "Liquid Telecommunications Operations Limited",
+    "Usage Type": "Fixed Line ISP",
+    "MFA Present": true,
+    "Recent Confirmations": "SOC-15 and SOC-22 were closed as false positives after client confirmed the user was on vacation and the location matches the user's monthly travel schedule."
+  },
+  "classification": "LP"
+}

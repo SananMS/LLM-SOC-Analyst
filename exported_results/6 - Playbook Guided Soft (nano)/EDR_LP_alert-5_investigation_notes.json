@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-29679",
+    "Start Time": "2025-09-07T17:47:55.000Z",
+    "Alert Name": "SentinelOne: Privilege Escalation",
+    "Source IP": "192.168.1.115",
+    "Endpoint": "MAC-WKSTN-043",
+    "User": "m.tamm@client.ee",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "File Name": "Grammarly Desktop",
+    "File Path": "/Users/m.tamm/Applications/Grammarly Desktop.app/Contents/MacOS/Grammarly Desktop",
+    "File SHA1": "1ee1a2bf448091a4e218a78f80752b136bc62f8a",
+    "Publisher": "Grammarly, Inc",
+    "Certificate ID": "<Type=DevID/ID=com.grammarly.ProjectLlama/Subject=OU:W8F65F92G2>",
+    "Description": "SentinelOne detected malware-like behavior on MAC-WKSTN-043 involving Grammarly Desktop.app, with indicators including Keychain access and Plist modifications. The binary appears to be a legitimate Grammarly app signed by Grammarly, but the observed behavior raises credential-access concerns and the remediation status is not mitigated. The alert is categorized as Malware with suspicious confidence and not mitigated, indicating potential unauthorized privilege escalation that warrants immediate investigation to confirm legitimacy and containment."
+  },
+  "classification": "HP"
+}

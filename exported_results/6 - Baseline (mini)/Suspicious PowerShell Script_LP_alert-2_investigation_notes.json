@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-9921",
+    "Start Time": "2026-01-20T02:15:44.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "192.168.1.45",
+    "Endpoint": "FS-PROD-02",
+    "User": "NT SERVICE\\DataBackupAgent",
+    "User ID": "S-1-5-80-3245",
+    "OS": "Windows Server 2019 Standard",
+    "Log Path": "C:\\ProgramData\\DataVault\\Logs\\inventory_scan.log",
+    "Report Path": "C:\\ProgramData\\DataVault\\Temp\\large_files.csv",
+    "Large File Threshold (GB)": "10",
+    "Description": "A PowerShell script executed on FS-PROD-02 under the NT SERVICE\\DataBackupAgent account that enumerates files larger than 10 GB and exports results to local ProgramData paths. The script contains clear, non-obfuscated cmdlets (Get-ChildItem, Export-Csv) and writes to expected backup-related locations, with no outbound network activity or known malicious indicators observed in the provided scriptblock. Given the use of a backup service account, benign file-collection behavior, and standard file paths, this activity is consistent with legitimate maintenance and is assessed as low risk."
+  },
+  "classification": "LP"
+}

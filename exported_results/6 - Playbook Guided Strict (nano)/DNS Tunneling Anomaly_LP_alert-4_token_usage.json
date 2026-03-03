@@ -1,0 +1,6 @@
+{
+  "input_tokens": 5262,
+  "output_tokens": 7037,
+  "time_seconds": 43.921685,
+  "use_case": "DNS Tunneling Anomaly"
+}

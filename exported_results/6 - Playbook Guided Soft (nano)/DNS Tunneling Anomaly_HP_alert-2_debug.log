@@ -1,0 +1,42 @@
+=== DEBUG SESSION START: 2026-03-02T22:50:56.420471+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: DNS Tunneling Anomaly
+Selected Playbook: suspicious_dns_queries.json
+
+[TOOL CALL]
+Tool: get_domain_age
+Arguments: {"domain": "github-status.com"}
+
+[TOOL RESPONSE]
+Domain: github-status.com | Created: 2026-02-04 | Age: 26 days old.
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14568",
+    "Start Time": "2026-02-06T11:20:00.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.200.15.44",
+    "Destination IP": "104.21.41.202",
+    "Endpoint": "dev-linux-node-03",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Description": "Anomalous DNS TXT queries to the root domain github-status.com were observed from 10.200.15.44 on endpoint dev-linux-node-03, resulting in a total of 412 bytes of traffic compared to a typical 22 bytes baseline. The sample_queries contain subdomains with encoded payloads, including references that decode or imply sensitive data being exfiltrated, such as 'password' and 'Strong!'. The root domain github-status.com is 26 days old with no established reputation or prior activity detected, which increases the risk of this being a suspicious or malicious channel. Given the combination of a recently created domain, unusually large and encoded DNS traffic, and potential data leakage indicators, this activity is classified as high priority and warrants escalation and further investigation."
+  },
+  "classification": "HP"
+}
+

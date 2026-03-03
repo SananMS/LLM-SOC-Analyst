@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-54389",
+    "Start Time": "2026-02-18T12:45:10.000Z",
+    "Alert Name": "Brand Logo Detection",
+    "Source IP": "50.62.0.1",
+    "Endpoint": "Apex Wellness Solutions (apexwellness.com)",
+    "Playbook Used": "Visual Brand Abuse & Logo Triage",
+    "Description": "Vitalis Healthcare logo was detected on the Apex Wellness Solutions partners page. The domain apexwellness.com resolves to IP 50.62.0.1, which is a data center hosting address registered with GoDaddy and 5 years old. No recent similar alerts were found and the IP reputation is not associated with abuse, suggesting this is likely authorized brand usage or a low-risk impersonation.",
+    "Domain Age": "5 years",
+    "Registrar": "GoDaddy.com, LLC",
+    "Evidence URL": "https://www.apexwellness.com/partners",
+    "IP Reputation Summary": "Abuse Confidence Score: 0/100; ISP: GoDaddy.com, LLC; Type: Data Center/Web Hosting/Transit; Privacy Status: VPN",
+    "Recent Similar Alerts": "No recent similar alerts found."
+  },
+  "classification": "LP"
+}

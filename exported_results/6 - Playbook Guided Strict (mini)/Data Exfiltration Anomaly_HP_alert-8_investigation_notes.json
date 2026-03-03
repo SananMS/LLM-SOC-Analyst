@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-27420",
+    "Start Time": "2026-02-01T20:15:30.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "92.240.64.18",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "RIX-SALES-LAP-22",
+    "User": "Dace.Ozolina@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Workload": "SharePoint",
+    "File Count": 1240,
+    "Baseline (24h)": 45,
+    "Geo Location": "Riga, Latvia (local time of event ≈ 2026-02-01 22:15 EET)",
+    "Recent Events Summary": "An anonymous sharing link was created at 2026-02-01T19:45:00Z, followed by multiple FileDeleted operations between 2026-02-01T20:02:15Z and 2026-02-01T20:14:55Z, immediately preceding the bulk FileDownloaded activity at 2026-02-01T20:15:30Z.",
+    "Description": "The alert reports an unusually high volume of SharePoint downloads (1,240) from the user, which greatly exceeds their 24-hour baseline of 45. Timeline evidence shows an anonymous sharing link was created before the downloads and several files were deleted immediately prior to the bulk download, and the activity occurred at approximately 22:15 local time in Riga. The user is in the Sales department and may have legitimate reasons to access client documents, but the large volume combined with anonymous link creation, pre-download deletions, and after-hours timing increases the likelihood of data exfiltration and warrants elevated attention."
+  },
+  "classification": "HP"
+}

@@ -1,0 +1,46 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-20114",
+    "Start Time": "2026-03-01T15:10:00.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "90.190.150.10",
+    "Destination IP": "40.108.201.15",
+    "User": "acc_svc@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Application": "Workday MSGraph",
+    "User Agent": "Mozilla/4.0 (compatible; Win32; WinHttp.WinHttpRequest.5)",
+    "Site URL": "https://globalcorp.sharepoint.com/sites/DACH_Finance_Central/",
+    "File Count": 294,
+    "Baseline 24h": 25,
+    "Geo Location": "Tallinn, Estonia (local time ~17:10)",
+    "Sample Paths": [
+      "Finanzwesen/Personalabrechnung/Exporte/",
+      "Finanzwesen/Berichterstattung/Archiv/",
+      "Finanzwesen/Reingang/Eingangsrechnungen/",
+      "Finanzwesen/Gehälter/Monatslisten/",
+      "Finanzwesen/Steuern/Meldungen/",
+      "Finanzwesen/Banking/Auszüge/",
+      "Finanzwesen/Buchhaltung/Forderungen/",
+      "Finanzwesen/Buchhaltung/Verbindlichkeiten/",
+      "Finanzwesen/Inventar/Anlagen/",
+      "Finanzwesen/Controlling/Berichte/"
+    ],
+    "Sample Files": [
+      "Gehaltsabrechnung_Februar_Export.csv",
+      "Jahresabschluss_2025_Entwurf.pdf",
+      "Kreditorenrechnung_DE_9941.pdf",
+      "Mitarbeiterliste_Abrechnung.xlsx",
+      "Umsatzsteuer_Voranmeldung_Q1.pdf",
+      "Kontoauszug_DeutscheBank_März.csv",
+      "Offene_Posten_Liste_Januar.xlsx",
+      "Verbindlichkeiten_Übersicht_GmbH.csv",
+      "Anlagenverzeichnis_Inventur_2026.xlsx",
+      "Cashflow_Bericht_Unternehmensführung.pdf"
+    ],
+    "User Lookup Result": "No users found for emails: acc_svc@globalcorp.ee (likely service/integration account)",
+    "Recent Events": "No recent events found.",
+    "Recent Similar Alerts": "No recent similar alerts found.",
+    "Description": "An automated-looking service account (acc_svc@globalcorp.ee) using a WinHttp user-agent performed 294 SharePoint downloads from the DACH finance site, which is a large deviation from the 24-hour baseline of 25. The accessed files include payroll, bank statements, and other sensitive financial records, and although the activity occurred at ~17:10 local time, the combination of automated access patterns, service-account naming, and high-volume access to sensitive finance data increases risk. No user record or prior related events were found, so this activity warrants escalation for further investigation."
+  },
+  "classification": "HP"
+}

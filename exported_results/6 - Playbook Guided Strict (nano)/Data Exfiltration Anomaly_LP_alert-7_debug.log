@@ -1,0 +1,27 @@
+=== DEBUG SESSION START: 2026-03-02T23:37:52.283859+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Data Exfiltration Anomaly
+Selected Playbook: excessive_downloads.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-19220",
+    "Start Time": "2026-02-01T14:10:00.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "90.190.150.10",
+    "Destination IP": "40.108.201.15",
+    "User": "globalcorp@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Description": "An unusual volume of SharePoint file downloads (290 files) was observed from the user globalcorp@globalcorp.ee, significantly above the 24-hour baseline of 50. The activity originated from Tallinn, Estonia, using Directo MSGraph with a generic user agent, and includes sample files and paths indicating bulk access across multiple document types. While the site appears to be a corporate SharePoint location, the combination of high data volume, automated-looking user agent, and the timing relative to normal activity warrants HP classification and further investigation.",
+    "File Count": 290,
+    "Baseline 24h": 50,
+    "Application": "Directo MSGraph",
+    "Site URL": "https://globalcorp.sharepoint.com/sites/Latvija_Finanses_Directo/",
+    "User Agent": "Mozilla/4.0 (compatible; Win32; WinHttp.WinHttpRequest.5)",
+    "Geo Location": "Tallinn, Estonia"
+  },
+  "classification": "HP"
+}
+

@@ -1,0 +1,20 @@
+=== DEBUG SESSION START: 2026-03-02T23:49:14.952885+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Azure Network Security Modification
+Selected Playbook: suspicious_cloud_network_activity.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-99400",
+    "Start Time": "2026-02-10T14:45:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "186.155.12.88",
+    "User": "mateo.rodriguez@globalcorp.ee",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Description": "Azure Network Security Group deletion detected for NSG prod-edge-01 in the rg-baltic-prod-connectivity resource group. The action was initiated by Mateo Rodriguez (Contributor) from IP 186.155.12.88 in Bogotá, Colombia, at 14:45 UTC, with MFA indicated. The targeted environment appears to be production, and deleting a NSG could remove protective controls if unauthorized, making the combination of unusual geography and scope suspicious and warranting escalation."
+  },
+  "classification": "HP"
+}
+

@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-29100",
+    "Start Time": "2026-02-01T21:30:00.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "78.60.112.55",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "VIL-MTN-WKS-02",
+    "User": "Linas.Pavilionis@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Description": "A large volume of SharePoint downloads (840 files vs a 24-hour baseline of 4) was performed from an endpoint in Vilnius at 23:30 local time, accessing sensitive areas such as R&D recipes, payroll, patents, contracts, and financial audits. Correlated activity shows searches for sensitive terms, creation of an anonymous link to a personal SharePoint export, and subsequent deletion of several sampled files, which together indicate likely deliberate exfiltration rather than routine use. The user's role (maintenance engineer in Techninė priežiūra) does not plausibly justify access to many of the downloaded paths, and the late-night timing further elevates concern; therefore the activity is considered High Priority for escalation and containment.",
+    "Workload": "SharePoint",
+    "File Count": 840,
+    "Baseline 24h": 4,
+    "User Department": "Techninė priežiūra",
+    "Recent Events Summary": "Search queries for salary/patent/secret terms (20:45-20:50 UTC), anonymous link created to a personal SharePoint export (21:05 UTC), and multiple file deletions of sampled files between 21:15-21:25 UTC."
+  },
+  "classification": "HP"
+}

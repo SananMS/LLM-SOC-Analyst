@@ -1,0 +1,46 @@
+=== DEBUG SESSION START: 2026-03-03T01:50:12.919288+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Azure Network Security Modification
+Selected Playbook: suspicious_cloud_network_activity.json
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[TOOL CALL]
+Tool: lookup_users
+Arguments: {"emails": ["unknown@unknown"]}
+
+[TOOL RESPONSE]
+No users found for emails: unknown@unknown
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-22410",
+    "Start Time": "2026-02-10T15:33:45.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Destination IP": "13.75.144.22",
+    "User": "ServicePrincipal b4a3c2d1-e5f6-4a7b-8c9d-0e1f2a3b4c5d (Contributor)",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Description": "An NSG write was detected for /subscriptions/d1c2b3a4-e5f6-7a8b-9c0d-1e2f3a4b5c6d/resourceGroups/rg-nordic-dev-test/networkSecurityGroups/nsg-aks-dev-01 that added a rule allowing inbound TCP from any source to 13.75.144.22:8080 and includes a broad AllowVnetInBound entry. The actor is a ServicePrincipal with Contributor scope on the rg-nordic-dev-test resource group and the operation originated in North Europe at 17:33 EET, which is consistent with normal administrative/automation timing. No recent deployment events or similar alerts were found to correlate this change, and the targeted resource group is a development/test environment. Because the change increases exposure but is limited to a non-production environment and was performed by a scoped ServicePrincipal in-region, this alert is assessed as Low Priority.",
+    "Resource": "/subscriptions/d1c2b3a4-e5f6-7a8b-9c0d-1e2f3a4b5c6d/resourceGroups/rg-nordic-dev-test/providers/Microsoft.Network/networkSecurityGroups/nsg-aks-dev-01",
+    "Resource Group": "rg-nordic-dev-test",
+    "Start Time (Local)": "2026-02-10T17:33:45 (EET)",
+    "Rule Impact Summary": "Added 'AllowDevWebService' permitting inbound TCP 8080 to 13.75.144.22 from any source (sourceAddressPrefix='*'), increasing external exposure for the specified destination. Also present: 'AllowVnetInBound' with priority 65000.",
+    "Recent Events Correlation": "No recent events found and no recent similar alerts were identified."
+  },
+  "classification": "LP"
+}
+

@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-24100",
+    "Start Time": "2026-02-01T22:15:44.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "85.253.110.42",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "TAL-CS-WORKSTATION-05",
+    "User": "Mari.Tamm@globalcorp.ee",
+    "Description": "A large spike in SharePoint file downloads (750 vs a 24-hour baseline of 15) was observed from the user's workstation, accessing the corporate SharePoint site. Sample files include sensitive financial and payroll documents, which increases the risk that this activity represents unauthorized data exfiltration. The volume and sensitivity of files represent a significant deviation from normal behavior and justify further investigation and escalation. Activity was observed from Tallinn, Estonia, matching the user’s locale but not reducing the concern given the data involved.",
+    "Workload": "SharePoint",
+    "File Count": 750,
+    "Baseline 24h": 15,
+    "Site URL": "https://globalcorp.sharepoint.com/sites/Juhtkond_Ja_Finants/",
+    "Geo Location": "Tallinn, Estonia"
+  },
+  "classification": "HP"
+}

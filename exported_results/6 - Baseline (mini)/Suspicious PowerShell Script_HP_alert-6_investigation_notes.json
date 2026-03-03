@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10002",
+    "Start Time": "2026-01-27T09:44:12.112Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.4.88.29",
+    "Destination IP": "45.33.19.121",
+    "Endpoint": "WKSTN-FIN-04",
+    "User": "j_smith",
+    "Initiating Process": "winword.exe",
+    "Parent Process": "outlook.exe",
+    "Process SHA256": "75d216cde89d62ae1f9a8137ce7ee32fec7a1da96826be471e664223651720bc",
+    "IP Reputation Summary": "ISP: Linode (data center/web hosting); Abuse Confidence Score: 0/100; usage type consistent with hosting/VPS.",
+    "File Reputation Summary": "No detections found in queried VT results for the reported winword.exe hash.",
+    "Recent Similar Alerts": "No recent similar alerts found in the environment.",
+    "Description": "A PowerShell reverse-shell command was executed on WKSTN-FIN-04, creating a TCP connection to 45.33.19.121:443 and launched from winword.exe with parent outlook.exe under user j_smith. The scriptblock uses iex to receive and execute remote input, which is behavior consistent with command-and-control or remote backdoor activity. Despite the file hash returning no AV detections and a low abuse score for the remote IP, the combination of Office processes spawning a hidden PowerShell reverse shell and the data-center destination are strong indicators of compromise, so this alert is classified as High Priority."
+  },
+  "classification": "HP"
+}

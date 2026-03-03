@@ -1,0 +1,22 @@
+=== DEBUG SESSION START: 2026-03-02T23:25:09.927609+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Brand Mention in External Document
+Selected Playbook: potentially_leaked_document.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-75901",
+    "Start Time": "2026-02-19T18:12:05.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Playbook Used": "Document Exposure & Threat Intel Triage",
+    "Description": "Vitalis Healthcare is mentioned in an external dataset with a document titled Vitalis_Internal_VPN_Config_v3.pdf hosted on Scribd. The matched content reveals internal VPN configuration details and references to internal infrastructure, which are sensitive and not intended for public sharing. The exposure on a public platform increases the risk of misuse, credential exposure, and reputational impact for the brand. This combination of sensitive content and public exposure warrants High Priority triage and escalation.",
+    "Document Title": "Vitalis_Internal_VPN_Config_v3.pdf",
+    "Source URL": "https://www.scribd.com/document/882145/vitalis-internal-infrastructure-guide",
+    "Detection Source": "TI-Monitor-Scribd",
+    "Matched Content Summary": "Contains sensitive internal VPN configuration details and internal infrastructure references."
+  },
+  "classification": "HP"
+}
+

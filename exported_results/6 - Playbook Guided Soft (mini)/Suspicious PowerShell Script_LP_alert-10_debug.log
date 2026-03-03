@@ -1,0 +1,26 @@
+=== DEBUG SESSION START: 2026-03-03T02:04:34.329541+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Suspicious PowerShell Script Execution
+Selected Playbook: suspicious_powershell.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10000",
+    "Start Time": "2026-01-05T19:08:48.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "172.18.99.41",
+    "Endpoint": "SRV-APPS-PRD02",
+    "User": "svc_backup_veeam",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "OS": "Windows Server 2022 Datacenter",
+    "Execution Command": "powershell.exe -ExecutionPolicy Unrestricted -EncodedCommand <base64 UTF-16LE payload>",
+    "Script Encoding": "Base64-encoded UTF-16LE (EncodedCommand)",
+    "Script Summary": "The decoded script defines a PowerShell function that checks whether a given target drive/path supports NTFS Alternate Data Streams and whether Add-Content supports the -Stream parameter, returning a boolean result. The logic enumerates local drives and inspects drive format (NTFS) and cmdlet availability.",
+    "External IPs Found": "None identified in the decoded script or alert evidence.",
+    "Description": "The decoded PowerShell performs an administrative check for NTFS Alternate Data Stream support and Add-Content -Stream capability. Execution occurred under the svc_backup_veeam service account on a production Windows server and contains no external network indicators or embedded malicious artifacts. Given the administrative intent of the script, the service account context, and lack of hostile indicators, this activity is assessed as Low Priority."
+  },
+  "classification": "LP"
+}
+

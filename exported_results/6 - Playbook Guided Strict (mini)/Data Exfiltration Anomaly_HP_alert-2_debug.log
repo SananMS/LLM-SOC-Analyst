@@ -1,0 +1,63 @@
+=== DEBUG SESSION START: 2026-03-03T02:21:21.793038+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Data Exfiltration Anomaly
+Selected Playbook: excessive_downloads.json
+
+[TOOL CALL]
+Tool: lookup_users
+Arguments: {"emails": ["Aleksei.Ivanov@globalcorp.ee"]}
+
+[TOOL RESPONSE]
+[
+  {
+    "email": "Aleksei.Ivanov@globalcorp.ee",
+    "full_name": "Aleksei Ivanov",
+    "department": "Engineering",
+    "role": "Senior Software Developer"
+  }
+]
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-12880",
+    "Start Time": "2026-01-31T23:04:12.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "145.14.37.179",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "HOST-VPN-PRIV-02",
+    "User": "Aleksei.Ivanov@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Description": "An unusually large bulk download of 1,120 files from a restricted SharePoint HR/Finance site was observed at 2026-01-31T23:04:12Z (≈ 2026-02-01 01:04:12 local time in Tallinn), which is outside normal business hours. The account belongs to a Senior Software Developer in Engineering and accessed sensitive payroll, executive reviews, and banking data, representing a ~112x increase over the user's 24-hour baseline of 10 downloads. No recent related events or similar alerts were found, making this a singular and anomalous exfiltration that presents a high risk and warrants escalation.",
+    "User Department": "Engineering",
+    "File Count": 1120,
+    "Baseline 24h": 10,
+    "Sample Files": [
+      "Employee_Salary_List_2026_Full.csv",
+      "Performance_Review_Executive_Leadership.pdf",
+      "Bank_Account_Details_Export.xlsx"
+    ],
+    "Sample Paths": [
+      "Shared Documents/Payroll/Global_Exports/",
+      "Shared Documents/HR/Reviews/Leadership_Only/",
+      "Shared Documents/Finance/Banking_Data/"
+    ]
+  },
+  "classification": "HP"
+}
+

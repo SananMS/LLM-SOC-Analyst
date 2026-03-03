@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-75988",
+    "Start Time": "2026-02-19T21:15:45.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Category": "Brand Monitoring",
+    "Threat": "DocumentExposure:VitalisHealthcare",
+    "Status": "new",
+    "Detection Source": "TI-Monitor-DarkWeb",
+    "Source URL": "http://x7y9z1a3b5c7d9e1f3g5h7i9j1k2l3m5n7o9p1q3r5s7t9u1v3w5x7y9.onion/dump/exfiltrated/2026/02/",
+    "Exposed File Paths": [
+      "/mnt/storage/breach_vault/vitalis_healthcare/clinical_ops/patient_records_2025_full.sql",
+      "/mnt/storage/breach_vault/vitalis_healthcare/finance/q4_insurance_claims_processing.csv",
+      "/mnt/storage/breach_vault/vitalis_healthcare/it_admin/network_topology_and_firewall_rules.pdf"
+    ],
+    "Description": "A dark-web monitoring source identified Vitalis Healthcare referenced in an onion-hosted dump that includes filenames consistent with patient records, financial claim data, and internal network/topology documentation. The presence of a full patient records SQL dump and firewall/network configuration files increases the likelihood of legitimate data exfiltration and elevated impact to privacy and security. The evidence originates from a credible TI-Monitor-DarkWeb feed and the filenames indicate sensitive HIPAA-related and infrastructure data, so this alert is classified as High Priority to ensure timely follow-up and containment."
+  },
+  "classification": "HP"
+}

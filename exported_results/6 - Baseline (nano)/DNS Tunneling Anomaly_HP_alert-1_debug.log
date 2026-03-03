@@ -1,0 +1,20 @@
+=== DEBUG SESSION START: 2026-03-02T22:17:24.557654+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: DNS Tunneling Anomaly
+Selected Playbook: General Triage (No Playbook)
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14567",
+    "Start Time": "2026-02-06T14:30:10.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.150.22.105",
+    "Destination IP": "45.15.201.33",
+    "Endpoint": "srv-prod-web-01",
+    "Description": "The alert reports anomalous DNS TXT traffic with high entropy indicating potential DNS tunneling. The actual traffic size is 2,140 bytes, far above the typical 15 bytes for similar queries, suggesting data exfiltration or covert channel activity. The observed domain update-check-cdn.xyz and the listed sample queries support a suspicious pattern consistent with DNS-based tunneling. Given the unusual traffic volume from an internal host targeting an external IP via DNS, this activity is high priority and should be investigated promptly."
+  },
+  "classification": "HP"
+}
+

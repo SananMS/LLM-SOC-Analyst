@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-13100",
+    "Start Time": "2026-01-31T23:55:12.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "145.14.37.201",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "MAINT-Kiosk-04",
+    "User": "Jaanus.Tamm@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Description": "An unusual volume of SharePoint file downloads (985) was observed from the user, which is higher than their 24-hour baseline. The activity occurred from a device in Tallinn, Estonia, during late local night hours, and targeted sensitive documents on the SharePoint site. The data volume and sampling of confidential files, combined with atypical timing, suggests a potential bulk data access that warrants HP classification due to exfiltration risk and possible insider threat or compromised credentials.",
+    "Geographic Context": "Tallinn, Estonia",
+    "Volume Anomaly": "985 files downloaded vs baseline 50 in the last 24 hours",
+    "Evidence Snapshot": "Sample files include Project_Phoenix_Acquisition_Terms_Draft.pdf, Q1_Strategic_Market_Exit_Plan.docx, Board_Member_Private_Contact_List.xlsx; sample paths point to Confidential and Executive directories"
+  },
+  "classification": "HP"
+}

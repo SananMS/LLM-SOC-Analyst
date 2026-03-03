@@ -1,0 +1,15 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-29490",
+    "Start Time": "2026-02-17T11:05:17.000Z",
+    "Alert Name": "Trend Micro Vision One: Suspicious Mailbox Rule Deletes All Incoming Emails",
+    "User": "autoreply",
+    "Affected Mailbox": "noreply-alerts@client.ee",
+    "Detection Source": "trendmicro_visionone",
+    "SIEM Evidence ID": "WB-31720-20260208-00003",
+    "Playbook Used": "EDR SaaS & Email Identity Triage",
+    "Recent Events": "No recent events found",
+    "Description": "Trend Micro Vision One detected a mailbox rule on the 'autoreply' account that deletes all incoming emails for noreply-alerts@client.ee. The affected identity appears to be a non-interactive/service 'noreply' mailbox with limited privilege and there are no recent anomalous authentication events in the logs. Given the mailbox type, lack of suspicious logins, and the operational plausibility of suppressing incoming mail on a noreply account, the activity is assessed as Low Priority because it is more consistent with legitimate configuration than an account takeover. Continue to monitor for any follow-up alerts or external forwarding activity that would increase risk."
+  },
+  "classification": "LP"
+}

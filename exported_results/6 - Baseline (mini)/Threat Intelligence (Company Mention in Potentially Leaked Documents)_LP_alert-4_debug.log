@@ -1,0 +1,26 @@
+=== DEBUG SESSION START: 2026-03-03T01:14:17.270531+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Brand Mention in External Document
+Selected Playbook: General Triage (No Playbook)
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-75693",
+    "Start Time": "2026-02-24T14:20:00.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Threat": "DocumentExposure:VitalisHealthcare",
+    "Category": "Brand Monitoring",
+    "Detection Source": "TI-Monitor-DarkWeb",
+    "Source URL": "http://n6p9q2r8t0v4w5x1y3z7a9b1c3d5e7f9g1h3i5j7k9l1m3n5o7p9q1r3.onion/repository/leaks/commercial-real-estate-sector/",
+    "Exposed Files": [
+      "/dumps/uk_property_agents/vitalis_estates_london/listings/Residential_Portfolio_2025.pdf",
+      "/dumps/uk_property_agents/vitalis_estates_london/contracts/Rental_Agreement_Template.docx",
+      "/dumps/uk_property_agents/vitalis_estates_london/staff/Branch_Manager_Directory.xlsx"
+    ],
+    "Description": "Vitalis Healthcare was mentioned in documents discovered on a dark web .onion repository that contains multiple files under a 'vitalis_estates_london' directory. The listed files include a residential portfolio PDF, a rental agreement DOCX, and a branch manager directory XLSX, which could contain contractual details or personnel data and therefore indicate potential data exposure. Because the content is hosted on a known dark web leak repository and includes a staff directory, the activity is considered High Priority due to the likelihood of sensitive information exposure and the need for verification and escalation."
+  },
+  "classification": "HP"
+}
+

@@ -1,0 +1,22 @@
+=== DEBUG SESSION START: 2026-03-03T01:12:59.259928+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Brand Mention in External Document
+Selected Playbook: General Triage (No Playbook)
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-76214",
+    "Start Time": "2026-02-19T13:50:42.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Threat": "DocumentExposure:VitalisHealthcare",
+    "Category": "Brand Monitoring",
+    "Detection Source": "TI-Monitor-DarkWeb",
+    "Source URL": "http://v3estvtl7x2m9n3p1q5r9t0v2w4x6y8z1a3b5c7d9e1f3g5h7i9j1k2l3.onion/dumps/baltic_sector/healthcare/",
+    "Exposed Files": "/var/backups/vitalis_healthcare_estonia/admin/ssh_keys/id_rsa_prod_gateway.key; /var/backups/vitalis_healthcare_estonia/andmebaasid/patsiendid/ravikaardid_tallinn_haigla_2026.dump; /var/backups/vitalis_healthcare_estonia/vorguseaded/VPN_klientide_konfiguratsioon_eesti.conf",
+    "Description": "A potential data leak referencing Vitalis Healthcare was detected on a darknet onion site. The provided evidence includes a production SSH private key, patient database dumps dated 2026, and VPN client configuration files, indicating exposure of credentials and protected health information. This is high risk because the private key and VPN configs could enable unauthorized access to internal systems and the patient records contain sensitive PHI that could be misused or trigger regulatory impact."
+  },
+  "classification": "HP"
+}
+

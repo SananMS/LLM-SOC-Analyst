@@ -1,0 +1,10 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-22410",
+    "Start Time": "2026-02-10T15:33:45.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Description": "NSG nsg-aks-dev-01 in resource group rg-nordic-dev-test was modified to add two inbound rules, including AllowDevWebService from any source to 13.75.144.22:8080 and a broad VNet inbound rule. The request_body describes the web service as a temporary API testing setup, and the change was made by a Service Principal with Contributor role in a dev environment. The timestamp converts to Estonia local time during typical admin hours, which lowers immediate risk but does not rule out authorized testing. The AllowDevWebService rule with a source of * creates potential exposure and requires verification against change approvals and access controls."
+  },
+  "classification": "LP"
+}

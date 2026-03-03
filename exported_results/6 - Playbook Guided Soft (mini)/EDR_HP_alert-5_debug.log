@@ -1,0 +1,26 @@
+=== DEBUG SESSION START: 2026-03-03T01:39:08.565410+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Malware Prevention: Trojan:Win32/SparkOnSoft
+Selected Playbook: EDR_malware_alerts.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-29908",
+    "Start Time": "2026-02-12T09:44:07.000Z",
+    "Alert Name": "Malware Prevention: Trojan:Win32/SparkOnSoft",
+    "Source IP": "10.45.20.114",
+    "Endpoint": "WKSTN-912A",
+    "User": "m.tamm@client.ee",
+    "Playbook Used": "EDR Malware Triage",
+    "File Name": "$RYRO9NW.exe",
+    "File Path": "C:\\$Recycle.Bin\\S-1-12-1-4290317762-1184293048-956127341-2105834469\\$RYFO7NF.exe",
+    "File SHA256": "686d018c86c03165925ebd3773c622f182c93f54b98db9616bae86f5e8684e4c",
+    "File Signer": "Hawk Integrated Inc.",
+    "Remediation Result": "Success",
+    "Description": "Microsoft Defender detected Trojan:Win32/SparkOnSoft on endpoint WKSTN-912A and quarantined the file successfully. The binary was found in a per-user Recycle Bin under a randomized filename, which is anomalous and consistent with a dropped or staged payload despite a valid-looking Sectigo EV code signature from 'Hawk Integrated Inc.'. Given the high-risk detection, suspicious file location and naming, and confirmed quarantine, this event is classified as High Priority because it indicates a likely malicious artifact that may represent compromise and warrants further host and user investigation."
+  },
+  "classification": "HP"
+}
+

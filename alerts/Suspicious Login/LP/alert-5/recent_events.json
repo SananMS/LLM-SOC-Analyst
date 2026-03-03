@@ -6,6 +6,7 @@
     "source_ip": "194.126.101.49",
     "destination_ip": "13.80.23.7",
     "location": "Tallinn, Estonia",
+    "endpoint": "T12345785",
     "login_result": "success",
     "has_mfa": true,
     "user_agent": "Windows-AzureAD-Authentication-Provider/1.0"
@@ -16,6 +17,7 @@
     "user": "arne.tamm@client.ee",
     "source_ip": "74.119.64.2",
     "destination_ip": "13.80.23.7",
+    "endpoint": "T12345785",
     "location": "Zhuojiacun, Macao",
     "login_result": "success",
     "has_mfa": true,

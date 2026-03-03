@@ -1,0 +1,58 @@
+=== DEBUG SESSION START: 2026-03-02T22:14:49.548058+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Data Exfiltration Anomaly
+Selected Playbook: General Triage (No Playbook)
+
+[TOOL CALL]
+Tool: check_ip_reputation
+Arguments: {"ip": "194.126.101.44"}
+
+[TOOL RESPONSE]
+Source IP: 194.126.101.44 | Abuse Confidence Score: 0/100 | ISP: backbone and servers | Usage Type: Fixed Line ISP | Privacy Status: Neither VPN nor Proxy nor Tor Node nor Relay
+
+[TOOL CALL]
+Tool: check_ip_reputation
+Arguments: {"ip": "40.108.201.15"}
+
+[TOOL RESPONSE]
+Source IP: 40.108.201.15 | Abuse Confidence Score: 0/100 | ISP: Microsoft Corporation | Usage Type: Data Center/Web Hosting/Transit | Privacy Status: VPN
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-11205",
+    "Start Time": "2026-01-31T09:15:22.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "194.126.101.44",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "FIN-LAPTOP-09",
+    "User": "Linda.Kask@globalcorp.ee",
+    "Playbook Used": "None",
+    "Description": "An unusual volume of SharePoint file downloads (420) was observed from Linda.Kask@globalcorp.ee, significantly above the 24-hour baseline of 45. The activity involved downloading multiple sensitive documents from the Finance Reporting site via SharePoint Online on FIN-LAPTOP-09, with the destination pointing to a Microsoft data center. While the destination is expected for SharePoint, the spike could indicate data exfiltration or policy misuse; this requires confirmation of user intent and data sensitivity, so the alert is prioritized for investigation.",
+    "File Count": 420,
+    "Baseline 24h": 45,
+    "SharePoint Site": "https://globalcorp.sharepoint.com/sites/Finance_Reporting/",
+    "Sample Files": [
+      "Q4_Vat_Report_Final.xlsx",
+      "Invoice_Archive_Jan_2026.zip",
+      "Payroll_Summary_Global_Corp.pdf"
+    ]
+  },
+  "classification": "HP"
+}
+

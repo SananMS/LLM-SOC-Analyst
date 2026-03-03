@@ -1,0 +1,69 @@
+=== DEBUG SESSION START: 2026-03-03T02:36:46.496194+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: DNS Tunneling Anomaly
+Selected Playbook: suspicious_dns_queries.json
+
+[TOOL CALL]
+Tool: get_domain_age
+Arguments: {"domain": "x1j2k3-v9.biz"}
+
+[TOOL RESPONSE]
+Domain: x1j2k3-v9.biz | Created: 2026-02-05 | Age: 26 days old.
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+[
+  {
+    "event_time": "2026-02-06T17:40:00.000Z",
+    "source_ip": "10.150.22.201",
+    "query": "a9z8y7-v1.biz",
+    "query_type": "A",
+    "status": "NXDOMAIN"
+  },
+  {
+    "event_time": "2026-02-06T17:42:15.000Z",
+    "source_ip": "10.150.22.201",
+    "query": "b8x7w6-v2.biz",
+    "query_type": "A",
+    "status": "NXDOMAIN"
+  },
+  {
+    "event_time": "2026-02-06T17:44:00.000Z",
+    "source_ip": "10.150.22.201",
+    "query": "x1j2k3-v9.biz",
+    "query_type": "A",
+    "status": "NOERROR"
+  }
+]
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-14571",
+    "Start Time": "2026-02-06T17:45:10.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "10.150.22.201",
+    "Destination IP": "203.0.113.42",
+    "Endpoint": "srv-sql-core-01",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Root Domain": "x1j2k3-v9.biz",
+    "Domain Age": "Created: 2026-02-05 (26 days old)",
+    "Query Type": "TXT",
+    "Decoded Sample Payloads": "SELECT config, value FROM syscfg; DBPASS_encrypted=abc1234567890; admin_email=soc_mgr@corp.com; SSL_C_KEY_bf4412c4aa... ",
+    "Recent Host Events": "Prior queries from 10.150.22.201 at 2026-02-06T17:40 and 17:42 showed randomized .biz A queries with NXDOMAIN responses; a subsequent A query for x1j2k3-v9.biz returned NOERROR at 17:44.",
+    "Description": "Multiple high-entropy TXT DNS queries from srv-sql-core-01 contained Base64-like subdomains that decode to SQL statements, an encrypted database password, an administrative email, and a partial SSL key, indicating likely data carriage within DNS. The root domain is very recently registered (26 days old) and the host shows a pattern of randomized .biz queries immediately prior to the captured TXT traffic, which increases suspicion. Given the sensitive nature of the decoded content and the domain's infancy combined with prior randomized queries from the same host, this activity is consistent with active DNS exfiltration and warrants escalation."
+  },
+  "classification": "HP"
+}
+

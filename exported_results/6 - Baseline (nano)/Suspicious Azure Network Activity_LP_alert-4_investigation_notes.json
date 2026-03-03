@@ -1,0 +1,16 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-22700",
+    "Start Time": "2026-02-10T12:30:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "102.89.1.20",
+    "User": "olumide.adeyemi@globalcorp.ee",
+    "Playbook Used": "null",
+    "Description": "An Azure Virtual Network delete operation was detected from IP 102.89.1.20 by user Olumide Adeyemi (Owner) targeting vnet-tallinn-test-01 in resource group rg-baltic-test-connectivity. The source IP geolocation is Lagos, Nigeria, and MFA was used for authentication. No additional related events were found, and a prior similar alert involving this user/IP was closed as a false positive after travel verification, supporting a low-priority determination for this alert.",
+    "Operation Name": "MICROSOFT.NETWORK/VIRTUALNETWORKS/DELETE",
+    "Target Resource": "vnet-tallinn-test-01",
+    "Resource Group": "rg-baltic-test-connectivity",
+    "Correlation ID": "d4c3b2a1-e5f6-4a5f-bc88-998877665544"
+  },
+  "classification": "LP"
+}

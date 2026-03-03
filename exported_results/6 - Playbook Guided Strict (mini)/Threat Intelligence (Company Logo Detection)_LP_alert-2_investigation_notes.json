@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-54412",
+    "Start Time": "2026-02-18T13:10:05.000Z",
+    "Alert Name": "Brand Logo Detection",
+    "Destination IP": "151.101.2.132",
+    "Endpoint": "healthsync-integrations.io",
+    "Playbook Used": "Visual Brand Abuse & Logo Triage",
+    "Target Brand": "Vitalis Healthcare",
+    "Target Brand Domain": "vitalis.com",
+    "Domain Age": "3 years",
+    "Registrar": "Fastly, Inc.",
+    "IP Reputation Score": "0/100 (Abuse confidence) — Fastly CDN (content delivery hosting)",
+    "Recent Similar Alerts": "No recent similar alerts found",
+    "Visual Match Notes": "The logo shown on the partner card closely matches the provided reference in color, iconography, and typography. The usage appears on a partner/ ecosystem listing page with a 'Visit Website' button and no visible credential collection or deceptive UI elements.",
+    "Description": "The Vitalis Healthcare logo was detected on a partner listing page at https://www.healthsync-integrations.io/ecosystem and the on-page rendering closely matches the supplied reference logo. The hosting IP is a Fastly CDN address with an abuse confidence score of 0/100 and the domain is three years old, and there are no prior alerts for this domain. There are no visible signs of credential harvesting or impersonation-focused UI elements, so the evidence suggests authorized partner listing rather than malicious impersonation, supporting a Low Priority classification."
+  },
+  "classification": "LP"
+}

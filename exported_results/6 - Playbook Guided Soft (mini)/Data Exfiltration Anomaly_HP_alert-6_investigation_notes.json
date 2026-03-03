@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-24100",
+    "Start Time": "2026-02-01T22:15:44.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "85.253.110.42",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "TAL-CS-WORKSTATION-05",
+    "User": "Mari.Tamm@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Workload": "SharePoint",
+    "File Count": 750,
+    "Baseline 24h": 15,
+    "User Role and Department": "Vanem-klienditeenindaja, Klienditugi",
+    "Local Time at Source": "2026-02-02T00:15:44 (EET)",
+    "Description": "Anomalous large volume of SharePoint downloads (750 files vs 15 baseline) by Mari.Tamm@globalcorp.ee was observed from Tallinn at 2026-02-02 00:15:44 local time. The downloaded items include sensitive financial and payroll documents, and the user's role (Vanem-klienditeenindaja, Klienditugi) does not align with an obvious business need for these files, increasing concern for unauthorized access. The access was via browser-based SharePoint Online and the source IP has no malicious reputation, but the large deviation from baseline, off-hours timing, and sensitive content together raise the likelihood of data exfiltration. This alert is classified as HP because the combination of volume, content sensitivity, role mismatch, and timing warrants escalation and further investigation."
+  },
+  "classification": "HP"
+}

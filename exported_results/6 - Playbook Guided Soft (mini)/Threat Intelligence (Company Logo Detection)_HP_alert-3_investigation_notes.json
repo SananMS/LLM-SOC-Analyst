@@ -1,0 +1,15 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-55014",
+    "Start Time": "2026-02-18T15:40:12.000Z",
+    "Alert Name": "Brand Logo Detection",
+    "Target Brand": "Vitalis Healthcare",
+    "Scanned URL": "https://www.vitalis-connect-update.com/download/security-patch-v4",
+    "Domain IP": "103.45.12.89",
+    "Domain Age": "3 hours",
+    "Playbook Used": "Visual Brand Abuse & Logo Triage",
+    "IP Reputation Score": "Abuse Confidence Score 0/100",
+    "Description": "The Vitalis Healthcare logo was detected on a newly registered domain that advertises a \"Critical Security Patch\" and prompts users to download an executable, with the page using a high-fidelity logo match and urgent language. The domain age (3 hours) and the presence of an .exe download increase the likelihood of impersonation and potential malware distribution despite the hosting IP showing a 0/100 abuse score and being in a public data center. No recent similar alerts were found for this domain, and the combination of brand impersonation, fresh registration, and an executable download justifies treating this as a High Priority incident for further investigation and escalation."
+  },
+  "classification": "HP"
+}

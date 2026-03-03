@@ -1,0 +1,27 @@
+=== DEBUG SESSION START: 2026-03-02T23:12:30.760277+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Suspicious PowerShell Script Execution
+Selected Playbook: suspicious_powershell.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10004",
+    "Start Time": "2026-01-27T13:45:10.000Z",
+    "Alert Name": "Suspicious PowerShell Script Execution",
+    "Source IP": "10.50.11.92",
+    "Endpoint": "SRV-APPS-02",
+    "User": "s_keller",
+    "Playbook Used": "Suspicious PowerShell Triage",
+    "Process SHA256": "9785001b0dcf755eddb8af294a373c0b87b2498660f724e76c4d53f9c217c7a3",
+    "Initiating Process": "powershell.exe",
+    "Parent Process": "wmiprvse.exe",
+    "Encoded Command Detected": "true",
+    "Scriptblock Encoding": "Base64",
+    "Potential Internal URL": "Decoded payload points to an HTTP URL using a private IP address (e.g., 172.16.x.x), indicating internal network fetch.",
+    "Description": "PowerShell was invoked with an encoded command, indicating obfuscated execution. The encoded payload appears to decode into a command that downloads and executes a script from an internal URL, suggesting an attempt to fetch payload over HTTP. The initiating process is powershell.exe with wmiprvse.exe as the parent process, a combination often seen in scripted activity; the use of encoded commands and a downloaded payload increases risk and warrants high-priority investigation."
+  },
+  "classification": "HP"
+}
+

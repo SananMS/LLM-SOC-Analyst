@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-65",
+    "Start Time": "2025-07-17T14:22:15.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "45.78.217.136",
+    "Destination IP": "13.80.23.7",
+    "Endpoint": "D235423",
+    "User": "martin.kask@client.ee",
+    "Description": "An Office 365 login for user martin.kask@client.ee originated from Singapore, which is outside the user's typical login region. The session completed successfully without MFA, and the source IP 45.78.217.136 has a high abuse score. Prior logins from Tallinn, Estonia were observed from a different IP to the same destination, indicating geographic inconsistency. A directory lookup for the user email did not return an internal account. Given the geographic deviation, lack of MFA, and IP reputation risk, this activity should be treated as high priority.",
+    "Source IP Reputation": "Abuse Confidence Score: 100/100; Data Center/Web Hosting/Transit; Privacy Status: Neither VPN nor Proxy nor Tor Node nor Relay",
+    "Recent Similar Alerts": "No recent similar alerts found.",
+    "Past Login Locations": "Tallinn, Estonia observed in prior logins (2025-07-17T12:15:00Z and 2025-07-17T13:00:00Z) from 145.14.37.180 to 13.80.23.7.",
+    "User Directory Status": "No users found for emails: martin.kask@client.ee"
+  },
+  "classification": "HP"
+}

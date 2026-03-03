@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-29890",
+    "Start Time": "2026-01-30T11:01:53.000Z",
+    "Alert Name": "SentinelOne: XDR Miscellaneous Malware",
+    "Source IP": "10.40.15.22",
+    "Endpoint": "WKSTN-SALES-080",
+    "User": "a.jakub@client.ee",
+    "Playbook Used": "EDR Malware Triage",
+    "File Path": "C:\\Users\\a.jakub\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\inhcgfpbfdjbjogdfjbclgolkmhnooop\\1.6.5_1\\aitopia\\assets\\ea4feaebb8fce87a082623ec5d08d8e7.js",
+    "File SHA256": "4a365b80f0de287dcfbf7860075e0956e450048933ddebb0506837afbced404e",
+    "Process Parent": "chrome.exe",
+    "Remediation Status": "mitigated",
+    "VirusTotal Detections": "5 Malicious | 0 Suspicious (Community Score -3; 3 community votes flagged malicious)",
+    "Description": "A malicious JavaScript component (Trojan:JS/ChatGPTStealer.GVA!MTB) was detected in a Chrome extension directory on WKSTN-SALES-080 and was blacklisted by SentinelOne Cloud with a malicious confidence level. VirusTotal shows multiple engines flagging the file as malicious and the file was executed under chrome.exe, indicating in-browser exposure; remediation actions (kill and quarantine) were performed. Given the confirmed malicious verdict, detection prevalence, and execution context within a browser extension belonging to a sales user, this alert is classified as HP because the component presents a real credential/data exfiltration risk and warrants further investigation of the user's browser extensions, credentials, and potential lateral impact."
+  },
+  "classification": "HP"
+}

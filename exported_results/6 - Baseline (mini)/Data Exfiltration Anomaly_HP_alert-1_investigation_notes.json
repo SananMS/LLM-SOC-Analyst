@@ -1,0 +1,22 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-12200",
+    "Start Time": "2026-01-31T14:45:10.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "194.126.101.99",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "WKSTN-OFFSITE-04",
+    "User": "Liam.O-Sullivan@globalcorp.ee",
+    "Description": "Alert triggered for an anomalous bulk download of 850 SharePoint files from the Executive_Board_Confidential site by the user, substantially exceeding their 24-hour baseline of 5 files. The activity used a non-standard WinHttp user agent consistent with scripted or automated access and targeted highly sensitive documents (merger terms, shareholder plans, board minutes). The volume, sensitive target, and atypical client behavior increase the likelihood of unauthorized data exfiltration, so this activity is considered High Priority for further investigation.",
+    "File Count": 850,
+    "Baseline 24h": 5,
+    "Site URL": "https://globalcorp.sharepoint.com/sites/Executive_Board_Confidential/",
+    "User Agent": "Mozilla/4.0 (compatible; Win32; WinHttp.WinHttpRequest.5)",
+    "Sample Files": [
+      "Project_Zeus_Merger_Terms_v4.pdf",
+      "Q1_Shareholder_Divestment_Plan.xlsx",
+      "Board_Meeting_Minutes_January.docx"
+    ]
+  },
+  "classification": "HP"
+}

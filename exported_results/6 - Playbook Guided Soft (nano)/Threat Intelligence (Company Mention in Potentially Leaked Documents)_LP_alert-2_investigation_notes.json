@@ -1,0 +1,13 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-75502",
+    "Start Time": "2026-02-19T13:10:00.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Playbook Used": "Document Exposure & Threat Intel Triage",
+    "Evidence Source": "TI-Monitor-SlideShare",
+    "Document Title": "Vitalis_Healthcare_Annual_Sustainability_Goals.pdf",
+    "Source URL": "https://www.slideshare.net/vitalis-marketing/annual-sustainability-goals-2026",
+    "Description": "Vitalis Healthcare is mentioned in an external SlideShare document with content describing sustainability goals. The hosting platform is a legitimate public sharing site, and the visible content appears to be marketing rather than internal or sensitive information. The exposure does not reveal confidential data or internal processes, and there are no indicators of deliberate data leakage, so this alert is classified as Low Priority."
+  },
+  "classification": "LP"
+}

@@ -1,0 +1,16 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-55014",
+    "Start Time": "2026-02-18T15:40:12.000Z",
+    "Alert Name": "Brand Logo Detection",
+    "Source IP": "103.45.12.89",
+    "Destination IP": "103.45.12.89",
+    "Scanned URL": "https://www.vitalis-connect-update.com/download/security-patch-v4",
+    "Domain IP": "103.45.12.89",
+    "Domain Age": "3 hours",
+    "Registrar": "NameSilo, LLC",
+    "Target Brand": "Vitalis Healthcare",
+    "Description": "Vitalis Healthcare logo was detected on the domain vitalis-connect-update.com, which hosts a download page for a patch. The domain is newly registered (3 hours old) and resolves to IP 103.45.12.89, suggesting potential impersonation or phishing activity. The use of brand assets on a suspicious domain and a download prompt indicates a risk to users and brand integrity, warranting high-priority investigation."
+  },
+  "classification": "HP"
+}

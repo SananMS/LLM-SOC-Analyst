@@ -1,0 +1,17 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-23105",
+    "Start Time": "2026-02-11T09:15:00.000Z",
+    "Alert Name": "Azure Network Security Modification",
+    "Source IP": "145.14.39.114",
+    "User": "markus.tamm@globalcorp.ee",
+    "Playbook Used": "Azure Network Security Group Modification Triage",
+    "Description": "The activity indicates deletion of a security rule within network security group nsg-tallinn-prod-01 by user markus.tamm@globalcorp.ee (Contributor). The action originated from 145.14.39.114 in Tallinn, Estonia, at 09:15 UTC, aligning with typical administrative work hours. Historical context shows a similar NSG modification by the same user during a maintenance window and linked to an approved change, supporting a legitimate administrative change rather than an unauthorized action.",
+    "Rule Change Type": "Delete security rule in NSG",
+    "Environment Scope": "/subscriptions/228e1d3b-9311-4477-8c1d-112233445566/resourceGroups/rg-baltic-prod-connectivity/providers/Microsoft.Network/networkSecurityGroups/nsg-tallinn-prod-01",
+    "Actor Role": "Contributor",
+    "Correlation ID": "f9e8d7c6-b5a4-4321-8877-665544332211",
+    "Geolocation of Caller": "Tallinn, Estonia"
+  },
+  "classification": "LP"
+}

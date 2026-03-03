@@ -1,0 +1,58 @@
+=== DEBUG SESSION START: 2026-03-03T02:38:46.048259+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: DNS Tunneling Anomaly
+Selected Playbook: suspicious_dns_queries.json
+
+[TOOL CALL]
+Tool: get_domain_age
+Arguments: {"domain": "contentdelivery.net"}
+
+[TOOL RESPONSE]
+Domain: contentdelivery.net | Created: 2003-10-10 | Age: 8180 days old.
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10241",
+    "Start Time": "2026-02-06T13:45:10.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "192.168.177.244",
+    "Destination IP": "19.240.126.129",
+    "Endpoint": "host-812-workstation",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Query Type": "A",
+    "Application": "DNS",
+    "Actual Bytes": 953,
+    "Typical Bytes": 46,
+    "Root Domain": "contentdelivery.net",
+    "Domain Age": "Created 2003-10-10 (≈8180 days)",
+    "Sample Queries": [
+      "e9d82f310a44b7c21098bcad7e6f5a41-httpcache0-08247-cacheod1.dna.contentdelivery.net",
+      "4a2b1c3d5e6f7890a1b2c3d4e5f60712-httpcache1-05529-cacheod2.dna.contentdelivery.net",
+      "bc3a21f876e940d240e1d827f311a2b9-httpcache0-11203-cacheod3.dna.contentdelivery.net",
+      "7d6c5b4a3210fedcba98765432109f8e-httpcache1-09841-cacheod1.dna.contentdelivery.net",
+      "19c02b8a284d7a110e55c9b2f4a7d33e-httpcache0-03462-cacheod2.dna.contentdelivery.net"
+    ],
+    "Encoded Payload Detected": "High-entropy, hex-like prefixes observed. Decoding attempts produced non-readable binary consistent with opaque identifiers or cache keys rather than readable/exfiltrated host data.",
+    "Recent Host Events": "No recent events found",
+    "Recent Similar Alerts": "No recent similar alerts found",
+    "Description": "Anomalously large DNS responses (953 bytes vs typical 46 bytes) were observed for queries to contentdelivery.net, with sample subdomains containing hex-like prefixes and cache-oriented labels (httpcache, cacheod, dna). The root domain is long-established (created 2003) and the subdomain structure is consistent with CDN cache identifiers; decoding attempts yielded non-readable binary likely representing opaque IDs rather than sensitive host information. No recent host activity or similar alerts were identified, indicating a low likelihood of active data exfiltration and supporting a Low Priority triage."
+  },
+  "classification": "LP"
+}
+

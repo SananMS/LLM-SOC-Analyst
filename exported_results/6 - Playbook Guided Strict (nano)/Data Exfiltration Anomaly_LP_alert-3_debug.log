@@ -1,0 +1,26 @@
+=== DEBUG SESSION START: 2026-03-02T23:36:12.769760+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Data Exfiltration Anomaly
+Selected Playbook: excessive_downloads.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-11340",
+    "Start Time": "2026-01-31T14:45:10.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "82.131.44.12",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "DEV-STATION-44",
+    "User": "Aleksei.Ivanov@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Description": "An unusual volume of SharePoint file downloads (550) was observed from the user's account targeting the Engineering Repo Backup site on SharePoint Online. The activity significantly exceeds the 24-hour baseline (550 vs 120) and originates from Tallinn, Estonia, raising questions about data scope and potential exfiltration. The combination of high volume, access to a backup repository, and a cross-regional location without an immediately obvious business justification indicates elevated risk and warrants further investigation.",
+    "Geo Location": "Tallinn, Estonia",
+    "Files Downloaded": "550",
+    "Baseline 24h": "120",
+    "Site URL": "https://globalcorp.sharepoint.com/sites/Engineering_Repo_Backup/"
+  },
+  "classification": "HP"
+}
+

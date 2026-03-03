@@ -1,0 +1,14 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-76214",
+    "Start Time": "2026-02-19T13:50:42.000Z",
+    "Alert Name": "Brand Mention in External Document",
+    "Playbook Used": "Document Exposure & Threat Intel Triage",
+    "Description": "Vitalis Healthcare is named in an externally sourced document from a dark web monitoring feed, with paths that appear to reference internal backups and credential-related files. The evidence includes SSH private keys, a patient data dump, and VPN configuration files, which together imply a credible risk of credential and sensitive data exposure. Given the brand relevance, the presence of sensitive artifacts, and the dark web context, this alert should be treated as high priority and escalated for containment and further investigation.",
+    "Evidence Source": "TI-Monitor-DarkWeb",
+    "Evidence Paths": "/var/backups/vitalis_healthcare_estonia/admin/ssh_keys/id_rsa_prod_gateway.key; /var/backups/vitalis_healthcare_estonia/andmebaasid/patsiendid/ravikaardid_tallinn_haigla_2026.dump; /var/backups/vitalis_healthcare_estonia/vorguseaded/VPN_klientide_konfiguratsioon_eesti.conf",
+    "Related Brand": "Vitalis Healthcare",
+    "Risk Indicators": "SSH private key exposure, patient data dump, VPN configuration exposure"
+  },
+  "classification": "HP"
+}

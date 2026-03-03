@@ -1,0 +1,21 @@
+=== DEBUG SESSION START: 2026-03-02T23:41:25.753552+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: DNS Tunneling Anomaly
+Selected Playbook: suspicious_dns_queries.json
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-10234",
+    "Start Time": "2026-02-06T09:58:16.000Z",
+    "Alert Name": "DNS Tunneling Anomaly",
+    "Source IP": "192.168.153.249",
+    "Destination IP": "172.16.40.3",
+    "Endpoint": "srv-prod-infra-01",
+    "Playbook Used": "Suspicious DNS Query Triage",
+    "Description": "Anomalous DNS traffic was observed with high-entropy, tunneled content, evidenced by a larger-than-normal DNS payload (313 Bytes) associated with the domain sharepoint.com. Sample queries include several generated subdomains, some pointing to Microsoft services and patterns that resemble encoded or high-entropy structures. Although sharepoint.com is a legitimate service with a long domain age, the combination of high-entropy subdomains and elevated query size is suspicious and warrants escalation for deeper investigation to rule out data exfiltration via DNS."
+  },
+  "classification": "HP"
+}
+

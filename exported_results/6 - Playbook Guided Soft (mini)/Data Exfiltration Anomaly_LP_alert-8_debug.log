@@ -1,0 +1,55 @@
+=== DEBUG SESSION START: 2026-03-03T01:26:13.656445+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Data Exfiltration Anomaly
+Selected Playbook: excessive_downloads.json
+
+[TOOL CALL]
+Tool: lookup_users
+Arguments: {"emails": ["acc@globalcorp.ee"]}
+
+[TOOL RESPONSE]
+No users found for emails: acc@globalcorp.ee
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[TOOL CALL]
+Tool: check_ip_reputation
+Arguments: {"ip": "62.248.150.12"}
+
+[TOOL RESPONSE]
+Source IP: 62.248.150.12 | Abuse Confidence Score: 0/100 | ISP: Elisa Oyj | Usage Type: Fixed Line ISP | Privacy Status: Neither VPN nor Proxy nor Tor Node nor Relay
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-19458",
+    "Start Time": "2026-03-01T13:10:00.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "62.248.150.12",
+    "Destination IP": "40.108.201.15",
+    "User": "acc@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Application": "Mepco MSGraph",
+    "Workload": "SharePoint",
+    "File Count": 305,
+    "Baseline 24h": 28,
+    "Geo Location": "Tampere, Finland",
+    "IP Reputation Score": "0/100 (Abuse Confidence Score); ISP: Elisa Oyj; Fixed-line",
+    "Description": "A large spike of SharePoint downloads (305 files vs 28 baseline) was observed from acc@globalcorp.ee targeting the Finland HR site at 2026-03-01 15:10 local time (Tampere). The activity used the Mepco MSGraph integration with a WinHttpRequest-style agent, originated from a fixed-line ISP address with a clean reputation, and there are no recent related alerts or events. The accessed files include HR and financial documents which are sensitive, but the combination of integration application context, scripted user-agent, business-hour timing, and benign IP indicators suggests this is likely an authorized automated sync rather than malicious exfiltration."
+  },
+  "classification": "LP"
+}
+

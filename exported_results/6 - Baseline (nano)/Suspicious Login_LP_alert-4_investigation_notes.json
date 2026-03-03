@@ -1,0 +1,14 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-110",
+    "Start Time": "2025-08-01T08:30:00.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "83.110.250.231",
+    "Destination IP": "13.80.23.7",
+    "Endpoint": "F12347565",
+    "User": "riina.maasik@client.ee",
+    "Playbook Used": "N/A",
+    "Description": "An anomalous Office 365 login occurred from Dubai, UAE, which is outside the user's typical login region. The authentication succeeded with MFA enabled and originated from a Windows endpoint contacting a Microsoft 365 service endpoint. Given MFA and the absence of additional suspicious activity in the available evidence, this is considered Low Priority pending confirmation of travel activity."
+  },
+  "classification": "LP"
+}

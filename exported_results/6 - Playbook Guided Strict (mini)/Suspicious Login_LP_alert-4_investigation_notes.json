@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-110",
+    "Start Time": "2025-08-01T08:30:00.000Z",
+    "Alert Name": "User Login Location Anomaly",
+    "Source IP": "83.110.250.231",
+    "Destination IP": "13.80.23.7",
+    "Endpoint": "F12347565",
+    "User": "riina.maasik@client.ee",
+    "Playbook Used": "Suspicious Login Triage",
+    "Has MFA": true,
+    "Company Managed and Compliant": true,
+    "ISP Name": "Emirates Telecommunications Corporation",
+    "IP Reputation Score": "0/100",
+    "Recent Events": "2025-07-26 Tallinn (success); 2025-07-30 Muscat (success, prior alert SOC-105 closed as false positive — user on vacation).",
+    "Description": "An anomalous successful Office 365 login was observed from Dubai, UAE for the user on a company-managed Windows endpoint with MFA enabled. The source IP is assigned to Emirates Telecommunications Corporation, has a low abuse score (0/100), and is not listed as a VPN/proxy. Recent successful logins include Tallinn and Muscat, and a prior similar alert from Muscat was closed after client confirmation that the user was traveling. Given MFA, a managed compliant device, benign IP reputation, and confirmed recent travel-related activity, this event is considered Low Priority because the indicators align with legitimate travel-related access rather than signs of active compromise."
+  },
+  "classification": "LP"
+}

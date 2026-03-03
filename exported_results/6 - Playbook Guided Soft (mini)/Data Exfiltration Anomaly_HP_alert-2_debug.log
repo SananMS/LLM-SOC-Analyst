@@ -1,0 +1,55 @@
+=== DEBUG SESSION START: 2026-03-03T01:16:28.941693+00:00 UTC ===
+
+[PLAYBOOK SELECTION]
+Alert Name: Data Exfiltration Anomaly
+Selected Playbook: excessive_downloads.json
+
+[TOOL CALL]
+Tool: lookup_users
+Arguments: {"emails": ["Aleksei.Ivanov@globalcorp.ee"]}
+
+[TOOL RESPONSE]
+[
+  {
+    "email": "Aleksei.Ivanov@globalcorp.ee",
+    "full_name": "Aleksei Ivanov",
+    "department": "Engineering",
+    "role": "Senior Software Developer"
+  }
+]
+
+[TOOL CALL]
+Tool: get_recent_events
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent events found.
+
+[TOOL CALL]
+Tool: get_recent_similar_alerts
+Arguments: {}
+
+[TOOL RESPONSE]
+No recent similar alerts found.
+
+[FINAL LLM OUTPUT]
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-12880",
+    "Start Time": "2026-01-31T23:04:12.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "145.14.37.179",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "HOST-VPN-PRIV-02",
+    "User": "Aleksei.Ivanov@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "User Role": "Senior Software Developer",
+    "Department": "Engineering",
+    "File Count": 1120,
+    "Baseline 24h": 10,
+    "Local Time": "2026-02-01T01:04:12+02:00 (Tallinn local time)",
+    "Description": "A high volume (1,120) of file downloads was observed from the restricted SharePoint site https://globalcorp.sharepoint.com/sites/Global_HR_Restricted/, including payroll, executive performance reviews, and bank account exports. The activity occurred at 01:04 local time in Tallinn and represents a large deviation from the user's 24-hour baseline; the user's role (Senior Software Developer in Engineering) does not have an apparent business justification for accessing HR/Finance restricted data. No recent related events or similar alerts were found, and the combination of volume, sensitive content, off-hours timing, and role mismatch supports classification as High Priority for further investigation."
+  },
+  "classification": "HP"
+}
+

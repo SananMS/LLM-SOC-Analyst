@@ -5,6 +5,7 @@
     "start_time": "2025-07-30T10:15:00.000Z",
     "source_ip": "188.135.50.141",
     "destination_ip": "13.80.23.7",
+    "endpoint": "F12347565",
     "user": "riina.maasik@client.ee",
     "geo_location": {
       "city": "Muscat",

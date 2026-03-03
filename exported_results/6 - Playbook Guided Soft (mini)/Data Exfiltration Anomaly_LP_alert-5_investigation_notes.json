@@ -1,0 +1,19 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-11500",
+    "Start Time": "2026-01-05T10:33:46.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "194.126.101.43",
+    "Destination IP": "40.108.201.15",
+    "Endpoint": "SRV-PROD",
+    "User": "globalcorp@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Application": "ChatGPT",
+    "User Agent": "Python/3.12 aiohttp/3.11.18",
+    "File Count": 300,
+    "Baseline 24h": 0,
+    "Recent Similar Alert": "SOC-11300 (closed as FP; client confirmed ChatGPT automated synchronization)",
+    "Description": "An automated client named ChatGPT using a Python aiohttp user agent downloaded 300 SharePoint files from SRV-PROD at 2026-01-05T10:33:46Z (local time ~12:33 in Tallinn). The activity matches a recent, similar alert that the client validated as an authorized ChatGPT-driven synchronization and the access pattern and user agent indicate scripted automated behavior rather than interactive user exfiltration. Because the downloads occurred during local business hours, match a previously confirmed false positive, and show clear automation indicators, the activity is assessed as low risk."
+  },
+  "classification": "LP"
+}
