@@ -1,0 +1,18 @@
+SOC-2281
+
+Start Time: 2026-01-25T14:40:12.000Z
+Source IP: 10.10.15.22
+
+Alert Name: Suspicious PowerShell Script Execution
+
+Endpoint: DC-EAST-01
+User: SYSTEM
+User ID: S-1-5-18
+OS: Windows Server 2022 Datacenter
+Playbook Used: Suspicious PowerShell Triage
+Scriptblock Summary: PowerShell script enumerates Active Directory domain controller and domain password policies (Get-ADDomainController, Get-ADDefaultDomainPasswordPolicy, Get-ADFineGrainedPasswordPolicy) and outputs JSON.
+Related Alert(s): SOC-2105 (identical script on same host; previously closed as false positive after client confirmed it is part of a daily automated compliance check)
+
+Description: A PowerShell script executed by the SYSTEM account on DC-EAST-01 that enumerates AD domain controllers and domain password policy settings and returns JSON. The script's behavior and execution context on a domain controller are consistent with legitimate automated compliance or inventory tasks, and no file paths, process hashes, or external IP indicators of compromise were observed. A prior identical alert on this host was validated by the client as a scheduled compliance check, so this activity is considered Low Priority.
+
+Classification: LP

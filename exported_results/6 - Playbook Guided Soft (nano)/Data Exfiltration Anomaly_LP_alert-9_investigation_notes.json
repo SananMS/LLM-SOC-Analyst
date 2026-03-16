@@ -1,0 +1,18 @@
+{
+  "investigation_notes": {
+    "Alert ID": "SOC-20114",
+    "Start Time": "2026-03-01T15:10:00.000Z",
+    "Alert Name": "Data Exfiltration Anomaly",
+    "Source IP": "90.190.150.10",
+    "Destination IP": "40.108.201.15",
+    "User": "acc_svc@globalcorp.ee",
+    "Playbook Used": "Excessive Download Triage",
+    "Description": "An unusually high volume of SharePoint file downloads was detected for user acc_svc@globalcorp.ee, totaling 294 files in the last 24 hours, far above the 24-hour baseline of 25. The activity originates from external IP 90.190.150.10 targeting the internal SharePoint site at globalcorp.sharepoint.com and involves sensitive payroll and financial documents. The user agent appears outdated and the action is associated with a service account, raising suspicion of automated or non-user-driven access. Given the combination of external source, high data volume to a finance site, and the involvement of a service account with access to payroll and invoices, this aligns with potential data exfiltration and warrants HP classification.",
+    "Geo Location": "Tallinn, Estonia",
+    "Data Volume": "294 files downloaded; baseline 25 in 24h",
+    "Sample Paths Context": "Finanzwesen/Personalabrechnung/Exporte/; Finanzwesen/Berichterstattung/Archiv/; Finanzwesen/Reingang/Eingangsrechnungen/; Finanzwesen/Gehälter/Monatslisten/; Finanzwesen/Steuern/Meldungen/",
+    "Notable Sample Files": "Gehaltsabrechnung_Februar_Export.csv; Jahresabschluss_2025_Entwurf.pdf; Kreditorenrechnung_DE_9941.pdf; Mitarbeiterliste_Abrechnung.xlsx; Umsatzsteuer_Voranmeldung_Q1.pdf",
+    "Application Involved": "Workday MSGraph"
+  },
+  "classification": "HP"
+}

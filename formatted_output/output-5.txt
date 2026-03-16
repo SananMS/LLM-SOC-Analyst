@@ -1,0 +1,17 @@
+SOC-54921
+
+Start Time: 2026-02-18T16:15:45.000Z
+Source IP: 185.212.131.54
+
+Alert Name: Brand Logo Detection
+
+Playbook Used: Visual Brand Abuse & Logo Triage
+Target Brand: Vitalis Healthcare
+Target Brand Domain: vitalis.com
+Scanned URL: https://www.vitalis-care-verification.net/update-info
+Domain Age: 1 day
+Abuse Confidence Score: 0/100
+
+Description: A newly registered domain (1 day old) is hosting a page that displays a high-fidelity Vitalis Healthcare logo and a multi-step form requesting sensitive personal information (Full Name, DOB, SSN, Member ID), which is consistent with credential/PII harvesting. The logo in the header closely matches the legitimate reference logo in placement and color, and the page uses brand language and copyright text to increase perceived legitimacy. Although the hosting IP shows a low abuse score, the combination of a recently created domain, non-matching registration name, and an active data-collection form indicates likely impersonation and elevated risk. Based on the visual fidelity, intent to collect sensitive data, and domain recency, this alert is classified as High Priority.
+
+Classification: HP

@@ -189,7 +189,7 @@ async def soc_analyst_role(alert_json, playbook_content, playbook_filename, mcp_
 
     if general_mode:
         system_instruction = (
-            f"You are a Tier-1 SOC Analyst. Output JSON only matching this structure: {json.dumps(template_guide)}\n\n"
+            f"You are a Tier-1 SOC Analyst. Output JSON only: {json.dumps(template_guide)}\n\n"
             f"Note: {template_note}\n\n"
             "GENERAL TRIAGE GUIDANCE:\n"
             "Weigh all available evidence together. No single factor should determine the outcome. Consider how the indicators interact and whether the overall picture is consistent with legitimate activity or suspicious behavior.\n\n"

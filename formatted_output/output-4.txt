@@ -1,0 +1,19 @@
+SOC-29481
+
+Start Time: 2026-02-17T11:05:17.000Z
+Source IP: 10.44.12.190
+
+Alert Name: Microsoft Defender: Potentially Unwanted Application Prevented
+
+Endpoint: WKSTN-DEV-772
+User: r.hunter@client.ee
+Playbook Used: EDR Malware Triage
+File Path: C:\repo-gradle\caches\9.1.2\a7b8c9d0e1f2\a7b8c9d0e1f2.lock
+SHA256: f4e3d2c1b0a9f8e7d6c5b4a3f2e1d0c9b8a7f6e5d4c3b2a1f0e9d8c7b6a5f4e3
+Remediation Status: prevented
+Process Parent: idea64.exe -> java.exe
+User Role: Robert Hunter, Junior Software Developer (Engineering)
+
+Description: Microsoft Defender prevented a detection of PUA 'MacKeeper' from a file located in a Gradle cache on WKSTN-DEV-772 and the remediation status is 'prevented'. Process lineage shows the file was accessed by java.exe launched under idea64.exe consistent with developer tooling, and the user is a junior developer which aligns with build activity. The file hash was not found in public reputation sources, there are no recent related events or similar alerts, and the source IP is an internal address with no abuse history. For these reasons this alert is considered Low Priority because the evidence points to a benign developer artifact or false positive rather than an active compromise.
+
+Classification: LP
