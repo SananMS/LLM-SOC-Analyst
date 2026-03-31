@@ -6,7 +6,6 @@ def export_soc_results(source_root="alerts", export_base="exported_results", fin
     """
     Exports SOC alert results including final_stats_report.json into a timestamped export folder.
     """
-    # Create timestamped export folder
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     export_dir = os.path.join(export_base, f"export_{timestamp}")
     os.makedirs(export_dir, exist_ok=True)
@@ -14,9 +13,7 @@ def export_soc_results(source_root="alerts", export_base="exported_results", fin
 
     files_moved = 0
 
-    # Walk through all alerts
     for root, dirs, files in os.walk(source_root):
-        # Only export these files
         targets = ["debug.log", "investigation_notes.json", "token_usage.json"]
 
         for filename in files:
@@ -28,23 +25,21 @@ def export_soc_results(source_root="alerts", export_base="exported_results", fin
                 source_file = os.path.join(root, filename)
                 destination_file = os.path.join(export_dir, new_filename)
 
-                # Move the file
                 try:
                     shutil.move(source_file, destination_file)
                     files_moved += 1
                 except Exception as e:
-                    print(f"⚠️ Error moving {source_file}: {e}")
+                    print(f"Error moving {source_file}: {e}")
 
-    # Copy final_stats_report.json into the export folder (no merging or modification)
     if os.path.exists(final_stats_file):
         try:
             shutil.copy(final_stats_file, os.path.join(export_dir, final_stats_file))
             files_moved += 1
         except Exception as e:
-            print(f"⚠️ Error copying {final_stats_file} to export folder: {e}")
+            print(f"Error copying {final_stats_file} to export folder: {e}")
 
     print(f"--- Export Complete! Moved {files_moved} files. ---")
-    print(f"📊 final_stats_report.json copied to {export_dir}")
+    print(f"final_stats_report.json copied to {export_dir}")
 
 
 if __name__ == "__main__":

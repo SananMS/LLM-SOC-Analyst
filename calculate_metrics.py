@@ -2,7 +2,6 @@ import os
 import re
 import json
 
-# ─── ALERT CATEGORIES ────────────────────────────────────────────────────────
 ALERT_CATEGORIES = [
     "Data Exfiltration Anomaly",
     "DNS Tunneling Anomaly",
@@ -29,14 +28,12 @@ def parse_filename(filename):
     """
     fn = os.path.basename(filename)
 
-    # Match _HP_ or _LP_ followed by alert-N
     match = re.search(r'_(HP|LP)_alert-\d+', fn, re.IGNORECASE)
     if not match:
         return None, None
 
     ground_truth = match.group(1).upper()
 
-    # Category is everything before the _HP_ or _LP_ match, spaces restored
     raw_prefix = fn[:match.start()].rstrip("_")
     category = raw_prefix.replace("_", " ")
 
@@ -85,11 +82,9 @@ def process_run_folder(run_folder_path):
                 print(f"  WARNING: Could not read prediction from: {filename}")
                 continue
 
-            # Initialise category entry
             if category not in per_category:
                 per_category[category] = {"TP": 0, "TN": 0, "FP": 0, "FN": 0, "total": 0}
 
-            # Confusion matrix logic — HP is the positive class
             if ground_truth == "HP" and predicted == "HP":
                 result = "TP"
             elif ground_truth == "LP" and predicted == "LP":
@@ -141,14 +136,12 @@ def print_results(folder_name, overall, per_category):
     print(f"  {folder_name}")
     print(f"{'=' * 65}")
 
-    # Confusion matrix
     print(f"\n  Confusion Matrix (HP = positive class):")
     print(f"  {'':25} {'Classified LP':>14} {'Classified HP':>14}")
     print(f"  {'Ground Truth LP':25} {'TN = ' + str(tn):>14} {'FP = ' + str(fp):>14}")
     print(f"  {'Ground Truth HP':25} {'FN = ' + str(fn):>14} {'TP = ' + str(tp):>14}")
     print(f"  Total alerts: {total}")
 
-    # Metric derivations
     print(f"\n  Derived Metrics:")
     print(f"  Accuracy  = (TP + TN) / total     = ({tp} + {tn}) / {total}            = {metrics['accuracy']}%")
     print(f"  Precision = TP / (TP + FP)         = {tp} / ({tp} + {fp})              = {metrics['precision']}%")
@@ -159,7 +152,6 @@ def print_results(folder_name, overall, per_category):
     r = metrics["recall"] / 100
     print(f"  F1        = 2*(P*R)/(P+R)          = 2*({metrics['precision']/100:.4f}*{r:.4f})/({metrics['precision']/100:.4f}+{r:.4f}) = {metrics['f1']}%")
 
-    # Per-category breakdown
     print(f"\n  Per-Category Breakdown:")
     print(f"  {'Category':<60} {'TP':>4} {'TN':>4} {'FP':>4} {'FN':>4} {'Acc%':>6} {'FNR%':>6}")
     print(f"  {'-' * 92}")
@@ -173,7 +165,6 @@ def print_results(folder_name, overall, per_category):
                 f"{m['accuracy']:>6} {m['fnr']:>6}"
             )
 
-    # Warn about unrecognised categories
     unrecognised = [c for c in per_category if c not in ALERT_CATEGORIES]
     if unrecognised:
         print(f"\n  Unrecognised categories (check filename format):")
@@ -222,7 +213,6 @@ def process_exported_results(exported_results_path):
             }
         }
 
-    # Cross-configuration summary table
     print(f"\n{'=' * 95}")
     print("  CROSS-CONFIGURATION SUMMARY")
     print(f"{'=' * 95}")
@@ -236,7 +226,6 @@ def process_exported_results(exported_results_path):
         )
     print(f"{'=' * 95}")
 
-    # Save full JSON report
     report_path = os.path.join(exported_results_path, "classification_report.json")
     with open(report_path, "w", encoding="utf-8") as f:
         json.dump(all_results, f, indent=2)

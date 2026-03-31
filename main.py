@@ -9,8 +9,6 @@ from mcp.client.stdio import stdio_client
 import base64
 
 client = OpenAI()
-
-# Context variables for local folder evidence [cite: 244, 259]
 current_folder_events = ""
 current_folder_alerts = ""
 
@@ -21,7 +19,7 @@ stats = {
     "total_input_tokens": 0,
     "total_time_seconds": 0,
     "total_output_tokens": 0,
-    "use_cases": {}  # Format: {"usecase1": {"input": 0, "output": 0, "count": 0}}
+    "use_cases": {} 
 }
 
 def encode_image(image_path):
@@ -37,7 +35,6 @@ def print_summary():
     print(f"Accuracy: {accuracy:.2f}%")
     print("-" * 40)
     
-    # Calculate Overall Averages
     if stats["total"] > 0:
         avg_in = stats["total_input_tokens"] / stats["total"]
         avg_out = stats["total_output_tokens"] / stats["total"]
@@ -75,7 +72,6 @@ async def select_playbook(alert_data, playbook_dir, llm_model="gpt-5-mini"):
     """Round 1: Let the LLM choose the correct JSON file based on summaries."""
     playbook_summaries = []
     
-    # Collect name and description from every json in the playbook folder
     for filename in os.listdir(playbook_dir):
         if filename.endswith(".json"):
             with open(os.path.join(playbook_dir, filename), "r", encoding="utf-8") as f:
@@ -122,7 +118,6 @@ async def soc_analyst_role(alert_json, playbook_content, playbook_filename, mcp_
         "classification": "LP (Low Priority) or HP (High Priority). Only write LP or HP for this part and no need for full form."
     }
 
-    # Note to LLM
     template_note = (
         "Use the template above as a guide. If a specific field within the template guide "
         "does not exist or cannot be found in the alert evidence, do not include it in the final output. "
@@ -144,7 +139,6 @@ async def soc_analyst_role(alert_json, playbook_content, playbook_filename, mcp_
         "Output the final JSON in a readable, beautified format with proper indentation, not as a single-line minified string."
     )
 
-    # Construct the user content dynamically
     user_content = [
         {
             "type": "text", 
@@ -152,9 +146,7 @@ async def soc_analyst_role(alert_json, playbook_content, playbook_filename, mcp_
         }
     ]
 
-    # 2. Check if an EVIDENCE image exists in the alert folder
     if image_path and os.path.exists(image_path):
-        # A. Encode and add the Evidence Screenshot
         base64_evidence = encode_image(image_path)
         user_content.append({
             "type": "text",
@@ -165,7 +157,6 @@ async def soc_analyst_role(alert_json, playbook_content, playbook_filename, mcp_
             "image_url": {"url": f"data:image/jpeg;base64,{base64_evidence}"}
         })
 
-        # B. ONLY if the evidence exists, add the REFERENCE logo for comparison
         ref_logo_path = "vitalis_icon.jpg"
         if os.path.exists(ref_logo_path):
             base64_ref = encode_image(ref_logo_path)
@@ -217,18 +208,15 @@ async def soc_analyst_role(alert_json, playbook_content, playbook_filename, mcp_
         os.getcwd(),
         "[SOC ANALYST PROMPT]\n" + json.dumps(messages, indent=2)
     )
-    # Initial call
+
     response = client.chat.completions.create(model=llm_model, messages=messages,tools=tools)
     total_in += response.usage.prompt_tokens
     total_out += response.usage.completion_tokens
     msg = response.choices[0].message
 
-    # Keep responding until no more tool calls
     while msg.tool_calls:
-        # 1. Append the model's request to the history
         messages.append(msg)
 
-        # Define which tools live on the MCP server to avoid crashing on hallucinations
         mcp_tool_whitelist = ["check_ip_reputation", "check_hash_reputation", "lookup_users", "get_domain_age"]
 
         for tc in msg.tool_calls:
@@ -237,10 +225,7 @@ async def soc_analyst_role(alert_json, playbook_content, playbook_filename, mcp_
 
             write_debug(root_path, f"[TOOL CALL]\nTool: {f_name}\nArguments: {json.dumps(f_args)}")
             
-            # 2. Merged Routing Logic
             if f_name in mcp_tool_whitelist:
-
-                # Call the MCP server only for whitelisted tools
                 try:
                     mcp_res = await mcp_session.call_tool(f_name, arguments=f_args)
                     tool_output = mcp_res.content[0].text
@@ -254,12 +239,10 @@ async def soc_analyst_role(alert_json, playbook_content, playbook_filename, mcp_
                 tool_output = get_recent_similar_alerts()
             
             else:
-                # This handles hallucinated tool names
                 tool_output = f"Error: The tool '{f_name}' is not available. Please use only provided tools."
 
             write_debug(root_path, f"[TOOL RESPONSE]\n{tool_output}")
 
-            # 3. Append the tool result as a 'tool' role message
             messages.append({
                 "role": "tool",
                 "tool_call_id": tc.id,
@@ -267,13 +250,11 @@ async def soc_analyst_role(alert_json, playbook_content, playbook_filename, mcp_
                 "content": str(tool_output)
             })
 
-        # 4. Call the model again with the updated message history
         response = client.chat.completions.create(model=llm_model, messages=messages, tools=tools)
         total_in += response.usage.prompt_tokens
         total_out += response.usage.completion_tokens
         msg = response.choices[0].message
 
-    # Done, return the final content
     write_debug(root_path, "[FINAL LLM OUTPUT]\n" + msg.content)
     return msg.content, total_in, total_out
 
@@ -282,11 +263,8 @@ async def process_dataset(root_dir, playbook_dir, mcp_session, general_mode=Fals
     
     for root, dirs, files in os.walk(root_dir):
         if "alert.json" in files:
-            # --- NEW: Identify the Use Case (Folder Name) ---
-            # Splits the path and picks the folder name immediately under 'alerts'
             parts = os.path.normpath(root).split(os.sep)
             try:
-                # Assuming root_dir is 'alerts', parts[1] is the use case
                 use_case = parts[parts.index(os.path.basename(root_dir)) + 1]
             except (ValueError, IndexError):
                 use_case = "unclassified"
@@ -296,7 +274,7 @@ async def process_dataset(root_dir, playbook_dir, mcp_session, general_mode=Fals
                     "input": 0,
                     "output": 0,
                     "count": 0,
-                    "time": 0   # NEW
+                    "time": 0 
                 }
 
             this_alert_in = 0
@@ -310,12 +288,10 @@ async def process_dataset(root_dir, playbook_dir, mcp_session, general_mode=Fals
             with open(os.path.join(root, "alert.json"), "r", encoding="utf-8") as f:
                 alert_data = json.load(f)
             
-            # --- ROUND 1: Selection Logic (UPDATED to capture tokens) ---
             playbook_content = None
             pb_filename = "General Triage (No Playbook)"
 
             if not general_mode:
-                # Capture the three return values: filename, input_tokens, output_tokens
                 raw_pb_filename, in_t, out_t = await select_playbook(alert_data, playbook_dir, llm_model=llm_model)
                 this_alert_in += in_t
                 this_alert_out += out_t
@@ -332,7 +308,6 @@ async def process_dataset(root_dir, playbook_dir, mcp_session, general_mode=Fals
 
             write_debug(root, f"[PLAYBOOK SELECTION]\nAlert Name: {alert_data.get('alert_name')}\nSelected Playbook: {pb_filename}")
 
-            # Load local evidence (keeping your existing logic)
             current_folder_events = (open(os.path.join(root, "recent_events.json"), "r", encoding="utf-8", errors="replace").read() if "recent_events.json" in files else "")
             current_folder_alerts = (open(os.path.join(root, "recent_alerts.json"), "r", encoding="utf-8", errors="replace").read() if "recent_alerts.json" in files else "")
 
@@ -342,7 +317,6 @@ async def process_dataset(root_dir, playbook_dir, mcp_session, general_mode=Fals
                     image_file = os.path.join(root, f)
                     break
 
-            # --- ROUND 2: Triage (UPDATED to capture tokens) ---
             result, in_t, out_t = await soc_analyst_role(
                 alert_data, playbook_content, pb_filename, mcp_session, root, image_file, general_mode=general_mode, llm_model=llm_model
             )
@@ -367,7 +341,6 @@ async def process_dataset(root_dir, playbook_dir, mcp_session, general_mode=Fals
                 f"Time: {alert_duration:.2f} sec"
             )
 
-            #  Write token usage to a file in the folder ---
             with open(os.path.join(root, "token_usage.json"), "w", encoding="utf-8") as f:
                 json.dump({
                     "input_tokens": this_alert_in,
@@ -376,7 +349,6 @@ async def process_dataset(root_dir, playbook_dir, mcp_session, general_mode=Fals
                     "use_case": use_case
                 }, f, indent=2)
 
-            # --- CLEANUP AND CLASSIFICATION (Original Logic) ---
             clean_result = result.strip()
             if clean_result.startswith("```json"):
                 clean_result = clean_result.replace("```json", "", 1).replace("```", "", 1).strip()
@@ -386,7 +358,7 @@ async def process_dataset(root_dir, playbook_dir, mcp_session, general_mode=Fals
             try:
                 parsed_result = json.loads(clean_result)
             except json.JSONDecodeError as e:
-                print(f"❌ FAILED TO PARSE LLM RESPONSE in {root}")
+                print(f"FAILED TO PARSE LLM RESPONSE in {root}")
                 continue 
             
             actual = parsed_result.get("classification", "").upper()
@@ -397,10 +369,10 @@ async def process_dataset(root_dir, playbook_dir, mcp_session, general_mode=Fals
             stats["total"] += 1
             if actual == expected:
                 stats["correct"] += 1
-                print(f"✅ CORRECT: {alert_data.get('alert_name')} | Folder: {expected} (Got: {actual})")
+                print(f"CORRECT: {alert_data.get('alert_name')} | Folder: {expected} (Got: {actual})")
             else:
                 stats["incorrect"] += 1
-                print(f"❌ INCORRECT: {alert_data.get('alert_name')} | Expected: {expected} (Got: {actual})")
+                print(f"INCORRECT: {alert_data.get('alert_name')} | Expected: {expected} (Got: {actual})")
 
             with open(os.path.join(root, "investigation_notes.json"), "w", encoding="utf-8") as f:
                 json.dump(parsed_result, f, ensure_ascii=False, indent=2)
@@ -439,15 +411,15 @@ async def main():
         async with ClientSession(read, write) as session:
             await session.initialize()
             if args.strict:
-                playbook_dir = "playbooks_test"
+                playbook_dir = "playbooks_strict"
                 general_mode = False
 
             elif args.soft:
-                playbook_dir = "playbooks_test_soft"
+                playbook_dir = "playbooks_soft"
                 general_mode = False
 
             elif args.general:
-                playbook_dir = None  # Not used
+                playbook_dir = None
                 general_mode = True
 
             else:
@@ -487,7 +459,7 @@ async def main():
 
             with open("final_stats_report.json", "w", encoding="utf-8") as f:
                 json.dump(summary_report, f, indent=2)
-            print("📝 Final summary report saved to final_stats_report.json")
+            print("Final summary report saved to final_stats_report.json")
 
 if __name__ == "__main__":
     asyncio.run(main())

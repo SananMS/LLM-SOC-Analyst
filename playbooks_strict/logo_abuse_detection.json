@@ -1,56 +1,50 @@
 {
-  "playbook_name": "Visual Brand Abuse & Logo Triage",
-  "description": "LLM-based SOP for evaluating potential logo abuse detections. Prioritizes differentiating between authorized partner usage (LP) and malicious brand impersonation (HP) using computer vision metadata, domain reputation, and visual intent analysis.",
-  "steps": [
-    {
-      "step_id": 1,
-      "task": "Extract Visual & Domain Metadata",
-      "action": "Parse alert JSON for 'target_brand', 'target_brand_domain', 'matching_confidence', 'scanned_url', 'domain_ip', 'domain_age', and 'screenshot_path'.",
-      "logic": "Establishes the baseline. The core task is then to determine the context of that presence."
-    },
-    {
-      "step_id": 2,
-      "task": "Evaluate Domain Trust & Authority",
-      "action": "Analyze 'domain_age' and 'registrar'. Check if the domain is a known partner, a subsidiary, or an industry-relevant entity.",
-      "logic": "Established domains with transparent registrar data are significantly less likely to be hosting one-off phishing pages. Quite recent domains are high-risk indicators."
-    },
-    {
-      "step_id": 3,
-      "task": "Analyze Visual Intent & Page Layout",
-      "action": "Perform a comparative analysis of the attached webpage screenshot against the brand's official web presence. Inspect the image for high-risk elements: 1) Credential input fields, 2) Urgent security/account lures, 3) PII collection forms, or 4) Layout/CSS cloning. Manually verify if the 'scanned_url' in the browser address bar matches the visual branding.",
-      "logic": "Authorized usage (LP) is typically evidenced by the logo appearing in partner galleries, footers, or press releases on established domains. Malicious intent (HP) is indicated if the screenshot shows a replica of the brand's login/portal interface hosted on an unauthorized or typosquatted domain."
-    },
-    {
-      "step_id": 4,
-      "task": "Direct Logo Comparison & Verification",
-      "action": "Compare the provided 'REFERENCE LOGO' against the 'EVIDENCE SCREENSHOT'. Determine if the evidence uses the official brand assets accurately (Pixel-Perfect) or if the detection is based on a generic shape/incorrect match.",
-      "logic": "If the reference logo and evidence logo match perfectly but are on an unauthorized domain with a login box, this is High Priority (HP). If the logo is visually different or scaled/placed in a 'Partners' grid, it is likely Low Priority (LP)."
-    },
-    {
-      "step_id": 5,
-      "task": "Cross-Reference with Authorized Usage List",
-      "action": "MAKE SURE TO INVOKE 'get_recent_similar_alerts' and internal partner databases to verify if the 'scanned_url' or parent domain is a pre-approved third-party collaborator.",
-      "tool_integration": "get_recent_similar_alerts",
-      "logic": "Consistency in detection across the environment for a specific partner domain typically confirms a benign, persistent relationship (LP)."
-    },
-    {
-      "step_id": 6,
-      "task": "Infrastructure & Hosting Reputation Check",
-      "action": "MAKE SURE TO INVOKE 'check_ip_reputation' for the 'domain_ip' associated with the scanned webpage.",
-      "tool_integration": "check_ip_reputation",
-      "logic": "IPs associated with known phishing bulletproof hosters or those with high abuse scores reinforce a malicious verdict. However, reputable cloud hosting can be used by both legitimate partners and attackers."
-    },
-    {
-      "step_id": 7,
-      "task": "Final Triage Classification",
-      "action": "Assign triage priority (LP or HP) by weighing visual intent, brand context, and technical reputation.",
-      "logic": "Classification rules:\n\n1. **Low Priority (LP)** if:\n   - **Partner/Affiliate Context:** The logo appears alongside other legitimate brands.\n   - **Informational/Passive:** The page is a blog, news article, or professional site with no interactive data fields.\n   - **Technical False Positive:** The logo is incorrectly detected or is a generic shape similar to the brand logo but lacks any brand-specific text.\n   **Note:** For all LP cases above, the registration date of the domain does not matter and should not trigger an HP classification if the visual intent is clearly non-malicious.\n\n2. **High Priority (HP)** if:\n   - **Deceptive Intent:** The page is a pixel-perfect clone or uses branding to create a sense of urgency.\n   - **Credential/Data Harvesting:** The page features a login portal, MFA prompt, or data entry form requesting sensitive information (PII).\n   - **Malicious Infrastructure:** The domain is newly registered  AND shows suspicious or deceptive content, is typosquatted, or 'check_ip_reputation' returns a high malicious score.\n   - **Impersonation:** The site represents itself as the official brand but is hosted on unauthorized or suspicious infrastructure."
-    },
-    {
-      "step_id": 8,
-      "task": "Generate Investigation Summary",
-      "action": "Construct a concise Description field including: 1) Target brand matched (whether it was actually detected correctly or not), 2) Visual context, 3) Domain risk level, and 4) Final reasoning.",
-      "logic": "Ensures the summary clarifies if the alert was a false positive based on business context or an active brand threat."
-    }
-  ]
-}
+    "playbook_name": "Visual Brand Abuse & Logo Triage",
+    "description": "LLM-based SOP for evaluating potential logo abuse detections. Prioritizes differentiating between authorized usage and malicious brand impersonation using computer vision metadata, domain reputation, and visual intent analysis.",
+    "steps": [
+      {
+        "step_id": 1,
+        "task": "Extract Visual & Domain Metadata",
+        "action": "Parse alert JSON for 'target_brand', 'target_brand_domain', 'matching_confidence', 'scanned_url', 'domain_ip', 'domain_age', and 'screenshot_path'.",
+        "logic": "Establish the baseline context of the detection. The core task is to determine whether the brand presence is authorized or potentially malicious."
+      },
+      {
+        "step_id": 2,
+        "task": "Evaluate Domain Trust & Authority",
+        "action": "Analyze 'domain_age' and 'registrar'.",
+        "logic": "Assess whether the domain has characteristics consistent with an established and transparent web presence, or whether it appears to have been recently created with limited history. Newly registered domains with no established reputation represent a higher risk than domains with a long and verifiable history."
+      },
+      {
+        "step_id": 3,
+        "task": "Analyze Visual Intent & Page Layout",
+        "action": "Inspect the image for elements that suggest data collection or user deception.",
+        "logic": "Consider whether the logo appears in a context consistent with legitimate use, or whether the page appears designed to impersonate the brand in order to collect credentials or sensitive information from users."
+      },
+      {
+        "step_id": 4,
+        "task": "Direct Logo Comparison & Verification",
+        "action": "Compare the provided 'REFERENCE LOGO' against the 'EVIDENCE SCREENSHOT'. Determine if the evidence uses the official brand assets accurately or if the detection is based on a generic or incorrectly matched visual.",
+        "logic": "Assess the degree of visual fidelity between the reference and detected logo, and consider what that fidelity implies in the context of the hosting domain and page intent."
+      },
+      {
+        "step_id": 5,
+        "task": "Cross-Reference with Historical Alerts",
+        "action": "MAKE SURE TO INVOKE 'get_recent_similar_alerts' for further context.",
+        "tool_integration": "get_recent_similar_alerts",
+        "logic": "Determine whether this domain has appeared in previous assessments and what conclusions were drawn. Prior activity on the same domain provides meaningful context for evaluating the current detection."
+      },
+      {
+        "step_id": 6,
+        "task": "Infrastructure & Hosting Reputation Check",
+        "action": "MAKE SURE TO INVOKE 'check_ip_reputation' for the 'domain_ip' associated with the scanned webpage.",
+        "tool_integration": "check_ip_reputation",
+        "logic": "Assess whether the hosting infrastructure is associated with malicious or abusive activity. Infrastructure reputation should be considered alongside visual and domain evidence rather than in isolation."
+      },
+      {
+        "step_id": 7,
+        "task": "Final Triage Classification",
+        "action": "Based on all evidence gathered in the previous steps, make a holistic triage judgment.",
+        "logic": "Weigh the visual intent of the page, the accuracy of the logo match, the domain's age and reputation, the hosting infrastructure, and the page's interactive elements together. No single factor should determine the outcome — consider whether the combined picture suggests legitimate brand usage or an attempt to deceive users by impersonating the brand. Classify the alert as High Priority (HP) if it represents a legitimate threat, requires further investigation, or warrants escalation — this includes notifying senior analysts or the client. Classify as Low Priority (LP) if the activity is a false positive or represents authorized behavior that requires no further action. Provide a clear written justification explaining which factors drove your decision and why."
+      }
+    ]
+  }

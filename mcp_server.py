@@ -5,10 +5,8 @@ import base64
 from dotenv import load_dotenv
 from mcp.server.fastmcp import FastMCP
 import json
-# Change these imports to be explicit
 from datetime import datetime, UTC
 
-# Load API keys from .env file
 load_dotenv()
 VT_API_KEY = os.getenv("VIRUSTOTAL_API_KEY")
 ABUSE_API_KEY = os.getenv("ABUSEIPDB_API_KEY")
@@ -39,7 +37,6 @@ async def get_domain_age(domain: str) -> str:
         creation_date = domain_info.get("creation_date", "Unknown")
         
         if creation_date != "Unknown":
-            # Now 'datetime.strptime' works because we imported the class specifically
             creation_dt = datetime.strptime(creation_date, "%Y-%m-%d").replace(tzinfo=UTC)
             now = datetime.now(UTC)
             age_days = (now - creation_dt).days
@@ -68,10 +65,8 @@ async def lookup_users(emails: list[str]) -> str:
         if not isinstance(users_db, list):
             return "Error: users.json format is invalid. Expected a list of user objects."
 
-        # 1. Normalize input emails to lowercase
         normalized_input_emails = [email.casefold() for email in emails]
 
-        # 2. Filter users by comparing normalized email strings
         found_users = [
             u for u in users_db 
             if u.get("email") and u.get("email").casefold() in normalized_input_emails
@@ -93,35 +88,30 @@ async def check_ip_reputation(ip: str) -> str:
     abuse_headers = {"Accept": "application/json", "Key": ABUSE_API_KEY}
     abuse_params = {"ipAddress": ip, "verbose": "true"}
     
-    # Updated to follow the vpnapi.io documentation: https://vpnapi.io/api/{IP}?key={API_KEY}
     vpnapi_url = f"https://vpnapi.io/api/{ip}"
     vpnapi_params = {"key": VPNAPI_KEY}
 
     async with httpx.AsyncClient() as client:
         try:
-            # Concurrent requests to both APIs for SOC efficiency
             abuse_task = client.get(abuse_url, headers=abuse_headers, params=abuse_params)
             vpnapi_task = client.get(vpnapi_url, params=vpnapi_params)
             
             abuse_resp, vpnapi_resp = await asyncio.gather(abuse_task, vpnapi_task)
             
-            # Process AbuseIPDB Data
             abuse_resp.raise_for_status()
             a_data = abuse_resp.json()["data"]
             score = a_data.get("abuseConfidenceScore", "N/A")
             usage_type = a_data.get("usageType", "Unknown")
             isp = a_data.get("isp", "Unknown")
 
-            # Process vpnapi.io Data based on provided documentation
             vpnapi_resp.raise_for_status()
             v_data = vpnapi_resp.json()
             
-            # Extract security flags as defined in the documentation
             security = v_data.get("security", {})
-            is_vpn = security.get("vpn", False)      # Determines if IP address is a VPN
-            is_proxy = security.get("proxy", False)  # Determines if IP address is a Proxy
-            is_tor = security.get("tor", False)      # Determines if IP address is a Tor Node
-            is_relay = security.get("relay", False)  # Determines if IP address is a Relay (ex. iCloud Private Relay)
+            is_vpn = security.get("vpn", False)      
+            is_proxy = security.get("proxy", False) 
+            is_tor = security.get("tor", False)     
+            is_relay = security.get("relay", False)  
             
             privacy_status = []
             if is_vpn: privacy_status.append("VPN")
@@ -131,7 +121,6 @@ async def check_ip_reputation(ip: str) -> str:
             
             privacy_label = ", ".join(privacy_status) if privacy_status else "Neither VPN nor Proxy nor Tor Node nor Relay"
 
-            # Formatted output for the LLM Analyst
             return (f"Source IP: {ip} | Abuse Confidence Score: {score}/100 | ISP: {isp} | "
                     f"Usage Type: {usage_type} | Privacy Status: {privacy_label}")
             
@@ -153,21 +142,13 @@ async def check_hash_reputation(hash: str) -> str:
             response.raise_for_status()
             data = response.json()["data"]["attributes"]
             
-            # 1. Engine Analysis Stats
             stats = data.get("last_analysis_stats", {})
             malicious = stats.get("malicious", 0)
             suspicious = stats.get("suspicious", 0)
-            
-            # 2. Community Reputation Score
-            # This is a net score calculated from community votes.
             community_reputation = data.get("reputation", 0)
-            
-            # 3. Community Votes breakdown (Optional but helpful)
             votes = data.get("total_votes", {})
             harmless_votes = votes.get("harmless", 0)
             malicious_votes = votes.get("malicious", 0)
-            
-            # Extract names
             file_name = data.get("meaningful_name") or (data.get("names", ["Unknown"])[0])
             
             return (

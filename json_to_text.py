@@ -2,7 +2,6 @@ import json
 import sys
 import os
 
-# Fields to exclude from the "details" section (handled separately)
 HEADER_FIELDS = {"Alert ID", "Start Time", "Source IP", "Destination IP", "Alert Name"}
 FOOTER_FIELDS = {"Description"}
 
@@ -12,7 +11,6 @@ def format_note(data: dict) -> str:
 
     lines = []
 
-    # ── Header block ─────────────────────────────────────────────
     alert_id = notes.get("Alert ID", "N/A")
     start_time = notes.get("Start Time", "N/A")
     source_ip = notes.get("Source IP")
@@ -32,7 +30,6 @@ def format_note(data: dict) -> str:
     lines.append(f"Alert Name: {alert_name}")
     lines.append("")
 
-    # ── Details block (everything else except Description) ───────
     skip_fields = HEADER_FIELDS | FOOTER_FIELDS
     for key, value in notes.items():
         if key in skip_fields:
@@ -40,14 +37,10 @@ def format_note(data: dict) -> str:
         lines.append(f"{key}: {value}")
 
     lines.append("")
-
-    # ── Description ──────────────────────────────────────────────
     description = notes.get("Description")
     if description:
         lines.append(f"Description: {description}")
         lines.append("")
-
-    # ── Classification ───────────────────────────────────────────
     lines.append(f"Classification: {classification}")
 
     return "\n".join(lines)
@@ -75,7 +68,6 @@ def process_folder(folder_path: str, output_folder: str = None):
                 input_path = os.path.join(root, filename)
 
                 if output_folder:
-                    # Preserve subfolder structure in output
                     rel_path = os.path.relpath(root, folder_path)
                     out_dir = os.path.join(output_folder, rel_path)
                     os.makedirs(out_dir, exist_ok=True)

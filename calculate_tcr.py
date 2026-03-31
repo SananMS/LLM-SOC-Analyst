@@ -2,7 +2,6 @@ import os
 import re
 import json
 
-# ─── BASE PLAYBOOK → EXPECTED TOOLS MAPPING ──────────────────────────────────
 PLAYBOOK_TOOLS = {
     "excessive_downloads.json":              {"lookup_users", "get_recent_events", "get_recent_similar_alerts"},
     "suspicious_dns_queries.json":           {"get_domain_age", "get_recent_events", "get_recent_similar_alerts"},
@@ -16,9 +15,7 @@ PLAYBOOK_TOOLS = {
     "suspicious_powershell.json":            {"check_hash_reputation", "check_ip_reputation", "get_recent_events", "get_recent_similar_alerts"},
 }
 
-# ─── FILENAME PREFIX → PLAYBOOK MAPPING ──────────────────────────────────────
-# Maps the category portion of the filename (before _HP_ or _LP_) to a playbook.
-# For EDR alerts the alert_key determines the sub-playbook separately below.
+
 FILENAME_PREFIX_PLAYBOOK = {
     "Data Exfiltration Anomaly":                                              "excessive_downloads.json",
     "DNS Tunneling Anomaly":                                                  "suspicious_dns_queries.json",
@@ -30,7 +27,6 @@ FILENAME_PREFIX_PLAYBOOK = {
     "EDR":                                                                    None,  # handled separately
 }
 
-# ─── EDR ALERT KEY → PLAYBOOK MAPPING ────────────────────────────────────────
 EDR_ALERT_PLAYBOOK = {
     "HP_alert-1": "EDR_malware_alerts.json",
     "HP_alert-2": "EDR_malware_alerts.json",
@@ -44,37 +40,26 @@ EDR_ALERT_PLAYBOOK = {
     "LP_alert-5": "EDR_malware_alerts.json",
 }
 
-# ─── PER-ALERT TOOL EXCEPTIONS ───────────────────────────────────────────────
-# Keyed by "filename_prefix|alert_key" where filename_prefix is the exact
-# category prefix used in the debug log filename.
-# Each value is the set of tools to REMOVE from the expected set.
-# Rules are independent and additive — merged automatically below.
-
 _EXC = {}
 
 def _ex(prefix, alert_key, tools):
     key = f"{prefix}|{alert_key}"
     _EXC.setdefault(key, set()).update(tools)
 
-# ── EDR: no check_ip_reputation ──────────────────────────────────────────────
 for _k in ["HP_alert-1", "HP_alert-2", "HP_alert-3", "HP_alert-5",
            "LP_alert-1", "LP_alert-3", "LP_alert-4", "LP_alert-5"]:
     _ex("EDR", _k, {"check_ip_reputation"})
 
-# ── EDR: no check_hash_reputation ────────────────────────────────────────────
 _ex("EDR", "HP_alert-2", {"check_hash_reputation"})
 
-# ── Suspicious Azure Network Activity: no lookup_users ───────────────────────
 for _k in ["LP_alert-1", "LP_alert-2"]:
     _ex("Suspicious Azure Network Activity", _k, {"lookup_users"})
 
-# ── Suspicious PowerShell Script: no check_hash_reputation ───────────────────
 for _k in ["HP_alert-1", "HP_alert-2", "HP_alert-3", "HP_alert-4", "HP_alert-5",
            "LP_alert-1", "LP_alert-2", "LP_alert-3", "LP_alert-4", "LP_alert-5",
            "LP_alert-10"]:
     _ex("Suspicious PowerShell Script", _k, {"check_hash_reputation"})
 
-# ── Suspicious PowerShell Script: no check_ip_reputation ─────────────────────
 for _k in ["HP_alert-1", "HP_alert-3", "HP_alert-4", "HP_alert-5",
            "HP_alert-8", "HP_alert-9",
            "LP_alert-1", "LP_alert-2", "LP_alert-3", "LP_alert-4", "LP_alert-5",
@@ -83,11 +68,7 @@ for _k in ["HP_alert-1", "HP_alert-3", "HP_alert-4", "HP_alert-5",
 
 TOOL_EXCEPTIONS = _EXC
 
-# ─── EDR PLAYBOOK SET ─────────────────────────────────────────────────────────
 EDR_PLAYBOOKS = {"EDR_malware_alerts.json", "EDR_anti_tampering.json", "EDR_identity_alerts.json"}
-
-
-# ─── HELPERS ─────────────────────────────────────────────────────────────────
 
 def extract_tools_called(log_text):
     """Extract all tool names actually invoked from a debug log."""
@@ -109,15 +90,12 @@ def parse_filename(filename):
     """
     fn = os.path.basename(filename)
 
-    # Match the HP/LP_alert-N part
     key_match = re.search(r'(HP|LP)_alert-(\d+)', fn, re.IGNORECASE)
     if not key_match:
         return None, None
 
     alert_key = f"{key_match.group(1).upper()}_alert-{key_match.group(2)}"
 
-    # Everything before the _HP_ or _LP_ is the category prefix
-    # Replace underscores with spaces to match the keys in FILENAME_PREFIX_PLAYBOOK
     raw_prefix = fn[:key_match.start()].rstrip("_")
     filename_prefix = raw_prefix.replace("_", " ")
 
@@ -129,16 +107,13 @@ def get_playbook(filename_prefix, alert_key, log_text):
     Determine the playbook for this alert.
     Priority: filename prefix → EDR sub-mapping → log fallback.
     """
-    # EDR is handled by alert key
     if filename_prefix == "EDR":
         return EDR_ALERT_PLAYBOOK.get(alert_key)
 
-    # Non-EDR: look up by filename prefix
     playbook = FILENAME_PREFIX_PLAYBOOK.get(filename_prefix)
     if playbook:
         return playbook
 
-    # Fallback: read from log playbook selection block
     pb_match = re.search(
         r'\[PLAYBOOK SELECTION\].*?Selected Playbook:\s*(\S+)',
         log_text, re.DOTALL
@@ -165,26 +140,19 @@ def get_expected_tools(filename, log_text):
     if not playbook:
         return "unknown", set(), filename_prefix or "", alert_key
 
-    # Base expected tools
     expected_tools = set(PLAYBOOK_TOOLS.get(playbook, set()))
 
-    # Determine exception prefix:
-    # EDR playbooks all use "EDR" as the exception prefix regardless of
-    # the specific sub-playbook or the raw alert name in the log.
     if playbook in EDR_PLAYBOOKS:
         exc_prefix = "EDR"
     else:
         exc_prefix = filename_prefix
 
-    # Apply exceptions
     exc_key = f"{exc_prefix}|{alert_key}"
     if exc_key in TOOL_EXCEPTIONS:
         expected_tools -= TOOL_EXCEPTIONS[exc_key]
 
     return playbook, expected_tools, filename_prefix or "", alert_key
 
-
-# ─── PROCESSING ──────────────────────────────────────────────────────────────
 
 def process_run_folder(run_folder_path):
     """
@@ -209,7 +177,6 @@ def process_run_folder(run_folder_path):
             with open(filepath, "r", encoding="utf-8", errors="replace") as f:
                 log_text = f.read()
 
-            # Skip general mode logs
             if ("General Triage Mode" in log_text or
                     "General Triage (No Playbook)" in log_text):
                 continue
@@ -287,7 +254,6 @@ def process_exported_results(exported_results_path):
                 print(f"      Missing:   {d['missing_tools']}")
                 print(f"      Extra:     {d['extra_tools']}")
 
-    # ─── SUMMARY TABLE ────────────────────────────────────────────────────────
     print("\n" + "=" * 70)
     print("TCR SUMMARY")
     print("=" * 70)
@@ -300,14 +266,10 @@ def process_exported_results(exported_results_path):
         )
     print("=" * 70)
 
-    # ─── SAVE JSON REPORT ─────────────────────────────────────────────────────
     report_path = os.path.join(exported_results_path, "tcr_report.json")
     with open(report_path, "w", encoding="utf-8") as f:
         json.dump(all_results, f, indent=2)
     print(f"\nFull report saved to: {report_path}")
-
-
-# ─── ENTRY POINT ─────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
     import sys

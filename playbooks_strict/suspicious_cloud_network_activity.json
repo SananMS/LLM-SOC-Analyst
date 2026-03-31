@@ -1,56 +1,56 @@
 {
-  "playbook_name": "Azure Network Security Group Modification Triage",
-  "description": "Standard Operating Procedure (SOP) for investigating changes to Azure NSGs by evaluating environment criticality, identity legitimacy, temporal alignment, and geolocation validity.",
-  "steps": [
-    {
-      "step_id": 1,
-      "task": "Extract Resource and Identity Context",
-      "action": "Identify the target NSG from 'evidence.resource_id' and the actor from the 'claims'.",
-      "requirement": "Check if 'request_body' exists. IF MISSING: Rely on 'operationName' and 'resource_id'. If 'request_body' is present, it is the primary source for rule delta analysis."
-    },
-    {
-      "step_id": 2,
-      "task": "User Profile and Role Verification",
-      "action": "Locate the 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn' field within the alert claims. Extract the ACTUAL email address value contained in that field and MAKE SURE TO pass it to the 'lookup_users' tool, if the mentioned field exists.",
-      "tool_integration": ["lookup_users"],
-      "logic": "Verify if the user's job title is consistent with infrastructure changes. If the user is found but their role is unrelated, consider a possible escalation to High Priority (HP)."
-    },
-    {
-      "step_id": 3,
-      "task": "Temporal Context and Working Hours Analysis",
-      "action": "Identify 'start_time' (UTC) and convert to local time (Estonian Time)",
-      "logic": "1. **Time Conversion:** Convert UTC to EET (UTC+2) or EEST (UTC+3). \n2. **Working Hours Check:** Evaluate if activity occurred within 08:00 - 19:00 Tallinn time. Originally working hours are 09:00 - 17:00, but in the case of alerts, 08:00 - 19:00 is the acceptable range. \n3. **Classification:** Admin activity during these hours is an LP indicator. Activity outside these hours is suspicious (HP)."
-    },
-    {
-      "step_id": 4,
-      "task": "Geolocation Verification",
-      "action": "Inspect source geolocation.",
-      "logic": "1. **Expected Location:** The default expected location for employees is Estonia (EE).\n2. **Anomaly Detection:** If the activity originates from a foreign country without a recorded business travel profile, escalate to High Priority (HP)."
-    },
-    {
-      "step_id": 5,
-      "task": "Environment Criticality Assessment",
-      "action": "Analyze the Resource Group name for environment markers.",
-      "logic": "1. **Production:** Presence of production environment markers increase criticality but does not force HP if identity and time are valid.\n 2. **Non-Production:** If it contains non-production environment markers, default toward LP unless the 'request_body' reveals sensitive port exposure."
-    },
-    {
-      "step_id": 6,
-      "task": "Rule Impact Analysis (Conditional)",
-      "action": "IF 'request_body' is present, parse 'properties.securityRules'.",
-      "logic": "1. ***Bypass Check:** If a rule is set to 'Allow' and provides unrestricted access to any sensitive management ports or broad port ranges without a reasonable justification that can be deduced, then consider escalating to High Priority (HP). \n2. **Hardening Check:** Adding 'Deny' rules is mostly an LP indicator."
-    },
-    {
-      "step_id": 7,
-      "task": "Correlate with Deployment Activity",
-      "action": "MAKE SURE TO INVOKE 'get_recent_events' and 'get_recent_similar_alerts'.",
-      "tool_integration": ["get_recent_events", "get_recent_similar_alerts"],
-      "logic": "Determine if this change correlates with an approved action or deployment window. Approved correlations support LP classification."
-    },
-    {
-      "step_id": 8,
-      "task": "Final Triage and Classification",
-      "action": "Evaluate the combination of user role, time, location, and environment.",
-      "logic": "Classification rules:\n\n1. **Low Priority (LP)** if:\n   - User job title matches the performed action AND within Estonian working hours AND from an Estonian or known IP.\n   - OR the change is clearly for hardening purposes.\n\n2. **High Priority (HP)** if:\n   - **The activity is from an unexpected Geolocation without any confirmation (Outside EE).**\n   - OR activity is outside working hours (08:00 - 19:00).\n   - OR sensitive ports are opened to the Internet."
-    }
-  ]
-}
+    "playbook_name": "Azure Network Security Group Modification Triage",
+    "description": "Standard Operating Procedure (SOP) for investigating changes to Azure NSGs by evaluating environment criticality, identity legitimacy, temporal alignment, and geolocation validity.",
+    "steps": [
+      {
+        "step_id": 1,
+        "task": "Extract Resource and Identity Context",
+        "action": "Identify the target NSG from 'evidence.resource_id' and the actor from the 'claims'.",
+        "requirement": "Check if 'request_body' exists. IF MISSING: Rely on 'operationName' and 'resource_id'. If 'request_body' is present, it is the primary source for rule delta analysis."
+      },
+      {
+        "step_id": 2,
+        "task": "User Profile and Role Verification",
+        "action": "Locate the 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn' field within the alert claims. Extract the ACTUAL email address value contained in that field and MAKE SURE TO pass it to the 'lookup_users' tool, if the mentioned field exists.",
+        "tool_integration": ["lookup_users"],
+        "logic": "Assess whether the user's role and responsibilities provide a plausible justification for performing infrastructure-level changes. A meaningful mismatch between the user's function and the action performed is a relevant risk indicator."
+      },
+      {
+        "step_id": 3,
+        "task": "Temporal Context and Working Hours Analysis",
+        "action": "Identify 'start_time' (UTC) and convert to Estonian local time.",
+        "logic": "Assess whether the activity occurred during hours consistent with normal administrative work patterns in Estonia. Activity outside of typical working hours warrants additional scrutiny, particularly when combined with other risk indicators."
+      },
+      {
+        "step_id": 4,
+        "task": "Geolocation Verification",
+        "action": "Inspect the source geolocation of the activity.",
+        "logic": "The organization primarily operates from Estonia. Assess whether the activity originates from a location consistent with the actor's known or expected working context. Activity from an unexpected location with no plausible business explanation is a meaningful risk indicator."
+      },
+      {
+        "step_id": 5,
+        "task": "Environment Criticality Assessment",
+        "action": "Analyze the Resource Group name for environment markers.",
+        "logic": "Consider whether the targeted environment is likely to host sensitive or business-critical workloads. Changes to higher-criticality environments carry greater potential impact and should be weighted accordingly, however the timing and the identity should also be considered within it."
+      },
+      {
+        "step_id": 6,
+        "task": "Rule Impact Analysis (Conditional)",
+        "action": "IF 'request_body' is present, parse 'properties.securityRules'.",
+        "logic": "Assess whether the rule change increases exposure by permitting broader or less restricted access, or whether it reduces exposure by tightening controls. Consider whether the scope of any access being permitted has a plausible and justifiable administrative purpose, or whether it appears to introduce unnecessary risk to the environment."
+      },
+      {
+        "step_id": 7,
+        "task": "Correlate with Deployment Activity",
+        "action": "MAKE SURE TO INVOKE 'get_recent_events' and 'get_recent_similar_alerts'.",
+        "tool_integration": ["get_recent_events", "get_recent_similar_alerts"],
+        "logic": "Determine whether this change correlates with recognized administrative or deployment activity. Changes that align with a broader pattern of approved work carry lower risk than isolated or unexplained modifications."
+      },
+      {
+        "step_id": 8,
+        "task": "Final Triage and Classification",
+        "action": "Based on all evidence gathered in the previous steps, make a holistic triage judgment.",
+        "logic": "Weigh the actor's identity and whether their role justifies the change, the timing of the activity relative to normal working patterns, the geographic origin and its plausibility, the criticality of the affected environment, the nature and scope of the rule change, and any corroborating or contradicting historical activity together. No single factor should determine the outcome — consider whether the combined picture is consistent with authorized administrative work or an unexpected and potentially unauthorized change to network security controls. Classify the alert as High Priority (HP) if it represents a legitimate threat, requires further investigation, or warrants escalation — this includes notifying senior analysts or the client. Classify as Low Priority (LP) if the activity is a false positive or represents authorized behavior that requires no further action. Provide a clear written justification explaining which factors drove your decision and why."
+      }
+    ]
+  }

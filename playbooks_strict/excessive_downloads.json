@@ -1,50 +1,44 @@
 {
-  "playbook_name": "Excessive Download Triage",
-  "description": "SOP for triaging data exfiltration or bulk download anomalies. Focuses on geolocation validation, user role correlation, file sensitivity, and temporal (time-based) anomalies.",
-  "steps": [
-    {
-      "step_id": 1,
-      "task": "Extract Alert Metadata & Evidence",
-      "action": "Parse alert JSON for 'user', 'source_ip', 'user_agent', 'workload', 'sample_files', 'sample_paths', 'start_time', and 'geo_location'.",
-      "logic": "Establishes the scope of the activity and provides the UTC timestamp needed for temporal analysis."
-    },
-    {
-      "step_id": 2,
-      "task": "Geographic & Temporal Context Validation",
-      "action": "Evaluate 'geo_location' and convert 'start_time' (UTC) to the local time of that geo-location.",
-      "logic": "Assess if the activity occurred during local business hours (08:00-19:00). Activity between 00:00 and 05:00 local time is considered high-risk regardless of role, as it can suggest automated scraping or an attacker operating from a different time zone."
-    },
-    {
-      "step_id": 3,
-      "task": "User Role & Identity Correlation",
-      "action": "MAKE SURE TO INVOKE 'lookup_users' using the 'user' provided in the alert.",
-      "tool_integration": "lookup_users",
-      "logic": "Compare the user's job title/department with the 'sample_paths' to check for access legitimacy."
-    },
-    {
-      "step_id": 4,
-      "task": "Historical & Environmental Correlation",
-      "action": "MAKE SURE TO INVOKE 'get_recent_events' and 'get_recent_similar_alerts' to understand context.",
-      "tool_integration": ["get_recent_events", "get_recent_similar_alerts"],
-      "logic": "Look for malicious patterns which, combined with bulk downloads, escalate the priority immediately."
-    },
-    {
-      "step_id": 5,
-      "task": "User-Agent & Application Analysis",
-      "action": "Examine 'user_agent' and 'application' to identify the access method (Browser vs. Script).",
-      "logic": "Automated tools like 'Python-requests' or 'curl' used on sensitive paths are likely suspicious indicators."
-    },
-    {
-      "step_id": 6,
-      "task": "Final Triage Classification",
-      "action": "Assign triage priority (LP or HP) based on role, location, time, and volume.",
-      "logic": "Classification rules:\n\n1. **Low Priority (LP)** if:\n   - Geolocation is within Europe and occurs during typical business hours.\n   - AND role matches data sensitivity.\n   - OR history shows this is a recurring monthly sync.\n   - OR activity appears to be part of some kind of integration or automated app process.\n\n2. **High Priority (HP)** if:\n   - Activity occurs during 'Dead of Night' local time without prior history of night shifts.\n   - OR Geolocation is anomalous/outside Europe.\n   - OR there is a significant role-to-data mismatch.\n   - OR the download volume is extremely large with no potentially reasonable justification."
-    },
-    {
-      "step_id": 7,
-      "task": "Generate Investigation Summary",
-      "action": "Construct a summary including: 1) User role vs. data sensitivity, 2) Geolocation status, 3) Correlation with recent alerts, and 4) Final priority reasoning.",
-      "logic": "Provides a clear narrative for SOC analysts to decide on client notification, further investigation or no action."
-    }
-  ]
-}
+    "playbook_name": "Excessive Download Triage",
+    "description": "SOP for triaging data exfiltration or bulk download anomalies. Focuses on geolocation validation, user role correlation, file sensitivity, and temporal (time-based) anomalies.",
+    "steps": [
+      {
+        "step_id": 1,
+        "task": "Extract Alert Metadata & Evidence",
+        "action": "Parse alert JSON for 'user', 'source_ip', 'user_agent', 'workload', 'sample_files', 'sample_paths', 'start_time', and 'geo_location'.",
+        "logic": "Establish the scope of the activity and note the timestamp for temporal analysis in the context of the activity's geographic location."
+      },
+      {
+        "step_id": 2,
+        "task": "Geographic & Temporal Context Validation",
+        "action": "Evaluate 'geo_location' and convert 'start_time' (UTC) to the local time of that geo-location.",
+        "logic": "Assess whether the activity occurred during hours consistent with normal working behavior for that location. Activity during late night or early morning hours local time warrants additional scrutiny, as it may suggest automated activity or an actor operating from a different time zone."
+      },
+      {
+        "step_id": 3,
+        "task": "User Role & Identity Correlation",
+        "action": "MAKE SURE TO INVOKE 'lookup_users' using the 'user' provided in the alert.",
+        "tool_integration": "lookup_users",
+        "logic": "Assess whether the user's role and department provide a plausible business reason for accessing the data indicated in 'sample_paths'. A meaningful mismatch between role and data sensitivity is a significant risk indicator."
+      },
+      {
+        "step_id": 4,
+        "task": "Historical & Environmental Correlation",
+        "action": "MAKE SURE TO INVOKE 'get_recent_events' and 'get_recent_similar_alerts' to understand context.",
+        "tool_integration": ["get_recent_events", "get_recent_similar_alerts"],
+        "logic": "Determine whether this activity is part of a recognizable and recurring pattern or whether it appears alongside other suspicious behavior that would compound the risk of the bulk download."
+      },
+      {
+        "step_id": 5,
+        "task": "User-Agent, Application & Content Relevance Analysis",
+        "action": "Examine 'user', 'user_agent', 'application', 'workload', 'sample_files', and 'sample_paths' together.",
+        "logic": "Consider whether the access method is consistent with normal human-driven activity or suggests scripted and automated data retrieval. If the application can be identified, use your knowledge of that application's typical function and expected data interactions to assess whether the observed access is within its normal operational scope. Consider also whether the application's nature involves routine background operations that would inherently produce bulk data access as part of its expected function. Where user role data is available, correlate it with the application and data accessed to assess whether the combination forms a coherent and explainable picture. Where role data is unavailable, use the user account name itself as a contextual signal — service accounts, system accounts, or accounts whose naming conventions suggest a specific function can still provide meaningful context about whether the observed activity is expected."
+      },
+      {
+        "step_id": 6,
+        "task": "Final Triage Classification",
+        "action": "Based on all evidence gathered in the previous steps, make a holistic triage judgment.",
+        "logic": "Weigh the user's role and whether it justifies the data accessed, the geographic location and its plausibility, the timing of the activity relative to normal working behavior, the access method, the volume of data, and any corroborating historical activity together. No single factor should determine the outcome — consider whether the combined picture is consistent with legitimate business activity or a potential insider threat or external compromise. Classify the alert as High Priority (HP) if it represents a legitimate threat, requires further investigation, or warrants escalation — this includes notifying senior analysts or the client about activity. Classify as Low Priority (LP) if the activity is a false positive or represents authorized behavior that requires no further action. Provide a clear written justification explaining which factors drove your decision and why."
+      }
+    ]
+  }

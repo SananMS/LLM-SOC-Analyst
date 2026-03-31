@@ -6,27 +6,27 @@
       "step_id": 1,
       "task": "Identify Source IP, Device, and Authentication Context",
       "action": "Extract the Source IP, Username, MFA status, login timestamp, and device management status (if available) from the alert evidence.",
-      "requirement": "Verify if the Login Result was 'success' and if MFA was not used."
+      "requirement": "Verify if the Login Result was 'success' and if MFA was not used (MFA: false)."
     },
     {
       "step_id": 2,
       "task": "Perform IP and ISP Usage Analysis",
-      "action": "Invoke 'check_ip_reputation' to retrieve the Abuse Confidence Score, ISP Name, Usage Type, and VPN status for the Source IP.",
+      "action": "Invoke 'check_ip_reputation' to retrieve the Security Score, ISP Name, Usage Type, and VPN status for the Source IP.",
       "tool_integration": "check_ip_reputation",
-      "logic": "Connections identified as 'Data Center/Web Hosting/Proxy' are high-risk. 'Fixed Line ISP' is lower risk unless the Abuse Confidence Score is elevated. VPN usage is evaluated together with device management signals and IP reputation."
+      "logic": "Assess whether the connection originates from infrastructure associated with anonymization, hosting, or proxying activity, as these represent elevated risk compared to residential or corporate connections. VPN usage should be evaluated in combination with device management signals and overall IP reputation."
     },
     {
       "step_id": 3,
       "task": "Correlate with Historical Activity and Client Confirmations",
       "action": "Invoke 'get_recent_events' and 'get_recent_similar_alerts' to examine the user's geographical history and past analyst notes. If either tool returns no data, this is acceptable and the analyst should continue with the investigation.",
       "tool_integration": ["get_recent_events", "get_recent_similar_alerts"],
-      "logic": "Compare the current country and login context against historical activity and prior alerts. If the country or access pattern has not been previously observed or confirmed by the client, treat the activity as higher risk unless other strong Low Priority indicators apply."
+      "logic": "Compare the current country and login context against historical activity and prior alerts. If the country or access pattern has not been previously observed or confirmed by the client, treat the activity as higher risk unless other strong Low Priority indicators apply. Where the IP has been identified as a VPN, assess whether the surrounding activity on the same device provides context that explains the connection method — consistency between the VPN login and the device's recent activity pattern is a meaningful signal when evaluating whether the anonymized connection represents a risk or a routine behavior."
     },
     {
       "step_id": 4,
       "task": "Final Correlation and Triage Decision",
-      "action": "Evaluate the current country, ISP Usage Type, device management status, IP reputation, login timing, and historical evidence.",
-      "logic": "Classification rules (precedence order):\n\n1. **Low Priority (LP)** if:\n   - The IP is confirmed as a VPN AND the device is confirmed as company-managed AND the Abuse Confidence Score is negligible AND within the proximity of the alert there was a successful login from the same endpoint  originating from the user's historically confirmed country (based on domain pattern such in username or prior seen events)  \n     _**This rule now overrides ISP type or novel country location.**_\n   - OR Usage Type is 'Fixed Line' AND the country has been historically confirmed by the client.\n   - OR the login originates from a geographically proximate or regionally related country, login time is realistic, Abuse Confidence Score is negligible, and prior client-confirmed activity exists nearby.\n\n2. **High Priority (HP)** if none of the LP rules apply, including:\n   - The login originates from a country with no prior client confirmation AND no regional or temporal plausibility.\n   - OR Usage Type is 'Data Center/Proxy' or any other type without prior confirmation.\n   - OR Abuse Confidence Score is significant.\n   - OR the IP is a VPN BUT the device is **not** company-managed OR the Abuse Confidence Score is significant."
+      "action": "Based on all evidence gathered in the previous steps, make a holistic triage judgment.",
+      "logic": "Weigh the connection type, geographic plausibility, device trust level, IP reputation, MFA status, login timing, and historical context together. No single factor should determine the outcome — consider how the indicators interact and whether the overall picture is consistent with legitimate user behavior or suspicious activity. Classify the alert as High Priority (HP) if it represents a threat that requires action — this includes escalation to senior analysts, escalation to the client for awareness, further investigation, or any activity that warrants external notification. Classify as Low Priority (LP) if the activity is a false positive or represents authorized behavior that requires no further action. Provide a clear written justification explaining which factors drove your decision and why."
     }
   ]
 }
